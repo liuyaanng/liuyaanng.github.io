@@ -4,6 +4,7 @@ date: 2019-07-25 21:12:11
 tags: OpenCV
 cover: false
 top: true
+img: https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png
 ---
 # OpenCV
 ## 什么是OpenCV
