@@ -2,7 +2,8 @@
 title: hexo大坑
 date: 2019-07-22 17:20:52
 tags: hexo
-cover: https://i.loli.net/2019/07/22/5d358d83b3a0315599.png
+cover: false
+img: https://i.loli.net/2019/07/22/5d358d83b3a0315599.png
 ---
 
 ## 坑一、Template render error 模板渲染错误

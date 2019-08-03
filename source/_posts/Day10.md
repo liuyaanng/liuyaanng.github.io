@@ -2,7 +2,8 @@
 title: Day10
 date: 2019-07-24 09:34:30
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 
 # 图像分割

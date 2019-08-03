@@ -2,7 +2,8 @@
 title: Day08
 date: 2019-07-22 13:48:33
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 # 形态学图像处理
 从这里开始过渡，从输入输出都是图像，过渡到图像分析方法，输出以某种方法来描述图像的内容。

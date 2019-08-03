@@ -2,7 +2,8 @@
 title: Day02
 date: 2019-07-16 10:59:03
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 ## 空间滤波基础
 

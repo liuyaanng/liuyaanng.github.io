@@ -2,7 +2,8 @@
 title: Day05
 date: 2019-07-19 14:03:12
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 ## 使用频率域滤波器平滑图像
 ----

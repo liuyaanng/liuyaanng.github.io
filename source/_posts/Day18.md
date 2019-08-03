@@ -5,7 +5,8 @@ tags: 实习
 categories: 
   - OpenCV 
   - C++
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 # LBP算法实现及人脸检测
 

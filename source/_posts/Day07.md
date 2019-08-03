@@ -2,7 +2,8 @@
 title: Day07
 date: 2019-07-21 14:47:14
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 
 ## 使用频率域滤波器锐化图像

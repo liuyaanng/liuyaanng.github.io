@@ -2,8 +2,8 @@
 title: My plan
 date: 2019-07-05 23:52:51
 tags: plan
-
-cover: http://images2.fanpop.com/image/photos/10500000/simple-plan-simple-plan-10550897-1024-768.jpg
+cover: true
+img: http://images2.fanpop.com/image/photos/10500000/simple-plan-simple-plan-10550897-1024-768.jpg
 ---
 
 

@@ -2,7 +2,8 @@
 title: Day12
 date: 2019-07-26 00:06:26
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 
 # 基于霍夫变换的圆形检测

@@ -2,7 +2,8 @@
 title: Day13
 date: 2019-07-27 18:48:06
 tags: 实习
-cover: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+cover: false
+img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 
 # 边缘检测之梯度详解
