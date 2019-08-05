@@ -5,15 +5,15 @@
 # Site
 title: Kevin
 subtitle: kevin's blog
-description: You Can Do It!
-keywords:
+description: You Can Do It
+keywords: "Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
 author: 留洋
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://kevinnnm.github.io
+url: https://liuyaanng.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -99,7 +99,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-matery
+theme: matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
