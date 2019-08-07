@@ -4,6 +4,7 @@ date: 2019-07-31 10:05:48
 tags: 实习 OpenCV
 categories:
 cover: false
+mathjax: true
 img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
 ---
 
