@@ -56,7 +56,7 @@ using namespace cv::face;
 int resize_save(Mat& faceIn, char* path, int  faceseq);
 //Input: current image, the path of file, the name or faceseq of images.
 //Output: None
-//Function: resize the current image to (92, 122), which is same to the train data.
+//Function: resize the current image to (92, 112), which is same to the train data.
 int get_face(char* path);
 //Input: the path of file.
 //Output: None
@@ -73,7 +73,7 @@ int resize_save(Mat& faceIn, char* path, int  faceseq){
   }
 
   if(faceIn.cols > 100){
-    resize(faceIn, faceOut, Size(92, 122));
+    resize(faceIn, faceOut, Size(92, 112));
     //Resize and Keep a match with the train database.
     strname = format("%s/%d.jpg", path, faceseq); //mkdir
     ret = imwrite(strname, faceOut); //save image. Note the file suffix.
