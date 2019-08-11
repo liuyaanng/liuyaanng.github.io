@@ -25,6 +25,7 @@ categories:
 5. For the face part, resize and write the image file in the specified directory;
 
 #### 1.1.2 Code
+
 ```cpp
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -148,16 +149,18 @@ int main(int argc, char* argv[]){
   return 0;
 }
 ```
+
 ![](4.jpg)
 Note:    
+
 1. After the compilation is successful, the execution executable file must provide parameters, which are the directories for storing the face image, and it must be an existing directory.(E.g: ./program_name Img/s41)    
 2. Press the “P” button to take a photo and save the face. Press the “Esc” button to exit.
 
 
 ### 1.2 Face Database Creation
-The official document provides a download of the face database, and i use the [AT&T Facedatabase](http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html) to creat my face databse. I have updated this zip file to my github, you can download it from [here](att_faces.zip) faster.
-AT&T Face Database is also konwn as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), diffenent face details(with or without glasses). All images were captured on a dark , eveb background with a vertical face o the front(some with a slight rotation).    
-You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the foder, which named from "s1" to "s40". Each folder has the same person's photos with different expressions, and there are 10 face photos.    
+The official document provides a download of the face database, and i use the [AT&T Facedatabase](http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html) to create my face database. I have updated this zip file to my github, you can download it from [here](att_faces.zip) faster.
+AT&T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).    
+You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from "s1" to "s40". Each folder has the same person's photos with different expressions, and there are 10 face photos.    
 The format of these images is ".pgm"
 ![](1.png)
 ![](2.png)
@@ -165,4 +168,329 @@ The format of these images is ".pgm"
 Note:    
 If you want to add your own photos to the face database through the program, the number of added pictures must be no less than 2.
 
+## 2. Face Recognition Model training
 
+### 2.1 Create a label file CSV
+With the face database data, we need to read it in the program, here we need to use csv file to read the image data in the face database.    
+The format of a csv file: image path name + label, such as /Img/s1/image.jpg;1    
+Assume the face image path is: /Img/s1/01..jpg    
+And we give this face image a label "1", this label represents the person's name. One person's face image label must be the same.    
+You can create a csv file manually and then enter the data one by one. But if you use python, you don't have to do this tedious and boring work.    
+The following is a piece of code which can write data in the CSV file automatically.
+
+```python
+#!/usr/bin/env python
+ 
+import sys
+import os.path
+ 
+# This is a tiny script to help you creating a CSV file from a face
+# database with a similar hierarchie:
+#
+#  
+#  
+#  |-- s1
+#  |   |-- 1.pgm
+#  |   |-- ...
+#  |   |-- 10.pgm
+#  |-- s2
+#  |   |-- 1.pgm
+#  |   |-- ...
+#  |   |-- 10.pgm
+#  ...
+#  |-- s40
+#  |   |-- 1.pgm
+#  |   |-- ...
+#  |   |-- 10.pgm
+#
+ 
+if __name__ == "__main__":
+ 
+    if len(sys.argv) != 2:
+        print "usage: create_csv <base_path>"
+        sys.exit(1)
+ 
+    BASE_PATH=sys.argv[1]        
+    SEPARATOR=";"
+    # This is output csv file.
+    fh = open("../at.csv",'w')
+ 
+    for dirname, dirnames, filenames in os.walk(BASE_PATH):
+        for subdirname in dirnames:
+            subject_path = os.path.join(dirname, subdirname)
+            for filename in os.listdir(subject_path):
+                abs_path = "%s/%s" % (subject_path, filename)
+                print("%s%s%s" % (abs_path, SEPARATOR, subdirname[1:]))
+                fh.write(abs_path)
+                fh.write(SEPARATOR)
+                fh.write(subdirname[1:])
+                fh.write("\n")
+    fh.close()
+```
+
+You should set the image path parameter (absolute path) when running.(E.g: **python filename.py /home/kevin/OpenCV/face_rec/Img** ) and you can get a CSV file like this:
+![](5.png)
+This CSV file is created.
+
+### 2.2 Model training
+This is the official example of OpenCV: [Click here](https://docs.opencv.org/3.2.0/da/d60/tutorial_face_main.html)
+They offer three models: Eigenfaces, Fisherfaces and Local Binary Patterns Histograms(LBPH)    
+
+Then I will train my own face database based on these models on the first step.
+
+```cpp
+static Mat norm_0_255(InputArray _src){
+  Mat src = _src.getMat();
+  Mat dst; //Create and return a normalized image matrix:
+  switch(src.channels()) {
+    case 1:
+        cv::normalize(_src, dst, 0, 255, NORM_MINMAX, CV_8UC1);
+        break;
+    case 3:
+        cv::normalize(_src, dst, 0, 255, NORM_MINMAX, CV_8UC3);
+        break;
+    default:
+        src.copyTo(dst);
+        break;
+  }
+  return dst;
+}
+//load CSV file
+static void read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';'){
+  std::ifstream file(filename.c_str(), ifstream::in);
+    if (!file) {
+        string error_message = "No valid input file was given, please check the given filename.";
+        CV_Error(Error::StsBadArg, error_message);
+    }
+    string line, path, classlabel;
+    while (getline(file, line)) {
+        stringstream liness(line);
+        getline(liness, path, separator);
+        getline(liness, classlabel);
+        if(!path.empty() && !classlabel.empty()) {
+            images.push_back(imread(path, 0));
+            labels.push_back(atoi(classlabel.c_str()));
+        }
+    }
+}
+
+void train_model(const string& fn_csv){
+  // 2 containers to store image data and corresponding labels
+    vector<Mat> images;
+    vector<int> labels;
+    // load data
+    try
+    {
+        read_csv(fn_csv, images, labels);
+    }
+    catch (cv::Exception& e)
+    {
+        cerr << "Error opening file \"" << fn_csv << "\". Reason: " << e.msg << endl;
+        exit(1);
+    }
+    if (images.size() <= 1) {
+        string error_message = "This demo needs at least 2 images to work. Please add more images to your data set!";
+        CV_Error(CV_StsError, error_message);
+    }
+
+    Mat testSample = images[images.size() - 1];
+    int testLabel = labels[labels.size() - 1];
+    images.pop_back();
+    labels.pop_back();
+    // The following lines create a feature face model for face recognition.
+     // Train it with images and tags read from a CSV file.
+     // Here is a complete PCA transform
+     //If you only want to keep 10 principal components, use the following code
+     // cv::EigenFaceRecognizer::create(10);
+     // cv::FisherFaceRecognizer::create(10);
+     //
+     // If you also want to initialize with a confidence threshold, use the following statement:
+     // cv::EigenFaceRecognizer::create(10, 123.0);
+     //
+     // If you use all features and use a threshold, use the following statement:
+     // cv::EigenFaceRecognizer::create(0, 123.0);
+     // cv::FisherFaceRecognizer::create(0, 123.0);
+
+    Ptr<BasicFaceRecognizer> model0 = EigenFaceRecognizer::create();
+    model0->train(images, labels);
+    model0->write("MyFacePCAModel.xml");
+
+    Ptr<BasicFaceRecognizer> model1 = FisherFaceRecognizer::create();
+    model1->train(images, labels);
+    model1->write("MyFaceFisherModel.xml");
+
+     Ptr<LBPHFaceRecognizer> model2 = LBPHFaceRecognizer::create();
+    model2->train(images, labels);
+    model2->write("MyFaceLBPHModel.xml");
+
+
+    // The test image is predicted below, predictedLabel is the predicted label result
+    int predictedLabel0 = model0->predict(testSample);
+    int predictedLabel1 = model1->predict(testSample);
+    int predictedLabel2 = model2->predict(testSample);
+
+    // There is also a way to get the result and get the threshold:
+    //      int predictedLabel = -1;
+    //      double confidence = 0.0;
+    //      model->predict(testSample, predictedLabel, confidence);
+
+    string result_message0 = format("Predicted class = %d / Actual class = %d.", predictedLabel0, testLabel);
+    string result_message1 = format("Predicted class = %d / Actual class = %d.", predictedLabel1, testLabel);
+    string result_message2 = format("Predicted class = %d / Actual class = %d.", predictedLabel2, testLabel);
+    cout << result_message0 << endl;
+    cout << result_message1 << endl;
+    cout << result_message2 << endl;
+
+    waitKey(0);
+}
+
+int main(int argc, char* argv[]){
+  if(argc != 2)
+  	{
+		printf("usage: %s <csv_file>\n", argv[0]);
+		return -1;
+  	}
+  string fn_csv = string(argv[1]);
+  train_model(fn_csv);
+  return 0;
+}
+```
+
+At this point, we have completed the training of the face model. And we get three files:     
+
+`MyFaceFisherModel.xml、MyFaceLBPHModel.xml、MyFacePCAModel.xml`
+
+![](6.png)
+Note:    
+
+1. Changes to the API of the OpenCV3.3 Face Recognition Module
+
+   a. Facerec.hpp before opencv3.3
+
+   ```cpp
+   #ifndef __OPENCV_FACEREC_HPP__
+   #define __OPENCV_FACEREC_HPP__
+   
+   #include "opencv2/face.hpp"
+   #include "opencv2/core.hpp"
+   
+   namespace cv { namespace face {
+   
+   // base for two classes
+   class CV_EXPORTS_W BasicFaceRecognizer : public FaceRecognizer
+   {
+   public:
+       /** @see setNumComponents */
+       CV_WRAP virtual int getNumComponents() const = 0;
+       // ----------- ...... -----------
+   
+       CV_WRAP virtual cv::Mat getEigenValues() const = 0;
+       CV_WRAP virtual cv::Mat getEigenVectors() const = 0;
+       CV_WRAP virtual cv::Mat getMean() const = 0;
+   };
+   
+   CV_EXPORTS_W Ptr<BasicFaceRecognizer> createEigenFaceRecognizer(int num_components = 0, double threshold = DBL_MAX);
+   
+   CV_EXPORTS_W Ptr<BasicFaceRecognizer> createFisherFaceRecognizer(int num_components = 0, double threshold = DBL_MAX);
+   
+   class CV_EXPORTS_W LBPHFaceRecognizer : public FaceRecognizer
+   {
+   public:
+       /** @see setGridX */
+       CV_WRAP virtual int getGridX() const = 0;
+       /** @copybrief getGridX @see getGridX */
+       CV_WRAP virtual void setGridX(int val) = 0;
+       // ----------- ...... -----------
+       CV_WRAP virtual cv::Mat getLabels() const = 0;
+   };
+   
+   CV_EXPORTS_W Ptr<LBPHFaceRecognizer> createLBPHFaceRecognizer(int radius=1, int neighbors=8, int grid_x=8, int grid_y=8, double threshold = DBL_MAX);
+   
+   }} //namespace cv::face
+   
+   #endif //__OPENCV_FACEREC_HPP__
+   ```
+
+   - Comment section of the ninth line: `// base for two classes`,  This shows that BasicFaceRecognizer is the base class of two classes: EigenFaceRecognizer and FisherFaceRecognizer. With LBPHFaceRecognizer is irrelevant. Even the new API is still the case.
+
+   - Method of creating three face recognizers.
+
+     ```cpp
+     Ptr<BasicFaceRecognizer> model =  createEigenFaceRecognizer();
+     Ptr<BasicFaceRecognizer> model =  createFisherFaceRecognizer();
+     Ptr<LBPHFaceRecognizer> model  =  createLBPHFaceRecognizer();
+     ```
+
+   b. Facerec.hpp after opencv3.3
+	
+```cpp
+#ifndef __OPENCV_FACEREC_HPP__
+#define __OPENCV_FACEREC_HPP__
+	
+#include "opencv2/face.hpp"
+#include "opencv2/core.hpp"
+	
+namespace cv { namespace face {
+	
+// base for two classes
+class CV_EXPORTS_W BasicFaceRecognizer : public FaceRecognizer
+{
+public:
+	/** @see setNumComponents */
+	CV_WRAP int getNumComponents() const;
+	// ----------- ...... -----------
+	CV_WRAP cv::Mat getEigenValues() const;
+	CV_WRAP cv::Mat getEigenVectors() const;
+	CV_WRAP cv::Mat getMean() const;
+	
+	virtual void read(const FileNode& fn);
+	virtual void write(FileStorage& fs) const;
+	virtual bool empty() const;
+	
+	using FaceRecognizer::read;
+	using FaceRecognizer::write;
+
+protected:
+	int _num_components;
+	double _threshold;
+	std::vector<Mat> _projections;
+	Mat _labels;
+	Mat _eigenvectors;
+	Mat _eigenvalues;
+	Mat _mean;
+};
+class CV_EXPORTS_W EigenFaceRecognizer : public BasicFaceRecognizer
+{
+public:
+	CV_WRAP static Ptr<EigenFaceRecognizer> create(int num_components = 0, double threshold = DBL_MAX);
+};
+
+class CV_EXPORTS_W FisherFaceRecognizer : public BasicFaceRecognizer
+{
+public:
+	CV_WRAP static Ptr<FisherFaceRecognizer> create(int num_components = 0, double threshold = DBL_MAX);
+};
+class CV_EXPORTS_W LBPHFaceRecognizer : public FaceRecognizer
+{
+public:
+	/** @see setGridX */
+	CV_WRAP virtual int getGridX() const = 0;
+	// ----------- ...... -----------
+	CV_WRAP virtual cv::Mat getLabels() const = 0;
+	CV_WRAP static Ptr<LBPHFaceRecognizer> create(int radius=1, int neighbors=8, int grid_x=8, int grid_y=8, double threshold = DBL_MAX);
+};
+}} //namespace cv::face
+	
+#endif //__OPENCV_FACEREC_HPP__
+```
+
+   - Both EigenFaceRecognizer and FisherFaceRecognizer are inherited from BasicFaceRecognizer. However, the LBFPHaceRecognizer, like the BasicFaceRecognizer, inherits from FaceRecognizer.	
+   - Method of creating three face recognizer
+
+```cpp
+Ptr<EigenFaceRecognizer> model  = EigenFaceRecognizer::create();
+Ptr<FisherFaceRecognizer> model = FisherFaceRecognizer::create();
+Ptr<LBPHFaceRecognizer> model   = LBPHFaceRecognizer::create();
+```
+
+## 3. Identify faces in the video stream (camera)
