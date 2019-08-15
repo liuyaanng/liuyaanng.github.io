@@ -7,10 +7,10 @@ mathjax: true
 date: 2019-08-05 15:22:19
 password:
 summary: PCA的数学原理
-tags: 
-- 实习
+tags:
 - PCA
-categories: 算法
+categories: 
+- 算法
 ---
 参考资料
 [PCA原理分析](PCA.pdf)

@@ -1,30 +1,111 @@
 ---
-title: Day18
-date: 2019-08-01 16:50:05
-tags: 实习
-categories: 
-  - OpenCV 
-  - C++
+title: Local Binary Patterns
+top: false
 cover: false
-img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png
+toc: true
+mathjax: true
+date: 2019-08-01 14:05:20
+password:
+summary: LBP算法原理、LBP特征实现(c++)
+tags:
+- 图像处理
+- LBP
+- c++
+categories:
+- 算法
 ---
-# LBP算法实现及人脸检测
 
-## OpenCV模块
-- core：简洁核心模块，基本函数，基本数据结构
-- imgproc：图像处理模块，线性和非线性图像滤波，几何图像转换，颜色空间转换，直方图等。
-- video：视频分析模块，运动估计，背景消除，物体跟踪算法
-- calib3d：基本多视角几何算法，单体和立体相机的标定，对象姿势估计，双目立体匹配算法和元素的三维重建
-- features2d：包含了显著特征检测算法，描述算子和算子匹配算法
-- objdetect：物体检测和一些预定义的物体的检测（如人脸，眼睛，杯子，人，汽车等)
-- ml：多种机器学习算法，如K均值，支持向量机和神经网络
-- highgui：简单易用接口，有视频捕捉，图像和视频编码功能，简单UI接口，iOS的是其中一个子集
-- gpu：GPU加速算法，iOS不可用
-- ocl：OpenCL通用算法，iOS不可用
-- 其它辅助模块，如用户贡献的算法
+# LBP算法
+
+LBP（Local Binary Patterns，局部二值模式）是一种能够有效地度量和提取图像局部纹理信息的算子，具有旋转不变性和灰度不变性等显著的优点。它是人脸识别中一种提取特征的重要方法，具有对光照不敏感的特性，但是对姿态和表情的鲁棒性不强。
+## 纹理
+
+纹理是由于物体表面物理属性不同所引起的能够表示某个特定表面特征的灰度或颜色信息。纹理反映了图像灰度模式的空间分布，包含了图像的表面信息及其周围环境的关系。
+
+## 基本的LBP算子
+
+局部二值模式是一种灰度范围内的纹理描述方式。最初的LBP算子定义在一个3×3的窗口，以窗口中心像素点为阈值，将相邻的像素的灰度值与其进行比较，若周围的像素值大于中心点的值，则将该像素位置标记为1,否则为0.这样一个3×3邻域内的8个点可产生一个8-bit的无符号数，再按其位置赋予不同权重求和得一整数，即可得到该窗口的 **LBP** 值，并用这个数反映该区域的纹理信息。    
+对比度分量C是邻域中所有大于和等于中心点像素的均值与所有小于中心点像素的均值之差。    
+![](https://i.loli.net/2019/07/31/5d415779ca87257597.jpg)
+
+基本的LBP算子最大的缺陷是只覆盖了一个固定半径范围内的小区域，改进的LBP算子，将3×3邻域扩展到任意邻域，用圆形邻域代替了正方形邻域，该算子允许在半径为R的圆形邻域内有任意多个像素点。
+- 一个局部区域的纹理分布可假设为局部区域内像素灰度的联合分布密度
+$$T = t(g_c,g_0, ....,g_{p-1})$$
+$g_c$表示局部区域的中心点的灰度值,$g_p(p=0,1,...,p)$对应中心点周围等距分布的P个点
+- 采用 **双线性插算法** 对没有完全落在像素位置的点计算灰度值。邻域内的$g_p$点的坐标可以表示为:
+$$(x_p,y_p) = (x_c + Rcos(\frac{2\pi}{P}),y_c - Rsin(\frac{2\pi}{P}))$$
+$(x_c,y_c)$表示中心点的坐标
+- 将中心点$g_c$的值从邻域像素的灰度值$g_p$中减去，则局部区域的纹理可以用中心点和中心点与周边像素值之差的联合分布来表示:
+$$T = t(g_c,g_0-g_c,....,g_{p-1}-g_c)$$
+- 假设中心像素点$g_c$与周边点像素$g_p$的差值$g_p-g_c(p=0,1,...P)$独立于中心点$g_c$，则
+$$T\approx t(g_c)(g_0-g_c,...,g_{p-1}-g_c)$$
+- 实际上，$t(g_c)$只是描述了整个图像的亮度分布情况，而和图像的局部纹理无关，它不能为纹理分析提供任何有价值的信息
+$$T\approx t(g_0-g_c,...,g_{p-1}-g_c)$$
+- 差值的联合分布具有灰度平移不变性，即邻域中所有P+1个像素同时加上或减去某个值，其表征的纹理不变。
+- 为了达到尺度不变的目的，只考虑差值的符号
+$$T\approx t(s(g_0-g_c),...,s(g_p-g_c))$$
+
+$$s(x)=\begin{cases}
+1 , \quad &x > 0  \\\\
+0 , &x \geqslant 0
+\end{cases}
+$$
+
+上式得到了一个8位的二进制数，再对像素按不同位置用$2^p$进行加权求和，这样得到了一个与邻域像素点相关的唯一的 **LBP** 值，这个值称为 **模式**。这个值描述的是以$(x_c,y_c)$为中心的局部区域的纹理，可以表示为
+$$LBP(x_c,y_c) = \sum_{p=0}^{P-1}s(g_p - g_c)2^P$$
+上式意味着差值的符号转化成一个P-bit的二进制数，进而转化成为一个取值范围为0-$2^p$的离散的LBP值，或者说转化为一种LBP模式。
+- 局部区域的灰度分布或纹理，可以用这个LBP值或LBP模式近似描述为:
+$$T\approx t(LBP(x_c,y_c))$$
+LBP算子对于任何单调的灰度变化具有鲁棒性，用符号$LBP_P^R$表示在半径为R的圆形邻域内有P个像素点$g_p(p=0,1,...,P)$的LBP算子
+![](https://i.loli.net/2019/07/31/5d415779b84ac47631.jpg)
+
+## LBP等价模式
+### 定义
+当某个局部二进制模式所对应的循环二进制数从０到１或从１到０最多有两次跳变时，该局部二进制模式所对应的二进制就称为一个等价模式类。比如00000000,11111111,10001111都是等价类。
+### 检验方法
+检验某种模式是否是等价模式的简单办法是将其和其移动一位后的二进制模式按位相减的绝对值求和
+$$U(G_p) = |s(g_{p-1}-g_c)-s(g_0-g_c)|+\sum_{p=1}^{P-1}|s(g_p-g_c)-s(g_{p-1}-g_c)$$
+若某种模式计算得到的 $U(G_p)$小于或等于２，则将其归于等价模式
+![](https://i.loli.net/2019/07/31/5d415779c949196019.jpg)
+
+## 旋转不变的LBP算子
+### 定义
+不断旋转圆形邻域得到一系列的初始定义的LBP值，取其最小值作为该邻域的LBP值，用公式表示为:
+$$LBP_{P,R}^{ri} = min(ROR(LBP_{P,R}^{ri},i)|i=0,1,...,P-1)$$
+$LBP^{ri}$表示旋转不变的LBP算子，$ROR(x,i)$函数为旋转函数，表示将x循环右移i(i<P)位。
+
+### 性质
+- 对于图像旋转，表现的更为鲁棒，并且LBP模式的种类进一步减少，使纹理识别更加容易。
+- 丢失了方向信息
+![](https://i.loli.net/2019/07/31/5d415779b8fed91298.jpg)
+
+## 旋转不变的的等价模式
+### 定义
+将等价模式类进行旋转得到旋转不变的等价模式
+
+$$LBP_{P,R}^{riu2} = \begin{cases}
+\sum_{P=0}^{P-1}s(g_p-g_c), & U(G_p) \leq 2 \\\\
+P + 1, & U(G_p) >2
+\end{cases}
+$$
+
+其中$U(G_p)$表示0到1或1到0跳变的次数，$LBP^{riu2}$被称为旋转不变的等价模式
+
+## 几种LBP算子的维数比较
+
+ LBP  | 原始模式数 | 等价模式 | 旋转不变等价模式
+:---: | :---: | :---: | :---:
+$LBP_P^R$ | $2^P$ | $P(P-1) + 2$ | $P+1$
+$LBP_8^1$ | 256 | 58(+1) | 9
+$LBP_{16}^2$ | 65536 | 242(+1) | 17
+$LBP_{24}^3$ | 16777216 | 554(+1) | 25
+
+
+# LBP特征实现
 
 ## 原始LBP特征
-``` c++
+
+```cpp
 //Original_LBP
 Mat get_original_LBP_feature(Mat img){
   Mat result;
@@ -48,12 +129,13 @@ Mat get_original_LBP_feature(Mat img){
   return result;
 }
 ```
+
 ![](https://i.loli.net/2019/07/31/5d4161dac5f0b23887.png)
 
 
 ## 圆形LBP特征
 
-``` c++
+``` cpp
 //Circular_LBP_feature
 Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
 {
@@ -101,6 +183,7 @@ Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
   return result;
 }
 ```
+
 结果:
 ![](https://i.loli.net/2019/08/01/5d42b5d2e345026549.png)
 
@@ -108,7 +191,7 @@ Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
 
 ## 旋转不变LBP特征
 
-``` c++
+``` cpp
 //Rotation_Invariant_LBP_feature
 Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
 {
@@ -170,13 +253,15 @@ Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
 }
 
 ```
+
 结果:
 ![](https://i.loli.net/2019/08/01/5d42b5d30749958722.png)
 
 第一幅图neighbors值设置为8,第二幅设置为6,可以看出neighbors值越大，得到的LBP特征亮度越高。
 
 ## 完整代码如下
-``` c++
+
+``` cpp
 #include <opencv2/highgui/highgui.hpp>
 
 using namespace cv;
@@ -332,60 +417,3 @@ int main(int argc, char* argv[])
   return 0;
 }
 ```
-## 人脸检测
-
-在OpenCV中，主要使用两种特征进行人脸检测，Haar特征和LBP特征，下面使用的是LBP特征。    
-实现人脸检测主要依赖于detectMultiScale()函数
-``` c++
-CV_WRAP virtual void detectMultiScale
-( const Mat& image,
-  CV_OUT vector<Rect>& objects,
-  double scaleFactor=1.1,
-  int minNeighbors=3, int flags=0,
-  Size minSize=Size(),
-  Size maxSize=Size() );
-```
-各参数含义如下：
-**const Mat& image**: 需要被检测的图像（灰度图）。
-**vector<Rect>& objects**: 保存被检测出的人脸位置坐标序列。
-**double scaleFactor**: 每次图片缩放的比例。
-**int minNeighbors**: 每一个人脸至少要检测到多少次才算是真的人脸。
-**doubleint flags**： 决定是缩放分类器来检测，还是缩放图像。
-**Size()**: 表示人脸的最大最小尺寸。
-
-具体实现代码如下:
-``` c++
-#include<opencv2/highgui/highgui.hpp>
-#include<opencv2/imgproc/imgproc.hpp>
-#include<opencv2/objdetect/objdetect.hpp>
-#include<iostream>
-#include<opencv2/core.hpp>
- 
-
-using namespace std;
-using namespace cv;
- 
-#define CV_COLOR_GREEN cv::Scalar(0, 255, 0)
-CascadeClassifier faceCascade;
-int main(int argc, char* argv[])
-{
- Mat img;
-
- CascadeClassifier faceDetector("lbpcascade_frontalface.xml");//读取分类器
- img = imread(argv[1]);  //读取检测的图片原图
- vector<Rect> objects;  //存放检测的对象
- faceDetector.detectMultiScale(img, objects);  //执行检测
- for (int i = 0; i < objects.size(); i++) //遍历检测到的脸
- {
-  rectangle(img, objects[i], CV_COLOR_RED);  //画出检测到的脸
- }
- imshow("result", img);  //显示结果
- waitKey(0);
-
- return 0;
-}
-```
-检测结果:
-![](https://i.loli.net/2019/08/01/5d42b5d26727057681.png)
-![](https://i.loli.net/2019/08/01/5d42b5d26fea564434.png)
-![](https://i.loli.net/2019/08/01/5d42b5d2b360c81753.png)

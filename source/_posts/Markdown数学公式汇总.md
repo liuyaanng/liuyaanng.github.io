@@ -1,13 +1,16 @@
 ---
 title: Markdown数学公式汇总
 date: 2019-07-19 15:31:03
-tags: Markdown
+toc: ture
+tags: 
+- Markdown
+categories: 
+- 教程
 mathjax: true
+summary: 总结一下Markdown的数学公式语法
 img: https://i.loli.net/2019/07/08/5d235019a672f97339.jpg
 ---
 
-[TOC]
-### 参考
 #### 分数、上标、下标、方根、求和、积分
 分数 ` $\dfrac{2}{3}$ `表示$\dfrac{2}{3}$，` $\tfrac{2}{3}$ `表示$\tfrac{2}{3}$
 ```

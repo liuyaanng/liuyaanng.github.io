@@ -7,8 +7,13 @@ mathjax: true
 date: 2019-08-07 09:48:10
 password:
 summary: PCA算法实例及C++实现
-tags: 实习
+tags:
+- 图像处理
+- PCA
+- OpenCV
+- c++
 categories:
+- 算法
 ---
 # PCA算法实例及C++实现
 
@@ -95,7 +100,7 @@ $$PCP^\mathsf{T}=\begin{pmatrix}
 \end{pmatrix}$$
 ![](02.png)
 
-### C++实现
+## C++实现
 因为要对一组图片信息进行训练，所以我写了一部分通过摄像头截取图片帧的代码，`get_img()`函数。这里提取了5个特征脸和一个均值脸
 
 ```cpp

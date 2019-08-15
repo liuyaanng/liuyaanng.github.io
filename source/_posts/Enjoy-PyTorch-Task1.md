@@ -6,9 +6,12 @@ toc: true
 mathjax: false
 date: 2019-08-07 13:11:13
 password:
-summary:
+summary: My notes of PyTorch
 tags:
+- PyTorch
+- Deep Learning
 categories:
+- PyTorch Notes
 ---
 
 # Installing PyTorch with Anaconda and Conda

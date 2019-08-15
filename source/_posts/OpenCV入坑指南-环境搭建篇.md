@@ -5,6 +5,12 @@ tags: OpenCV
 cover: false
 top: true
 img: https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png
+toc: true
+summary: 从零开始搭建OpenCV图像处理环境, 总结了搭建过程中遇到的坑，满满的干货.
+tag: 
+- OpenCV
+categories: 
+- 教程
 ---
 # OpenCV
 ## 什么是OpenCV

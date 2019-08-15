@@ -1,21 +1,20 @@
 ---
-title: Face Recognition with OpenCV
+title: Face Recognition
 top: false
 cover: false
+img: https://i.loli.net/2019/08/15/hegwoqsdjiZf2rN.jpg
 toc: true
 mathjax: false
-date: 2019-08-09 12:00:00
+date: 2019-08-10 12:00:00
 password:
-summary:
+summary: Face Recognition
 tags: 
 - OpenCV
 - Face Recongnition
 - c++
 - python
 categories: 
-- OpenCV
-- c++
-- python
+- Face Recognition
 ---
 
 # Face Recognition with OpenCV
