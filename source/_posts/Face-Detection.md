@@ -2,7 +2,7 @@
 title: Face Detection
 top: false
 cover: false
-img: https://i.loli.net/2019/08/01/5d42b5d26727057681.png
+img: https://i.loli.net/2019/08/15/HGSkhArtKw89uqJ.jpg
 toc: true
 mathjax: false
 date: 2019-08-03 14:15:02
