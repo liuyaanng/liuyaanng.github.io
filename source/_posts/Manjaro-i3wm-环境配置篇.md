@@ -190,6 +190,9 @@ chsh -s usr/bin/fish
 之后重启终端,shell就默认为fish了
 ![](14.png)
 
+配置文件的位置是`/home/kevin/.config/fish/functions/fish_prompt.fish`，可以在这里设置替换命令，提高效率，举个例子:
+![](18.png)
+
 - oh-my-fish是一个 Fishshell 框架，允许你安装扩展或更改你的 shell 外观的软件包。它简单易用，快速可扩展。使用 omf，你可以根据你的想法，很容易地安装主题，丰富你的外观和安装插件来调整你的 Fish shell。    
 - 安装omf
 在fish shell里执行
