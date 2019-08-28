@@ -253,7 +253,7 @@ neofetch是一个个性化显示Linux系统信息的工具
 ```bash
 sudo pacman -S neofetch
 ```
-![](16.png)
+![](19.png)
 #### 3.1.6 vim 
 
 ![](6.png)
