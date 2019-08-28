@@ -78,7 +78,7 @@ recommend:
 # 配置网站favicon和网站LOGO
 favicon: https://i.loli.net/2019/08/03/RpL5aQ2XKFvUkr7.jpg
 #favicon: /favicon.jpg
-#logo: /medias/logo.png
+logo: /medias/logo.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.

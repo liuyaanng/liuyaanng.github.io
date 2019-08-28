@@ -1,5 +1,3 @@
-
-
 ---
 title: Manjaro i3wm 高效率环境配置篇(持续更新)
 top: false
@@ -153,8 +151,266 @@ vim ~/.i3/config
 
 `exec_always fcitx`
 
+## 3. 高效率软件以及配置
 
-### 杂项
+### 3.1 软件
+
+#### 3.1.1 Alacritty 
+
+Alacritty 是一个免费的开源，快速，跨平台的终端仿真器，它使用GPU进行渲染，我使用tree命令跑了一下，确实速度快。kitty也是一款优秀的终端，不过它的配置稍麻烦，感兴趣的可以自行Google.
+
+```bash
+sudo pacman -S alacritty
+```
+#### 3.1.2 fish & oh-my-fish(omf)
+
+- fish是一个智能且用户友好的命令行shell，适用于macOS，Linux和其他家族。fish包含语法突出显示，自动提示类型和精美的选项卡完成等功能，无需配置。    
+Terminal下默认的SHELL是bash, 但bash作为你经常使用的工具来说一点都不便捷,相信有很多人都用过另一款shell,它的名字是**zsh**，以及**oh-my-zsh**，我也用了一段时间的zsh，在用的过程中我发现它有时候运行贼慢，忍不了，而且配置虽说有oh-my-zsh管理，但终归不是傻瓜式工具，直到有一天我发现了 **fish**,官网号称是一个专为90后设计的shell。   
+安装很简单:
+
+```bash
+sudo pacman -S fish
+```
+终端输入`fish`即可进入
+- 查看已经安装的shell
+
+```bash
+cat /etc/shells
+```
+
+![](12.png)
+- 修改默认shell
+
+看一下上一步输出的`fish`的位置，然后执行
+
+```bash
+chsh -s usr/bin/fish
+```
+![](13.png)
+之后重启终端,shell就默认为fish了
+![](14.png)
+
+- oh-my-fish是一个 Fishshell 框架，允许你安装扩展或更改你的 shell 外观的软件包。它简单易用，快速可扩展。使用 omf，你可以根据你的想法，很容易地安装主题，丰富你的外观和安装插件来调整你的 Fish shell。    
+- 安装omf
+在fish shell里执行
+
+```bash
+curl -L https://get.oh-my.fish | fish
+```
+- 列出所有的安装包
+
+```bash
+omf list
+```
+
+这条命令会列出一安装的主题和插件
+
+![](15.png)
+- 列出已安装主题
+
+```bash
+omf theme
+```
+- 安装一个新主题
+我现在用的主题叫 ays
+```bash
+omf install ays
+```
+- 改变主题
+
+```bash 
+omf theme ays
+```
+- 卸载oh-my-fish
+
+```bash
+omf destroy
+```
+其他具体功能见[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
+
+#### 3.1.3 Chromium
+
+安装方式:
+
+```bash
+sudo pacman -S chromium
+```
+#### 3.1.4 nitrogen 
+一款可视化换壁纸的软件,当然**feh**也是一款优秀的壁纸切换软件，教程很多，这里不再说了
+
+```bash
+sudo pacman -S nitrogen
+```
+![](5.png)
+
+#### 3.1.5 neofetch
+
+neofetch是一个个性化显示Linux系统信息的工具
+
+```bash
+sudo pacman -S neofetch
+```
+![](16.png)
+#### 3.1.6 vim 
+
+![](6.png)
+
+文本/代码编辑中最最最为优秀经典的上古神器,之后我会写一个调教Vim的教程
+
+```bash
+sudo pacman -S vim 
+```
+
+#### 3.1.7 albert
+
+![](7.png)
+一款软件/文件/搜索 启动器
+
+```bash
+sudo pacman -S albert
+```
+第一次运行会提示你设置一下
+
+![](8.png)
+![](9.png)
+
+#### 3.1.8 iease-music
+
+网易云音乐最漂亮的第三方客户端！
+
+```bash
+sudo pacman -S iease-music
+```
+![](10.png)
+
+#### 3.1.9 deepin-screenshot
+
+深度截图
+
+```bash
+sudo pacman -S deepin-screenshot
+```
+
+#### 3.1.10 shadowsocks-qt5
+
+```bash
+sudo pacman -S shadowsocks-qt5
+```
+
+#### 3.1.11 thefuck
+
+自从用了"Thefuck",妈妈再也不用担心我敲错命令了。   
+有了它，万物皆可fffffffffuck!
+
+```bash
+sudo pacman -S thefuck
+```
+![](11.png)
+
+#### 3.1.12 compton
+
+设置窗口半透明+毛玻璃效果
+
+![](16.png)
+
+Manjaro i3 自带的有compton，不过这个只能做到半透明而没有毛玻璃效果，我使用的是[Compton](https://github.com/tryone144/compton),下面详细介绍一下安装过程
+
+1. 卸载原有的compton
+
+```bash
+sudo pacman -R compton
+```
+若遇到依赖问题无法卸载，则
+
+```bash
+sudo pacman -Rc compton
+```
+
+2. clone仓库
+
+```bash
+git clone git@github.com:liuyaanng/compton.git
+```
+
+3. 安装
+
+具体内容参考[README](https://github.com/liuyaanng/compton/blob/dual_kawase/README.md)    
+安装前要确保下列依赖已经安装。    
+其实大部分都已经安装,只有个别没有，若下面安装不成功，则按提示把依赖装上即可，有问题也可以在issues上查看
+
+![](17.png)
+
+```bash
+cd compton
+# Make the main program
+make
+# Make the man page
+make docs
+# Install
+make install
+```
+
+4. 配置
+
+配置信息在[.config]()
+
+### 3.2 i3的配置
+
+i3的配置文件在 `~/.i3/config`
+
+里面的配置信息介绍的很详细,需要更详细的信息你可以阅读官方[userguide](https://i3wm.org/docs/userguide.html)
+
+ 首先在`Autoapplications`处添加自启动的应用
+
+```bash
+exec_always fcitx
+exec_always albert
+```
+- 把系统默认terminal换成`alacritty`
+在 `start a terminal`处将原来的代码注释掉，加上以下语句
+
+```bash
+bindsym $mod+Return exec alacritty
+```
+- 设置软件启动快捷键
+
+在配置文件中添加
+
+```bash
+set $mod Mod4
+set $mod1 Mod1
+```
+
+mod在这里设置的是键盘的`Super`键
+mod1在这里设置的是`Alt`键
+
+```bash 
+bindsym $mod+c exec chromium
+bindsym $mod+p exec nitrogen
+bindsym $mod1+m exec iease-music
+bindsym $mod1+Shift+a exec deepin-screenshot
+```
+- 窗口之间的间距通过i3-gaps来设置，若没有安装，则
+
+```bash
+sudo pacman -S i3-gaps
+```
+在配置文件中加入
+
+```bash
+gaps inner 16
+gaps outer 0
+```
+可以根据自己喜好调整数值
+
+
+
+
+
+
+
+
+## 杂项
 
 #### 彻底解决蜂鸣问题
 由于蜂鸣是由主板发出来的声音，故不能通过调节音量来消除此声音，要从源头上解决
