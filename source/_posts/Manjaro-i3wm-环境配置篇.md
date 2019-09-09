@@ -357,6 +357,19 @@ make install
 
 配置信息在[.config]()
 
+#### 3.1.13 deepin-file-manager
+
+默认的 `pcmanfm` 竟然没有搜索功能，这不能忍啊    
+我使用 `deepin-file-manager` 来代替默认的 `pcmanfm`
+
+```bash
+sudo pacman -S deepin-file-manager
+```
+在配置文件里
+
+![](19.png)
+
+
 ### 3.2 i3的配置
 
 i3的配置文件在 `~/.i3/config`
