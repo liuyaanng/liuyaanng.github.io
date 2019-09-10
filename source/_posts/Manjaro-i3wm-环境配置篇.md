@@ -367,7 +367,7 @@ sudo pacman -S deepin-file-manager
 ```
 在配置文件里
 
-![](19.png)
+![](20.png)
 
 
 ### 3.2 i3的配置
