@@ -419,9 +419,13 @@ gaps outer 0
 ```
 可以根据自己喜好调整数值
 
+- xbacklight config
 
+install `xorg-xbacklight` first
 
-
+```bash
+sudo pacman -S xorg-xbacklight 
+```
 
 
 
