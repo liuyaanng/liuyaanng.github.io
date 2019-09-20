@@ -4,6 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: false
+img: https://i.loli.net/2019/09/19/wc3vfPElWsXKTGV.jpg
 date: 2019-09-18 16:21:29
 password:
 summary: Some problems in GitHub & Git.
