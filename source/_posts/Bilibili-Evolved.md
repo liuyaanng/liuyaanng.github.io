@@ -2,6 +2,7 @@
 title: Bilibili-Evolved
 top: false
 cover: false
+img: https://github.com/the1812/Bilibili-Evolved/raw/master/images/bilibili-evolved-wide-color.svg?sanitize=true<Paste>
 toc: true
 mathjax: false
 date: 2019-09-21 00:40:43
