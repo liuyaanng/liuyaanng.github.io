@@ -229,6 +229,17 @@ omf theme ays
 ```bash
 omf destroy
 ```
+
+- Fish 运行Bash commands    
+例如 在fish 不能运行 time 命令，以下是解决办法    
+   - 在 `fish/functions/` 目录下创建 `time.fish` 文件，在里面输入    
+
+    ```
+    function time --description "alias time bash -c time"
+      bash -c "time $argv";
+    end
+    ```
+
 其他具体功能见[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 
 #### 3.1.3 Chromium
