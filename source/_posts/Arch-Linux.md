@@ -352,13 +352,15 @@ sudo pacman -S xorg xorg-server xorg-apps
   pacman -Ss xf86-video
   ```
 
-    For me:
+  **Note** : For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, You  **can not** just install `xf86-video-intel` & `nvidia` , it will get a blcak screen. See [NVIDIA Optimus](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) to get more informations. 
+
+  I just install `xf86-video-vesa` . 
 
   ```bash
-  pacman -S xf86-video-intel nvidia
+  pacman -S xf86-video-vesa
   ```
 
-  [More informations](https://wiki.archlinux.org/index.php/Xorg#Driver_installation) 
+  [Xorg: Driver_installtion](https://wiki.archlinux.org/index.php/Xorg#Driver_installation) 
 
 - Use [xinit](https://wiki.archlinux.org/index.php/Xinit) to start Xorg display server.
 
