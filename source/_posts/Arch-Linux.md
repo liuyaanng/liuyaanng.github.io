@@ -456,6 +456,7 @@ sudo pacman -S yaourt
 ```
 
 - [Software i use often](https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-13)
+
 ### 6. Fonts
 
 [Fonts-ArchWiki](https://wiki.archlinux.org/index.php/Fonts) , [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts) , [Unicode-table]( https://unicode-table.com/en/ )  
@@ -549,29 +550,7 @@ If you want a System volume tray, you can try **volumeicon**
   [volume_up](https://github.com/liuyaanng/Arch_linux/blob/master/volume_up.sh)    
   [volume_down](https://github.com/liuyaanng/Arch_linux/blob/master/volume_down.sh) 
 
-### 7. Notify(Dunst)
-
-```bash
-sudo pacman -S libnotify dunst
-```
-
-Create `org.freedesktop.Notifications.service` in `/usr/share/dbus-1/services/` folder. Add the following lines.
-
-```
-[D-BUS Service]
-Name.org.freedesktop.Notifications
-Exec=/usr/local/bin/dunst
-```
-
-An example configuration file is included at `/usr/local/share/dunst/dunstrc` . Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.
-
-[My Dunstrc](https://github.com/liuyaanng/Arch_linux/tree/master/dunst) 
-
-Use `notify-send "Hello, world!" ` to test.
-
-![Dunst](10.png) 
-
-### 8. Bluetooth
+### 7. Bluetooth
 
 - Install **bluez** , **bluez-utils**
 
@@ -620,6 +599,28 @@ sudo pacman -S blueman
 ```
   1. `blueman-applet` to use.
   2. add `exec --no-startup-id blueman-applet` to `~/.config/i3/config` to auto start `blueman-applet` .
+
+### 8. Notify(Dunst)
+
+```bash
+sudo pacman -S libnotify dunst
+```
+
+Create `org.freedesktop.Notifications.service` in `/usr/share/dbus-1/services/` folder. Add the following lines.
+
+```
+[D-BUS Service]
+Name.org.freedesktop.Notifications
+Exec=/usr/local/bin/dunst
+```
+
+An example configuration file is included at `/usr/local/share/dunst/dunstrc` . Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.
+
+[My Dunstrc](https://github.com/liuyaanng/Arch_linux/tree/master/dunst) 
+
+Use `notify-send "Hello, world!" ` to test.
+
+![Dunst](10.png) 
 
 
 
