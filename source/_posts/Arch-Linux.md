@@ -16,13 +16,9 @@ categories:
 ## Arch linux + i3
 
 ![arch+i3](https://i.loli.net/2019/12/07/ykIzuo8Z1PSGpLv.png)
-
-    
-TODO    
-- [x] Arch Installation    
-- [ ] Arch configuration    
-- [ ] i3wm configuration    
-
+![](main.png) 
+![](albert.png) 
+![](music.png) 
 
 ## Installation guide
 
