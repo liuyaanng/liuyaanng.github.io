@@ -1,14 +1,16 @@
 ---
 title: Arch Linux
-top: false
+top: true
 cover: false
 toc: true
 mathjax: false
 date: 2019-12-06 01:14:50
 img: https://i.loli.net/2019/12/07/ykIzuo8Z1PSGpLv.png
 password:
-summary:
+summary: Arch-linux Install and condig guide. 
 tags:
+- Arch
+- linux
 categories:
 ---
 

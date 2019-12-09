@@ -1,6 +1,6 @@
 ---
 title: Vim
-top: false
+top: true
 img: https://i.loli.net/2019/11/23/EKUi4P2qMnZoktG.jpg
 cover: false
 toc: true
@@ -16,9 +16,6 @@ categories:
 ---
 
 ## - My Vim(Neovim) Config
-- Todos
-  - 146
-  - 224
 
 [GitHub Link](https://github.com/liuyaanng/NeoVim-Config)
 
