@@ -550,7 +550,49 @@ If you want a System volume tray, you can try **volumeicon**
   [volume_up](https://github.com/liuyaanng/Arch_linux/blob/master/volume_up.sh)    
   [volume_down](https://github.com/liuyaanng/Arch_linux/blob/master/volume_down.sh) 
 
-### 7. Bluetooth
+### 8. Screen brightness
+
+A good advice for backlight management is `xbacklight` , but it seems not work in my computer. 
+
+The backlight can be controlled by the file `/sys/class/backlight/intel_backlight/brightness` 's value. So i wrote a script to control it. I named it `intel_brightness_control.sh`
+
+```shell
+#!/bin/bash
+set -e
+file="/sys/class/backlight/intel_backlight/brightness"
+current=$(cat "$file")
+new="$current"
+if [ "$1" = "-inc" ]
+then
+  new=$(( current + $2 ))
+  status="Up"
+fi
+if [ "$1" = "-dec" ]
+then
+  if [ current < 100 ]
+  then
+    new="50"
+  else
+    new=$(( current - $2 ))
+  fi
+  status="Down"
+fi
+echo "$new" | tee "$file"
+brightness=`light -G`
+notify-send "Brightness $status($brightness%)"
+```
+
+Remember put it in your `/usr/bin/`.
+
+Then do `sudo chmod 777 /sys/class/backlight/intel_backlight/brightness` . The last thing is adding the following lines to `.config/i3/config` .
+
+```shell
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec "intel_brightness_control.sh -inc 100"
+bindsym XF86MonBrightnessDown exec "intel_brightness_control.sh -dec 100"
+```
+
+### 9. Bluetooth
 
 - Install **bluez** , **bluez-utils**
 
@@ -600,7 +642,7 @@ sudo pacman -S blueman
   1. `blueman-applet` to use.
   2. add `exec --no-startup-id blueman-applet` to `~/.config/i3/config` to auto start `blueman-applet` .
 
-### 8. Notify(Dunst)
+### 10. Notify(Dunst)
 
 ```bash
 sudo pacman -S libnotify dunst
