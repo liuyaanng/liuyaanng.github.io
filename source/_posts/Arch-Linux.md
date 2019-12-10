@@ -409,7 +409,7 @@ startx
 
 I'm a [fish](https://fishshell.com/) user, so i just need add the following to the bottom of my `~/.config/fish/config.fish` .
 
-```
+```bash
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a $XDG_VTNR = 1
@@ -499,7 +499,7 @@ If you want a System volume tray, you can try **volumeicon**
 
   2. Add `volumeicon` file in `~/.config/volumeicon`  , and add the following lines to it.
 
-  ```
+  ```bash
   [Alsa]
   card=default
 
@@ -529,7 +529,7 @@ If you want a System volume tray, you can try **volumeicon**
 
   3. Create `pulseaudio-ctl.desktop` in `~/.config/autostart` , and add the following lines to it.
 
-  ```
+  ```bash
   [Desktop Entry]
   Encoding=UTF-8
   Type=Application
@@ -557,7 +557,7 @@ A good advice for backlight management is `xorg-xbacklight` , but it seems not w
 If you have the same problem, you can try the solution of Wiki, but it still can't work on my computer. Sad! So i try another way to control the screen brightness.    
 The backlight can be controlled by the file `/sys/class/backlight/intel_backlight/brightness` 's value. So i wrote a script to control it. I named it `intel_brightness_control.sh`
 
-```shell
+```bash
 #!/bin/bash
 set -e
 file="/sys/class/backlight/intel_backlight/brightness"
@@ -587,7 +587,7 @@ Remember put it in your `/usr/bin/`.
 
 Then do `sudo chmod 777 /sys/class/backlight/intel_backlight/brightness` . The last thing is adding the following lines to `.config/i3/config` .
 
-```shell
+```bash
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "intel_brightness_control.sh -inc 100"
 bindsym XF86MonBrightnessDown exec "intel_brightness_control.sh -dec 100"
@@ -619,7 +619,7 @@ Add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom in th
 
 - Discoverable on startup
 
-```
+```bash
 /etc/bluetooth/main.conf
 
 [General]
@@ -664,6 +664,65 @@ An example configuration file is included at `/usr/local/share/dunst/dunstrc` . 
 Use `notify-send "Hello, world!" ` to test.
 
 ![Dunst](10.png) 
+
+### 11. Shutdown Reboot LockScreen
+
+- Create a script named `i3exit` . Make sure you have `polkit` installed. 
+
+```bash
+#!/bin/sh
+lock() {
+    i3lock
+}
+
+case "$1" in
+    lock)
+        blurlock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        blurlock && systemctl suspend
+        ;;
+    hibernate)
+        blurlock && systemctl hibernate
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
+```
+
+Do `chmod +x` and put it in `$PATH` ( `/usr/bin/` ) .
+
+- Add the following lines to `.config/i3/config`
+
+```bash
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
+```
+
 
 
 
