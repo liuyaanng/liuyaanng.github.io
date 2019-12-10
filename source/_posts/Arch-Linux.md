@@ -180,7 +180,19 @@ vim /etc/locale.conf
 LANG=en_US.UTF-8
 ```
 
-### 13. Network configuration
+### 13. Initramfs
+
+```bash
+mkinitcpio -P
+```
+
+### 14. Root password
+
+```bash
+passwd root
+```
+
+### 15. [Network configuration](https://wiki.archlinux.org/index.php/Network_configuration) 
 
 - Create the **hostname** file
 
@@ -202,29 +214,15 @@ vim /etc/hosts
 127.0.0.1    yourhostname.localdomain    yourhostname
 ```
 
-### 14. Initramfs
-
-```bash
-mkinitcpio -P
-```
-
-### 15. Root password
-
-```bash
-passwd root
-```
-
-### 16. [Network configuration](https://wiki.archlinux.org/index.php/Network_configuration) 
-
-Install some software to ensure you can connect the Internet after reboot system.
+- Install some software to ensure you can connect the Internet after reboot system.
 
 ```bash
 pacman -S iw wpa_supplicant dialog networkmanager
 ```
 
-[Detailed configuration]() 
+[Detailed configuration](#nm) 
 
-### 17. [Microcode](https://wiki.archlinux.org/index.php/Microcode) 
+### 16. [Microcode](https://wiki.archlinux.org/index.php/Microcode) 
 
 My computer is `Intel` processors.
 
@@ -232,7 +230,7 @@ My computer is `Intel` processors.
 pacman -S intel-ucode
 ```
 
-### 18. [Boot loader](https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader) 
+### 17. [Boot loader](https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader) 
 
 [**GRUB**](https://wiki.archlinux.org/index.php/GRUB) 
 
@@ -244,7 +242,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 If you can see some `img` file generated, it means the grub boot loader file are successful creatted.
 
-### 19. Reboot
+### 18. Reboot
 
 ```bash
 exit
@@ -271,7 +269,7 @@ USER_NAME ALL=(ALL) ALL
 
 `su username` to switch users.
 
-### 2. [NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager) 
+### 2. <a id = "nm">[NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager) </a>
 
 NetworkManager(package `networkmanager` ) contains a daemon, a command line interface( `nmcli` ) and a curses-based interface( `nmtui` ). After installation, you should **enable the daemon**.
 
@@ -552,8 +550,11 @@ If you want a System volume tray, you can try **volumeicon**
 
 ### 8. Screen brightness
 
-A good advice for backlight management is `xbacklight` , but it seems not work in my computer. 
+A good advice for backlight management is `xorg-xbacklight` , but it seems not work on my computer. 
 
+![xbacklight -error](12.png) 
+
+If you have the same problem, you can try the solution of Wiki, but it still can't work on my computer. Sad! So i try another way to control the screen brightness.    
 The backlight can be controlled by the file `/sys/class/backlight/intel_backlight/brightness` 's value. So i wrote a script to control it. I named it `intel_brightness_control.sh`
 
 ```shell
