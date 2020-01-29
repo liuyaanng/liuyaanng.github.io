@@ -16,7 +16,7 @@ categories:
 
 ## SORT
 
-### INSERTION SORT
+### 1. INSERTION SORT
 
 ```python
 INSERTION-SORT(A)
@@ -36,6 +36,23 @@ for j = 2 to A.length
 
 $$ \Theta (n^2) $$
 
+### 2. SELECT SORT
+
+```python
+SELECT-SORT(A)
+//A:sort array
+for i = 1 to range(i,A.length)
+  min = A[i]
+  for j = 1 to A.length
+    if min > A[j]
+      min = A[j]
+      min_index = j
+  swap(A[i],A[min_index])
+```
+
+![SELECT_SORT](SELECT_SORT.gif) 
+
+$$ \Theta (n^2) $$
 ### MERGE SORT
 
 ```python
