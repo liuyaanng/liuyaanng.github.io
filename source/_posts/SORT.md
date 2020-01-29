@@ -53,7 +53,8 @@ for i = 1 to range(i,A.length)
 ![SELECT_SORT](SELECT_SORT.gif) 
 
 $$ \Theta (n^2) $$
-### MERGE SORT
+
+### 3. MERGE SORT
 
 ```python
 MERGE-SORT(A, p, r)
