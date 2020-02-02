@@ -39,7 +39,7 @@ It include **3 additions** and **3 multiplications**
 - In terms of $a_n$
   - $$ p(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + \cdots + a_nx^n $$
   - $$ p(x) = a_0x^0 + a_1x + a_2x^2 + a_3x^3 + \cdots + a_nx^n  = \sum_{i=0}^{n} a_i x^i $$
-  - $$ p(x) = a_0 +x(a_1 + x(a_2 + \vdots + x(a_{n-1} + xa_n    ) \cdots )) $$
+  - $$ p(x) = a_0 +x(a_1 + x(a_2 + \cdots + x(a_{n-1} + xa_n    ) \cdots )) $$
   - $$p(x) = p_0(x) where p_i(x) = \begin{cases} a_i + x \times p_{i+1}(x), if i < n \\ a_n, if i = n \end{cases}$$
 
 #### Pseudocode
