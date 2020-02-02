@@ -28,6 +28,9 @@ for i = 1 to A.length - 1
 
 ```
 
+![BUBBLE_SORT](BUBBLE_SORT.gif) 
+
+$$ \Theta (n^2) $$
 
 ### 2. INSERTION SORT
 
