@@ -16,7 +16,20 @@ categories:
 
 ## SORT
 
-### 1. INSERTION SORT
+### 1. BUBBLE SORT
+
+```python
+BUBBLE-SORT(A)
+//A:sort array
+for i = 1 to A.length - 1
+  for j = A.length to i + 1
+    if A[j] < A[j-1]
+      swap(A[j], A[j-1]
+
+```
+
+
+### 2. INSERTION SORT
 
 ```python
 INSERTION-SORT(A)
@@ -36,7 +49,7 @@ for j = 2 to A.length
 
 $$ \Theta (n^2) $$
 
-### 2. SELECT SORT
+### 3. SELECT SORT
 
 ```python
 SELECT-SORT(A)
@@ -54,7 +67,7 @@ for i = 1 to range(i,A.length)
 
 $$ \Theta (n^2) $$
 
-### 3. MERGE SORT
+### 4. MERGE SORT
 
 ```python
 MERGE-SORT(A, p, r)

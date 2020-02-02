@@ -5,7 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2020-02-01 23:14:57
-img: https://sm.ms/image/rgcG5ebztwOZpTy.jpg
+img: https://i.loli.net/2020/02/02/HvfDTFuE48MARon.png
 password:
 summary:
 tags:
