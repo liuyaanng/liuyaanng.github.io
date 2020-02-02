@@ -19,6 +19,8 @@ VPS: [vultr](https://www.vultr.com/)
 
 Script: [SSR](https://github.com/liuyaanng/SSR) 
 
+Ping test: [ping](http://ping.chinaz.com/) 
+
 ![Youtube speed](1.png) 
 
 ### proxychains
