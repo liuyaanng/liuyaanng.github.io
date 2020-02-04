@@ -1,7 +1,7 @@
 ---
 title: Arch Linux
 top: true
-cover: false
+cover: true
 toc: true
 mathjax: false
 date: 2019-12-06 01:14:50

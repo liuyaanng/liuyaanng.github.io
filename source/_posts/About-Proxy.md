@@ -4,7 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2020-02-01 23:14:57
+date: 2020-02-04 15:00:57
 img: https://i.loli.net/2020/02/02/HvfDTFuE48MARon.png
 password:
 summary: SSR OR V2RAY?
@@ -25,7 +25,7 @@ Ping test: [ping](http://ping.chinaz.com/)
 ## V2Ray
 
 Preconditions:
-- a VPS: [vultr](https://www.vultr.com/)($5/m , i uesd now) , [VIRMACH](https://billing.virmach.com/cart.php)($1.25/m)
+- a VPS: [vultr](https://www.vultr.com/)( \$5/m , i uesd now) , [VIRMACH](https://billing.virmach.com/cart.php)( \$1.25/m)
 - a Domain: ([Namesilo](https://www.namesilo.com/)($0.99), [Freenom](https://www.freenom.com/)(free) )
 - VPS OS version: Debian 9+ / Ubuntu 18.04+ / CentOS 7+
 

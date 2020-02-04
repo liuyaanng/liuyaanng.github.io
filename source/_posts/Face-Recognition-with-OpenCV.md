@@ -1,7 +1,7 @@
 ---
 title: Face Recognition
 top: false
-cover: false
+cover: true
 img: https://i.loli.net/2019/08/15/hegwoqsdjiZf2rN.jpg
 toc: true
 mathjax: false
