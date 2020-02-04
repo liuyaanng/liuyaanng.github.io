@@ -25,9 +25,9 @@ Ping test: [ping](http://ping.chinaz.com/)
 ## V2Ray
 
 Preconditions:
-- a VPS: [vultr](https://www.vultr.com/)($5/m i uesd now) , [VIRMACH](https://billing.virmach.com/cart.php)($1.25/m)
+- a VPS: [vultr](https://www.vultr.com/)($5/m , i uesd now) , [VIRMACH](https://billing.virmach.com/cart.php)($1.25/m)
 - a Domain: ([Namesilo](https://www.namesilo.com/)($0.99), [Freenom](https://www.freenom.com/)(free) )
-- OS version: Debian 9+ / Ubuntu 18.04+ / CentOS 7+
+- VPS OS version: Debian 9+ / Ubuntu 18.04+ / CentOS 7+
 
 ### 1. Resolve the domain to the IP of your VPS
 
@@ -95,7 +95,7 @@ SELF TESTING
 - stop nginx: `systemctl stop nginx`
 
 
-## 5. V2Ray client
+### 5. V2Ray client
 
 - Windows: 
   - [V2RayN](https://tlanyan.me/download.php?filename=/v2/windows/v2rayN-v3.5.zip) 
@@ -106,7 +106,7 @@ SELF TESTING
   - Configuration V2Ray
   
    config file is located in `/etc/v2ray/config.json`
-```
+```bash
 {
   "policy": null,
   "log": {
