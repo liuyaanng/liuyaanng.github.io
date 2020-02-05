@@ -49,7 +49,7 @@ Preconditions:
 
 ![](6.png) 
 
-You can light the cloud icon to use a proxy which can hidden real ip. 
+~~You can light the cloud icon to use a proxy which can hidden real ip. ~~ it is possible to make v2ray doesn't work.
 
 NOTE: **Do it after installed V2Ray if u need it**
 
@@ -103,6 +103,7 @@ SELF TESTING
   - [V2RayU](https://tlanyan.me/download.php?filename=/v2/macos/v2rayU-v1.5.1.dmg) 
 - Linux:
   - [link](https://www.jianshu.com/p/a5b6d9dc0441) 
+  - [Snap](https://snapcraft.io/install/v2ray-core/arch#install)
   - Configuration V2Ray
   
    config file is located in `/etc/v2ray/config.json`
