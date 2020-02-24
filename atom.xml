@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kevin</title>
+  
+  <subtitle>kevin&#39;s blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://liuyaanng.github.io/"/>
+  <updated>2020-02-24T10:49:41.283Z</updated>
+  <id>https://liuyaanng.github.io/</id>
+  
+  <author>
+    <name>留洋</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About Proxy</title>
+    <link href="https://liuyaanng.github.io/2020/02/04/about-proxy/"/>
+    <id>https://liuyaanng.github.io/2020/02/04/about-proxy/</id>
+    <published>2020-02-04T07:00:57.000Z</published>
+    <updated>2020-02-24T10:49:41.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;About-Proxy&quot;&gt;&lt;a href=&quot;#About-Proxy&quot; class=&quot;headerlink&quot; title=&quot;About Proxy&quot;&gt;&lt;/a&gt;About Proxy&lt;/h1&gt;&lt;p&gt;&lt;del&gt;Script: &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Horner&#39;s Method</title>
+    <link href="https://liuyaanng.github.io/2020/02/02/horner-s-method/"/>
+    <id>https://liuyaanng.github.io/2020/02/02/horner-s-method/</id>
+    <published>2020-02-02T11:54:55.000Z</published>
+    <updated>2020-02-24T10:49:41.358Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Function-vs-Polynomial&quot;&gt;&lt;a href=&quot;#Function-vs-Polynomial&quot; class=&quot;headerlink&quot; title=&quot;Function vs Polynomial&quot;&gt;&lt;/a&gt;Function vs
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SORT</title>
+    <link href="https://liuyaanng.github.io/2020/01/29/sort/"/>
+    <id>https://liuyaanng.github.io/2020/01/29/sort/</id>
+    <published>2020-01-29T06:20:02.000Z</published>
+    <updated>2020-02-24T10:49:41.424Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;SORT&quot;&gt;&lt;a href=&quot;#SORT&quot; class=&quot;headerlink&quot; title=&quot;SORT&quot;&gt;&lt;/a&gt;SORT&lt;/h2&gt;&lt;h3 id=&quot;1-BUBBLE-SORT&quot;&gt;&lt;a href=&quot;#1-BUBBLE-SORT&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Algorithms" scheme="https://liuyaanng.github.io/categories/Algorithms/"/>
+    
+    
+      <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020</title>
+    <link href="https://liuyaanng.github.io/2020/01/01/2020/"/>
+    <id>https://liuyaanng.github.io/2020/01/01/2020/</id>
+    <published>2020-01-01T02:37:05.000Z</published>
+    <updated>2020-02-24T10:49:41.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;New-Plan&quot;&gt;&lt;a href=&quot;#New-Plan&quot; class=&quot;headerlink&quot; title=&quot;New Plan&quot;&gt;&lt;/a&gt;New Plan&lt;/h2&gt;&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;&lt;input disabled
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ranger</title>
+    <link href="https://liuyaanng.github.io/2019/12/17/ranger/"/>
+    <id>https://liuyaanng.github.io/2019/12/17/ranger/</id>
+    <published>2019-12-17T05:08:34.000Z</published>
+    <updated>2020-02-24T10:49:41.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Ranger&quot;&gt;&lt;a href=&quot;#Ranger&quot; class=&quot;headerlink&quot; title=&quot;Ranger&quot;&gt;&lt;/a&gt;Ranger&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;If you want a tool to preview images or other
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Arch Linux</title>
+    <link href="https://liuyaanng.github.io/2019/12/06/arch-linux/"/>
+    <id>https://liuyaanng.github.io/2019/12/06/arch-linux/</id>
+    <published>2019-12-05T17:14:50.000Z</published>
+    <updated>2020-02-24T10:49:41.294Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Arch-linux-i3&quot;&gt;&lt;a href=&quot;#Arch-linux-i3&quot; class=&quot;headerlink&quot; title=&quot;Arch linux + i3&quot;&gt;&lt;/a&gt;Arch linux + i3&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Arch" scheme="https://liuyaanng.github.io/tags/Arch/"/>
+    
+      <category term="linux" scheme="https://liuyaanng.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vim</title>
+    <link href="https://liuyaanng.github.io/2019/11/23/vim/"/>
+    <id>https://liuyaanng.github.io/2019/11/23/vim/</id>
+    <published>2019-11-23T14:10:56.000Z</published>
+    <updated>2020-02-24T10:49:41.437Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;My-Vim-Neovim-Config&quot;&gt;&lt;a href=&quot;#My-Vim-Neovim-Config&quot; class=&quot;headerlink&quot; title=&quot;- My Vim(Neovim) Config&quot;&gt;&lt;/a&gt;- My Vim(Neovim)
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Vim" scheme="https://liuyaanng.github.io/tags/Vim/"/>
+    
+      <category term="Linux" scheme="https://liuyaanng.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bilibili-Evolved</title>
+    <link href="https://liuyaanng.github.io/2019/09/21/bilibili-evolved/"/>
+    <id>https://liuyaanng.github.io/2019/09/21/bilibili-evolved/</id>
+    <published>2019-09-20T16:40:43.000Z</published>
+    <updated>2020-02-24T10:49:41.321Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Bilibili-Evolved&quot;&gt;&lt;a href=&quot;#Bilibili-Evolved&quot; class=&quot;headerlink&quot; title=&quot;Bilibili-Evolved&quot;&gt;&lt;/a&gt;Bilibili-Evolved&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Bilibili.com" scheme="https://liuyaanng.github.io/tags/Bilibili-com/"/>
+    
+      <category term="Script" scheme="https://liuyaanng.github.io/tags/Script/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git &amp; Github</title>
+    <link href="https://liuyaanng.github.io/2019/09/18/git-github/"/>
+    <id>https://liuyaanng.github.io/2019/09/18/git-github/</id>
+    <published>2019-09-18T08:21:29.000Z</published>
+    <updated>2020-02-24T10:49:41.357Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-When-i-download-files-from-GitHub-Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://liuyaanng.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="https://liuyaanng.github.io/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda</title>
+    <link href="https://liuyaanng.github.io/2019/09/18/anaconda/"/>
+    <id>https://liuyaanng.github.io/2019/09/18/anaconda/</id>
+    <published>2019-09-18T02:27:45.000Z</published>
+    <updated>2020-02-24T10:49:41.288Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Install-Anaconda-and-use-it-to-manage-your-python&quot;&gt;&lt;a href=&quot;#Install-Anaconda-and-use-it-to-manage-your-python&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://liuyaanng.github.io/tags/Python/"/>
+    
+      <category term="Anaconda3" scheme="https://liuyaanng.github.io/tags/Anaconda3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My Vim Config</title>
+    <link href="https://liuyaanng.github.io/2019/09/12/my-vim-config/"/>
+    <id>https://liuyaanng.github.io/2019/09/12/my-vim-config/</id>
+    <published>2019-09-11T19:05:29.000Z</published>
+    <updated>2020-02-24T10:49:41.378Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Manjaro i3wm 高效率环境配置篇(持续更新)</title>
+    <link href="https://liuyaanng.github.io/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/"/>
+    <id>https://liuyaanng.github.io/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</id>
+    <published>2019-08-24T07:45:27.000Z</published>
+    <updated>2020-02-24T10:49:41.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;4.png&quot; alt&gt;&lt;br&gt;Manjaro是一款基于Arch Linux、对用户友好、全球排名第1的Linux发行版&lt;br&gt;使用它是因为 AUR软件仓库有着世界上最齐全的Linux软件，万物皆可 pacman
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Manjaro" scheme="https://liuyaanng.github.io/tags/Manjaro/"/>
+    
+      <category term="i3wm" scheme="https://liuyaanng.github.io/tags/i3wm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Face Recognition</title>
+    <link href="https://liuyaanng.github.io/2019/08/10/face-recognition-with-opencv/"/>
+    <id>https://liuyaanng.github.io/2019/08/10/face-recognition-with-opencv/</id>
+    <published>2019-08-10T04:00:00.000Z</published>
+    <updated>2020-02-24T10:49:41.331Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Face-Recognition-with-OpenCV&quot;&gt;&lt;a href=&quot;#Face-Recognition-with-OpenCV&quot; class=&quot;headerlink&quot; title=&quot;Face Recognition with
+        
+      
+    
+    </summary>
+    
+      <category term="Face Recognition" scheme="https://liuyaanng.github.io/categories/Face-Recognition/"/>
+    
+    
+      <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
+    
+      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
+    
+      <category term="Face Recongnition" scheme="https://liuyaanng.github.io/tags/Face-Recongnition/"/>
+    
+      <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to install OpenCV and OpenCV_contrib in Ubuntu16.04</title>
+    <link href="https://liuyaanng.github.io/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/"/>
+    <id>https://liuyaanng.github.io/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/</id>
+    <published>2019-08-09T03:49:11.000Z</published>
+    <updated>2020-02-24T10:49:41.358Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Enjoy PyTorch-Task1</title>
+    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch-task1/"/>
+    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch-task1/</id>
+    <published>2019-08-07T05:11:13.000Z</published>
+    <updated>2020-02-24T10:49:41.327Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
+    
+    
+      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
+    
+      <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enjoy PyTorch</title>
+    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/"/>
+    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/</id>
+    <published>2019-08-07T04:56:29.000Z</published>
+    <updated>2020-02-24T10:49:41.328Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
+    
+    
+      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
+    
+      <category term="Deep Learing" scheme="https://liuyaanng.github.io/tags/Deep-Learing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PCA算法实现</title>
+    <link href="https://liuyaanng.github.io/2019/08/07/pca-suan-fa-shi-xian/"/>
+    <id>https://liuyaanng.github.io/2019/08/07/pca-suan-fa-shi-xian/</id>
+    <published>2019-08-07T01:48:10.000Z</published>
+    <updated>2020-02-24T10:49:41.418Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;PCA算法实例及C-实现&quot;&gt;&lt;a href=&quot;#PCA算法实例及C-实现&quot; class=&quot;headerlink&quot; title=&quot;PCA算法实例及C++实现&quot;&gt;&lt;/a&gt;PCA算法实例及C++实现&lt;/h1&gt;&lt;h2 id=&quot;PCA算法&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="图像处理" scheme="https://liuyaanng.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
+    
+      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
+    
+      <category term="PCA" scheme="https://liuyaanng.github.io/tags/PCA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PCA原理分析</title>
+    <link href="https://liuyaanng.github.io/2019/08/05/pca-yuan-li-fen-xi/"/>
+    <id>https://liuyaanng.github.io/2019/08/05/pca-yuan-li-fen-xi/</id>
+    <published>2019-08-05T07:22:19.000Z</published>
+    <updated>2020-02-24T10:49:41.378Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;参考资料&lt;br&gt;&lt;a href=&quot;PCA.pdf&quot;&gt;PCA原理分析&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;PCA的数学原理&quot;&gt;&lt;a href=&quot;#PCA的数学原理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="PCA" scheme="https://liuyaanng.github.io/tags/PCA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Face Detection</title>
+    <link href="https://liuyaanng.github.io/2019/08/03/face-detection/"/>
+    <id>https://liuyaanng.github.io/2019/08/03/face-detection/</id>
+    <published>2019-08-03T06:15:02.000Z</published>
+    <updated>2020-02-24T10:49:41.330Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;人脸检测&quot;&gt;&lt;a href=&quot;#人脸检测&quot; class=&quot;headerlink&quot; title=&quot;人脸检测&quot;&gt;&lt;/a&gt;人脸检测&lt;/h1&gt;&lt;h2 id=&quot;OpenCV模块&quot;&gt;&lt;a href=&quot;#OpenCV模块&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="人脸检测" scheme="https://liuyaanng.github.io/categories/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/"/>
+    
+    
+      <category term="Face_Detection" scheme="https://liuyaanng.github.io/tags/Face-Detection/"/>
+    
+      <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
+    
+      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Local Binary Patterns</title>
+    <link href="https://liuyaanng.github.io/2019/08/01/local-binary-patterns/"/>
+    <id>https://liuyaanng.github.io/2019/08/01/local-binary-patterns/</id>
+    <published>2019-08-01T06:05:20.000Z</published>
+    <updated>2020-02-24T10:49:41.358Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;LBP算法&quot;&gt;&lt;a href=&quot;#LBP算法&quot; class=&quot;headerlink&quot; title=&quot;LBP算法&quot;&gt;&lt;/a&gt;LBP算法&lt;/h1&gt;&lt;p&gt;LBP（Local Binary
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="图像处理" scheme="https://liuyaanng.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
+    
+      <category term="LBP" scheme="https://liuyaanng.github.io/tags/LBP/"/>
+    
+  </entry>
+  
+</feed>
