@@ -177,5 +177,37 @@ int main()
     有些教程是两个都添加，这是不对的，一定要注意。
     
 ---
+
+# MacOS 安装opencv-python
+
+### 1. 首先安装xcode
+
+```bash
+xcode-select --install 
+```
+
+### 2. 安装opencv-python
+
+```bash
+pip install opencv-python
+```
+
+这默认将安装`opencv-python 4.2`, 但在 **catalina** 貌似不可用
+
+所以我选择了安装低版本的opencv-python
+
+```bash
+pip install opencv-python==4.1.2.30
+```
+
+或者选择安装
+
+```bash
+pip install opencv-python-headless
+```
+
+这个原因未知
+
+
 好了，教程到此结束，    
 接下来你就可以放心地去玩耍了，Enjoy Your OpenCV!
