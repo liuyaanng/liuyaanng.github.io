@@ -596,6 +596,14 @@
 </li>
 </ol>
 <hr>
+<h1 id="MacOS-安装opencv-python"><a href="#MacOS-安装opencv-python" class="headerlink" title="MacOS 安装opencv-python"></a>MacOS 安装opencv-python</h1><h3 id="1-首先安装xcode"><a href="#1-首先安装xcode" class="headerlink" title="1. 首先安装xcode"></a>1. 首先安装xcode</h3><pre class=" language-bash"><code class="language-bash">xcode-select --install </code></pre>
+<h3 id="2-安装opencv-python"><a href="#2-安装opencv-python" class="headerlink" title="2. 安装opencv-python"></a>2. 安装opencv-python</h3><pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> opencv-python</code></pre>
+<p>这默认将安装<code>opencv-python 4.2</code>, 但在 <strong>catalina</strong> 貌似不可用</p>
+<p>所以我选择了安装低版本的opencv-python</p>
+<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> opencv-python<span class="token operator">==</span>4.1.2.30</code></pre>
+<p>或者选择安装</p>
+<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> opencv-python-headless</code></pre>
+<p>这个原因未知</p>
 <p>好了，教程到此结束，<br>接下来你就可以放心地去玩耍了，Enjoy Your OpenCV!</p>
 
             </div>
@@ -1050,7 +1058,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">36.3k</span>
+            <span class="white-color">36.4k</span>
             
 
             <br>
