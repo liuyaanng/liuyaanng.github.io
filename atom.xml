@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-02-24T10:49:41.283Z</updated>
+  <updated>2020-03-04T00:41:36.614Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Playing Atari with Deep Reinforcement Learning</title>
+    <link href="https://liuyaanng.github.io/2020/03/03/playing-atari-with-deep-reinforcement-learning/"/>
+    <id>https://liuyaanng.github.io/2020/03/03/playing-atari-with-deep-reinforcement-learning/</id>
+    <published>2020-03-03T02:29:11.000Z</published>
+    <updated>2020-03-04T00:41:36.614Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;This is the first deep learning model using
+        
+      
+    
+    </summary>
+    
+      <category term="Paper Notes" scheme="https://liuyaanng.github.io/categories/Paper-Notes/"/>
+    
+    
+      <category term="Deep Reinforcement Learning" scheme="https://liuyaanng.github.io/tags/Deep-Reinforcement-Learning/"/>
+    
+  </entry>
+  
+  <entry>
     <title>About Proxy</title>
     <link href="https://liuyaanng.github.io/2020/02/04/about-proxy/"/>
     <id>https://liuyaanng.github.io/2020/02/04/about-proxy/</id>
     <published>2020-02-04T07:00:57.000Z</published>
-    <updated>2020-02-24T10:49:41.283Z</updated>
+    <updated>2020-03-06T12:21:35.331Z</updated>
     
     <summary type="html">
     
@@ -163,7 +189,7 @@
     <link href="https://liuyaanng.github.io/2019/11/23/vim/"/>
     <id>https://liuyaanng.github.io/2019/11/23/vim/</id>
     <published>2019-11-23T14:10:56.000Z</published>
-    <updated>2020-02-24T10:49:41.437Z</updated>
+    <updated>2020-03-04T08:05:44.034Z</updated>
     
     <summary type="html">
     
@@ -245,7 +271,7 @@
     <link href="https://liuyaanng.github.io/2019/09/18/anaconda/"/>
     <id>https://liuyaanng.github.io/2019/09/18/anaconda/</id>
     <published>2019-09-18T02:27:45.000Z</published>
-    <updated>2020-02-24T10:49:41.288Z</updated>
+    <updated>2020-03-06T12:17:08.055Z</updated>
     
     <summary type="html">
     
@@ -253,7 +279,7 @@
       
         
         
-          &lt;h2 id=&quot;Install-Anaconda-and-use-it-to-manage-your-python&quot;&gt;&lt;a href=&quot;#Install-Anaconda-and-use-it-to-manage-your-python&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;Install-Guide&quot;&gt;&lt;a href=&quot;#Install-Guide&quot; class=&quot;headerlink&quot; title=&quot;Install Guide&quot;&gt;&lt;/a&gt;Install Guide&lt;/h2&gt;&lt;p&gt;You probably need proxy:
         
       
     
@@ -490,36 +516,6 @@
       <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
     
       <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Local Binary Patterns</title>
-    <link href="https://liuyaanng.github.io/2019/08/01/local-binary-patterns/"/>
-    <id>https://liuyaanng.github.io/2019/08/01/local-binary-patterns/</id>
-    <published>2019-08-01T06:05:20.000Z</published>
-    <updated>2020-02-24T10:49:41.358Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;LBP算法&quot;&gt;&lt;a href=&quot;#LBP算法&quot; class=&quot;headerlink&quot; title=&quot;LBP算法&quot;&gt;&lt;/a&gt;LBP算法&lt;/h1&gt;&lt;p&gt;LBP（Local Binary
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="图像处理" scheme="https://liuyaanng.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
-      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
-    
-      <category term="LBP" scheme="https://liuyaanng.github.io/tags/LBP/"/>
     
   </entry>
   

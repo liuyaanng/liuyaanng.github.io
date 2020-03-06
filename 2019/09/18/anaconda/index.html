@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Anaconda, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="Install Anaconda and use it to manage your python.1. Download AnacondaClick here to download Anaconda
-2. Install Anacond">
+    <meta name="description" content="Install GuideYou probably need proxy: About Proxy 
+1. Download AnacondaClick here to download Anaconda
+2. Install Anacon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -426,7 +427,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        135
+                        180
                     </div>
                     
 
@@ -449,7 +450,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Install-Anaconda-and-use-it-to-manage-your-python"><a href="#Install-Anaconda-and-use-it-to-manage-your-python" class="headerlink" title="Install Anaconda and use it to manage your python."></a>Install Anaconda and use it to manage your python.</h2><h3 id="1-Download-Anaconda"><a href="#1-Download-Anaconda" class="headerlink" title="1. Download Anaconda"></a>1. Download <code>Anaconda</code></h3><p>Click here to download <a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener">Anaconda</a></p>
+                <h2 id="Install-Guide"><a href="#Install-Guide" class="headerlink" title="Install Guide"></a>Install Guide</h2><p>You probably need proxy: <a href="https://godliuyang.wang/2020/02/04/about-proxy/" target="_blank" rel="noopener">About Proxy</a> </p>
+<h3 id="1-Download-Anaconda"><a href="#1-Download-Anaconda" class="headerlink" title="1. Download Anaconda"></a>1. Download <code>Anaconda</code></h3><p>Click here to download <a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener">Anaconda</a></p>
 <h3 id="2-Install-Anaconda"><a href="#2-Install-Anaconda" class="headerlink" title="2. Install Anaconda"></a>2. Install <code>Anaconda</code></h3><pre class=" language-bash"><code class="language-bash"><span class="token function">bash</span> ~/Downloads/Anaconda3-2019.07-Linux-x86_64.sh</code></pre>
 <p><img src="3.png" alt></p>
 <p>Press ENTER</p>
@@ -477,6 +479,14 @@
 <p>it works.</p>
 <p><img src="9.png" alt></p>
 <p><img src="10.png" alt></p>
+<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><h3 id="1-Create-Python-environment"><a href="#1-Create-Python-environment" class="headerlink" title="1. Create Python environment"></a>1. Create Python environment</h3><pre class=" language-bash"><code class="language-bash">conda create --name python37 python<span class="token operator">=</span>3.7</code></pre>
+<h3 id="2-Check-Python-Environment-you-have-created"><a href="#2-Check-Python-Environment-you-have-created" class="headerlink" title="2. Check Python Environment you have created."></a>2. Check Python Environment you have created.</h3><pre class=" language-bash"><code class="language-bash">conda info --envs</code></pre>
+<p><img src="11.png" alt> </p>
+<p>Where * indicates the current Python environment</p>
+<h3 id="3-Modify-Python-environment"><a href="#3-Modify-Python-environment" class="headerlink" title="3. Modify Python environment"></a>3. Modify Python environment</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> activate python37</code></pre>
+<p>and modify default Python environment</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> deactivate</code></pre>
+<h3 id="4-Delate-Python-environment"><a href="#4-Delate-Python-environment" class="headerlink" title="4. Delate Python environment"></a>4. Delate Python environment</h3><pre class=" language-bash"><code class="language-bash">conda remove --name python37 --all</code></pre>
 
             </div>
             <hr/>
@@ -910,7 +920,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">36.4k</span>
+            <span class="white-color">36.7k</span>
             
 
             <br>
