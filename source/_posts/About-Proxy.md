@@ -101,6 +101,7 @@ SELF TESTING
   - [V2RayN](https://tlanyan.me/download.php?filename=/v2/windows/v2rayN-v3.5.zip) 
 - MacOS:
   - [V2RayU](https://tlanyan.me/download.php?filename=/v2/macos/v2rayU-v1.5.1.dmg) 
+  - [ClashX](https://github.com/yichengchen/clashX/releases/download/1.18.2/ClashX.dmg) (what i use now)
 - Linux:
   - [link](https://www.jianshu.com/p/a5b6d9dc0441) 
   - [Snap](https://snapcraft.io/install/v2ray-core/arch#install)

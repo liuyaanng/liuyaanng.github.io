@@ -7,7 +7,7 @@ mathjax: false
 img: https://i.loli.net/2019/09/19/PLeZNEwcsvzlUSn.jpg
 date: 2019-09-18 10:27:45
 password:
-summary:
+summary: Install Anaconda3 and use conda to manage python environment
 tags:
 - Python
 - Anaconda3
@@ -16,8 +16,9 @@ categories:
 - 教程
 ---
 
-## Install Anaconda and use it to manage your python.
+## Install Guide
 
+You probably need proxy: [About Proxy](https://godliuyang.wang/2020/02/04/about-proxy/) 
 ### 1. Download `Anaconda`
 
 Click here to download [Anaconda](https://www.anaconda.com/distribution/)
@@ -90,3 +91,42 @@ it works.
 ![](9.png)
 
 ![](10.png)
+
+## conda 
+
+### 1. Create Python environment
+
+```bash
+conda create --name python37 python=3.7
+```
+
+### 2. Check Python Environment you have created.
+
+```bash
+conda info --envs
+```
+
+![](11.png) 
+
+Where * indicates the current Python environment
+
+### 3. Modify Python environment
+
+```bash
+source activate python37
+```
+
+and modify default Python environment
+
+```bash
+source deactivate
+```
+
+### 4. Delate Python environment
+
+```bash
+conda remove --name python37 --all
+```
+
+
+
