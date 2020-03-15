@@ -5,7 +5,7 @@ cover: false
 toc: true
 mathjax: false
 date: 2020-03-15 17:36:01
-img:
+img: https://i.loli.net/2020/03/15/Otio8fnEpqlXWgL.png
 password:
 summary: Numpy的快速入门教程
 tags:
