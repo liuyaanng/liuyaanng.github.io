@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-03-04T00:41:36.614Z</updated>
+  <updated>2020-03-15T13:56:41.565Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Numpy 基础</title>
+    <link href="https://liuyaanng.github.io/2020/03/15/numpy-ji-chu/"/>
+    <id>https://liuyaanng.github.io/2020/03/15/numpy-ji-chu/</id>
+    <published>2020-03-15T09:36:01.000Z</published>
+    <updated>2020-03-15T13:56:41.565Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;参考Numpy&quot;&gt;&lt;a href=&quot;#参考Numpy&quot; class=&quot;headerlink&quot; title=&quot;参考Numpy&quot;&gt;&lt;/a&gt;参考&lt;a href=&quot;https://www.numpy.org.cn/user/quickstart.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Playing Atari with Deep Reinforcement Learning</title>
@@ -486,36 +508,6 @@
     
     
       <category term="PCA" scheme="https://liuyaanng.github.io/tags/PCA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Face Detection</title>
-    <link href="https://liuyaanng.github.io/2019/08/03/face-detection/"/>
-    <id>https://liuyaanng.github.io/2019/08/03/face-detection/</id>
-    <published>2019-08-03T06:15:02.000Z</published>
-    <updated>2020-02-24T10:49:41.330Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;人脸检测&quot;&gt;&lt;a href=&quot;#人脸检测&quot; class=&quot;headerlink&quot; title=&quot;人脸检测&quot;&gt;&lt;/a&gt;人脸检测&lt;/h1&gt;&lt;h2 id=&quot;OpenCV模块&quot;&gt;&lt;a href=&quot;#OpenCV模块&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="人脸检测" scheme="https://liuyaanng.github.io/categories/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/"/>
-    
-    
-      <category term="Face_Detection" scheme="https://liuyaanng.github.io/tags/Face-Detection/"/>
-    
-      <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
-    
-      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
     
   </entry>
   
