@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-03-16T08:41:47.526Z</updated>
+  <updated>2020-03-17T07:48:36.748Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pandas 基础</title>
+    <link href="https://liuyaanng.github.io/2020/03/17/pandas-ji-chu/"/>
+    <id>https://liuyaanng.github.io/2020/03/17/pandas-ji-chu/</id>
+    <published>2020-03-17T02:49:18.000Z</published>
+    <updated>2020-03-17T07:48:36.748Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Pandas-基础&quot;&gt;&lt;a href=&quot;#Pandas-基础&quot; class=&quot;headerlink&quot; title=&quot;Pandas 基础&quot;&gt;&lt;/a&gt;Pandas 基础&lt;/h2&gt;&lt;p&gt;参考：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Numpy 基础</title>
@@ -479,33 +501,6 @@
       <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
     
       <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
-    
-      <category term="PCA" scheme="https://liuyaanng.github.io/tags/PCA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PCA原理分析</title>
-    <link href="https://liuyaanng.github.io/2019/08/05/pca-yuan-li-fen-xi/"/>
-    <id>https://liuyaanng.github.io/2019/08/05/pca-yuan-li-fen-xi/</id>
-    <published>2019-08-05T07:22:19.000Z</published>
-    <updated>2020-02-24T10:49:41.378Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;参考资料&lt;br&gt;&lt;a href=&quot;PCA.pdf&quot;&gt;PCA原理分析&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;PCA的数学原理&quot;&gt;&lt;a href=&quot;#PCA的数学原理&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
     
       <category term="PCA" scheme="https://liuyaanng.github.io/tags/PCA/"/>
     
