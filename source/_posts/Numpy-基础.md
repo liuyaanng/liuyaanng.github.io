@@ -4,13 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-03-15 17:36:01
+date: 2020-03-14 17:36:01
 img: https://i.loli.net/2020/03/15/Otio8fnEpqlXWgL.png
 password:
-summary: Numpy的快速入门教程
+summary: Numpy的快速入门笔记
 tags:
-
+- Python
+- Numpy
 categories:
+- 笔记
 ---
 
 ### 参考[Numpy](https://www.numpy.org.cn/user/quickstart.html) 
