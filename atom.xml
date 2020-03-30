@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-03-17T07:53:08.870Z</updated>
+  <updated>2020-03-30T15:40:08.826Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>scikit-image guide</title>
+    <link href="https://liuyaanng.github.io/2020/03/30/scikit-image-guide/"/>
+    <id>https://liuyaanng.github.io/2020/03/30/scikit-image-guide/</id>
+    <published>2020-03-30T15:26:25.000Z</published>
+    <updated>2020-03-30T15:40:08.826Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python的数字图片处理包。比如-PIL-pillow-opencv-scikit-image&quot;&gt;&lt;a href=&quot;#Python的数字图片处理包。比如-PIL-pillow-opencv-scikit-image&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Pandas 基础</title>
@@ -483,38 +507,6 @@
       <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
     
       <category term="Deep Learing" scheme="https://liuyaanng.github.io/tags/Deep-Learing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PCA算法实现</title>
-    <link href="https://liuyaanng.github.io/2019/08/07/pca-suan-fa-shi-xian/"/>
-    <id>https://liuyaanng.github.io/2019/08/07/pca-suan-fa-shi-xian/</id>
-    <published>2019-08-07T01:48:10.000Z</published>
-    <updated>2020-02-24T10:49:41.418Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;PCA算法实例及C-实现&quot;&gt;&lt;a href=&quot;#PCA算法实例及C-实现&quot; class=&quot;headerlink&quot; title=&quot;PCA算法实例及C++实现&quot;&gt;&lt;/a&gt;PCA算法实例及C++实现&lt;/h1&gt;&lt;h2 id=&quot;PCA算法&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="图像处理" scheme="https://liuyaanng.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
-      <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
-    
-      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
-    
-      <category term="PCA" scheme="https://liuyaanng.github.io/tags/PCA/"/>
     
   </entry>
   

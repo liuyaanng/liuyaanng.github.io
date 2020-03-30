@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>scikit-image guide</title>
+      <link href="/2020/03/30/scikit-image-guide/"/>
+      <url>/2020/03/30/scikit-image-guide/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python的数字图片处理包。比如-PIL-pillow-opencv-scikit-image"><a href="#Python的数字图片处理包。比如-PIL-pillow-opencv-scikit-image" class="headerlink" title="Python的数字图片处理包。比如 PIL, pillow, opencv, scikit-image"></a>Python的数字图片处理包。比如 PIL, pillow, opencv, scikit-image</h1><p>PIL和pillow只提供最基础的数字图像处理，功能有限；opencv实际上是一个c++库，只提供了python借口，更新速度非常慢。scikit-image是基于scipy的一款图像处理包，它将图片作为numpy数组进行处理，与matlab一样，所以我选择了是scikit-image进行图像处理</p><h2 id="1-Install"><a href="#1-Install" class="headerlink" title="1. Install"></a>1. Install</h2><pre class=" language-bash"><code class="language-bash">conda <span class="token function">install</span> -c conda-forge scikit-image</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Pandas 基础</title>
       <link href="/2020/03/17/pandas-ji-chu/"/>
       <url>/2020/03/17/pandas-ji-chu/</url>

@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo大坑, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="坑一、Template render error 模板渲染错误写了一下午博文，高高兴兴地hexo g却发现报错了！INFO  Start processing
-FATAL Something&amp;#39;s wrong. Maybe you c">
+    <meta name="keywords" content="scikit-image guide, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="Python的数字图片处理包。比如 PIL, pillow, opencv, scikit-imagePIL和pillow只提供最基础的数字图像处理，功能有限；opencv实际上是一个c++库，只提供了python借口，更新速度非常慢。sc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo大坑 | Kevin</title>
+    <title>scikit-image guide | Kevin</title>
     <link rel="icon" type="image/jpeg" href="https://i.loli.net/2019/08/03/RpL5aQ2XKFvUkr7.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +273,13 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2019/07/22/5d358d83b3a0315599.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/03/30/fMqoUgeTm3zPJNu.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo大坑
+                        scikit-image guide
                     </div>
                 </div>
             </div>
@@ -391,8 +390,8 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/" target="_blank">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/python/" target="_blank">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -400,36 +399,27 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/教程/" class="post-category" target="_blank">
-                                教程
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-07-22
+                    2020-03-30
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        477
+                        109
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        2 Min
+                        1 Min
                     </div>
                     
                 
@@ -445,29 +435,8 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="坑一、Template-render-error-模板渲染错误"><a href="#坑一、Template-render-error-模板渲染错误" class="headerlink" title="坑一、Template render error 模板渲染错误"></a>坑一、Template render error 模板渲染错误</h2><p>写了一下午博文，高高兴兴地hexo g却发现报错了！<br><code>INFO  Start processing
-FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
-Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
- at formatNunjucksError (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:102:13)
-    at Promise.fromCallback.catch.err (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:124:34)
-    at tryCatcher (/home/kevin/blog/node_modules/bluebird/js/release/util.js:16:23)
-    at Promise._settlePromiseFromHandler (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:517:31)
-    at Promise._settlePromise (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:574:18)
-    at Promise._settlePromise0 (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:619:10)
-    at Promise._settlePromises (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:695:18)
-    at _drainQueueStep (/home/kevin/blog/node_modules/bluebird/js/release/async.js:138:12)
-    at _drainQueue (/home/kevin/blog/node_modules/bluebird/js/release/async.js:131:9)
-    at Async._drainQueues (/home/kevin/blog/node_modules/bluebird/js/release/async.js:147:5)
-    at Immediate.Async.drainQueues [as _onImmediate] (/home/kevin/blog/node_modules/bluebird/js/release/async.js:17:14)
-    at processImmediate (internal/timers.js:443:21)</code></p>
-<p>原因是nunjucks模板标签导致MD文件解析报错的问题，我试验了一下，在md文档中出现<code>双大括号</code>,<code>左大括号+#</code>,<code>左大括号+%</code>等都会报错(原谅我这么打，因为我打出来符号的话这篇博客就发不出来了)，下面是一位大神的<a href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">解决办法</a>，他提供了几种解决办法，讲的很详细，可以参考一下</p>
-<p>我觉得有点麻烦就没采用(说多了就是菜～),下面是我的办法:</p>
-<ol>
-<li>既然出现上面的内容就会报错，那就尽量避免出现呗…(说的都是废话)</li>
-<li>使用<code>\lbrace</code>代替<code>\{</code>,使用<code>\rbrace</code>代替<code>\}</code><br>推荐大神的解决办法，一劳永逸，以后就不用管了</li>
-</ol>
-<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img src="https://i.loli.net/2019/07/22/5d358cfee55f989745.png" alt></p>
-<p>有可能是hexo解析的问题，我在使用markdown-preview的时候看的是正常的</p>
+                <h1 id="Python的数字图片处理包。比如-PIL-pillow-opencv-scikit-image"><a href="#Python的数字图片处理包。比如-PIL-pillow-opencv-scikit-image" class="headerlink" title="Python的数字图片处理包。比如 PIL, pillow, opencv, scikit-image"></a>Python的数字图片处理包。比如 PIL, pillow, opencv, scikit-image</h1><p>PIL和pillow只提供最基础的数字图像处理，功能有限；opencv实际上是一个c++库，只提供了python借口，更新速度非常慢。scikit-image是基于scipy的一款图像处理包，它将图片作为numpy数组进行处理，与matlab一样，所以我选择了是scikit-image进行图像处理</p>
+<h2 id="1-Install"><a href="#1-Install" class="headerlink" title="1. Install"></a>1. Install</h2><pre class=" language-bash"><code class="language-bash">conda <span class="token function">install</span> -c conda-forge scikit-image</code></pre>
 
             </div>
             <hr/>
@@ -626,9 +595,9 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《hexo大坑》
+                    《scikit-image guide》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/22/hexo-da-keng/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/30/scikit-image-guide/" property="cc:attributionName"
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
@@ -668,49 +637,43 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/07/24/tu-xiang-fen-ge/">
+                <a href="/2020/03/30/scikit-image-guide/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="图像分割">
+                        <img src="https://i.loli.net/2020/03/30/fMqoUgeTm3zPJNu.jpg" class="responsive-img" alt="scikit-image guide">
                         
-                        <span class="card-title">图像分割</span>
+                        <span class="card-title">scikit-image guide</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            孤立点检测、线检测、基本边缘检测
+                            Image processing in python
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-30
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            留洋
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
-                    </a>
-                    
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -724,30 +687,30 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/22/xing-tai-xue-tu-xiang-chu-li/">
+                <a href="/2020/03/17/pandas-ji-chu/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="形态学图像处理">
+                        <img src="https://i.loli.net/2020/03/17/dh2qsablfzx1E7R.png" class="responsive-img" alt="Pandas 基础">
                         
-                        <span class="card-title">形态学图像处理</span>
+                        <span class="card-title">Pandas 基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            形态学图像处理、二值图像上的运算、图像的腐蚀与膨胀
+                            Pandas 的快速入门笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
+                            <a href="/categories/笔记/" class="post-category" target="_blank">
+                                    笔记
                                 </a>
                             
                             
@@ -757,12 +720,12 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/Pandas/" target="_blank">
+                        <span class="chip bg-color">Pandas</span>
                     </a>
                     
                 </div>
