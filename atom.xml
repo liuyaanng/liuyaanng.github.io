@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-03-30T15:40:08.826Z</updated>
+  <updated>2020-04-21T14:32:37.039Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GPU servers</title>
+    <link href="https://liuyaanng.github.io/2020/04/21/gpu-servers/"/>
+    <id>https://liuyaanng.github.io/2020/04/21/gpu-servers/</id>
+    <published>2020-04-21T10:01:15.000Z</published>
+    <updated>2020-04-21T14:32:37.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
+    
+      <category term="GPU" scheme="https://liuyaanng.github.io/tags/GPU/"/>
+    
+  </entry>
   
   <entry>
     <title>scikit-image guide</title>
@@ -487,26 +515,6 @@
       <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
     
       <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Enjoy PyTorch</title>
-    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/"/>
-    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/</id>
-    <published>2019-08-07T04:56:29.000Z</published>
-    <updated>2020-02-24T10:49:41.328Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
-    
-    
-      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
-    
-      <category term="Deep Learing" scheme="https://liuyaanng.github.io/tags/Deep-Learing/"/>
     
   </entry>
   
