@@ -6,7 +6,7 @@ toc: true
 mathjax: False
 date: 2020-04-21 18:01:15
 img: https://i.loli.net/2020/04/21/xJaNy6wI8o9T2O5.jpg
-password: haohaoxuexi
+password: 9c9f1c821316b17111901cc76c1fe43604de1235f4f4cfafa4eb98355477465e
 summary: 记录一下我在使用GPU服务器做深度强化学习训练的过程
 tags:
 - GPU
@@ -18,11 +18,11 @@ categories:
 
 我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的[Arcade](https://arcade.academy/index.html) 库来写的。    
 
-我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用**OpenCV** 和**Pyglet** 来进行渲染的
+我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用**OpenGL** 和**Pyglet** 来进行渲染的
 
 ![Arcade VS Pygame](ArcadeVSPygame.png)
 
-而服务器大多都以ssh登陆，而OpenCV就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。
+而服务器大多都以ssh登陆，而OpenGL就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。
 
 
 
