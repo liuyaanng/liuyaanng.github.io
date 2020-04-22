@@ -266,29 +266,6 @@
   </entry>
   
   <entry>
-    <title>ranger</title>
-    <link href="https://liuyaanng.github.io/2019/12/17/ranger/"/>
-    <id>https://liuyaanng.github.io/2019/12/17/ranger/</id>
-    <published>2019-12-17T05:08:34.000Z</published>
-    <updated>2020-02-24T10:49:41.449Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Ranger&quot;&gt;&lt;a href=&quot;#Ranger&quot; class=&quot;headerlink&quot; title=&quot;Ranger&quot;&gt;&lt;/a&gt;Ranger&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;If you want a tool to preview images or other
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Arch Linux</title>
     <link href="https://liuyaanng.github.io/2019/12/06/arch-linux/"/>
     <id>https://liuyaanng.github.io/2019/12/06/arch-linux/</id>
@@ -311,34 +288,6 @@
       <category term="Arch" scheme="https://liuyaanng.github.io/tags/Arch/"/>
     
       <category term="linux" scheme="https://liuyaanng.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vim</title>
-    <link href="https://liuyaanng.github.io/2019/11/23/vim/"/>
-    <id>https://liuyaanng.github.io/2019/11/23/vim/</id>
-    <published>2019-11-23T14:10:56.000Z</published>
-    <updated>2020-03-04T08:05:44.034Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;My-Vim-Neovim-Config&quot;&gt;&lt;a href=&quot;#My-Vim-Neovim-Config&quot; class=&quot;headerlink&quot; title=&quot;- My Vim(Neovim) Config&quot;&gt;&lt;/a&gt;- My Vim(Neovim)
-        
-      
-    
-    </summary>
-    
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Vim" scheme="https://liuyaanng.github.io/tags/Vim/"/>
-    
-      <category term="Linux" scheme="https://liuyaanng.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -509,6 +458,54 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Enjoy PyTorch-Task1</title>
+    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch-task1/"/>
+    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch-task1/</id>
+    <published>2019-08-07T05:11:13.000Z</published>
+    <updated>2020-02-24T10:49:41.327Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
+    
+    
+      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
+    
+      <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enjoy PyTorch</title>
+    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/"/>
+    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/</id>
+    <published>2019-08-07T04:56:29.000Z</published>
+    <updated>2020-02-24T10:49:41.328Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
+    
+    
+      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
+    
+      <category term="Deep Learing" scheme="https://liuyaanng.github.io/tags/Deep-Learing/"/>
     
   </entry>
   
