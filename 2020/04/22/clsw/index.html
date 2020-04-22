@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="GPU servers, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="前言我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的Arcade 库来写的。    
-我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用OpenGL 和Pyg">
+    <meta name="keywords" content="CLSW, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="Install and Configure guide 
+My config 
+1. Vim(Neovim)
+2. Ranger
+If you want a tool to preview images or other file type">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>GPU servers | Kevin</title>
+    <title>CLSW | Kevin</title>
     <link rel="icon" type="image/jpeg" href="https://i.loli.net/2019/08/03/RpL5aQ2XKFvUkr7.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +277,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/04/21/xJaNy6wI8o9T2O5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/04/22/eyqgx4QanMLjrH1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        GPU servers
+                        CLSW
                     </div>
                 </div>
             </div>
@@ -389,29 +392,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Deep-Learning/" target="_blank">
-                                <span class="chip bg-color">Deep Learning</span>
-                            </a>
-                        
-                            <a href="/tags/GPU/" target="_blank">
-                                <span class="chip bg-color">GPU</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/教程/" class="post-category" target="_blank">
-                                教程
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -419,21 +405,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-21
+                    2020-04-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.3k
+                        58
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        5 Min
+                        1 Min
                     </div>
                     
                 
@@ -449,147 +435,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的<a href="https://arcade.academy/index.html" target="_blank" rel="noopener">Arcade</a> 库来写的。    </p>
-<p>我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用<strong>OpenGL</strong> 和<strong>Pyglet</strong> 来进行渲染的</p>
-<p><img src="ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
-<p>而服务器大多都以ssh登陆，而OpenGL就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。</p>
-<h2 id="GPU-servers"><a href="#GPU-servers" class="headerlink" title="GPU servers"></a>GPU servers</h2><p>  <a href="https://www.zhihu.com/question/51707286" target="_blank" rel="noopener">知乎:目前哪里可以租用到GPU服务器？</a> </p>
-<hr>
-<ul>
-<li><a href="https://aistudio.baidu.com/aistudio/index" target="_blank" rel="noopener">AI Studio</a></li>
-</ul>
-<p>非常良心，用算力可以获得算力，不怕你用，用得多送的多。<br>这里有一位同学写的攻略<a href="https://zhuanlan.zhihu.com/p/73361554?utm_source=wechat_session&utm_medium=social&utm_oi=28323023421440" target="_blank" rel="noopener">薅薅国产免费GPU计算资源</a><br>登陆方式有 <strong>notebook</strong> ,可使用 <strong>Terminal</strong> ,但没有root权限，这就意味着有很多限制，最重要的是预装框架为 <strong>PaddlePaddle</strong> .  不能用 <code>TensorFlow</code>, 总不能为了嫖GPU服务器再去学一种框架吧，别担心, 这里有<a href="https://www.zhihu.com/question/336485090" target="_blank" rel="noopener">百度paddlepaddle平台如何配置tensorflow-gpu</a>. 这个我没有尝试，有兴趣的可以尝试一下（有空了我会来填这个坑）</p>
-<ul>
-<li><a href="https://www.easyaiforum.cn/" target="_blank" rel="noopener">易学智能</a> </li>
-</ul>
-<p>我现在使用的就是这个</p>
-<p>感谢<a href="https://www.paratera.com/liveInterface.html" target="_blank" rel="noopener">并行超算</a> 给我提供的50算力的试用，我就是靠着这50算力把环境给搭明白了哈哈哈。</p>
-<ul>
-<li>…</li>
-</ul>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="1-Ubuntu"><a href="#1-Ubuntu" class="headerlink" title="1. Ubuntu"></a>1. Ubuntu</h3><p>GPU 配置可根据自己的需要调整<br>我选择的是：</p>
-<pre><code>OS: Ubuntu
-GPU: RTX 2080TI
-CPU: E5 4CORE
-MEMARY: 15G
-ENVIROMENT: Python 3.6 + TF 2.0</code></pre><p>这里的环境使开箱即用的，不需要激活</p>
-<ol>
-<li>基本包安装</li>
-</ol>
-<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> arcade dataclasses scikit-image</code></pre>
-<ol start="2">
-<li>测试arcade环境</li>
-</ol>
-<ul>
-<li>Arcade 官方的一个小demo</li>
-</ul>
-<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
-Drawing an example happy face
-
-If Python and Arcade are installed, this example can be run from the command line with:
-python -m arcade.examples.happy_face
-"""</span>
-
-<span class="token keyword">import</span> arcade
-
-<span class="token comment" spellcheck="true"># Set constants for the screen size</span>
-SCREEN_WIDTH <span class="token operator">=</span> <span class="token number">600</span>
-SCREEN_HEIGHT <span class="token operator">=</span> <span class="token number">600</span>
-SCREEN_TITLE <span class="token operator">=</span> <span class="token string">"Happy Face Example"</span>
-
-<span class="token comment" spellcheck="true"># Open the window. Set the window title and dimensions</span>
-arcade<span class="token punctuation">.</span>open_window<span class="token punctuation">(</span>SCREEN_WIDTH<span class="token punctuation">,</span> SCREEN_HEIGHT<span class="token punctuation">,</span> SCREEN_TITLE<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Set the background color</span>
-arcade<span class="token punctuation">.</span>set_background_color<span class="token punctuation">(</span>arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>WHITE<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Clear screen and start render process</span>
-arcade<span class="token punctuation">.</span>start_render<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># --- Drawing Commands Will Go Here ---</span>
-
-<span class="token comment" spellcheck="true"># Draw the face</span>
-x <span class="token operator">=</span> <span class="token number">300</span>
-y <span class="token operator">=</span> <span class="token number">300</span>
-radius <span class="token operator">=</span> <span class="token number">200</span>
-arcade<span class="token punctuation">.</span>draw_circle_filled<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>YELLOW<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Draw the right eye</span>
-x <span class="token operator">=</span> <span class="token number">370</span>
-y <span class="token operator">=</span> <span class="token number">350</span>
-radius <span class="token operator">=</span> <span class="token number">20</span>
-arcade<span class="token punctuation">.</span>draw_circle_filled<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Draw the left eye</span>
-x <span class="token operator">=</span> <span class="token number">230</span>
-y <span class="token operator">=</span> <span class="token number">350</span>
-radius <span class="token operator">=</span> <span class="token number">20</span>
-arcade<span class="token punctuation">.</span>draw_circle_filled<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Draw the smile</span>
-x <span class="token operator">=</span> <span class="token number">300</span>
-y <span class="token operator">=</span> <span class="token number">280</span>
-width <span class="token operator">=</span> <span class="token number">120</span>
-height <span class="token operator">=</span> <span class="token number">100</span>
-start_angle <span class="token operator">=</span> <span class="token number">190</span>
-end_angle <span class="token operator">=</span> <span class="token number">350</span>
-arcade<span class="token punctuation">.</span>draw_arc_outline<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>BLACK<span class="token punctuation">,</span>
-                        start_angle<span class="token punctuation">,</span> end_angle<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Finish drawing and display the result</span>
-arcade<span class="token punctuation">.</span>finish_render<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Keep the window open until the user hits the 'close' button</span>
-arcade<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<ul>
-<li><p>-&gt;运行发现报错：<code>ImportError: Library “GLU” not found</code></p>
-<p>解决办法：<a href="https://stackoverflow.com/questions/50446867/importerror-library-glu-not-found" target="_blank" rel="noopener"><code>sudo apt-get install freeglut3-dev</code></a> </p>
+                <p><a href="https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-14" target="_blank" rel="noopener">Install and Configure guide</a> </p>
+<p><a href="https://github.com/liuyaanng/CLSW" target="_blank" rel="noopener">My config</a> </p>
+<h2 id="1-Vim-Neovim"><a href="#1-Vim-Neovim" class="headerlink" title="1. Vim(Neovim)"></a>1. Vim(Neovim)</h2><p><img src="https://github.com/liuyaanng/CLSW/raw/master/nvim.png" alt="Vim"></p>
+<h2 id="2-Ranger"><a href="#2-Ranger" class="headerlink" title="2. Ranger"></a>2. Ranger</h2><ul>
+<li><p>If you want a tool to preview images or other file type can preview as images (pdf, videos), i recommended ueberzug , but note, you should use ranger-git by <code>yaourt -S ranger-git</code></p>
 </li>
-<li><p>-&gt;再次运行报错：<code>pyglet.canvas.xlib.NoSuchDisplayException: Cannot connect to &quot;None&quot;</code></p>
-<p>原因大概是arcade调用<code>pyglet</code>绘制窗口需要图形界面（就是弹出来的那个框框），而当你使用ssh连接server时是没有图形界面的。<br>因此我们需要一个虚拟的图形界面，而<a href="https://linux.die.net/man/1/xvfb" target="_blank" rel="noopener"><code>xvfb-run</code></a>就是一个提供虚拟图形界面的工具。<br>这里有一篇文章是介绍如何使用<code>xvfb</code>来创建一个虚拟桌面来进行服务器端的图形测试的。</p>
-<p><a href="http://elementalselenium.com/tips/38-headless" target="_blank" rel="noopener">How To Run Your Tests Headlessly with Xvfb</a></p>
-<p>安装<code>xvfb</code>之前要先更新一下 <code>sudo apt update</code>, 如果遇到密钥不可用可以<code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 密钥</code></p>
-</li>
-<li><p>-&gt;使用<code>xvfb-run -a python xxx.py</code> 来继续测试报错：<code>arcade.application.NoOpenGLException:  Unable to create an OpenGL 3.3+ context. Check to make sure your system supports OpenGL 3.3 or higher.</code>     </p>
-<p>意思是OpenCV版本太低</p>
-</li>
-<li><p>接下来查看服务器端的OpenGL版本，使用<code>glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="opencv_version.png" alt="opencv_version"> </p>
-<p>还是没有图形界面的问题，继续使用<code>xvfb-run -a glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="opencv_version2.png" alt="opencv_version"> </p>
-<p>显示OpenGL的版本为3.1, 依旧无法满足arcade需要的OpenGL3+。</p>
-</li>
-<li><p>会不会是由于服务端原机器上的低版本OpenGL造成<code>xvfb</code>虚拟后的OpenCV版本较低？</p>
-<p>我在本地的Ubuntu系统上分别运行<code>glxinfo | grep &quot;OpenGL&quot;</code>, 发现原机器版本为4.6，但<code>xvfb</code>虚拟后的版本为3.1，推测为<code>Xvfb</code>虚拟图形界面的原因。</p>
-<p><img src="glxinfo.png" alt></p>
-<p>此问题没有找到解决办法</p>
-</li>
-<li><p>⚠️ 如果你是一个<code>pygame</code>用户，或者你对OpenGL的版本要求不高（3.1），你完全可以使用<code>xvfb-run</code>来进行要求图形化的测试。经测试，pygame在GPU服务器上可以运行。</p>
+<li><p>If you are a Mac user, iterm2 is enough to preview images.</p>
 </li>
 </ul>
-<p>既然Ubuntu无法完成我的工作，故我开始使用Windows</p>
-<h3 id="2-Windows-10"><a href="#2-Windows-10" class="headerlink" title="2. Windows 10"></a>2. Windows 10</h3><p>系统配置</p>
-<pre><code>OS: Windows 10
-GPU: RTX 2080TI
-CPU: I5</code></pre><ul>
-<li>进入系统要先激活环境,详细信息见<a href="https://www.easyaiforum.cn/helpDocument?manual_id=136" target="_blank" rel="noopener">帮助文档</a> </li>
-</ul>
-<pre class=" language-bash"><code class="language-bash">conda activate py36h</code></pre>
-<ul>
-<li><p>安装基本包和Ubuntu一样，测试的时候发现依旧存在<code>OpenGL</code>的问题,查看OpenGL版本为1.1</p>
-<p>这里给几个查看OpenGL的工具：</p>
-<ul>
-<li>GPU_Caps_Viewer: 链接: <a href="https://pan.baidu.com/s/1_YisKqKJY_2Uml2MQXKnNQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1_YisKqKJY_2Uml2MQXKnNQ</a> 提取码: use7</li>
-<li>GLViewer: 链接: <a href="https://pan.baidu.com/s/1G2GR5S9oSqatMmBqv5YLdA" target="_blank" rel="noopener">https://pan.baidu.com/s/1G2GR5S9oSqatMmBqv5YLdA</a> 提取码: 27s2</li>
-</ul>
-</li>
-<li><p>更新OpenGL</p>
-<p>更新显卡驱动即可: <a href="https://www.nvidia.com/Download/index.aspx#" target="_blank" rel="noopener">NVIDIA Driver Downloads</a> , 下载对应版本的驱动安装。</p>
-<p>我在网上找到很多说用 驱动精灵， 鲁大师等软件更新驱动，我试了一下，完全不起作用。官网驱动亲测可行，就是有点耗时间。</p>
-</li>
-<li><p>更新完OpenGL之后代码就可以快乐地训练啦</p>
-</li>
-</ul>
+<p><img src="https://github.com/liuyaanng/CLSW/raw/master/ranger.png" alt="Ranger"> </p>
+<h2 id="3-Fish"><a href="#3-Fish" class="headerlink" title="3. Fish"></a>3. Fish</h2><p><img src="https://github.com/liuyaanng/CLSW/raw/master/Fish.png" alt="Fish"> </p>
 
             </div>
             <hr/>
@@ -748,9 +604,9 @@ CPU: I5</code></pre><ul>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《GPU servers》
+                    《CLSW》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/21/gpu-servers/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/22/clsw/" property="cc:attributionName"
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
@@ -790,9 +646,10 @@ CPU: I5</code></pre><ul>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/04/22/clsw/">
                     <div class="card-image">
@@ -809,9 +666,9 @@ CPU: I5</code></pre><ul>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -820,6 +677,7 @@ CPU: I5</code></pre><ul>
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -830,28 +688,32 @@ CPU: I5</code></pre><ul>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/30/scikit-image-guide/">
+                <a href="/2020/04/21/gpu-servers/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/03/30/fMqoUgeTm3zPJNu.jpg" class="responsive-img" alt="scikit-image guide">
+                        <img src="https://i.loli.net/2020/04/21/xJaNy6wI8o9T2O5.jpg" class="responsive-img" alt="GPU servers">
                         
-                        <span class="card-title">scikit-image guide</span>
+                        <span class="card-title">GPU servers</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Image processing in python
+                            记录一下我在使用GPU服务器做深度强化学习训练的过程
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            留洋
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/教程/" class="post-category" target="_blank">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -859,8 +721,12 @@ CPU: I5</code></pre><ul>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/Deep-Learning/" target="_blank">
+                        <span class="chip bg-color">Deep Learning</span>
+                    </a>
+                    
+                    <a href="/tags/GPU/" target="_blank">
+                        <span class="chip bg-color">GPU</span>
                     </a>
                     
                 </div>

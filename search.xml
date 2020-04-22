@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>CLSW</title>
+      <link href="/2020/04/22/clsw/"/>
+      <url>/2020/04/22/clsw/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-14" target="_blank" rel="noopener">Install and Configure guide</a> </p><p><a href="https://github.com/liuyaanng/CLSW" target="_blank" rel="noopener">My config</a> </p><h2 id="1-Vim-Neovim"><a href="#1-Vim-Neovim" class="headerlink" title="1. Vim(Neovim)"></a>1. Vim(Neovim)</h2><p><img src="https://github.com/liuyaanng/CLSW/raw/master/nvim.png" alt="Vim"></p><h2 id="2-Ranger"><a href="#2-Ranger" class="headerlink" title="2. Ranger"></a>2. Ranger</h2><ul><li><p>If you want a tool to preview images or other file type can preview as images (pdf, videos), i recommended ueberzug , but note, you should use ranger-git by <code>yaourt -S ranger-git</code></p></li><li><p>If you are a Mac user, iterm2 is enough to preview images.</p></li></ul><p><img src="https://github.com/liuyaanng/CLSW/raw/master/ranger.png" alt="Ranger"> </p><h2 id="3-Fish"><a href="#3-Fish" class="headerlink" title="3. Fish"></a>3. Fish</h2><p><img src="https://github.com/liuyaanng/CLSW/raw/master/Fish.png" alt="Fish"> </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GPU servers</title>
       <link href="/2020/04/21/gpu-servers/"/>
       <url>/2020/04/21/gpu-servers/</url>
