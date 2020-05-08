@@ -430,14 +430,14 @@ wget https://d">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        290
+                        367
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        2 Min
                     </div>
                     
                 
@@ -487,12 +487,29 @@ sh cuda_10.0.130.1_linux.run --silent --installdir<span class="token operator">=
 <li>Then create a file named ‘environment’(whatever you like)</li>
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> -e <span class="token string">'export PATH=<span class="token variable">$HOME</span>/cuda_10.0/bin:<span class="token variable">$PATH</span>\nexport LD_LIBRARY_PATH=<span class="token variable">$LD_LIBRARY_PATH</span>:<span class="token variable">$HOME</span>/cuda_10.0/lib64'</span><span class="token operator">></span>~/environment</code></pre>
-<h3 id="3-Install-Tensotflow-gpu"><a href="#3-Install-Tensotflow-gpu" class="headerlink" title="3. Install Tensotflow-gpu"></a>3. Install Tensotflow-gpu</h3><pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> tensorflow-gpu<span class="token operator">==</span>1.13.1</code></pre>
+<h3 id="3-Install-Tensotflow-gpu"><a href="#3-Install-Tensotflow-gpu" class="headerlink" title="3. Install Tensotflow-gpu"></a>3. Install Tensotflow-gpu</h3><p>Use a persistence installation</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> /home/aistudio/external-libraries</code></pre>
+<p>Then:</p>
+<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> tensorflow-gpu<span class="token operator">==</span>1.13.1 -t  /home/aistudio/external-libraries</code></pre>
 <p>OR </p>
 <p><a href="https://pypi.tuna.tsinghua.edu.cn/simple/tensorflow-gpu/" target="_blank" rel="noopener">tensorflow-gpu</a> </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://pypi.tuna.tsinghua.edu.cn/packages/2c/65/8dc8fc4a263a24f7ad935b72ad35e72ba381cb9e175b6a5fe086c85f17a7/tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl<span class="token comment" spellcheck="true">#sha256=931c7d49b1757a0a6f3c577ab465cc53d0c4984ef766122f4f48159f5acdec81</span>
-pip <span class="token function">install</span> tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl<span class="token comment" spellcheck="true">#</span></code></pre>
-<h3 id="4-Test"><a href="#4-Test" class="headerlink" title="4. Test"></a>4. Test</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+pip <span class="token function">install</span> tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl -t /home/aistudio/external-libraries</code></pre>
+<h3 id="4-Autostart-shell"><a href="#4-Autostart-shell" class="headerlink" title="4. Autostart shell"></a>4. Autostart shell</h3><p>Create a file named <code>chmod_cuda100.sh</code></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token function">chmod</span> a+r ~/cuda_10.0/include/cudnn.h
+
+<span class="token function">chmod</span> a+r ~/cuda_10.0/lib64/libcudnn*
+
+<span class="token function">source</span> ~/environment
+</code></pre>
+<p>Every time the environment starts, just run the following code</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> chmod_cuda100.sh</code></pre>
+<p>and before you use tendorflow, you should run:</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'/home/aistudio/external-libraries'</span><span class="token punctuation">)</span></code></pre>
+<h3 id="5-Test"><a href="#5-Test" class="headerlink" title="5. Test"></a>5. Test</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
 
 sess <span class="token operator">=</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
@@ -958,7 +975,7 @@ wget https://d
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">40.5k</span>
+            <span class="white-color">40.6k</span>
             
 
             <br>
