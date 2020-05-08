@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-04-22T08:25:20.099Z</updated>
+  <updated>2020-05-08T16:49:05.647Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Use Tensorflow in AI Studio</title>
+    <link href="https://liuyaanng.github.io/2020/05/09/use-tensorflow-in-ai-studio/"/>
+    <id>https://liuyaanng.github.io/2020/05/09/use-tensorflow-in-ai-studio/</id>
+    <published>2020-05-08T16:04:38.000Z</published>
+    <updated>2020-05-08T16:49:05.647Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/336485090&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;How to install tensorflow-gpu in PaddlePaddle&lt;/a&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="GPU" scheme="https://liuyaanng.github.io/tags/GPU/"/>
+    
+      <category term="Tensorflow" scheme="https://liuyaanng.github.io/tags/Tensorflow/"/>
+    
+  </entry>
   
   <entry>
     <title>CLSW</title>
@@ -486,26 +514,6 @@
       <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
     
       <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Enjoy PyTorch</title>
-    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/"/>
-    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch/</id>
-    <published>2019-08-07T04:56:29.000Z</published>
-    <updated>2020-02-24T10:49:41.328Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
-    
-    
-      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
-    
-      <category term="Deep Learing" scheme="https://liuyaanng.github.io/tags/Deep-Learing/"/>
     
   </entry>
   
