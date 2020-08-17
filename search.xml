@@ -387,9 +387,9 @@
             
             <tag> OpenCV </tag>
             
-            <tag> c++ </tag>
-            
             <tag> Face Recongnition </tag>
+            
+            <tag> c++ </tag>
             
             <tag> python </tag>
             
@@ -539,11 +539,11 @@
       
         <tags>
             
-            <tag> Face_Detection </tag>
-            
             <tag> OpenCV </tag>
             
             <tag> c++ </tag>
+            
+            <tag> Face_Detection </tag>
             
         </tags>
       
