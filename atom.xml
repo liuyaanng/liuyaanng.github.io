@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-05-14T08:03:19.739Z</updated>
+  <updated>2020-08-17T14:05:09.528Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode EASY_9</title>
+    <link href="https://liuyaanng.github.io/2020/08/17/leetcode-easy-9/"/>
+    <id>https://liuyaanng.github.io/2020/08/17/leetcode-easy-9/</id>
+    <published>2020-08-17T13:26:14.000Z</published>
+    <updated>2020-08-17T14:05:09.528Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python3" scheme="https://liuyaanng.github.io/tags/Python3/"/>
+    
+      <category term="LeetCode" scheme="https://liuyaanng.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Use Tensorflow in AI Studio</title>
@@ -467,9 +495,9 @@
     
       <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
     
-      <category term="Face Recongnition" scheme="https://liuyaanng.github.io/tags/Face-Recongnition/"/>
-    
       <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
+    
+      <category term="Face Recongnition" scheme="https://liuyaanng.github.io/tags/Face-Recongnition/"/>
     
       <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
     
@@ -486,34 +514,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Enjoy PyTorch-Task1</title>
-    <link href="https://liuyaanng.github.io/2019/08/07/enjoy-pytorch-task1/"/>
-    <id>https://liuyaanng.github.io/2019/08/07/enjoy-pytorch-task1/</id>
-    <published>2019-08-07T05:11:13.000Z</published>
-    <updated>2020-02-24T10:49:41.327Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="PyTorch Notes" scheme="https://liuyaanng.github.io/categories/PyTorch-Notes/"/>
-    
-    
-      <category term="PyTorch" scheme="https://liuyaanng.github.io/tags/PyTorch/"/>
-    
-      <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
     
   </entry>
   
