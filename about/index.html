@@ -459,7 +459,7 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
         },
         xAxis: {
             type: 'category',
-            data: ["2019-07","2019-08","2019-09","2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07"]
+            data: ["2019-08","2019-09","2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08"]
         },
         yAxis: {
             type: 'value',
@@ -469,7 +469,7 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
                 name: 'Number of posts',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [15,9,4,0,0,1,2,2,4,2,1,0,0],
+                data: [9,4,0,0,1,2,2,4,2,1,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -511,7 +511,7 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"教程","value":8},{"name":"Digital Image Processing","value":7},{"name":"PyTorch Notes","value":2},{"name":"人脸检测","value":1},{"name":"Face Recognition","value":1},{"name":"Open Source","value":1},{"name":"算法","value":4},{"name":"笔记","value":2},{"name":"Algorithms","value":1},{"name":"Paper Notes","value":1},{"name":"OpenCV学习笔记","value":1}],
+                data: [{"name":"教程","value":8},{"name":"Digital Image Processing","value":7},{"name":"人脸检测","value":1},{"name":"PyTorch Notes","value":2},{"name":"Face Recognition","value":1},{"name":"Open Source","value":1},{"name":"算法","value":4},{"name":"笔记","value":2},{"name":"Algorithms","value":1},{"name":"Paper Notes","value":1},{"name":"OpenCV学习笔记","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -711,6 +711,20 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
             
             
             
+            <a href="/tags/Face-Detection/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Face_Detection</span>
+            </a>
+            
+            
+            
+            
+            
+            <a href="/tags/c/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">c++</span>
+            </a>
+            
+            
+            
             <a href="/tags/PyTorch/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">PyTorch</span>
             </a>
@@ -729,16 +743,14 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
             
             
             
-            <a href="/tags/Face-Detection/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Face_Detection</span>
+            <a href="/tags/Git/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Git</span>
             </a>
             
             
             
-            
-            
-            <a href="/tags/c/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">c++</span>
+            <a href="/tags/Github/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
             </a>
             
             
@@ -755,14 +767,8 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
             
             
             
-            <a href="/tags/Git/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Git</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Github/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
+            <a href="/tags/LBP/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">LBP</span>
             </a>
             
             
@@ -781,12 +787,6 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
             
             <a href="/tags/i3wm/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">i3wm</span>
-            </a>
-            
-            
-            
-            <a href="/tags/LBP/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">LBP</span>
             </a>
             
             
@@ -821,6 +821,12 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
             
             
             
+            <a href="/tags/hexo/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            </a>
+            
+            
+            
             <a href="/tags/Deep-Reinforcement-Learning/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Deep Reinforcement Learning</span>
             </a>
@@ -829,12 +835,6 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
             
             <a href="/tags/Tensorflow/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Tensorflow</span>
-            </a>
-            
-            
-            
-            <a href="/tags/hexo/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
             </a>
             
             
@@ -1093,7 +1093,8 @@ $(function () {
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-
+<script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -1104,5 +1105,5 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
