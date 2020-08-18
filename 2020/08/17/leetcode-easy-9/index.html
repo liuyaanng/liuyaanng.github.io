@@ -432,7 +432,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        799
+                        754
                     </div>
                     
 
@@ -527,6 +527,18 @@ x_reversed <span class="token operator">=</span> <span class="token number">0</s
     x_reversed <span class="token operator">=</span> x_reversed <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">%</span> <span class="token number">10</span>
     x <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">10</span>
 <span class="token keyword">return</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> x_reversed <span class="token operator">or</span> x <span class="token operator">==</span> x_reversed <span class="token operator">//</span> <span class="token number">10</span><span class="token punctuation">)</span></code></pre>
+<p>C代码如下：</p>
+<pre class=" language-C"><code class="language-C">bool isPalindrome(int x){
+if (x<0 || (x%10 == 0 && x != 0)){
+    return false;
+}
+int x_reversed = 0;
+while (x_reversed < x){
+    x_reversed = x_reversed * 10 + x % 10; 
+    x = x / 10;
+}
+return (x == x_reversed || x == x_reversed / 10);
+}</code></pre>
 <h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><ul>
 <li>时间复杂度：O(log n) ，对于每次迭代，都将输入除以n，故时间复杂度为O(log n)</li>
 <li>空间复杂度： O(1). 只需在常数空间存储若干变量。</li>
@@ -998,7 +1010,7 @@ wget https://d
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">41.4k</span>
+            <span class="white-color">41.3k</span>
             
 
             <br>
