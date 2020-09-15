@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-08-18T07:34:54.241Z</updated>
+  <updated>2020-09-15T09:29:23.381Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CDN_for_blog</title>
+    <link href="https://liuyaanng.github.io/2020/09/14/cdn-for-blog/"/>
+    <id>https://liuyaanng.github.io/2020/09/14/cdn-for-blog/</id>
+    <published>2020-09-14T12:54:39.000Z</published>
+    <updated>2020-09-15T09:29:23.381Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Why-CND&quot;&gt;&lt;a href=&quot;#Why-CND&quot; class=&quot;headerlink&quot; title=&quot;Why CND?&quot;&gt;&lt;/a&gt;Why
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Neovim</title>
+    <link href="https://liuyaanng.github.io/2020/09/14/neovim/"/>
+    <id>https://liuyaanng.github.io/2020/09/14/neovim/</id>
+    <published>2020-09-14T12:51:28.000Z</published>
+    <updated>2020-09-14T12:51:28.938Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>LeetCode EASY_9</title>
@@ -233,7 +269,7 @@
     <link href="https://liuyaanng.github.io/2020/02/04/about-proxy/"/>
     <id>https://liuyaanng.github.io/2020/02/04/about-proxy/</id>
     <published>2020-02-04T07:00:57.000Z</published>
-    <updated>2020-03-06T12:21:35.331Z</updated>
+    <updated>2020-09-14T13:40:50.662Z</updated>
     
     <summary type="html">
     
@@ -468,52 +504,6 @@
       <category term="Manjaro" scheme="https://liuyaanng.github.io/tags/Manjaro/"/>
     
       <category term="i3wm" scheme="https://liuyaanng.github.io/tags/i3wm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Face Recognition</title>
-    <link href="https://liuyaanng.github.io/2019/08/10/face-recognition-with-opencv/"/>
-    <id>https://liuyaanng.github.io/2019/08/10/face-recognition-with-opencv/</id>
-    <published>2019-08-10T04:00:00.000Z</published>
-    <updated>2020-09-12T13:38:07.159Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Face-Recognition-with-OpenCV&quot;&gt;&lt;a href=&quot;#Face-Recognition-with-OpenCV&quot; class=&quot;headerlink&quot; title=&quot;Face Recognition with
-        
-      
-    
-    </summary>
-    
-      <category term="Face Recognition" scheme="https://liuyaanng.github.io/categories/Face-Recognition/"/>
-    
-    
-      <category term="OpenCV" scheme="https://liuyaanng.github.io/tags/OpenCV/"/>
-    
-      <category term="c++" scheme="https://liuyaanng.github.io/tags/c/"/>
-    
-      <category term="Face Recongnition" scheme="https://liuyaanng.github.io/tags/Face-Recongnition/"/>
-    
-      <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to install OpenCV and OpenCV_contrib in Ubuntu16.04</title>
-    <link href="https://liuyaanng.github.io/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/"/>
-    <id>https://liuyaanng.github.io/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/</id>
-    <published>2019-08-09T03:49:11.000Z</published>
-    <updated>2020-02-24T10:49:41.358Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
