@@ -411,14 +411,14 @@ USE CDN
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        852
+                        803
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        4 Min
+                        3 Min
                     </div>
                     
                 
@@ -446,82 +446,74 @@ USE CDN
 <li>注明版本号后发布<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release_number.jpg" alt> </li>
 </ul>
 <ol start="5">
-<li>通过如下形式来使用<pre><code>// load any GitHub release, commit, or branch
-</code></pre></li>
+<li>通过如下形式来使用</li>
 </ol>
-<p>// note: we recommend using npm for projects that support it</p>
-<p><a href="https://cdn.jsdelivr.net/gh/user/repo@version/file" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/user/repo@version/file</a></p>
-<pre><code>
-例如：在我的github仓库中有这么一个文件
+<pre><code>// load any GitHub release, commit, or branch
 
-[https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg](https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg)
+// note: we recommend using npm for projects that support it
 
-使用jsdelivr加速访问就是：
+https://cdn.jsdelivr.net/gh/user/repo@version/file</code></pre><p>例如：在我的github仓库中有这么一个文件</p>
+<p><a href="https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg" target="_blank" rel="noopener">https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg</a></p>
+<p>使用jsdelivr加速访问就是：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg</a> </p>
+<p>其中<strong>1.02</strong>是我发布的版本号，当然也可以使用模糊版本号的方法进行访问，无论哪种形式，都可以明显的感觉到访问速度快了很多。</p>
+<p>另外，在我使用的过程中，发现在第一次发布之后，以后在使用图片可将版本号换成<code>master</code>直接访问。</p>
+<h2 id="Generate-Jsdelivr-Link"><a href="#Generate-Jsdelivr-Link" class="headerlink" title="Generate Jsdelivr Link"></a>Generate Jsdelivr Link</h2><ul>
+<li>我写博客的截图均是由<a href="https://zh.xnipapp.com/" target="_blank" rel="noopener">Xnip</a> 生成，截图文件存储目录<code>Pictures/Xnip</code>,故我写了一个小脚本来实现</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment" spellcheck="true"># @author:liuyaanng</span>
 
-[https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg](https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg) 
-
-其中**1.02**是我发布的版本号，当然也可以使用模糊版本号的方法进行访问，无论哪种形式，都可以明显的感觉到访问速度快了很多。
-
-另外，在我使用的过程中，发现在第一次发布之后，以后在使用图片可将版本号换成`master`直接访问。
-
-
-## Generate Jsdelivr Link
-
-- 我写博客的截图均是由[Xnip](https://zh.xnipapp.com/) 生成，截图文件存储目录`Pictures/Xnip`,故我写了一个小脚本来实现
-
-```bash
-#!/bin/bash
-# @author:liuyaanng
-
-rep_path=~/Github/Myrep/CDN/
-blog_photo_folder=blog_images
-path=~/Pictures/Xnip
-prefix=https://cdn.jsdelivr.net/gh/liuyaanng/CDN@
-files=$(ls $path)
-check_v=0
-check_f=0
-help_text=&quot;This is a script for move the picture files to github, and get the jsdelivr link quickly. This scripts run with 2 arguments.\n
+rep_path<span class="token operator">=</span>~/Github/Myrep/CDN/
+blog_photo_folder<span class="token operator">=</span>blog_images
+path<span class="token operator">=</span>~/Pictures/Xnip
+prefix<span class="token operator">=</span>https://cdn.jsdelivr.net/gh/liuyaanng/CDN@
+files<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">ls</span> $path<span class="token variable">)</span></span>
+check_v<span class="token operator">=</span>0
+check_f<span class="token operator">=</span>0
+help_text<span class="token operator">=</span><span class="token string">"This is a script for move the picture files to github, and get the jsdelivr link quickly. This scripts run with 2 arguments.\n
 1. cdn_server.sh -v version -f folder. version is the release version
-,folder is the pictures&#39;s file folder. \n
+,folder is the pictures's file folder. \n
 for example: cdn_server.sh -v 1.0 -f cdn_for_blog, it will get\n
 https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.0/blog_images/cdn_for_blog/filename\n
 if you do not use version, please use:cdn_server.sh -v master -f foldername.
-2. cdn_server.sh -h    Show help content.&quot;
+2. cdn_server.sh -h    Show help content."</span>
 
-while getopts :v:f:h opt
-do
-    case &quot;$opt&quot; in
-        v) version=$OPTARG
-             check_v=1;;
-        f) folder=$OPTARG
-             check_f=1;;
-        h) echo -e $help_text
-             exit 1;;
-        ?) echo &quot;sync error. Use &#39;cdn_server.sh -h&#39; for help.&quot;;;
+<span class="token keyword">while</span> <span class="token function">getopts</span> :v:f:h opt
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$opt</span>"</span> <span class="token keyword">in</span>
+        v<span class="token punctuation">)</span> version<span class="token operator">=</span><span class="token variable">$OPTARG</span>
+             check_v<span class="token operator">=</span>1<span class="token punctuation">;</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">)</span> folder<span class="token operator">=</span><span class="token variable">$OPTARG</span>
+             check_f<span class="token operator">=</span>1<span class="token punctuation">;</span><span class="token punctuation">;</span>
+        h<span class="token punctuation">)</span> <span class="token keyword">echo</span> -e <span class="token variable">$help_text</span>
+             <span class="token keyword">exit</span> 1<span class="token punctuation">;</span><span class="token punctuation">;</span>
+        ?<span class="token punctuation">)</span> <span class="token keyword">echo</span> <span class="token string">"sync error. Use 'cdn_server.sh -h' for help."</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
     esac
-done
-print_link(){
-if [ ! -n &quot;$files&quot; ]; then
-    echo &quot;There is no file in Xnip folder.&quot;
-else
-    for filename in $files
-    do
-        echo $prefix$version/$blog_photo_folder/$folder/$filename
-        mv $path/* $rep_path$blog_photo_folder/$folder
-        echo &quot;move file $filename success&quot;
-    done
-    cd $rep_path
-    git add .
-    git commit -m &quot;upload $folder&quot;
-    git push
-fi
-}
+<span class="token keyword">done</span>
+print_link<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -n <span class="token string">"<span class="token variable">$files</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">echo</span> <span class="token string">"There is no file in Xnip folder."</span>
+<span class="token keyword">else</span>
+    <span class="token keyword">for</span> filename <span class="token keyword">in</span> <span class="token variable">$files</span>
+    <span class="token keyword">do</span>
+        <span class="token keyword">echo</span> <span class="token variable">$prefix</span><span class="token variable">$version</span>/<span class="token variable">$blog_photo_folder</span>/<span class="token variable">$folder</span>/<span class="token variable">$filename</span>
+        <span class="token function">mv</span> <span class="token variable">$path</span>/* <span class="token variable">$rep_path</span><span class="token variable">$blog_photo_folder</span>/<span class="token variable">$folder</span>
+        <span class="token keyword">echo</span> <span class="token string">"move file <span class="token variable">$filename</span> success"</span>
+    <span class="token keyword">done</span>
+    <span class="token function">cd</span> <span class="token variable">$rep_path</span>
+    <span class="token function">git</span> add <span class="token keyword">.</span>
+    <span class="token function">git</span> commit -m <span class="token string">"upload <span class="token variable">$folder</span>"</span>
+    <span class="token function">git</span> push
+<span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
 
-if [ $check_v -eq $check_f ]; then
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$check_v</span> -eq <span class="token variable">$check_f</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
     print_link
-else
-    echo &quot;need 2 args but given 1.&quot;
-fi</code></pre><p>该脚本有以下功能：</p>
+<span class="token keyword">else</span>
+    <span class="token keyword">echo</span> <span class="token string">"need 2 args but given 1."</span>
+<span class="token keyword">fi</span></code></pre>
+<p>该脚本有以下功能：</p>
 <ol>
 <li>将截图转到github仓库中并提交</li>
 <li>自动生成jsdelivr链接</li>
@@ -973,7 +965,7 @@ USE CDN
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.2k</span>
+            <span class="white-color">42.1k</span>
             
 
             <br>
