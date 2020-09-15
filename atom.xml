@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-09-15T09:45:11.373Z</updated>
+  <updated>2020-09-15T12:58:44.647Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Neovim</title>
+    <link href="https://liuyaanng.github.io/2020/09/15/neovim/"/>
+    <id>https://liuyaanng.github.io/2020/09/15/neovim/</id>
+    <published>2020-09-15T12:58:44.000Z</published>
+    <updated>2020-09-15T12:58:44.647Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CDN_for_blog</title>
@@ -41,20 +55,6 @@
       <category term="hexo" scheme="https://liuyaanng.github.io/tags/hexo/"/>
     
       <category term="jsdelivr" scheme="https://liuyaanng.github.io/tags/jsdelivr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Neovim</title>
-    <link href="https://liuyaanng.github.io/2020/09/14/neovim/"/>
-    <id>https://liuyaanng.github.io/2020/09/14/neovim/</id>
-    <published>2020-09-14T12:51:28.000Z</published>
-    <updated>2020-09-14T12:51:28.938Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

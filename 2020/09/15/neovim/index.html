@@ -4,11 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Horner&#39;s Method, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="Function vs Polynomial
-f(x) means a function, any function
-$$ f(x) = \sin (e^x) + \ln ( \frac{1}{x^2+1} ) $$
-$$ f(x) = \">
+    <meta name="keywords" content="Neovim, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="Neovim | Kevin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@ $$ f(x) = \">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Horner&#39;s Method | Kevin</title>
+    <title>Neovim | Kevin</title>
     <link rel="icon" type="image/jpeg" href="https://i.loli.net/2019/08/03/RpL5aQ2XKFvUkr7.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -282,7 +279,7 @@ $$ f(x) = \">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Horner&#39;s Method
+                        Neovim
                     </div>
                 </div>
             </div>
@@ -404,14 +401,14 @@ $$ f(x) = \">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-02
+                    2020-09-15
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        233
+                        0
                     </div>
                     
 
@@ -434,48 +431,7 @@ $$ f(x) = \">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Function-vs-Polynomial"><a href="#Function-vs-Polynomial" class="headerlink" title="Function vs Polynomial"></a>Function vs Polynomial</h3><ul>
-<li>f(x) means a function, any function<ul>
-<li>$$ f(x) = \sin (e^x) + \ln ( \frac{1}{x^2+1} ) $$</li>
-<li>$$ f(x) = \alpha x^3 - \arctan(x) $$</li>
-</ul>
-</li>
-<li>p(x) means a polynomial function<ul>
-<li>$$ p(x) = dx^3 + cx^2 + bx + a $$</li>
-<li>$$ p(x) = a + bx + cx^2 + dx^3 $$</li>
-</ul>
-</li>
-<li>evaluating p(x) can be slow<ul>
-<li>$$ p(x) = a + bx + cx^2 + dx^3 $$</li>
-<li>$$ p(x) = a + b \times x + c \times x \times x + d \times x \times x \times x $$</li>
-</ul>
-</li>
-</ul>
-<p>It include <strong>4 additions</strong> and <strong>6 multiplications</strong></p>
-<h3 id="Horner’s-Method"><a href="#Horner’s-Method" class="headerlink" title="Horner’s Method"></a>Horner’s Method</h3><ul>
-<li>Rewrite p(x)<ul>
-<li>$$ p(x) = a + bx + cx^2 + dx^3 $$</li>
-<li>$$ p(x) = a + bx + x(cx + dx^2) $$</li>
-<li>$$ p(x) = a + x(b + x(cx + dx)) $$</li>
-<li>$$ p(x) = a + x \times (b + x \times (c + d \times x)) $$</li>
-</ul>
-</li>
-</ul>
-<p>It include <strong>3 additions</strong> and <strong>3 multiplications</strong></p>
-<ul>
-<li>In terms of $a_n$<ul>
-<li>$$ p(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + \cdots + a_nx^n $$</li>
-<li>$$ p(x) = a_0x^0 + a_1x + a_2x^2 + a_3x^3 + \cdots + a_nx^n  = \sum_{i=0}^{n} a_i x^i $$</li>
-<li>$$ p(x) = a_0 +x(a_1 + x(a_2 + \cdots + x(a_{n-1} + xa_n    ) \cdots )) $$</li>
-<li>$$p(x) = p_0(x) where p_i(x) = \begin{cases} a_i + x \times p_{i+1}(x), if i &lt; n \\ a_n, if i = n \end{cases}$$</li>
-</ul>
-</li>
-</ul>
-<h4 id="Pseudocode"><a href="#Pseudocode" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><p>Give the value of coefficient $a_0$, $a_1$, $\cdots$, $a_n$ and $x$.</p>
-<pre class=" language-python"><code class="language-python">y <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">for</span> i <span class="token operator">=</span> n downto <span class="token number">0</span>
-  y <span class="token operator">=</span> a_i <span class="token operator">+</span> xy</code></pre>
-
+                
             </div>
             <hr/>
 
@@ -633,9 +589,9 @@ $$ f(x) = \">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Horner&#39;s Method》
+                    《Neovim》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/02/horner-s-method/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/15/neovim/" property="cc:attributionName"
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
@@ -675,28 +631,30 @@ $$ f(x) = \">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/02/04/about-proxy/">
+                <a href="/2020/09/15/neovim/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/02/02/HvfDTFuE48MARon.png" class="responsive-img" alt="About Proxy">
                         
-                        <span class="card-title">About Proxy</span>
+                        <img src="https://i.loli.net/2019/07/17/5d2ee2aa767f015436.jpeg" class="responsive-img" alt="Neovim">
+                        
+                        <span class="card-title">Neovim</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SSR OR V2RAY?
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -705,6 +663,7 @@ $$ f(x) = \">
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -715,30 +674,30 @@ $$ f(x) = \">
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/29/sort/">
+                <a href="/2020/09/15/cdn-for-blog/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/01/29/tGwhsVWSLndoyYX.jpg" class="responsive-img" alt="SORT">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/img.png" class="responsive-img" alt="CDN_for_blog">
                         
-                        <span class="card-title">SORT</span>
+                        <span class="card-title">CDN_for_blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Sort algorithms with python
+                            Jsdelivr + Github = hexo🥰
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithms/" class="post-category" target="_blank">
-                                    Algorithms
+                            <a href="/categories/教程/" class="post-category" target="_blank">
+                                    教程
                                 </a>
                             
                             
@@ -748,8 +707,12 @@ $$ f(x) = \">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/hexo/" target="_blank">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/jsdelivr/" target="_blank">
+                        <span class="chip bg-color">jsdelivr</span>
                     </a>
                     
                 </div>

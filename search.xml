@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Neovim</title>
+      <link href="/2020/09/15/neovim/"/>
+      <url>/2020/09/15/neovim/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CDN_for_blog</title>
       <link href="/2020/09/15/cdn-for-blog/"/>
       <url>/2020/09/15/cdn-for-blog/</url>
@@ -25,19 +38,6 @@
             <tag> jsdelivr </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Neovim</title>
-      <link href="/2020/09/14/neovim/"/>
-      <url>/2020/09/14/neovim/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
