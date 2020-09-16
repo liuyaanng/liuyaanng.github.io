@@ -15,20 +15,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>GPU servers | Kevin</title>
-    <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/favicon.jpg">
+    <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
     </style>
 
-    <script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -115,7 +115,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -258,7 +258,7 @@
 </header>
 
 
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/cryptojs/crypto-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
         let pwd = '9c9f1c821316b17111901cc76c1fe43604de1235f4f4cfafa4eb98355477465e';
@@ -274,7 +274,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/GPU-servers/img.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/img.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -293,7 +293,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -451,7 +451,7 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的<a href="https://arcade.academy/index.html" target="_blank" rel="noopener">Arcade</a> 库来写的。    </p>
 <p>我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用<strong>OpenGL</strong> 和<strong>Pyglet</strong> 来进行渲染的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/GPU-servers/ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
 <p>而服务器大多都以ssh登陆，而OpenGL就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。</p>
 <h2 id="GPU-servers"><a href="#GPU-servers" class="headerlink" title="GPU servers"></a>GPU servers</h2><p>  <a href="https://www.zhihu.com/question/51707286" target="_blank" rel="noopener">知乎:目前哪里可以租用到GPU服务器？</a> </p>
 <hr>
@@ -554,14 +554,14 @@ arcade<span class="token punctuation">.</span>run<span class="token punctuation"
 <p>意思是OpenCV版本太低</p>
 </li>
 <li><p>接下来查看服务器端的OpenGL版本，使用<code>glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/GPU-servers/opencv_version.png" alt="opencv_version"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version.png" alt="opencv_version"> </p>
 <p>还是没有图形界面的问题，继续使用<code>xvfb-run -a glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/GPU-servers/opencv_version2.png" alt="opencv_version"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version2.png" alt="opencv_version"> </p>
 <p>显示OpenGL的版本为3.1, 依旧无法满足arcade需要的OpenGL3+。</p>
 </li>
 <li><p>会不会是由于服务端原机器上的低版本OpenGL造成<code>xvfb</code>虚拟后的OpenCV版本较低？</p>
 <p>我在本地的Ubuntu系统上分别运行<code>glxinfo | grep &quot;OpenGL&quot;</code>, 发现原机器版本为4.6，但<code>xvfb</code>虚拟后的版本为3.1，推测为<code>Xvfb</code>虚拟图形界面的原因。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/GPU-servers/glxinfo.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/glxinfo.png" alt></p>
 <p>此问题没有找到解决办法</p>
 </li>
 <li><p>⚠️ 如果你是一个<code>pygame</code>用户，或者你对OpenGL的版本要求不高（3.1），你完全可以使用<code>xvfb-run</code>来进行要求图形化的测试。经测试，pygame在GPU服务器上可以运行。</p>
@@ -702,10 +702,10 @@ CPU: I5</code></pre><ul>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -929,7 +929,7 @@ CPU: I5</code></pre><ul>
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1152,11 +1152,11 @@ $(function () {
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/materialize/materialize.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/aos/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
 <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = " ᘳᗒ.ᗕᘰ 喔哟，崩溃啦！", clearTimeout(st)) : (document.title = " ⋋╏ ❛ ◡ ❛ ╏⋌ 咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
     </script>
@@ -1164,10 +1164,10 @@ $(function () {
 
 
 
-    <script src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/others/clicklove.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 
 
-    <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.04/blog_source/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
