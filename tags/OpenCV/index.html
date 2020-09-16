@@ -566,15 +566,6 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
                 </a>
                 
                 
-                <a href="/tags/python/" title="python: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="python" style="background-color: #F8C471;">python
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Pandas/" title="Pandas: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -589,6 +580,15 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
                              chip-default "
                             data-tagname="Deep Reinforcement Learning" style="background-color: #D7BDE2;">Deep Reinforcement Learning
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/python/" title="python: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="python" style="background-color: #F8C471;">python
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -1046,7 +1046,7 @@ $(function () {
 				})
 				.then(function (data) {
 					var hitokoto = document.getElementById("hitokoto");
-					hitokoto.innerText = data.hitokoto + "——【" + data.from + "】";
+					hitokoto.innerText = data.hitokoto;
 				})
 				.catch(function (err) {
 					console.error(err);

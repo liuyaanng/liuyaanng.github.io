@@ -1321,7 +1321,7 @@ $(function () {
 				})
 				.then(function (data) {
 					var hitokoto = document.getElementById("hitokoto");
-					hitokoto.innerText = data.hitokoto + "——【" + data.from + "】";
+					hitokoto.innerText = data.hitokoto;
 				})
 				.catch(function (err) {
 					console.error(err);
