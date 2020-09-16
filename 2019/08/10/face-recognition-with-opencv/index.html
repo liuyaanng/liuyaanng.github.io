@@ -274,7 +274,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2019/08/15/hegwoqsdjiZf2rN.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/img.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -586,12 +586,12 @@
   <span class="token function">get_face</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><img src="4.jpg" alt><br>Note:    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/4.jpg" alt><br>Note:    </p>
 <ol>
 <li>After the compilation is successful, the execution executable file must provide parameters, which are the directories for storing the face image, and it must be an existing directory.(E.g: ./program_name Img/s41)    </li>
 <li>Press the “P” button to take a photo and save the face. Press the “Esc” button to exit.</li>
 </ol>
-<h3 id="1-2-Face-Database-Creation"><a href="#1-2-Face-Database-Creation" class="headerlink" title="1.2 Face Database Creation"></a>1.2 Face Database Creation</h3><p>The official document provides a download of the face database, and i use the <a href="http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html" target="_blank" rel="noopener">AT&amp;T Facedatabase</a> to create my face database. I have updated this zip file to my github, you can download it from <a href="att_faces.zip">here</a> faster.<br>AT&amp;T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).<br>You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from “s1” to “s40”. Each folder has the same person’s photos with different expressions, and there are 10 face photos.<br>The format of these images is “.pgm”<br><img src="1.png" alt><br><img src="2.png" alt></p>
+<h3 id="1-2-Face-Database-Creation"><a href="#1-2-Face-Database-Creation" class="headerlink" title="1.2 Face Database Creation"></a>1.2 Face Database Creation</h3><p>The official document provides a download of the face database, and i use the <a href="http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html" target="_blank" rel="noopener">AT&amp;T Facedatabase</a> to create my face database. I have updated this zip file to my github, you can download it from <a href="att_faces.zip">here</a> faster.<br>AT&amp;T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).<br>You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from “s1” to “s40”. Each folder has the same person’s photos with different expressions, and there are 10 face photos.<br>The format of these images is “.pgm”<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/1.png" alt><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/2.png" alt></p>
 <p>Note:<br>If you want to add your own photos to the face database through the program, the number of added pictures must be no less than 2.</p>
 <h2 id="2-Face-Recognition-Model-training"><a href="#2-Face-Recognition-Model-training" class="headerlink" title="2. Face Recognition Model training"></a>2. Face Recognition Model training</h2><h3 id="2-1-Create-a-label-file-CSV"><a href="#2-1-Create-a-label-file-CSV" class="headerlink" title="2.1 Create a label file CSV"></a>2.1 Create a label file CSV</h3><p>With the face database data, we need to read it in the program, here we need to use csv file to read the image data in the face database.<br>The format of a csv file: image path name + label, such as /Img/s1/image.jpg;1<br>Assume the face image path is: /Img/s1/01..jpg<br>And we give this face image a label “1”, this label represents the person’s name. One person’s face image label must be the same.<br>You can create a csv file manually and then enter the data one by one. But if you use python, you don’t have to do this tedious and boring work.<br>The following is a piece of code which can write data in the CSV file automatically.</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
@@ -641,7 +641,7 @@
                 fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span>subdirname<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
                 fh<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
     fh<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>You should set the image path parameter (absolute path) when running.(E.g: <strong>python filename.py /home/kevin/OpenCV/face_rec/Img</strong> ) and you can get a CSV file like this:<br><img src="5.png" alt><br>This CSV file is created.</p>
+<p>You should set the image path parameter (absolute path) when running.(E.g: <strong>python filename.py /home/kevin/OpenCV/face_rec/Img</strong> ) and you can get a CSV file like this:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/5.png" alt><br>This CSV file is created.</p>
 <h3 id="2-2-Model-training"><a href="#2-2-Model-training" class="headerlink" title="2.2 Model training"></a>2.2 Model training</h3><p>This is the official example of OpenCV: <a href="https://docs.opencv.org/3.2.0/da/d60/tutorial_face_main.html" target="_blank" rel="noopener">Click here</a><br>They offer three models: Eigenfaces, Fisherfaces and Local Binary Patterns Histograms(LBPH)    </p>
 <p>Then I will train my own face database based on these models on the first step.</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">static</span> Mat <span class="token function">norm_0_255</span><span class="token punctuation">(</span>InputArray _src<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -761,7 +761,7 @@
 <span class="token punctuation">}</span></code></pre>
 <p>At this point, we have completed the training of the face model. And we get three files:     </p>
 <p><code>MyFaceFisherModel.xml、MyFaceLBPHModel.xml、MyFacePCAModel.xml</code></p>
-<p><img src="6.png" alt><br>Note:    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/6.png" alt><br>Note:    </p>
 <ol>
 <li><p>Changes to the API of the OpenCV3.3 Face Recognition Module</p>
 <p>a. Facerec.hpp before opencv3.3</p>
@@ -1006,7 +1006,7 @@ Ptr<span class="token operator">&lt;</span>LBPHFaceRecognizer<span class="token 
   <span class="token function">Recognition_And_Draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><img src="7.jpg" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/Face-Recognition-with-OpenCV/7.jpg" alt></p>
 <p>Note:    </p>
 <ol>
 <li>This program supports multiple face recognition at the same time</li>
@@ -1448,7 +1448,7 @@ Ptr<span class="token operator">&lt;</span>LBPHFaceRecognizer<span class="token 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.1k</span>
+            <span class="white-color">42.3k</span>
             
 
             <br>
