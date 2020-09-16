@@ -632,6 +632,28 @@
     </div>
 
     
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '95f40aeda5a41974e96e',
+        clientSecret: '1378c2e4e1e1fc75c3edf3a00b1a732ef7eb9298',
+        repo: 'liuyaanng.github.io',
+        owner: 'liuyaanng',
+        admin: "liuyaanng",
+        id: '2019-08-07T12-56-29',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
