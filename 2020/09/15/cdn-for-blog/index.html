@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="CDN_for_blog, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="Why CND?放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。
@@ -31,7 +31,7 @@ USE CDN
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +42,7 @@ USE CDN
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -117,7 +117,7 @@ USE CDN
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -409,7 +409,7 @@ USE CDN
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                 教程
                             </a>
                         
@@ -428,7 +428,7 @@ USE CDN
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        803
+                        811
                     </div>
                     
 
@@ -459,8 +459,8 @@ USE CDN
 <li>发布仓库</li>
 </ol>
 <ul>
-<li>点击release发布仓库<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CDN_for_blog/release.jpg" alt>  </li>
-<li>注明版本号后发布<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CDN_for_blog/release_number.jpg" alt> </li>
+<li>点击release发布仓库<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CDN_for_blog/release.jpg">  </li>
+<li>注明版本号后发布<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CDN_for_blog/release_number.jpg"> </li>
 </ul>
 <ol start="5">
 <li>通过如下形式来使用</li>
@@ -469,14 +469,15 @@ USE CDN
 
 // note: we recommend using npm for projects that support it
 
-https://cdn.jsdelivr.net/gh/user/repo@version/file</code></pre><p>例如：在我的github仓库中有这么一个文件</p>
-<p><a href="https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg" target="_blank" rel="noopener">https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg</a></p>
+https://cdn.jsdelivr.net/gh/user/repo@version/file</code></pre>
+<p>例如：在我的github仓库中有这么一个文件</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg">https://github.com/liuyaanng/CDN/blob/1.02/blog_images/CDN_for_blog/release.jpg</a></p>
 <p>使用jsdelivr加速访问就是：</p>
-<p><a href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg</a> </p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg</a> </p>
 <p>其中<strong>1.02</strong>是我发布的版本号，当然也可以使用模糊版本号的方法进行访问，无论哪种形式，都可以明显的感觉到访问速度快了很多。</p>
 <p>另外，在我使用的过程中，发现在第一次发布之后，以后在使用图片可将版本号换成<code>master</code>直接访问。</p>
 <h2 id="Generate-Jsdelivr-Link"><a href="#Generate-Jsdelivr-Link" class="headerlink" title="Generate Jsdelivr Link"></a>Generate Jsdelivr Link</h2><ul>
-<li>我写博客的截图均是由<a href="https://zh.xnipapp.com/" target="_blank" rel="noopener">Xnip</a> 生成，截图文件存储目录<code>Pictures/Xnip</code>,故我写了一个小脚本来实现</li>
+<li>我写博客的截图均是由<a target="_blank" rel="noopener" href="https://zh.xnipapp.com/">Xnip</a> 生成，截图文件存储目录<code>Pictures/Xnip</code>,故我写了一个小脚本来实现</li>
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment" spellcheck="true"># @author:liuyaanng</span>
@@ -508,7 +509,7 @@ if you do not use version, please use:cdn_server.sh -v master -f foldername.
         ?<span class="token punctuation">)</span> <span class="token keyword">echo</span> <span class="token string">"sync error. Use 'cdn_server.sh -h' for help."</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
     esac
 <span class="token keyword">done</span>
-print_link<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+print_link<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -n <span class="token string">"<span class="token variable">$files</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
     <span class="token keyword">echo</span> <span class="token string">"There is no file in Xnip folder."</span>
 <span class="token keyword">else</span>
@@ -523,7 +524,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
     <span class="token function">git</span> commit -m <span class="token string">"upload <span class="token variable">$folder</span>"</span>
     <span class="token function">git</span> push
 <span class="token keyword">fi</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$check_v</span> -eq <span class="token variable">$check_f</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
     print_link
@@ -544,10 +545,10 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
 <p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源. 若不想指定版本号（第一次发布之后可用），可以直接使用 <code>-a master</code>.</p>
 <p>例如：</p>
 <pre class=" language-bash"><code class="language-bash">cdn_server.sh -a master -f CDN_for_blog</code></pre>
-<p>生成链接为: <a href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg</a><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg" alt> </p>
+<p>生成链接为: <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg</a><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg"> </p>
 <p>为了写博客更（l）方（a）便（n）, 我在<code>hexo new</code>的同时在github的CDN仓库创建了一个同名的文件夹用于存储博客图片：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># hexo and CDN</span>
-<span class="token function">alias</span> hn<span class="token operator">=</span><span class="token string">'f() {hexo new <span class="token variable">$1</span>;mkdir ~/Github/Myrep/CND/<span class="token variable">$1</span>;echo Created folder ~/Github/Myrep/CND/<span class="token variable">$1</span>};f'</span></code></pre>
+<span class="token function">alias</span> hn<span class="token operator">=</span><span class="token string">'f() &amp;#123;hexo new <span class="token variable">$1</span>;mkdir ~/Github/Myrep/CND/<span class="token variable">$1</span>;echo Created folder ~/Github/Myrep/CND/<span class="token variable">$1</span>&amp;#125;;f'</span></code></pre>
 
             </div>
             <hr/>
@@ -660,10 +661,10 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -697,7 +698,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -712,7 +713,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -756,7 +757,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/14.jpg" class="responsive-img" alt="Neovim">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/14.jpg" class="responsive-img" alt="Neovim">
                         
                         <span class="card-title">Neovim</span>
                     </div>
@@ -804,7 +805,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
                 <a href="/2020/08/17/leetcode-easy-9/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/08/17/dE57y8WIv1eflOX.png" class="responsive-img" alt="LeetCode EASY_9">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2020/08/17/dE57y8WIv1eflOX.png" class="responsive-img" alt="LeetCode EASY_9">
                         
                         <span class="card-title">LeetCode EASY_9</span>
                     </div>
@@ -823,7 +824,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                     算法
                                 </a>
                             
@@ -1004,7 +1005,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1156,5 +1157,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

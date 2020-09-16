@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="High-quality-ellipse-detection, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="High-quality-ellipse-detection个人环境:Matlab 2019a、VS2017、Opencv3.4.4，64位Windows操作系统
@@ -30,7 +30,7 @@ MatLab和">
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@ MatLab和">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -116,7 +116,7 @@ MatLab和">
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -392,7 +392,7 @@ MatLab和">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/图像处理/" target="_blank">
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                                 <span class="chip bg-color">图像处理</span>
                             </a>
                         
@@ -459,37 +459,37 @@ MatLab和">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="High-quality-ellipse-detection"><a href="#High-quality-ellipse-detection" class="headerlink" title="High-quality-ellipse-detection"></a>High-quality-ellipse-detection</h1><p>个人环境:Matlab 2019a、VS2017、Opencv3.4.4，64位Windows操作系统</p>
-<h2 id="OpenCV环境配置请看这篇"><a href="#OpenCV环境配置请看这篇" class="headerlink" title="OpenCV环境配置请看这篇"></a>OpenCV环境配置请看这篇</h2><p><a href="https://godliuyang.wang/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/" target="_blank" rel="noopener">OpenCV入坑指南:环境搭建篇</a></p>
+<h2 id="OpenCV环境配置请看这篇"><a href="#OpenCV环境配置请看这篇" class="headerlink" title="OpenCV环境配置请看这篇"></a>OpenCV环境配置请看这篇</h2><p><a target="_blank" rel="noopener" href="https://godliuyang.wang/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/">OpenCV入坑指南:环境搭建篇</a></p>
 <h2 id="MatLab和C-混合编程环境配置"><a href="#MatLab和C-混合编程环境配置" class="headerlink" title="MatLab和C++混合编程环境配置"></a>MatLab和C++混合编程环境配置</h2><p>Matlab的安装这里不再说    </p>
 <ol>
 <li>在命令行里输入 <code>mex -setup</code>，选择vs就行了</li>
-<li>执行 <code>mex -setup C++</code>完成配置<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/1.png" alt><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/2.png" alt></li>
+<li>执行 <code>mex -setup C++</code>完成配置<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/2.png"></li>
 </ol>
 <h2 id="下载Github文件"><a href="#下载Github文件" class="headerlink" title="下载Github文件"></a>下载Github文件</h2><p>download Zip即可</p>
 <h2 id="导入依赖文件"><a href="#导入依赖文件" class="headerlink" title="导入依赖文件"></a>导入依赖文件</h2><p>将 <strong>D:\OpenCV\opencv\build\x64\vc15\lib</strong>下的 <strong>opencv_world344.lib</strong>文件复制到你的Matlab安装路径下的 <strong>microsoft</strong>文件夹下,我的是 <strong>D:\MATLAB\R2019a\extern\lib\win64\microsoft</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/3.png" alt><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/4.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/3.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/4.png"></p>
 <h2 id="在Matlab中导入文件"><a href="#在Matlab中导入文件" class="headerlink" title="在Matlab中导入文件"></a>在Matlab中导入文件</h2><h2 id="在命令行执行以下命令"><a href="#在命令行执行以下命令" class="headerlink" title="在命令行执行以下命令"></a>在命令行执行以下命令</h2><p>注意作者的命令为:</p>
 <pre class=" language-matlab"><code class="language-matlab">mex generateEllipseCandidates<span class="token punctuation">.</span>cpp <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>include <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv2 <span class="token operator">-</span>LF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>x64<span class="token operator">\</span>vc11<span class="token operator">\</span>lib <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>settlein<span class="token operator">\</span>extern<span class="token operator">\</span>include <span class="token operator">-</span>LF<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>settlein<span class="token operator">\</span>extern<span class="token operator">\</span>lib<span class="token operator">\</span>win64<span class="token operator">\</span>microsoft <span class="token operator">-</span>lopencv_core249 <span class="token operator">-</span>lopencv_highgui249 <span class="token operator">-</span>lopencv_imgproc249 <span class="token operator">-</span>llibmwlapack<span class="token punctuation">.</span>lib</code></pre>
-<p>把OpenCV和Matlab的相关文件的路径改成你的安装路径<br>我这里版本号为OpenCV3.4.4,安装路径如下,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/5.png" alt><br>故修改为<code>D:\OpenCV\opencv\build...</code>,<br>由于OpenCV3.4.4只有 <strong>opencv_world344.lib</strong> 这一个lib文件，故将 <code>LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code>　修改为 <code>LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib</code></p>
+<p>把OpenCV和Matlab的相关文件的路径改成你的安装路径<br>我这里版本号为OpenCV3.4.4,安装路径如下,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/5.png"><br>故修改为<code>D:\OpenCV\opencv\build...</code>,<br>由于OpenCV3.4.4只有 <strong>opencv_world344.lib</strong> 这一个lib文件，故将 <code>LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code>　修改为 <code>LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib</code></p>
 <p>完整的命令为:</p>
 <pre class=" language-matlab"><code class="language-matlab">mex generateEllipseCandidates<span class="token punctuation">.</span>cpp <span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>include 
 <span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv <span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv2 
 <span class="token operator">-</span>LD<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>x64<span class="token operator">\</span>vc15<span class="token operator">\</span>lib 
 <span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>R2019a<span class="token operator">\</span>include <span class="token operator">-</span>LD<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>R2019a<span class="token operator">\</span>extern<span class="token operator">\</span>lib<span class="token operator">\</span>win64<span class="token operator">\</span>microsoft <span class="token operator">-</span>lopencv_world344 <span class="token operator">-</span>llibmwlapack<span class="token punctuation">.</span>lib
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/6.png" alt><br>编译成功之后生成<code>generateEllipseCandidates.mexw64</code>文件<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/7.png" alt><br>之后再运行<code>LCS_ellipse.m</code><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/8.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/6.png"><br>编译成功之后生成<code>generateEllipseCandidates.mexw64</code>文件<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/7.png"><br>之后再运行<code>LCS_ellipse.m</code><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/8.png"></p>
 <p>##　报错解决办法</p>
 <ol>
-<li>如图<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/9.png" alt><br>在.cpp文件中添加</li>
+<li>如图<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/9.png"><br>在.cpp文件中添加</li>
 </ol>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">using</span> <span class="token keyword">namespace</span> std</code></pre>
 <ol start="2">
 <li>如图</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/10.png" alt><br>缺少lib文件，检查一下是不是配置出错了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/10.png"><br>缺少lib文件，检查一下是不是配置出错了</p>
 <p>参考文献:</p>
 <ol>
-<li><a href="https://github.com/AlanLuSun/High-quality-ellipse-detection" target="_blank" rel="noopener">Arc-support Line Segments Revisited: An Efficient and High-quality Ellipse Detection</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/AlanLuSun/High-quality-ellipse-detection">Arc-support Line Segments Revisited: An Efficient and High-quality Ellipse Detection</a></li>
 </ol>
 
             </div>
@@ -603,10 +603,10 @@ MatLab和">
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -640,7 +640,7 @@ MatLab和">
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -655,7 +655,7 @@ MatLab和">
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -698,7 +698,7 @@ MatLab和">
                 <a href="/2019/07/30/tu-xing-hui-zhi/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png" class="responsive-img" alt="图形绘制">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png" class="responsive-img" alt="图形绘制">
                         
                         <span class="card-title">图形绘制</span>
                     </div>
@@ -717,7 +717,7 @@ MatLab和">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/OpenCV学习笔记/" class="post-category" target="_blank">
+                            <a href="/categories/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category" target="_blank">
                                     OpenCV学习笔记
                                 </a>
                             
@@ -746,7 +746,7 @@ MatLab和">
                 <a href="/2019/07/28/day14/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="Day14">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="Day14">
                         
                         <span class="card-title">Day14</span>
                     </div>
@@ -774,7 +774,7 @@ OpenCV椭圆绘制ellip
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/实习/" target="_blank">
+                    <a href="/tags/%E5%AE%9E%E4%B9%A0/" target="_blank">
                         <span class="chip bg-color">实习</span>
                     </a>
                     
@@ -933,7 +933,7 @@ OpenCV椭圆绘制ellip
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1085,5 +1085,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

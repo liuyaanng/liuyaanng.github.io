@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="图像分割, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="图像分割
@@ -33,7 +33,7 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -44,7 +44,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -119,7 +119,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -395,7 +395,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/图像处理/" target="_blank">
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                                 <span class="chip bg-color">图像处理</span>
                             </a>
                         
@@ -556,7 +556,7 @@ g <span class="token operator">=</span> g <span class="token operator">>=</span>
 <span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
 
 <span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span></code></pre>
-<p>结果：<br><img src="https://i.loli.net/2019/07/24/5d37b3a82234833730.jpg" alt></p>
+<p>结果：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a82234833730.jpg"></p>
 <h3 id="线检测"><a href="#线检测" class="headerlink" title="线检测"></a>线检测</h3><p>可以预期，二阶导数将导致更强的响应，并产生比一阶导数更细的线</p>
 <p>线检测模板</p>
 <ul>
@@ -707,7 +707,7 @@ g <span class="token operator">=</span> g <span class="token operator">>=</span>
 
 <span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span>
 </code></pre>
-<p>结果:<br><img src="https://i.loli.net/2019/07/24/5d37b3a815b7125153.jpg" alt><br>可能会用到的M函数pixeldup</p>
+<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a815b7125153.jpg"><br>可能会用到的M函数pixeldup</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token keyword">function</span> B<span class="token operator">=</span><span class="token function">pixeldup</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">%pixeldup用来重复像素的，在水平方向复制m倍，在垂直方向复制n倍，m，n必须为整数，n没有赋值默认为m%检查输入参数个数</span>
 <span class="token keyword">if</span> nargin<span class="token operator">&lt;</span><span class="token number">2</span>
     <span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'At least two inputs are required.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -726,7 +726,7 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 <h3 id="基本边缘检测"><a href="#基本边缘检测" class="headerlink" title="基本边缘检测"></a>基本边缘检测</h3><h4 id="边缘模型"><a href="#边缘模型" class="headerlink" title="边缘模型"></a>边缘模型</h4><ul>
 <li>台阶模型<br>在一个像素的距离上发生两次灰度级间理想的过渡</li>
 <li>斜坡模型<br>数字图像存在被模糊或有噪声的边缘，这时的边缘被建模成一个更接近灰度斜坡的剖面，斜坡的斜度与边缘的模糊程度成反比</li>
-<li>屋顶模型<br>通过一个区域的线的模型，屋顶边缘的基底(宽度)由该线的宽度和尖锐度决定<br><img src="https://i.loli.net/2019/07/24/5d382004cd3e437707.jpg" alt></li>
+<li>屋顶模型<br>通过一个区域的线的模型，屋顶边缘的基底(宽度)由该线的宽度和尖锐度决定<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d382004cd3e437707.jpg"></li>
 </ul>
 <p>结合前面提到的一阶导数和二阶导数的性质，可以得出结论:</p>
 <ol>
@@ -744,7 +744,7 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 </li>
 </ul>
 <h4 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h4><h5 id="梯度概念"><a href="#梯度概念" class="headerlink" title="梯度概念"></a>梯度概念</h5><p>梯度是一个可以确定图像f的(x,y)位置处的边缘方向和强度的工具，用 $\triangledown f$来表示，用 <strong>向量</strong>来定义</p>
-<p>$$\triangledown f = \begin{bmatrix} g_x \\ g_y \\ \end{bmatrix} = \begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial x} \end{bmatrix}$$</p>
+<p>$$\triangledown f = \begin{bmatrix} g_x \ g_y \ \end{bmatrix} = \begin{bmatrix} \frac{\partial f}{\partial x} \ \frac{\partial f}{\partial x} \end{bmatrix}$$</p>
 <h5 id="梯度性质"><a href="#梯度性质" class="headerlink" title="梯度性质"></a>梯度性质</h5><ol>
 <li><p>梯度向量大小。<br>$\triangledown f$的大小为M(x,y)<br>$$\triangledown f = mag(\triangledown f)=[g_x^2+g_y^2]^{<br>1/2}= [(\partial f/\partial x)^2+(\partial f/\partial y)^2]^{1/2}$$<br>这是梯度向量方向变化率的值。其中$g_x$,$g_y$和M(x,y)都是和原图像大小相同的图像。称M(x,y)为梯度图像。</p>
 </li>
@@ -963,7 +963,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
 figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gLoG_best<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gLoG best'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gCanny_default<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gCanny default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gCanny_best<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gCanny best'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>其中最佳输出的阀值是根据得到的ts,tlog,tc的值来确定的<br>结果:<br><img src="https://i.loli.net/2019/07/24/5d37d6b4bec1777947.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b5886d994031.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b3ad9b270352.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b573bae72055.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b61724d14715.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b51df2874618.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b65663011930.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d37d6b3e566366232.jpg" alt><br>综合结果来看，Canny边缘检测算子可以得到最好的结果</p>
+<p>其中最佳输出的阀值是根据得到的ts,tlog,tc的值来确定的<br>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b4bec1777947.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b5886d994031.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b3ad9b270352.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b573bae72055.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b61724d14715.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b51df2874618.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b65663011930.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b3e566366232.jpg"><br>综合结果来看，Canny边缘检测算子可以得到最好的结果</p>
 
             </div>
             <hr/>
@@ -1076,10 +1076,10 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1113,7 +1113,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -1128,7 +1128,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -1171,7 +1171,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
                 <a href="/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png" class="responsive-img" alt="OpenCV入坑指南:环境搭建篇">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png" class="responsive-img" alt="OpenCV入坑指南:环境搭建篇">
                         
                         <span class="card-title">OpenCV入坑指南:环境搭建篇</span>
                     </div>
@@ -1190,7 +1190,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                     教程
                                 </a>
                             
@@ -1219,7 +1219,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
                 <a href="/2019/07/22/hexo-da-keng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/img.png" class="responsive-img" alt="hexo大坑">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/img.png" class="responsive-img" alt="hexo大坑">
                         
                         <span class="card-title">hexo大坑</span>
                     </div>
@@ -1238,7 +1238,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                     教程
                                 </a>
                             
@@ -1415,7 +1415,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1567,5 +1567,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

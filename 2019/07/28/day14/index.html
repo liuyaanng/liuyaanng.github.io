@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Day14, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="High-quality-ellipse-detection高精度椭圆检测参考High-quality-ellipse-detection
@@ -30,7 +30,7 @@ OpenCV椭圆绘制ellip">
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@ OpenCV椭圆绘制ellip">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -116,7 +116,7 @@ OpenCV椭圆绘制ellip">
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -392,7 +392,7 @@ OpenCV椭圆绘制ellip">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/实习/" target="_blank">
+                            <a href="/tags/%E5%AE%9E%E4%B9%A0/" target="_blank">
                                 <span class="chip bg-color">实习</span>
                             </a>
                         
@@ -414,7 +414,7 @@ OpenCV椭圆绘制ellip">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        365
+                        381
                     </div>
                     
 
@@ -437,12 +437,13 @@ OpenCV椭圆绘制ellip">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="High-quality-ellipse-detection"><a href="#High-quality-ellipse-detection" class="headerlink" title="High-quality-ellipse-detection"></a>High-quality-ellipse-detection</h1><p>高精度椭圆检测<br>参考<a href="https://github.com/AlanLuSun/High-quality-ellipse-detection" target="_blank" rel="noopener">High-quality-ellipse-detection</a></p>
+                <h1 id="High-quality-ellipse-detection"><a href="#High-quality-ellipse-detection" class="headerlink" title="High-quality-ellipse-detection"></a>High-quality-ellipse-detection</h1><p>高精度椭圆检测<br>参考<a target="_blank" rel="noopener" href="https://github.com/AlanLuSun/High-quality-ellipse-detection">High-quality-ellipse-detection</a></p>
 <p>关于椭圆检测的部分，实在是看不懂，我只做了得到椭圆参数绘制椭圆的部分</p>
 <h2 id="OpenCV椭圆绘制"><a href="#OpenCV椭圆绘制" class="headerlink" title="OpenCV椭圆绘制"></a>OpenCV椭圆绘制</h2><h3 id="ellipse函数"><a href="#ellipse函数" class="headerlink" title="ellipse函数"></a>ellipse函数</h3><p>语法</p>
 <pre><code>void cvEllipse( CvArr* img, CvPoint center, CvSize axes, double angle,
                 double start_angle, double end_angle, CvScalar color,
-                int thickness=1, int line_type=8, int shift=0 );</code></pre><p>参数:<br>img:图像。<br>center:椭圆圆心坐标。<br>axes:轴的长度。<br>angle:偏转的角度。<br>start_angle:圆弧起始角的角度。<br>end_angle:圆弧终结角的角度。<br>color:线条的颜色。<br>thickness:线条的粗细程度。<br>line_type:线条的类型,见CVLINE的描述。<br>shift:圆心坐标点和数轴的精度。    </p>
+                int thickness=1, int line_type=8, int shift=0 );</code></pre>
+<p>参数:<br>img:图像。<br>center:椭圆圆心坐标。<br>axes:轴的长度。<br>angle:偏转的角度。<br>start_angle:圆弧起始角的角度。<br>end_angle:圆弧终结角的角度。<br>color:线条的颜色。<br>thickness:线条的粗细程度。<br>line_type:线条的类型,见CVLINE的描述。<br>shift:圆心坐标点和数轴的精度。    </p>
 <p>C++代码实现</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/opencv.hpp></span>#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/core/core.hpp></span> </span><span class="token comment" spellcheck="true">// 核心组件</span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/highgui/highgui.hpp></span>  </span><span class="token comment" spellcheck="true">// GUI</span>
@@ -450,22 +451,22 @@ OpenCV椭圆绘制ellip">
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 定义存储椭圆参数的数据结构</span>
-<span class="token keyword">struct</span> Ellipse <span class="token punctuation">{</span>
+<span class="token keyword">struct</span> Ellipse <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> x0<span class="token punctuation">,</span> y0<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
     <span class="token keyword">double</span> alpha<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">drawEllipse</span><span class="token punctuation">(</span>Ellipse ellipses_para<span class="token punctuation">,</span> Mat im<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">drawEllipse</span><span class="token punctuation">(</span>Ellipse ellipses_para<span class="token punctuation">,</span> Mat im<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">int</span> <span class="token function">drawEllipse</span><span class="token punctuation">(</span>Ellipse ellipses_para<span class="token punctuation">,</span> Mat im<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// Draw Ellipse after detection</span>
 <span class="token comment" spellcheck="true">//x0 - x coordinate of the center of the ellipse</span>
 <span class="token comment" spellcheck="true">//y0 - y coordinate of the center of the ellipse</span>
 <span class="token comment" spellcheck="true">//a - length of semimajor axis</span>
 <span class="token comment" spellcheck="true">//b - length of semiminor axis</span>
 <span class="token comment" spellcheck="true">//alpha - angle of orientation of semimajor axis</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>im<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>im<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"imread error!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> x0<span class="token punctuation">,</span> y0<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
     <span class="token keyword">double</span> alpha<span class="token punctuation">;</span>
     <span class="token keyword">int</span> thickness <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
@@ -477,8 +478,8 @@ OpenCV椭圆绘制ellip">
     alpha <span class="token operator">=</span> ellipses_para<span class="token punctuation">.</span>alpha<span class="token punctuation">;</span>
     <span class="token function">ellipse</span><span class="token punctuation">(</span>im<span class="token punctuation">,</span> <span class="token function">Point</span><span class="token punctuation">(</span>x0<span class="token punctuation">,</span> y0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Size</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">360</span><span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> thickness<span class="token punctuation">,</span> lineType<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"原图"</span><span class="token punctuation">,</span> im<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     Ellipse ellipses_para<span class="token punctuation">;</span>
     Mat im <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"11.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">/*test
@@ -489,7 +490,7 @@ OpenCV椭圆绘制ellip">
     ellipses_para.alpha = 80.0;*/</span>
     <span class="token function">drawEllipse</span><span class="token punctuation">(</span>ellipses_para<span class="token punctuation">,</span> im<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 
             </div>
@@ -603,10 +604,10 @@ OpenCV椭圆绘制ellip">
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -640,7 +641,7 @@ OpenCV椭圆绘制ellip">
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -655,7 +656,7 @@ OpenCV椭圆绘制ellip">
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -698,7 +699,7 @@ OpenCV椭圆绘制ellip">
                 <a href="/2019/07/29/high-quality-ellipse-detection/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/img.jpg" class="responsive-img" alt="High-quality-ellipse-detection">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/img.jpg" class="responsive-img" alt="High-quality-ellipse-detection">
                         
                         <span class="card-title">High-quality-ellipse-detection</span>
                     </div>
@@ -728,7 +729,7 @@ OpenCV椭圆绘制ellip">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -759,7 +760,7 @@ OpenCV椭圆绘制ellip">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/7.jpg" class="responsive-img" alt="圆形检测">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/7.jpg" class="responsive-img" alt="圆形检测">
                         
                         <span class="card-title">圆形检测</span>
                     </div>
@@ -789,7 +790,7 @@ OpenCV椭圆绘制ellip">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -956,7 +957,7 @@ OpenCV椭圆绘制ellip">
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1108,5 +1109,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

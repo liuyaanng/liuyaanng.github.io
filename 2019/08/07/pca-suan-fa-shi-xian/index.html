@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="PCA算法实现, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="PCA算法实例及C++实现PCA算法总结一下PCA的算法步骤：
@@ -33,7 +33,7 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -44,7 +44,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -119,7 +119,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -395,7 +395,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/图像处理/" target="_blank">
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                                 <span class="chip bg-color">图像处理</span>
                             </a>
                         
@@ -419,7 +419,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                 算法
                             </a>
                         
@@ -445,7 +445,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        5 Min
+                        6 Min
                     </div>
                     
                 
@@ -471,8 +471,8 @@
 <li>将特征向量按对应特征值大小从上到下按行排列成矩阵，取前k行组成矩阵P</li>
 <li>$Y = PX$即为降维到k维后的数据</li>
 </ol>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>以<br>$$ \begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix} $$<br>为例，我们用PCA方法将这组二维数据其降到一维。</p>
-<p>因为这个矩阵的每行已经是零均值，这里我们直接求协方差矩阵：<br>$$ C=\frac{1}{5}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -2 \\\<br>  -1 &amp; 0  \\\<br>  0  &amp; 0  \\\<br>  2  &amp; 1  \\\<br>  0  &amp; 1 \<br>\end{pmatrix}=\begin{pmatrix}<br>  \frac{6}{5} &amp; \frac{4}{5} \\\<br>  \frac{4}{5} &amp; \frac{6}{5} \<br>\end{pmatrix}$$<br>然后求其特征值和特征向量，具体求解方法不再详述，可以参考相关资料。求解后特征值为：<br>$$\lambda_1=2,\lambda_2=2/5$$<br>其对应的特征向量分别是：<br>$$c_1\begin{pmatrix}<br>  1 \\\<br>  1<br>\end{pmatrix},c_2\begin{pmatrix}<br>  -1 \\\<br>  1<br>\end{pmatrix}$$<br>其中对应的特征向量分别是一个通解， $c_1$和 $c_2$ 可取任意实数。那么标准化后的特征向量为：<br>$$\begin{pmatrix}<br>  1/\sqrt{2} \\\<br>  1/\sqrt{2}<br>\end{pmatrix},\begin{pmatrix}<br>  -1/\sqrt{2} \\\<br>  1/\sqrt{2}<br>\end{pmatrix}$$<br>因此我们的矩阵P是：<br>$$P=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}$$<br>最后我们用P的第一行乘以数据矩阵，就得到了降维后的表示：<br>$$Y=\begin{pmatrix}<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1<br>\end{pmatrix}=\begin{pmatrix}<br>  -3/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0 &amp; 3/\sqrt{2} &amp; -1/\sqrt{2}<br>\end{pmatrix}$$<br>可以验证协方差矩阵C的对角化：<br>$$PCP^\mathsf{T}=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  6/5 &amp; 4/5 \\\<br>  4/5 &amp; 6/5<br>\end{pmatrix}\begin{pmatrix}<br>  1/\sqrt{2} &amp; -1/\sqrt{2}  \\\<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}=\begin{pmatrix}<br>  2 &amp; 0  \\\<br>  0 &amp; 2/5<br>\end{pmatrix}$$<br><img src="02.png" alt></p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>以<br>$$ \begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix} $$<br>为例，我们用PCA方法将这组二维数据其降到一维。</p>
+<p>因为这个矩阵的每行已经是零均值，这里我们直接求协方差矩阵：<br>$$ C=\frac{1}{5}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -2 \\<br>  -1 &amp; 0  \\<br>  0  &amp; 0  \\<br>  2  &amp; 1  \\<br>  0  &amp; 1 \<br>\end{pmatrix}=\begin{pmatrix}<br>  \frac{6}{5} &amp; \frac{4}{5} \\<br>  \frac{4}{5} &amp; \frac{6}{5} \<br>\end{pmatrix}$$<br>然后求其特征值和特征向量，具体求解方法不再详述，可以参考相关资料。求解后特征值为：<br>$$\lambda_1=2,\lambda_2=2/5$$<br>其对应的特征向量分别是：<br>$$c_1\begin{pmatrix}<br>  1 \\<br>  1<br>\end{pmatrix},c_2\begin{pmatrix}<br>  -1 \\<br>  1<br>\end{pmatrix}$$<br>其中对应的特征向量分别是一个通解， $c_1$和 $c_2$ 可取任意实数。那么标准化后的特征向量为：<br>$$\begin{pmatrix}<br>  1/\sqrt{2} \\<br>  1/\sqrt{2}<br>\end{pmatrix},\begin{pmatrix}<br>  -1/\sqrt{2} \\<br>  1/\sqrt{2}<br>\end{pmatrix}$$<br>因此我们的矩阵P是：<br>$$P=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}$$<br>最后我们用P的第一行乘以数据矩阵，就得到了降维后的表示：<br>$$Y=\begin{pmatrix}<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1<br>\end{pmatrix}=\begin{pmatrix}<br>  -3/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0 &amp; 3/\sqrt{2} &amp; -1/\sqrt{2}<br>\end{pmatrix}$$<br>可以验证协方差矩阵C的对角化：<br>$$PCP^\mathsf{T}=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  6/5 &amp; 4/5 \\<br>  4/5 &amp; 6/5<br>\end{pmatrix}\begin{pmatrix}<br>  1/\sqrt{2} &amp; -1/\sqrt{2}  \\<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}=\begin{pmatrix}<br>  2 &amp; 0  \\<br>  0 &amp; 2/5<br>\end{pmatrix}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="02.png"></p>
 <h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h2><p>因为要对一组图片信息进行训练，所以我写了一部分通过摄像头截取图片帧的代码，<code>get_img()</code>函数。这里提取了5个特征脸和一个均值脸</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/core/core.hpp></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/highgui/highgui.hpp></span></span>
@@ -488,16 +488,16 @@
 <span class="token comment" spellcheck="true">//通过摄像头保存要训练的图片</span>
 
 <span class="token comment" spellcheck="true">//打开摄像头</span>
-<span class="token keyword">int</span> <span class="token function">get_img</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> <span class="token function">get_img</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   VideoCapture <span class="token function">cap</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>cap<span class="token punctuation">.</span><span class="token function">isOpened</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   Mat frame<span class="token punctuation">;</span>
   <span class="token keyword">bool</span> stop <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>stop<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>stop<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     cap <span class="token operator">>></span> frame<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>frame<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -512,14 +512,14 @@
     <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">></span> img_num<span class="token punctuation">)</span>
       <span class="token keyword">break</span><span class="token punctuation">;</span>
 
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//把图像归一化为0-255</span>
-Mat <span class="token function">norm_0_255</span><span class="token punctuation">(</span><span class="token keyword">const</span> Mat<span class="token operator">&amp;</span> src<span class="token punctuation">)</span><span class="token punctuation">{</span>
+Mat <span class="token function">norm_0_255</span><span class="token punctuation">(</span><span class="token keyword">const</span> Mat<span class="token operator">&amp;</span> src<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   Mat dst<span class="token punctuation">;</span>
-  <span class="token keyword">switch</span><span class="token punctuation">(</span>src<span class="token punctuation">.</span><span class="token function">channels</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">switch</span><span class="token punctuation">(</span>src<span class="token punctuation">.</span><span class="token function">channels</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
         cv<span class="token operator">::</span><span class="token function">normalize</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> dst<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> NORM_MINMAX<span class="token punctuation">,</span> CV_8UC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
@@ -529,12 +529,12 @@ Mat <span class="token function">norm_0_255</span><span class="token punctuation
     <span class="token keyword">default</span><span class="token operator">:</span>
         src<span class="token punctuation">.</span><span class="token function">copyTo</span><span class="token punctuation">(</span>dst<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> dst<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">//将给定的图像转化为行矩阵</span>
-Mat <span class="token function">asRowMatrix</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span>Mat<span class="token operator">></span><span class="token operator">&amp;</span> src<span class="token punctuation">,</span> <span class="token keyword">int</span> rtype<span class="token punctuation">,</span> <span class="token keyword">double</span> alpha <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">double</span> beta <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+Mat <span class="token function">asRowMatrix</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span>Mat<span class="token operator">></span><span class="token operator">&amp;</span> src<span class="token punctuation">,</span> <span class="token keyword">int</span> rtype<span class="token punctuation">,</span> <span class="token keyword">double</span> alpha <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">double</span> beta <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 样本数量</span>
   size_t n <span class="token operator">=</span> src<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//没有样本，返回空矩阵</span>
@@ -547,37 +547,37 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
   Mat <span class="token function">data</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> d<span class="token punctuation">,</span> rtype<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token comment" spellcheck="true">//拷贝数据</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       string error_message <span class="token operator">=</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Image number %d was empty, please check your input data."</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token function">CV_Error</span><span class="token punctuation">(</span>CV_StsBadArg<span class="token punctuation">,</span> error_message<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
     <span class="token comment" spellcheck="true">//确保数据能被reshape</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> d<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       string error_message <span class="token operator">=</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Wrong number of elements in matrix #%d! Expected %d was %d."</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> d<span class="token punctuation">,</span> src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token function">CV_Error</span><span class="token punctuation">(</span>CV_StsBadArg<span class="token punctuation">,</span> error_message<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     Mat xi <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">row</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//转化为1行，n列的格式</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">isContinuous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">isContinuous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reshape</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">convertTo</span><span class="token punctuation">(</span>xi<span class="token punctuation">,</span> rtype<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> beta<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       src<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reshape</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">convertTo</span><span class="token punctuation">(</span>xi<span class="token punctuation">,</span> rtype<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> beta<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> data<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   vector<span class="token operator">&lt;</span>Mat<span class="token operator">></span> db<span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//get_img();</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>img_num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>img_num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
     string filename <span class="token operator">=</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Img/%d.jpg"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     db<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">imread</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> IMREAD_GRAYSCALE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// Build a matrix with the observations in row:</span>
     Mat data <span class="token operator">=</span> <span class="token function">asRowMatrix</span><span class="token punctuation">(</span>db<span class="token punctuation">,</span> CV_32FC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -607,8 +607,8 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
     <span class="token comment" spellcheck="true">// Success!</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
-<p><img src="01.png" alt></p>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="01.png"></p>
 
             </div>
             <hr/>
@@ -721,10 +721,10 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -758,7 +758,7 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -773,7 +773,7 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -816,7 +816,7 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
                 <a href="/2019/08/07/enjoy-pytorch/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/08/07/qwgZ9yezahmipo2.png" class="responsive-img" alt="Enjoy PyTorch">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/07/qwgZ9yezahmipo2.png" class="responsive-img" alt="Enjoy PyTorch">
                         
                         <span class="card-title">Enjoy PyTorch</span>
                     </div>
@@ -869,7 +869,7 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/15.jpg" class="responsive-img" alt="PCA原理分析">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/15.jpg" class="responsive-img" alt="PCA原理分析">
                         
                         <span class="card-title">PCA原理分析</span>
                     </div>
@@ -888,7 +888,7 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                     算法
                                 </a>
                             
@@ -1065,7 +1065,7 @@ Mat <span class="token function">asRowMatrix</span><span class="token punctuatio
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1217,5 +1217,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

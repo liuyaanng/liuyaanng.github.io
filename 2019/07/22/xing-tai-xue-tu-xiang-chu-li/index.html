@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="形态学图像处理, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="形态学图像处理从这里开始过渡，从输入输出都是图像，过渡到图像分析方法，输出以某种方法来描述图像的内容。
@@ -29,7 +29,7 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -115,7 +115,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -391,7 +391,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/图像处理/" target="_blank">
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                                 <span class="chip bg-color">图像处理</span>
                             </a>
                         
@@ -452,8 +452,8 @@
                 <h1 id="形态学图像处理"><a href="#形态学图像处理" class="headerlink" title="形态学图像处理"></a>形态学图像处理</h1><p>从这里开始过渡，从输入输出都是图像，过渡到图像分析方法，输出以某种方法来描述图像的内容。</p>
 <h2 id="集合理论基础"><a href="#集合理论基础" class="headerlink" title="集合理论基础"></a>集合理论基础</h2><p>令Z为整数集合，用于产生的数字图像的抽样处理可以看做是把xy平面分割成网格状，其中每个网格的<strong>中心坐标</strong>是来自笛卡尔积$Z^2$中的一对元素。在集合理论中，如果(x,y)是来自$Z^2$的整数,f是分配给每个不同坐标的对(x,y)的亮度值的映射，那么函数f(x,y)被成为数字图像。如果亮度值也为整数，那么这幅图像就变成了二维图像。<br>集合的基本操作:$\in$,$\notin$,$\cup$,$\cap$,+,-.除了这些基本操作，形态学操作还需要两个算子，他们特别针对元素均为像素坐标的集合</p>
 <ol>
-<li>集合的反射$\hat{B}$<br>$$ \hat{B} = \{w|w=-b,b\in B\}$$</li>
-<li>点z=($z_1$,$z_2$)集合的平移${(A)}_z$<br>$$ (A)_z = \{c|c=a+z,a\in A\}$$<h3 id="二值图像、集合及逻辑算子"><a href="#二值图像、集合及逻辑算子" class="headerlink" title="二值图像、集合及逻辑算子"></a>二值图像、集合及逻辑算子</h3>形态学理论把二值图像看成是前景(1值)像素的集合,集合的元素属于$Z^2$如果A和B都是二值图像，那么$C=A\cup B$也是二值图像<br>$$C(x,y)=\begin{cases}<br>1,\quad A(x,y)或B(x,y)为1,或者两者均为1\<br>0 \quad 其他<br>\end{cases}<br>$$<h3 id="在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算"><a href="#在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算" class="headerlink" title="在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算"></a>在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算</h3></li>
+<li>集合的反射$\hat{B}$<br>$$ \hat{B} = {w|w=-b,b\in B}$$</li>
+<li>点z=($z_1$,$z_2$)集合的平移${(A)}_z$<br>$$ (A)_z = {c|c=a+z,a\in A}$$<h3 id="二值图像、集合及逻辑算子"><a href="#二值图像、集合及逻辑算子" class="headerlink" title="二值图像、集合及逻辑算子"></a>二值图像、集合及逻辑算子</h3>形态学理论把二值图像看成是前景(1值)像素的集合,集合的元素属于$Z^2$如果A和B都是二值图像，那么$C=A\cup B$也是二值图像<br>$$C(x,y)=\begin{cases}<br>1,\quad A(x,y)或B(x,y)为1,或者两者均为1\<br>0 \quad 其他<br>\end{cases}<br>$$<h3 id="在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算"><a href="#在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算" class="headerlink" title="在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算"></a>在MATLAB中使用逻辑表达式在二值图像上进行逻辑运算</h3></li>
 </ol>
 <table>
 <thead>
@@ -484,7 +484,7 @@
 <td>差</td>
 </tr>
 </tbody></table>
-<h2 id="腐蚀和膨胀"><a href="#腐蚀和膨胀" class="headerlink" title="腐蚀和膨胀"></a>腐蚀和膨胀</h2><h3 id="膨胀"><a href="#膨胀" class="headerlink" title="膨胀"></a>膨胀</h3><p>膨胀是使图像中的目标”生长”或”变粗”的操作。程度由一种被称为<strong>结构元</strong>的形状来控制<br>A被B膨胀，表示为$A \oplus B$,作为集合操作<br>$$ A\oplus B=\{ z|\hat{B}_z\cap A\not= \emptyset\}$$<br>约定: $A \oplus B$ 的第一个操作数是图像，第二个操作数是结构元，结构元通常比图像小的多。<br><img src="https://i.loli.net/2019/07/22/5d35670a79cd611294.jpg" alt></p>
+<h2 id="腐蚀和膨胀"><a href="#腐蚀和膨胀" class="headerlink" title="腐蚀和膨胀"></a>腐蚀和膨胀</h2><h3 id="膨胀"><a href="#膨胀" class="headerlink" title="膨胀"></a>膨胀</h3><p>膨胀是使图像中的目标”生长”或”变粗”的操作。程度由一种被称为<strong>结构元</strong>的形状来控制<br>A被B膨胀，表示为$A \oplus B$,作为集合操作<br>$$ A\oplus B={ z|\hat{B}_z\cap A\not= \emptyset}$$<br>约定: $A \oplus B$ 的第一个操作数是图像，第二个操作数是结构元，结构元通常比图像小的多。<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d35670a79cd611294.jpg"></p>
 <ul>
 <li>工具箱函数imdilate(A, B)来执行膨胀</li>
 </ul>
@@ -495,8 +495,8 @@ D <span class="token operator">=</span> <span class="token function">imdilate</s
 <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'原图'</span><span class="token punctuation">)</span>
 <span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>D<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'膨胀后的图'</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2019/07/22/5d3564132fa1741100.jpg" alt></p>
-<h3 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a>腐蚀</h3><p>腐蚀”收缩”或”细化”二值图像中的物体。像膨胀一样，收缩的方法和程度由结构元控制。<br>A被B腐蚀表示为$A\ominus B$,定义为:<br>$$ A\ominus B = \{z| (B)_z\subseteq A\} = \{z| (B)_z\cap A^c = \emptyset\}$$<br><img src="https://i.loli.net/2019/07/23/5d36cefa2813d95731.jpg" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d3564132fa1741100.jpg"></p>
+<h3 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a>腐蚀</h3><p>腐蚀”收缩”或”细化”二值图像中的物体。像膨胀一样，收缩的方法和程度由结构元控制。<br>A被B腐蚀表示为$A\ominus B$,定义为:<br>$$ A\ominus B = {z| (B)_z\subseteq A} = {z| (B)_z\cap A^c = \emptyset}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/23/5d36cefa2813d95731.jpg"></p>
 <p>工具箱函数imerode(A,B)来执腐蚀</p>
 <pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'tig.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%自定义结构元</span>
@@ -505,10 +505,10 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
 <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'原图'</span><span class="token punctuation">)</span>
 <span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>R<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'腐蚀后的图'</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2019/07/22/5d356b5f7eed962952.jpg" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d356b5f7eed962952.jpg"></p>
 <h3 id="结构元"><a href="#结构元" class="headerlink" title="结构元"></a>结构元</h3><p>strel函数，用来构造各种大小和形状的结构元</p>
 <pre class=" language-matlab"><code class="language-matlab">se <span class="token operator">=</span> <span class="token function">strel</span><span class="token punctuation">(</span>shape<span class="token punctuation">,</span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>shape是希望形状的字符串，parameters是描述形状信息的参数列表<br><img src="https://i.loli.net/2019/07/22/5d35670a85b4f22579.jpg" alt><br><img src="https://i.loli.net/2019/07/22/5d35670a63e2817742.jpg" alt><br>注意生成的se含有两项</p>
+<p>shape是希望形状的字符串，parameters是描述形状信息的参数列表<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d35670a85b4f22579.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d35670a63e2817742.jpg"><br>注意生成的se含有两项</p>
 <ol>
 <li>se.Neighborhood:[ ×  logical ]</li>
 <li>se.Demensionality: 2</li>
@@ -625,10 +625,10 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -662,7 +662,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -677,7 +677,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -720,7 +720,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
                 <a href="/2019/07/22/hexo-da-keng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/img.png" class="responsive-img" alt="hexo大坑">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/img.png" class="responsive-img" alt="hexo大坑">
                         
                         <span class="card-title">hexo大坑</span>
                     </div>
@@ -739,7 +739,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                     教程
                                 </a>
                             
@@ -768,7 +768,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
                 <a href="/2019/07/20/pin-yu-lu-bo-qi-ji-qi-ying-yong/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="频域滤波器及其应用">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="频域滤波器及其应用">
                         
                         <span class="card-title">频域滤波器及其应用</span>
                     </div>
@@ -798,7 +798,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -968,7 +968,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1120,5 +1120,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

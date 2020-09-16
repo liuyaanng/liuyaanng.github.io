@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Use Tensorflow in AI Studio, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="How to install tensorflow-gpu in PaddlePaddle 
@@ -33,7 +33,7 @@ wget https://d">
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -44,7 +44,7 @@ wget https://d">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -119,7 +119,7 @@ wget https://d">
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -411,7 +411,7 @@ wget https://d">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                 教程
                             </a>
                         
@@ -453,9 +453,9 @@ wget https://d">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://www.zhihu.com/question/336485090" target="_blank" rel="noopener">How to install tensorflow-gpu in PaddlePaddle</a> </p>
-<h2 id="Tensorflow-gpu-1-13-1"><a href="#Tensorflow-gpu-1-13-1" class="headerlink" title="Tensorflow-gpu 1.13.1"></a>Tensorflow-gpu 1.13.1</h2><p><img src="cuda-cudnn.png" alt> </p>
-<h3 id="1-Install-cuda10-0"><a href="#1-Install-cuda10-0" class="headerlink" title="1. Install cuda10.0"></a>1. Install <a href="https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal" target="_blank" rel="noopener">cuda10.0</a></h3><ul>
+                <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/336485090">How to install tensorflow-gpu in PaddlePaddle</a> </p>
+<h2 id="Tensorflow-gpu-1-13-1"><a href="#Tensorflow-gpu-1-13-1" class="headerlink" title="Tensorflow-gpu 1.13.1"></a>Tensorflow-gpu 1.13.1</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="cuda-cudnn.png"> </p>
+<h3 id="1-Install-cuda10-0"><a href="#1-Install-cuda10-0" class="headerlink" title="1. Install cuda10.0"></a>1. Install <a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal">cuda10.0</a></h3><ul>
 <li>Base Installer</li>
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux</code></pre>
@@ -468,7 +468,7 @@ wget https://d">
 </ul>
 <pre class=" language-bash"><code class="language-bash">sh cuda_10.0.130_410.48_linux --silent --toolkit --toolkitpath<span class="token operator">=</span><span class="token variable">$HOME</span>/cuda_10.0
 sh cuda_10.0.130.1_linux.run --silent --installdir<span class="token operator">=</span><span class="token variable">$HOME</span>/cuda_10.0 --accept-eula</code></pre>
-<h3 id="2-cuDNN"><a href="#2-cuDNN" class="headerlink" title="2. cuDNN"></a>2. <a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">cuDNN</a></h3><ul>
+<h3 id="2-cuDNN"><a href="#2-cuDNN" class="headerlink" title="2. cuDNN"></a>2. <a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN</a></h3><ul>
 <li>Choose v7.4</li>
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.4.2/prod/10.0_20181213/cudnn-10.0-linux-x64-v7.4.2.24.tgz</code></pre>
@@ -490,7 +490,7 @@ sh cuda_10.0.130.1_linux.run --silent --installdir<span class="token operator">=
 <span class="token function">source</span> ~/environment</code></pre>
 <h3 id="3-Install-Tensotflow-gpu"><a href="#3-Install-Tensotflow-gpu" class="headerlink" title="3. Install Tensotflow-gpu"></a>3. Install Tensotflow-gpu</h3><pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> tensorflow-gpu<span class="token operator">==</span>1.13.1 </code></pre>
 <p>OR </p>
-<p><a href="https://pypi.tuna.tsinghua.edu.cn/simple/tensorflow-gpu/" target="_blank" rel="noopener">tensorflow-gpu</a> </p>
+<p><a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/tensorflow-gpu/">tensorflow-gpu</a> </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://pypi.tuna.tsinghua.edu.cn/packages/2c/65/8dc8fc4a263a24f7ad935b72ad35e72ba381cb9e175b6a5fe086c85f17a7/tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl<span class="token comment" spellcheck="true">#sha256=931c7d49b1757a0a6f3c577ab465cc53d0c4984ef766122f4f48159f5acdec81</span>
 pip <span class="token function">install</span> tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl</code></pre>
 <h3 id="4-Autostart-shell"><a href="#4-Autostart-shell" class="headerlink" title="4. Autostart shell"></a>4. Autostart shell</h3><p>Create a file named <code>chmod_cuda100.sh</code></p>
@@ -518,7 +518,7 @@ b <span class="token operator">=</span> tf<span class="token punctuation">.</spa
 local_device_protos <span class="token operator">=</span> device_lib<span class="token punctuation">.</span>list_local_devices<span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">.</span>name <span class="token keyword">for</span> x <span class="token keyword">in</span> local_device_protos <span class="token keyword">if</span> x<span class="token punctuation">.</span>device_type <span class="token operator">==</span> <span class="token string">'GPU'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 <p>Result: [‘/device:GPU:0’]</p>
-<p><img src="GPU.png" alt> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="GPU.png"> </p>
 
             </div>
             <hr/>
@@ -631,10 +631,10 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -668,7 +668,7 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -683,7 +683,7 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -726,7 +726,7 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
                 <a href="/2020/08/17/leetcode-easy-9/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/08/17/dE57y8WIv1eflOX.png" class="responsive-img" alt="LeetCode EASY_9">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2020/08/17/dE57y8WIv1eflOX.png" class="responsive-img" alt="LeetCode EASY_9">
                         
                         <span class="card-title">LeetCode EASY_9</span>
                     </div>
@@ -745,7 +745,7 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                     算法
                                 </a>
                             
@@ -778,7 +778,7 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
                 <a href="/2020/04/22/clsw/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/04/22/eyqgx4QanMLjrH1.jpg" class="responsive-img" alt="CLSW">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2020/04/22/eyqgx4QanMLjrH1.jpg" class="responsive-img" alt="CLSW">
                         
                         <span class="card-title">CLSW</span>
                     </div>
@@ -962,7 +962,7 @@ local_device_protos <span class="token operator">=</span> device_lib<span class=
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1114,5 +1114,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="频域滤波, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="频域滤波
@@ -34,7 +34,7 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -45,7 +45,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -120,7 +120,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -396,7 +396,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/图像处理/" target="_blank">
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                                 <span class="chip bg-color">图像处理</span>
                             </a>
                         
@@ -460,15 +460,15 @@
 <li>去除周期的选择性滤波</li>
 </ol>
 <h2 id="二维傅里叶变换"><a href="#二维傅里叶变换" class="headerlink" title="二维傅里叶变换"></a>二维傅里叶变换</h2><ul>
-<li><p>二维傅里叶变换:<br>$$ F(u,v)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y)e^{-j2\pi(ux + vy)}\,\mathrm{d}x \mathrm{d}y $$</p>
+<li><p>二维傅里叶变换:<br>$$ F(u,v)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y)e^{-j2\pi(ux + vy)},\mathrm{d}x \mathrm{d}y $$</p>
 </li>
-<li><p>二维傅里叶逆变换：<br>$$ f(x,y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F(u,v)e^{j2\pi(ux + vy)}\,dxdy $$</p>
+<li><p>二维傅里叶逆变换：<br>$$ f(x,y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F(u,v)e^{j2\pi(ux + vy)},dxdy $$</p>
 </li>
 </ul>
 <h2 id="二维离散傅里叶变换"><a href="#二维离散傅里叶变换" class="headerlink" title="二维离散傅里叶变换"></a>二维离散傅里叶变换</h2><p>f(x,y)代表一幅大小为M×N的图像，其中x=0,1,……,M-1,y=0,1,…..,N-1,DFT如下</p>
-<p>$$ F(u,v)=\int_{x=0}^{M-1} \int_{y=0}^{N-1} f(x,y)e^{-j2\pi(\frac{ux}{M}+\frac{vy}{N})}\,\mathrm{d}x \mathrm{d}y $$</p>
+<p>$$ F(u,v)=\int_{x=0}^{M-1} \int_{y=0}^{N-1} f(x,y)e^{-j2\pi(\frac{ux}{M}+\frac{vy}{N})},\mathrm{d}x \mathrm{d}y $$</p>
 <p>IDFT：</p>
-<p>$$ f(x,y)=\frac{1}{MN}\int_{x=0}^{M-1} \int_{y=0}^{N-1} F(u,v)e^{j2\pi(\frac{ux}{M}+\frac{vy}{N})}\,\mathrm{d}x \mathrm{d}y $$</p>
+<p>$$ f(x,y)=\frac{1}{MN}\int_{x=0}^{M-1} \int_{y=0}^{N-1} F(u,v)e^{j2\pi(\frac{ux}{M}+\frac{vy}{N})},\mathrm{d}x \mathrm{d}y $$</p>
 <p>这里的F(u,v)被称为展开的傅里叶级数</p>
 <p>频域原点出的变换的值F(0,0)称为傅里叶变换的直流(dc)分量，F(0,0)等于f(0,0)平均值的MN倍。要注意的是在MATLAB中索引是从1开始的而不是从0开始的</p>
 <h2 id="MATLAB实现对图像的Fourier变换和逆变换"><a href="#MATLAB实现对图像的Fourier变换和逆变换" class="headerlink" title="MATLAB实现对图像的Fourier变换和逆变换"></a>MATLAB实现对图像的Fourier变换和逆变换</h2><ul>
@@ -517,17 +517,17 @@ ret<span class="token operator">=</span><span class="token function">im2uint8</s
 <span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">imshow</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'逆傅里叶变换'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>结果<br><img src="https://i.loli.net/2019/07/18/5d3043778b4e114553.jpg" alt><br>如果使用<code>&gt;&gt; f = im2double(img)</code>进行处理，则会出现以下结果<br><img src="https://i.loli.net/2019/07/18/5d304377bcc9554917.jpg" alt></p>
+<p>结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d3043778b4e114553.jpg"><br>如果使用<code>&gt;&gt; f = im2double(img)</code>进行处理，则会出现以下结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377bcc9554917.jpg"></p>
 <ul>
 <li>分析    </li>
 </ul>
 <ol>
-<li>图像Fourier变换之后立即imshow会报错<br><img src="https://i.loli.net/2019/07/18/5d3043779bef722309.jpg" alt><br>这是因为经过fourier变换之后的图像矩阵为复数矩阵，包含实部和虚部，此时进行<code>abs(f)</code>取复数矩阵的模，再显示。</li>
+<li>图像Fourier变换之后立即imshow会报错<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d3043779bef722309.jpg"><br>这是因为经过fourier变换之后的图像矩阵为复数矩阵，包含实部和虚部，此时进行<code>abs(f)</code>取复数矩阵的模，再显示。</li>
 <li><code>rgb2gray()</code>和<code>im2double()</code>的使用<br>这一点要特别注意，对于RGB图像，<code>imread()</code>是已三维矩阵的形式来存储的，要先进行类型转换，否则会出现空白    </li>
 <li><code>rgb2gray()</code>转换为灰度图像,得到的图像呈灰色基调，见‘结果’</li>
-<li><code>im2double()</code>转换成双精度图像，得到的图像呈白色基调，见‘结果’<br>其他图像处理结果<br><img src="https://i.loli.net/2019/07/18/5d304377bd0c676784.jpg" alt></li>
+<li><code>im2double()</code>转换成双精度图像，得到的图像呈白色基调，见‘结果’<br>其他图像处理结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377bd0c676784.jpg"></li>
 </ol>
-<p><img src="https://i.loli.net/2019/07/18/5d304377b0b2610307.jpg" alt><br>可以看到Fourier逆变换处理之后的图片为原图的灰度图片。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377b0b2610307.jpg"><br>可以看到Fourier逆变换处理之后的图片为原图的灰度图片。</p>
 <h2 id="对图像Fourier变换的意义分析"><a href="#对图像Fourier变换的意义分析" class="headerlink" title="对图像Fourier变换的意义分析"></a>对图像Fourier变换的意义分析</h2><p>对于一个图像，其频率是表征图像中灰度变化剧烈程度的指标，是灰度在平面空间的梯度。设f为一个能量有限的模拟信号，其傅里叶变换代表f的频谱。从纯粹的数学意义上来看，Fourier变换是将一个函数转换成一系列的周期函数来进行处理的。从物理角度来看，Fourier变换是将图像从空间域转换到频率域，逆变换是将图像从频率域转换到空间域。也就是说，Fourier变换是将图像的灰度分布函数变换成图像的频率分布函数。<strong>这里要注意是灰度分布函数</strong>,下面还会说到。</p>
 <p>Fourie逆变换是将图像的频率分布函数转换成灰度分布函数(原始图像的灰度分布函数),图像的概念前边说过，用一个二维矩阵来表示空间上的各点，z=f(x,y)，但空间是三维的，因此空间上的物体在另一个维度上的关系必须由梯度来表示。</p>
 <p>Fourier频谱图上的明暗点，意义是指图像上的某一点与邻域点差异的强弱，即梯度的大小。</p>
@@ -539,7 +539,7 @@ ret<span class="token operator">=</span><span class="token function">im2uint8</s
 </li>
 <li>得到有填充的Fourier变换<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> F <span class="token operator">=</span> <span class="token function">fft2</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg" alt><br>如果是类似这样的<br><img src="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg" alt>    <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> H <span class="token operator">=</span> <span class="token function">lpfilter</span><span class="token punctuation">(</span><span class="token string">'gaussian'</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span>sig<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> H <span class="token operator">=</span> <span class="token function">lpfilter</span><span class="token punctuation">(</span><span class="token string">'gaussian'</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span>sig<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 在使用滤波器之前，要先<code>H = fftshift(H)</code></li>
 <li>用滤波器乘以FFT变换<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> G <span class="token operator">=</span> H <span class="token operator">.*</span> F<span class="token punctuation">;</span></code></pre>
 </li>
@@ -601,7 +601,7 @@ gpc <span class="token operator">=</span> <span class="token function">revertcla
 <span class="token function">imshow</span><span class="token punctuation">(</span>gpc<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'已填充的滤波'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>这里展示了不填充滤波和填充滤波的两种情况，结果<br><img src="https://i.loli.net/2019/07/19/5d318dcf1e88071166.jpg" alt><br>可以观察到未填充滤波处理后图像的垂直边缘未模糊</p>
+<p>这里展示了不填充滤波和填充滤波的两种情况，结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf1e88071166.jpg"><br>可以观察到未填充滤波处理后图像的垂直边缘未模糊</p>
 <p>涉及到的函数    </p>
 <ul>
 <li>paddedsize函数</li>
@@ -831,10 +831,10 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -868,7 +868,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -883,7 +883,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -926,7 +926,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
                 <a href="/2019/07/19/markdown-shu-xue-gong-shi-hui-zong/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/08/5d235019a672f97339.jpg" class="responsive-img" alt="Markdown数学公式汇总">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/08/5d235019a672f97339.jpg" class="responsive-img" alt="Markdown数学公式汇总">
                         
                         <span class="card-title">Markdown数学公式汇总</span>
                     </div>
@@ -945,7 +945,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                     教程
                                 </a>
                             
@@ -974,7 +974,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
                 <a href="/2019/07/17/kong-jian-lu-bo/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="空间滤波">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="空间滤波">
                         
                         <span class="card-title">空间滤波</span>
                     </div>
@@ -1004,7 +1004,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -1174,7 +1174,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1326,5 +1326,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

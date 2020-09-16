@@ -2,7 +2,7 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="霍夫变换, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="霍夫变换介绍与应用场景霍夫变换(Hough Transform)是图像处理中的一种特征提取技术，该过程在一个参数空间中通过计算累计结果的局部最大值得到一个符合该特定形状的集合作为霍夫变换结果。经典霍夫变换用来检测图像中的直线，后来霍夫变换扩">
@@ -28,7 +28,7 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -39,7 +39,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -114,7 +114,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -390,7 +390,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/图像处理/" target="_blank">
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                                 <span class="chip bg-color">图像处理</span>
                             </a>
                         
@@ -406,7 +406,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                 算法
                             </a>
                         
@@ -448,8 +448,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="霍夫变换"><a href="#霍夫变换" class="headerlink" title="霍夫变换"></a>霍夫变换</h1><h2 id="介绍与应用场景"><a href="#介绍与应用场景" class="headerlink" title="介绍与应用场景"></a>介绍与应用场景</h2><p><a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2" target="_blank" rel="noopener">霍夫变换</a>(Hough Transform)是图像处理中的一种特征提取技术，该过程在一个参数空间中通过计算累计结果的局部最大值得到一个符合该特定形状的集合作为霍夫变换结果。经典霍夫变换用来检测图像中的直线，后来霍夫变换扩展到任意形状物体的识别，多为圆和椭圆。霍夫变换运用两个坐标空间之间的变换将在一个空间中具有相同形状的曲线或直线映射到另一个坐标空间的一个点上形成峰值，从而把检测任意形状的问题转化为统计峰值问题。</p>
-<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>考虑点$(x_i,y_i)$及通过这个点的线,有无穷多的线通过点$(x_i,y_i)$，针对a和b的一些值，满足斜截式$y_i = ax_i + b$的所有线都通过该点。该公式也可以写为$b = -ax_i + y_i$，考虑ab平面(即<strong>参数空间</strong>)对固定点$(x_i,y_i)$得到一条线的方程。另外，第二个点$(x_j,y_j)$也有一条在参数空间中与之相关的线，这条线和与$(x_i,y_i)$<strong>相关</strong>的线交于点$(a’,b’)$，其中$a’$是斜率，$b’$是在<strong>xy平面</strong>上包含点$(x_i,y_i)$和$(x_j,y_j)$的线的截距。在<strong>参数空间</strong>中，这条线包含的所有点都有相交于$(a’,b’)$点的直线。<br>简单理解，直线由两个点$A(x_1,y_1)$和$B(x_2,y_2)$定义，在参数空间中，两条直线的唯一公共点是在原图像空间中表示连接点A和B的唯一存在的直线<br><img src="https://i.loli.net/2019/07/24/5d38129f0e9f156720.jpg" alt><br>因此，给定很多点，判断这些点是否共线的问题，经由霍夫变换之后，变成判断一堆曲线(每一个点在$(r, \theta)$平面上代表一条曲线)是否 在 $(r,\theta)$平面上相交于同一点的问题<br>另外用法线表示法:<br>$$xcos\theta + ysin\theta = \rho$$<br>水平线的$\theta$=0,$\rho$等于正的x的截距，垂直线的$\theta=90$度，$\rho$等于正的y的截距<br><img src="https://i.loli.net/2019/07/24/5d382004e2bab23873.jpg" alt></p>
+                <h1 id="霍夫变换"><a href="#霍夫变换" class="headerlink" title="霍夫变换"></a>霍夫变换</h1><h2 id="介绍与应用场景"><a href="#介绍与应用场景" class="headerlink" title="介绍与应用场景"></a>介绍与应用场景</h2><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2">霍夫变换</a>(Hough Transform)是图像处理中的一种特征提取技术，该过程在一个参数空间中通过计算累计结果的局部最大值得到一个符合该特定形状的集合作为霍夫变换结果。经典霍夫变换用来检测图像中的直线，后来霍夫变换扩展到任意形状物体的识别，多为圆和椭圆。霍夫变换运用两个坐标空间之间的变换将在一个空间中具有相同形状的曲线或直线映射到另一个坐标空间的一个点上形成峰值，从而把检测任意形状的问题转化为统计峰值问题。</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>考虑点$(x_i,y_i)$及通过这个点的线,有无穷多的线通过点$(x_i,y_i)$，针对a和b的一些值，满足斜截式$y_i = ax_i + b$的所有线都通过该点。该公式也可以写为$b = -ax_i + y_i$，考虑ab平面(即<strong>参数空间</strong>)对固定点$(x_i,y_i)$得到一条线的方程。另外，第二个点$(x_j,y_j)$也有一条在参数空间中与之相关的线，这条线和与$(x_i,y_i)$<strong>相关</strong>的线交于点$(a’,b’)$，其中$a’$是斜率，$b’$是在<strong>xy平面</strong>上包含点$(x_i,y_i)$和$(x_j,y_j)$的线的截距。在<strong>参数空间</strong>中，这条线包含的所有点都有相交于$(a’,b’)$点的直线。<br>简单理解，直线由两个点$A(x_1,y_1)$和$B(x_2,y_2)$定义，在参数空间中，两条直线的唯一公共点是在原图像空间中表示连接点A和B的唯一存在的直线<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d38129f0e9f156720.jpg"><br>因此，给定很多点，判断这些点是否共线的问题，经由霍夫变换之后，变成判断一堆曲线(每一个点在$(r, \theta)$平面上代表一条曲线)是否 在 $(r,\theta)$平面上相交于同一点的问题<br>另外用法线表示法:<br>$$xcos\theta + ysin\theta = \rho$$<br>水平线的$\theta$=0,$\rho$等于正的x的截距，垂直线的$\theta=90$度，$\rho$等于正的y的截距<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d382004e2bab23873.jpg"></p>
 <p>在坐标(i, j)的单元位置，累加器的值是 A(i, j)，对应于参数空间坐标$(\rho_i,\theta_j)$的正方形。最初， 这些单元位置为零。然后，对于每个图像平面上的非背景点$(x_k,y_k)$(就是 xy 平面)，我们令 θ 等 于在 θ 轴上允许的细分值，并通过公式$\rho = x_kcos\theta+y_ksin\theta$解出相应的 ρ 值。然后，得到的 ρ 值四 舍五入为最接近的 ρ 轴上允许的单元值。相应的累加器单元增加一个增量。在这个过程的最后， 累加单元 A(i, j)中的值 Q 就意味着 xy 平面上位于线$xcos\theta_j+ysin\theta_j = \rho_i$上的点有 Q 个。在$\rho\theta$平面上，细分的数目决定了这些点的共线的精确度。累加器数组在工具箱中叫做霍夫变换矩阵，简称霍夫变换。</p>
 <h2 id="MATLAB工具箱函数"><a href="#MATLAB工具箱函数" class="headerlink" title="MATLAB工具箱函数"></a>MATLAB工具箱函数</h2><h3 id="hough函数"><a href="#hough函数" class="headerlink" title="hough函数"></a>hough函数</h3><p>默认语法</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>H<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> rho<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">hough</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
@@ -475,7 +475,7 @@
 axis on<span class="token punctuation">,</span> axis normal
 
 <span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'\theta'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'\rho'</span><span class="token punctuation">)</span></code></pre>
-<p>结果:<br><img src="https://i.loli.net/2019/07/24/5d381e6cd3ce994397.jpg" alt><br>观察图可以看打到三条曲线在+45度和-45度处的交点指出:f中有两组三个共线的点。两条曲线在$(\rho,\theta)$ = (0,-90)、(-100,-90)、(0,0)、(100,0)处的交点指出:有4组位于<strong>垂直线</strong>和<strong>水平线</strong>上的公共点</p>
+<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d381e6cd3ce994397.jpg"><br>观察图可以看打到三条曲线在+45度和-45度处的交点指出:f中有两组三个共线的点。两条曲线在$(\rho,\theta)$ = (0,-90)、(-100,-90)、(0,0)、(100,0)处的交点指出:有4组位于<strong>垂直线</strong>和<strong>水平线</strong>上的公共点</p>
 <h3 id="houghpeaks函数"><a href="#houghpeaks函数" class="headerlink" title="houghpeaks函数"></a>houghpeaks函数</h3><p>寻找指定的峰值数<br>默认语法</p>
 <pre class=" language-matlab"><code class="language-matlab">peaks <span class="token operator">=</span> <span class="token function">houghpeaks</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> NumPeaks<span class="token punctuation">)</span></code></pre>
 <p>H是霍夫变换矩阵</p>
@@ -522,7 +522,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
     <span class="token function">plot</span><span class="token punctuation">(</span><span class="token function">xy</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">xy</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'LineWidth'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">end</span></code></pre>
-<p>结果:<br><img src="https://i.loli.net/2019/07/24/5d381d8d80bff63571.jpg" alt><br><img src="https://i.loli.net/2019/07/24/5d381de2778c421022.jpg" alt></p>
+<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d381d8d80bff63571.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d381de2778c421022.jpg"></p>
 
             </div>
             <hr/>
@@ -635,10 +635,10 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -672,7 +672,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -687,7 +687,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -731,7 +731,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/7.jpg" class="responsive-img" alt="圆形检测">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.2/blog_source/featureimages/7.jpg" class="responsive-img" alt="圆形检测">
                         
                         <span class="card-title">圆形检测</span>
                     </div>
@@ -761,7 +761,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -787,7 +787,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
                 <a href="/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png" class="responsive-img" alt="OpenCV入坑指南:环境搭建篇">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png" class="responsive-img" alt="OpenCV入坑指南:环境搭建篇">
                         
                         <span class="card-title">OpenCV入坑指南:环境搭建篇</span>
                     </div>
@@ -806,7 +806,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                     教程
                                 </a>
                             
@@ -983,7 +983,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1135,5 +1135,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

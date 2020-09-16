@@ -2,11 +2,10 @@
 <html lang="zh_CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="hexo大坑, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="坑一、Template render error 模板渲染错误写了一下午博文，高高兴兴地hexo g却发现报错了！INFO  Start processing
-FATAL Something&amp;#39;s wrong. Maybe you c">
+    <meta name="description" content="坑一、Template render error 模板渲染错误写了一下午博文，高高兴兴地hexo g却发现报错了！INFO  Start processing FATAL Something&amp;#39;s wrong. Maybe you c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +28,7 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -40,7 +39,7 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -115,7 +114,7 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -403,7 +402,7 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/教程/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
                                 教程
                             </a>
                         
@@ -422,7 +421,7 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        477
+                        481
                     </div>
                     
 
@@ -445,28 +444,14 @@ FATAL Something&amp;#39;s wrong. Maybe you c">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="坑一、Template-render-error-模板渲染错误"><a href="#坑一、Template-render-error-模板渲染错误" class="headerlink" title="坑一、Template render error 模板渲染错误"></a>坑一、Template render error 模板渲染错误</h2><p>写了一下午博文，高高兴兴地hexo g却发现报错了！<br><code>INFO  Start processing
-FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
-Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
- at formatNunjucksError (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:102:13)
-    at Promise.fromCallback.catch.err (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:124:34)
-    at tryCatcher (/home/kevin/blog/node_modules/bluebird/js/release/util.js:16:23)
-    at Promise._settlePromiseFromHandler (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:517:31)
-    at Promise._settlePromise (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:574:18)
-    at Promise._settlePromise0 (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:619:10)
-    at Promise._settlePromises (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:695:18)
-    at _drainQueueStep (/home/kevin/blog/node_modules/bluebird/js/release/async.js:138:12)
-    at _drainQueue (/home/kevin/blog/node_modules/bluebird/js/release/async.js:131:9)
-    at Async._drainQueues (/home/kevin/blog/node_modules/bluebird/js/release/async.js:147:5)
-    at Immediate.Async.drainQueues [as _onImmediate] (/home/kevin/blog/node_modules/bluebird/js/release/async.js:17:14)
-    at processImmediate (internal/timers.js:443:21)</code></p>
-<p>原因是nunjucks模板标签导致MD文件解析报错的问题，我试验了一下，在md文档中出现<code>双大括号</code>,<code>左大括号+#</code>,<code>左大括号+%</code>等都会报错(原谅我这么打，因为我打出来符号的话这篇博客就发不出来了)，下面是一位大神的<a href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">解决办法</a>，他提供了几种解决办法，讲的很详细，可以参考一下</p>
+                <h2 id="坑一、Template-render-error-模板渲染错误"><a href="#坑一、Template-render-error-模板渲染错误" class="headerlink" title="坑一、Template render error 模板渲染错误"></a>坑一、Template render error 模板渲染错误</h2><p>写了一下午博文，高高兴兴地hexo g却发现报错了！<br><code>INFO  Start processing FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html Nunjucks Error:  [Line 2, Column 6] unexpected token: &#125;&#125;  at formatNunjucksError (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:102:13)     at Promise.fromCallback.catch.err (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:124:34)     at tryCatcher (/home/kevin/blog/node_modules/bluebird/js/release/util.js:16:23)     at Promise._settlePromiseFromHandler (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:517:31)     at Promise._settlePromise (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:574:18)     at Promise._settlePromise0 (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:619:10)     at Promise._settlePromises (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:695:18)     at _drainQueueStep (/home/kevin/blog/node_modules/bluebird/js/release/async.js:138:12)     at _drainQueue (/home/kevin/blog/node_modules/bluebird/js/release/async.js:131:9)     at Async._drainQueues (/home/kevin/blog/node_modules/bluebird/js/release/async.js:147:5)     at Immediate.Async.drainQueues [as _onImmediate] (/home/kevin/blog/node_modules/bluebird/js/release/async.js:17:14)     at processImmediate (internal/timers.js:443:21)</code></p>
+<p>原因是nunjucks模板标签导致MD文件解析报错的问题，我试验了一下，在md文档中出现<code>双大括号</code>,<code>左大括号+#</code>,<code>左大括号+%</code>等都会报错(原谅我这么打，因为我打出来符号的话这篇博客就发不出来了)，下面是一位大神的<a target="_blank" rel="noopener" href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/">解决办法</a>，他提供了几种解决办法，讲的很详细，可以参考一下</p>
 <p>我觉得有点麻烦就没采用(说多了就是菜～),下面是我的办法:</p>
 <ol>
 <li>既然出现上面的内容就会报错，那就尽量避免出现呗…(说的都是废话)</li>
-<li>使用<code>\lbrace</code>代替<code>\{</code>,使用<code>\rbrace</code>代替<code>\}</code><br>推荐大神的解决办法，一劳永逸，以后就不用管了</li>
+<li>使用<code>\lbrace</code>代替<code>\&#123;</code>,使用<code>\rbrace</code>代替<code>\&#125;</code><br>推荐大神的解决办法，一劳永逸，以后就不用管了</li>
 </ol>
-<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/1.png" alt></p>
+<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/1.png"></p>
 <p>有可能是hexo解析的问题，我在使用markdown-preview的时候看的是正常的</p>
 
             </div>
@@ -580,10 +565,10 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -617,7 +602,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
         </p>
         
             <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                     <img alt=""
                          style="border-width:0"
                          src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
@@ -632,7 +617,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                 Creative Commons Attribution 4.0 International License
             </a> 
         
@@ -675,7 +660,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                 <a href="/2019/07/24/tu-xiang-fen-ge/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="图像分割">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="图像分割">
                         
                         <span class="card-title">图像分割</span>
                     </div>
@@ -705,7 +690,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -727,7 +712,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                 <a href="/2019/07/22/xing-tai-xue-tu-xiang-chu-li/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="形态学图像处理">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="形态学图像处理">
                         
                         <span class="card-title">形态学图像处理</span>
                     </div>
@@ -757,7 +742,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/图像处理/" target="_blank">
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
                         <span class="chip bg-color">图像处理</span>
                     </a>
                     
@@ -920,7 +905,7 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.3k</span>
+            <span class="white-color">42.9k</span>
             
 
             <br>
@@ -1072,5 +1057,10 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>
