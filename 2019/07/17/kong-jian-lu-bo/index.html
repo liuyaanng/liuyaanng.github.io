@@ -42,7 +42,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Kevin</span>
                 </a>
@@ -117,7 +117,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Kevin</div>
         <div class="logo-desc">
@@ -454,11 +454,11 @@
                 <h1 id="空间滤波基础"><a href="#空间滤波基础" class="headerlink" title="空间滤波基础"></a>空间滤波基础</h1><h2 id="滤波的原理："><a href="#滤波的原理：" class="headerlink" title="滤波的原理："></a>滤波的原理：</h2><p>空间滤波是采用滤波处理的图像增强的方法，理论基础是空间卷积和空间相关，目的是改善图片质量</p>
 <h2 id="线性空间滤波"><a href="#线性空间滤波" class="headerlink" title="线性空间滤波"></a>线性空间滤波</h2><ul>
 <li>移动滤波的模板w称为滤波器</li>
-<li>相关 与 卷积：<br>相关是指模板w按下图所示的方式进行图像数组的处理。在原理上，卷积是相同的处理过程，只不过在w通过之前先将它选旋转180度<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/16/5d2d9d9ea213761403.jpg"><br>相关与卷积操作说明<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/16/5d2d9dffdbc4911045.jpg"><br>需要注意的地方：    </li>
+<li>相关 与 卷积：<br>相关是指模板w按下图所示的方式进行图像数组的处理。在原理上，卷积是相同的处理过程，只不过在w通过之前先将它选旋转180度<br><img src="https://i.loli.net/2019/07/16/5d2d9d9ea213761403.jpg"><br>相关与卷积操作说明<br><img src="https://i.loli.net/2019/07/16/5d2d9dffdbc4911045.jpg"><br>需要注意的地方：    </li>
 </ul>
 <ol>
 <li>相关是滤波器位移的函数</li>
-<li>滤波器w与一个只包含一个1其余全是0的函数相关，得到的是旋转了180度的滤波器w，将这个函数称之为<strong>离散单位冲激</strong><br>结论: 一个函数与离散单位冲激相关，在该冲激位置产生这个函数的一个翻转版本<br>一个函数与离散单位冲激相关激卷积，得到的是在该冲激处的这个函数的拷贝，这个复制的性质称为筛选<br>这种定义推广到图像如下图所示<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e77c7afba429201.jpg"><br>为了便于表达，以公式形式总结两种形式</li>
+<li>滤波器w与一个只包含一个1其余全是0的函数相关，得到的是旋转了180度的滤波器w，将这个函数称之为<strong>离散单位冲激</strong><br>结论: 一个函数与离散单位冲激相关，在该冲激位置产生这个函数的一个翻转版本<br>一个函数与离散单位冲激相关激卷积，得到的是在该冲激处的这个函数的拷贝，这个复制的性质称为筛选<br>这种定义推广到图像如下图所示<br><img src="https://i.loli.net/2019/07/17/5d2e77c7afba429201.jpg"><br>为了便于表达，以公式形式总结两种形式</li>
 </ol>
 <ul>
 <li>大小为m×n的滤波模板w(x,y)与函数f(x,y)的相关<pre><code>   ![](https://i.loli.net/2019/07/17/5d2e78e52323950837.jpg)</code></pre>
@@ -472,7 +472,7 @@
 <pre class=" language-matlab"><code class="language-matlab">g <span class="token operator">=</span> <span class="token function">imfilter</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> w<span class="token punctuation">,</span> <span class="token string">'conv'</span><span class="token punctuation">)</span></code></pre>
 <p>或者使用<code>rot90(w, 2)</code>来将w旋转180度</p>
 <pre class=" language-matlab"><code class="language-matlab">g <span class="token operator">=</span> <span class="token function">imfilter</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token function">rot90</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<p>f是输入图像，w为滤波模板，g为滤波结果<br>其他参数如下<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e84e556ad615011.jpg"><br>使用matlab实现为</p>
+<p>f是输入图像，w为滤波模板，g为滤波结果<br>其他参数如下<br><img src="https://i.loli.net/2019/07/17/5d2e84e556ad615011.jpg"><br>使用matlab实现为</p>
 <pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'filter.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 F <span class="token operator">=</span> <span class="token function">im2double</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">imshow</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -498,7 +498,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
 g <span class="token operator">=</span> <span class="token function">imfilter</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> w<span class="token punctuation">,</span> <span class="token string">'replicate'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'replicate unit8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>这里开始读取的filter.jpg为uint8格式，故在处理之前先使用<code>im2double</code>将其转化为double类型以提高精度<br>滤波结果如下<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e8517ac67e80281.jpg"></p>
+<p>这里开始读取的filter.jpg为uint8格式，故在处理之前先使用<code>im2double</code>将其转化为double类型以提高精度<br>滤波结果如下<br><img src="https://i.loli.net/2019/07/17/5d2e8517ac67e80281.jpg"></p>
 </li>
 </ul>
 <h2 id="非线性空间滤波："><a href="#非线性空间滤波：" class="headerlink" title="非线性空间滤波："></a>非线性空间滤波：</h2><p>线性空间滤波基于计算乘积和，即线性操作，非线性空间滤波基于涉及邻域像素内的非线性操作，例如，使每个中心点的响应等于邻域内像素最大值的操作可以称为是非线性滤波操作      </p>
@@ -513,11 +513,11 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
 <li><p>可以使用fspecial实现，生成滤波器w</p>
 <pre class=" language-matlab"><code class="language-matlab">w <span class="token operator">=</span> <span class="token function">fspecial</span><span class="token punctuation">(</span><span class="token string">'type'</span><span class="token punctuation">,</span> parameters<span class="token punctuation">)</span>
 </code></pre>
-<p>  ‘type’表示滤波器的类型，’parameters’进一步定义指定的滤波器<br>  应用参数如下：<br>  <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2eba0f5055d41026.jpg"><br>  <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2ec9491164776894.jpg"></p>
+<p>  ‘type’表示滤波器的类型，’parameters’进一步定义指定的滤波器<br>  应用参数如下：<br>  <img src="https://i.loli.net/2019/07/17/5d2eba0f5055d41026.jpg"><br>  <img src="https://i.loli.net/2019/07/17/5d2ec9491164776894.jpg"></p>
 </li>
 <li><p>Laplace滤波器的实现</p>
 <ul>
-<li><p>原理：<br>图像f(x,y)的laplace算子：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2ec90e6a75162149.jpg"><br>Laplace算子增强公式：<br>$$g(x,y) = f(x,y)+c[\triangledown ^2 f(x,y)]$$<br>注意：如果模板的中心系数为正，c为1;如果为负，c为0.</p>
+<li><p>原理：<br>图像f(x,y)的laplace算子：<br><img src="https://i.loli.net/2019/07/17/5d2ec90e6a75162149.jpg"><br>Laplace算子增强公式：<br>$$g(x,y) = f(x,y)+c[\triangledown ^2 f(x,y)]$$<br>注意：如果模板的中心系数为正，c为1;如果为负，c为0.</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token function">fspecial</span><span class="token punctuation">(</span><span class="token string">'laplacian'</span><span class="token punctuation">,</span> alpha<span class="token punctuation">)</span></code></pre>
 <p>可以实现更为一般的laplace模板</p>
 </li>
@@ -525,7 +525,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
 <ul>
 <li><p>下面是用laplace滤波器增强图像的例子：<br>首先设置滤波器</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> w <span class="token operator">=</span> <span class="token function">fspecial</span><span class="token punctuation">(</span><span class="token string">'laplacian'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2ed6fcca83142276.jpg"></p>
+<p><img src="https://i.loli.net/2019/07/17/5d2ed6fcca83142276.jpg"></p>
 <p>输入的图像为unit8类，</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> g1 <span class="token operator">=</span> <span class="token function">imfilter</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> w<span class="token punctuation">,</span> <span class="token string">'replicate'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">></span><span class="token operator">></span> <span class="token function">imshow</span><span class="token punctuation">(</span>g1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -553,7 +553,7 @@ revertclass <span class="token operator">=</span> table<span class="token operat
 <p>最后用原始图像减去laplace图像来恢复失去的灰度层次(因为中心参数为负值)</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> g <span class="token operator">=</span> ff <span class="token operator">-</span> g2<span class="token punctuation">;</span>
 <span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>可以看到结果比原图象要清晰<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2ed69eaa47174206.jpg"></p>
+<p>可以看到结果比原图象要清晰<br><img src="https://i.loli.net/2019/07/17/5d2ed69eaa47174206.jpg"></p>
 </li>
 </ul>
 </li>
@@ -583,7 +583,7 @@ revertclass <span class="token operator">=</span> table<span class="token operat
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> fn <span class="token operator">=</span> <span class="token function">imnoise</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'salt &amp; pepper'</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span></code></pre>
 <p>对带噪图像进行中值滤波处理</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> gm <span class="token operator">=</span> <span class="token function">medfilt2</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span></code></pre>
-<p>注意，在这里出现了错误，==A应为二维==<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2ed759e608448713.jpg"></p>
+<p>注意，在这里出现了错误，==A应为二维==<br><img src="https://i.loli.net/2019/07/17/5d2ed759e608448713.jpg"></p>
 <p>原因:中值滤波medfilt2,输入的图像应为二维矩阵，实际输入的为imread读取的图像加上噪声，通常是三维RGB图，是三维矩阵<br>解决办法:先用rgb2gray(f)将图像转换为灰度矩阵图像</p>
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> fn2 <span class="token operator">=</span> <span class="token function">rgb2gray</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">></span><span class="token operator">></span> gm <span class="token operator">=</span> <span class="token function">medfilt2</span><span class="token punctuation">(</span>fn2<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -592,7 +592,7 @@ revertclass <span class="token operator">=</span> table<span class="token operat
 <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> gms <span class="token operator">=</span> <span class="token function">medfilt2</span><span class="token punctuation">(</span>fn2<span class="token punctuation">,</span> <span class="token string">'symmetric'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2ed7776b71a55041.jpg"></p>
+<p><img src="https://i.loli.net/2019/07/17/5d2ed7776b71a55041.jpg"></p>
 
             </div>
             <hr/>
@@ -705,10 +705,10 @@ revertclass <span class="token operator">=</span> table<span class="token operat
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -800,7 +800,7 @@ revertclass <span class="token operator">=</span> table<span class="token operat
                 <a href="/2019/07/19/pin-yu-lu-bo/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="频域滤波">
+                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="频域滤波">
                         
                         <span class="card-title">频域滤波</span>
                     </div>
@@ -852,7 +852,7 @@ revertclass <span class="token operator">=</span> table<span class="token operat
                 <a href="/2019/07/15/digital-image-processing/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="Digital Image Processing">
+                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="Digital Image Processing">
                         
                         <span class="card-title">Digital Image Processing</span>
                     </div>
@@ -1204,10 +1204,5 @@ $(function () {
     <script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script><script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":"enbale:true hitokoto:true","log":false});</script></body>
 </html>
