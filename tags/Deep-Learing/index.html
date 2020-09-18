@@ -35,7 +35,7 @@
 		<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
+            <div class="brand-logo kevin-logo">
                 <a href="/" class="waves-effect waves-light">
                     
                     <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
@@ -46,9 +46,9 @@
             
 
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
+<ul class="right menu-item">
     
-    <li class="hide-on-med-and-down">
+    <li class="hide-on-med-and-down menu-item-home">
         <a href="/" class="waves-effect waves-light">
             
             <i class="fa fa-home"></i>
@@ -57,7 +57,7 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
+    <li class="hide-on-med-and-down menu-item-tags">
         <a href="/tags" class="waves-effect waves-light">
             
             <i class="fa fa-tags"></i>
@@ -66,7 +66,7 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
+    <li class="hide-on-med-and-down menu-item-categories">
         <a href="/categories" class="waves-effect waves-light">
             
             <i class="fa fa-bookmark"></i>
@@ -75,7 +75,7 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
+    <li class="hide-on-med-and-down menu-item-archives">
         <a href="/archives" class="waves-effect waves-light">
             
             <i class="fa fa-archive"></i>
@@ -84,7 +84,7 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
+    <li class="hide-on-med-and-down menu-item-about">
         <a href="/about" class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
@@ -93,7 +93,7 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
+    <li class="hide-on-med-and-down menu-item-friends">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -102,7 +102,7 @@
         </a>
     </li>
     
-    <li>
+    <li class="menu-item-search">
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
             <i id="searchIcon" class="fa fa-search" title="Search"></i>
         </a>
@@ -192,6 +192,7 @@
     </ul>
 </div>
 
+
         </div>
 
         
@@ -269,18 +270,15 @@
                 
                     <p id="hitokoto">正在加载一言...</p>
                 
+
             </div>
-						<div class="clock">
-							<!--人体时钟背景透明-->
-<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-						</div>
+
 					</div>
     </div>
 </div>
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-//$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-$('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4YcuJwU71L8.jpg)');
+$('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
 
 
@@ -408,20 +406,20 @@ $('.bg-cover').css('background-image', 'url(https://i.loli.net/2019/08/03/XxdF4Y
                 </a>
                 
                 
-                <a href="/tags/Deep-Learing/" title="Deep Learing: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="Deep Learing" style="background-color: #A3E4D7;">Deep Learing
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Deep-Learning/" title="Deep Learning: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Deep Learning" style="background-color: #F9E79F;">Deep Learning
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Deep-Learing/" title="Deep Learing: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Deep Learing" style="background-color: #A3E4D7;">Deep Learing
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -834,21 +832,21 @@ $(function () {
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 		
 
-		<!-- Aplayer -->
-		<div
-			class="aplayer"
-			data-id="2909081825"
-			data-server="netease"
-			data-type="playlist"
-			data-fixed="true"
-			data-mini="true"
-			data-autoplay="false"
-			data-order="random"
-			data-volume="0.5"
-			data-theme="#1da496"
-			data-preload="auto"
-		></div>
-
+		<!-- <!&#45;&#45; Aplayer &#45;&#45;> -->
+		<!-- <div -->
+		<!-- 	class="aplayer" -->
+		<!-- 	data&#45;id="2909081825" -->
+		<!-- 	data&#45;server="netease" -->
+		<!-- 	data&#45;type="playlist" -->
+		<!-- 	data&#45;fixed="true" -->
+		<!-- 	data&#45;mini="true" -->
+		<!-- 	data&#45;autoplay="false" -->
+		<!-- 	data&#45;order="random" -->
+		<!-- 	data&#45;volume="0.5" -->
+		<!-- 	data&#45;theme="#1da496" -->
+		<!-- 	data&#45;preload="auto" -->
+		<!-- ></div> -->
+		<!--  -->
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
@@ -868,7 +866,7 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<script src="/live2d-widget/autoload.js"></script>
 		<!--动态线条背景-->
 		<script
 			type="text/javascript"
@@ -883,5 +881,5 @@ $(function () {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":160,"height":320},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":{"enbale":true,"hitokoto":true},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"Pio"},"display":{"position":"left","width":160,"height":320},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":{"enbale":true,"hitokoto":true},"log":false});</script></body>
 </html>
