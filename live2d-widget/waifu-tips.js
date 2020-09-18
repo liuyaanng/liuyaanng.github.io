@@ -7,7 +7,7 @@ function loadWidget(config) {
 	let { waifuPath, apiPath, cdnPath } = config;
 	let useCDN = false, modelList;
 	if (typeof cdnPath === "string") {
-		useCDN = false;
+		useCDN = true;
 		if (!cdnPath.endsWith("/")) cdnPath += "/";
 	} else if (typeof apiPath === "string") {
 		if (!apiPath.endsWith("/")) apiPath += "/";
@@ -162,8 +162,8 @@ function loadWidget(config) {
 			modelTexturesId = localStorage.getItem("modelTexturesId");
 		if (modelId === null) {
 			// 首次访问加载 指定模型 的 指定材质
-			modelId = 1; // 模型 ID
-			modelTexturesId = 53; // 材质 ID
+			modelId = 3; // 模型 ID
+			modelTexturesId = 33; // 材质 ID
 		}
 		loadModel(modelId, modelTexturesId);
 		fetch(waifuPath)
@@ -216,7 +216,7 @@ function loadWidget(config) {
 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
 		} else {
 			loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
-			console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
+			console.log(`Live2D 模型  nihao ${modelId}-${modelTexturesId} 加载完成`);
 		}
 	}
 
@@ -227,14 +227,14 @@ function loadWidget(config) {
 			if (!modelList) await loadModelList();
 			const target = randomSelection(modelList.models[modelId]);
 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
-			showMessage("主人我的新衣服好看嘛？", 4000, 10);
+			showMessage("我的新衣服好看嘛zhuren？", 4000, 10);
 		} else {
 			// 可选 "rand"(随机), "switch"(顺序)
 			fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
 				.then(response => response.json())
 				.then(result => {
 					if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
-					else loadModel(modelId, result.textures.id, "nihao我的新衣服好看嘛？");
+					else loadModel(modelId, result.textures.id, "我的新衣服好看嘛？");
 				});
 		}
 	}
