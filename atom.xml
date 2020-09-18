@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-09-16T01:44:19.778Z</updated>
+  <updated>2020-09-18T15:04:43.256Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>魔改hexo博客</title>
+    <link href="https://liuyaanng.github.io/2020/09/18/mo-gai-hexo-bo-ke/"/>
+    <id>https://liuyaanng.github.io/2020/09/18/mo-gai-hexo-bo-ke/</id>
+    <published>2020-09-18T13:12:34.000Z</published>
+    <updated>2020-09-18T15:04:43.256Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;魔改hexo博客&quot;&gt;&lt;a href=&quot;#魔改hexo博客&quot; class=&quot;headerlink&quot; title=&quot;魔改hexo博客&quot;&gt;&lt;/a&gt;魔改hexo博客&lt;/h2&gt;&lt;p&gt;本次魔改主要包括以下几个方面&lt;/p&gt;
+&lt;h3 id=&quot;1-添加一言插件&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://liuyaanng.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Neovim</title>
@@ -495,34 +520,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Manjaro i3wm 高效率环境配置篇(持续更新)</title>
-    <link href="https://liuyaanng.github.io/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/"/>
-    <id>https://liuyaanng.github.io/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</id>
-    <published>2019-08-24T07:45:27.000Z</published>
-    <updated>2020-02-24T10:49:41.359Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Manjaro" scheme="https://liuyaanng.github.io/tags/Manjaro/"/>
-    
-      <category term="i3wm" scheme="https://liuyaanng.github.io/tags/i3wm/"/>
     
   </entry>
   

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>魔改hexo博客</title>
+      <link href="/2020/09/18/mo-gai-hexo-bo-ke/"/>
+      <url>/2020/09/18/mo-gai-hexo-bo-ke/</url>
+      
+        <content type="html"><![CDATA[<h2 id="魔改hexo博客"><a href="#魔改hexo博客" class="headerlink" title="魔改hexo博客"></a>魔改hexo博客</h2><p>本次魔改主要包括以下几个方面</p><h3 id="1-添加一言插件"><a href="#1-添加一言插件" class="headerlink" title="1. 添加一言插件"></a>1. 添加一言插件</h3><h3 id="2-添加动态线条背景"><a href="#2-添加动态线条背景" class="headerlink" title="2. 添加动态线条背景"></a>2. 添加动态线条背景</h3><h3 id="3-添加Dplayer视频播放器"><a href="#3-添加Dplayer视频播放器" class="headerlink" title="3. 添加Dplayer视频播放器"></a>3. 添加Dplayer视频播放器</h3><h3 id="4-添加Aplayer播放器"><a href="#4-添加Aplayer播放器" class="headerlink" title="4. 添加Aplayer播放器"></a>4. 添加Aplayer播放器</h3><h3 id="5-添加看板娘（live2d-widget插件）"><a href="#5-添加看板娘（live2d-widget插件）" class="headerlink" title="5. 添加看板娘（live2d-widget插件）"></a>5. 添加看板娘（live2d-widget插件）</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Neovim</title>
       <link href="/2020/09/16/neovim/"/>
       <url>/2020/09/16/neovim/</url>
