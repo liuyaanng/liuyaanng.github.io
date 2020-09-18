@@ -527,7 +527,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/liuyaanng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/liuyaanng" class="tooltipped github-link" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
 
@@ -539,15 +539,16 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1757465118" class="tooltipped" data-tooltip="QQ联系我: 1757465118" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1757465118" class="tooltipped tencent-qq" data-tooltip="QQ联系我: 1757465118" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
     </a>
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped rss-feed" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
+
 </div>
     </div>
 </footer>
@@ -630,7 +631,7 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script> <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
+<div id="backTop" class="top-scroll back-to-top">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
     </a>

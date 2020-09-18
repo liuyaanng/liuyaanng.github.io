@@ -587,7 +587,7 @@ MatLab和">
     }
 </style>
 
-<div id="reward">
+<div id="reward" class="reward-content">
     <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
 
     <!-- Modal Structure -->
@@ -618,6 +618,7 @@ MatLab和">
         $('.tabs').tabs();
     });
 </script>
+
             
 
             <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
@@ -680,7 +681,7 @@ MatLab和">
 <link rel="stylesheet" href="/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
-    <div id="gitalk-container" class="card-content"></div>
+    <div id="gitalk-container" class="card-content gittalk-content"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/gitalk/gitalk.min.js"></script>
@@ -697,6 +698,7 @@ MatLab和">
 
     gitalk.render('gitalk-container');
 </script>
+
     
 
     
@@ -976,7 +978,7 @@ OpenCV椭圆绘制ellip
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/liuyaanng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/liuyaanng" class="tooltipped github-link" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
 
@@ -988,15 +990,16 @@ OpenCV椭圆绘制ellip
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1757465118" class="tooltipped" data-tooltip="QQ联系我: 1757465118" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1757465118" class="tooltipped tencent-qq" data-tooltip="QQ联系我: 1757465118" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
     </a>
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped rss-feed" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
+
 </div>
     </div>
 </footer>
@@ -1079,7 +1082,7 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script> <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
+<div id="backTop" class="top-scroll back-to-top">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
     </a>
