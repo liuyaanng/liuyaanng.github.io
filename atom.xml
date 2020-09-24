@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuyaanng.github.io/"/>
-  <updated>2020-09-18T15:04:43.256Z</updated>
+  <updated>2020-09-24T03:30:59.310Z</updated>
   <id>https://liuyaanng.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>可爱的壁纸</title>
+    <link href="https://liuyaanng.github.io/2020/09/23/ke-ai-de-bi-zhi/"/>
+    <id>https://liuyaanng.github.io/2020/09/23/ke-ai-de-bi-zhi/</id>
+    <published>2020-09-23T13:57:41.000Z</published>
+    <updated>2020-09-24T03:30:59.310Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在寻找壁纸api的时候突然发现了一套灰常灰常可爱的壁纸，于是想把他们都放到我的壁纸界面上，无奈api一次请求的图片一样，所以就想着把这些图片搞下来，存到我的cdn加速中。&lt;/p&gt;
+&lt;h3 id=&quot;得到图片&quot;&gt;&lt;a href=&quot;#得到图片&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>魔改hexo博客</title>
@@ -157,7 +180,7 @@
     <link href="https://liuyaanng.github.io/2020/04/22/clsw/"/>
     <id>https://liuyaanng.github.io/2020/04/22/clsw/</id>
     <published>2020-04-22T07:32:13.000Z</published>
-    <updated>2020-09-16T10:00:07.511Z</updated>
+    <updated>2020-09-23T15:01:07.023Z</updated>
     
     <summary type="html">
     
@@ -506,20 +529,6 @@
       <category term="Python" scheme="https://liuyaanng.github.io/tags/Python/"/>
     
       <category term="Anaconda3" scheme="https://liuyaanng.github.io/tags/Anaconda3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>My Vim Config</title>
-    <link href="https://liuyaanng.github.io/2019/09/12/my-vim-config/"/>
-    <id>https://liuyaanng.github.io/2019/09/12/my-vim-config/</id>
-    <published>2019-09-11T19:05:29.000Z</published>
-    <updated>2020-02-24T10:49:41.378Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
