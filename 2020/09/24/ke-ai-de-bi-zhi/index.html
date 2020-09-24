@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="可爱的壁纸, Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
     <meta name="description" content="在寻找壁纸api的时候突然发现了一套灰常灰常可爱的壁纸，于是想把他们都放到我的壁纸界面上，无奈api一次请求的图片一样，所以就想着把这些图片搞下来，存到我的cdn加速中。
-得到图片懒癌晚期当然是不能一张一张的下载了，于是就有了下面
-impo">
+先来几张图：
+ 
+得到图片懒癌晚期当然是不能一张一张的下载了，于是就">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -95,6 +96,13 @@ impo">
         </a>
     </li>
     
+    <li class="hide-on-med-and-down menu-item-mc">
+        <a href="/mc" class="waves-effect waves-light">
+            
+            <span>Mc</span>
+        </a>
+    </li>
+    
     <li class="hide-on-med-and-down menu-item-friends">
         <a href="/friends" class="waves-effect waves-light">
             
@@ -171,6 +179,15 @@ impo">
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/mc" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Mc
             </a>
         </li>
         
@@ -274,7 +291,7 @@ impo">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://api.ixiaowai.cn/mcapi/mcapi.php/?random')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -402,21 +419,21 @@ impo">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-23
+                    2020-09-24
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        721
+                        712
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        3 Min
+                        2 Min
                     </div>
                     
                 
@@ -433,6 +450,8 @@ impo">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>在寻找壁纸api的时候突然发现了一套灰常灰常可爱的壁纸，于是想把他们都放到我的壁纸界面上，无奈api一次请求的图片一样，所以就想着把这些图片搞下来，存到我的cdn加速中。</p>
+<p>先来几张图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/1.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/13.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/29.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/65.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg"> </p>
 <h3 id="得到图片"><a href="#得到图片" class="headerlink" title="得到图片"></a>得到图片</h3><p>懒癌晚期当然是不能一张一张的下载了，于是就有了下面</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
 <span class="token keyword">import</span> time
@@ -478,8 +497,7 @@ index <span class="token operator">=</span> len<span class="token punctuation">(
 <span class="token keyword">except</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'出现异常'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>运行如下，没想到这么多张</p>
-<p>https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="<img src=""> </p>
+<p>运行如下，没想到这么多张<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/1.jpg"> </p>
 <h2 id="2-改名字"><a href="#2-改名字" class="headerlink" title="2. 改名字"></a>2. 改名字</h2><p>由于原图片的名字是一串神秘代码，这样看着太难受了，于是我决定给他们改名字，正好最近vim用的很顺手，接下来就是vim的骚操作了。</p>
 <p>操作之前先讲讲vim为什么可以这么做: 可以在 Vim 内部调用外部程序(如shell命令)，还可以把缓冲区的内容作为标准输入传递给外部命令，或是把外部命令的标准输出导入到Vim缓冲区。</p>
 <h3 id="1-在vim内部执行shell命令"><a href="#1-在vim内部执行shell命令" class="headerlink" title="1. 在vim内部执行shell命令"></a>1. 在vim内部执行shell命令</h3><p>在Vim的命令行模式中，在命令前加一个!前缀 (参见:h :! ) 就可以调用外部的shell程序。<br>例如：在vim中，想要查看当前目录的所有文件,在命令行模式下使用<code>:!ls</code></p>
@@ -488,9 +506,12 @@ index <span class="token operator">=</span> len<span class="token punctuation">(
 <h3 id="2-将Vim-缓冲区内容作为标准输入或标准输出"><a href="#2-将Vim-缓冲区内容作为标准输入或标准输出" class="headerlink" title="2. 将Vim 缓冲区内容作为标准输入或标准输出"></a>2. 将Vim 缓冲区内容作为标准输入或标准输出</h3><p>在使用<code>!&#123;cmd&#125;</code>时，vim会回显command的输出，可以用<code>:read !&#123;cmd&#125;</code>把command的输出重定向到当前vim的缓冲区中,或使用<code>:write !&#123;cmd&#125;</code>把当前vim缓冲区的内容作为command的标准输入.</p>
 <p>例如：执行<code>:write !sh</code>则会在shell中逐行执行当前vim缓冲区的内容</p>
 <h3 id="3-改名字"><a href="#3-改名字" class="headerlink" title="3. 改名字"></a>3. 改名字</h3><p>我想把名字改成（1.jpg，2.jpg）的形式，所以需要用到递增</p>
-<p>首先选中需要修改的部分，接下来执行两条指令:</p>
+<ul>
+<li>首先选中需要修改的部分，接下来执行两条指令:</li>
+</ul>
 <pre class=" language-shell"><code class="language-shell">:'<,>'s/.*/mv & aaa.jpg
 :'<,>'s/aaa/\=line(".")-line("'<")+1</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/2.gif"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/3.gif"></p>
 <p>具体命令详解：</p>
 <pre class=" language-vim"><code class="language-vim"><span class="token string">'&lt;,'</span><span class="token operator">></span>        我们所选中的区域 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token string">'&lt;，:help '</span><span class="token operator">></span> <span class="token punctuation">)</span>
 s            在选中的区域中进行替换 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token punctuation">:</span>s <span class="token punctuation">)</span>
@@ -499,6 +520,10 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
 <span class="token function">line</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span>    当前光标所在行的行号 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token function">line</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
 <span class="token function">line</span><span class="token punctuation">(</span><span class="token string">"'&lt;"</span><span class="token punctuation">)</span>   我们所选区域中第一行的行号 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token function">line</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> </code></pre>
 <p><code>&#39;&lt;</code>和<code>&#39;&gt;</code>是我们使用了”v”，”V”命令选中一个visual区域后，VIM设置的标记，分别用来标识visual区域的开始和结束。</p>
+<ul>
+<li>接着执行<code>:wirte !sh</code>即可</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/4.gif"> </p>
 
             </div>
             <hr/>
@@ -660,7 +685,7 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
                   property="dct:title" rel="dct:type">
                     《可爱的壁纸》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/23/ke-ai-de-bi-zhi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/24/ke-ai-de-bi-zhi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 留洋
             </a> is licensed under a
@@ -701,7 +726,7 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
         repo: 'liuyaanng.github.io',
         owner: 'liuyaanng',
         admin: "liuyaanng",
-        id: '2020-09-23T21-57-41',
+        id: '2020-09-24T14-30-41',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -728,11 +753,10 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
                 <i class="fa fa-dot-circle-o"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2020/09/23/ke-ai-de-bi-zhi/">
+                <a href="/2020/09/24/ke-ai-de-bi-zhi/">
                     <div class="card-image">
                         
-                        
-                        <img src="https://api.ixiaowai.cn/mcapi/mcapi.php/?random" class="responsive-img" alt="可爱的壁纸">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg" class="responsive-img" alt="可爱的壁纸">
                         
                         <span class="card-title">可爱的壁纸</span>
                     </div>
@@ -740,14 +764,12 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在寻找壁纸api的时候突然发现了一套灰常灰常可爱的壁纸，于是想把他们都放到我的壁纸界面上，无奈api一次请求的图片一样，所以就想着把这些图片搞下来，存到我的cdn加速中。
-得到图片懒癌晚期当然是不能一张一张的下载了，于是就有了下面
-impo
+                            mc酱
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-24
                             </span>
                         <span class="publish-author">
                             
