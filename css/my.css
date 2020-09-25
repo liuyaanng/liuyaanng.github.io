@@ -1,1 +1,27 @@
 /* Here is your custom css styles. */
+
+/* body.dark { */
+/* 	background: #242933; */
+/* } */
+body.dark {
+	background: #2f3742;
+}
+body.dark .aplayer {
+	background: #2f3742 !important;
+}
+body.dark img {
+	filter: brightness(50%);
+}
+
+/* .main_dark { */
+/* 	background: #2f3742; */
+/* } */
+
+.articles_dark div {
+	background-color: #242933;
+	color: white;
+}
+.content_dark {
+	background: #242933;
+	color: white;
+}

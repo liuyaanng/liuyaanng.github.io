@@ -404,7 +404,7 @@ calib3d">
     <div id="main-content" class="col s12 m12 l9">
         <!-- 文章内容详情 -->
 <div id="artDetail">
-    <div class="card">
+    <div class="card" id="article-content">
         <div class="card-content article-info">
             <div class="row tag-cate">
                 <div class="col s7">
@@ -1259,6 +1259,77 @@ $(function () {
 			count="300"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		<script>
+			// 主页置顶展示卡片
+			var card = document.getElementById("card");
+			//主页文章卡片
+			var articles = document.getElementById("articles");
+			//文章详细内容
+			var article_content = document.getElementById("article-content");
+			// 壁纸
+			var galleries = document.getElementById("galleries");
+			// 标签云
+			var tag_cloud = document.getElementById("tag-cloud");
+			//标签词云
+			var tag_wordcloud = document.getElementById("tag-wordcloud");
+			//分类云
+			var category_clouds = document.getElementById("category-clouds");
+			//分类图
+			var category_radars = document.getElementById("category-radars");
+			//活动日历
+			var post_calendar = document.getElementById("post-calendar");
+			//关于
+			var aboutme = document.getElementById("aboutme-content");
+			// console.log(card);
+			// console.log(articles);
+			// console.log(main_content);
+
+			function add_dark_class(element, value) {
+				if (!element) {
+					return;
+				} else {
+					element.classList.add(value);
+				}
+			}
+			if (localStorage.getItem("dark") === "1") {
+				document.body.classList.add("dark");
+				add_dark_class(card, "content_dark");
+				add_dark_class(articles, "articles_dark");
+				add_dark_class(article_content, "content_dark");
+				add_dark_class(galleries, "content_dark");
+				add_dark_class(tag_cloud, "content_dark");
+				add_dark_class(tag_wordcloud, "content_dark");
+				add_dark_class(category_clouds, "content_dark");
+				add_dark_class(category_radars, "content_dark");
+				add_dark_class(post_calendar, "content_dark");
+				add_dark_class(aboutme, "content_dark");
+			} else if (new Date().getHours() >= 18 || new Date().getHours() < 7) {
+				document.body.className = "dark";
+				add_dark_class(card, "content_dark");
+				add_dark_class(articles, "articles_dark");
+				add_dark_class(article_content, "content_dark");
+				add_dark_class(galleries, "content_dark");
+				add_dark_class(tag_cloud, "content_dark");
+				add_dark_class(tag_wordcloud, "content_dark");
+				add_dark_class(category_clouds, "content_dark");
+				add_dark_class(category_radars, "content_dark");
+				add_dark_class(post_calendar, "content_dark");
+				add_dark_class(aboutme, "content_dark");
+				// articles.classList.add("articles_dark");
+			} else if (matchMedia("(prefers-color-scheme: dark)").matches) {
+				document.body.classList.add("dark");
+				add_dark_class(card, "content_dark");
+				add_dark_class(articles, "articles_dark");
+				add_dark_class(article_content, "content_dark");
+				add_dark_class(galleries, "content_dark");
+				add_dark_class(tag_cloud, "content_dark");
+				add_dark_class(tag_wordcloud, "content_dark");
+				add_dark_class(category_clouds, "content_dark");
+				add_dark_class(category_radars, "content_dark");
+				add_dark_class(post_calendar, "content_dark");
+				add_dark_class(aboutme, "content_dark");
+			}
+		</script>
 	<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
