@@ -17,6 +17,15 @@ body.night img {
 /* 	background: #2f3742; */
 /* } */
 
+body {
+	--duration: 0.5s;
+	--timing: ease;
+
+	color: var(--color);
+	background-color: var(--background-color);
+
+	transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+}
 body.night .card {
 	--background: #242933;
 	--color: white;
@@ -31,7 +40,7 @@ body.night .card {
 #xm {
 	cursor: pointer;
 	position: fixed;
-	bottom: 0;
+	bottom: 50%;
 	left: 0;
 	z-index: 999;
 	font-size: 0;
@@ -43,14 +52,4 @@ body.night .card {
 }
 #xm img {
 	width: 50px;
-}
-
-body {
-	--duration: 1s;
-	--timing: ease;
-
-	color: var(--color);
-	background-color: var(--background-color);
-
-	transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }
