@@ -24,12 +24,13 @@ Installation guide1. Boot the live environmentThe live environment can be booted
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -459,20 +460,20 @@ Installation guide1. Boot the live environmentThe live environment can be booted
             <div id="articleContent">
                 <h2 id="Arch-linux-i3"><a href="#Arch-linux-i3" class="headerlink" title="Arch linux + i3"></a>Arch linux + i3</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/img.jpg" alt="arch+i3"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/main.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/albert.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/music.png"> </p>
 <h2 id="Installation-guide"><a href="#Installation-guide" class="headerlink" title="Installation guide"></a>Installation guide</h2><h3 id="1-Boot-the-live-environment"><a href="#1-Boot-the-live-environment" class="headerlink" title="1. Boot the live environment"></a>1. Boot the live environment</h3><p>The live environment can be booted from a USB flash device, an optical disc or a network with PXE. </p>
-<h3 id="2-Connect-the-Internet"><a href="#2-Connect-the-Internet" class="headerlink" title="2. Connect the Internet"></a>2. Connect the Internet</h3><pre class=" language-bash"><code class="language-bash">wifi-menu</code></pre>
+<h3 id="2-Connect-the-Internet"><a href="#2-Connect-the-Internet" class="headerlink" title="2. Connect the Internet"></a>2. Connect the Internet</h3><pre><code class="bash">wifi-menu</code></pre>
 <p>Use <code>ping www.archlinux.org</code> to verify the connection.</p>
 <h3 id="3-Update-the-system-clock"><a href="#3-Update-the-system-clock" class="headerlink" title="3. Update the system clock"></a>3. Update the system clock</h3><p>Use <code>tiledatectl</code> to ensure the system colck is accurate</p>
-<pre class=" language-bash"><code class="language-bash">timedatectl set-ntp <span class="token boolean">true</span></code></pre>
+<pre><code class="bash">timedatectl set-ntp true</code></pre>
 <p>To check the service status, use <code>timedatectl status</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/1.png" alt="timedate"> </p>
 <h3 id="4-Partition-the-disks"><a href="#4-Partition-the-disks" class="headerlink" title="4. Partition the disks"></a>4. Partition the disks</h3><p>When recognized by the live system, disks are assigned to a block device such as <code>/dev/sda</code> or <code>/dev/nvme0n1</code> . To identify these devices, use <code>lsblk</code> or <code>fdisk</code> .</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">fdisk</span> -l</code></pre>
+<pre><code class="bash">fdisk -l</code></pre>
 <p>Use <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Fdisk">fdisk</a> or <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Parted">parted</a> to modify partition tables. </p>
 <p>for example: </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># parted /dev/sda</span>
-<span class="token punctuation">(</span>parted<span class="token punctuation">)</span> mklabel
+<pre><code class="bash"># parted /dev/sda
+(parted) mklabel
 New disk label type? gpt
-<span class="token punctuation">(</span>parted<span class="token punctuation">)</span> <span class="token keyword">exit</span></code></pre>
+(parted) exit</code></pre>
 <p>Use <code>cfdisk</code> to create partition.    </p>
 <p>It should include <strong>EFI</strong> , <strong>/</strong> (root), <strong>/home</strong> , <strong>/swap</strong> .</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/2.png" alt="Disks"> </p>
@@ -480,90 +481,90 @@ New disk label type? gpt
 <ul>
 <li>EFI partition</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">mkfs.vfat /dev/sda2</code></pre>
+<pre><code class="bash">mkfs.vfat /dev/sda2</code></pre>
 <ul>
 <li>root and home partition</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">mkfs.ext4 /dev/sda3
+<pre><code class="bash">mkfs.ext4 /dev/sda3
 mkfs.ext4 /dev/sda4</code></pre>
 <ul>
 <li>swap partition</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">mkswap -f /dev/sda5
+<pre><code class="bash">mkswap -f /dev/sda5
 swapon /dev/swap</code></pre>
 <h3 id="6-Mount-the-file-systems"><a href="#6-Mount-the-file-systems" class="headerlink" title="6. Mount the file systems"></a>6. Mount the file systems</h3><p>Pay attention to the <strong>order</strong> of mounting partitions!</p>
 <ul>
 <li>mount the file system on the root partition to <code>/mnt</code></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">mount</span> /dev/sda3 /mnt</code></pre>
+<pre><code class="bash">mount /dev/sda3 /mnt</code></pre>
 <ul>
 <li>create <strong>home</strong> folder in <code>/mnt</code> folder and mount the file system on the home partition to <code>/mnt/home</code></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> /mnt/home
-<span class="token function">mount</span> /dev/sda4 /mnt/home</code></pre>
+<pre><code class="bash">mkdir /mnt/home
+mount /dev/sda4 /mnt/home</code></pre>
 <ul>
 <li>create <strong>/mnt/boot/EFI</strong> folder and mount the file system on the EFI partition to <code>/mnt/boot/EFI</code></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> /mnt/boot
-<span class="token function">mkdir</span> /mnt/boot/EFI
-<span class="token function">mount</span> /dev/sda2 /mnt/boot/EFI</code></pre>
-<h3 id="7-Select-the-mirrors"><a href="#7-Select-the-mirrors" class="headerlink" title="7. Select the mirrors"></a>7. Select the mirrors</h3><pre class=" language-bash"><code class="language-bash">vim /etc/pacman.d/mirrorlist</code></pre>
+<pre><code class="bash">mkdir /mnt/boot
+mkdir /mnt/boot/EFI
+mount /dev/sda2 /mnt/boot/EFI</code></pre>
+<h3 id="7-Select-the-mirrors"><a href="#7-Select-the-mirrors" class="headerlink" title="7. Select the mirrors"></a>7. Select the mirrors</h3><pre><code class="bash">vim /etc/pacman.d/mirrorlist</code></pre>
 <p>Paste the China mirrors in the beginning</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/3.png" alt="mirrorlist"> </p>
-<h3 id="8-Install-essential-packages"><a href="#8-Install-essential-packages" class="headerlink" title="8. Install essential packages"></a>8. Install essential packages</h3><pre class=" language-bash"><code class="language-bash">pacstrap /mnt base linux linux-firmware</code></pre>
-<h3 id="9-Generate-an-fstab-file"><a href="#9-Generate-an-fstab-file" class="headerlink" title="9. Generate an fstab file"></a>9. Generate an <strong>fstab</strong> file</h3><pre class=" language-bash"><code class="language-bash">genfstab -U /mnt <span class="token operator">>></span> /mnt/etc/fstab</code></pre>
+<h3 id="8-Install-essential-packages"><a href="#8-Install-essential-packages" class="headerlink" title="8. Install essential packages"></a>8. Install essential packages</h3><pre><code class="bash">pacstrap /mnt base linux linux-firmware</code></pre>
+<h3 id="9-Generate-an-fstab-file"><a href="#9-Generate-an-fstab-file" class="headerlink" title="9. Generate an fstab file"></a>9. Generate an <strong>fstab</strong> file</h3><pre><code class="bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></pre>
 <p>Check the resulting <code>/mnt/etc/fstab</code> file, and edit it in case of errors.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> /mnt/etc/fstab</code></pre>
+<pre><code class="bash">cat /mnt/etc/fstab</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/4.png" alt="fstab"> </p>
-<h3 id="10-Change-root-into-the-new-system"><a href="#10-Change-root-into-the-new-system" class="headerlink" title="10. Change root into the new system"></a>10. Change root into the new system</h3><pre class=" language-bash"><code class="language-bash">arch-chroot /mnt</code></pre>
-<h3 id="11-Time-zone"><a href="#11-Time-zone" class="headerlink" title="11. Time zone"></a>11. Time zone</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc.localtime
+<h3 id="10-Change-root-into-the-new-system"><a href="#10-Change-root-into-the-new-system" class="headerlink" title="10. Change root into the new system"></a>10. Change root into the new system</h3><pre><code class="bash">arch-chroot /mnt</code></pre>
+<h3 id="11-Time-zone"><a href="#11-Time-zone" class="headerlink" title="11. Time zone"></a>11. Time zone</h3><pre><code class="bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc.localtime
 hwclock --systohc</code></pre>
 <h3 id="12-Localozation-Language"><a href="#12-Localozation-Language" class="headerlink" title="12. Localozation(Language)"></a>12. Localozation(Language)</h3><ul>
 <li>Uncomment <code>en_US.UTF-8 UTF-8</code> and others needed locals in <code>/etc/locale.gen</code> , and generate them with:</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">locale-gen</code></pre>
+<pre><code class="bash">locale-gen</code></pre>
 <ul>
 <li>Create the <code>locale.conf</code> file, and set <code>LANG</code> variable accordingly:</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">vim /etc/locale.conf
-LANG<span class="token operator">=</span>en_US.UTF-8</code></pre>
-<h3 id="13-Initramfs"><a href="#13-Initramfs" class="headerlink" title="13. Initramfs"></a>13. Initramfs</h3><pre class=" language-bash"><code class="language-bash">mkinitcpio -P</code></pre>
-<h3 id="14-Root-password"><a href="#14-Root-password" class="headerlink" title="14. Root password"></a>14. Root password</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">passwd</span> root</code></pre>
+<pre><code class="bash">vim /etc/locale.conf
+LANG=en_US.UTF-8</code></pre>
+<h3 id="13-Initramfs"><a href="#13-Initramfs" class="headerlink" title="13. Initramfs"></a>13. Initramfs</h3><pre><code class="bash">mkinitcpio -P</code></pre>
+<h3 id="14-Root-password"><a href="#14-Root-password" class="headerlink" title="14. Root password"></a>14. Root password</h3><pre><code class="bash">passwd root</code></pre>
 <h3 id="15-Network-configuration"><a href="#15-Network-configuration" class="headerlink" title="15. Network configuration"></a>15. <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Network_configuration">Network configuration</a></h3><ul>
 <li>Create the <strong>hostname</strong> file</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">vim /etc/hostname</code></pre>
+<pre><code class="bash">vim /etc/hostname</code></pre>
 <p>Enter your hostname in this file.</p>
 <ul>
 <li>Add matching entries to <strong>hosts</strong></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">vim /etc/hosts</code></pre>
+<pre><code class="bash">vim /etc/hosts</code></pre>
 <pre><code>127.0.0.1    localhost
 ::1          localhost
 127.0.0.1    yourhostname.localdomain    yourhostname</code></pre>
 <ul>
 <li>Install some software to ensure you can connect the Internet after reboot system.</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">pacman -S iw wpa_supplicant dialog networkmanager</code></pre>
+<pre><code class="bash">pacman -S iw wpa_supplicant dialog networkmanager</code></pre>
 <p><a href="#nm">Detailed configuration</a> </p>
 <h3 id="16-Microcode"><a href="#16-Microcode" class="headerlink" title="16. Microcode"></a>16. <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Microcode">Microcode</a></h3><p>My computer is <code>Intel</code> processors.</p>
-<pre class=" language-bash"><code class="language-bash">pacman -S intel-ucode</code></pre>
+<pre><code class="bash">pacman -S intel-ucode</code></pre>
 <h3 id="17-Boot-loader"><a href="#17-Boot-loader" class="headerlink" title="17. Boot loader"></a>17. <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader">Boot loader</a></h3><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/GRUB"><strong>GRUB</strong></a> </p>
-<pre class=" language-bash"><code class="language-bash">pacman -S grub efibootmgr
-grub-install --target<span class="token operator">=</span>x86_64-efi --efi-directory<span class="token operator">=</span>/boot/EFI -bootloader-id<span class="token operator">=</span>Archlinux
+<pre><code class="bash">pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI -bootloader-id=Archlinux
 grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
 <p>If you can see some <code>img</code> file generated, it means the grub boot loader file are successful creatted.</p>
-<h3 id="18-Reboot"><a href="#18-Reboot" class="headerlink" title="18. Reboot"></a>18. Reboot</h3><pre class=" language-bash"><code class="language-bash"><span class="token keyword">exit</span>
-<span class="token function">umount</span> -R /mnt
-<span class="token function">reboot</span></code></pre>
+<h3 id="18-Reboot"><a href="#18-Reboot" class="headerlink" title="18. Reboot"></a>18. Reboot</h3><pre><code class="bash">exit
+umount -R /mnt
+reboot</code></pre>
 <p>Use <code>uname -a</code> to view the Version of Arch linux.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/5.png" alt="Arch_linux Version"> </p>
-<h2 id="My-config-recommendations"><a href="#My-config-recommendations" class="headerlink" title="My config recommendations"></a>My config recommendations</h2><h3 id="1-Add-users"><a href="#1-Add-users" class="headerlink" title="1. Add users"></a>1. Add users</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">useradd</span> -s -G wheel -s /bin/bash username</code></pre>
+<h2 id="My-config-recommendations"><a href="#My-config-recommendations" class="headerlink" title="My config recommendations"></a>My config recommendations</h2><h3 id="1-Add-users"><a href="#1-Add-users" class="headerlink" title="1. Add users"></a>1. Add users</h3><pre><code class="bash">useradd -s -G wheel -s /bin/bash username</code></pre>
 <p>To allow user to gain full root privileges when he precdeds a command with <code>sudo</code> , add the following line to <code>/etc/sudoers</code> .</p>
-<pre class=" language-bash"><code class="language-bash">USER_NAME ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span> ALL</code></pre>
+<pre><code class="bash">USER_NAME ALL=(ALL) ALL</code></pre>
 <p><code>su username</code> to switch users.</p>
 <h3 id="2-NetworkManager"><a href="#2-NetworkManager" class="headerlink" title="2. NetworkManager "></a>2. <a id = "nm"><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/NetworkManager">NetworkManager</a> </a></h3><p>NetworkManager(package <code>networkmanager</code> ) contains a daemon, a command line interface( <code>nmcli</code> ) and a curses-based interface( <code>nmtui</code> ). After installation, you should <strong>enable the daemon</strong>.</p>
-<pre class=" language-bash"><code class="language-bash">systemctl <span class="token function">enable</span> NetworkManager.service
+<pre><code class="bash">systemctl enable NetworkManager.service
 systemctl start NetworkManager.service</code></pre>
 <p>Use <code>ip link</code> to view the network interface.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/6.png" alt="Network interface"> </p>
@@ -571,61 +572,61 @@ systemctl start NetworkManager.service</code></pre>
 <ul>
 <li>List nearby wifi networks</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">nmcli device wifi list</code></pre>
+<pre><code class="bash">nmcli device wifi list</code></pre>
 <ul>
 <li>Connect to a wifi network</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">nmcli device wifi connect SSID password password</code></pre>
+<pre><code class="bash">nmcli device wifi connect SSID password password</code></pre>
 <ul>
 <li>Disconnect an interface</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">nmcli device disconnect ifname eth0</code></pre>
+<pre><code class="bash">nmcli device disconnect ifname eth0</code></pre>
 <ul>
 <li>See a list of network devices and wheir state</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">nmcli device</code></pre>
+<pre><code class="bash">nmcli device</code></pre>
 <ul>
 <li>Turn off wifi</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">nmcli radio wifi off</code></pre>
+<pre><code class="bash">nmcli radio wifi off</code></pre>
 <p><code>nm-applet</code> for a system tray applet</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S network-manager-applet</code></pre>
+<pre><code class="bash">sudo pacman -S network-manager-applet</code></pre>
 <ul>
 <li>Add <code>exec --no-startup-id nm-applet</code> to <code>~/.config/i3/config</code> fot autostart <code>nm-applet</code> .</li>
 </ul>
 <h3 id="3-Xorg-display-server"><a href="#3-Xorg-display-server" class="headerlink" title="3. Xorg display server"></a>3. <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Xorg">Xorg</a> display server</h3><ul>
 <li>Installation</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S xorg xorg-server xorg-apps</code></pre>
+<pre><code class="bash">sudo pacman -S xorg xorg-server xorg-apps</code></pre>
 <ul>
 <li><p>Driver installation</p>
 <ol>
 <li>First, identify your card:</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">lspci <span class="token operator">|</span> <span class="token function">grep</span> -e VGA -e 3D</code></pre>
+<pre><code class="bash">lspci | grep -e VGA -e 3D</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/7.png" alt="card"> </p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/8.png"> </p>
 <ol start="2">
 <li>Install an appropriate deiver</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">pacman -Ss xf86-video</code></pre>
+<pre><code class="bash">pacman -Ss xf86-video</code></pre>
 <p><strong>Note</strong> : For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, You  <strong>can not</strong> just install <code>xf86-video-intel</code> &amp; <code>nvidia</code> , it will get a blcak screen. See <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus">NVIDIA Optimus</a> to get more informations. </p>
 <p>I just install <code>xf86-video-vesa</code> . </p>
-<pre class=" language-bash"><code class="language-bash">pacman -S xf86-video-vesa</code></pre>
+<pre><code class="bash">pacman -S xf86-video-vesa</code></pre>
 <p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Xorg#Driver_installation">Xorg: Driver_installtion</a> </p>
 </li>
 <li><p>Use <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Xinit">xinit</a> to start Xorg display server.</p>
 </li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S xorg-xinit</code></pre>
+<pre><code class="bash">sudo pacman -S xorg-xinit</code></pre>
 <ul>
 <li>Create <code>.xinitrc</code> file(in common users)</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> /etc/X11/xinit/xinitrc ~/.xinitrc</code></pre>
+<pre><code class="bash">sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc</code></pre>
 <ul>
 <li>Tap-to-click</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> vim /etc/X11/xorg.conf.d/30-touchpad.conf</code></pre>
+<pre><code class="bash">sudo vim /etc/X11/xorg.conf.d/30-touchpad.conf</code></pre>
 <p>Add the following lines to it.</p>
 <pre><code>Section &quot;InputClass&quot;
   Identifier &quot;touchpad&quot;
@@ -636,7 +637,7 @@ EndSection</code></pre>
 <ul>
 <li>Install Windows Manager (i3)</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S i3</code></pre>
+<pre><code class="bash">sudo pacman -S i3</code></pre>
 <p>It include <code>i3-gaps</code> , <code>i3wm</code> , <code>i3blocks</code> , <code>i3lock</code> , <code>i3status</code></p>
 <ul>
 <li>Use i3</li>
@@ -645,15 +646,15 @@ EndSection</code></pre>
 <ul>
 <li>Start Xorg server.</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">startx</code></pre>
+<pre><code class="bash">startx</code></pre>
 <ul>
 <li>Autostart X at login</li>
 </ul>
 <p>I’m a <a target="_blank" rel="noopener" href="https://fishshell.com/">fish</a> user, so i just need add the following to the bottom of my <code>~/.config/fish/config.fish</code> .</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Start X at login</span>
-<span class="token keyword">if</span> status is-login
-    <span class="token keyword">if</span> <span class="token function">test</span> -z <span class="token string">"<span class="token variable">$DISPLAY</span>"</span> -a <span class="token variable">$XDG_VTNR</span> <span class="token operator">=</span> 1
-        <span class="token function">exec</span> startx -- -keeptty
+<pre><code class="bash"># Start X at login
+if status is-login
+    if test -z &quot;$DISPLAY&quot; -a $XDG_VTNR = 1
+        exec startx -- -keeptty
     end
 end</code></pre>
 <p>Other shell user (like <strong>bash</strong> , <strong>zsh</strong> ), Please visit <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Xinit#Autostart_X_at_login">here</a> </p>
@@ -670,9 +671,9 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 #Server   = http://repo.archlinuxcn.org/$arch
 #Server   = http://repo.archlinux.fr/$arch</code></pre>
 <p>Synchronized communities</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -Syu</code></pre>
+<pre><code class="bash">sudo pacman -Syu</code></pre>
 <p>Insatll yaourt </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S yaourt</code></pre>
+<pre><code class="bash">sudo pacman -S yaourt</code></pre>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-13">Software i use often</a></li>
 </ul>
@@ -703,11 +704,11 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 <li><p>Install <strong>pulseaudio</strong></p>
 </li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S pulseaudio</code></pre>
+<pre><code class="bash">sudo pacman -S pulseaudio</code></pre>
 <ul>
 <li>Install <strong>alsa-utils</strong></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S alsa-utils</code></pre>
+<pre><code class="bash">sudo pacman -S alsa-utils</code></pre>
 <p>Use <code>alsamixer</code> to manage the system volume</p>
 <ul>
 <li>VoulmeIcon</li>
@@ -716,45 +717,45 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 <p>If you want a System volume tray, you can try <strong>volumeicon</strong></p>
 <ol>
 <li><p>Install volumeicon</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S volumeicon</code></pre>
+<pre><code class="bash">sudo pacman -S volumeicon</code></pre>
 </li>
 <li><p>Add <code>volumeicon</code> file in <code>~/.config/volumeicon</code>  , and add the following lines to it.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>Alsa<span class="token punctuation">]</span>
-card<span class="token operator">=</span>default
+<pre><code class="bash">[Alsa]
+card=default
 
-<span class="token punctuation">[</span>Notification<span class="token punctuation">]</span>
-show_notification<span class="token operator">=</span>true
-notification_type<span class="token operator">=</span>1
+[Notification]
+show_notification=true
+notification_type=1
 
-<span class="token punctuation">[</span>StatusIcon<span class="token punctuation">]</span>
-stepsize<span class="token operator">=</span>5
-onclick<span class="token operator">=</span>xterm -e <span class="token string">'alsamixer'</span>
-theme<span class="token operator">=</span>White Gnome
-use_panel_specific_icons<span class="token operator">=</span>true
-lmb_slider<span class="token operator">=</span>true
-mmb_mute<span class="token operator">=</span>true
-use_horizontal_slider<span class="token operator">=</span>false
-show_sound_level<span class="token operator">=</span>true
-use_transparent_bac<span class="token operator">&lt;</span>++<span class="token operator">></span>kground<span class="token operator">=</span>true
+[StatusIcon]
+stepsize=5
+onclick=xterm -e &#39;alsamixer&#39;
+theme=White Gnome
+use_panel_specific_icons=true
+lmb_slider=true
+mmb_mute=true
+use_horizontal_slider=false
+show_sound_level=true
+use_transparent_bac&lt;++&gt;kground=true
 
-<span class="token punctuation">[</span>Hotkeys<span class="token punctuation">]</span>
-up_enabled<span class="token operator">=</span>true
-down_enabled<span class="token operator">=</span>true
-mute_enabled<span class="token operator">=</span>true
-up<span class="token operator">=</span>XF86AudioRaiseVolume
-down<span class="token operator">=</span>XF86AudioLowerVolume
-mute<span class="token operator">=</span>XF86AudioMute</code></pre>
+[Hotkeys]
+up_enabled=true
+down_enabled=true
+mute_enabled=true
+up=XF86AudioRaiseVolume
+down=XF86AudioLowerVolume
+mute=XF86AudioMute</code></pre>
 </li>
 <li><p>Create <code>pulseaudio-ctl.desktop</code> in <code>~/.config/autostart</code> , and add the following lines to it.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span>
-Encoding<span class="token operator">=</span>UTF-8
-Type<span class="token operator">=</span>Application
-Name<span class="token operator">=</span>pulseaudio-ctl
-comment<span class="token operator">=</span>Set Volume to 70%
-Exec<span class="token operator">=</span>pulseaudio-ctl-normal
-StartupNotify<span class="token operator">=</span>true
-Terminal<span class="token operator">=</span>false
-Hidden<span class="token operator">=</span>false</code></pre>
+<pre><code class="bash">[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=pulseaudio-ctl
+comment=Set Volume to 70%
+Exec=pulseaudio-ctl-normal
+StartupNotify=true
+Terminal=false
+Hidden=false</code></pre>
 </li>
 <li><p>Add <code>exec --no-startup-id volumeicon</code> to <code>~/.config/i3/config</code> .</p>
 </li>
@@ -765,38 +766,38 @@ Hidden<span class="token operator">=</span>false</code></pre>
 <h3 id="8-Screen-brightness"><a href="#8-Screen-brightness" class="headerlink" title="8. Screen brightness"></a>8. Screen brightness</h3><p>A good advice for backlight management is <code>xorg-xbacklight</code> , but it seems not work on my computer. </p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/12.png" alt="xbacklight -error"> </p>
 <p>If you have the same problem, you can try the solution of Wiki, but it still can’t work on my computer. Sad! So i try another way to control the screen brightness.<br>The backlight can be controlled by the file <code>/sys/class/backlight/intel_backlight/brightness</code> ‘s value. So i wrote a script to control it. I named it <code>intel_brightness_control.sh</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
-<span class="token keyword">set</span> -e
-file<span class="token operator">=</span><span class="token string">"/sys/class/backlight/intel_backlight/brightness"</span>
-current<span class="token operator">=</span><span class="token punctuation">$(</span>cat <span class="token string">"<span class="token variable">$file</span>"</span><span class="token punctuation">)</span>
-new<span class="token operator">=</span><span class="token string">"<span class="token variable">$current</span>"</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">=</span> <span class="token string">"-inc"</span> <span class="token punctuation">]</span>
-<span class="token keyword">then</span>
-  new<span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span> current <span class="token operator">+</span> $<span class="token number">2</span> <span class="token variable">))</span></span>
-  status<span class="token operator">=</span><span class="token string">"Up"</span>
-<span class="token keyword">fi</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">=</span> <span class="token string">"-dec"</span> <span class="token punctuation">]</span>
-<span class="token keyword">then</span>
-  <span class="token keyword">if</span> <span class="token punctuation">[</span> current <span class="token operator">&lt;</span> 100 <span class="token punctuation">]</span>
-  <span class="token keyword">then</span>
-    new<span class="token operator">=</span><span class="token string">"50"</span>
-  <span class="token keyword">else</span>
-    new<span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span> current <span class="token operator">-</span> $<span class="token number">2</span> <span class="token variable">))</span></span>
-  <span class="token keyword">fi</span>
-  status<span class="token operator">=</span><span class="token string">"Down"</span>
-<span class="token keyword">fi</span>
-<span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$new</span>"</span> <span class="token operator">|</span> <span class="token function">tee</span> <span class="token string">"<span class="token variable">$file</span>"</span>
-brightness<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>light -G<span class="token variable">`</span></span>
-<span class="token function">notify-send</span> <span class="token string">"Brightness <span class="token variable">$status</span>(<span class="token variable">$brightness</span>%)"</span></code></pre>
+<pre><code class="bash">#!/bin/bash
+set -e
+file=&quot;/sys/class/backlight/intel_backlight/brightness&quot;
+current=$(cat &quot;$file&quot;)
+new=&quot;$current&quot;
+if [ &quot;$1&quot; = &quot;-inc&quot; ]
+then
+  new=$(( current + $2 ))
+  status=&quot;Up&quot;
+fi
+if [ &quot;$1&quot; = &quot;-dec&quot; ]
+then
+  if [ current &lt; 100 ]
+  then
+    new=&quot;50&quot;
+  else
+    new=$(( current - $2 ))
+  fi
+  status=&quot;Down&quot;
+fi
+echo &quot;$new&quot; | tee &quot;$file&quot;
+brightness=`light -G`
+notify-send &quot;Brightness $status($brightness%)&quot;</code></pre>
 <p>Remember put it in your <code>/usr/bin/</code>.</p>
 <p>Then do <code>sudo chmod 777 /sys/class/backlight/intel_backlight/brightness</code> . The last thing is adding the following lines to <code>.config/i3/config</code> .</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Screen brightness controls</span>
-bindsym XF86MonBrightnessUp <span class="token function">exec</span> <span class="token string">"intel_brightness_control.sh -inc 100"</span>
-bindsym XF86MonBrightnessDown <span class="token function">exec</span> <span class="token string">"intel_brightness_control.sh -dec 100"</span></code></pre>
+<pre><code class="bash"># Screen brightness controls
+bindsym XF86MonBrightnessUp exec &quot;intel_brightness_control.sh -inc 100&quot;
+bindsym XF86MonBrightnessDown exec &quot;intel_brightness_control.sh -dec 100&quot;</code></pre>
 <h3 id="9-Bluetooth"><a href="#9-Bluetooth" class="headerlink" title="9. Bluetooth"></a>9. Bluetooth</h3><ul>
 <li>Install <strong>bluez</strong> , <strong>bluez-utils</strong></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S bluez bluez-utils</code></pre>
+<pre><code class="bash">sudo pacman -S bluez bluez-utils</code></pre>
 <ul>
 <li>The generic Bluetooth driver is the <code>btusb</code> Kernel module. Use <code>lsmod</code> to check whether that module is loaded. </li>
 </ul>
@@ -804,7 +805,7 @@ bindsym XF86MonBrightnessDown <span class="token function">exec</span> <span cla
 <ul>
 <li>Start / Enable</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">systemctl <span class="token function">enable</span> bluetooth.service
+<pre><code class="bash">systemctl enable bluetooth.service
 systemctl start bluetooth.service</code></pre>
 <ul>
 <li>Auto power-on after boot</li>
@@ -813,25 +814,25 @@ systemctl start bluetooth.service</code></pre>
 <ul>
 <li>Discoverable on startup</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">/etc/bluetooth/main.conf
+<pre><code class="bash">/etc/bluetooth/main.conf
 
-<span class="token punctuation">[</span>General<span class="token punctuation">]</span>
-DiscoverableTimeout <span class="token operator">=</span> 0
-Discoverable<span class="token operator">=</span>true</code></pre>
+[General]
+DiscoverableTimeout = 0
+Discoverable=true</code></pre>
 <ul>
 <li>Install <strong>pulseaudio-bluetooth</strong> to use audio equipment like bluetooth headphones or speakers.</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Bluetooth_headset">Bluetooth headset</a> </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S pulseaudio-bluetooth</code></pre>
+<pre><code class="bash">sudo pacman -S pulseaudio-bluetooth</code></pre>
 <ul>
 <li>Install <a target="_blank" rel="noopener" href="https://github.com/blueman-project/blueman">blueman</a> </li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S blueman</code></pre>
+<pre><code class="bash">sudo pacman -S blueman</code></pre>
 <ol>
 <li><code>blueman-applet</code> to use.</li>
 <li>add <code>exec --no-startup-id blueman-applet</code> to <code>~/.config/i3/config</code> to auto start <code>blueman-applet</code> .</li>
 </ol>
-<h3 id="10-Notify-Dunst"><a href="#10-Notify-Dunst" class="headerlink" title="10. Notify(Dunst)"></a>10. Notify(Dunst)</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S libnotify dunst</code></pre>
+<h3 id="10-Notify-Dunst"><a href="#10-Notify-Dunst" class="headerlink" title="10. Notify(Dunst)"></a>10. Notify(Dunst)</h3><pre><code class="bash">sudo pacman -S libnotify dunst</code></pre>
 <p>Create <code>org.freedesktop.Notifications.service</code> in <code>/usr/share/dbus-1/services/</code> folder. Add the following lines.</p>
 <pre><code>[D-BUS Service]
 Name.org.freedesktop.Notifications
@@ -843,54 +844,54 @@ Exec=/usr/local/bin/dunst</code></pre>
 <h3 id="11-Shutdown-Reboot-LockScreen"><a href="#11-Shutdown-Reboot-LockScreen" class="headerlink" title="11. Shutdown Reboot LockScreen"></a>11. Shutdown Reboot LockScreen</h3><ul>
 <li>Create a script named <code>i3exit</code> . Make sure you have <code>polkit</code> installed. </li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
-lock<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<pre><code class="bash">#!/bin/sh
+lock() &#123;
     i3lock
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+&#125;
 
-<span class="token keyword">case</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token keyword">in</span>
-    lock<span class="token punctuation">)</span>
+case &quot;$1&quot; in
+    lock)
         blurlock
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    logout<span class="token punctuation">)</span>
-        i3-msg <span class="token keyword">exit</span>
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    suspend<span class="token punctuation">)</span>
-        blurlock <span class="token operator">&amp;&amp;</span> systemctl <span class="token function">suspend</span>
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    hibernate<span class="token punctuation">)</span>
-        blurlock <span class="token operator">&amp;&amp;</span> systemctl hibernate
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    reboot<span class="token punctuation">)</span>
-        systemctl <span class="token function">reboot</span>
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    shutdown<span class="token punctuation">)</span>
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        blurlock &amp;&amp; systemctl suspend
+        ;;
+    hibernate)
+        blurlock &amp;&amp; systemctl hibernate
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
         systemctl poweroff
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    *<span class="token punctuation">)</span>
-        <span class="token keyword">echo</span> <span class="token string">"Usage: <span class="token variable">$0</span> &amp;#123;lock|logout|suspend|hibernate|reboot|shutdown&amp;#125;"</span>
-        <span class="token keyword">exit</span> 2
+        ;;
+    *)
+        echo &quot;Usage: $0 &#123;lock|logout|suspend|hibernate|reboot|shutdown&#125;&quot;
+        exit 2
 esac
 
-<span class="token keyword">exit</span> 0</code></pre>
+exit 0</code></pre>
 <p>Do <code>chmod +x</code> and put it in <code>$PATH</code> ( <code>/usr/bin/</code> ) .</p>
 <ul>
 <li>Add the following lines to <code>.config/i3/config</code></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">set</span> <span class="token variable">$mode_system</span> System <span class="token punctuation">(</span>l<span class="token punctuation">)</span> lock, <span class="token punctuation">(</span>e<span class="token punctuation">)</span> logout, <span class="token punctuation">(</span>s<span class="token punctuation">)</span> suspend, <span class="token punctuation">(</span>h<span class="token punctuation">)</span> hibernate, <span class="token punctuation">(</span>r<span class="token punctuation">)</span> reboot, <span class="token punctuation">(</span>Shift+s<span class="token punctuation">)</span> <span class="token function">shutdown</span>
-mode <span class="token string">"<span class="token variable">$mode_system</span>"</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    bindsym l <span class="token function">exec</span> --no-startup-id i3exit lock, mode <span class="token string">"default"</span>
-    bindsym e <span class="token function">exec</span> --no-startup-id i3exit logout, mode <span class="token string">"default"</span>
-    bindsym s <span class="token function">exec</span> --no-startup-id i3exit suspend, mode <span class="token string">"default"</span>
-    bindsym h <span class="token function">exec</span> --no-startup-id i3exit hibernate, mode <span class="token string">"default"</span>
-    bindsym r <span class="token function">exec</span> --no-startup-id i3exit reboot, mode <span class="token string">"default"</span>
-    bindsym Shift+s <span class="token function">exec</span> --no-startup-id i3exit shutdown, mode <span class="token string">"default"</span>  
+<pre><code class="bash">set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode &quot;$mode_system&quot; &#123;
+    bindsym l exec --no-startup-id i3exit lock, mode &quot;default&quot;
+    bindsym e exec --no-startup-id i3exit logout, mode &quot;default&quot;
+    bindsym s exec --no-startup-id i3exit suspend, mode &quot;default&quot;
+    bindsym h exec --no-startup-id i3exit hibernate, mode &quot;default&quot;
+    bindsym r exec --no-startup-id i3exit reboot, mode &quot;default&quot;
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode &quot;default&quot;  
 
-    <span class="token comment" spellcheck="true"># back to normal: Enter or Escape</span>
-    bindsym Return mode <span class="token string">"default"</span>
-    bindsym Escape mode <span class="token string">"default"</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-bindsym <span class="token variable">$mod</span>+Pause mode <span class="token string">"<span class="token variable">$mode_system</span>"</span></code></pre>
+    # back to normal: Enter or Escape
+    bindsym Return mode &quot;default&quot;
+    bindsym Escape mode &quot;default&quot;
+&#125;
+bindsym $mod+Pause mode &quot;$mode_system&quot;</code></pre>
 
             </div>
             <hr/>
@@ -1350,7 +1351,7 @@ bindsym <span class="token variable">$mod</span>+Pause mode <span class="token s
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1421,6 +1422,7 @@ bindsym <span class="token variable">$mod</span>+Pause mode <span class="token s
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

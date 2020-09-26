@@ -23,12 +23,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -490,46 +491,46 @@
 <p>2.6、对每一个圆心，完成上面的2.1～2.5步骤，得到所有的圆半径。</p>
 <p>HoughCircles函数的原型为：<br><code>void HoughCircles (InputArray image,OutputArray circles, int method, double dp, double minDist,double param1=100, double param2=100, int minRadius=0,int maxRadius=0 )</code><br>image为输入图像，要求是灰度图像<br>circles为输出圆向量，每个向量包括三个浮点型的元素——圆心横坐标，圆心纵坐标和圆半径<br>method为使用霍夫变换圆检测的算法，Opencv2.4.9只实现了2-1霍夫变换，它的参数是CV_HOUGH_GRADIENT<br>dp为第一阶段所使用的霍夫空间的分辨率，dp=1时表示霍夫空间与输入图像空间的大小一致，dp=2时霍夫空间是输入图像空间的一半，以此类推<br>minDist为圆心之间的最小距离，如果检测到的两个圆心之间距离小于该值，则认为它们是同一个圆心<br>param1为边缘检测时使用Canny算子的高阈值<br>param2为步骤1.5和步骤2.5中所共有的阈值<br>minRadius和maxRadius为所检测到的圆半径的最小值和最大值</p>
 <h3 id="霍夫变换椭圆检测的实现"><a href="#霍夫变换椭圆检测的实现" class="headerlink" title="霍夫变换椭圆检测的实现"></a>霍夫变换椭圆检测的实现</h3><p>运行环境: vs2017 + Opencv3.4<br>由于HoughCircles函数是调用Canny函数进行边缘检测，OpenCV的Canny函数不包括平滑滤波，所以先对原图进行滤波处理，在这里使用的是高斯模糊</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"opencv2/core/core.hpp"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"opencv2/highgui/highgui.hpp"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"opencv2/imgproc/imgproc.hpp"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<pre><code class="cpp">#include &quot;opencv2/core/core.hpp&quot;
+#include &quot;opencv2/highgui/highgui.hpp&quot;
+#include &quot;opencv2/imgproc/imgproc.hpp&quot;
+#include &lt;iostream&gt;
+using namespace cv;
+using namespace std;
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span> <span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv <span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-     Mat src<span class="token punctuation">,</span> gray<span class="token punctuation">;</span>
-    src<span class="token operator">=</span><span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"coins.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>src<span class="token punctuation">.</span>data <span class="token punctuation">)</span>  
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>  
+int main( int argc, char** argv )
+&#123;
+     Mat src, gray;
+    src=imread(&quot;coins.jpg&quot;);
+    if( !src.data )  
+        return -1;  
 
-    <span class="token function">cvtColor</span><span class="token punctuation">(</span> src<span class="token punctuation">,</span> gray<span class="token punctuation">,</span> CV_BGR2GRAY <span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//高斯模糊平滑</span>
-    <span class="token function">GaussianBlur</span><span class="token punctuation">(</span> gray<span class="token punctuation">,</span> gray<span class="token punctuation">,</span> <span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cvtColor( src, gray, CV_BGR2GRAY );
+    //高斯模糊平滑
+    GaussianBlur( gray, gray, Size(9, 9), 2, 2 );
 
-    vector<span class="token operator">&lt;</span>Vec3f<span class="token operator">></span> circles<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//霍夫变换</span>
-    <span class="token function">HoughCircles</span><span class="token punctuation">(</span> gray<span class="token punctuation">,</span> circles<span class="token punctuation">,</span> CV_HOUGH_GRADIENT<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> gray<span class="token punctuation">.</span>rows<span class="token operator">/</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vector&lt;Vec3f&gt; circles;
+    //霍夫变换
+    HoughCircles( gray, circles, CV_HOUGH_GRADIENT, 1, gray.rows/20, 100, 60, 0, 0 );
 
-    <span class="token comment" spellcheck="true">//在原图中画出圆心和圆</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span> size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> circles<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//提取出圆心坐标</span>
-        Point <span class="token function">center</span><span class="token punctuation">(</span><span class="token function">cvRound</span><span class="token punctuation">(</span>circles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cvRound</span><span class="token punctuation">(</span>circles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//提取出圆半径</span>
-        <span class="token keyword">int</span> radius <span class="token operator">=</span> <span class="token function">cvRound</span><span class="token punctuation">(</span>circles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//圆心</span>
-        <span class="token function">circle</span><span class="token punctuation">(</span> src<span class="token punctuation">,</span> center<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//圆</span>
-        <span class="token function">circle</span><span class="token punctuation">(</span> src<span class="token punctuation">,</span> center<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    //在原图中画出圆心和圆
+    for( size_t i = 0; i &lt; circles.size(); i++ )
+    &#123;
+        //提取出圆心坐标
+        Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+        //提取出圆半径
+        int radius = cvRound(circles[i][2]);
+        //圆心
+        circle( src, center, 3, Scalar(0,255,0), -1, 8, 0 );
+        //圆
+        circle( src, center, radius, Scalar(0,0,255), 3, 8, 0 );
+   &#125;
 
-    <span class="token function">imshow</span><span class="token punctuation">(</span> <span class="token string">"霍夫变换检测圆图"</span><span class="token punctuation">,</span> src <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    imshow( &quot;霍夫变换检测圆图&quot;, src );
 
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+    waitKey(0);
+    return 0;
+&#125;</code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/26/5d3abf54a4c3b88169.jpg"></p>
 
             </div>
@@ -1008,7 +1009,7 @@ OpenCV椭圆绘制ellip
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1079,6 +1080,7 @@ OpenCV椭圆绘制ellip
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

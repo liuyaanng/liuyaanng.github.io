@@ -24,12 +24,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -443,7 +444,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        775
+                        787
                     </div>
                     
 
@@ -505,26 +506,26 @@
 <ul>
 <li>工具箱函数imdilate(A, B)来执行膨胀</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'1111.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%自定义结构元</span>
-D <span class="token operator">=</span> <span class="token function">imdilate</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'原图'</span><span class="token punctuation">)</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>D<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'膨胀后的图'</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">f = imread(&#39;1111.jpg&#39;);
+B = [0 1 0; 1 1 1; 0 1 0];%自定义结构元
+D = imdilate(f, B);
+subplot(1,2,1),imshow(f);
+title(&#39;原图&#39;)
+subplot(1,2,2),imshow(D);
+title(&#39;膨胀后的图&#39;)</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d3564132fa1741100.jpg"></p>
 <h3 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a>腐蚀</h3><p>腐蚀”收缩”或”细化”二值图像中的物体。像膨胀一样，收缩的方法和程度由结构元控制。<br>A被B腐蚀表示为$A\ominus B$,定义为:<br>$$ A\ominus B = {z| (B)_z\subseteq A} = {z| (B)_z\cap A^c = \emptyset}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/23/5d36cefa2813d95731.jpg"></p>
 <p>工具箱函数imerode(A,B)来执腐蚀</p>
-<pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'tig.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%自定义结构元</span>
-R <span class="token operator">=</span> <span class="token function">imerode</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'原图'</span><span class="token punctuation">)</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>R<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'腐蚀后的图'</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">f = imread(&#39;tig.jpg&#39;);
+B = [0 1 0; 1 1 1; 0 1 0];%自定义结构元
+R = imerode(f, B);
+subplot(1,2,1),imshow(f);
+title(&#39;原图&#39;)
+subplot(1,2,2),imshow(R);
+title(&#39;腐蚀后的图&#39;)</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d356b5f7eed962952.jpg"></p>
 <h3 id="结构元"><a href="#结构元" class="headerlink" title="结构元"></a>结构元</h3><p>strel函数，用来构造各种大小和形状的结构元</p>
-<pre class=" language-matlab"><code class="language-matlab">se <span class="token operator">=</span> <span class="token function">strel</span><span class="token punctuation">(</span>shape<span class="token punctuation">,</span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">se = strel(shape, parameters);</code></pre>
 <p>shape是希望形状的字符串，parameters是描述形状信息的参数列表<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d35670a85b4f22579.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/22/5d35670a63e2817742.jpg"><br>注意生成的se含有两项</p>
 <ol>
 <li>se.Neighborhood:[ ×  logical ]</li>
@@ -1008,7 +1009,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1079,6 +1080,7 @@ R <span class="token operator">=</span> <span class="token function">imerode</sp
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

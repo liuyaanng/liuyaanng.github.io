@@ -25,12 +25,13 @@ OpenCV椭圆绘制ellip">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -431,7 +432,7 @@ OpenCV椭圆绘制ellip">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        381
+                        383
                     </div>
                     
 
@@ -462,52 +463,52 @@ OpenCV椭圆绘制ellip">
                 int thickness=1, int line_type=8, int shift=0 );</code></pre>
 <p>参数:<br>img:图像。<br>center:椭圆圆心坐标。<br>axes:轴的长度。<br>angle:偏转的角度。<br>start_angle:圆弧起始角的角度。<br>end_angle:圆弧终结角的角度。<br>color:线条的颜色。<br>thickness:线条的粗细程度。<br>line_type:线条的类型,见CVLINE的描述。<br>shift:圆心坐标点和数轴的精度。    </p>
 <p>C++代码实现</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/opencv.hpp></span>#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/core/core.hpp></span> </span><span class="token comment" spellcheck="true">// 核心组件</span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/highgui/highgui.hpp></span>  </span><span class="token comment" spellcheck="true">// GUI</span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/imgproc/imgproc.hpp></span>  </span><span class="token comment" spellcheck="true">// 图像处理</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 定义存储椭圆参数的数据结构</span>
-<span class="token keyword">struct</span> Ellipse <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> x0<span class="token punctuation">,</span> y0<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
-    <span class="token keyword">double</span> alpha<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">drawEllipse</span><span class="token punctuation">(</span>Ellipse ellipses_para<span class="token punctuation">,</span> Mat im<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">drawEllipse</span><span class="token punctuation">(</span>Ellipse ellipses_para<span class="token punctuation">,</span> Mat im<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// Draw Ellipse after detection</span>
-<span class="token comment" spellcheck="true">//x0 - x coordinate of the center of the ellipse</span>
-<span class="token comment" spellcheck="true">//y0 - y coordinate of the center of the ellipse</span>
-<span class="token comment" spellcheck="true">//a - length of semimajor axis</span>
-<span class="token comment" spellcheck="true">//b - length of semiminor axis</span>
-<span class="token comment" spellcheck="true">//alpha - angle of orientation of semimajor axis</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>im<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"imread error!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> x0<span class="token punctuation">,</span> y0<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
-    <span class="token keyword">double</span> alpha<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> thickness <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> lineType <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
-    x0 <span class="token operator">=</span> ellipses_para<span class="token punctuation">.</span>x0<span class="token punctuation">;</span>
-    y0 <span class="token operator">=</span> ellipses_para<span class="token punctuation">.</span>y0<span class="token punctuation">;</span>
-    a <span class="token operator">=</span> ellipses_para<span class="token punctuation">.</span>a<span class="token punctuation">;</span>
-    b <span class="token operator">=</span> ellipses_para<span class="token punctuation">.</span>b<span class="token punctuation">;</span>
-    alpha <span class="token operator">=</span> ellipses_para<span class="token punctuation">.</span>alpha<span class="token punctuation">;</span>
-    <span class="token function">ellipse</span><span class="token punctuation">(</span>im<span class="token punctuation">,</span> <span class="token function">Point</span><span class="token punctuation">(</span>x0<span class="token punctuation">,</span> y0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Size</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">360</span><span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> thickness<span class="token punctuation">,</span> lineType<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"原图"</span><span class="token punctuation">,</span> im<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Ellipse ellipses_para<span class="token punctuation">;</span>
-    Mat im <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"11.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">/*test
+<pre><code class="cpp">#include&lt;opencv2/opencv.hpp&gt;#include&lt;opencv2/core/core.hpp&gt; // 核心组件
+#include&lt;opencv2/highgui/highgui.hpp&gt;  // GUI
+#include&lt;opencv2/imgproc/imgproc.hpp&gt;  // 图像处理
+using namespace cv;
+using namespace std;
+// 定义存储椭圆参数的数据结构
+struct Ellipse &#123;
+    int x0, y0, a, b;
+    double alpha;
+&#125;;
+int drawEllipse(Ellipse ellipses_para, Mat im);
+int drawEllipse(Ellipse ellipses_para, Mat im) &#123;
+// Draw Ellipse after detection
+//x0 - x coordinate of the center of the ellipse
+//y0 - y coordinate of the center of the ellipse
+//a - length of semimajor axis
+//b - length of semiminor axis
+//alpha - angle of orientation of semimajor axis
+    if (im.empty()) &#123;
+        printf(&quot;imread error!&quot;);
+        return -1;
+    &#125;
+    int x0, y0, a, b;
+    double alpha;
+    int thickness = 3;
+    int lineType = 8;
+    x0 = ellipses_para.x0;
+    y0 = ellipses_para.y0;
+    a = ellipses_para.a;
+    b = ellipses_para.b;
+    alpha = ellipses_para.alpha;
+    ellipse(im, Point(x0, y0), Size(a, b), alpha, 0, 360, Scalar(255, 255, 0), thickness, lineType);
+    imshow(&quot;原图&quot;, im);
+    waitKey();&#125;
+int main() &#123;
+    Ellipse ellipses_para;
+    Mat im = imread(&quot;11.bmp&quot;);
+    /*test
         ellipses_para.x0 = 100;
     ellipses_para.y0 = 100;
     ellipses_para.a = 90;
     ellipses_para.b = 60;
-    ellipses_para.alpha = 80.0;*/</span>
-    <span class="token function">drawEllipse</span><span class="token punctuation">(</span>ellipses_para<span class="token punctuation">,</span> im<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    ellipses_para.alpha = 80.0;*/
+    drawEllipse(ellipses_para, im);
+    return 0;
+&#125;
 </code></pre>
 
             </div>
@@ -997,7 +998,7 @@ OpenCV椭圆绘制ellip">
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1068,6 +1069,7 @@ OpenCV椭圆绘制ellip">
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

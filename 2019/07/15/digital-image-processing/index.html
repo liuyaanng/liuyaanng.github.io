@@ -30,12 +30,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -449,7 +450,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        541
+                        559
                     </div>
                     
 
@@ -526,15 +527,15 @@
 <li><p>直方图的处理和函数绘图</p>
 <ul>
 <li><p>生成图像的直方图</p>
-<pre class=" language-matlab"><code class="language-matlab">  <span class="token operator">></span><span class="token operator">></span> h <span class="token operator">=</span> <span class="token function">imhist</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">  &gt;&gt; h = imhist(f)</code></pre>
 </li>
 <li><p>也可以用条形图来表示</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> h <span class="token operator">=</span> <span class="token function">imhist</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">></span><span class="token operator">></span> horz <span class="token operator">=</span> <span class="token function">linespace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">></span><span class="token operator">></span> <span class="token function">bar</span><span class="token punctuation">(</span>horz<span class="token punctuation">,</span>h<span class="token punctuation">)</span>
-<span class="token operator">></span><span class="token operator">></span> <span class="token function">axis</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token number">255</span> <span class="token number">0</span> <span class="token number">60000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">></span><span class="token operator">></span> <span class="token function">set</span><span class="token punctuation">(</span>gca<span class="token punctuation">,</span> <span class="token string">'xtick'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">:</span><span class="token number">50</span><span class="token operator">:</span><span class="token number">255</span><span class="token punctuation">)</span>
-<span class="token operator">></span><span class="token operator">></span> <span class="token function">set</span><span class="token punctuation">(</span>gca<span class="token punctuation">,</span> <span class="token string">'ytick'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">:</span><span class="token number">20000</span><span class="token operator">:</span><span class="token number">60000</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">&gt;&gt; h = imhist(f,25);
+&gt;&gt; horz = linespace(0,255,25);
+&gt;&gt; bar(horz,h)
+&gt;&gt; axis(0 255 0 60000);
+&gt;&gt; set(gca, &#39;xtick&#39;, 0:50:255)
+&gt;&gt; set(gca, &#39;ytick&#39;, 0:20000:60000)</code></pre>
 </li>
 <li><p>杆状图<br><code>stem(horz, z , &#39;LineSpec&#39;, &#39;fill&#39;)</code></p>
 </li>
@@ -1036,7 +1037,7 @@ Python单排系列
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1107,6 +1108,7 @@ Python单排系列
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

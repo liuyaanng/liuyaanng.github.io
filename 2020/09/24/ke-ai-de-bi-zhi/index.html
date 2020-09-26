@@ -26,12 +26,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -428,14 +429,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        713
+                        882
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        2 Min
+                        3 Min
                     </div>
                     
                 
@@ -455,49 +456,49 @@
 <p>先来几张图：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/1.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/13.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/29.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/65.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg"> </p>
 <h3 id="1-得到图片"><a href="#1-得到图片" class="headerlink" title="1. 得到图片"></a>1. 得到图片</h3><p>懒癌晚期当然是不能一张一张的下载了，于是就有了下面</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
-<span class="token keyword">import</span> time
-<span class="token keyword">import</span> random
-<span class="token keyword">import</span> requests
-<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
-<span class="token keyword">from</span> urllib<span class="token punctuation">.</span>request <span class="token keyword">import</span> Request<span class="token punctuation">,</span> urlopen<span class="token punctuation">,</span> urlretrieve
+<pre><code class="python">import os
+import time
+import random
+import requests
+import urllib.request
+from urllib.request import Request, urlopen, urlretrieve
 
-url <span class="token operator">=</span> yourapi
-headers <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span>
-    <span class="token string">'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-folder_path <span class="token operator">=</span> <span class="token string">'/Users/kevin/Pictures/wallpapers/mc/'</span>
-folder <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>folder_path<span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token operator">not</span> folder<span class="token punctuation">:</span>
-    os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>folder_path<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"创建文件夹%s成功"</span> <span class="token operator">%</span> folder_path<span class="token punctuation">)</span>
-file_names <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>folder_path<span class="token punctuation">)</span>
-index <span class="token operator">=</span> len<span class="token punctuation">(</span>file_names<span class="token punctuation">)</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        flag <span class="token operator">=</span> <span class="token boolean">False</span>
-        request <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
-        resp <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
-        real_url <span class="token operator">=</span> resp<span class="token punctuation">.</span>geturl<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>real_url<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># img_name = real_url.split('/')[4]</span>
-        img_name <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>split<span class="token punctuation">(</span>real_url<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> file_name <span class="token keyword">in</span> file_names<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> file_name <span class="token operator">==</span> img_name<span class="token punctuation">:</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片已存在'</span><span class="token punctuation">)</span>
-                flag <span class="token operator">=</span> <span class="token boolean">True</span>
-                <span class="token keyword">break</span>
-        <span class="token keyword">if</span> flag<span class="token punctuation">:</span>
-            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">continue</span>
-        path <span class="token operator">=</span> folder_path <span class="token operator">+</span> img_name
-        index <span class="token operator">+=</span> <span class="token number">1</span>
-        urlretrieve<span class="token punctuation">(</span>real_url<span class="token punctuation">,</span> path<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'已下载%d张图片,该图片的真实链接为%s'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>index<span class="token punctuation">,</span> real_url<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">except</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'出现异常'</span><span class="token punctuation">)</span>
+url = yourapi
+headers = &#123;
+    &#39;User-Agent&#39;:
+    &#39;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0&#39;
+&#125;
+folder_path = &#39;/Users/kevin/Pictures/wallpapers/mc/&#39;
+folder = os.path.exists(folder_path)
+if not folder:
+    os.makedirs(folder_path)
+    print(&quot;创建文件夹%s成功&quot; % folder_path)
+file_names = os.listdir(folder_path)
+index = len(file_names)
+try:
+    while True:
+        flag = False
+        request = urllib.request.Request(url, headers=headers)
+        resp = urllib.request.urlopen(request)
+        real_url = resp.geturl()
+        response = requests.get(real_url)
+        # img_name = real_url.split(&#39;/&#39;)[4]
+        img_name = os.path.split(real_url)[1]
+        for file_name in file_names:
+            if file_name == img_name:
+                print(&#39;图片已存在&#39;)
+                flag = True
+                break
+        if flag:
+            time.sleep(random.randint(0, 3))
+            continue
+        path = folder_path + img_name
+        index += 1
+        urlretrieve(real_url, path)
+        print(&#39;已下载%d张图片,该图片的真实链接为%s&#39; % (index, real_url))
+        time.sleep(random.randint(0, 3))
+except:
+    print(&#39;出现异常&#39;)
 </code></pre>
 <p>运行如下，没想到这么多张<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/1.jpg"> </p>
 <h2 id="2-改名字"><a href="#2-改名字" class="headerlink" title="2. 改名字"></a>2. 改名字</h2><p>由于原图片的名字是一串神秘代码，这样看着太难受了，于是我决定给他们改名字，正好最近vim用的很顺手，接下来就是vim的骚操作了。</p>
@@ -511,16 +512,16 @@ index <span class="token operator">=</span> len<span class="token punctuation">(
 <ul>
 <li>首先选中需要修改的部分，接下来执行两条指令:</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">:'<,>'s/.*/mv & aaa.jpg
-:'<,>'s/aaa/\=line(".")-line("'<")+1</code></pre>
+<pre><code class="shell">:&#39;&lt;,&gt;&#39;s/.*/mv &amp; aaa.jpg
+:&#39;&lt;,&gt;&#39;s/aaa/\=line(&quot;.&quot;)-line(&quot;&#39;&lt;&quot;)+1</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/2.gif"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@latest/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/3.gif"> </p>
 <p>具体命令详解：</p>
-<pre class=" language-vim"><code class="language-vim"><span class="token string">'&lt;,'</span><span class="token operator">></span>        所选中的区域 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token string">'&lt;，:help '</span><span class="token operator">></span> <span class="token punctuation">)</span>
-s            在选中的区域中进行替换 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token punctuation">:</span>s <span class="token punctuation">)</span>
-<span class="token operator">.</span><span class="token operator">*</span>           匹配当前所有字符
-\<span class="token operator">=</span>           指明后面是一个表达式 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token punctuation">:</span>s\<span class="token operator">=</span> <span class="token punctuation">)</span>
-<span class="token function">line</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span>    当前光标所在行的行号 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token function">line</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
-<span class="token function">line</span><span class="token punctuation">(</span><span class="token string">"'&lt;"</span><span class="token punctuation">)</span>   所选区域中第一行的行号 <span class="token punctuation">(</span><span class="token punctuation">:</span><span class="token keyword">help</span> <span class="token function">line</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> </code></pre>
+<pre><code class="vim">&#39;&lt;,&#39;&gt;        所选中的区域 (:help &#39;&lt;，:help &#39;&gt; )
+s            在选中的区域中进行替换 (:help :s )
+.*           匹配当前所有字符
+\=           指明后面是一个表达式 (:help :s\= )
+line(&quot;.&quot;)    当前光标所在行的行号 (:help line() )
+line(&quot;&#39;&lt;&quot;)   所选区域中第一行的行号 (:help line() ) </code></pre>
 <p><code>&#39;&lt;</code>和<code>&#39;&gt;</code>是使用了”v”，”V”命令选中一个visual区域后，VIM设置的标记，分别用来标识visual区域的开始和结束。</p>
 <ul>
 <li>接着执行<code>:wirte !sh</code>即可</li>
@@ -983,7 +984,7 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1054,6 +1055,7 @@ s            在选中的区域中进行替换 <span class="token punctuation">(
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

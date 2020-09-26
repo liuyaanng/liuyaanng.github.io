@@ -23,12 +23,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -445,7 +446,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        5 Min
+                        6 Min
                     </div>
                     
                 
@@ -586,20 +587,20 @@
 <li>选择 链接器-&gt;输入-&gt;附加依赖项,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156f13aac74119.png" alt="12.png"><br>在里面添加 <strong>opencv_world344d.lib</strong>，这个lib文件根据你的OpenCV版本号灵活变动<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156f0828190561.png"></li>
 <li>点击应用，确定即可<br>到这里，OpenCV的所有配置工作已经完成了，要注意的是解决方案那一栏要换成x64(因为我们一直在配置的就是x64)<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156ee8b6668598.png"><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>这是一段读取并显示本地图片的代码，测试一下你的OpenCV环境是否配置好</li>
 </ol>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/core/core.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/highgui/highgui.hpp></span></span>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/core/core.hpp&gt;
+#include &lt;opencv2/highgui/highgui.hpp&gt;
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
+using namespace cv;
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Mat img <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"1.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">namedWindow</span><span class="token punctuation">(</span><span class="token string">"图片"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"图片"</span><span class="token punctuation">,</span> img<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">6000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+int main()
+&#123;
+    Mat img = imread(&quot;1.bmp&quot;);
+    namedWindow(&quot;图片&quot;);
+    imshow(&quot;图片&quot;, img);
+    waitKey(6000);
+    return 0;
+&#125;</code></pre>
 <p>运行结果如下：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c15857414f57549.png"></p>
 <h2 id="需要注意的问题"><a href="#需要注意的问题" class="headerlink" title="需要注意的问题"></a>需要注意的问题</h2><ol>
 <li>导入包的时候不报错，但运行程序时出现一下错误<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156f55e6b74341.png" alt="15.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156f39a4e29681.png" alt="16.png"><br>出现这个问题，目前已知的有两个原因    <ul>
@@ -613,13 +614,13 @@
 </li>
 </ol>
 <hr>
-<h1 id="MacOS-安装opencv-python"><a href="#MacOS-安装opencv-python" class="headerlink" title="MacOS 安装opencv-python"></a>MacOS 安装opencv-python</h1><h3 id="1-首先安装xcode"><a href="#1-首先安装xcode" class="headerlink" title="1. 首先安装xcode"></a>1. 首先安装xcode</h3><pre class=" language-bash"><code class="language-bash">xcode-select --install </code></pre>
-<h3 id="2-安装opencv-python"><a href="#2-安装opencv-python" class="headerlink" title="2. 安装opencv-python"></a>2. 安装opencv-python</h3><pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> opencv-python</code></pre>
+<h1 id="MacOS-安装opencv-python"><a href="#MacOS-安装opencv-python" class="headerlink" title="MacOS 安装opencv-python"></a>MacOS 安装opencv-python</h1><h3 id="1-首先安装xcode"><a href="#1-首先安装xcode" class="headerlink" title="1. 首先安装xcode"></a>1. 首先安装xcode</h3><pre><code class="bash">xcode-select --install </code></pre>
+<h3 id="2-安装opencv-python"><a href="#2-安装opencv-python" class="headerlink" title="2. 安装opencv-python"></a>2. 安装opencv-python</h3><pre><code class="bash">pip install opencv-python</code></pre>
 <p>这默认将安装<code>opencv-python 4.2</code>, 但在 <strong>catalina</strong> 貌似不可用</p>
 <p>所以我选择了安装低版本的opencv-python</p>
-<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> opencv-python<span class="token operator">==</span>4.1.2.30</code></pre>
+<pre><code class="bash">pip install opencv-python==4.1.2.30</code></pre>
 <p>或者选择安装</p>
-<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> opencv-python-headless</code></pre>
+<pre><code class="bash">pip install opencv-python-headless</code></pre>
 <p>这个原因未知</p>
 <p>好了，教程到此结束，<br>接下来你就可以放心地去玩耍了，Enjoy Your OpenCV!</p>
 
@@ -1098,7 +1099,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1169,6 +1170,7 @@
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

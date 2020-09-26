@@ -28,12 +28,13 @@ a VPS: vultr( ">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -430,14 +431,14 @@ a VPS: vultr( ">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        762
+                        940
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        4 Min
+                        5 Min
                     </div>
                     
                 
@@ -472,17 +473,17 @@ a VPS: vultr( ">
 <p>NOTE: <strong>Do it after installed V2Ray if u need it</strong></p>
 <h4 id="4-Ping"><a href="#4-Ping" class="headerlink" title="4. Ping"></a>4. Ping</h4><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/7.png"> </p>
 <p>it works.</p>
-<h3 id="2-Set-BBR-lotserver"><a href="#2-Set-BBR-lotserver" class="headerlink" title="2. Set BBR lotserver"></a>2. Set BBR lotserver</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> --no-check-certificate https://raw.githubusercontent.com/liuyaanng/SSR/master/tcp.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x tcp.sh <span class="token operator">&amp;&amp;</span> ./tcp.sh</code></pre>
+<h3 id="2-Set-BBR-lotserver"><a href="#2-Set-BBR-lotserver" class="headerlink" title="2. Set BBR lotserver"></a>2. Set BBR lotserver</h3><pre><code class="bash">wget --no-check-certificate https://raw.githubusercontent.com/liuyaanng/SSR/master/tcp.sh &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/8.png"> </p>
 <h3 id="3-Install-V2Ray"><a href="#3-Install-V2Ray" class="headerlink" title="3. Install V2Ray"></a>3. Install V2Ray</h3><p>There are two way to install V2Ray use different methods.</p>
 <ul>
 <li>Vmess+websocket+TLS+Nginx+Website</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span>curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token function">tee</span> v2ray_ins.log</code></pre>
+<pre><code class="bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log</code></pre>
 <ul>
 <li>Vmess + HTTP2 over TLS</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span>curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token function">tee</span> v2ray_ins_h2.log</code></pre>
+<pre><code class="bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh) | tee v2ray_ins_h2.log</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/9.png"> </p>
 <p>SELF TESTING</p>
 <h3 id="4-Run-V2Ray"><a href="#4-Run-V2Ray" class="headerlink" title="4. Run V2Ray"></a>4. Run V2Ray</h3><ul>
@@ -511,126 +512,126 @@ a VPS: vultr( ">
 </li>
 <li><p>Configuration V2Ray</p>
 <p>config file is located in <code>/etc/v2ray/config.json</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-<span class="token string">"policy"</span><span class="token keyword">:</span> null,
-<span class="token string">"log"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-<span class="token string">"access"</span><span class="token keyword">:</span> <span class="token string">""</span>,
-<span class="token string">"error"</span><span class="token keyword">:</span> <span class="token string">""</span>,
-<span class="token string">"loglevel"</span><span class="token keyword">:</span> <span class="token string">"warning"</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-<span class="token string">"inbounds"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-  <span class="token string">"tag"</span><span class="token keyword">:</span> <span class="token string">"proxy"</span>,
-  <span class="token string">"port"</span><span class="token keyword">:</span> 1080,
-  <span class="token string">"listen"</span><span class="token keyword">:</span> <span class="token string">"127.0.0.1"</span>,
-  <span class="token string">"protocol"</span><span class="token keyword">:</span> <span class="token string">"socks"</span>,
-  <span class="token string">"sniffing"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"enabled"</span><span class="token keyword">:</span> true,
-    <span class="token string">"destOverride"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"http"</span>,
-      <span class="token string">"tls"</span>
-    <span class="token punctuation">]</span>
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-  <span class="token string">"settings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"auth"</span><span class="token keyword">:</span> <span class="token string">"noauth"</span>,
-    <span class="token string">"udp"</span><span class="token keyword">:</span> true,
-    <span class="token string">"ip"</span><span class="token keyword">:</span> null,
-    <span class="token string">"address"</span><span class="token keyword">:</span> null,
-    <span class="token string">"clients"</span><span class="token keyword">:</span> null
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-  <span class="token string">"streamSettings"</span><span class="token keyword">:</span> null
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token punctuation">]</span>,
-<span class="token string">"outbounds"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-  <span class="token string">"tag"</span><span class="token keyword">:</span> <span class="token string">"proxy"</span>,
-  <span class="token string">"protocol"</span><span class="token keyword">:</span> <span class="token string">"vmess"</span>,
-  <span class="token string">"settings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"vnext"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-        <span class="token string">"address"</span><span class="token keyword">:</span> <span class="token string">" "</span>, //your domain address
-        <span class="token string">"port"</span><span class="token keyword">:</span>  ,   //port
-        <span class="token string">"users"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-          <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-            <span class="token string">"id"</span><span class="token keyword">:</span> <span class="token string">" "</span>,   //id
-            <span class="token string">"alterId"</span><span class="token keyword">:</span> 2,
-            <span class="token string">"email"</span><span class="token keyword">:</span> <span class="token string">"t@t.tt"</span>,
-            <span class="token string">"security"</span><span class="token keyword">:</span> <span class="token string">"auto"</span>
-          <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-        <span class="token punctuation">]</span>
-      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token punctuation">]</span>,
-    <span class="token string">"servers"</span><span class="token keyword">:</span> null,
-    <span class="token string">"response"</span><span class="token keyword">:</span> null
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-    <span class="token string">"streamSettings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"network"</span><span class="token keyword">:</span> <span class="token string">"ws"</span>,
-    <span class="token string">"security"</span><span class="token keyword">:</span> <span class="token string">"tls"</span>,
-    <span class="token string">"tlsSettings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-      <span class="token string">"allowInsecure"</span><span class="token keyword">:</span> true,
-      <span class="token string">"serverName"</span><span class="token keyword">:</span> <span class="token string">" "</span>    //domain address
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-    <span class="token string">"tcpSettings"</span><span class="token keyword">:</span> null,
-    <span class="token string">"kcpSettings"</span><span class="token keyword">:</span> null,
-    <span class="token string">"wsSettings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-      <span class="token string">"connectionReuse"</span><span class="token keyword">:</span> true,
-      <span class="token string">"path"</span><span class="token keyword">:</span> <span class="token string">"/e3137ae7/"</span>,   //path
-      <span class="token string">"headers"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-        <span class="token string">"Host"</span><span class="token keyword">:</span> <span class="token string">" "</span>  //domain address
-      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-    <span class="token string">"httpSettings"</span><span class="token keyword">:</span> null,
-    <span class="token string">"quicSettings"</span><span class="token keyword">:</span> null
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-  <span class="token string">"mux"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"enabled"</span><span class="token keyword">:</span> true,
-    <span class="token string">"concurrency"</span><span class="token keyword">:</span> 8
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-  <span class="token string">"tag"</span><span class="token keyword">:</span> <span class="token string">"direct"</span>,
-  <span class="token string">"protocol"</span><span class="token keyword">:</span> <span class="token string">"freedom"</span>,
-  <span class="token string">"settings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"vnext"</span><span class="token keyword">:</span> null,
-    <span class="token string">"servers"</span><span class="token keyword">:</span> null,
-    <span class="token string">"response"</span><span class="token keyword">:</span> null
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-  <span class="token string">"streamSettings"</span><span class="token keyword">:</span> null,
-  <span class="token string">"mux"</span><span class="token keyword">:</span> null
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-  <span class="token string">"tag"</span><span class="token keyword">:</span> <span class="token string">"block"</span>,
-  <span class="token string">"protocol"</span><span class="token keyword">:</span> <span class="token string">"blackhole"</span>,
-  <span class="token string">"settings"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"vnext"</span><span class="token keyword">:</span> null,
-    <span class="token string">"servers"</span><span class="token keyword">:</span> null,
-    <span class="token string">"response"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-      <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"http"</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
-  <span class="token string">"streamSettings"</span><span class="token keyword">:</span> null,
-  <span class="token string">"mux"</span><span class="token keyword">:</span> null
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token punctuation">]</span>,
-<span class="token string">"stats"</span><span class="token keyword">:</span> null,
-<span class="token string">"api"</span><span class="token keyword">:</span> null,
-<span class="token string">"dns"</span><span class="token keyword">:</span> null,
-<span class="token string">"routing"</span><span class="token keyword">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-<span class="token string">"domainStrategy"</span><span class="token keyword">:</span> <span class="token string">"IPIfNonMatch"</span>,
-<span class="token string">"rules"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"field"</span>,
-    <span class="token string">"port"</span><span class="token keyword">:</span> null,
-    <span class="token string">"inboundTag"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"api"</span>
-    <span class="token punctuation">]</span>,
-    <span class="token string">"outboundTag"</span><span class="token keyword">:</span> <span class="token string">"api"</span>,
-    <span class="token string">"ip"</span><span class="token keyword">:</span> null,
-    <span class="token string">"domain"</span><span class="token keyword">:</span> null
-  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token punctuation">]</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span></code></pre>
+<pre><code class="bash">&#123;
+&quot;policy&quot;: null,
+&quot;log&quot;: &#123;
+&quot;access&quot;: &quot;&quot;,
+&quot;error&quot;: &quot;&quot;,
+&quot;loglevel&quot;: &quot;warning&quot;
+&#125;,
+&quot;inbounds&quot;: [
+&#123;
+  &quot;tag&quot;: &quot;proxy&quot;,
+  &quot;port&quot;: 1080,
+  &quot;listen&quot;: &quot;127.0.0.1&quot;,
+  &quot;protocol&quot;: &quot;socks&quot;,
+  &quot;sniffing&quot;: &#123;
+    &quot;enabled&quot;: true,
+    &quot;destOverride&quot;: [
+      &quot;http&quot;,
+      &quot;tls&quot;
+    ]
+  &#125;,
+  &quot;settings&quot;: &#123;
+    &quot;auth&quot;: &quot;noauth&quot;,
+    &quot;udp&quot;: true,
+    &quot;ip&quot;: null,
+    &quot;address&quot;: null,
+    &quot;clients&quot;: null
+  &#125;,
+  &quot;streamSettings&quot;: null
+&#125;
+],
+&quot;outbounds&quot;: [
+&#123;
+  &quot;tag&quot;: &quot;proxy&quot;,
+  &quot;protocol&quot;: &quot;vmess&quot;,
+  &quot;settings&quot;: &#123;
+    &quot;vnext&quot;: [
+      &#123;
+        &quot;address&quot;: &quot; &quot;, //your domain address
+        &quot;port&quot;:  ,   //port
+        &quot;users&quot;: [
+          &#123;
+            &quot;id&quot;: &quot; &quot;,   //id
+            &quot;alterId&quot;: 2,
+            &quot;email&quot;: &quot;t@t.tt&quot;,
+            &quot;security&quot;: &quot;auto&quot;
+          &#125;
+        ]
+      &#125;
+    ],
+    &quot;servers&quot;: null,
+    &quot;response&quot;: null
+  &#125;,
+    &quot;streamSettings&quot;: &#123;
+    &quot;network&quot;: &quot;ws&quot;,
+    &quot;security&quot;: &quot;tls&quot;,
+    &quot;tlsSettings&quot;: &#123;
+      &quot;allowInsecure&quot;: true,
+      &quot;serverName&quot;: &quot; &quot;    //domain address
+    &#125;,
+    &quot;tcpSettings&quot;: null,
+    &quot;kcpSettings&quot;: null,
+    &quot;wsSettings&quot;: &#123;
+      &quot;connectionReuse&quot;: true,
+      &quot;path&quot;: &quot;/e3137ae7/&quot;,   //path
+      &quot;headers&quot;: &#123;
+        &quot;Host&quot;: &quot; &quot;  //domain address
+      &#125;
+    &#125;,
+    &quot;httpSettings&quot;: null,
+    &quot;quicSettings&quot;: null
+  &#125;,
+  &quot;mux&quot;: &#123;
+    &quot;enabled&quot;: true,
+    &quot;concurrency&quot;: 8
+  &#125;
+&#125;,
+&#123;
+  &quot;tag&quot;: &quot;direct&quot;,
+  &quot;protocol&quot;: &quot;freedom&quot;,
+  &quot;settings&quot;: &#123;
+    &quot;vnext&quot;: null,
+    &quot;servers&quot;: null,
+    &quot;response&quot;: null
+  &#125;,
+  &quot;streamSettings&quot;: null,
+  &quot;mux&quot;: null
+&#125;,
+&#123;
+  &quot;tag&quot;: &quot;block&quot;,
+  &quot;protocol&quot;: &quot;blackhole&quot;,
+  &quot;settings&quot;: &#123;
+    &quot;vnext&quot;: null,
+    &quot;servers&quot;: null,
+    &quot;response&quot;: &#123;
+      &quot;type&quot;: &quot;http&quot;
+    &#125;
+  &#125;,
+  &quot;streamSettings&quot;: null,
+  &quot;mux&quot;: null
+&#125;
+],
+&quot;stats&quot;: null,
+&quot;api&quot;: null,
+&quot;dns&quot;: null,
+&quot;routing&quot;: &#123;
+&quot;domainStrategy&quot;: &quot;IPIfNonMatch&quot;,
+&quot;rules&quot;: [
+  &#123;
+    &quot;type&quot;: &quot;field&quot;,
+    &quot;port&quot;: null,
+    &quot;inboundTag&quot;: [
+      &quot;api&quot;
+    ],
+    &quot;outboundTag&quot;: &quot;api&quot;,
+    &quot;ip&quot;: null,
+    &quot;domain&quot;: null
+  &#125;
+]
+&#125;
+&#125;</code></pre>
 </li>
 </ul>
 </li>
@@ -639,13 +640,13 @@ a VPS: vultr( ">
 <ul>
 <li>Installation</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S proxychains</code></pre>
+<pre><code class="bash">sudo pacman -S proxychains</code></pre>
 <p>Or you can install it from source code. (make sure your <code>gcc</code> installed)</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/rofl0r/proxychains-ng
-<span class="token function">cd</span> proxychains-ng
+<pre><code class="bash">git clone https://github.com/rofl0r/proxychains-ng
+cd proxychains-ng
 ./configure
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
-<span class="token function">sudo</span> <span class="token function">make</span> install-config<span class="token punctuation">(</span>generate config file<span class="token punctuation">)</span></code></pre>
+sudo make &amp;&amp; make install
+sudo make install-config(generate config file)</code></pre>
 <ul>
 <li>Configuration<br>config file is saved in <code>/etc/proxychains.conf</code></li>
 </ul>
@@ -654,24 +655,24 @@ a VPS: vultr( ">
 <li>Use</li>
 </ul>
 <p>Add <code>proxychains</code> before the terminal commands.</p>
-<pre class=" language-bash"><code class="language-bash">proxychains <span class="token function">git</span> clone https://github.com/rofl0r/proxychains-ng</code></pre>
+<pre><code class="bash">proxychains git clone https://github.com/rofl0r/proxychains-ng</code></pre>
 <p>you can run <code>npm</code> , <code>docker</code> … But <code>ping</code> command is not suitable, because proxychains can only proxy <strong>TCP</strong>, and <code>ping</code> is use <strong>ICMP</strong>.</p>
 <h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>You may need to configure a proxy server if you’re having trouble cloning or fetching from a remote repository or getting an error like unable to access <code>Couldn&#39;t resolve host</code>.</p>
 <p>Consider something like:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port</code></pre>
+<pre><code class="bash">git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port</code></pre>
 <p>i use <code>git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;</code> to set my git cause i use socks5.</p>
 <p>i also use <code> git config --local http.proxy &#39;socks5://127.0.0.1:1080&#39;</code> to set my local config that can only work in ‘git clone’ repositories.</p>
 <p>Check global proxy:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global http.proxy</code></pre>
+<pre><code class="bash">git config --global http.proxy</code></pre>
 <p>Check local proxy:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --local http.proxy</code></pre>
+<pre><code class="bash">git config --local http.proxy</code></pre>
 <p>Cancel proxy:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global --unset http.proxy</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --local --unset http.proxy</code></pre>
+<pre><code class="bash">git config --global --unset http.proxy</code></pre>
+<pre><code class="bash">git config --local --unset http.proxy</code></pre>
 <h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>Create <code>.wgetrc</code> file in home directory.</p>
-<pre class=" language-bash"><code class="language-bash">use_proxy<span class="token operator">=</span>yes
-http_proxy<span class="token operator">=</span>127.0.0.1:1080
-https_proxy<span class="token operator">=</span>127.0.0.1:1080</code></pre>
+<pre><code class="bash">use_proxy=yes
+http_proxy=127.0.0.1:1080
+https_proxy=127.0.0.1:1080</code></pre>
 <p>it can only use http proxy.</p>
 
             </div>
@@ -1137,7 +1138,7 @@ https_proxy<span class="token operator">=</span>127.0.0.1:1080</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1208,6 +1209,7 @@ https_proxy<span class="token operator">=</span>127.0.0.1:1080</code></pre>
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

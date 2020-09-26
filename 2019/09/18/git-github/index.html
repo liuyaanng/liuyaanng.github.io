@@ -24,12 +24,13 @@ Find wheather you are">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -460,26 +461,26 @@ Find wheather you are">
                 <h3 id="1-When-i-download-files-from-GitHub-Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused"><a href="#1-When-i-download-files-from-GitHub-Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused" class="headerlink" title="1. When i download files from GitHub, Failed to connect to 127.0.0.1 port 1080: Connection refused"></a>1. When i download files from GitHub, <code>Failed to connect to 127.0.0.1 port 1080: Connection refused</code></h3><ol>
 <li>Find wheather you are using proxy server or not.</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global http.proxy</code></pre>
+<pre><code class="bash">git config --global http.proxy</code></pre>
 <ol start="2">
 <li>Cancel the proxy server.</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global --unset http.proxy</code></pre>
+<pre><code class="bash">git config --global --unset http.proxy</code></pre>
 <h3 id="2-Clone-with-SSH-Github-guide"><a href="#2-Clone-with-SSH-Github-guide" class="headerlink" title="2. Clone with SSH (Github guide)"></a>2. Clone with SSH (<a target="_blank" rel="noopener" href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">Github guide</a>)</h3><ul>
 <li>Install Openssh</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S openssh</code></pre>
+<pre><code class="bash">sudo pacman -S openssh</code></pre>
 <ul>
 <li>Generating a new SSH key</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">ssh-keygen</code></pre>
+<pre><code class="bash">ssh-keygen</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/1.png"> </p>
-<pre class=" language-bash"><code class="language-bash">tree .ssh</code></pre>
+<pre><code class="bash">tree .ssh</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/2.png"> </p>
 <ul>
 <li>Copy the SSH key to your clipboard</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> .ssh/id_rsa.pub</code></pre>
+<pre><code class="bash">cat .ssh/id_rsa.pub</code></pre>
 <ul>
 <li>In the upper-right corner of any page, click your profile photo, then click <strong>Settings</strong></li>
 </ul>
@@ -498,7 +499,7 @@ Find wheather you are">
 <ul>
 <li>If prompted, confirm your GitHub password.</li>
 </ul>
-<h3 id="3-Mandatory-update-of-local-repository"><a href="#3-Mandatory-update-of-local-repository" class="headerlink" title="3.Mandatory update of local repository"></a>3.Mandatory update of local repository</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> fetch --all <span class="token operator">&amp;&amp;</span>  <span class="token function">git</span> reset --hard origin/master <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> pull</code></pre>
+<h3 id="3-Mandatory-update-of-local-repository"><a href="#3-Mandatory-update-of-local-repository" class="headerlink" title="3.Mandatory update of local repository"></a>3.Mandatory update of local repository</h3><pre><code class="bash">git fetch --all &amp;&amp;  git reset --hard origin/master &amp;&amp; git pull</code></pre>
 
             </div>
             <hr/>
@@ -974,7 +975,7 @@ Find wheather you are">
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1045,6 +1046,7 @@ Find wheather you are">
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

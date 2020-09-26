@@ -26,12 +26,13 @@ USE CDN
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -445,7 +446,7 @@ USE CDN
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        811
+                        828
                     </div>
                     
 
@@ -496,58 +497,58 @@ https://cdn.jsdelivr.net/gh/user/repo@version/file</code></pre>
 <h2 id="Generate-Jsdelivr-Link"><a href="#Generate-Jsdelivr-Link" class="headerlink" title="Generate Jsdelivr Link"></a>Generate Jsdelivr Link</h2><ul>
 <li>我写博客的截图均是由<a target="_blank" rel="noopener" href="https://zh.xnipapp.com/">Xnip</a> 生成，截图文件存储目录<code>Pictures/Xnip</code>,故我写了一个小脚本来实现</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
-<span class="token comment" spellcheck="true"># @author:liuyaanng</span>
+<pre><code class="bash">#!/bin/bash
+# @author:liuyaanng
 
-rep_path<span class="token operator">=</span>~/Github/Myrep/CDN/
-blog_photo_folder<span class="token operator">=</span>blog_images
-path<span class="token operator">=</span>~/Pictures/Xnip
-prefix<span class="token operator">=</span>https://cdn.jsdelivr.net/gh/liuyaanng/CDN@
-files<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">ls</span> $path<span class="token variable">)</span></span>
-check_v<span class="token operator">=</span>0
-check_f<span class="token operator">=</span>0
-help_text<span class="token operator">=</span><span class="token string">"This is a script for move the picture files to github, and get the jsdelivr link quickly. This scripts run with 2 arguments.\n
+rep_path=~/Github/Myrep/CDN/
+blog_photo_folder=blog_images
+path=~/Pictures/Xnip
+prefix=https://cdn.jsdelivr.net/gh/liuyaanng/CDN@
+files=$(ls $path)
+check_v=0
+check_f=0
+help_text=&quot;This is a script for move the picture files to github, and get the jsdelivr link quickly. This scripts run with 2 arguments.\n
 1. cdn_server.sh -v version -f folder. version is the release version
-,folder is the pictures's file folder. \n
+,folder is the pictures&#39;s file folder. \n
 for example: cdn_server.sh -v 1.0 -f cdn_for_blog, it will get\n
 https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.0/blog_images/cdn_for_blog/filename\n
 if you do not use version, please use:cdn_server.sh -v master -f foldername.
-2. cdn_server.sh -h    Show help content."</span>
+2. cdn_server.sh -h    Show help content.&quot;
 
-<span class="token keyword">while</span> <span class="token function">getopts</span> :v:f:h opt
-<span class="token keyword">do</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$opt</span>"</span> <span class="token keyword">in</span>
-        v<span class="token punctuation">)</span> version<span class="token operator">=</span><span class="token variable">$OPTARG</span>
-             check_v<span class="token operator">=</span>1<span class="token punctuation">;</span><span class="token punctuation">;</span>
-        f<span class="token punctuation">)</span> folder<span class="token operator">=</span><span class="token variable">$OPTARG</span>
-             check_f<span class="token operator">=</span>1<span class="token punctuation">;</span><span class="token punctuation">;</span>
-        h<span class="token punctuation">)</span> <span class="token keyword">echo</span> -e <span class="token variable">$help_text</span>
-             <span class="token keyword">exit</span> 1<span class="token punctuation">;</span><span class="token punctuation">;</span>
-        ?<span class="token punctuation">)</span> <span class="token keyword">echo</span> <span class="token string">"sync error. Use 'cdn_server.sh -h' for help."</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+while getopts :v:f:h opt
+do
+    case &quot;$opt&quot; in
+        v) version=$OPTARG
+             check_v=1;;
+        f) folder=$OPTARG
+             check_f=1;;
+        h) echo -e $help_text
+             exit 1;;
+        ?) echo &quot;sync error. Use &#39;cdn_server.sh -h&#39; for help.&quot;;;
     esac
-<span class="token keyword">done</span>
-print_link<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -n <span class="token string">"<span class="token variable">$files</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token keyword">echo</span> <span class="token string">"There is no file in Xnip folder."</span>
-<span class="token keyword">else</span>
-    <span class="token keyword">for</span> filename <span class="token keyword">in</span> <span class="token variable">$files</span>
-    <span class="token keyword">do</span>
-        <span class="token keyword">echo</span> <span class="token variable">$prefix</span><span class="token variable">$version</span>/<span class="token variable">$blog_photo_folder</span>/<span class="token variable">$folder</span>/<span class="token variable">$filename</span>
-        <span class="token function">mv</span> <span class="token variable">$path</span>/* <span class="token variable">$rep_path</span><span class="token variable">$blog_photo_folder</span>/<span class="token variable">$folder</span>
-        <span class="token keyword">echo</span> <span class="token string">"move file <span class="token variable">$filename</span> success"</span>
-    <span class="token keyword">done</span>
-    <span class="token function">cd</span> <span class="token variable">$rep_path</span>
-    <span class="token function">git</span> add <span class="token keyword">.</span>
-    <span class="token function">git</span> commit -m <span class="token string">"upload <span class="token variable">$folder</span>"</span>
-    <span class="token function">git</span> push
-<span class="token keyword">fi</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+done
+print_link()&#123;
+if [ ! -n &quot;$files&quot; ]; then
+    echo &quot;There is no file in Xnip folder.&quot;
+else
+    for filename in $files
+    do
+        echo $prefix$version/$blog_photo_folder/$folder/$filename
+        mv $path/* $rep_path$blog_photo_folder/$folder
+        echo &quot;move file $filename success&quot;
+    done
+    cd $rep_path
+    git add .
+    git commit -m &quot;upload $folder&quot;
+    git push
+fi
+&#125;
 
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$check_v</span> -eq <span class="token variable">$check_f</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+if [ $check_v -eq $check_f ]; then
     print_link
-<span class="token keyword">else</span>
-    <span class="token keyword">echo</span> <span class="token string">"need 2 args but given 1."</span>
-<span class="token keyword">fi</span></code></pre>
+else
+    echo &quot;need 2 args but given 1.&quot;
+fi</code></pre>
 <p>该脚本有以下功能：</p>
 <ol>
 <li>将截图转到github仓库中并提交</li>
@@ -561,11 +562,11 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
 </ol>
 <p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源. 若不想指定版本号（第一次发布之后可用），可以直接使用 <code>-a master</code>.</p>
 <p>例如：</p>
-<pre class=" language-bash"><code class="language-bash">cdn_server.sh -a master -f CDN_for_blog</code></pre>
+<pre><code class="bash">cdn_server.sh -a master -f CDN_for_blog</code></pre>
 <p>生成链接为: <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg</a><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg"> </p>
 <p>为了写博客更（l）方（a）便（n）, 我在<code>hexo new</code>的同时在github的CDN仓库创建了一个同名的文件夹用于存储博客图片：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># hexo and CDN</span>
-<span class="token function">alias</span> hn<span class="token operator">=</span><span class="token string">'f() &amp;#123;hexo new <span class="token variable">$1</span>;mkdir ~/Github/Myrep/CND/<span class="token variable">$1</span>;echo Created folder ~/Github/Myrep/CND/<span class="token variable">$1</span>&amp;#125;;f'</span></code></pre>
+<pre><code class="bash"># hexo and CDN
+alias hn=&#39;f() &#123;hexo new $1;mkdir ~/Github/Myrep/CND/$1;echo Created folder ~/Github/Myrep/CND/$1&#125;;f&#39;</code></pre>
 
             </div>
             <hr/>
@@ -1045,7 +1046,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1116,6 +1117,7 @@ print_link<span class="token punctuation">(</span><span class="token punctuation
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

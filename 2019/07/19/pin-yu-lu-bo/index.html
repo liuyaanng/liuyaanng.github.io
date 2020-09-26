@@ -29,12 +29,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -455,7 +456,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        7 Min
+                        8 Min
                     </div>
                     
                 
@@ -491,49 +492,49 @@
 <h2 id="MATLAB实现对图像的Fourier变换和逆变换"><a href="#MATLAB实现对图像的Fourier变换和逆变换" class="headerlink" title="MATLAB实现对图像的Fourier变换和逆变换"></a>MATLAB实现对图像的Fourier变换和逆变换</h2><ul>
 <li>Fourier变换，f为原图像</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> F <span class="token operator">=</span> <span class="token function">fft2</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">&gt;&gt; F = fft2(f);</code></pre>
 <ul>
 <li>Fourier谱</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> S <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">&gt;&gt; S = abs(F);</code></pre>
 <p>该函数计算的是数组中每个元素的幅值( $ \sqrt{r^2+i^2} $ )<br>可以在这里观察到4个角的亮点，这就是周期特性的结果，不便观察</p>
 <ul>
 <li>将交换的原点移动到频域矩形的中心</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> Fc <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">&gt;&gt; Fc = fftshift(F)</code></pre>
 <p>频谱范围大，不便观察</p>
 <ul>
 <li>取模，缩放</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab">S2 <span class="token operator">=</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token function">abs</span><span class="token punctuation">(</span>Fc<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">S2 = log(1 + abs(Fc));</code></pre>
 <ul>
 <li>Fourier逆变换</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> f <span class="token operator">=</span> <span class="token function">ifft2</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">&gt;&gt; f = ifft2(F);</code></pre>
 <p>下面是完整代码</p>
-<pre class=" language-matlab"><code class="language-matlab">img<span class="token operator">=</span><span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'moon.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'原图'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="matlab">img=imread(&#39;moon.jpg&#39;);
+subplot(2,2,1);
+    imshow(img);
+    title(&#39;原图&#39;);
 
-f<span class="token operator">=</span><span class="token function">rgb2gray</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">%对于RGB图像必须做的一步，也可以用im2double函数</span>
-F<span class="token operator">=</span><span class="token function">fft2</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">%Fourier变换</span>
-F1<span class="token operator">=</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">%取模,缩放</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span>F1<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'傅里叶变换频谱图'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+f=rgb2gray(img);    %对于RGB图像必须做的一步，也可以用im2double函数
+F=fft2(f);          %Fourier变换
+F1=log(abs(F)+1);   %取模,缩放
+subplot(2,2,2);
+    imshow(F1,[]);
+    title(&#39;傅里叶变换频谱图&#39;);
 
-Fs<span class="token operator">=</span><span class="token function">fftshift</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">%将频谱图中零频率成分移动至频谱图中心</span>
-S<span class="token operator">=</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>Fs<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">%取模并进行缩放</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span>S<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'频移后的频谱图'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Fs=fftshift(F);      %将频谱图中零频率成分移动至频谱图中心
+S=log(abs(Fs)+1);    %取模并进行缩放
+subplot(2,2,3);
+    imshow(S,[]);
+    title(&#39;频移后的频谱图&#39;);
 
-fr<span class="token operator">=</span><span class="token function">real</span><span class="token punctuation">(</span><span class="token function">ifft2</span><span class="token punctuation">(</span><span class="token function">ifftshift</span><span class="token punctuation">(</span>Fs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">%频率域反变换到空间域，并取实部</span>
-ret<span class="token operator">=</span><span class="token function">im2uint8</span><span class="token punctuation">(</span><span class="token function">mat2gray</span><span class="token punctuation">(</span>fr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">%更改图像类型</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'逆傅里叶变换'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+fr=real(ifft2(ifftshift(Fs)));  %频率域反变换到空间域，并取实部
+ret=im2uint8(mat2gray(fr));    %更改图像类型
+subplot(2,2,4);
+    imshow(ret);
+    title(&#39;逆傅里叶变换&#39;);</code></pre>
 <p>结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d3043778b4e114553.jpg"><br>如果使用<code>&gt;&gt; f = im2double(img)</code>进行处理，则会出现以下结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377bcc9554917.jpg"></p>
 <ul>
 <li>分析    </li>
@@ -550,185 +551,185 @@ ret<span class="token operator">=</span><span class="token function">im2uint8</s
 <p>Fourier频谱图上的明暗点，意义是指图像上的某一点与邻域点差异的强弱，即梯度的大小。</p>
 <p>对频谱移频到原点之后，可以看出图像的频率分布是以原点为圆心，对称分布的.</p>
 <h2 id="DFT滤波"><a href="#DFT滤波" class="headerlink" title="DFT滤波"></a>DFT滤波</h2><h3 id="滤波步骤"><a href="#滤波步骤" class="headerlink" title="滤波步骤"></a>滤波步骤</h3><ol>
-<li>用函数<code>tofloat</code>把输入图像转换成浮点图像<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">[</span>f<span class="token punctuation">,</span> revertclass<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">tofloat</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>用函数<code>tofloat</code>把输入图像转换成浮点图像<pre><code class="matlab">&gt;&gt; [f, revertclass] = tofloat(f);</code></pre>
 </li>
-<li>用函数<code>paddedsize</code>来获得填充参数<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> PQ <span class="token operator">=</span> <span class="token function">paddedsize</span><span class="token punctuation">(</span><span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>用函数<code>paddedsize</code>来获得填充参数<pre><code class="matlab">&gt;&gt; PQ = paddedsize(size(f));</code></pre>
 </li>
-<li>得到有填充的Fourier变换<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> F <span class="token operator">=</span> <span class="token function">fft2</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>得到有填充的Fourier变换<pre><code class="matlab">&gt;&gt; F = fft2(f,PQ(1), PQ(2));</code></pre>
 </li>
-<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> H <span class="token operator">=</span> <span class="token function">lpfilter</span><span class="token punctuation">(</span><span class="token string">'gaussian'</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span>sig<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre><code class="matlab">&gt;&gt; H = lpfilter(&#39;gaussian&#39;,PQ(1),PQ(2),2*sig);</code></pre>
 在使用滤波器之前，要先<code>H = fftshift(H)</code></li>
-<li>用滤波器乘以FFT变换<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> G <span class="token operator">=</span> H <span class="token operator">.*</span> F<span class="token punctuation">;</span></code></pre>
+<li>用滤波器乘以FFT变换<pre><code class="matlab">&gt;&gt; G = H .* F;</code></pre>
 </li>
-<li>获得G的逆Fourier变换<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> g <span class="token operator">=</span> <span class="token function">ifft2</span><span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>获得G的逆Fourier变换<pre><code class="matlab">&gt;&gt; g = ifft2(G);</code></pre>
 </li>
-<li>修剪左上部矩形为原始大小<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> g <span class="token operator">=</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>修剪左上部矩形为原始大小<pre><code class="matlab">&gt;&gt; g = g(1:size(f, 1), 1:size(f, 2));</code></pre>
 </li>
-<li>把滤波后的图像变换为输入图像的类<pre class=" language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> g <span class="token operator">=</span> <span class="token function">revertclass</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li>把滤波后的图像变换为输入图像的类<pre><code class="matlab">&gt;&gt; g = revertclass(g);</code></pre>
 <h3 id="Matlab实现"><a href="#Matlab实现" class="headerlink" title="Matlab实现"></a>Matlab实现</h3></li>
 </ol>
-<pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'1.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="matlab">f = imread(&#39;1.jpg&#39;);
 
-f <span class="token operator">=</span> <span class="token function">rgb2gray</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+f = rgb2gray(f);
 
-<span class="token comment" spellcheck="true">%未填充的滤波</span>
+%未填充的滤波
 
-<span class="token punctuation">[</span>M<span class="token punctuation">,</span>N<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+[M,N] = size(f);
 
-<span class="token punctuation">[</span>f<span class="token punctuation">,</span> revertclass<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">tofloat</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+[f, revertclass] = tofloat(f);
 
-F <span class="token operator">=</span> <span class="token function">fft2</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+F = fft2(f);
 
-sig <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+sig = 10;
 
-H <span class="token operator">=</span> <span class="token function">lpfilter</span><span class="token punctuation">(</span><span class="token string">'gaussian'</span><span class="token punctuation">,</span> M<span class="token punctuation">,</span> N<span class="token punctuation">,</span> sig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+H = lpfilter(&#39;gaussian&#39;, M, N, sig);
 
-G <span class="token operator">=</span> H<span class="token operator">.*</span>F<span class="token punctuation">;</span>
+G = H.*F;
 
-g <span class="token operator">=</span> <span class="token function">ifft2</span><span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span>
+g = ifft2(G);
 
-g <span class="token operator">=</span> <span class="token function">revertclass</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+g = revertclass(g);
 
-<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+figure(1);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+subplot(1,2,1);
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+imshow(g)
 
-<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'未填充的滤波'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+title(&#39;未填充的滤波&#39;);
 
-<span class="token comment" spellcheck="true">%已填充的滤波</span>
+%已填充的滤波
 
-PQ <span class="token operator">=</span> <span class="token function">paddedsize</span><span class="token punctuation">(</span><span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+PQ = paddedsize(size(f));
 
-Fp <span class="token operator">=</span> <span class="token function">fft2</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Fp = fft2(f,PQ(1),PQ(2));
 
-Hp <span class="token operator">=</span> <span class="token function">lpfilter</span><span class="token punctuation">(</span><span class="token string">'gaussian'</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">PQ</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span>sig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Hp = lpfilter(&#39;gaussian&#39;,PQ(1),PQ(2),2*sig);
 
-Gp <span class="token operator">=</span> Hp<span class="token operator">.*</span>Fp<span class="token punctuation">;</span>
+Gp = Hp.*Fp;
 
-gp <span class="token operator">=</span> <span class="token function">ifft2</span><span class="token punctuation">(</span>Gp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+gp = ifft2(Gp);
 
-gpc <span class="token operator">=</span> <span class="token function">gp</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gpc = gp(1:size(f,1),1:size(f,2));
 
-gpc <span class="token operator">=</span> <span class="token function">revertclass</span><span class="token punctuation">(</span>gpc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+gpc = revertclass(gpc);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+subplot(1,2,2);
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>gpc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+imshow(gpc);
 
-<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'已填充的滤波'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+title(&#39;已填充的滤波&#39;);</code></pre>
 <p>这里展示了不填充滤波和填充滤波的两种情况，结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf1e88071166.jpg"><br>可以观察到未填充滤波处理后图像的垂直边缘未模糊</p>
 <p>涉及到的函数    </p>
 <ul>
 <li>paddedsize函数</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token keyword">function</span> PQ <span class="token operator">=</span> <span class="token function">paddedsize</span><span class="token punctuation">(</span>AB<span class="token punctuation">,</span> CD<span class="token punctuation">,</span> PARAM<span class="token punctuation">)</span>
+<pre><code class="matlab">function PQ = paddedsize(AB, CD, PARAM)
 
-<span class="token keyword">if</span> nargin <span class="token operator">==</span> <span class="token number">1</span>
+if nargin == 1
 
-PQ <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>AB<span class="token punctuation">;</span>
+PQ = 2*AB;
 
-<span class="token keyword">elseif</span> nargin <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;</span> <span class="token operator">~</span><span class="token function">ischar</span><span class="token punctuation">(</span>CD<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%如果CD不为字符串</span>
+elseif nargin == 2 &amp; ~ischar(CD) %如果CD不为字符串
 
-PQ <span class="token operator">=</span> AB <span class="token operator">+</span> CD <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+PQ = AB + CD -1;
 
-PQ <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span><span class="token function">ceil</span><span class="token punctuation">(</span>PQ <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+PQ = 2 *ceil(PQ / 2);
 
-<span class="token keyword">elseif</span> nargin <span class="token operator">==</span> <span class="token number">2</span> <span class="token comment" spellcheck="true">%如果CD处为字符串</span>
+elseif nargin == 2 %如果CD处为字符串
 
-m <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>AB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+m = max(AB);
 
-P <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">^</span><span class="token function">nextpow2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%取2的整数次幂</span>
+P = 2^nextpow2(2*m); %取2的整数次幂
 
-PQ <span class="token operator">=</span> <span class="token punctuation">[</span>P<span class="token punctuation">,</span> P<span class="token punctuation">]</span><span class="token punctuation">;</span>
+PQ = [P, P];
 
-<span class="token keyword">elseif</span> nargin <span class="token operator">==</span> <span class="token number">3</span>
+elseif nargin == 3
 
-m <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">[</span>AB CD<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m = max([AB CD]);
 
-P <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">^</span><span class="token function">nextpow2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+P = 2^nextpow2(2*m);
 
-PQ <span class="token operator">=</span> <span class="token punctuation">[</span>P<span class="token punctuation">,</span> P<span class="token punctuation">]</span><span class="token punctuation">;</span>
+PQ = [P, P];
 
-<span class="token keyword">else</span>
+else
 
-<span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'wrong number of inputs.'</span><span class="token punctuation">)</span>
+error(&#39;wrong number of inputs.&#39;)
 
-<span class="token keyword">end</span></code></pre>
+end</code></pre>
 <ul>
 <li>lpfilter函数</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token keyword">function</span> <span class="token punctuation">[</span> H<span class="token punctuation">,</span> D <span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">lpfilter</span><span class="token punctuation">(</span> type<span class="token punctuation">,</span>M<span class="token punctuation">,</span>N<span class="token punctuation">,</span>D0<span class="token punctuation">,</span>n <span class="token punctuation">)</span>
+<pre><code class="matlab">function [ H, D ] = lpfilter( type,M,N,D0,n )
 
-<span class="token comment" spellcheck="true">%LPFILTER creates the transfer function of a lowpass filter.</span>
+%LPFILTER creates the transfer function of a lowpass filter.
 
-<span class="token comment" spellcheck="true">%   Detailed explanation goes here</span>
-
-
-
-<span class="token comment" spellcheck="true">%use function dftuv to set up the meshgrid arrays needed for computing</span>
-
-<span class="token comment" spellcheck="true">%the required distances.</span>
-
-<span class="token punctuation">[</span>U<span class="token punctuation">,</span> V<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">dftuv</span><span class="token punctuation">(</span>M<span class="token punctuation">,</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+%   Detailed explanation goes here
 
 
 
-<span class="token comment" spellcheck="true">%compute the distances D(U,V)</span>
+%use function dftuv to set up the meshgrid arrays needed for computing
 
-D <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>U<span class="token operator">.^</span><span class="token number">2</span> <span class="token operator">+</span> V<span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+%the required distances.
+
+[U, V] = dftuv(M,N);
 
 
 
-<span class="token comment" spellcheck="true">%begin filter computations</span>
+%compute the distances D(U,V)
 
-<span class="token keyword">switch</span> type
+D = sqrt(U.^2 + V.^2);
 
-    <span class="token keyword">case</span> <span class="token string">'ideal'</span>
 
-        H <span class="token operator">=</span> <span class="token function">double</span><span class="token punctuation">(</span>D <span class="token operator">&lt;=</span> D0<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">case</span> <span class="token string">'btw'</span>
+%begin filter computations
 
-        <span class="token keyword">if</span> nargin <span class="token operator">==</span> <span class="token number">4</span>
+switch type
 
-            n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    case &#39;ideal&#39;
 
-        <span class="token keyword">end</span>
+        H = double(D &lt;= D0);
 
-        H <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">./</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span><span class="token punctuation">(</span>D<span class="token operator">./</span>D0<span class="token punctuation">)</span><span class="token operator">.^</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    case &#39;btw&#39;
 
-    <span class="token keyword">case</span> <span class="token string">'gaussian'</span>
+        if nargin == 4
 
-        H <span class="token operator">=</span> <span class="token function">exp</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>D<span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">./</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token punctuation">(</span>D0<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            n = 1;
 
-    <span class="token keyword">otherwise</span>
+        end
 
-        <span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Unkown filter type'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">end</span></code></pre>
+        H = 1./(1+(D./D0).^(2*n));
+
+    case &#39;gaussian&#39;
+
+        H = exp(-(D.^2)./(2*(D0^2)));
+
+    otherwise
+
+        error(&#39;Unkown filter type&#39;);
+end</code></pre>
 <ul>
 <li>dftuv函数</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token keyword">function</span> <span class="token punctuation">[</span> U<span class="token punctuation">,</span>V <span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">dftuv</span><span class="token punctuation">(</span> M<span class="token punctuation">,</span> N <span class="token punctuation">)</span>
+<pre><code class="matlab">function [ U,V ] = dftuv( M, N )
 
-<span class="token comment" spellcheck="true">%DFTUV 实现频域滤波器的网格函数</span>
+%DFTUV 实现频域滤波器的网格函数
 
-<span class="token comment" spellcheck="true">%   Detailed explanation goes here</span>
+%   Detailed explanation goes here
 
-u <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token punctuation">(</span>M <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+u = 0:(M - 1);
 
-v <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token punctuation">(</span>N <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+v = 0:(N - 1);
 
-idx <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>u <span class="token operator">></span> M<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%找大于M/2的数据</span>
+idx = find(u &gt; M/2); %找大于M/2的数据
 
-<span class="token function">u</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">u</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span> <span class="token operator">-</span> M<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%将大于M/2的数据减去M</span>
+u(idx) = u(idx) - M; %将大于M/2的数据减去M
 
-idy <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>v <span class="token operator">></span> N<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+idy = find(v &gt; N/2);
 
-<span class="token function">v</span><span class="token punctuation">(</span>idy<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">v</span><span class="token punctuation">(</span>idy<span class="token punctuation">)</span> <span class="token operator">-</span> N<span class="token punctuation">;</span>
+v(idy) = v(idy) - N;
 
-<span class="token punctuation">[</span>V<span class="token punctuation">,</span> U<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">meshgrid</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> u<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+[V, U] = meshgrid(v, u);</code></pre>
 <ul>
 <li>总结：</li>
 </ul>
@@ -1214,7 +1215,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1285,6 +1286,7 @@ idy <span class="token operator">=</span> <span class="token function">find</spa
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

@@ -25,12 +25,13 @@ MatLab和">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -486,20 +487,20 @@ MatLab和">
 <h2 id="导入依赖文件"><a href="#导入依赖文件" class="headerlink" title="导入依赖文件"></a>导入依赖文件</h2><p>将 <strong>D:\OpenCV\opencv\build\x64\vc15\lib</strong>下的 <strong>opencv_world344.lib</strong>文件复制到你的Matlab安装路径下的 <strong>microsoft</strong>文件夹下,我的是 <strong>D:\MATLAB\R2019a\extern\lib\win64\microsoft</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/3.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/4.png"></p>
 <h2 id="在Matlab中导入文件"><a href="#在Matlab中导入文件" class="headerlink" title="在Matlab中导入文件"></a>在Matlab中导入文件</h2><h2 id="在命令行执行以下命令"><a href="#在命令行执行以下命令" class="headerlink" title="在命令行执行以下命令"></a>在命令行执行以下命令</h2><p>注意作者的命令为:</p>
-<pre class=" language-matlab"><code class="language-matlab">mex generateEllipseCandidates<span class="token punctuation">.</span>cpp <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>include <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv2 <span class="token operator">-</span>LF<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv2<span class="token number">.4</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">\</span>build<span class="token operator">\</span>x64<span class="token operator">\</span>vc11<span class="token operator">\</span>lib <span class="token operator">-</span>IF<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>settlein<span class="token operator">\</span>extern<span class="token operator">\</span>include <span class="token operator">-</span>LF<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>settlein<span class="token operator">\</span>extern<span class="token operator">\</span>lib<span class="token operator">\</span>win64<span class="token operator">\</span>microsoft <span class="token operator">-</span>lopencv_core249 <span class="token operator">-</span>lopencv_highgui249 <span class="token operator">-</span>lopencv_imgproc249 <span class="token operator">-</span>llibmwlapack<span class="token punctuation">.</span>lib</code></pre>
+<pre><code class="matlab">mex generateEllipseCandidates.cpp -IF:\OpenCV\opencv2.4.9\build\include -IF:\OpenCV\opencv2.4.9\build\include\opencv -IF:\OpenCV\opencv2.4.9\build\include\opencv2 -LF:\OpenCV\opencv2.4.9\build\x64\vc11\lib -IF:\Matlab\settlein\extern\include -LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code></pre>
 <p>把OpenCV和Matlab的相关文件的路径改成你的安装路径<br>我这里版本号为OpenCV3.4.4,安装路径如下,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/5.png"><br>故修改为<code>D:\OpenCV\opencv\build...</code>,<br>由于OpenCV3.4.4只有 <strong>opencv_world344.lib</strong> 这一个lib文件，故将 <code>LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code>　修改为 <code>LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib</code></p>
 <p>完整的命令为:</p>
-<pre class=" language-matlab"><code class="language-matlab">mex generateEllipseCandidates<span class="token punctuation">.</span>cpp <span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>include 
-<span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv <span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>include<span class="token operator">\</span>opencv2 
-<span class="token operator">-</span>LD<span class="token operator">:</span><span class="token operator">\</span>OpenCV<span class="token operator">\</span>opencv<span class="token operator">\</span>build<span class="token operator">\</span>x64<span class="token operator">\</span>vc15<span class="token operator">\</span>lib 
-<span class="token operator">-</span>ID<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>R2019a<span class="token operator">\</span>include <span class="token operator">-</span>LD<span class="token operator">:</span><span class="token operator">\</span>Matlab<span class="token operator">\</span>R2019a<span class="token operator">\</span>extern<span class="token operator">\</span>lib<span class="token operator">\</span>win64<span class="token operator">\</span>microsoft <span class="token operator">-</span>lopencv_world344 <span class="token operator">-</span>llibmwlapack<span class="token punctuation">.</span>lib
+<pre><code class="matlab">mex generateEllipseCandidates.cpp -ID:\OpenCV\opencv\build\include 
+-ID:\OpenCV\opencv\build\include\opencv -ID:\OpenCV\opencv\build\include\opencv2 
+-LD:\OpenCV\opencv\build\x64\vc15\lib 
+-ID:\Matlab\R2019a\include -LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/6.png"><br>编译成功之后生成<code>generateEllipseCandidates.mexw64</code>文件<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/7.png"><br>之后再运行<code>LCS_ellipse.m</code><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/8.png"></p>
 <p>##　报错解决办法</p>
 <ol>
 <li>如图<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/9.png"><br>在.cpp文件中添加</li>
 </ol>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">using</span> <span class="token keyword">namespace</span> std</code></pre>
+<pre><code class="cpp">using namespace std</code></pre>
 <ol start="2">
 <li>如图</li>
 </ol>
@@ -973,7 +974,7 @@ OpenCV椭圆绘制ellip
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1044,6 +1045,7 @@ OpenCV椭圆绘制ellip
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

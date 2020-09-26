@@ -28,12 +28,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -447,7 +448,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        2.7k
+                        2.8k
                     </div>
                     
 
@@ -552,27 +553,27 @@
 <ul>
 <li>MATLAB实现</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'moon.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="matlab">f = imread(&#39;moon.jpg&#39;);
 
-f <span class="token operator">=</span> <span class="token function">rgb2gray</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+f = rgb2gray(f);
 
-w <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token number">8</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+w = [-1 -1 -1; -1 8 -1; -1 -1 -1];
 
-g <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">imfilter</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> w<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+g = abs(imfilter(f, w));
 
-T <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">g</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+T = max(g(:));
 
-g <span class="token operator">=</span> g <span class="token operator">>=</span> T<span class="token punctuation">;</span>
+g = g &gt;= T;
 
-<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+figure(1);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+subplot(1,2,1)
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+imshow(f)
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+subplot(1,2,2)
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span></code></pre>
+imshow(g)</code></pre>
 <p>结果：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a82234833730.jpg"></p>
 <h3 id="线检测"><a href="#线检测" class="headerlink" title="线检测"></a>线检测</h3><p>可以预期，二阶导数将导致更强的响应，并产生比一阶导数更细的线</p>
 <p>线检测模板</p>
@@ -668,77 +669,77 @@ g <span class="token operator">=</span> g <span class="token operator">>=</span>
 <ul>
 <li>MATLAB实现检测指定方向上的线</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab">clc
+<pre><code class="matlab">clc
 
 clear
 
-f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'11111.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+f = imread(&#39;11111.jpg&#39;);
 
-f <span class="token operator">=</span> <span class="token function">rgb2gray</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+f = rgb2gray(f);
 
-<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+figure(1);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+subplot(2,3,1)
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+imshow(f);
 
-w <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token number">2</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token number">2</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+w = [-1, 2, -1; -1 2 -1; -1 2 -1];
 
-<span class="token comment" spellcheck="true">% g = imfilter(tofloat(f),w);</span>
+% g = imfilter(tofloat(f),w);
 
-g <span class="token operator">=</span> <span class="token function">imfilter</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+g = imfilter(f,w);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+subplot(2,3,2)
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+imshow(g, [ ]);
 
-gtop <span class="token operator">=</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gtop = g(1:120, 1:120);
 
-<span class="token comment" spellcheck="true">% gtop = pixeldup(gtop, 4);</span>
+% gtop = pixeldup(gtop, 4);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+subplot(2,3,3)
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>gtop<span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+imshow(gtop, [ ]);
 
-gbot <span class="token operator">=</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token keyword">end</span> <span class="token operator">-</span> <span class="token number">119</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token punctuation">,</span> <span class="token keyword">end</span> <span class="token operator">-</span> <span class="token number">119</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gbot = g(end - 119:end, end - 119:end);
 
-<span class="token comment" spellcheck="true">% gbot = pixeldup(gbot, 4);</span>
+% gbot = pixeldup(gbot, 4);
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>
+subplot(2,3,4)
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>gbot<span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-g <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
-
-<span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+imshow(gbot, [ ]);
 
 
-T <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">g</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+g = abs(g);
 
-g <span class="token operator">=</span> g <span class="token operator">>=</span> T<span class="token punctuation">;</span>
+subplot(2,3,5)
 
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+imshow(g, [])
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+
+T = max(g(:));
+
+g = g &gt;= T;
+
+subplot(2,3,6);
+
+imshow(g)
 </code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a815b7125153.jpg"><br>可能会用到的M函数pixeldup</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token keyword">function</span> B<span class="token operator">=</span><span class="token function">pixeldup</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">%pixeldup用来重复像素的，在水平方向复制m倍，在垂直方向复制n倍，m，n必须为整数，n没有赋值默认为m%检查输入参数个数</span>
-<span class="token keyword">if</span> nargin<span class="token operator">&lt;</span><span class="token number">2</span>
-    <span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'At least two inputs are required.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">end</span>
-<span class="token keyword">if</span> nargin<span class="token operator">==</span><span class="token number">2</span>
-    n<span class="token operator">=</span>m<span class="token punctuation">;</span>
-    <span class="token keyword">end</span>
-u<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%产生一个向量，其向量中元素的个数为A的行数%复制向量中每个元素m次m=round(m);%防止m为非整数u=u(ones(1,m),:);</span>
-u<span class="token operator">=</span><span class="token function">u</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%在垂直方向重复操作</span>
-v<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-n<span class="token operator">=</span><span class="token function">round</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-v<span class="token operator">=</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-v<span class="token operator">=</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-B<span class="token operator">=</span><span class="token function">A</span><span class="token punctuation">(</span>u<span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">function B=pixeldup(A,m,n)%pixeldup用来重复像素的，在水平方向复制m倍，在垂直方向复制n倍，m，n必须为整数，n没有赋值默认为m%检查输入参数个数
+if nargin&lt;2
+    error(&#39;At least two inputs are required.&#39;);
+    end
+if nargin==2
+    n=m;
+    end
+u=1:size(A,1);%产生一个向量，其向量中元素的个数为A的行数%复制向量中每个元素m次m=round(m);%防止m为非整数u=u(ones(1,m),:);
+u=u(:);%在垂直方向重复操作
+v=1:size(A,2);
+n=round(n);
+v=v(ones(1,n),:);
+v=v(:);
+B=A(u,v);</code></pre>
 <p><strong>慎用tofloat函数</strong></p>
 <h3 id="基本边缘检测"><a href="#基本边缘检测" class="headerlink" title="基本边缘检测"></a>基本边缘检测</h3><h4 id="边缘模型"><a href="#边缘模型" class="headerlink" title="边缘模型"></a>边缘模型</h4><ul>
 <li>台阶模型<br>在一个像素的距离上发生两次灰度级间理想的过渡</li>
@@ -784,7 +785,7 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 <h4 id="使用函数edge的边缘检测"><a href="#使用函数edge的边缘检测" class="headerlink" title="使用函数edge的边缘检测"></a>使用函数edge的边缘检测</h4><ul>
 <li>语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'method'</span><span class="token punctuation">,</span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g,t] = edge(f, &#39;method&#39;, parameters);</code></pre>
 <p>f是输入图像，method是边缘检测方法，parameters是附加参数</p>
 <h4 id="边缘检测算子"><a href="#边缘检测算子" class="headerlink" title="边缘检测算子"></a>边缘检测算子</h4><p>图像邻域如下图所示:</p>
 <table>
@@ -852,7 +853,7 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span> t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'sobel'</span><span class="token punctuation">,</span> T<span class="token punctuation">,</span> dir<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g, t] = edge(f, &#39;sobel&#39;, T, dir);</code></pre>
 <p>f是输入的图像，T是指定的阀值，dir是指定的检测边缘的首选方向:’horizontal’,’vertical’,’both’(默认值)<br>t是可选的，T未指定，则t自动设置</p>
 <h5 id="Prewitt边缘检测算子"><a href="#Prewitt边缘检测算子" class="headerlink" title="Prewitt边缘检测算子"></a>Prewitt边缘检测算子</h5><ul>
 <li>Prewitt边缘检测算子模板</li>
@@ -900,7 +901,7 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span> t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'prewitt'</span><span class="token punctuation">,</span> T <span class="token punctuation">,</span>dir<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g, t] = edge(f, &#39;prewitt&#39;, T ,dir);</code></pre>
 <p>计算简单，但容易产生噪声</p>
 <h5 id="Roberts边缘检测算子"><a href="#Roberts边缘检测算子" class="headerlink" title="Roberts边缘检测算子"></a>Roberts边缘检测算子</h5><ul>
 <li>Roberts边缘检测算子模板</li>
@@ -934,7 +935,7 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span> t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'roberts'</span><span class="token punctuation">,</span> T <span class="token punctuation">,</span> dir<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g, t] = edge(f, &#39;roberts&#39;, T , dir);</code></pre>
 <h5 id="LoG检测算子"><a href="#LoG检测算子" class="headerlink" title="LoG检测算子"></a>LoG检测算子</h5><ul>
 <li>LoG</li>
 </ul>
@@ -943,43 +944,43 @@ B<span class="token operator">=</span><span class="token function">A</span><span
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span> t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'log'</span><span class="token punctuation">,</span> T <span class="token punctuation">,</span> sigma<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g, t] = edge(f, &#39;log&#39;, T , sigma);</code></pre>
 <p>sigma默认值是2</p>
 <h5 id="零交叉检测算子"><a href="#零交叉检测算子" class="headerlink" title="零交叉检测算子"></a>零交叉检测算子</h5><ul>
 <li>基于LoG，卷积使用特殊的滤波函数H来完成</li>
 <li>MATLAB语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span> t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'zerocross'</span><span class="token punctuation">,</span> T <span class="token punctuation">,</span> H<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g, t] = edge(f, &#39;zerocross&#39;, T , H);</code></pre>
 <h5 id="Canny检测算子"><a href="#Canny检测算子" class="headerlink" title="Canny检测算子"></a>Canny检测算子</h5><ul>
 <li>edge函数中最强的边缘检测算子</li>
 <li>MATLAB语法</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>g<span class="token punctuation">,</span> t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'canny'</span><span class="token punctuation">,</span> T <span class="token punctuation">,</span> sigma<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="matlab">[g, t] = edge(f, &#39;canny&#39;, T , sigma);</code></pre>
 <h4 id="MATLAB实现"><a href="#MATLAB实现" class="headerlink" title="MATLAB实现"></a>MATLAB实现</h4><ul>
 <li>几种边缘检测算法的比较(Sobel,LoG,Canny)</li>
 </ul>
-<pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'timg1.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'currect image'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-f <span class="token operator">=</span> <span class="token function">rgb2gray</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">%Default Output</span>
-<span class="token punctuation">[</span>gSobel_default<span class="token punctuation">,</span>ts<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'sobel'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">[</span>gLoG_default<span class="token punctuation">,</span> tlog<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">[</span>gCanny_default<span class="token punctuation">,</span> tc<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token string">'canny'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="matlab">f = imread(&#39;timg1.jpg&#39;); 
+imshow(f),title(&#39;currect image&#39;);
+f = rgb2gray(f);
+%Default Output
+[gSobel_default,ts] = edge(f, &#39;sobel&#39;);
+[gLoG_default, tlog] = edge(f, &#39;log&#39;);
+[gCanny_default, tc] = edge(f,&#39;canny&#39;);
 
-<span class="token comment" spellcheck="true">%Best Output</span>
+%Best Output
 
-gSobel_best <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token string">'sobel'</span><span class="token punctuation">,</span><span class="token number">0.165</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-gLoG_best <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token string">'log'</span><span class="token punctuation">,</span><span class="token number">0.008</span><span class="token punctuation">,</span> <span class="token number">2.25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-gCanny_best <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token string">'canny'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gSobel_best = edge(f,&#39;sobel&#39;,0.165);
+gLoG_best = edge(f,&#39;log&#39;,0.008, 2.25);
+gCanny_best = edge(f,&#39;canny&#39;,[0.05, 0.4], 1.5);
 
 
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Gary images'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gSobel_default<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gSobel default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gSobel_best<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gSobel best'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gLoG_default<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gLoG default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gLoG_best<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gLoG best'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gCanny_default<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gCanny default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-figure<span class="token punctuation">,</span><span class="token function">imshow</span><span class="token punctuation">(</span>gCanny_best<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'gCanny best'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+figure,imshow(f),title(&#39;Gary images&#39;);
+figure,imshow(gSobel_default),title(&#39;gSobel default&#39;);
+figure,imshow(gSobel_best),title(&#39;gSobel best&#39;);
+figure,imshow(gLoG_default),title(&#39;gLoG default&#39;);
+figure,imshow(gLoG_best),title(&#39;gLoG best&#39;);
+figure,imshow(gCanny_default),title(&#39;gCanny default&#39;);
+figure,imshow(gCanny_best),title(&#39;gCanny best&#39;);</code></pre>
 <p>其中最佳输出的阀值是根据得到的ts,tlog,tc的值来确定的<br>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b4bec1777947.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b5886d994031.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b3ad9b270352.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b573bae72055.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b61724d14715.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b51df2874618.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b65663011930.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b3e566366232.jpg"><br>综合结果来看，Canny边缘检测算子可以得到最好的结果</p>
 
             </div>
@@ -1455,7 +1456,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1526,6 +1527,7 @@ figure<span class="token punctuation">,</span><span class="token function">imsho
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

@@ -23,12 +23,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -453,7 +454,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        17 Min
+                        18 Min
                     </div>
                     
                 
@@ -531,293 +532,293 @@
 <td align="center">25</td>
 </tr>
 </tbody></table>
-<h1 id="LBP特征实现"><a href="#LBP特征实现" class="headerlink" title="LBP特征实现"></a>LBP特征实现</h1><h2 id="原始LBP特征"><a href="#原始LBP特征" class="headerlink" title="原始LBP特征"></a>原始LBP特征</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//Original_LBP</span>
-Mat <span class="token function">get_original_LBP_feature</span><span class="token punctuation">(</span>Mat img<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat result<span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>rows <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>rows <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      uchar center <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      uchar lbpcode <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">7</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
-      result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> lbpcode<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<h1 id="LBP特征实现"><a href="#LBP特征实现" class="headerlink" title="LBP特征实现"></a>LBP特征实现</h1><h2 id="原始LBP特征"><a href="#原始LBP特征" class="headerlink" title="原始LBP特征"></a>原始LBP特征</h2><pre><code class="cpp">//Original_LBP
+Mat get_original_LBP_feature(Mat img)&#123;
+  Mat result;
+  result.create(img.rows - 2, img.cols -2, img.type());
+  result.setTo(0);
+  for (int i = 1; i &lt; img.rows - 1; i++)&#123;
+    for (int j = 1; j &lt; img.cols -1; j++)&#123;
+      uchar center = img.at&lt;uchar&gt;(i, j);
+      uchar lbpcode = 0;
+      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j - 1) &gt;= center) &lt;&lt; 7;
+      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j) &gt;= center) &lt;&lt; 6;
+      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j + 1) &gt;= center) &lt;&lt; 5;
+      lbpcode |= (img.at&lt;uchar&gt;(i, j -1) &gt;= center) &lt;&lt; 4;
+      lbpcode |= (img.at&lt;uchar&gt;(i, j + 1) &gt;= center) &lt;&lt; 3;
+      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j - 1) &gt;= center) &lt;&lt; 2;
+      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j) &gt;= center) &lt;&lt; 1;
+      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j + 1) &gt;= center) &lt;&lt; 0;
+      result.at&lt;uchar&gt;(i - 1, j - 1) = lbpcode;
+    &#125;
+  &#125;
+  return result;
+&#125;</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d4161dac5f0b23887.png"></p>
-<h2 id="圆形LBP特征"><a href="#圆形LBP特征" class="headerlink" title="圆形LBP特征"></a>圆形LBP特征</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//Circular_LBP_feature</span>
-Mat <span class="token function">get_circular_LBP_feature</span><span class="token punctuation">(</span>Mat img<span class="token punctuation">,</span> <span class="token keyword">int</span> radius<span class="token punctuation">,</span> <span class="token keyword">int</span> neighbors<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat result<span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>rows <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//循环处理每个像素</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>radius<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>rows<span class="token operator">-</span>radius<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-  <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>radius<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>cols<span class="token operator">-</span>radius<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-      <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-          <span class="token comment" spellcheck="true">//获得中心像素点的灰度值</span>
-          uchar center <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          uchar lbpCode <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>neighbors<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
-          <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-              <span class="token comment" spellcheck="true">//根据公式计算第k个采样点的坐标，这个地方可以优化，不必每次都进行计算radius*cos，radius*sin</span>
-              <span class="token keyword">float</span> x <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> \
-                  <span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-              <span class="token keyword">float</span> y <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> \
-                  <span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//根据取整结果进行双线性插值，得到第k个采样点的灰度值</span>
-                <span class="token comment" spellcheck="true">//1.分别对x，y进行上下取整</span>
-                <span class="token keyword">int</span> x1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> x2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> y1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> y2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="圆形LBP特征"><a href="#圆形LBP特征" class="headerlink" title="圆形LBP特征"></a>圆形LBP特征</h2><pre><code class="cpp">//Circular_LBP_feature
+Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
+&#123;
+  Mat result;
+  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
+  result.setTo(0);
+  //循环处理每个像素
+  for(int i=radius;i&lt;img.rows-radius;i++)
+  &#123;
+      for(int j=radius;j&lt;img.cols-radius;j++)
+      &#123;
+          //获得中心像素点的灰度值
+          uchar center = img.at&lt;uchar&gt;(i,j);
+          uchar lbpCode = 0;
+          for(int k=0;k&lt;neighbors;k++)
+          &#123;
+              //根据公式计算第k个采样点的坐标，这个地方可以优化，不必每次都进行计算radius*cos，radius*sin
+              float x = i + static_cast&lt;float&gt;(radius * \
+                  cos(2.0 * CV_PI * k / neighbors));
+              float y = j - static_cast&lt;float&gt;(radius * \
+                  sin(2.0 * CV_PI * k / neighbors));
+                //根据取整结果进行双线性插值，得到第k个采样点的灰度值
+                //1.分别对x，y进行上下取整
+                int x1 = static_cast&lt;int&gt;(floor(x));
+                int x2 = static_cast&lt;int&gt;(ceil(x));
+                int y1 = static_cast&lt;int&gt;(floor(y));
+                int y2 = static_cast&lt;int&gt;(ceil(y));
 
-                <span class="token comment" spellcheck="true">//将坐标映射到0-1之间</span>
-                <span class="token keyword">float</span> tx <span class="token operator">=</span> x <span class="token operator">-</span> x1<span class="token punctuation">;</span>
-                <span class="token keyword">float</span> ty <span class="token operator">=</span> y <span class="token operator">-</span> y1<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//根据0-1之间的x，y的权重计算公式计算权重</span>
-                <span class="token keyword">float</span> w1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">float</span> w2 <span class="token operator">=</span>    tx  <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">float</span> w3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-                <span class="token keyword">float</span> w4 <span class="token operator">=</span>    tx  <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//3.根据双线性插值公式计算第k个采样点的灰度值</span>
-                <span class="token keyword">float</span> neighbor <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w1 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w2 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w3 <span class="token operator">+</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w4<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//通过比较获得LBP值，并按顺序排列起来</span>
-                lbpCode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>neighbor<span class="token operator">></span>center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>neighbors<span class="token operator">-</span>k<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">-</span>radius<span class="token punctuation">,</span>j<span class="token operator">-</span>radius<span class="token punctuation">)</span> <span class="token operator">=</span> lbpCode<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+                //将坐标映射到0-1之间
+                float tx = x - x1;
+                float ty = y - y1;
+                //根据0-1之间的x，y的权重计算公式计算权重
+                float w1 = (1-tx) * (1-ty);
+                float w2 =    tx  * (1-ty);
+                float w3 = (1-tx) *    ty;
+                float w4 =    tx  *    ty;
+                //3.根据双线性插值公式计算第k个采样点的灰度值
+                float neighbor = img.at&lt;uchar&gt;(x1,y1) * w1 + img.at&lt;uchar&gt;(x1,y2) *w2 + img.at&lt;uchar&gt;(x2,y1) * w3 +img.at&lt;uchar&gt;(x2,y2) *w4;
+                //通过比较获得LBP值，并按顺序排列起来
+                lbpCode |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
+            &#125;
+            result.at&lt;uchar&gt;(i-radius,j-radius) = lbpCode;
+        &#125;
+    &#125;
+  return result;
+&#125;</code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/01/5d42b5d2e345026549.png"></p>
 <p>第一幅图设置半径为4,第二幅图设置半径为1,可以看到半径越小处理的越精细。</p>
-<h2 id="旋转不变LBP特征"><a href="#旋转不变LBP特征" class="headerlink" title="旋转不变LBP特征"></a>旋转不变LBP特征</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//Rotation_Invariant_LBP_feature</span>
-Mat <span class="token function">get_rotation_invariant_LBP_feature</span><span class="token punctuation">(</span>Mat img<span class="token punctuation">,</span> <span class="token keyword">int</span> radius<span class="token punctuation">,</span> <span class="token keyword">int</span> neighbors<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat result<span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>rows <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>neighbors<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//计算采样点对于中心点坐标的偏移量rx，ry</span>
-        <span class="token keyword">float</span> rx <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> <span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> ry <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> <span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//为双线性插值做准备</span>
-        <span class="token comment" spellcheck="true">//对采样点偏移量分别进行上下取整</span>
-        <span class="token keyword">int</span> x1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>rx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> x2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>rx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> y1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>ry<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> y2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>ry<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//将坐标偏移量映射到0-1之间</span>
-        <span class="token keyword">float</span> tx <span class="token operator">=</span> rx <span class="token operator">-</span> x1<span class="token punctuation">;</span>
-        <span class="token keyword">float</span> ty <span class="token operator">=</span> ry <span class="token operator">-</span> y1<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//根据0-1之间的x，y的权重计算公式计算权重，权重与坐标具体位置无关，与坐标间的差值有关</span>
-        <span class="token keyword">float</span> w1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> w2 <span class="token operator">=</span>    tx  <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> w3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-        <span class="token keyword">float</span> w4 <span class="token operator">=</span>    tx  <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//循环处理每个像素</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>radius<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>rows<span class="token operator">-</span>radius<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>radius<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>cols<span class="token operator">-</span>radius<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//获得中心像素点的灰度值</span>
-                uchar center <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//根据双线性插值公式计算第k个采样点的灰度值</span>
-                <span class="token keyword">float</span> neighbor <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x1<span class="token punctuation">,</span>j<span class="token operator">+</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w1 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x1<span class="token punctuation">,</span>j<span class="token operator">+</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w2 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x2<span class="token punctuation">,</span>j<span class="token operator">+</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w3 <span class="token operator">+</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x2<span class="token punctuation">,</span>j<span class="token operator">+</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w4<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//LBP特征图像的每个邻居的LBP值累加，累加通过与操作完成，对应的LBP值通过移位取得</span>
-                result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">-</span>radius<span class="token punctuation">,</span>j<span class="token operator">-</span>radius<span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>neighbor<span class="token operator">></span>center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>neighbors<span class="token operator">-</span>k<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//进行旋转不变处理</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>result<span class="token punctuation">.</span>rows<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>result<span class="token punctuation">.</span>cols<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            uchar currentValue <span class="token operator">=</span> result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            uchar minValue <span class="token operator">=</span> currentValue<span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>neighbors<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//循环左移</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                uchar temp <span class="token operator">=</span> <span class="token punctuation">(</span>currentValue<span class="token operator">>></span><span class="token punctuation">(</span>neighbors<span class="token operator">-</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>currentValue<span class="token operator">&lt;&lt;</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>temp <span class="token operator">&lt;</span> minValue<span class="token punctuation">)</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    minValue <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token operator">=</span> minValue<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h2 id="旋转不变LBP特征"><a href="#旋转不变LBP特征" class="headerlink" title="旋转不变LBP特征"></a>旋转不变LBP特征</h2><pre><code class="cpp">//Rotation_Invariant_LBP_feature
+Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
+&#123;
+  Mat result;
+  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
+  result.setTo(0);
+  for(int k=0;k&lt;neighbors;k++)
+    &#123;
+        //计算采样点对于中心点坐标的偏移量rx，ry
+        float rx = static_cast&lt;float&gt;(radius * cos(2.0 * CV_PI * k / neighbors));
+        float ry = -static_cast&lt;float&gt;(radius * sin(2.0 * CV_PI * k / neighbors));
+        //为双线性插值做准备
+        //对采样点偏移量分别进行上下取整
+        int x1 = static_cast&lt;int&gt;(floor(rx));
+        int x2 = static_cast&lt;int&gt;(ceil(rx));
+        int y1 = static_cast&lt;int&gt;(floor(ry));
+        int y2 = static_cast&lt;int&gt;(ceil(ry));
+        //将坐标偏移量映射到0-1之间
+        float tx = rx - x1;
+        float ty = ry - y1;
+        //根据0-1之间的x，y的权重计算公式计算权重，权重与坐标具体位置无关，与坐标间的差值有关
+        float w1 = (1-tx) * (1-ty);
+        float w2 =    tx  * (1-ty);
+        float w3 = (1-tx) *    ty;
+        float w4 =    tx  *    ty;
+        //循环处理每个像素
+        for(int i=radius;i&lt;img.rows-radius;i++)
+        &#123;
+            for(int j=radius;j&lt;img.cols-radius;j++)
+            &#123;
+                //获得中心像素点的灰度值
+                uchar center = img.at&lt;uchar&gt;(i,j);
+                //根据双线性插值公式计算第k个采样点的灰度值
+                float neighbor = img.at&lt;uchar&gt;(i+x1,j+y1) * w1 + img.at&lt;uchar&gt;(i+x1,j+y2) *w2 + img.at&lt;uchar&gt;(i+x2,j+y1) * w3 +img.at&lt;uchar&gt;(i+x2,j+y2) *w4;
+                //LBP特征图像的每个邻居的LBP值累加，累加通过与操作完成，对应的LBP值通过移位取得
+                result.at&lt;uchar&gt;(i-radius,j-radius) |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
+            &#125;
+        &#125;
+    &#125;
+    //进行旋转不变处理
+    for(int i=0;i&lt;result.rows;i++)
+    &#123;
+        for(int j=0;j&lt;result.cols;j++)
+        &#123;
+            uchar currentValue = result.at&lt;uchar&gt;(i,j);
+            uchar minValue = currentValue;
+            for(int k=1;k&lt;neighbors;k++)        //循环左移
+            &#123;
+                uchar temp = (currentValue&gt;&gt;(neighbors-k)) | (currentValue&lt;&lt;k);
+                if(temp &lt; minValue)
+                &#123;
+                    minValue = temp;
+                &#125;
+            &#125;
+            result.at&lt;uchar&gt;(i,j) = minValue;
+        &#125;
+    &#125;
+    return result;
+&#125;
 </code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/01/5d42b5d30749958722.png"></p>
 <p>第一幅图neighbors值设置为8,第二幅设置为6,可以看出neighbors值越大，得到的LBP特征亮度越高。</p>
-<h2 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/highgui/highgui.hpp></span></span>
+<h2 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h2><pre><code class="cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
+using namespace cv;
 
-<span class="token comment" spellcheck="true">//Original_LBP</span>
-Mat <span class="token function">get_original_LBP_feature</span><span class="token punctuation">(</span>Mat img<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat result<span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>rows <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>rows <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      uchar center <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      uchar lbpcode <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">7</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
-      lbpcode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">>=</span> center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
-      result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> lbpcode<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+//Original_LBP
+Mat get_original_LBP_feature(Mat img)&#123;
+  Mat result;
+  result.create(img.rows - 2, img.cols -2, img.type());
+  result.setTo(0);
+  for (int i = 1; i &lt; img.rows - 1; i++)&#123;
+    for (int j = 1; j &lt; img.cols -1; j++)&#123;
+      uchar center = img.at&lt;uchar&gt;(i, j);
+      uchar lbpcode = 0;
+      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j - 1) &gt;= center) &lt;&lt; 7;
+      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j) &gt;= center) &lt;&lt; 6;
+      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j + 1) &gt;= center) &lt;&lt; 5;
+      lbpcode |= (img.at&lt;uchar&gt;(i, j -1) &gt;= center) &lt;&lt; 4;
+      lbpcode |= (img.at&lt;uchar&gt;(i, j + 1) &gt;= center) &lt;&lt; 3;
+      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j - 1) &gt;= center) &lt;&lt; 2;
+      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j) &gt;= center) &lt;&lt; 1;
+      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j + 1) &gt;= center) &lt;&lt; 0;
+      result.at&lt;uchar&gt;(i - 1, j - 1) = lbpcode;
+    &#125;
+  &#125;
+  return result;
+&#125;
 
-<span class="token comment" spellcheck="true">//Circular_LBP_feature</span>
-Mat <span class="token function">get_circular_LBP_feature</span><span class="token punctuation">(</span>Mat img<span class="token punctuation">,</span> <span class="token keyword">int</span> radius<span class="token punctuation">,</span> <span class="token keyword">int</span> neighbors<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat result<span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>rows <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//循环处理每个像素</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>radius<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>rows<span class="token operator">-</span>radius<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-  <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>radius<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>cols<span class="token operator">-</span>radius<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-      <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-          <span class="token comment" spellcheck="true">//获得中心像素点的灰度值</span>
-          uchar center <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          uchar lbpCode <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>neighbors<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
-          <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-              <span class="token comment" spellcheck="true">//根据公式计算第k个采样点的坐标，这个地方可以优化，不必每次都进行计算radius*cos，radius*sin</span>
-              <span class="token keyword">float</span> x <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> \
-                  <span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-              <span class="token keyword">float</span> y <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> \
-                  <span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//根据取整结果进行双线性插值，得到第k个采样点的灰度值</span>
-                <span class="token comment" spellcheck="true">//1.分别对x，y进行上下取整</span>
-                <span class="token keyword">int</span> x1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> x2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> y1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">int</span> y2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//Circular_LBP_feature
+Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
+&#123;
+  Mat result;
+  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
+  result.setTo(0);
+  //循环处理每个像素
+  for(int i=radius;i&lt;img.rows-radius;i++)
+  &#123;
+      for(int j=radius;j&lt;img.cols-radius;j++)
+      &#123;
+          //获得中心像素点的灰度值
+          uchar center = img.at&lt;uchar&gt;(i,j);
+          uchar lbpCode = 0;
+          for(int k=0;k&lt;neighbors;k++)
+          &#123;
+              //根据公式计算第k个采样点的坐标，这个地方可以优化，不必每次都进行计算radius*cos，radius*sin
+              float x = i + static_cast&lt;float&gt;(radius * \
+                  cos(2.0 * CV_PI * k / neighbors));
+              float y = j - static_cast&lt;float&gt;(radius * \
+                  sin(2.0 * CV_PI * k / neighbors));
+                //根据取整结果进行双线性插值，得到第k个采样点的灰度值
+                //1.分别对x，y进行上下取整
+                int x1 = static_cast&lt;int&gt;(floor(x));
+                int x2 = static_cast&lt;int&gt;(ceil(x));
+                int y1 = static_cast&lt;int&gt;(floor(y));
+                int y2 = static_cast&lt;int&gt;(ceil(y));
 
-                <span class="token comment" spellcheck="true">//将坐标映射到0-1之间</span>
-                <span class="token keyword">float</span> tx <span class="token operator">=</span> x <span class="token operator">-</span> x1<span class="token punctuation">;</span>
-                <span class="token keyword">float</span> ty <span class="token operator">=</span> y <span class="token operator">-</span> y1<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//根据0-1之间的x，y的权重计算公式计算权重</span>
-                <span class="token keyword">float</span> w1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">float</span> w2 <span class="token operator">=</span>    tx  <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">float</span> w3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-                <span class="token keyword">float</span> w4 <span class="token operator">=</span>    tx  <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//3.根据双线性插值公式计算第k个采样点的灰度值</span>
-                <span class="token keyword">float</span> neighbor <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w1 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w2 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w3 <span class="token operator">+</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w4<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//通过比较获得LBP值，并按顺序排列起来</span>
-                lbpCode <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>neighbor<span class="token operator">></span>center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>neighbors<span class="token operator">-</span>k<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">-</span>radius<span class="token punctuation">,</span>j<span class="token operator">-</span>radius<span class="token punctuation">)</span> <span class="token operator">=</span> lbpCode<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                //将坐标映射到0-1之间
+                float tx = x - x1;
+                float ty = y - y1;
+                //根据0-1之间的x，y的权重计算公式计算权重
+                float w1 = (1-tx) * (1-ty);
+                float w2 =    tx  * (1-ty);
+                float w3 = (1-tx) *    ty;
+                float w4 =    tx  *    ty;
+                //3.根据双线性插值公式计算第k个采样点的灰度值
+                float neighbor = img.at&lt;uchar&gt;(x1,y1) * w1 + img.at&lt;uchar&gt;(x1,y2) *w2 + img.at&lt;uchar&gt;(x2,y1) * w3 +img.at&lt;uchar&gt;(x2,y2) *w4;
+                //通过比较获得LBP值，并按顺序排列起来
+                lbpCode |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
+            &#125;
+            result.at&lt;uchar&gt;(i-radius,j-radius) = lbpCode;
+        &#125;
+    &#125;
+  return result;
+&#125;
 
-<span class="token comment" spellcheck="true">//Rotation_Invariant_LBP_feature</span>
-Mat <span class="token function">get_rotation_invariant_LBP_feature</span><span class="token punctuation">(</span>Mat img<span class="token punctuation">,</span> <span class="token keyword">int</span> radius<span class="token punctuation">,</span> <span class="token keyword">int</span> neighbors<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat result<span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>rows <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span>cols <span class="token operator">-</span> radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  result<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>neighbors<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//计算采样点对于中心点坐标的偏移量rx，ry</span>
-        <span class="token keyword">float</span> rx <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> <span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> ry <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>radius <span class="token operator">*</span> <span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> CV_PI <span class="token operator">*</span> k <span class="token operator">/</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//为双线性插值做准备</span>
-        <span class="token comment" spellcheck="true">//对采样点偏移量分别进行上下取整</span>
-        <span class="token keyword">int</span> x1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>rx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> x2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>rx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> y1 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">floor</span><span class="token punctuation">(</span>ry<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> y2 <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token function">ceil</span><span class="token punctuation">(</span>ry<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//将坐标偏移量映射到0-1之间</span>
-        <span class="token keyword">float</span> tx <span class="token operator">=</span> rx <span class="token operator">-</span> x1<span class="token punctuation">;</span>
-        <span class="token keyword">float</span> ty <span class="token operator">=</span> ry <span class="token operator">-</span> y1<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//根据0-1之间的x，y的权重计算公式计算权重，权重与坐标具体位置无关，与坐标间的差值有关</span>
-        <span class="token keyword">float</span> w1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> w2 <span class="token operator">=</span>    tx  <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ty<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> w3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>tx<span class="token punctuation">)</span> <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-        <span class="token keyword">float</span> w4 <span class="token operator">=</span>    tx  <span class="token operator">*</span>    ty<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//循环处理每个像素</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>radius<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>rows<span class="token operator">-</span>radius<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>radius<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>img<span class="token punctuation">.</span>cols<span class="token operator">-</span>radius<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//获得中心像素点的灰度值</span>
-                uchar center <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//根据双线性插值公式计算第k个采样点的灰度值</span>
-                <span class="token keyword">float</span> neighbor <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x1<span class="token punctuation">,</span>j<span class="token operator">+</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w1 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x1<span class="token punctuation">,</span>j<span class="token operator">+</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w2 <span class="token operator">+</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x2<span class="token punctuation">,</span>j<span class="token operator">+</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> w3 <span class="token operator">+</span>img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">+</span>x2<span class="token punctuation">,</span>j<span class="token operator">+</span>y2<span class="token punctuation">)</span> <span class="token operator">*</span>w4<span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//LBP特征图像的每个邻居的LBP值累加，累加通过与操作完成，对应的LBP值通过移位取得</span>
-                result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token operator">-</span>radius<span class="token punctuation">,</span>j<span class="token operator">-</span>radius<span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span>neighbor<span class="token operator">></span>center<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>neighbors<span class="token operator">-</span>k<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//进行旋转不变处理</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>result<span class="token punctuation">.</span>rows<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>result<span class="token punctuation">.</span>cols<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            uchar currentValue <span class="token operator">=</span> result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            uchar minValue <span class="token operator">=</span> currentValue<span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>neighbors<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//循环左移</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                uchar temp <span class="token operator">=</span> <span class="token punctuation">(</span>currentValue<span class="token operator">>></span><span class="token punctuation">(</span>neighbors<span class="token operator">-</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>currentValue<span class="token operator">&lt;&lt;</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>temp <span class="token operator">&lt;</span> minValue<span class="token punctuation">)</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    minValue <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            result<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token operator">=</span> minValue<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+//Rotation_Invariant_LBP_feature
+Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
+&#123;
+  Mat result;
+  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
+  result.setTo(0);
+  for(int k=0;k&lt;neighbors;k++)
+    &#123;
+        //计算采样点对于中心点坐标的偏移量rx，ry
+        float rx = static_cast&lt;float&gt;(radius * cos(2.0 * CV_PI * k / neighbors));
+        float ry = -static_cast&lt;float&gt;(radius * sin(2.0 * CV_PI * k / neighbors));
+        //为双线性插值做准备
+        //对采样点偏移量分别进行上下取整
+        int x1 = static_cast&lt;int&gt;(floor(rx));
+        int x2 = static_cast&lt;int&gt;(ceil(rx));
+        int y1 = static_cast&lt;int&gt;(floor(ry));
+        int y2 = static_cast&lt;int&gt;(ceil(ry));
+        //将坐标偏移量映射到0-1之间
+        float tx = rx - x1;
+        float ty = ry - y1;
+        //根据0-1之间的x，y的权重计算公式计算权重，权重与坐标具体位置无关，与坐标间的差值有关
+        float w1 = (1-tx) * (1-ty);
+        float w2 =    tx  * (1-ty);
+        float w3 = (1-tx) *    ty;
+        float w4 =    tx  *    ty;
+        //循环处理每个像素
+        for(int i=radius;i&lt;img.rows-radius;i++)
+        &#123;
+            for(int j=radius;j&lt;img.cols-radius;j++)
+            &#123;
+                //获得中心像素点的灰度值
+                uchar center = img.at&lt;uchar&gt;(i,j);
+                //根据双线性插值公式计算第k个采样点的灰度值
+                float neighbor = img.at&lt;uchar&gt;(i+x1,j+y1) * w1 + img.at&lt;uchar&gt;(i+x1,j+y2) *w2 + img.at&lt;uchar&gt;(i+x2,j+y1) * w3 +img.at&lt;uchar&gt;(i+x2,j+y2) *w4;
+                //LBP特征图像的每个邻居的LBP值累加，累加通过与操作完成，对应的LBP值通过移位取得
+                result.at&lt;uchar&gt;(i-radius,j-radius) |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
+            &#125;
+        &#125;
+    &#125;
+    //进行旋转不变处理
+    for(int i=0;i&lt;result.rows;i++)
+    &#123;
+        for(int j=0;j&lt;result.cols;j++)
+        &#123;
+            uchar currentValue = result.at&lt;uchar&gt;(i,j);
+            uchar minValue = currentValue;
+            for(int k=1;k&lt;neighbors;k++)        //循环左移
+            &#123;
+                uchar temp = (currentValue&gt;&gt;(neighbors-k)) | (currentValue&lt;&lt;k);
+                if(temp &lt; minValue)
+                &#123;
+                    minValue = temp;
+                &#125;
+            &#125;
+            result.at&lt;uchar&gt;(i,j) = minValue;
+        &#125;
+    &#125;
+    return result;
+&#125;
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  Mat src <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  Mat dst <span class="token operator">=</span> <span class="token function">get_original_LBP_feature</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  Mat odst1 <span class="token operator">=</span> <span class="token function">get_circular_LBP_feature</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//Mat odst4 = get_circular_LBP_feature(src, 4, 8);</span>
-  Mat rif8 <span class="token operator">=</span> <span class="token function">get_rotation_invariant_LBP_feature</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  Mat rif6 <span class="token operator">=</span> <span class="token function">get_rotation_invariant_LBP_feature</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main(int argc, char* argv[])
+&#123;
+  Mat src = imread(argv[1], 0);
+  Mat dst = get_original_LBP_feature(src);
+  Mat odst1 = get_circular_LBP_feature(src, 1, 8);
+  //Mat odst4 = get_circular_LBP_feature(src, 4, 8);
+  Mat rif8 = get_rotation_invariant_LBP_feature(src, 1, 8);
+  Mat rif6 = get_rotation_invariant_LBP_feature(src, 1, 6);
 
 
-  <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"原始图片"</span><span class="token punctuation">,</span> src<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"原始LBP"</span><span class="token punctuation">,</span> dst<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"圆形LBP"</span><span class="token punctuation">,</span> odst1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//imshow("圆形LBP4", odst4);</span>
-  <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"旋转不变LBP"</span><span class="token punctuation">,</span> rif8<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//imshow("旋转不变LBP6", rif6);</span>
+  imshow(&quot;原始图片&quot;, src);
+  imshow(&quot;原始LBP&quot;, dst);
+  imshow(&quot;圆形LBP&quot;, odst1);
+  //imshow(&quot;圆形LBP4&quot;, odst4);
+  imshow(&quot;旋转不变LBP&quot;, rif8);
+  //imshow(&quot;旋转不变LBP6&quot;, rif6);
 
-  <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+  waitKey(0);
+  return 0;
+&#125;</code></pre>
 
             </div>
             <hr/>
@@ -1300,7 +1301,7 @@ Mat <span class="token function">get_rotation_invariant_LBP_feature</span><span 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1371,6 +1372,7 @@ Mat <span class="token function">get_rotation_invariant_LBP_feature</span><span 
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

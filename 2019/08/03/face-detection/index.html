@@ -27,12 +27,13 @@ calib3d">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -450,7 +451,7 @@ calib3d">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        803
+                        817
                     </div>
                     
 
@@ -487,94 +488,94 @@ calib3d">
 <li>其它辅助模块，如用户贡献的算法</li>
 </ul>
 <h2 id="人脸检测-1"><a href="#人脸检测-1" class="headerlink" title="人脸检测"></a>人脸检测</h2><h2 id="检测图片中的人脸"><a href="#检测图片中的人脸" class="headerlink" title="检测图片中的人脸"></a>检测图片中的人脸</h2><p>在OpenCV中，主要使用两种特征进行人脸检测，Haar特征和LBP特征，下面使用的是LBP特征。<br>实现人脸检测主要依赖于detectMultiScale()函数</p>
-<pre class=" language-cpp"><code class="language-cpp">CV_WRAP <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">detectMultiScale</span>
-<span class="token punctuation">(</span> <span class="token keyword">const</span> Mat<span class="token operator">&amp;</span> image<span class="token punctuation">,</span>
-  CV_OUT vector<span class="token operator">&lt;</span>Rect<span class="token operator">></span><span class="token operator">&amp;</span> objects<span class="token punctuation">,</span>
-  <span class="token keyword">double</span> scaleFactor<span class="token operator">=</span><span class="token number">1.1</span><span class="token punctuation">,</span>
-  <span class="token keyword">int</span> minNeighbors<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token keyword">int</span> flags<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>
-  Size minSize<span class="token operator">=</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  Size maxSize<span class="token operator">=</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="cpp">CV_WRAP virtual void detectMultiScale
+( const Mat&amp; image,
+  CV_OUT vector&lt;Rect&gt;&amp; objects,
+  double scaleFactor=1.1,
+  int minNeighbors=3, int flags=0,
+  Size minSize=Size(),
+  Size maxSize=Size() );</code></pre>
 <p>各参数含义如下：<br><strong>const Mat&amp; image</strong>: 需要被检测的图像（灰度图）。<br><strong>vector<Rect>&amp; objects</strong>: 保存被检测出的人脸位置坐标序列。<br><strong>double scaleFactor</strong>: 每次图片缩放的比例。<br><strong>int minNeighbors</strong>: 每一个人脸至少要检测到多少次才算是真的人脸。<br><strong>doubleint flags</strong>： 决定是缩放分类器来检测，还是缩放图像。<br><strong>Size()</strong>: 表示人脸的最大最小尺寸。</p>
 <p>具体实现代码如下:</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/highgui/highgui.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/imgproc/imgproc.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/objdetect/objdetect.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/core.hpp></span></span>
+<pre><code class="cpp">#include&lt;opencv2/highgui/highgui.hpp&gt;
+#include&lt;opencv2/imgproc/imgproc.hpp&gt;
+#include&lt;opencv2/objdetect/objdetect.hpp&gt;
+#include&lt;iostream&gt;
+#include&lt;opencv2/core.hpp&gt;
 
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
+using namespace std;
+using namespace cv;
 
-<span class="token macro property">#<span class="token directive keyword">define</span> CV_COLOR_GREEN cv::Scalar(0, 255, 0)</span>
-CascadeClassifier faceCascade<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
- Mat img<span class="token punctuation">;</span>
+#define CV_COLOR_GREEN cv::Scalar(0, 255, 0)
+CascadeClassifier faceCascade;
+int main(int argc, char* argv[])
+&#123;
+ Mat img;
 
- CascadeClassifier <span class="token function">faceDetector</span><span class="token punctuation">(</span><span class="token string">"lbpcascade_frontalface.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//读取分类器</span>
- img <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//读取检测的图片原图</span>
- vector<span class="token operator">&lt;</span>Rect<span class="token operator">></span> objects<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//存放检测的对象</span>
- faceDetector<span class="token punctuation">.</span><span class="token function">detectMultiScale</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> objects<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//执行检测</span>
- <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> objects<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//遍历检测到的脸</span>
- <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token function">rectangle</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> objects<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> CV_COLOR_RED<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//画出检测到的脸</span>
- <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
- <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"result"</span><span class="token punctuation">,</span> img<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//显示结果</span>
- <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ CascadeClassifier faceDetector(&quot;lbpcascade_frontalface.xml&quot;);//读取分类器
+ img = imread(argv[1]);  //读取检测的图片原图
+ vector&lt;Rect&gt; objects;  //存放检测的对象
+ faceDetector.detectMultiScale(img, objects);  //执行检测
+ for (int i = 0; i &lt; objects.size(); i++) //遍历检测到的脸
+ &#123;
+  rectangle(img, objects[i], CV_COLOR_RED);  //画出检测到的脸
+ &#125;
+ imshow(&quot;result&quot;, img);  //显示结果
+ waitKey(0);
 
- <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+ return 0;
+&#125;</code></pre>
 <p>检测结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/2.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/3.png"></p>
 <h3 id="检测视频中的人脸"><a href="#检测视频中的人脸" class="headerlink" title="检测视频中的人脸"></a>检测视频中的人脸</h3><p>原理就是对视频逐帧处理，1s大约分为30帧。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/highgui/highgui.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/imgproc/imgproc.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/core/core.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/objdetect/objdetect.hpp></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<pre><code class="cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
+#include &lt;opencv2/imgproc/imgproc.hpp&gt;
+#include &lt;opencv2/core/core.hpp&gt;
+#include &lt;opencv2/objdetect/objdetect.hpp&gt;
+#include &lt;iostream&gt;
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
+using namespace std;
+using namespace cv;
 
-<span class="token macro property">#<span class="token directive keyword">define</span> CV_COLOR_GREEN cv::Scalar(0, 255, 0)</span>
-CascadeClassifier faceCascade<span class="token punctuation">;</span>
+#define CV_COLOR_GREEN cv::Scalar(0, 255, 0)
+CascadeClassifier faceCascade;
 
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//打开摄像头</span>
-  VideoCapture <span class="token function">cap</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>cap<span class="token punctuation">.</span><span class="token function">isOpened</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//读取分类器</span>
-  CascadeClassifier <span class="token function">faceDetector</span><span class="token punctuation">(</span><span class="token string">"lbpcascade_frontalface.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span>Rect<span class="token operator">></span> objects<span class="token punctuation">;</span>
-  Mat frame<span class="token punctuation">;</span>
-  Mat edges<span class="token punctuation">;</span>
-  <span class="token keyword">bool</span> stop <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>stop<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    cap <span class="token operator">>></span> frame<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>frame<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-      stop <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token keyword">double</span> scaleFactor<span class="token operator">=</span><span class="token number">1.1</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> minNeighbors <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//int flags = 1;</span>
-    <span class="token comment" spellcheck="true">//cvtColor(frame, edges, CV_BGR2GRAY);</span>
-    <span class="token comment" spellcheck="true">//GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);</span>
-    faceDetector<span class="token punctuation">.</span><span class="token function">detectMultiScale</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> objects<span class="token punctuation">,</span>scaleFactor<span class="token punctuation">,</span> minNeighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> objects<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      <span class="token function">rectangle</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> objects<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> CV_COLOR_GREEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token function">rectangle</span><span class="token punctuation">(</span>edges<span class="token punctuation">,</span> objects<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> CV_COLOR_GREEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//imshow("edge", edges);</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"frame"</span><span class="token punctuation">,</span> frame<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-      stop <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+int main(int argc, char** argv)
+&#123;
+  //打开摄像头
+  VideoCapture cap(0);
+  if(!cap.isOpened())
+  &#123;
+    return -1;
+  &#125;
+  //读取分类器
+  CascadeClassifier faceDetector(&quot;lbpcascade_frontalface.xml&quot;);
+  vector&lt;Rect&gt; objects;
+  Mat frame;
+  Mat edges;
+  bool stop = false;
+  while(!stop)&#123;
+    cap &gt;&gt; frame;
+    if (frame.empty())
+      stop = true;
+    double scaleFactor=1.1;
+    int minNeighbors = 3;
+    //int flags = 1;
+    //cvtColor(frame, edges, CV_BGR2GRAY);
+    //GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
+    faceDetector.detectMultiScale(frame, objects,scaleFactor, minNeighbors);
+    for(int i = 0; i &lt; objects.size(); i++)&#123;
+      rectangle(frame, objects[i], CV_COLOR_GREEN);
+      rectangle(edges, objects[i], CV_COLOR_GREEN);
+    &#125;
+    //imshow(&quot;edge&quot;, edges);
+    imshow(&quot;frame&quot;, frame);
+    if (waitKey(30) &gt;= 0)
+      stop = true;
+  &#125;
+  return 0;
+&#125;</code></pre>
 <p>识别结果:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/4.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/5.png"></p>
 
@@ -1054,7 +1055,7 @@ CascadeClassifier faceCascade<span class="token punctuation">;</span>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1125,6 +1126,7 @@ CascadeClassifier faceCascade<span class="token punctuation">;</span>
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

@@ -32,12 +32,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -451,7 +452,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        755
+                        848
                     </div>
                     
 
@@ -485,14 +486,14 @@
 <ul>
 <li><p>思路1：将数字转化为字符串形式，分别进行头尾判断数字是否一致。<br>实现需要3步：</p>
 <p>预判断：<br>首先判断当输入数字为负数或其个位数字是0（排除0）时一定输出False</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> x<span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token boolean">False</span></code></pre>
+<pre><code class="python">if (x &lt; 0 or (x % 10 == 0 and x!= 0)):
+    return False</code></pre>
 <ul>
 <li><p>将输入转化为字符串</p>
-<pre class=" language-python3"><code class="language-python3">x_str = str(x)</code></pre>
+<pre><code class="python3">x_str = str(x)</code></pre>
 </li>
 <li><p>分割字符串，不能用split方法。这里因为当输入为奇数时，数字中间的一位对结果无影响，故将这一位删掉。</p>
-<pre class=" language-python3"><code class="language-python3">x_list = []
+<pre><code class="python3">x_list = []
 for x_s in x_str:
   x_list.append(x_s)
 if num != num_i:
@@ -504,33 +505,33 @@ if num != num_i:
 </li>
 </ul>
 <p>程序完整代码如下：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> x<span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token boolean">False</span>    
-x_str <span class="token operator">=</span> str<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-num <span class="token operator">=</span> len<span class="token punctuation">(</span>x_str<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> 
-num_i <span class="token operator">=</span> len<span class="token punctuation">(</span>x_str<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
-x_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> x_s <span class="token keyword">in</span> x_str<span class="token punctuation">:</span>
-    x_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x_s<span class="token punctuation">)</span>
-<span class="token keyword">if</span> num <span class="token operator">!=</span> num_i<span class="token punctuation">:</span>
-    x_list<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>num_i<span class="token punctuation">)</span>
-i <span class="token operator">=</span> <span class="token number">0</span>
-result <span class="token operator">=</span> <span class="token boolean">True</span>
-<span class="token keyword">while</span> i <span class="token operator">&lt;</span> num_i<span class="token punctuation">:</span>
-    <span class="token keyword">if</span> x_list<span class="token punctuation">[</span>num_i <span class="token operator">+</span> i<span class="token punctuation">]</span> <span class="token operator">==</span> x_list<span class="token punctuation">[</span>num_i <span class="token operator">-</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        result <span class="token operator">=</span> <span class="token boolean">True</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        result <span class="token operator">=</span> <span class="token boolean">False</span>
-        <span class="token keyword">return</span> result
-    i <span class="token operator">+=</span> <span class="token number">1</span>
-<span class="token keyword">return</span> result</code></pre>
+<pre><code class="python">if (x &lt; 0 or (x % 10 == 0 and x!= 0)):
+    return False    
+x_str = str(x)
+num = len(x_str) / 2 
+num_i = len(x_str) // 2
+x_list = []
+for x_s in x_str:
+    x_list.append(x_s)
+if num != num_i:
+    x_list.pop(num_i)
+i = 0
+result = True
+while i &lt; num_i:
+    if x_list[num_i + i] == x_list[num_i - (i + 1)]:
+        result = True
+    else:
+        result = False
+        return result
+    i += 1
+return result</code></pre>
 <p>在参考了LeetCode官网解法之后，发现了类似思路更简单的解法，代码如下：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">return</span> <span class="token punctuation">(</span>str<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">==</span> str<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="python">return (str(x) == str(x)[::-1])</code></pre>
 <p>只需判断输入数字的一半即可判断结果，故可改进如下：</p>
-<pre class=" language-python"><code class="language-python">x_str <span class="token operator">=</span> str<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-x_len <span class="token operator">=</span> len<span class="token punctuation">(</span>x_str<span class="token punctuation">)</span>
-x_h <span class="token operator">=</span> x_len <span class="token operator">//</span> <span class="token number">2</span>
-<span class="token keyword">return</span> <span class="token punctuation">(</span>x_str<span class="token punctuation">[</span><span class="token punctuation">:</span>x_h<span class="token punctuation">]</span> <span class="token operator">==</span> x_str<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span>x_h <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="python">x_str = str(x)
+x_len = len(x_str)
+x_h = x_len // 2
+return (x_str[:x_h] == x_str[-1:-x_h - 1:-1])</code></pre>
 <p>以上方法均将输入转化为字符串之后再进行判断</p>
 <h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶:"></a>进阶:</h3><p>你能不将整数转为字符串来解决这个问题吗？</p>
 <ul>
@@ -541,20 +542,20 @@ x_h <span class="token operator">=</span> x_len <span class="token operator">//<
 </li>
 </ul>
 <p>完整代码如下：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> x <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token boolean">False</span>
-x_reversed <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">while</span> x_reversed <span class="token operator">&lt;</span> x<span class="token punctuation">:</span>
-    x_reversed <span class="token operator">=</span> x_reversed <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">%</span> <span class="token number">10</span>
-    x <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">10</span>
-<span class="token keyword">return</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> x_reversed <span class="token operator">or</span> x <span class="token operator">==</span> x_reversed <span class="token operator">//</span> <span class="token number">10</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="python">if (x &lt; 0 or (x % 10 == 0 and x != 0)):
+    return False
+x_reversed = 0
+while x_reversed &lt; x:
+    x_reversed = x_reversed * 10 + x % 10
+    x = x // 10
+return (x == x_reversed or x == x_reversed // 10)</code></pre>
 <p>C代码如下：</p>
-<pre class=" language-C"><code class="language-C">bool isPalindrome(int x)&#123;
-if (x<0 || (x%10 == 0 && x != 0))&#123;
+<pre><code class="C">bool isPalindrome(int x)&#123;
+if (x&lt;0 || (x%10 == 0 &amp;&amp; x != 0))&#123;
     return false;
 &#125;
 int x_reversed = 0;
-while (x_reversed < x)&#123;
+while (x_reversed &lt; x)&#123;
     x_reversed = x_reversed * 10 + x % 10; 
     x = x / 10;
 &#125;
@@ -1052,7 +1053,7 @@ wget https://d
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1123,6 +1124,7 @@ wget https://d
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

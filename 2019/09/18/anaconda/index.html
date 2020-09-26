@@ -25,12 +25,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -444,7 +445,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        180
+                        182
                     </div>
                     
 
@@ -469,7 +470,7 @@
             <div id="articleContent">
                 <h2 id="Install-Guide"><a href="#Install-Guide" class="headerlink" title="Install Guide"></a>Install Guide</h2><p>You probably need proxy: <a target="_blank" rel="noopener" href="https://godliuyang.wang/2020/02/04/about-proxy/">About Proxy</a> </p>
 <h3 id="1-Download-Anaconda"><a href="#1-Download-Anaconda" class="headerlink" title="1. Download Anaconda"></a>1. Download <code>Anaconda</code></h3><p>Click here to download <a target="_blank" rel="noopener" href="https://www.anaconda.com/distribution/">Anaconda</a></p>
-<h3 id="2-Install-Anaconda"><a href="#2-Install-Anaconda" class="headerlink" title="2. Install Anaconda"></a>2. Install <code>Anaconda</code></h3><pre class=" language-bash"><code class="language-bash"><span class="token function">bash</span> ~/Downloads/Anaconda3-2019.07-Linux-x86_64.sh</code></pre>
+<h3 id="2-Install-Anaconda"><a href="#2-Install-Anaconda" class="headerlink" title="2. Install Anaconda"></a>2. Install <code>Anaconda</code></h3><pre><code class="bash">bash ~/Downloads/Anaconda3-2019.07-Linux-x86_64.sh</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/3.png"></p>
 <p>Press ENTER</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/4.png"></p>
@@ -481,29 +482,29 @@
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/7.png"></p>
 <p>successful installation.</p>
 <p>You can use <code>conda -V</code> to check the version of anaconda.</p>
-<h3 id="3-Bash-user"><a href="#3-Bash-user" class="headerlink" title="3. Bash user"></a>3. Bash user</h3><pre class=" language-bash"><code class="language-bash">vim ~/.bashrc</code></pre>
+<h3 id="3-Bash-user"><a href="#3-Bash-user" class="headerlink" title="3. Bash user"></a>3. Bash user</h3><pre><code class="bash">vim ~/.bashrc</code></pre>
 <p>add the following line to your ~/.bashrc.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"/home/xupp/anaconda3/bin:<span class="token variable">$PATH</span>"</span></code></pre>
+<pre><code class="bash">export PATH=&quot;/home/xupp/anaconda3/bin:$PATH&quot;</code></pre>
 <p>Reboot your terminal.</p>
 <h3 id="4-Fish-user"><a href="#4-Fish-user" class="headerlink" title="4. Fish user"></a>4. Fish user</h3><p>If your shell is <strong>fish</strong>, you probably need to configure your environment variable.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/8.png"></p>
 <p>I use <code>set</code> command to do this.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">set</span> -xg</code></pre>
+<pre><code class="bash">set -xg</code></pre>
 <p>Prints all global, exported variables.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/1.png"></p>
 <p>I find the user name of anaconda path in PATH is wrong.<br>I don’t know why it is, but i know i should correct it.</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">set</span> PATH<span class="token punctuation">[</span>1<span class="token punctuation">]</span> /home/kevin/anaconda3/bin</code></pre>
+<pre><code class="bash">set PATH[1] /home/kevin/anaconda3/bin</code></pre>
 <p>it works.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/9.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/10.png"></p>
-<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><h3 id="1-Create-Python-environment"><a href="#1-Create-Python-environment" class="headerlink" title="1. Create Python environment"></a>1. Create Python environment</h3><pre class=" language-bash"><code class="language-bash">conda create --name python37 python<span class="token operator">=</span>3.7</code></pre>
-<h3 id="2-Check-Python-Environment-you-have-created"><a href="#2-Check-Python-Environment-you-have-created" class="headerlink" title="2. Check Python Environment you have created."></a>2. Check Python Environment you have created.</h3><pre class=" language-bash"><code class="language-bash">conda info --envs</code></pre>
+<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><h3 id="1-Create-Python-environment"><a href="#1-Create-Python-environment" class="headerlink" title="1. Create Python environment"></a>1. Create Python environment</h3><pre><code class="bash">conda create --name python37 python=3.7</code></pre>
+<h3 id="2-Check-Python-Environment-you-have-created"><a href="#2-Check-Python-Environment-you-have-created" class="headerlink" title="2. Check Python Environment you have created."></a>2. Check Python Environment you have created.</h3><pre><code class="bash">conda info --envs</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/11.png"> </p>
 <p>Where * indicates the current Python environment</p>
-<h3 id="3-Modify-Python-environment"><a href="#3-Modify-Python-environment" class="headerlink" title="3. Modify Python environment"></a>3. Modify Python environment</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> activate python37</code></pre>
+<h3 id="3-Modify-Python-environment"><a href="#3-Modify-Python-environment" class="headerlink" title="3. Modify Python environment"></a>3. Modify Python environment</h3><pre><code class="bash">source activate python37</code></pre>
 <p>and modify default Python environment</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> deactivate</code></pre>
-<h3 id="4-Delate-Python-environment"><a href="#4-Delate-Python-environment" class="headerlink" title="4. Delate Python environment"></a>4. Delate Python environment</h3><pre class=" language-bash"><code class="language-bash">conda remove --name python37 --all</code></pre>
+<pre><code class="bash">source deactivate</code></pre>
+<h3 id="4-Delate-Python-environment"><a href="#4-Delate-Python-environment" class="headerlink" title="4. Delate Python environment"></a>4. Delate Python environment</h3><pre><code class="bash">conda remove --name python37 --all</code></pre>
 
             </div>
             <hr/>
@@ -960,7 +961,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1031,6 +1032,7 @@
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

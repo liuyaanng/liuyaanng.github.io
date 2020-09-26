@@ -24,12 +24,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -494,71 +495,71 @@ ENVIROMENT: Python 3.6 + TF 2.0</code></pre>
 <ol>
 <li>基本包安装</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> arcade dataclasses scikit-image</code></pre>
+<pre><code class="bash">pip install arcade dataclasses scikit-image</code></pre>
 <ol start="2">
 <li>测试arcade环境</li>
 </ol>
 <ul>
 <li>Arcade 官方的一个小demo</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<pre><code class="python">&quot;&quot;&quot;
 Drawing an example happy face
 
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.happy_face
-"""</span>
+&quot;&quot;&quot;
 
-<span class="token keyword">import</span> arcade
+import arcade
 
-<span class="token comment" spellcheck="true"># Set constants for the screen size</span>
-SCREEN_WIDTH <span class="token operator">=</span> <span class="token number">600</span>
-SCREEN_HEIGHT <span class="token operator">=</span> <span class="token number">600</span>
-SCREEN_TITLE <span class="token operator">=</span> <span class="token string">"Happy Face Example"</span>
+# Set constants for the screen size
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+SCREEN_TITLE = &quot;Happy Face Example&quot;
 
-<span class="token comment" spellcheck="true"># Open the window. Set the window title and dimensions</span>
-arcade<span class="token punctuation">.</span>open_window<span class="token punctuation">(</span>SCREEN_WIDTH<span class="token punctuation">,</span> SCREEN_HEIGHT<span class="token punctuation">,</span> SCREEN_TITLE<span class="token punctuation">)</span>
+# Open the window. Set the window title and dimensions
+arcade.open_window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
-<span class="token comment" spellcheck="true"># Set the background color</span>
-arcade<span class="token punctuation">.</span>set_background_color<span class="token punctuation">(</span>arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>WHITE<span class="token punctuation">)</span>
+# Set the background color
+arcade.set_background_color(arcade.color.WHITE)
 
-<span class="token comment" spellcheck="true"># Clear screen and start render process</span>
-arcade<span class="token punctuation">.</span>start_render<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# Clear screen and start render process
+arcade.start_render()
 
-<span class="token comment" spellcheck="true"># --- Drawing Commands Will Go Here ---</span>
+# --- Drawing Commands Will Go Here ---
 
-<span class="token comment" spellcheck="true"># Draw the face</span>
-x <span class="token operator">=</span> <span class="token number">300</span>
-y <span class="token operator">=</span> <span class="token number">300</span>
-radius <span class="token operator">=</span> <span class="token number">200</span>
-arcade<span class="token punctuation">.</span>draw_circle_filled<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>YELLOW<span class="token punctuation">)</span>
+# Draw the face
+x = 300
+y = 300
+radius = 200
+arcade.draw_circle_filled(x, y, radius, arcade.color.YELLOW)
 
-<span class="token comment" spellcheck="true"># Draw the right eye</span>
-x <span class="token operator">=</span> <span class="token number">370</span>
-y <span class="token operator">=</span> <span class="token number">350</span>
-radius <span class="token operator">=</span> <span class="token number">20</span>
-arcade<span class="token punctuation">.</span>draw_circle_filled<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span>
+# Draw the right eye
+x = 370
+y = 350
+radius = 20
+arcade.draw_circle_filled(x, y, radius, arcade.color.BLACK)
 
-<span class="token comment" spellcheck="true"># Draw the left eye</span>
-x <span class="token operator">=</span> <span class="token number">230</span>
-y <span class="token operator">=</span> <span class="token number">350</span>
-radius <span class="token operator">=</span> <span class="token number">20</span>
-arcade<span class="token punctuation">.</span>draw_circle_filled<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span>
+# Draw the left eye
+x = 230
+y = 350
+radius = 20
+arcade.draw_circle_filled(x, y, radius, arcade.color.BLACK)
 
-<span class="token comment" spellcheck="true"># Draw the smile</span>
-x <span class="token operator">=</span> <span class="token number">300</span>
-y <span class="token operator">=</span> <span class="token number">280</span>
-width <span class="token operator">=</span> <span class="token number">120</span>
-height <span class="token operator">=</span> <span class="token number">100</span>
-start_angle <span class="token operator">=</span> <span class="token number">190</span>
-end_angle <span class="token operator">=</span> <span class="token number">350</span>
-arcade<span class="token punctuation">.</span>draw_arc_outline<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">,</span> arcade<span class="token punctuation">.</span>color<span class="token punctuation">.</span>BLACK<span class="token punctuation">,</span>
-                        start_angle<span class="token punctuation">,</span> end_angle<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+# Draw the smile
+x = 300
+y = 280
+width = 120
+height = 100
+start_angle = 190
+end_angle = 350
+arcade.draw_arc_outline(x, y, width, height, arcade.color.BLACK,
+                        start_angle, end_angle, 10)
 
-<span class="token comment" spellcheck="true"># Finish drawing and display the result</span>
-arcade<span class="token punctuation">.</span>finish_render<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# Finish drawing and display the result
+arcade.finish_render()
 
-<span class="token comment" spellcheck="true"># Keep the window open until the user hits the 'close' button</span>
-arcade<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+# Keep the window open until the user hits the &#39;close&#39; button
+arcade.run()</code></pre>
 <ul>
 <li><p>-&gt;运行发现报错：<code>ImportError: Library “GLU” not found</code></p>
 <p>解决办法：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50446867/importerror-library-glu-not-found"><code>sudo apt-get install freeglut3-dev</code></a> </p>
@@ -593,7 +594,7 @@ CPU: I5</code></pre>
 <ul>
 <li>进入系统要先激活环境,详细信息见<a target="_blank" rel="noopener" href="https://www.easyaiforum.cn/helpDocument?manual_id=136">帮助文档</a> </li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">conda activate py36h</code></pre>
+<pre><code class="bash">conda activate py36h</code></pre>
 <ul>
 <li><p>安装基本包和Ubuntu一样，测试的时候发现依旧存在<code>OpenGL</code>的问题,查看OpenGL版本为1.1</p>
 <p>这里给几个查看OpenGL的工具：</p>
@@ -1060,7 +1061,7 @@ CPU: I5</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1131,6 +1132,7 @@ CPU: I5</code></pre>
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

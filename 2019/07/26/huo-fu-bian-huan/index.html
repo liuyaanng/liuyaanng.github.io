@@ -23,12 +23,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -442,14 +443,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.2k
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        4 Min
+                        5 Min
                     </div>
                     
                 
@@ -469,35 +470,35 @@
 <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>考虑点$(x_i,y_i)$及通过这个点的线,有无穷多的线通过点$(x_i,y_i)$，针对a和b的一些值，满足斜截式$y_i = ax_i + b$的所有线都通过该点。该公式也可以写为$b = -ax_i + y_i$，考虑ab平面(即<strong>参数空间</strong>)对固定点$(x_i,y_i)$得到一条线的方程。另外，第二个点$(x_j,y_j)$也有一条在参数空间中与之相关的线，这条线和与$(x_i,y_i)$<strong>相关</strong>的线交于点$(a’,b’)$，其中$a’$是斜率，$b’$是在<strong>xy平面</strong>上包含点$(x_i,y_i)$和$(x_j,y_j)$的线的截距。在<strong>参数空间</strong>中，这条线包含的所有点都有相交于$(a’,b’)$点的直线。<br>简单理解，直线由两个点$A(x_1,y_1)$和$B(x_2,y_2)$定义，在参数空间中，两条直线的唯一公共点是在原图像空间中表示连接点A和B的唯一存在的直线<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d38129f0e9f156720.jpg"><br>因此，给定很多点，判断这些点是否共线的问题，经由霍夫变换之后，变成判断一堆曲线(每一个点在$(r, \theta)$平面上代表一条曲线)是否 在 $(r,\theta)$平面上相交于同一点的问题<br>另外用法线表示法:<br>$$xcos\theta + ysin\theta = \rho$$<br>水平线的$\theta$=0,$\rho$等于正的x的截距，垂直线的$\theta=90$度，$\rho$等于正的y的截距<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d382004e2bab23873.jpg"></p>
 <p>在坐标(i, j)的单元位置，累加器的值是 A(i, j)，对应于参数空间坐标$(\rho_i,\theta_j)$的正方形。最初， 这些单元位置为零。然后，对于每个图像平面上的非背景点$(x_k,y_k)$(就是 xy 平面)，我们令 θ 等 于在 θ 轴上允许的细分值，并通过公式$\rho = x_kcos\theta+y_ksin\theta$解出相应的 ρ 值。然后，得到的 ρ 值四 舍五入为最接近的 ρ 轴上允许的单元值。相应的累加器单元增加一个增量。在这个过程的最后， 累加单元 A(i, j)中的值 Q 就意味着 xy 平面上位于线$xcos\theta_j+ysin\theta_j = \rho_i$上的点有 Q 个。在$\rho\theta$平面上，细分的数目决定了这些点的共线的精确度。累加器数组在工具箱中叫做霍夫变换矩阵，简称霍夫变换。</p>
 <h2 id="MATLAB工具箱函数"><a href="#MATLAB工具箱函数" class="headerlink" title="MATLAB工具箱函数"></a>MATLAB工具箱函数</h2><h3 id="hough函数"><a href="#hough函数" class="headerlink" title="hough函数"></a>hough函数</h3><p>默认语法</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token punctuation">[</span>H<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> rho<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">hough</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">[H, theta, rho] = hough(f)</code></pre>
 <p>H是霍夫变换矩阵，theta和rho是$\theta$和$\rho$的值<br>下面这个例子可以加深对霍夫变换的理解</p>
-<pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="matlab">f = zeros(101,101);
 
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+f(1,1) = 1;
 
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+f(101,1) = 1;
 
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+f(1,101) = 1;
 
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+f(101, 101) = 1;
 
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">51</span><span class="token punctuation">,</span> <span class="token number">51</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+f(51, 51) = 1;
 
-<span class="token comment" spellcheck="true">% H = hough(f);</span>
+% H = hough(f);
 
-<span class="token punctuation">[</span>H<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> rho<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">hough</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+[H, theta, rho] = hough(f);
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'XData'</span><span class="token punctuation">,</span> theta<span class="token punctuation">,</span><span class="token string">'YData'</span><span class="token punctuation">,</span> rho<span class="token punctuation">,</span> <span class="token string">'InitialMagnification'</span><span class="token punctuation">,</span> <span class="token string">'fit'</span><span class="token punctuation">)</span>
+imshow(H, [],&#39;XData&#39;, theta,&#39;YData&#39;, rho, &#39;InitialMagnification&#39;, &#39;fit&#39;)
 
-axis on<span class="token punctuation">,</span> axis normal
+axis on, axis normal
 
-<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'\theta'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'\rho'</span><span class="token punctuation">)</span></code></pre>
+xlabel(&#39;\theta&#39;),ylabel(&#39;\rho&#39;)</code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d381e6cd3ce994397.jpg"><br>观察图可以看打到三条曲线在+45度和-45度处的交点指出:f中有两组三个共线的点。两条曲线在$(\rho,\theta)$ = (0,-90)、(-100,-90)、(0,0)、(100,0)处的交点指出:有4组位于<strong>垂直线</strong>和<strong>水平线</strong>上的公共点</p>
 <h3 id="houghpeaks函数"><a href="#houghpeaks函数" class="headerlink" title="houghpeaks函数"></a>houghpeaks函数</h3><p>寻找指定的峰值数<br>默认语法</p>
-<pre class=" language-matlab"><code class="language-matlab">peaks <span class="token operator">=</span> <span class="token function">houghpeaks</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> NumPeaks<span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">peaks = houghpeaks(H, NumPeaks)</code></pre>
 <p>H是霍夫变换矩阵</p>
 <h3 id="houghlines函数"><a href="#houghlines函数" class="headerlink" title="houghlines函数"></a>houghlines函数</h3><p>决定线的起点和终点<br>默认语法</p>
-<pre class=" language-matlab"><code class="language-matlab">lines <span class="token operator">=</span> <span class="token function">houghlines</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> rho<span class="token punctuation">,</span> peaks<span class="token punctuation">)</span></code></pre>
+<pre><code class="matlab">lines = houghlines(f, theta, rho, peaks)</code></pre>
 <p>输出lines是结构数组，长度等于找到的线段。结构中的每个元素可以看成一条线，并含有下列字段:    </p>
 <ol>
 <li>point1:两元素向量[r1,c1]，指定了线段终点的行列坐标。</li>
@@ -505,40 +506,40 @@ axis on<span class="token punctuation">,</span> axis normal
 <li>theta:与线相关的霍夫变换的以度计量的角度。</li>
 <li>rho:与线相关的霍夫变换的$\rho$轴位置。</li>
 </ol>
-<h3 id="MATLAB使用霍夫变换检测和连接线"><a href="#MATLAB使用霍夫变换检测和连接线" class="headerlink" title="MATLAB使用霍夫变换检测和连接线"></a>MATLAB使用霍夫变换检测和连接线</h3><pre class=" language-matlab"><code class="language-matlab">f <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">'timg1.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="MATLAB使用霍夫变换检测和连接线"><a href="#MATLAB使用霍夫变换检测和连接线" class="headerlink" title="MATLAB使用霍夫变换检测和连接线"></a>MATLAB使用霍夫变换检测和连接线</h3><pre><code class="matlab">f = imread(&#39;timg1.jpg&#39;);
 
-f <span class="token operator">=</span> <span class="token function">rgb2gray</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+f = rgb2gray(f);
 
-BW <span class="token operator">=</span> <span class="token function">edge</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token string">'canny'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+BW = edge(f,&#39;canny&#39;);
 
-<span class="token punctuation">[</span>H <span class="token punctuation">,</span>theta<span class="token punctuation">,</span> rho<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">hough</span><span class="token punctuation">(</span>BW<span class="token punctuation">,</span> <span class="token string">'ThetaResolution'</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+[H ,theta, rho] = hough(BW, &#39;ThetaResolution&#39;, 0.2);
 
-<span class="token function">imshow</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'XData'</span><span class="token punctuation">,</span> theta<span class="token punctuation">,</span><span class="token string">'YData'</span><span class="token punctuation">,</span> rho<span class="token punctuation">,</span> <span class="token string">'InitialMagnification'</span><span class="token punctuation">,</span> <span class="token string">'fit'</span><span class="token punctuation">)</span>
+imshow(H, [],&#39;XData&#39;, theta,&#39;YData&#39;, rho, &#39;InitialMagnification&#39;, &#39;fit&#39;)
 
-axis on<span class="token punctuation">,</span> axis normal
+axis on, axis normal
 
-<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'\theta'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'\rho'</span><span class="token punctuation">)</span>
+xlabel(&#39;\theta&#39;),ylabel(&#39;\rho&#39;)
 
-peaks <span class="token operator">=</span> <span class="token function">houghpeaks</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+peaks = houghpeaks(H, 5);
 
 hold on
 
-<span class="token function">plot</span><span class="token punctuation">(</span><span class="token function">theta</span><span class="token punctuation">(</span><span class="token function">peaks</span><span class="token punctuation">(</span> <span class="token operator">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rho</span><span class="token punctuation">(</span><span class="token function">peaks</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">...</span>
+plot(theta(peaks( :, 2)), rho(peaks(:, 1)),...
 
-    <span class="token string">'linestyle'</span><span class="token punctuation">,</span> <span class="token string">'none'</span><span class="token punctuation">,</span> <span class="token string">'marker'</span><span class="token punctuation">,</span> <span class="token string">'s'</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    &#39;linestyle&#39;, &#39;none&#39;, &#39;marker&#39;, &#39;s&#39;, &#39;color&#39;, &#39;w&#39;);
 
 
-lines <span class="token operator">=</span> <span class="token function">houghlines</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> rho<span class="token punctuation">,</span> peaks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+lines = houghlines(f, theta, rho, peaks);
 
-figure<span class="token punctuation">,</span> <span class="token function">imshow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span> hold on
+figure, imshow(f), hold on
 
-<span class="token keyword">for</span> k <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token function">length</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span>
+for k = 1:length(lines)
 
-    xy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">lines</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">.</span>point1 <span class="token punctuation">;</span> <span class="token function">lines</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">.</span>point2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    xy = [lines(k).point1 ; lines(k).point2];
 
-    <span class="token function">plot</span><span class="token punctuation">(</span><span class="token function">xy</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">xy</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'LineWidth'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    plot(xy(:,1), xy(:,2), &#39;LineWidth&#39;, 4, &#39;color&#39;, &#39;red&#39;);
 
-<span class="token keyword">end</span></code></pre>
+end</code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d381d8d80bff63571.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d381de2778c421022.jpg"></p>
 
             </div>
@@ -1023,7 +1024,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1094,6 +1095,7 @@ figure<span class="token punctuation">,</span> <span class="token function">imsh
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

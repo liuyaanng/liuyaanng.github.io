@@ -27,12 +27,13 @@ for i = 1 to A.length - 1
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -442,7 +443,7 @@ for i = 1 to A.length - 1
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        271
+                        274
                     </div>
                     
 
@@ -465,74 +466,74 @@ for i = 1 to A.length - 1
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="SORT"><a href="#SORT" class="headerlink" title="SORT"></a>SORT</h2><h3 id="1-BUBBLE-SORT"><a href="#1-BUBBLE-SORT" class="headerlink" title="1. BUBBLE SORT"></a>1. BUBBLE SORT</h3><pre class=" language-python"><code class="language-python">BUBBLE<span class="token operator">-</span>SORT<span class="token punctuation">(</span>A<span class="token punctuation">)</span>
-<span class="token operator">//</span>A<span class="token punctuation">:</span>sort array
-<span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span> to A<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
-  <span class="token keyword">for</span> j <span class="token operator">=</span> A<span class="token punctuation">.</span>length to i <span class="token operator">+</span> <span class="token number">1</span>
-    <span class="token keyword">if</span> A<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> A<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
-      swap<span class="token punctuation">(</span>A<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> A<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+                <h2 id="SORT"><a href="#SORT" class="headerlink" title="SORT"></a>SORT</h2><h3 id="1-BUBBLE-SORT"><a href="#1-BUBBLE-SORT" class="headerlink" title="1. BUBBLE SORT"></a>1. BUBBLE SORT</h3><pre><code class="python">BUBBLE-SORT(A)
+//A:sort array
+for i = 1 to A.length - 1
+  for j = A.length to i + 1
+    if A[j] &lt; A[j-1]
+      swap(A[j], A[j-1]
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="BUBBLE_SORT.gif" alt="BUBBLE_SORT"> </p>
 <p>$$ \Theta (n^2) $$</p>
-<h3 id="2-INSERTION-SORT"><a href="#2-INSERTION-SORT" class="headerlink" title="2. INSERTION SORT"></a>2. INSERTION SORT</h3><pre class=" language-python"><code class="language-python">INSERTION<span class="token operator">-</span>SORT<span class="token punctuation">(</span>A<span class="token punctuation">)</span>
-<span class="token operator">//</span>A<span class="token punctuation">:</span>sort array
+<h3 id="2-INSERTION-SORT"><a href="#2-INSERTION-SORT" class="headerlink" title="2. INSERTION SORT"></a>2. INSERTION SORT</h3><pre><code class="python">INSERTION-SORT(A)
+//A:sort array
 
-<span class="token keyword">for</span> j <span class="token operator">=</span> <span class="token number">2</span> to A<span class="token punctuation">.</span>length
-  key <span class="token operator">=</span> A<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-  <span class="token operator">//</span>Insert A<span class="token punctuation">[</span>j<span class="token punctuation">]</span> into the sorted sequence A<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
-  i <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span>
-  <span class="token keyword">while</span> i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">and</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> key
-    A<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    i <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
-  A<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> key</code></pre>
+for j = 2 to A.length
+  key = A[j]
+  //Insert A[j] into the sorted sequence A[1..j-1]
+  i = j - 1
+  while i &gt; 0 and A[i] &gt; key
+    A[i+1] = A[i]
+    i = i - 1
+  A[i+1] = key</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="INSERTION_SORT.gif" alt="INSERTION_SORT"> </p>
 <p>$$ \Theta (n^2) $$</p>
-<h3 id="3-SELECT-SORT"><a href="#3-SELECT-SORT" class="headerlink" title="3. SELECT SORT"></a>3. SELECT SORT</h3><pre class=" language-python"><code class="language-python">SELECT<span class="token operator">-</span>SORT<span class="token punctuation">(</span>A<span class="token punctuation">)</span>
-<span class="token operator">//</span>A<span class="token punctuation">:</span>sort array
-<span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span> to range<span class="token punctuation">(</span>i<span class="token punctuation">,</span>A<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
-  min <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-  <span class="token keyword">for</span> j <span class="token operator">=</span> <span class="token number">1</span> to A<span class="token punctuation">.</span>length
-    <span class="token keyword">if</span> min <span class="token operator">></span> A<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-      min <span class="token operator">=</span> A<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-      min_index <span class="token operator">=</span> j
-  swap<span class="token punctuation">(</span>A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>A<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h3 id="3-SELECT-SORT"><a href="#3-SELECT-SORT" class="headerlink" title="3. SELECT SORT"></a>3. SELECT SORT</h3><pre><code class="python">SELECT-SORT(A)
+//A:sort array
+for i = 1 to range(i,A.length)
+  min = A[i]
+  for j = 1 to A.length
+    if min &gt; A[j]
+      min = A[j]
+      min_index = j
+  swap(A[i],A[min_index])</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="SELECT_SORT.gif" alt="SELECT_SORT"> </p>
 <p>$$ \Theta (n^2) $$</p>
-<h3 id="4-MERGE-SORT"><a href="#4-MERGE-SORT" class="headerlink" title="4. MERGE SORT"></a>4. MERGE SORT</h3><pre class=" language-python"><code class="language-python">MERGE<span class="token operator">-</span>SORT<span class="token punctuation">(</span>A<span class="token punctuation">,</span> p<span class="token punctuation">,</span> r<span class="token punctuation">)</span>
-<span class="token operator">//</span>A<span class="token punctuation">:</span>sort array
-<span class="token operator">//</span>p<span class="token punctuation">:</span>begin index
-<span class="token operator">//</span>r<span class="token punctuation">:</span>end index
+<h3 id="4-MERGE-SORT"><a href="#4-MERGE-SORT" class="headerlink" title="4. MERGE SORT"></a>4. MERGE SORT</h3><pre><code class="python">MERGE-SORT(A, p, r)
+//A:sort array
+//p:begin index
+//r:end index
 
-<span class="token keyword">if</span> p <span class="token operator">&lt;</span> r
-  q <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>p <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span>
-  MERGE<span class="token operator">-</span>SORT<span class="token punctuation">(</span>A<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span>
-  MERGE<span class="token operator">-</span>SORT<span class="token punctuation">(</span>A<span class="token punctuation">,</span> q<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
-  MERGE<span class="token punctuation">(</span>A<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">,</span> r<span class="token punctuation">)</span>
+if p &lt; r
+  q = [(p + r) / 2]
+  MERGE-SORT(A, p, q)
+  MERGE-SORT(A, q+1, r)
+  MERGE(A, p, q, r)
 
-MERGE<span class="token punctuation">(</span>A<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">,</span> r<span class="token punctuation">)</span>
-<span class="token operator">//</span>A<span class="token punctuation">:</span>sort array
-<span class="token operator">//</span>p<span class="token punctuation">:</span>begin index
-<span class="token operator">//</span>q<span class="token punctuation">:</span>mid index
-<span class="token operator">//</span>r<span class="token punctuation">:</span>end index
+MERGE(A, p, q, r)
+//A:sort array
+//p:begin index
+//q:mid index
+//r:end index
 
-n1 <span class="token operator">=</span> q <span class="token operator">-</span> p <span class="token operator">+</span> <span class="token number">1</span>
-n2 <span class="token operator">=</span> r <span class="token operator">-</span> q
-Let L<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">and</span> R<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n2 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> be new arrays
-<span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span> to n1
-  L<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>p <span class="token operator">+</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> j <span class="token operator">=</span> <span class="token number">1</span> to n2
-  R<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>q <span class="token operator">+</span> j<span class="token punctuation">]</span>
-L<span class="token punctuation">[</span>n1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> infinity
-R<span class="token punctuation">[</span>n2 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> infinity
-i <span class="token operator">=</span> <span class="token number">1</span>
-j <span class="token operator">=</span> <span class="token number">1</span>
-<span class="token keyword">for</span> k <span class="token operator">=</span> p to r
-  <span class="token keyword">if</span> L<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> R<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-    A<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
-  <span class="token keyword">else</span>
-    A<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> R<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-    j <span class="token operator">=</span> j <span class="token operator">+</span> <span class="token number">1</span></code></pre>
+n1 = q - p + 1
+n2 = r - q
+Let L[1..n1 + 1] and R[1..n2 + 1] be new arrays
+for i = 1 to n1
+  L[i] = A[p + i - 1]
+for j = 1 to n2
+  R[j] = A[q + j]
+L[n1 + 1] = infinity
+R[n2 + 1] = infinity
+i = 1
+j = 1
+for k = p to r
+  if L[i] &lt;= R[j]
+    A[k] = L[i]
+    i = i + 1
+  else
+    A[k] = R[j]
+    j = j + 1</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="MERGE_SORT.gif" alt="MERGE_SORT"> </p>
 <p>$$ \Theta (n) $$</p>
 
@@ -986,7 +987,7 @@ j <span class="token operator">=</span> <span class="token number">1</span>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1057,6 +1058,7 @@ j <span class="token operator">=</span> <span class="token number">1</span>
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

@@ -27,12 +27,13 @@ In [2]: import pandas as pd
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/css/prism.css">
     <style type="text/css">
         
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
 	<body>
@@ -446,14 +447,14 @@ In [2]: import pandas as pd
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.8k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        10 Min
+                        11 Min
                     </div>
                     
                 
@@ -471,315 +472,315 @@ In [2]: import pandas as pd
             <div id="articleContent">
                 <h2 id="Pandas-基础"><a href="#Pandas-基础" class="headerlink" title="Pandas 基础"></a>Pandas 基础</h2><p>参考：<a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/getting_started/10min.html#min">10min 入门Pandas</a> </p>
 <p>导入：</p>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd</code></pre>
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><h4 id="1-创建一个Series通过传递值的列表"><a href="#1-创建一个Series通过传递值的列表" class="headerlink" title="1. 创建一个Series通过传递值的列表"></a>1. 创建一个<code>Series</code>通过传递值的列表</h4><pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> s
-Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-<span class="token number">0</span>    <span class="token number">1.0</span>
-<span class="token number">1</span>    <span class="token number">2.0</span>
-<span class="token number">2</span>    <span class="token number">3.0</span>
-<span class="token number">3</span>    NaN
-<span class="token number">4</span>    <span class="token number">4.0</span>
-<span class="token number">5</span>    <span class="token number">5.0</span>
-dtype<span class="token punctuation">:</span> float64</code></pre>
+<pre><code class="python">In [1]: import numpy as np
+In [2]: import pandas as pd</code></pre>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><h4 id="1-创建一个Series通过传递值的列表"><a href="#1-创建一个Series通过传递值的列表" class="headerlink" title="1. 创建一个Series通过传递值的列表"></a>1. 创建一个<code>Series</code>通过传递值的列表</h4><pre><code class="python">In [3]: s = pd.Series([1,2,3,np.nan,4,5])
+In [4]: s
+Out[4]:
+0    1.0
+1    2.0
+2    3.0
+3    NaN
+4    4.0
+5    5.0
+dtype: float64</code></pre>
 <h5 id="2-DataFrame"><a href="#2-DataFrame" class="headerlink" title="2. DataFrame"></a>2. DataFrame</h5><ul>
 <li>通过传递带有日期时间的索引和带标签的列的numpy数组来创建</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> dates <span class="token operator">=</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span><span class="token string">'20200101'</span><span class="token punctuation">,</span> periods <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">)</span>
-In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> dates
-Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-DatetimeIndex<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'2020-01-01'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-02'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-03'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-04'</span><span class="token punctuation">,</span>
-               <span class="token string">'2020-01-05'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-06'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              dtype<span class="token operator">=</span><span class="token string">'datetime64[ns]'</span><span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">)</span>
+<pre><code class="python">In [5]: dates = pd.date_range(&#39;20200101&#39;, periods = 6)
+In [6]: dates
+Out[6]:
+DatetimeIndex([&#39;2020-01-01&#39;, &#39;2020-01-02&#39;, &#39;2020-01-03&#39;, &#39;2020-01-04&#39;,
+               &#39;2020-01-05&#39;, &#39;2020-01-06&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
 
-In <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index <span class="token operator">=</span> dates<span class="token punctuation">,</span>
-   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>  columns <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token string">'ABCD'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-In <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df
-Out<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+In [7]: df = pd.DataFrame(np.random.randn(6,4), index = dates,
+   ...:  columns = list(&#39;ABCD&#39;))
+In [8]: df
+Out[8]:
                   A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">-</span><span class="token number">0.009355</span> <span class="token operator">-</span><span class="token number">0.491184</span>  <span class="token number">0.908148</span>  <span class="token number">0.021897</span></code></pre>
+2020-01-01 -1.325714 -0.485991  1.425164  0.111944
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381
+2020-01-04 -1.698448  0.092562  0.563688 -0.587796
+2020-01-05  1.104307 -1.469510 -1.364106 -2.165353
+2020-01-06 -0.009355 -0.491184  0.908148  0.021897</code></pre>
 <ul>
 <li>通过传递对象的字典来创建，这些对象可以转化为类似序列的对象</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">:</span> dff <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'A':1,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>                     <span class="token string">'B'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Timestamp<span class="token punctuation">(</span><span class="token string">'20200303'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>                     <span class="token string">'C'</span><span class="token punctuation">:</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">,</span> dtype <span class="token operator">=</span> np<span class="token punctuation">.</span><span class="token keyword">in</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span> t32<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>                     <span class="token string">'D'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> index<span class="token operator">=</span>list<span class="token punctuation">(</span>range
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>dtype <span class="token operator">=</span> <span class="token string">'float32'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>                     <span class="token string">'E'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Categorical<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"test"</span><span class="token punctuation">,</span>"train
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span> <span class="token string">","</span>test<span class="token string">","</span>train"<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>                     <span class="token string">'F'</span><span class="token punctuation">:</span><span class="token string">'foo'</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;)</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span>
+<pre><code class="python">In [11]: dff = pd.DataFrame(&#123;&#39;A&#39;:1,
+    ...:                     &#39;B&#39;:pd.Timestamp(&#39;20200303&#39;),
+    ...:                     &#39;C&#39;:np.array([3]*4, dtype = np.in
+    ...: t32),
+    ...:                     &#39;D&#39;:pd.Series(1, index=list(range
+    ...: (4)),dtype = &#39;float32&#39;),
+    ...:                     &#39;E&#39;:pd.Categorical([&quot;test&quot;,&quot;train
+    ...: &quot;,&quot;test&quot;,&quot;train&quot;]),
+    ...:                     &#39;F&#39;:&#39;foo&#39;&#125;)
+    ...:
 
-In <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">:</span> dff
-Out<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+In [12]: dff
+Out[12]:
    A          B  C    D      E    F
-<span class="token number">0</span>  <span class="token number">1</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">03</span>  <span class="token number">3</span>  <span class="token number">1.0</span>   test  foo
-<span class="token number">1</span>  <span class="token number">1</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">03</span>  <span class="token number">3</span>  <span class="token number">1.0</span>  train  foo
-<span class="token number">2</span>  <span class="token number">1</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">03</span>  <span class="token number">3</span>  <span class="token number">1.0</span>   test  foo
-<span class="token number">3</span>  <span class="token number">1</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">03</span>  <span class="token number">3</span>  <span class="token number">1.0</span>  train  foo</code></pre>
+0  1 2020-03-03  3  1.0   test  foo
+1  1 2020-03-03  3  1.0  train  foo
+2  1 2020-03-03  3  1.0   test  foo
+3  1 2020-03-03  3  1.0  train  foo</code></pre>
 <p>结果的列具有不同的<code>dtype</code></p>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">:</span> dff<span class="token punctuation">.</span>dtypes
-Out<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [13]: dff.dtypes
+Out[13]:
 A             int64
-B    datetime64<span class="token punctuation">[</span>ns<span class="token punctuation">]</span>
+B    datetime64[ns]
 C             int32
 D           float32
 E          category
 F            object
-dtype<span class="token punctuation">:</span> object</code></pre>
+dtype: object</code></pre>
 <h3 id="2-查看数据"><a href="#2-查看数据" class="headerlink" title="2. 查看数据"></a>2. 查看数据</h3><ul>
 <li>查看顶部和底部行</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [16]: df.head()
+Out[16]:
                   A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-In <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+2020-01-01 -1.325714 -0.485991  1.425164  0.111944
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381
+2020-01-04 -1.698448  0.092562  0.563688 -0.587796
+2020-01-05  1.104307 -1.469510 -1.364106 -2.165353
+In [17]: df.tail(3)
+Out[17]:
                    A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">-</span><span class="token number">0.009355</span> <span class="token operator">-</span><span class="token number">0.491184</span>  <span class="token number">0.908148</span>  <span class="token number">0.021897</span></code></pre>
+2020-01-04 -1.698448  0.092562  0.563688 -0.587796
+2020-01-05  1.104307 -1.469510 -1.364106 -2.165353
+2020-01-06 -0.009355 -0.491184  0.908148  0.021897</code></pre>
 <ul>
 <li>查看索引和列</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>index
-Out<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-DatetimeIndex<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'2020-01-01'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-02'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-03'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-04'</span><span class="token punctuation">,</span>
-               <span class="token string">'2020-01-05'</span><span class="token punctuation">,</span> <span class="token string">'2020-01-06'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              dtype<span class="token operator">=</span><span class="token string">'datetime64[ns]'</span><span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">)</span>
-In <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>columns
-Out<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">:</span> Index<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token string">'object'</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="python">In [18]: df.index
+Out[18]:
+DatetimeIndex([&#39;2020-01-01&#39;, &#39;2020-01-02&#39;, &#39;2020-01-03&#39;, &#39;2020-01-04&#39;,
+               &#39;2020-01-05&#39;, &#39;2020-01-06&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+In [20]: df.columns
+Out[20]: Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;], dtype=&#39;object&#39;)</code></pre>
 <ul>
 <li><code>DataFrame.to_numpy</code>给出基础数据的Numpy形式</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.32571443</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.48599075</span><span class="token punctuation">,</span>  <span class="token number">1.42516446</span><span class="token punctuation">,</span>  <span class="token number">0.11194363</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span> <span class="token number">0.51837887</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.08638321</span><span class="token punctuation">,</span>  <span class="token number">0.22993722</span><span class="token punctuation">,</span>  <span class="token number">0.11209583</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.50818274</span><span class="token punctuation">,</span>  <span class="token number">0.46678885</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.33046943</span><span class="token punctuation">,</span>  <span class="token number">0.53438102</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.69844816</span><span class="token punctuation">,</span>  <span class="token number">0.0925617</span> <span class="token punctuation">,</span>  <span class="token number">0.56368756</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.58779561</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span> <span class="token number">1.10430711</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.46950994</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.36410571</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.16535338</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.00935469</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.49118366</span><span class="token punctuation">,</span>  <span class="token number">0.90814807</span><span class="token punctuation">,</span>  <span class="token number">0.02189745</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<pre><code class="python">In [21]: df.to_numpy()
+Out[21]:
+array([[-1.32571443, -0.48599075,  1.42516446,  0.11194363],
+       [ 0.51837887, -1.08638321,  0.22993722,  0.11209583],
+       [-0.50818274,  0.46678885, -1.33046943,  0.53438102],
+       [-1.69844816,  0.0925617 ,  0.56368756, -0.58779561],
+       [ 1.10430711, -1.46950994, -1.36410571, -2.16535338],
+       [-0.00935469, -0.49118366,  0.90814807,  0.02189745]])</code></pre>
 <p>注意： <code>DataFrame.to_numpy()</code>在输出中不包括索引或标签</p>
 <ul>
 <li><code>describe()</code>显示数据的快速统计摘要</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [22]: df.describe()
+Out[22]:
               A         B         C         D
-count  <span class="token number">6.000000</span>  <span class="token number">6.000000</span>  <span class="token number">6.000000</span>  <span class="token number">6.000000</span>
-mean  <span class="token operator">-</span><span class="token number">0.319836</span> <span class="token operator">-</span><span class="token number">0.495620</span>  <span class="token number">0.072060</span> <span class="token operator">-</span><span class="token number">0.328805</span>
-std    <span class="token number">1.074711</span>  <span class="token number">0.716905</span>  <span class="token number">1.168436</span>  <span class="token number">0.969198</span>
-min   <span class="token operator">-</span><span class="token number">1.698448</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-<span class="token number">25</span><span class="token operator">%</span>   <span class="token operator">-</span><span class="token number">1.121332</span> <span class="token operator">-</span><span class="token number">0.937583</span> <span class="token operator">-</span><span class="token number">0.940368</span> <span class="token operator">-</span><span class="token number">0.435372</span>
-<span class="token number">50</span><span class="token operator">%</span>   <span class="token operator">-</span><span class="token number">0.258769</span> <span class="token operator">-</span><span class="token number">0.488587</span>  <span class="token number">0.396812</span>  <span class="token number">0.066921</span>
-<span class="token number">75</span><span class="token operator">%</span>    <span class="token number">0.386445</span> <span class="token operator">-</span><span class="token number">0.052076</span>  <span class="token number">0.822033</span>  <span class="token number">0.112058</span>
-max    <span class="token number">1.104307</span>  <span class="token number">0.466789</span>  <span class="token number">1.425164</span>  <span class="token number">0.534381</span></code></pre>
+count  6.000000  6.000000  6.000000  6.000000
+mean  -0.319836 -0.495620  0.072060 -0.328805
+std    1.074711  0.716905  1.168436  0.969198
+min   -1.698448 -1.469510 -1.364106 -2.165353
+25%   -1.121332 -0.937583 -0.940368 -0.435372
+50%   -0.258769 -0.488587  0.396812  0.066921
+75%    0.386445 -0.052076  0.822033  0.112058
+max    1.104307  0.466789  1.425164  0.534381</code></pre>
 <ul>
 <li>转置数据</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>T
-Out<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-   <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span>  <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span>  <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span>  <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span>
-A   <span class="token operator">-</span><span class="token number">1.325714</span>    <span class="token number">0.518379</span>   <span class="token operator">-</span><span class="token number">0.508183</span>   <span class="token operator">-</span><span class="token number">1.698448</span>    <span class="token number">1.104307</span>   <span class="token operator">-</span><span class="token number">0.009355</span>
-B   <span class="token operator">-</span><span class="token number">0.485991</span>   <span class="token operator">-</span><span class="token number">1.086383</span>    <span class="token number">0.466789</span>    <span class="token number">0.092562</span>   <span class="token operator">-</span><span class="token number">1.469510</span>   <span class="token operator">-</span><span class="token number">0.491184</span>
-C    <span class="token number">1.425164</span>    <span class="token number">0.229937</span>   <span class="token operator">-</span><span class="token number">1.330469</span>    <span class="token number">0.563688</span>   <span class="token operator">-</span><span class="token number">1.364106</span>    <span class="token number">0.908148</span>
-D    <span class="token number">0.111944</span>    <span class="token number">0.112096</span>    <span class="token number">0.534381</span>   <span class="token operator">-</span><span class="token number">0.587796</span>   <span class="token operator">-</span><span class="token number">2.165353</span>    <span class="token number">0.021897</span></code></pre>
+<pre><code class="python">In [24]: df.T
+Out[24]:
+   2020-01-01  2020-01-02  2020-01-03  2020-01-04  2020-01-05  2020-01-06
+A   -1.325714    0.518379   -0.508183   -1.698448    1.104307   -0.009355
+B   -0.485991   -1.086383    0.466789    0.092562   -1.469510   -0.491184
+C    1.425164    0.229937   -1.330469    0.563688   -1.364106    0.908148
+D    0.111944    0.112096    0.534381   -0.587796   -2.165353    0.021897</code></pre>
 <ul>
 <li>按轴排序</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>sort_index<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> ascending <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [26]: df.sort_index(axis = 1, ascending = False)
+Out[26]:
                    D         C         B         A
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span>  <span class="token number">0.111944</span>  <span class="token number">1.425164</span> <span class="token operator">-</span><span class="token number">0.485991</span> <span class="token operator">-</span><span class="token number">1.325714</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.112096</span>  <span class="token number">0.229937</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.518379</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span>  <span class="token number">0.534381</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">0.508183</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">0.587796</span>  <span class="token number">0.563688</span>  <span class="token number">0.092562</span> <span class="token operator">-</span><span class="token number">1.698448</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span> <span class="token operator">-</span><span class="token number">2.165353</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">1.469510</span>  <span class="token number">1.104307</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span>  <span class="token number">0.021897</span>  <span class="token number">0.908148</span> <span class="token operator">-</span><span class="token number">0.491184</span> <span class="token operator">-</span><span class="token number">0.009355</span>
+2020-01-01  0.111944  1.425164 -0.485991 -1.325714
+2020-01-02  0.112096  0.229937 -1.086383  0.518379
+2020-01-03  0.534381 -1.330469  0.466789 -0.508183
+2020-01-04 -0.587796  0.563688  0.092562 -1.698448
+2020-01-05 -2.165353 -1.364106 -1.469510  1.104307
+2020-01-06  0.021897  0.908148 -0.491184 -0.009355
 
-In <span class="token punctuation">[</span><span class="token number">27</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>sort_index<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> ascending <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">27</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+In [27]: df.sort_index(axis = 0, ascending = False)
+Out[27]:
                    A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">-</span><span class="token number">0.009355</span> <span class="token operator">-</span><span class="token number">0.491184</span>  <span class="token number">0.908148</span>  <span class="token number">0.021897</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span></code></pre>
+2020-01-06 -0.009355 -0.491184  0.908148  0.021897
+2020-01-05  1.104307 -1.469510 -1.364106 -2.165353
+2020-01-04 -1.698448  0.092562  0.563688 -0.587796
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-01 -1.325714 -0.485991  1.425164  0.111944</code></pre>
 <p><code>axis = 1</code> 表示行<br><code>axis = 0</code> 表示列<br><code>ascending</code>默认为<code>True</code>,表示升序</p>
 <ul>
 <li>按值排序</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  df<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'B'</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [28]:  df.sort_values(by=&#39;B&#39;)
+Out[28]:
                    A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">-</span><span class="token number">0.009355</span> <span class="token operator">-</span><span class="token number">0.491184</span>  <span class="token number">0.908148</span>  <span class="token number">0.021897</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span></code></pre>
+2020-01-05  1.104307 -1.469510 -1.364106 -2.165353
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-06 -0.009355 -0.491184  0.908148  0.021897
+2020-01-01 -1.325714 -0.485991  1.425164  0.111944
+2020-01-04 -1.698448  0.092562  0.563688 -0.587796
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381</code></pre>
 <h3 id="3-数据选择"><a href="#3-数据选择" class="headerlink" title="3. 数据选择"></a>3. 数据选择</h3><h4 id="1-一般选择"><a href="#1-一般选择" class="headerlink" title="1. 一般选择"></a>1. 一般选择</h4><ul>
 <li>选择一个单列，产生一个<code>Series</code>,相当于<code>df.A</code></li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span>   <span class="token operator">-</span><span class="token number">1.325714</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>    <span class="token number">0.518379</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span>   <span class="token operator">-</span><span class="token number">0.508183</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span>   <span class="token operator">-</span><span class="token number">1.698448</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>    <span class="token number">1.104307</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span>   <span class="token operator">-</span><span class="token number">0.009355</span>
-Freq<span class="token punctuation">:</span> D<span class="token punctuation">,</span> Name<span class="token punctuation">:</span> A<span class="token punctuation">,</span> dtype<span class="token punctuation">:</span> float64</code></pre>
+<pre><code class="python">In [29]: df[&#39;A&#39;]
+Out[29]:
+2020-01-01   -1.325714
+2020-01-02    0.518379
+2020-01-03   -0.508183
+2020-01-04   -1.698448
+2020-01-05    1.104307
+2020-01-06   -0.009355
+Freq: D, Name: A, dtype: float64</code></pre>
 <ul>
 <li>对行进行切片</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [30]: df[0:3]
+Out[30]:
                    A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span>
+2020-01-01 -1.325714 -0.485991  1.425164  0.111944
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381
 
-In <span class="token punctuation">[</span><span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">[</span><span class="token string">'20200101'</span><span class="token punctuation">:</span><span class="token string">'20200105'</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+In [31]: df[&#39;20200101&#39;:&#39;20200105&#39;]
+Out[31]:
                    A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span></code></pre>
+2020-01-01 -1.325714 -0.485991  1.425164  0.111944
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381
+2020-01-04 -1.698448  0.092562  0.563688 -0.587796
+2020-01-05  1.104307 -1.469510 -1.364106 -2.165353</code></pre>
 <h4 id="2-通过标签选择"><a href="#2-通过标签选择" class="headerlink" title="2. 通过标签选择"></a>2. 通过标签选择</h4><ul>
 <li>使用标签获取横截面</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-A    <span class="token number">0.518379</span>
-B   <span class="token operator">-</span><span class="token number">1.086383</span>
-C    <span class="token number">0.229937</span>
-D    <span class="token number">0.112096</span>
-Name<span class="token punctuation">:</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">,</span> dtype<span class="token punctuation">:</span> float64</code></pre>
+<pre><code class="python">In [32]: df.loc[dates[1]]
+Out[32]:
+A    0.518379
+B   -1.086383
+C    0.229937
+D    0.112096
+Name: 2020-01-02 00:00:00, dtype: float64</code></pre>
 <ul>
 <li>通过标签在多个轴上选择</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">34</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">34</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [34]: df.loc[:,[&#39;A&#39;,&#39;C&#39;]]
+Out[34]:
                    A         C
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span>  <span class="token number">1.425164</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span>  <span class="token number">0.229937</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span> <span class="token operator">-</span><span class="token number">1.330469</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.563688</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.364106</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">-</span><span class="token number">0.009355</span>  <span class="token number">0.908148</span>
+2020-01-01 -1.325714  1.425164
+2020-01-02  0.518379  0.229937
+2020-01-03 -0.508183 -1.330469
+2020-01-04 -1.698448  0.563688
+2020-01-05  1.104307 -1.364106
+2020-01-06 -0.009355  0.908148
 
-In <span class="token punctuation">[</span><span class="token number">35</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">:</span><span class="token string">'C'</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">35</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+In [35]: df.loc[:,&#39;A&#39;:&#39;C&#39;]
+Out[35]:
                    A         B         C
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>  <span class="token number">1.425164</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>  <span class="token number">0.563688</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span> <span class="token operator">-</span><span class="token number">1.364106</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">-</span><span class="token number">0.009355</span> <span class="token operator">-</span><span class="token number">0.491184</span>  <span class="token number">0.908148</span></code></pre>
+2020-01-01 -1.325714 -0.485991  1.425164
+2020-01-02  0.518379 -1.086383  0.229937
+2020-01-03 -0.508183  0.466789 -1.330469
+2020-01-04 -1.698448  0.092562  0.563688
+2020-01-05  1.104307 -1.469510 -1.364106
+2020-01-06 -0.009355 -0.491184  0.908148</code></pre>
 <ul>
 <li>显示标签切片，两个端点都包括在内</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">36</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">'20200101'</span><span class="token punctuation">:</span><span class="token string">'20200104'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">36</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [36]: df.loc[&#39;20200101&#39;:&#39;20200104&#39;,[&#39;A&#39;,&#39;B&#39;]]
+Out[36]:
                    A         B
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">-</span><span class="token number">1.325714</span> <span class="token operator">-</span><span class="token number">0.485991</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span></code></pre>
+2020-01-01 -1.325714 -0.485991
+2020-01-02  0.518379 -1.086383
+2020-01-03 -0.508183  0.466789
+2020-01-04 -1.698448  0.092562</code></pre>
 <ul>
 <li>减小返回对象的尺寸</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">37</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">'20200101'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">37</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-A   <span class="token operator">-</span><span class="token number">1.325714</span>
-B   <span class="token operator">-</span><span class="token number">0.485991</span>
-Name<span class="token punctuation">:</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">,</span> dtype<span class="token punctuation">:</span> float64</code></pre>
+<pre><code class="python">In [37]: df.loc[&#39;20200101&#39;,[&#39;A&#39;,&#39;B&#39;]]
+Out[37]:
+A   -1.325714
+B   -0.485991
+Name: 2020-01-01 00:00:00, dtype: float64</code></pre>
 <ul>
 <li>获取标量值</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">38</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">38</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1.3257144329922794</span></code></pre>
+<pre><code class="python">In [38]: df.loc[dates[0],&#39;A&#39;]
+Out[38]: -1.3257144329922794</code></pre>
 <ul>
 <li>快速访问标量</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">39</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>at<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">39</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1.3257144329922794</span></code></pre>
+<pre><code class="python">In [39]: df.at[dates[0],&#39;A&#39;]
+Out[39]: -1.3257144329922794</code></pre>
 <h4 id="3-通过位置选择"><a href="#3-通过位置选择" class="headerlink" title="3. 通过位置选择"></a>3. 通过位置选择</h4><ul>
 <li>通过传递的整数的位置进行选择</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-A   <span class="token operator">-</span><span class="token number">1.698448</span>
-B    <span class="token number">0.092562</span>
-C    <span class="token number">0.563688</span>
-D   <span class="token operator">-</span><span class="token number">0.587796</span>
-Name<span class="token punctuation">:</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">,</span> dtype<span class="token punctuation">:</span> float64</code></pre>
+<pre><code class="python">In [40]: df.iloc[3]
+Out[40]:
+A   -1.698448
+B    0.092562
+C    0.563688
+D   -0.587796
+Name: 2020-01-04 00:00:00, dtype: float64</code></pre>
 <ul>
 <li>通过整数切片</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">41</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">41</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [41]: df.iloc[3:5,0:2]
+Out[41]:
                    A         B
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.092562</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span>  <span class="token number">1.104307</span> <span class="token operator">-</span><span class="token number">1.469510</span></code></pre>
+2020-01-04 -1.698448  0.092562
+2020-01-05  1.104307 -1.469510</code></pre>
 <ul>
 <li>通过整数位置列表</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [42]: df.iloc[[1,2,3],[0,2]]
+Out[42]:
                    A         C
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span>  <span class="token number">0.229937</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span> <span class="token operator">-</span><span class="token number">1.330469</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">1.698448</span>  <span class="token number">0.563688</span></code></pre>
+2020-01-02  0.518379  0.229937
+2020-01-03 -0.508183 -1.330469
+2020-01-04 -1.698448  0.563688</code></pre>
 <ul>
 <li>显式切片行</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">43</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">43</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [43]: df.iloc[1:3,:]
+Out[43]:
                    A         B         C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.518379</span> <span class="token operator">-</span><span class="token number">1.086383</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">0.508183</span>  <span class="token number">0.466789</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span></code></pre>
+2020-01-02  0.518379 -1.086383  0.229937  0.112096
+2020-01-03 -0.508183  0.466789 -1.330469  0.534381</code></pre>
 <ul>
 <li>显式切片列</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<pre><code class="python">In [44]: df.iloc[:,2:4]
+Out[44]:
                    C         D
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span>  <span class="token number">1.425164</span>  <span class="token number">0.111944</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>  <span class="token number">0.229937</span>  <span class="token number">0.112096</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">03</span> <span class="token operator">-</span><span class="token number">1.330469</span>  <span class="token number">0.534381</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">04</span>  <span class="token number">0.563688</span> <span class="token operator">-</span><span class="token number">0.587796</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">05</span> <span class="token operator">-</span><span class="token number">1.364106</span> <span class="token operator">-</span><span class="token number">2.165353</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">06</span>  <span class="token number">0.908148</span>  <span class="token number">0.021897</span></code></pre>
+2020-01-01  1.425164  0.111944
+2020-01-02  0.229937  0.112096
+2020-01-03 -1.330469  0.534381
+2020-01-04  0.563688 -0.587796
+2020-01-05 -1.364106 -2.165353
+2020-01-06  0.908148  0.021897</code></pre>
 <ul>
 <li>显式地获取值</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">45</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">45</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1.0863832145090018</span></code></pre>
+<pre><code class="python">In [45]: df.iloc[1,1]
+Out[45]: -1.0863832145090018</code></pre>
 <ul>
 <li>快速访问标量</li>
 </ul>
-<pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">46</span><span class="token punctuation">]</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>iat<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
-Out<span class="token punctuation">[</span><span class="token number">46</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1.0863832145090018</span></code></pre>
+<pre><code class="python">In [46]: df.iat[1,1]
+Out[46]: -1.0863832145090018</code></pre>
 
             </div>
             <hr/>
@@ -1247,7 +1248,7 @@ Out<span class="token punctuation">[</span><span class="token number">46</span><
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.7k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
@@ -1318,6 +1319,7 @@ Out<span class="token punctuation">[</span><span class="token number">46</span><
         }
     });
 </script>
+<script src="/js/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
