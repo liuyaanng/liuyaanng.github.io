@@ -31,7 +31,7 @@
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
-	<body class="<?php echo($_COOKIE['dark'] == '1' ? 'night' : ''); ?>">
+	<body class="<?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>">
 		<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -767,12 +767,12 @@ $(function () {
 		<script>
 			function switchNightMode() {
 				var body = document.body;
-				if (body.classList.contains("dark")) {
-					document.body.classList.remove("dark");
-					localStorage.setItem("dark", "0");
+				if (body.classList.contains("night")) {
+					document.body.classList.remove("night");
+					localStorage.setItem("night", "0");
 				} else {
-					document.body.classList.add("dark");
-					localStorage.setItem("dark", "1");
+					document.body.classList.add("night");
+					localStorage.setItem("night", "1");
 				}
 			}
 			var xm = document.getElementById("xm");
@@ -851,12 +851,12 @@ $(function () {
 		></script>
 
 		<!-- <!&#45;&#45; 黑夜模式 &#45;&#45;> -->
-		<!-- <script src="https://cdn.jsdelivr.net/npm/darkmode&#45;js@1.5.7/lib/darkmode&#45;js.min.js"></script> -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/nightmode&#45;js@1.5.7/lib/darkmode&#45;js.min.js"></script> -->
 		<!-- <script> -->
-		<!-- 	function addDarkmodeWidget() { -->
-		<!-- 		new Darkmode().showWidget(); -->
+		<!-- 	function addnightmodeWidget() { -->
+		<!-- 		new nightmode().showWidget(); -->
 		<!-- 	} -->
-		<!-- 	window.addEventListener("load", addDarkmodeWidget); -->
+		<!-- 	window.addEventListener("load", addnightmodeWidget); -->
 		<!-- </script> -->
 		<script>
 			// // 主页置顶展示卡片
@@ -883,7 +883,7 @@ $(function () {
 			// console.log(articles);
 			// console.log(main_content);
 			//
-			// function add_dark_class(element, value) {
+			// function add_night_class(element, value) {
 			// 	if (!element) {
 			// 		return;
 			// 	} else {
@@ -893,11 +893,11 @@ $(function () {
 			(function () {
 				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
 					if (new Date().getHours() > 22 || new Date().getHours() < 6) {
-						document.body.classList.add("dark");
+						document.body.classList.add("night");
 						document.cookie = "night=1;path=/";
 						console.log("夜间模式开启");
 					} else {
-						document.body.classList.remove("dark");
+						document.body.classList.remove("night");
 						document.cookie = "night=0;path=/";
 						console.log("夜间模式关闭");
 					}
@@ -905,50 +905,51 @@ $(function () {
 					var night =
 						document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || "0";
 					if (night == "0") {
-						document.body.classList.remove("dark");
-						console.log("夜间模式开启,from cookie");
+						document.body.classList.remove("night");
+						console.log("夜间模式移除,from cookie");
 					} else if (night == "1") {
-						document.body.classList.add("dark");
+						document.body.classList.add("night");
+						console.log("夜间模式开启,from cookie");
 					}
 				}
 			})();
-			// var night = document.cookie.replace(/(?:(?:^|.*;\s*)dark\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+			// var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
 			//  if (night == '0'){
-			//      document.body.classList.add('dark');
-			//      document.cookie = "dark=1;path=/";
-			//      console.log('Dark mode on');
+			//      document.body.classList.add('night');
+			//      document.cookie = "night=1;path=/";
+			//      console.log('night mode on');
 			//  }else{
-			//      document.body.classList.remove('dark');
-			//      document.cookie = "dark=0;path=/";
-			//      console.log('Dark mode off');
+			//      document.body.classList.remove('night');
+			//      document.cookie = "night=0;path=/";
+			//      console.log('night mode off');
 			//  }
-			// if (localStorage.getItem("dark") === "1") {
-			// 	document.body.classList.add("dark");
-			// 	// add_dark_class(card, "content_dark");
-			// // 	add_dark_class(articles, "articles_dark");
-			// // 	add_dark_class(article_content, "content_dark");
-			// // 	add_dark_class(galleries, "content_dark");
-			// // 	add_dark_class(tag_cloud, "content_dark");
-			// // 	add_dark_class(tag_wordcloud, "content_dark");
-			// // 	add_dark_class(category_clouds, "content_dark");
-			// // 	add_dark_class(category_radars, "content_dark");
-			// // 	add_dark_class(post_calendar, "content_dark");
-			// // 	add_dark_class(aboutme, "content_dark");
+			// if (localStorage.getItem("night") === "1") {
+			// 	document.body.classList.add("night");
+			// 	// add_night_class(card, "content_dark");
+			// // 	add_night_class(articles, "articles_dark");
+			// // 	add_night_class(article_content, "content_dark");
+			// // 	add_night_class(galleries, "content_dark");
+			// // 	add_night_class(tag_cloud, "content_dark");
+			// // 	add_night_class(tag_wordcloud, "content_dark");
+			// // 	add_night_class(category_clouds, "content_dark");
+			// // 	add_night_class(category_radars, "content_dark");
+			// // 	add_night_class(post_calendar, "content_dark");
+			// // 	add_night_class(aboutme, "content_dark");
 			// } else if (new Date().getHours() >= 18 || new Date().getHours() < 12) {
-			// 	document.body.className = "dark";
-			// 	// add_dark_class(card, "content_dark");
-			// 	// add_dark_class(articles, "articles_dark");
-			// 	// add_dark_class(article_content, "content_dark");
-			// 	// add_dark_class(galleries, "content_dark");
-			// 	// add_dark_class(tag_cloud, "content_dark");
-			// 	// add_dark_class(tag_wordcloud, "content_dark");
-			// 	// add_dark_class(category_clouds, "content_dark");
-			// 	// add_dark_class(category_radars, "content_dark");
-			// 	// add_dark_class(post_calendar, "content_dark");
-			// 	// add_dark_class(aboutme, "content_dark");
-			// 	// articles.classList.add("articles_dark");
-			// } else if (matchMedia("(prefers-color-scheme: dark)").matches) {
-			// 	document.body.classList.add("dark");
+			// 	document.body.className = "night";
+			// 	// add_night_class(card, "content_dark");
+			// 	// add_night_class(articles, "articles_dark");
+			// 	// add_night_class(article_content, "content_dark");
+			// 	// add_night_class(galleries, "content_dark");
+			// 	// add_night_class(tag_cloud, "content_dark");
+			// 	// add_night_class(tag_wordcloud, "content_dark");
+			// 	// add_night_class(category_clouds, "content_dark");
+			// 	// add_night_class(category_radars, "content_dark");
+			// 	// add_night_class(post_calendar, "content_dark");
+			// // 	// add_night_class(aboutme, "content_dark");
+			// 	// articles.classList.add("articles_night");
+			// } else if (matchMedia("(prefers-color-scheme: night)").matches) {
+			// 	document.body.classList.add("night");
 		</script>
 	<script>
             window.imageLazyLoadSetting = {
