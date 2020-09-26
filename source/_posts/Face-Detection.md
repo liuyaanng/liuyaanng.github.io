@@ -2,7 +2,7 @@
 title: Face Detection
 top: false
 cover: false
-img: https://i.loli.net/2019/08/15/HGSkhArtKw89uqJ.jpg
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/img.jpg
 toc: true
 mathjax: false
 date: 2019-08-03 14:15:02
@@ -15,7 +15,6 @@ tags:
 categories:
 - 人脸检测
 ---
-
 # 人脸检测
 
 ## OpenCV模块
@@ -90,9 +89,9 @@ int main(int argc, char* argv[])
 ```
 
 检测结果:
-![](https://i.loli.net/2019/08/01/5d42b5d26727057681.png)
-![](https://i.loli.net/2019/08/01/5d42b5d26fea564434.png)
-![](https://i.loli.net/2019/08/01/5d42b5d2b360c81753.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/2.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/3.png)
 
 ### 检测视频中的人脸
 原理就是对视频逐帧处理，1s大约分为30帧。
@@ -150,6 +149,6 @@ int main(int argc, char** argv)
 
 识别结果:
 
-![](https://i.loli.net/2019/08/02/5d43e017d9e1227148.png)
-![](https://i.loli.net/2019/08/02/5d43e017f281538470.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/4.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/5.png)
 

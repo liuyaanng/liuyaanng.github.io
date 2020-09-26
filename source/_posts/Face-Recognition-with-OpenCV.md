@@ -1,8 +1,8 @@
 ---
 title: Face Recognition
 top: false
-cover: true
-img: https://i.loli.net/2019/08/15/hegwoqsdjiZf2rN.jpg
+cover: false
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/img.jpg
 toc: true
 mathjax: false
 date: 2019-08-10 12:00:00
@@ -160,7 +160,7 @@ int main(int argc, char* argv[]){
 }
 ```
 
-![](4.jpg)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/4.jpg)
 Note:    
 
 1. After the compilation is successful, the execution executable file must provide parameters, which are the directories for storing the face image, and it must be an existing directory.(E.g: ./program_name Img/s41)    
@@ -172,8 +172,8 @@ The official document provides a download of the face database, and i use the [A
 AT&T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).    
 You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from "s1" to "s40". Each folder has the same person's photos with different expressions, and there are 10 face photos.    
 The format of these images is ".pgm"
-![](1.png)
-![](2.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/2.png)
 
 Note:    
 If you want to add your own photos to the face database through the program, the number of added pictures must be no less than 2.
@@ -239,7 +239,7 @@ if __name__ == "__main__":
 ```
 
 You should set the image path parameter (absolute path) when running.(E.g: **python filename.py /home/kevin/OpenCV/face_rec/Img** ) and you can get a CSV file like this:
-![](5.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/5.png)
 This CSV file is created.
 
 ### 2.2 Model training
@@ -370,7 +370,7 @@ At this point, we have completed the training of the face model. And we get thre
 
 `MyFaceFisherModel.xml、MyFaceLBPHModel.xml、MyFacePCAModel.xml`
 
-![](6.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/6.png)
 Note:    
 
 1. Changes to the API of the OpenCV3.3 Face Recognition Module
@@ -635,7 +635,7 @@ int main(){
 }
 ```
 
-![](7.jpg)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/7.jpg)
 
 Note:    
 1. This program supports multiple face recognition at the same time

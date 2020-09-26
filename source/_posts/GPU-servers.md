@@ -5,7 +5,8 @@ cover: false
 toc: true
 mathjax: False
 date: 2020-04-21 18:01:15
-img: https://i.loli.net/2020/04/21/xJaNy6wI8o9T2O5.jpg
+password: 9c9f1c821316b17111901cc76c1fe43604de1235f4f4cfafa4eb98355477465e
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/img.jpg
 summary: 记录一下我在使用GPU服务器做深度强化学习训练的过程
 tags:
 - GPU
@@ -19,7 +20,7 @@ categories:
 
 我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用**OpenGL** 和**Pyglet** 来进行渲染的
 
-![Arcade VS Pygame](ArcadeVSPygame.png)
+![Arcade VS Pygame](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/ArcadeVSPygame.png)
 
 而服务器大多都以ssh登陆，而OpenGL就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。
 
@@ -149,11 +150,11 @@ arcade.run()
 
 - 接下来查看服务器端的OpenGL版本，使用`glxinfo | grep "OpenGL"`
 
-  ![opencv_version](opencv_version.png) 
+  ![opencv_version](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version.png) 
 
   还是没有图形界面的问题，继续使用`xvfb-run -a glxinfo | grep "OpenGL"`
 
-  ![opencv_version](opencv_version2.png) 
+  ![opencv_version](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version2.png) 
 
   显示OpenGL的版本为3.1, 依旧无法满足arcade需要的OpenGL3+。
 
@@ -161,7 +162,7 @@ arcade.run()
 
   我在本地的Ubuntu系统上分别运行`glxinfo | grep "OpenGL"`, 发现原机器版本为4.6，但`xvfb`虚拟后的版本为3.1，推测为`Xvfb`虚拟图形界面的原因。
 
-  ![](glxinfo.png)
+  ![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/glxinfo.png)
 
   此问题没有找到解决办法
 

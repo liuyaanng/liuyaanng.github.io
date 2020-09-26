@@ -1,30 +1,168 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="<%= config.language %>">
-<%- partial('_partial/head') %>
+	<%- partial('_partial/head') %>
 
-<body>
+	<body>
+		<%- partial('_partial/header') %> <%- body %> <%- partial('_partial/footer') %> <%-
+		partial('_partial/search') %> <%- partial('_partial/back-top') %>
+		<script src="<%- theme.libs.js.materialize %>"></script>
+		<script src="<%- theme.libs.js.masonry %>"></script>
+		<script src="<%- theme.libs.js.aos %>"></script>
+		<script src="<%- theme.libs.js.scrollProgress %>"></script>
+		<script src="<%- theme.libs.js.lightgallery %>"></script>
+		<script src="/js/matery.js"></script>
+		<script type="text/javascript">
+			var OriginTitile = document.title,
+				st;
+			document.addEventListener("visibilitychange", function () {
+				document.hidden
+					? ((document.title = " ( ͡ಥ ͜ʖ ͡ಥ) 喔哟，崩溃啦！"), clearTimeout(st))
+					: ((document.title = " ( ͡ᵔ ͜ʖ ͡ᵔ) 咦，又好了！"),
+					  (st = setTimeout(function () {
+							document.title = OriginTitile;
+					  }, 3e3)));
+			});
+		</script>
+		<%- partial('_partial/google-analytics') %> <% if (theme.clicklove.enable) { %>
+		<script src="<%- theme.libs.js.clicklove %>"></script>
+		<% } %> <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+		<script async src="<%- theme.libs.js.busuanzi %>"></script>
+		<% } %>
 
-<%- partial('_partial/header') %>
-<%- body %>
-<%- partial('_partial/footer') %>
+		<!-- <!&#45;&#45; Aplayer &#45;&#45;> -->
+		<!-- <div -->
+		<!-- 	class="aplayer" -->
+		<!-- 	data&#45;id="2909081825" -->
+		<!-- 	data&#45;server="netease" -->
+		<!-- 	data&#45;type="playlist" -->
+		<!-- 	data&#45;fixed="true" -->
+		<!-- 	data&#45;mini="true" -->
+		<!-- 	data&#45;autoplay="false" -->
+		<!-- 	data&#45;order="random" -->
+		<!-- 	data&#45;volume="0.5" -->
+		<!-- 	data&#45;theme="#1da496" -->
+		<!-- 	data&#45;preload="auto" -->
+		<!-- ></div> -->
+		<!--  -->
+		<!-- 一言API -->
+		<!-- 现代写法，推荐 -->
+		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+		<!--End-->
+		<script>
+			fetch("https://v1.hitokoto.cn")
+				.then(function (res) {
+					return res.json();
+				})
+				.then(function (data) {
+					var hitokoto = document.getElementById("hitokoto");
+					hitokoto.innerText = data.hitokoto;
+				})
+				.catch(function (err) {
+					console.error(err);
+				});
+		</script>
 
-<%- partial('_partial/search') %>
-<%- partial('_partial/back-top') %>
+		<!-- live2d -->
+		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
+		<script src="/live2d-widget/autoload.js"></script>
+		<!--动态线条背景-->
+		<script
+			type="text/javascript"
+			color="220,220,220"
+			opacity="0.7"
+			zIndex="-1"
+			count="150"
+			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
+		></script>
 
-<script src="<%- theme.libs.js.materialize %>"></script>
-<script src="<%- theme.libs.js.masonry %>"></script>
-<script src="<%- theme.libs.js.aos %>"></script>
-<script src="<%- theme.libs.js.scrollProgress %>"></script>
-<script src="<%- theme.libs.js.lightgallery %>"></script>
-<script src="/js/matery.js"></script>
-
-<%- partial('_partial/google-analytics') %>
-<% if (theme.clicklove.enable) { %>
-    <script src="<%- theme.libs.js.clicklove %>"></script>
-<% } %>
-<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-    <script async src="<%- theme.libs.js.busuanzi %>"></script>
-<% } %>
-
-</body>
+		<!-- night mode -->
+		<div id="xm">
+			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
+		</div>
+		<script></script>
+		<script>
+			// // 主页置顶展示卡片
+			// var card = document.getElementById("card");
+			// //主页文章卡片
+			// var articles = document.getElementById("articles");
+			// //文章详细内容
+			// var article_content = document.getElementById("article-content");
+			// // 壁纸
+			// var galleries = document.getElementById("galleries");
+			// // 标签云
+			// var tag_cloud = document.getElementById("tag-cloud");
+			// //标签词云
+			// var tag_wordcloud = document.getElementById("tag-wordcloud");
+			// //分类云
+			// var category_clouds = document.getElementById("category-clouds");
+			// //分类图
+			// var category_radars = document.getElementById("category-radars");
+			// //活动日历
+			// var post_calendar = document.getElementById("post-calendar");
+			// //关于
+			// var aboutme = document.getElementById("aboutme-content");
+			// console.log(card);
+			// console.log(articles);
+			// console.log(main_content);
+			//
+			// function add_night_class(element, value) {
+			// 	if (!element) {
+			// 		return;
+			// 	} else {
+			// 		element.classList.add(value);
+			// 	}
+			// }
+			// var tip = <?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>;
+			// alert(tip);
+			// var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			// alert(cookie);
+			function switchNightMode() {
+				var body = document.body;
+				if (body.classList.contains("night")) {
+					document.body.classList.remove("night");
+					document.cookie = "night=0;path=/";
+				} else {
+					document.body.classList.add("night");
+					document.cookie = "night=1;path=/";
+				}
+			}
+			var xm = document.getElementById("xm");
+			xm.onclick = switchNightMode;
+			// if (localStorage.getItem("night") === "1") {
+			// 	document.body.classList.add("night");
+			// } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+			// 	document.body.classList.add("night");
+			// } else if (matchMedia("(prefers-color-scheme: night)").matches) {
+			// 	document.body.classList.add("night");
+			// }
+			(function () {
+				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
+					if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+						document.body.classList.add("night");
+						document.cookie = "night=1;path=/";
+						console.log("夜间模式开启");
+					} else if (matchMedia("(prefers-color-scheme: night)").matches) {
+						document.body.classList.add("night");
+						document.cookie = "night=1;path=/";
+					} else {
+						document.body.classList.remove("night");
+						document.cookie = "night=0;path=/";
+						console.log("夜间模式关闭");
+					}
+				} else {
+					var night =
+						document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || "0";
+					if (night == "0") {
+						document.body.classList.remove("night");
+						console.log("夜间模式移除,from cookie");
+					} else if (night == "1") {
+						document.body.classList.add("night");
+						console.log("夜间模式开启,from cookie");
+					}
+				}
+			})();
+		</script>
+	</body>
 </html>

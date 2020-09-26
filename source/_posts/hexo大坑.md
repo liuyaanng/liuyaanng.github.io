@@ -8,7 +8,7 @@ categories:
 toc: true
 summary: 总结自己在使用hexo的过程中遇到的问题，持续更新中...
 cover: false
-img: https://i.loli.net/2019/07/22/5d358d83b3a0315599.png
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/img.png
 ---
 
 ## 坑一、Template render error 模板渲染错误
@@ -39,6 +39,6 @@ Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
 
 ## 坑二、Markdown的空行
 在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！
-![](https://i.loli.net/2019/07/22/5d358cfee55f989745.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/1.png)
 
 有可能是hexo解析的问题，我在使用markdown-preview的时候看的是正常的

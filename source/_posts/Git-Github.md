@@ -4,7 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: false
-img: https://i.loli.net/2019/09/19/wc3vfPElWsXKTGV.jpg
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/img.jpg
 date: 2019-09-18 16:21:29
 password:
 summary: Some problems in GitHub & Git.
@@ -40,13 +40,13 @@ sudo pacman -S openssh
 ssh-keygen
 ```
 
-![](https://i.loli.net/2019/12/06/foZjquaH75Jnw3Y.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/1.png) 
 
 ```bash
 tree .ssh
 ```
 
-![](https://i.loli.net/2019/12/06/oKIUzYLRcp4OhyE.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/2.png) 
 
 - Copy the SSH key to your clipboard
 
@@ -56,7 +56,7 @@ cat .ssh/id_rsa.pub
 
 - In the upper-right corner of any page, click your profile photo, then click **Settings**
 
-![](https://i.loli.net/2019/12/06/hIA7KpbfmYMJ14j.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/3.png)
 
 - In the user settings sidebar, click **SSH and GPG keys**
 
@@ -66,10 +66,15 @@ cat .ssh/id_rsa.pub
 
 - Paste your key into the "Key" field.
 
-![](https://i.loli.net/2019/12/06/vjZVS19MN2A4hoD.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/4.png) 
 
 - If prompted, confirm your GitHub password.
 
+### 3.Mandatory update of local repository
+
+```bash
+git fetch --all &&  git reset --hard origin/master && git pull
+```
 
 
 

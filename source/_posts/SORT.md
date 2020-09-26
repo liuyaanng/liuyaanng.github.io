@@ -5,7 +5,6 @@ cover: false
 toc: true
 mathjax: true
 date: 2020-01-29 14:20:02
-img: https://i.loli.net/2020/01/29/tGwhsVWSLndoyYX.jpg
 password:
 summary: Sort algorithms with python
 tags:

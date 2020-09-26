@@ -38,7 +38,7 @@ source ./bashrc
 ```
 2. Go to the Getting Started section on the [Pytorch website](https://pytorch.org/).
 3. Specify the appropriate configuration options for your particular environment.
-![](1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Enjoy-PyTorch-Task1/1.png)
 4. Run the presented command in the terminal to install Pytorch.
 ```bash
 conda install pytorch-cpu torchvision-cpu -c pytorch

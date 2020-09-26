@@ -2,7 +2,7 @@
 title: Bilibili-Evolved
 top: false
 cover: false
-img: https://github.com/the1812/Bilibili-Evolved/raw/master/images/bilibili-evolved-wide-color.svg?sanitize=true<Paste>
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/img.jpg
 toc: true
 mathjax: false
 date: 2019-09-21 00:40:43
@@ -19,10 +19,10 @@ categories:
 
 ## Bilibili-Evolved
 
-![](1.png)
-![](2.png)
-![](3.png)
-![](4.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/2.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/3.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/4.png)
 
 ### 1. Install
 
@@ -36,8 +36,8 @@ Please access [GitHub](https://github.com/the1812/Bilibili-Evolved) to view how 
 
 #### 2.1 Download single video.
 
-![](5.png)
-![](6.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/5.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/6.png)
 
 #### 2.2 Batch export(with aria2).
 
@@ -48,7 +48,7 @@ sudo pacman -S aria2
 ```
 - export aria2(a txt file)
 
-![](7.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Bilibili-Evolved/7.png)
 
 - Download videos in current directory.
 

@@ -4,7 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: false
-img: https://i.loli.net/2019/09/19/PLeZNEwcsvzlUSn.jpg
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/img.jpg
 date: 2019-09-18 10:27:45
 password:
 summary: Install Anaconda3 and use conda to manage python environment
@@ -29,24 +29,24 @@ Click here to download [Anaconda](https://www.anaconda.com/distribution/)
 bash ~/Downloads/Anaconda3-2019.07-Linux-x86_64.sh
 ```
 
-![](3.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/3.png)
 
 Press ENTER
 
-![](4.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/4.png)
 
 input yes 
 
-![](5.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/5.png)
 
 Press ENTER    
 A few minutes later.......
 
-![](6.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/6.png)
 
 input yes
 
-![](7.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/7.png)
 
 successful installation.
 
@@ -68,7 +68,7 @@ Reboot your terminal.
 
 If your shell is **fish**, you probably need to configure your environment variable.
 
-![](8.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/8.png)
 
 I use `set` command to do this.
 
@@ -78,7 +78,7 @@ set -xg
 
 Prints all global, exported variables.
 
-![](1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/1.png)
 
 I find the user name of anaconda path in PATH is wrong.
 I don't know why it is, but i know i should correct it.
@@ -88,9 +88,9 @@ set PATH[1] /home/kevin/anaconda3/bin
 ```
 it works.
 
-![](9.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/9.png)
 
-![](10.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/10.png)
 
 ## conda 
 
@@ -106,7 +106,7 @@ conda create --name python37 python=3.7
 conda info --envs
 ```
 
-![](11.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/11.png) 
 
 Where * indicates the current Python environment
 

@@ -16,8 +16,8 @@ categories:
 [My config](https://github.com/liuyaanng/CLSW) 
 
 ## 1. Vim(Neovim)
-
-![Vim](https://github.com/liuyaanng/CLSW/raw/master/nvim.png)
+![vim cheat sheet](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CLSW/vim_cheat_sheet.png) 
+![Vim](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CLSW/nvim.png)
 
 ## 2. Ranger
 
@@ -25,8 +25,8 @@ categories:
 
 - If you are a Mac user, iterm2 is enough to preview images.
 
-![Ranger](https://github.com/liuyaanng/CLSW/raw/master/ranger.png) 
+![Ranger](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CLSW/ranger.png) 
 
 ## 3. Fish
 
-![Fish](https://github.com/liuyaanng/CLSW/raw/master/Fish.png) 
+![Fish](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/CLSW/Fish.png) 

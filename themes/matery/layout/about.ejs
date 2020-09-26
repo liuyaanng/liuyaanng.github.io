@@ -11,14 +11,14 @@
 
     <div id="aboutme" class="container about-container">
         <div class="card">
-            <div class="card-content">
+            <div class="card-content" id="aboutme-content">
                 <div class="row">
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         <%- partial('_partial/post-statis') %>
                     </div>
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
-                            <div class="avatar">
+                            <div class="avatar site-author">
                                 <img src="<%- theme.profile.avatar %>" alt="<%- config.author %>"
                                      class="circle responsive-img avatar-img">
                             </div>
@@ -52,7 +52,6 @@
                 <% if (theme.mySkills && theme.mySkills.enable) { %>
                 <%- partial('_widget/my-skills') %>
                 <% } %>
-
                 <% if (theme.myGallery && theme.myGallery.enable) { %>
                 <%- partial('_widget/my-gallery') %>
                 <% } %>

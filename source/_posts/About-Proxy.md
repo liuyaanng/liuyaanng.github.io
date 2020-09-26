@@ -5,7 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2020-02-04 15:00:57
-img: https://i.loli.net/2020/02/02/HvfDTFuE48MARon.png
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/img.jpg
 password:
 summary: SSR OR V2RAY?
 tags:
@@ -20,7 +20,7 @@ categories:
 
 Ping test: [ping](http://ping.chinaz.com/) 
 
-![Youtube speed](1.png) 
+![Youtube speed](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/1.png) 
 
 ## V2Ray
 
@@ -35,19 +35,19 @@ Preconditions:
 
 #### 1. Add site
 
-![](2.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/2.png) 
 
 #### 2. Change your domain NS
 
-![](5.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/5.png) 
 
-![](3.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/3.png) 
 
-![](4.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/4.png) 
 
 #### 3. Add record
 
-![](6.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/6.png) 
 
 ~~You can light the cloud icon to use a proxy which can hidden real ip. ~~ it is possible to make v2ray doesn't work.
 
@@ -55,7 +55,7 @@ NOTE: **Do it after installed V2Ray if u need it**
 
 #### 4. Ping
 
-![](7.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/7.png) 
 
 it works.
 
@@ -65,7 +65,7 @@ it works.
 wget --no-check-certificate https://raw.githubusercontent.com/liuyaanng/SSR/master/tcp.sh && chmod +x tcp.sh && ./tcp.sh
 ```
 
-![](8.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/8.png) 
 
 ### 3. Install V2Ray
 
@@ -83,7 +83,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_o
 bash <(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh) | tee v2ray_ins_h2.log
 ```
 
-![](9.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/9.png) 
 
 SELF TESTING
 

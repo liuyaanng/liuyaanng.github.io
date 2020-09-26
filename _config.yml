@@ -5,7 +5,8 @@
 # Site
 title: Kevin
 subtitle: kevin's blog
-description: You Can Do It
+description: 1
+# description: You Can Do It
 keywords: "Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
 author: 留洋
 language: zh_CN
@@ -107,3 +108,39 @@ deploy:
   type: git
   repository: git@github.com:liuyaanng/liuyaanng.github.io.git
   branch: master
+
+# live2d
+live2d:
+  enable: false
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: Pio
+  display:
+    position: left
+    width: 160
+    height: 320
+  mobile:
+    show: true
+  react:
+    opacity: 0.7
+  dialog:
+    enbale: true
+    hitokoto: true
+
+
+# LazyLoad
+lazyload:
+  enable: true 
+  onlypost: true # 是否只对文章的图片做懒加载
+  loadingImg: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif
+
+
+# # Aplayer
+# aplayer:
+#   meting: true # MetingJS 支持
+#   asset_inject: false # 自动插入Aplayer.js与Meting.js资源脚本（默认开启）

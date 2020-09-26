@@ -2,7 +2,7 @@
 title: High-quality-ellipse-detection
 top: false
 cover: false
-img: https://i.loli.net/2019/08/15/BMeGUIZqhdRCKgF.jpg
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/img.jpg
 toc: true
 mathjax: false
 date: 2019-07-29 13:01:50
@@ -28,8 +28,8 @@ categories:
 Matlab的安装这里不再说    
 1. 在命令行里输入 `mex -setup`，选择vs就行了
 2. 执行 `mex -setup C++`完成配置
-![](https://i.loli.net/2019/07/29/5d3ea6561215b10575.png)
-![](https://i.loli.net/2019/07/29/5d3eaa19b300f42041.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/2.png)
 
 ## 下载Github文件
 
@@ -40,8 +40,8 @@ download Zip即可
 
 将 **D:\OpenCV\opencv\build\x64\vc15\lib**下的 **opencv_world344.lib**文件复制到你的Matlab安装路径下的 **microsoft**文件夹下,我的是 **D:\MATLAB\R2019a\extern\lib\win64\microsoft**
 
-![](https://i.loli.net/2019/07/29/5d3ea6564f0b271051.png)
-![](https://i.loli.net/2019/07/29/5d3ea6564ed8016435.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/3.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/4.png)
 ## 在Matlab中导入文件
 
 ## 在命令行执行以下命令
@@ -54,7 +54,7 @@ mex generateEllipseCandidates.cpp -IF:\OpenCV\opencv2.4.9\build\include -IF:\Ope
 
 把OpenCV和Matlab的相关文件的路径改成你的安装路径    
 我这里版本号为OpenCV3.4.4,安装路径如下,
-![](https://i.loli.net/2019/07/29/5d3ea6561fbd474647.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/5.png)
 故修改为`D:\OpenCV\opencv\build...`,    
 由于OpenCV3.4.4只有 **opencv_world344.lib** 这一个lib文件，故将 `LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib`　修改为 `LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib`
 
@@ -68,15 +68,15 @@ mex generateEllipseCandidates.cpp -ID:\OpenCV\opencv\build\include
 
 ```
 
-![](https://i.loli.net/2019/07/29/5d3ea65639bdf67747.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/6.png)
 编译成功之后生成`generateEllipseCandidates.mexw64`文件
-![](https://i.loli.net/2019/07/29/5d3ea6564e0c183020.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/7.png)
 之后再运行`LCS_ellipse.m`
-![7.png](https://i.loli.net/2019/07/29/5d3ea657cb9e659639.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/8.png)
 
 ##　报错解决办法
 1. 如图
-![](https://i.loli.net/2019/07/29/5d3eabf1c942443319.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/9.png)
 在.cpp文件中添加
 
 ```cpp
@@ -84,7 +84,7 @@ using namespace std
 ```
 2. 如图
 
-![](https://i.loli.net/2019/07/29/5d3eabf1d457769964.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/10.png)
 缺少lib文件，检查一下是不是配置出错了
 
 

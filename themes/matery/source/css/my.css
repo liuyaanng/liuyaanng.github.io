@@ -1,1 +1,55 @@
 /* Here is your custom css styles. */
+
+/* body.night { */
+/* 	background: #242933; */
+/* } */
+body.night {
+	background: #2f3742;
+}
+body.night .aplayer {
+	background: #2f3742 !important;
+}
+body.night img {
+	filter: brightness(60%);
+}
+
+/* .main_night { */
+/* 	background: #2f3742; */
+/* } */
+
+body {
+	--duration: 0.5s;
+	--timing: ease;
+
+	color: var(--color);
+	background-color: var(--background-color);
+
+	transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+}
+body.night .card {
+	--background: #242933;
+	--color: white;
+	--duration: 0.7s;
+	--timing: ease;
+
+	color: var(--color);
+	background-color: var(--background);
+
+	transition: color var(--duration) var(--timing), background var(--duration) var(--timing);
+}
+#xm {
+	cursor: pointer;
+	position: fixed;
+	bottom: 50%;
+	left: 0;
+	z-index: 999;
+	font-size: 0;
+	transition: all 0.3s ease-in-out;
+	transform: translateY(3px);
+}
+#xm:hover {
+	transform: translateY(0);
+}
+#xm img {
+	width: 50px;
+}

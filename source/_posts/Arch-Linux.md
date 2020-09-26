@@ -1,11 +1,11 @@
 ---
 title: Arch Linux
 top: true
-cover: true
+cover: false
 toc: true
 mathjax: false
 date: 2019-12-06 01:14:50
-img: https://i.loli.net/2019/12/07/ykIzuo8Z1PSGpLv.png
+img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/img.jpg
 password:
 summary: Arch-linux Install and condig guide. 
 tags:
@@ -14,19 +14,18 @@ tags:
 categories:
 ---
 
-
 ## Arch linux + i3
 
-![arch+i3](https://i.loli.net/2019/12/07/ykIzuo8Z1PSGpLv.png)
-![](main.png) 
-![](albert.png) 
-![](music.png) 
+![arch+i3](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/img.jpg)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/main.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/albert.png) 
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/music.png) 
 
 ## Installation guide
 
 ### 1. Boot the live environment
 
-The live environment can be booted from a USB flash deive, an optical disc or a network with PXE. 
+The live environment can be booted from a USB flash device, an optical disc or a network with PXE. 
 
 ### 2. Connect the Internet
 
@@ -46,7 +45,7 @@ timedatectl set-ntp true
 
 To check the service status, use `timedatectl status`
 
-![timedate](1.png) 
+![timedate](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/1.png) 
 
 ### 4. Partition the disks
 
@@ -71,7 +70,7 @@ Use `cfdisk` to create partition.
 
 It should include **EFI** , **/** (root), **/home** , **/swap** .
 
-![Disks](2.png) 
+![Disks](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/2.png) 
 
 ### 5. Format the partitions
 
@@ -130,7 +129,7 @@ vim /etc/pacman.d/mirrorlist
 
 Paste the China mirrors in the beginning
 
-![mirrorlist](3.png) 
+![mirrorlist](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/3.png) 
 
 ### 8. Install essential packages
 
@@ -150,7 +149,7 @@ Check the resulting `/mnt/etc/fstab` file, and edit it in case of errors.
 cat /mnt/etc/fstab
 ```
 
-![fstab](4.png) 
+![fstab](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/4.png) 
 
 ### 10. Change root into the new system
 
@@ -251,7 +250,7 @@ reboot
 ```
 Use `uname -a` to view the Version of Arch linux.
 
-![Arch_linux Version](5.png) 
+![Arch_linux Version](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/5.png) 
 
 
 ## My config recommendations
@@ -280,7 +279,7 @@ systemctl start NetworkManager.service
 
 Use `ip link` to view the network interface.
 
-![Network interface](6.png) 
+![Network interface](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/6.png) 
 
 **Usage**
 
@@ -338,9 +337,9 @@ sudo pacman -S xorg xorg-server xorg-apps
   lspci | grep -e VGA -e 3D
   ```
 
-  ![card](7.png) 
+  ![card](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/7.png) 
 
-  ![](8.png) 
+  ![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/8.png) 
 
   2. Install an appropriate deiver
 
@@ -487,7 +486,7 @@ Use `alsamixer` to manage the system volume
 
 - VoulmeIcon
 
-![VolumeIcon](9.png) 
+![VolumeIcon](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/9.png) 
 
 If you want a System volume tray, you can try **volumeicon**
 
@@ -552,7 +551,7 @@ If you want a System volume tray, you can try **volumeicon**
 
 A good advice for backlight management is `xorg-xbacklight` , but it seems not work on my computer. 
 
-![xbacklight -error](12.png) 
+![xbacklight -error](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/12.png) 
 
 If you have the same problem, you can try the solution of Wiki, but it still can't work on my computer. Sad! So i try another way to control the screen brightness.    
 The backlight can be controlled by the file `/sys/class/backlight/intel_backlight/brightness` 's value. So i wrote a script to control it. I named it `intel_brightness_control.sh`
@@ -603,7 +602,7 @@ sudo pacman -S bluez bluez-utils
 
 - The generic Bluetooth driver is the `btusb` Kernel module. Use `lsmod` to check whether that module is loaded. 
 
-![btusb module](11.png)    
+![btusb module](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/11.png)    
   If it's not, do `modprobe btusb` to load the moudle.
 
 - Start / Enable
@@ -663,7 +662,7 @@ An example configuration file is included at `/usr/local/share/dunst/dunstrc` . 
 
 Use `notify-send "Hello, world!" ` to test.
 
-![Dunst](10.png) 
+![Dunst](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/10.png) 
 
 ### 11. Shutdown Reboot LockScreen
 

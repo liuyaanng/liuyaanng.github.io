@@ -4,22 +4,31 @@ menu:
   Index:
     url: /
     icon: fa-home
+    name: menu-item-home
   Tags:
     url: /tags
     icon: fa-tags
+    name: menu-item-tags
   Categories:
     url: /categories
     icon: fa-bookmark
+    name: menu-item-categories
   Archives:
     url: /archives
     icon: fa-archive
+    name: menu-item-archives
   About:
     url: /about
     icon: fa-user-circle-o
+    name: menu-item-about
   Friends:
     url: /friends
     icon: fa-address-book
-
+    name: menu-item-friends
+  Galleries:
+    url: /galleries
+    icon: fa-image
+    name: menu-item-galleries
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
 cover:
@@ -39,34 +48,52 @@ dream:
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
+# music:
+#   enable: false
+#   title:     	    # 非吸底模式有效
+#     enable: true
+#     show: 听听音乐
+#   server: netease   # require music platform: netease, tencent, kugou, xiami, baidu
+#   type: playlist    # require song, playlist, album, search, artist
+#   id: 2909081825     # require song id / playlist id / album id / search keyword
+#   fixed:       # 开启吸底模式
+#   autoplay: false   # 是否自动播放
+#   theme: '#42b983'
+#   loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
+#   order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
+#   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
+#   volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+#   listFolded: true  # 列表默认折叠
+
+
 music:
   enable: false
   showTitle: true
   title: 听听音乐
-  fixed: false # 开启吸底模式
+  fixed: true # 开启吸底模式
   autoplay: true # 是否自动播放
   theme: '#42b983'
   loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
-  order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
+  order: 'random' # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: false # 列表默认折叠
-  listMaxHeight: #列表最大高度
-
+  listMaxHeight: 300 #列表最大高度
+#
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
-  enable: false
+  enable: true
   showTitle: true
-  title: 精彩视频
-  url: # 必填
-  pic:
-  thumbnails:
-  height: # 如：400
+  title: Never Give Up
+  url: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/video/video.mp4
+  pic: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/video/pic.jpg
+  thumbnails: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/video/thumbnails.jpg
+  height:  # 如：400
   autoplay: false # 是否自动播放
   theme: '#42b983'
   loop: false # 是否循环播放
-  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
+  preload: 'none' # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7
 
 # Whether to display the title of the recommended posts
@@ -76,9 +103,9 @@ recommend:
 
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
-favicon: https://i.loli.net/2019/08/03/RpL5aQ2XKFvUkr7.jpg
-#favicon: /favicon.jpg
-logo: /medias/logo.png
+# favicon: https://i.loli.net/2019/08/03/RpL5aQ2XKFvUkr7.jpg
+favicon: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg
+logo: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
@@ -114,9 +141,9 @@ code:
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
   enable: true
-  title: 你的赏识是我前进的动力
-  wechat: /medias/reward/wechat.jpg
-  alipay: /medias/reward/alipay.jpg
+  title: 如果觉得本文对你有帮助，请赏杯咖啡呗！
+  wechat: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg
+  alipay: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
@@ -154,7 +181,7 @@ clicklove:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatar.jpg
+  avatar: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/avatar.jpg
   career: Zhengzhou University | C S | Senior
   introduction: If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.
 
@@ -211,33 +238,149 @@ mySkills:
 myGallery:
   enable: true
   data:
-    - /medias/photo/0.jpg
-    - https://i.loli.net/2019/08/05/qEm9Wa3unxlC2JQ.jpg
-    - https://i.loli.net/2019/08/05/OnYAT7FdRBvPsgw.jpg
-    - https://i.loli.net/2019/08/05/jyMQf4midPKX7wW.jpg
-    - https://i.loli.net/2019/08/05/BVp9LU5OklHtuyX.jpg
-    - https://i.loli.net/2019/08/05/MT3S8XhE6DarjtH.jpg
-    - https://i.loli.net/2019/12/07/MxyNCfsinqYQPLA.jpg
-    - https://i.loli.net/2019/08/03/3LhrmHUABMoTslV.jpg
-    - https://i.loli.net/2019/08/03/bkrmgfo3WOFT52R.jpg
-    - https://i.loli.net/2019/08/03/feWctQFHS1YDpyl.jpg
-    - https://i.loli.net/2019/08/03/NPdGORgDnEk5ome.jpg
-    - https://i.loli.net/2019/08/03/DWny6qw9dEVubrA.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/0.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/1.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/3.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/5.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/6.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/7.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/8.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/9.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/10.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/11.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/12.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/photo/2.jpg
+    # - https://random.52ecy.cn/randbg.php
+    # - https://source.unsplash.com/random/800x0/?marvel
+    # - https://api.ixiaowai.cn/api/api.php
+    # - https://api.ixiaowai.cn/gqapi/gqapi.php
+    # - https://source.unsplash.com/random/?anime
+    # - http://api.btstu.cn/sjbz/?lx=suiji
+    # - http://api.btstu.cn/sjbz/?lx=dongman
+    # - https://source.unsplash.com/random/?work-from-home
+    # - https://api.ixiaowai.cn/mcapi/mcapi.php
+    # - https://source.unsplash.com/random/?wallpapers
+    # - https://source.unsplash.com/random/?people
+    # - https://source.unsplash.com/random/?business-work
+    # - https://source.unsplash.com/user/raaminka/
 
-# Whether to display post-calender in the `archive` page
+single_gallery:
+  enable: true
+  data:
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/1.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/2.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/3.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/4.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/5.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/6.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/7.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/8.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/9.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/10.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/11.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/12.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/13.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/14.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/15.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/16.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/17.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/18.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/19.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/20.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/21.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/22.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/23.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/24.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/25.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/26.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/27.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/28.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/29.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/30.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/31.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/32.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/33.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/34.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/35.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/36.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/37.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/38.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/39.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/40.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/41.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/42.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/43.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/44.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/45.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/46.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/47.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/48.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/49.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/50.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/51.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/52.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/53.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/54.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/55.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/56.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/57.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/58.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/59.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/60.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/61.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/62.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/63.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/64.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/65.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/66.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/67.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/68.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/69.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/70.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/71.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/72.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/73.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/74.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/75.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/76.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/77.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/78.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/79.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/80.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/81.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/82.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/83.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/84.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/85.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/86.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/87.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/88.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/89.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/90.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/91.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/92.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/93.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/95.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/96.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/97.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/98.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/99.jpg
 # 设置在归档页面中是否显示'文章日历'控件
 postCalendar: true
+
+# 这里单独给mc做了一个界面，以下是配置
 
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: false
-  owner:
-  repo:
+  enable: true
+  owner: liuyaanng
+  repo: liuyaanng.github.io
   oauth:
-    clientId:
-    clientSecret:
-  admin:
+    clientId: 95f40aeda5a41974e96e
+    clientSecret: 1378c2e4e1e1fc75c3edf3a00b1a732ef7eb9298
+  admin: liuyaanng
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
@@ -266,14 +409,14 @@ livere:
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
   enable: false
-  appId:
-  appKey:
+  appId: hDkKfARtq15Qmzk62bNg9BR6-gzGzoHsz
+  appKey: kLSDOxY3iclKHGiVHrAzoNoR
   notify: false
   verify: false
   visitor: true
   avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
-  placeholder: 'just go go' # Comment Box placeholder
+  placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' # Comment Box placeholder
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
@@ -308,67 +451,142 @@ googleAnalytics:
   enable: false
   id:
 
-# The used front-end library can be replaced with the corresponding CDN address as needed,
+# The used front-end library can be replaced with the corresponding Blog_source address as needed,
 # If the specific version is not specified below, you can use the latest version.
-# 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
+# 使用到的前端库，可按需替换成对应的Blog_source地址，如果下面未指定具体的版本号，使用最新的版本即可.
 libs:
   css:
-    fontAwesome: /libs/awesome/css/font-awesome.min.css # V4.7.0
-    materialize: /libs/materialize/materialize.min.css # 1.0.0
-    aos: /libs/aos/aos.css
-    animate: /libs/animate/animate.min.css # V3.5.1
-    lightgallery: /libs/lightGallery/css/lightgallery.min.css # V1.6.11
-    aplayer: /libs/aplayer/APlayer.min.css
-    dplayer: /libs/dplayer/DPlayer.min.css
-    gitalk: /libs/gitalk/gitalk.css
-    jqcloud: /libs/jqcloud/jqcloud.css
-    tocbot: /libs/tocbot/tocbot.css
+    fontAwesome: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css # V4.7.0
+    materialize: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.css # 1.0.0
+    aos: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.css
+    animate: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/animate/animate.min.css # V3.5.1
+    lightgallery: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css # V1.6.11
+    aplayer: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aplayer/APlayer.min.css
+    dplayer: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/dplayer/DPlayer.min.css
+    gitalk: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/gitalk/gitalk.css
+    jqcloud: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/jqcloud/jqcloud.css
+    tocbot: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/tocbot/tocbot.css
   js:
-    jquery: /libs/jquery/jquery-2.2.0.min.js
-    materialize: /libs/materialize/materialize.min.js # 1.0.0
-    masonry: /libs/masonry/masonry.pkgd.min.js # v4.0.0
-    aos: /libs/aos/aos.js
-    scrollProgress: /libs/scrollprogress/scrollProgress.min.js
-    lightgallery: /libs/lightGallery/js/lightgallery-all.min.js # V1.6.11
-    clicklove: /libs/others/clicklove.js
-    busuanzi: /libs/others/busuanzi.pure.mini.js
-    aplayer: /libs/aplayer/APlayer.min.js
-    dplayer: /libs/dplayer/DPlayer.min.js
-    crypto: /libs/cryptojs/crypto-js.min.js
-    echarts: /libs/echarts/echarts.min.js
-    gitalk: /libs/gitalk/gitalk.min.js
-    jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
-    tocbot: /libs/tocbot/tocbot.min.js
+    # jquery: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/jquery/jquery-2.2.0.min.js
+    jquery: https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js
+    materialize: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.js # 1.0.0
+    masonry: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/masonry/masonry.pkgd.min.js # v4.0.0
+    aos: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.js
+    scrollProgress: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/scrollprogress/scrollProgress.min.js
+    lightgallery: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/js/lightgallery-all.min.js # V1.6.11
+    clicklove: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js
+    busuanzi: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/busuanzi.pure.mini.js
+    aplayer: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aplayer/APlayer.min.js
+    dplayer: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/dplayer/DPlayer.min.js
+    crypto: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/cryptojs/crypto-js.min.js
+    echarts: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/echarts/echarts.min.js
+    gitalk: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/gitalk/gitalk.min.js
+    jqcloud: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/jqcloud/jqcloud-1.0.4.min.js
+    tocbot: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/tocbot/tocbot.min.js
 
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages: 
-#- /medias/featureimages/0.jpg
-- https://i.loli.net/2019/07/17/5d2ee2aa767f015436.jpeg
-#- /medias/featureimages/1.jpg
-#- /medias/featureimages/2.jpg
-#- /medias/featureimages/3.jpg
-#- /medias/featureimages/4.jpg
-#- /medias/featureimages/5.jpg
-#- /medias/featureimages/6.jpg
-#- /medias/featureimages/7.jpg
-#- /medias/featureimages/8.jpg
-#- /medias/featureimages/9.jpg
-#- /medias/featureimages/10.jpg
-#- /medias/featureimages/11.jpg
-#- /medias/featureimages/12.jpg
-#- /medias/featureimages/13.jpg
-#- /medias/featureimages/14.jpg
-#- /medias/featureimages/15.jpg
-#- /medias/featureimages/16.jpg
-#- /medias/featureimages/17.jpg
-#- /medias/featureimages/18.jpg
-#- /medias/featureimages/19.jpg
-#- /medias/featureimages/20.jpg
-#- /medias/featureimages/21.jpg
-#- /medias/featureimages/22.jpg
-#- /medias/featureimages/23.jpg
-
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/1.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/2.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/3.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/4.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/5.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/6.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/7.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/8.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/9.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/10.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/11.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/12.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/13.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/14.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/15.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/16.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/17.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/18.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/19.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/20.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/21.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/22.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/23.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/24.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/25.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/26.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/27.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/28.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/29.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/30.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/31.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/32.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/33.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/34.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/35.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/36.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/37.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/38.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/39.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/40.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/41.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/42.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/43.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/44.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/45.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/46.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/47.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/48.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/49.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/50.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/51.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/52.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/53.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/54.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/55.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/56.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/57.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/58.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/59.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/60.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/61.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/62.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/63.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/64.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/65.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/66.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/67.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/68.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/69.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/70.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/71.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/72.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/73.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/74.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/75.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/76.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/77.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/78.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/79.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/80.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/81.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/82.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/83.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/84.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/85.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/86.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/87.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/88.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/89.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/90.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/91.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/92.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/93.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/95.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/96.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/97.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/98.jpg
+    - https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/99.jpg
+#
   # default configs that the default policy for every articles/posts
   # default 配置文章的默认转载规则
 
@@ -391,3 +609,11 @@ featureImages:
 reprint:
   enable: true # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by
+
+live2d:
+  enable: true
+  mobile:
+    show: true
+  react:
+    opacity: 0.7
+
