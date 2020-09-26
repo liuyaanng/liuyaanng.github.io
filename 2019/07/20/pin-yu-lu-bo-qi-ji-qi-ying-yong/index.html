@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -469,7 +469,7 @@
                 <h1 id="频域滤波器"><a href="#频域滤波器" class="headerlink" title="频域滤波器"></a>频域滤波器</h1><h2 id="低通滤波器"><a href="#低通滤波器" class="headerlink" title="低通滤波器"></a>低通滤波器</h2><h3 id="理想低通滤波器"><a href="#理想低通滤波器" class="headerlink" title="理想低通滤波器"></a>理想低通滤波器</h3><p>在以原点为圆心，以$D_0$为半径的圆内无衰减通过所有频率，而在圆外切断所有频率的二维低通滤波器，称为理想低通滤波器(ILPF)，定义为<br>$$y=\begin{cases}<br>1,\quad D(x,y)\leq 0\<br>0, \quad D(x,y) &gt; 0<br>\end{cases}$$<br>$D_0$是一个常数，D(u,v)是频率域中心点(u,v)与频率矩形中心的距离，即<br>$$ D(u,v)=\lbrack{(u-\frac{P}{2})^2+(v-\frac{Q}{2})^2}\rbrack^\frac{1}{2} $$<br>过渡点称为<strong>截止频率</strong><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f0cb755202.jpg"></p>
 <h3 id="布特沃斯低通滤波器"><a href="#布特沃斯低通滤波器" class="headerlink" title="布特沃斯低通滤波器"></a>布特沃斯低通滤波器</h3><p>截止频率位于距原点$D_0$处的n阶布特沃斯低通滤波器(BLPF)的传递函数的定义为:<br>$$H(u,v)=\frac{1}{1+{[D(u,v)/D_0]}^{2n}}$$<br>截止频率点是当D(u,v) = $D_0$时的点<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f101518273.jpg"></p>
 <h3 id="高斯低通滤波器"><a href="#高斯低通滤波器" class="headerlink" title="高斯低通滤波器"></a>高斯低通滤波器</h3><p>二维形式:<br>$$H(u,v) = e^{-D^2(u,v)/2{D_0}^2} $$<br>$D_0$ 是截止频率<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f163e99741.jpg"></p>
-<h3 id="使用低通滤波器平滑图像"><a href="#使用低通滤波器平滑图像" class="headerlink" title="使用低通滤波器平滑图像"></a>使用低通滤波器平滑图像</h3><h4 id="1-高斯低通滤波器"><a href="#1-高斯低通滤波器" class="headerlink" title="1. 高斯低通滤波器"></a>1. 高斯低通滤波器</h4><pre><code class="matlab">f = imread(&#39;1.jpg&#39;);
+<h3 id="使用低通滤波器平滑图像"><a href="#使用低通滤波器平滑图像" class="headerlink" title="使用低通滤波器平滑图像"></a>使用低通滤波器平滑图像</h3><h4 id="1-高斯低通滤波器"><a href="#1-高斯低通滤波器" class="headerlink" title="1. 高斯低通滤波器"></a>1. 高斯低通滤波器</h4><pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
 f = rgb2gray(f);
 [f, revertclass] = tofloat(f);
 PQ = paddedsize(size(f));
@@ -485,7 +485,7 @@ figure, imshow(log(1 + abs(fftshift(F))), [])
 figure, imshow(g);</code></pre>
 <p>滤波结果：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/20/5d32d02f5468855048.jpg"></p>
 <p>除了之前说的几个M函数外，还需要用到<code>dftfilt()</code>函数</p>
-<pre><code class="matlab">function g=dftfilt(f,H)
+<pre><code class="line-numbers language-matlab">function g=dftfilt(f,H)
 %DFTFILT Performs frequency domain filtering.
 %   G=DFTFILT(F,H) filters F in the frequency domain using the
 %   filter transfer function H. The output, G, is the filtered
@@ -505,7 +505,7 @@ g=real(ifft2(H.*F));
 %Crop to original size.
 g=g(1:size(f,1),1:size(f,2));</code></pre>
 <h4 id="2-Butterworth滤波"><a href="#2-Butterworth滤波" class="headerlink" title="2. Butterworth滤波"></a>2. Butterworth滤波</h4><p>该函数输入为灰度图像，自由设置截止频率$D_0$和BLPF的阶数n，输出为滤波后的图像(已归一化到[0,255])</p>
-<pre><code class="matlab">function [image_out] = Bfilter(image_in, D0, N)
+<pre><code class="line-numbers language-matlab">function [image_out] = Bfilter(image_in, D0, N)
 % Butterworth滤波器，在频率域进行滤波
 % 输入为需要进行滤波的灰度图像，Butterworth滤波器的截止频率D0，阶数N
 % 输出为滤波之后的灰度图像
@@ -560,7 +560,7 @@ for i = 1 : m
 end
 end</code></pre>
 <p>测试BLPF的阶数为2,截止频率分别为10,40,80,150,450</p>
-<pre><code class="matlab">clear all;
+<pre><code class="line-numbers language-matlab">clear all;
 close all;
 clc;
 
@@ -590,7 +590,7 @@ subplot(2,3,6), imshow(image6), title(&#39;D0 = 450, n = 2&#39;);</code></pre>
 <h3 id="布特沃斯高通滤波器"><a href="#布特沃斯高通滤波器" class="headerlink" title="布特沃斯高通滤波器"></a>布特沃斯高通滤波器</h3><p>截止频率为$D_0$的n阶布特沃斯高通滤波器(BHPF)的定义为:<br>$$ H(u,v)=\frac{1}{1+[D_0/D(u,v)]^{2n}}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1c376281237.jpg"></p>
 <h3 id="高斯高通滤波器"><a href="#高斯高通滤波器" class="headerlink" title="高斯高通滤波器"></a>高斯高通滤波器</h3><p>截止频率处在距频率矩形中心距离为$D_0$的高斯高通滤波器(GHPF)的传递函数如下:<br>$$H(u,v)=1-e^{-D^2(u,v)/2D_0^2}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1c3f7954220.jpg"></p>
 <h3 id="使用高通滤波器锐化图像"><a href="#使用高通滤波器锐化图像" class="headerlink" title="使用高通滤波器锐化图像"></a>使用高通滤波器锐化图像</h3><p>使用高通滤波器来锐化图像，与平滑图像类似，只是将低通滤波器换成了高通滤波器，具体步骤不再赘述</p>
-<pre><code class="matlab">f = imread(&#39;1.jpg&#39;);
+<pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
 f = rgb2gray(f);
 [f, revertclass] = tofloat(f);
 PQ = paddedsize(size(f));
@@ -615,7 +615,7 @@ subplot(2,2,4);
 imshow(g);
 title(&#39;滤波后图像&#39;);</code></pre>
 <p>同样这里需要的是高通滤波函数hpfilter()</p>
-<pre><code class="matlab">function [H] = hpfilter(type,M,N,D0,n)
+<pre><code class="line-numbers language-matlab">function [H] = hpfilter(type,M,N,D0,n)
 %HPFILTER Computes freq. domain highpass filters
 %        THIS IS NOT A STANDARD MATLAB FUNCTION
 %        H = hpfilter (type,M,N,D0,n) creates the
@@ -1209,7 +1209,7 @@ H = 1 - Hlp;
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

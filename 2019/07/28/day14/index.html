@@ -25,7 +25,7 @@ OpenCV椭圆绘制ellip">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -463,7 +463,7 @@ OpenCV椭圆绘制ellip">
                 int thickness=1, int line_type=8, int shift=0 );</code></pre>
 <p>参数:<br>img:图像。<br>center:椭圆圆心坐标。<br>axes:轴的长度。<br>angle:偏转的角度。<br>start_angle:圆弧起始角的角度。<br>end_angle:圆弧终结角的角度。<br>color:线条的颜色。<br>thickness:线条的粗细程度。<br>line_type:线条的类型,见CVLINE的描述。<br>shift:圆心坐标点和数轴的精度。    </p>
 <p>C++代码实现</p>
-<pre><code class="cpp">#include&lt;opencv2/opencv.hpp&gt;#include&lt;opencv2/core/core.hpp&gt; // 核心组件
+<pre><code class="line-numbers language-cpp">#include&lt;opencv2/opencv.hpp&gt;#include&lt;opencv2/core/core.hpp&gt; // 核心组件
 #include&lt;opencv2/highgui/highgui.hpp&gt;  // GUI
 #include&lt;opencv2/imgproc/imgproc.hpp&gt;  // 图像处理
 using namespace cv;
@@ -1069,7 +1069,7 @@ int main() &#123;
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

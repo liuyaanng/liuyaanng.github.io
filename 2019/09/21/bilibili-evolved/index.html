@@ -30,7 +30,7 @@ Please access GitHub to view how ">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -485,7 +485,7 @@ Please access GitHub to view how ">
 <h4 id="2-2-Batch-export-with-aria2"><a href="#2-2-Batch-export-with-aria2" class="headerlink" title="2.2 Batch export(with aria2)."></a>2.2 Batch export(with aria2).</h4><ul>
 <li>Install aria2.</li>
 </ul>
-<pre><code class="bash">sudo pacman -S aria2</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S aria2</code></pre>
 <ul>
 <li>export aria2(a txt file)</li>
 </ul>
@@ -493,9 +493,9 @@ Please access GitHub to view how ">
 <ul>
 <li>Download videos in current directory.</li>
 </ul>
-<pre><code class="bash">aria2c -i Download.txt</code></pre>
+<pre><code class="line-numbers language-bash">aria2c -i Download.txt</code></pre>
 <h3 id="3-Convert-video-files"><a href="#3-Convert-video-files" class="headerlink" title="3. Convert video files."></a>3. Convert video files.</h3><p>The default video files format is <code>flv</code>.<br>I recommend using <a target="_blank" rel="noopener" href="http://ffmpeg.org/">ffmpeg</a> to convert video files format on Linux.</p>
-<pre><code class="bash">ffmpeg -i input.flv output.mp4</code></pre>
+<pre><code class="line-numbers language-bash">ffmpeg -i input.flv output.mp4</code></pre>
 
             </div>
             <hr/>
@@ -1034,7 +1034,7 @@ Please access GitHub to view how ">
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

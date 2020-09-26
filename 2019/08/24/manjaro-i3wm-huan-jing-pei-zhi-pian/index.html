@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -479,13 +479,13 @@
 <h3 id="1-3-系统安装"><a href="#1-3-系统安装" class="headerlink" title="1.3 系统安装"></a>1.3 系统安装</h3><p>安装过程很简单，参考下面这篇博客<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e555a079f78a">Manjaro Linux i3 安装笔记</a></p>
 <p>安装时语言选择  <strong>简体中文</strong>即可</p>
 <h2 id="2-中文环境配置"><a href="#2-中文环境配置" class="headerlink" title="2. 中文环境配置"></a>2. 中文环境配置</h2><h3 id="2-1-更换Linux国内源"><a href="#2-1-更换Linux国内源" class="headerlink" title="2.1 更换Linux国内源"></a>2.1 更换Linux国内源</h3><p>Manjaro 默认的更新源在国外，没翻墙的宝宝无法更新，这里先换一下更新源</p>
-<h4 id="2-1-1-更新镜像排名"><a href="#2-1-1-更新镜像排名" class="headerlink" title="2.1.1 更新镜像排名"></a>2.1.1 更新镜像排名</h4><pre><code class="bash">sudo pacman-mirrors -i -c China -m rank //更新镜像排名</code></pre>
+<h4 id="2-1-1-更新镜像排名"><a href="#2-1-1-更新镜像排名" class="headerlink" title="2.1.1 更新镜像排名"></a>2.1.1 更新镜像排名</h4><pre><code class="line-numbers language-bash">sudo pacman-mirrors -i -c China -m rank //更新镜像排名</code></pre>
 <p>之后自己选择几个镜像，推荐ustc和tuna的镜像源</p>
-<pre><code class="bash">sudo vim /etc/pacman.d/mirrorlist //查看选择的源
+<pre><code class="line-numbers language-bash">sudo vim /etc/pacman.d/mirrorlist //查看选择的源
 sudo pacman -Syy  //更新数据源</code></pre>
-<h4 id="2-1-2-设置Archlinuxcn源"><a href="#2-1-2-设置Archlinuxcn源" class="headerlink" title="2.1.2 设置Archlinuxcn源"></a>2.1.2 设置Archlinuxcn源</h4><pre><code class="bash">sudo vim /etc/pacman.conf</code></pre>
+<h4 id="2-1-2-设置Archlinuxcn源"><a href="#2-1-2-设置Archlinuxcn源" class="headerlink" title="2.1.2 设置Archlinuxcn源"></a>2.1.2 设置Archlinuxcn源</h4><pre><code class="line-numbers language-bash">sudo vim /etc/pacman.conf</code></pre>
 <p>在文件末尾添加如下:</p>
-<pre><code class="bash">[archlinuxcn]
+<pre><code class="line-numbers language-bash">[archlinuxcn]
 SigLevel = Optional TrustedOnly
 #中科大源
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
@@ -500,73 +500,73 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/antergos/$repo/$arch
 [arch4edu]
 SigLevel = TrustAll
 Server = http://mirrors.tuna.tsinghua.edu.cn/arch4edu/$arch</code></pre>
-<h4 id="2-1-3-导入GPG-key"><a href="#2-1-3-导入GPG-key" class="headerlink" title="2.1.3 导入GPG key"></a>2.1.3 导入GPG key</h4><pre><code class="bash">sudo pacman -Syy //更新数据源
+<h4 id="2-1-3-导入GPG-key"><a href="#2-1-3-导入GPG-key" class="headerlink" title="2.1.3 导入GPG key"></a>2.1.3 导入GPG key</h4><pre><code class="line-numbers language-bash">sudo pacman -Syy //更新数据源
 sudo pacman -S archlinuxcn-keyring //安装导入GPG key
 sudo pacman -S antergos-keyrin</code></pre>
-<h4 id="2-1-4-更新系统"><a href="#2-1-4-更新系统" class="headerlink" title="2.1.4 更新系统"></a>2.1.4 更新系统</h4><pre><code class="bash">sudo pacman -Syu</code></pre>
+<h4 id="2-1-4-更新系统"><a href="#2-1-4-更新系统" class="headerlink" title="2.1.4 更新系统"></a>2.1.4 更新系统</h4><pre><code class="line-numbers language-bash">sudo pacman -Syu</code></pre>
 <h3 id="2-2-解决桌面中文显示方块问题"><a href="#2-2-解决桌面中文显示方块问题" class="headerlink" title="2.2 解决桌面中文显示方块问题"></a>2.2 解决桌面中文显示方块问题</h3><p>若遇到桌面时间中文部分显示为 <strong>方块</strong>     </p>
-<pre><code class="bash">sudo vim /usr/share/conky/conky_maia</code></pre>
+<pre><code class="line-numbers language-bash">sudo vim /usr/share/conky/conky_maia</code></pre>
 <p>将 <strong>conky.text</strong> 的前四行字体改为 <strong>anti</strong> 即可</p>
 <h3 id="2-3-中文输入法"><a href="#2-3-中文输入法" class="headerlink" title="2.3 中文输入法"></a>2.3 中文输入法</h3><p>先安装fcitx</p>
-<pre><code class="bash">sudo pacman -S fcitx fcitx-im fcitx-configtool</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S fcitx fcitx-im fcitx-configtool</code></pre>
 <p>安装完fcitx之后，创建.xprofile文件</p>
-<pre><code class="bash">vim ~/.xprofile</code></pre>
+<pre><code class="line-numbers language-bash">vim ~/.xprofile</code></pre>
 <p>在里面添加如下内容:</p>
-<pre><code class="bash">#fcitx
+<pre><code class="line-numbers language-bash">#fcitx
 export GTK_IM_MODULE=fcitx 
 export QT_IM_MODULE=fcitx 
 export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
 <p>之后安装中文输入法，搜狗拼音貌似对arch的支持不太好，所以我们选择谷歌拼音</p>
-<pre><code class="bash">sudo pacman -S fcitx-googlepinyin</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S fcitx-googlepinyin</code></pre>
 <p>之后在终端运行 <code>$ fcitx</code> 在图形化界面的配置文件中配置输入法即可，配置快捷键<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="2.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="3.png"></p>
 <p>若中文输入法开机无法自启动，则执行如下操作</p>
-<pre><code class="bash">vim ~/.i3/config</code></pre>
+<pre><code class="line-numbers language-bash">vim ~/.i3/config</code></pre>
 <p>添加如下内容:</p>
 <p><code>exec_always fcitx</code></p>
 <h2 id="3-高效率软件以及配置"><a href="#3-高效率软件以及配置" class="headerlink" title="3. 高效率软件以及配置"></a>3. 高效率软件以及配置</h2><h3 id="3-1-软件"><a href="#3-1-软件" class="headerlink" title="3.1 软件"></a>3.1 软件</h3><h4 id="3-1-1-Alacritty"><a href="#3-1-1-Alacritty" class="headerlink" title="3.1.1 Alacritty"></a>3.1.1 Alacritty</h4><p>Alacritty 是一个免费的开源，快速，跨平台的终端仿真器，它使用GPU进行渲染，我使用tree命令跑了一下，确实速度快。kitty也是一款优秀的终端，不过它的配置稍麻烦，感兴趣的可以自行Google.</p>
-<pre><code class="bash">sudo pacman -S alacritty</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S alacritty</code></pre>
 <h4 id="3-1-2-fish-amp-oh-my-fish-omf"><a href="#3-1-2-fish-amp-oh-my-fish-omf" class="headerlink" title="3.1.2 fish &amp; oh-my-fish(omf)"></a>3.1.2 fish &amp; oh-my-fish(omf)</h4><ul>
 <li>fish是一个智能且用户友好的命令行shell，适用于macOS，Linux和其他家族。fish包含语法突出显示，自动提示类型和精美的选项卡完成等功能，无需配置。<br>Terminal下默认的SHELL是bash, 但bash作为你经常使用的工具来说一点都不便捷,相信有很多人都用过另一款shell,它的名字是<strong>zsh</strong>，以及<strong>oh-my-zsh</strong>，我也用了一段时间的zsh，在用的过程中我发现它有时候运行贼慢，忍不了，而且配置虽说有oh-my-zsh管理，但终归不是傻瓜式工具，直到有一天我发现了 <strong>fish</strong>,官网号称是一个专为90后设计的shell。<br>安装很简单:</li>
 </ul>
-<pre><code class="bash">sudo pacman -S fish</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S fish</code></pre>
 <p>终端输入<code>fish</code>即可进入</p>
 <ul>
 <li>查看已经安装的shell</li>
 </ul>
-<pre><code class="bash">cat /etc/shells</code></pre>
+<pre><code class="line-numbers language-bash">cat /etc/shells</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="12.png"></p>
 <ul>
 <li>修改默认shell</li>
 </ul>
 <p>看一下上一步输出的<code>fish</code>的位置，然后执行</p>
-<pre><code class="bash">chsh -s usr/bin/fish</code></pre>
+<pre><code class="line-numbers language-bash">chsh -s usr/bin/fish</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="13.png"><br>之后重启终端,shell就默认为fish了<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="14.png"></p>
 <p>配置文件的位置是<code>/home/kevin/.config/fish/functions/fish_prompt.fish</code>，可以在这里设置替换命令，提高效率，举个例子:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="18.png"></p>
 <ul>
 <li>oh-my-fish是一个 Fishshell 框架，允许你安装扩展或更改你的 shell 外观的软件包。它简单易用，快速可扩展。使用 omf，你可以根据你的想法，很容易地安装主题，丰富你的外观和安装插件来调整你的 Fish shell。    </li>
 <li>安装omf<br>在fish shell里执行</li>
 </ul>
-<pre><code class="bash">curl -L https://get.oh-my.fish | fish</code></pre>
+<pre><code class="line-numbers language-bash">curl -L https://get.oh-my.fish | fish</code></pre>
 <ul>
 <li>列出所有的安装包</li>
 </ul>
-<pre><code class="bash">omf list</code></pre>
+<pre><code class="line-numbers language-bash">omf list</code></pre>
 <p>这条命令会列出一安装的主题和插件</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="15.png"></p>
 <ul>
 <li>列出已安装主题</li>
 </ul>
-<pre><code class="bash">omf theme</code></pre>
+<pre><code class="line-numbers language-bash">omf theme</code></pre>
 <ul>
-<li>安装一个新主题<br>我现在用的主题叫 ays<pre><code class="bash">omf install ays</code></pre>
+<li>安装一个新主题<br>我现在用的主题叫 ays<pre><code class="line-numbers language-bash">omf install ays</code></pre>
 </li>
 <li>改变主题</li>
 </ul>
-<pre><code class="bash">omf theme ays</code></pre>
+<pre><code class="line-numbers language-bash">omf theme ays</code></pre>
 <ul>
 <li>卸载oh-my-fish</li>
 </ul>
-<pre><code class="bash">omf destroy</code></pre>
+<pre><code class="line-numbers language-bash">omf destroy</code></pre>
 <ul>
 <li><p>Fish 运行Bash commands<br>例如 在fish 不能运行 time 命令，以下是解决办法    </p>
 <ul>
@@ -580,28 +580,28 @@ end</code></pre>
 </ul>
 <p>其他具体功能见<a target="_blank" rel="noopener" href="https://github.com/oh-my-fish/oh-my-fish">oh-my-fish</a></p>
 <h4 id="3-1-3-Chromium"><a href="#3-1-3-Chromium" class="headerlink" title="3.1.3 Chromium"></a>3.1.3 Chromium</h4><p>安装方式:</p>
-<pre><code class="bash">sudo pacman -S chromium</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S chromium</code></pre>
 <h4 id="3-1-4-nitrogen"><a href="#3-1-4-nitrogen" class="headerlink" title="3.1.4 nitrogen"></a>3.1.4 nitrogen</h4><p>一款可视化换壁纸的软件,当然<strong>feh</strong>也是一款优秀的壁纸切换软件，教程很多，这里不再说了</p>
-<pre><code class="bash">sudo pacman -S nitrogen</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S nitrogen</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="5.png"></p>
 <h4 id="3-1-5-neofetch"><a href="#3-1-5-neofetch" class="headerlink" title="3.1.5 neofetch"></a>3.1.5 neofetch</h4><p>neofetch是一个个性化显示Linux系统信息的工具</p>
-<pre><code class="bash">sudo pacman -S neofetch</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S neofetch</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="19.png"></p>
 <h4 id="3-1-6-vim"><a href="#3-1-6-vim" class="headerlink" title="3.1.6 vim"></a>3.1.6 vim</h4><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="6.png"></p>
 <p>文本/代码编辑中最最最为优秀经典的上古神器,之后我会写一个调教Vim的教程</p>
-<pre><code class="bash">sudo pacman -S vim </code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S vim </code></pre>
 <h4 id="3-1-7-albert"><a href="#3-1-7-albert" class="headerlink" title="3.1.7 albert"></a>3.1.7 albert</h4><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="7.png"><br>一款软件/文件/搜索 启动器</p>
-<pre><code class="bash">sudo pacman -S albert</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S albert</code></pre>
 <p>第一次运行会提示你设置一下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="8.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="9.png"></p>
 <h4 id="3-1-8-iease-music"><a href="#3-1-8-iease-music" class="headerlink" title="3.1.8 iease-music"></a>3.1.8 iease-music</h4><p>网易云音乐最漂亮的第三方客户端！</p>
-<pre><code class="bash">sudo pacman -S iease-music</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S iease-music</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="10.png"></p>
 <h4 id="3-1-9-deepin-screenshot"><a href="#3-1-9-deepin-screenshot" class="headerlink" title="3.1.9 deepin-screenshot"></a>3.1.9 deepin-screenshot</h4><p>深度截图</p>
-<pre><code class="bash">sudo pacman -S deepin-screenshot</code></pre>
-<h4 id="3-1-10-shadowsocks-qt5"><a href="#3-1-10-shadowsocks-qt5" class="headerlink" title="3.1.10 shadowsocks-qt5"></a>3.1.10 shadowsocks-qt5</h4><pre><code class="bash">sudo pacman -S shadowsocks-qt5</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S deepin-screenshot</code></pre>
+<h4 id="3-1-10-shadowsocks-qt5"><a href="#3-1-10-shadowsocks-qt5" class="headerlink" title="3.1.10 shadowsocks-qt5"></a>3.1.10 shadowsocks-qt5</h4><pre><code class="line-numbers language-bash">sudo pacman -S shadowsocks-qt5</code></pre>
 <h4 id="3-1-11-thefuck"><a href="#3-1-11-thefuck" class="headerlink" title="3.1.11 thefuck"></a>3.1.11 thefuck</h4><p>自从用了”Thefuck”,妈妈再也不用担心我敲错命令了。<br>有了它，万物皆可fffffffffuck!</p>
-<pre><code class="bash">sudo pacman -S thefuck</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S thefuck</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="11.png"></p>
 <h4 id="3-1-12-compton"><a href="#3-1-12-compton" class="headerlink" title="3.1.12 compton"></a>3.1.12 compton</h4><p>设置窗口半透明+毛玻璃效果</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="16.png"></p>
@@ -609,19 +609,19 @@ end</code></pre>
 <ol>
 <li>卸载原有的compton</li>
 </ol>
-<pre><code class="bash">sudo pacman -R compton</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -R compton</code></pre>
 <p>若遇到依赖问题无法卸载，则</p>
-<pre><code class="bash">sudo pacman -Rc compton</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -Rc compton</code></pre>
 <ol start="2">
 <li>clone仓库</li>
 </ol>
-<pre><code class="bash">git clone git@github.com:liuyaanng/compton.git</code></pre>
+<pre><code class="line-numbers language-bash">git clone git@github.com:liuyaanng/compton.git</code></pre>
 <ol start="3">
 <li>安装</li>
 </ol>
 <p>具体内容参考<a target="_blank" rel="noopener" href="https://github.com/liuyaanng/compton/blob/dual_kawase/README.md">README</a><br>安装前要确保下列依赖已经安装。<br>其实大部分都已经安装,只有个别没有，若下面安装不成功，则按提示把依赖装上即可，有问题也可以在issues上查看</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="17.png"></p>
-<pre><code class="bash">cd compton
+<pre><code class="line-numbers language-bash">cd compton
 # Make the main program
 make
 # Make the man page
@@ -633,52 +633,52 @@ make install</code></pre>
 </ol>
 <p>配置信息在<a href="">.config</a></p>
 <h4 id="3-1-13-deepin-file-manager"><a href="#3-1-13-deepin-file-manager" class="headerlink" title="3.1.13 deepin-file-manager"></a>3.1.13 deepin-file-manager</h4><p>默认的 <code>pcmanfm</code> 竟然没有搜索功能，这不能忍啊<br>我使用 <code>deepin-file-manager</code> 来代替默认的 <code>pcmanfm</code></p>
-<pre><code class="bash">sudo pacman -S deepin-file-manager</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S deepin-file-manager</code></pre>
 <p>在配置文件里</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="20.png"></p>
 <h3 id="3-2-i3的配置"><a href="#3-2-i3的配置" class="headerlink" title="3.2 i3的配置"></a>3.2 i3的配置</h3><p>i3的配置文件在 <code>~/.i3/config</code></p>
 <p>里面的配置信息介绍的很详细,需要更详细的信息你可以阅读官方<a target="_blank" rel="noopener" href="https://i3wm.org/docs/userguide.html">userguide</a></p>
 <p> 首先在<code>Autoapplications</code>处添加自启动的应用</p>
-<pre><code class="bash">exec_always fcitx
+<pre><code class="line-numbers language-bash">exec_always fcitx
 exec_always albert</code></pre>
 <ul>
 <li>把系统默认terminal换成<code>alacritty</code><br>在 <code>start a terminal</code>处将原来的代码注释掉，加上以下语句</li>
 </ul>
-<pre><code class="bash">bindsym $mod+Return exec alacritty</code></pre>
+<pre><code class="line-numbers language-bash">bindsym $mod+Return exec alacritty</code></pre>
 <ul>
 <li>设置软件启动快捷键</li>
 </ul>
 <p>在配置文件中添加</p>
-<pre><code class="bash">set $mod Mod4
+<pre><code class="line-numbers language-bash">set $mod Mod4
 set $mod1 Mod1</code></pre>
 <p>mod在这里设置的是键盘的<code>Super</code>键<br>mod1在这里设置的是<code>Alt</code>键</p>
-<pre><code class="bash">bindsym $mod+c exec chromium
+<pre><code class="line-numbers language-bash">bindsym $mod+c exec chromium
 bindsym $mod+p exec nitrogen
 bindsym $mod1+m exec iease-music
 bindsym $mod1+Shift+a exec deepin-screenshot</code></pre>
 <ul>
 <li>窗口之间的间距通过i3-gaps来设置，若没有安装，则</li>
 </ul>
-<pre><code class="bash">sudo pacman -S i3-gaps</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S i3-gaps</code></pre>
 <p>在配置文件中加入</p>
-<pre><code class="bash">gaps inner 16
+<pre><code class="line-numbers language-bash">gaps inner 16
 gaps outer 0</code></pre>
 <p>可以根据自己喜好调整数值</p>
 <ul>
 <li>xbacklight config</li>
 </ul>
 <p>install <code>xorg-xbacklight</code> first</p>
-<pre><code class="bash">sudo pacman -S xorg-xbacklight </code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S xorg-xbacklight </code></pre>
 <h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><h4 id="彻底解决蜂鸣问题"><a href="#彻底解决蜂鸣问题" class="headerlink" title="彻底解决蜂鸣问题"></a>彻底解决蜂鸣问题</h4><p>由于蜂鸣是由主板发出来的声音，故不能通过调节音量来消除此声音，要从源头上解决</p>
 <ul>
 <li>关闭终端下Tab键的蜂鸣提示</li>
 </ul>
-<pre><code class="bash">sudo vim /etc/inputrc</code></pre>
+<pre><code class="line-numbers language-bash">sudo vim /etc/inputrc</code></pre>
 <p>将 <code>set bell-style none</code> 前的注释去掉</p>
 <ul>
 <li>关闭vim中错误提示蜂鸣声</li>
 </ul>
-<pre><code class="bash">vim .vim/vimrc</code></pre>
+<pre><code class="line-numbers language-bash">vim .vim/vimrc</code></pre>
 <p>在里面加入  <code>set vb t_vb= </code></p>
 
             </div>
@@ -1219,7 +1219,7 @@ gaps outer 0</code></pre>
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

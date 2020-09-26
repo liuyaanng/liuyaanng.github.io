@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -486,14 +486,14 @@
 <ul>
 <li><p>思路1：将数字转化为字符串形式，分别进行头尾判断数字是否一致。<br>实现需要3步：</p>
 <p>预判断：<br>首先判断当输入数字为负数或其个位数字是0（排除0）时一定输出False</p>
-<pre><code class="python">if (x &lt; 0 or (x % 10 == 0 and x!= 0)):
+<pre><code class="line-numbers language-python">if (x &lt; 0 or (x % 10 == 0 and x!= 0)):
     return False</code></pre>
 <ul>
 <li><p>将输入转化为字符串</p>
-<pre><code class="python3">x_str = str(x)</code></pre>
+<pre><code class="line-numbers language-python3">x_str = str(x)</code></pre>
 </li>
 <li><p>分割字符串，不能用split方法。这里因为当输入为奇数时，数字中间的一位对结果无影响，故将这一位删掉。</p>
-<pre><code class="python3">x_list = []
+<pre><code class="line-numbers language-python3">x_list = []
 for x_s in x_str:
   x_list.append(x_s)
 if num != num_i:
@@ -505,7 +505,7 @@ if num != num_i:
 </li>
 </ul>
 <p>程序完整代码如下：</p>
-<pre><code class="python">if (x &lt; 0 or (x % 10 == 0 and x!= 0)):
+<pre><code class="line-numbers language-python">if (x &lt; 0 or (x % 10 == 0 and x!= 0)):
     return False    
 x_str = str(x)
 num = len(x_str) / 2 
@@ -526,9 +526,9 @@ while i &lt; num_i:
     i += 1
 return result</code></pre>
 <p>在参考了LeetCode官网解法之后，发现了类似思路更简单的解法，代码如下：</p>
-<pre><code class="python">return (str(x) == str(x)[::-1])</code></pre>
+<pre><code class="line-numbers language-python">return (str(x) == str(x)[::-1])</code></pre>
 <p>只需判断输入数字的一半即可判断结果，故可改进如下：</p>
-<pre><code class="python">x_str = str(x)
+<pre><code class="line-numbers language-python">x_str = str(x)
 x_len = len(x_str)
 x_h = x_len // 2
 return (x_str[:x_h] == x_str[-1:-x_h - 1:-1])</code></pre>
@@ -542,7 +542,7 @@ return (x_str[:x_h] == x_str[-1:-x_h - 1:-1])</code></pre>
 </li>
 </ul>
 <p>完整代码如下：</p>
-<pre><code class="python">if (x &lt; 0 or (x % 10 == 0 and x != 0)):
+<pre><code class="line-numbers language-python">if (x &lt; 0 or (x % 10 == 0 and x != 0)):
     return False
 x_reversed = 0
 while x_reversed &lt; x:
@@ -550,7 +550,7 @@ while x_reversed &lt; x:
     x = x // 10
 return (x == x_reversed or x == x_reversed // 10)</code></pre>
 <p>C代码如下：</p>
-<pre><code class="C">bool isPalindrome(int x)&#123;
+<pre><code class="line-numbers language-C">bool isPalindrome(int x)&#123;
 if (x&lt;0 || (x%10 == 0 &amp;&amp; x != 0))&#123;
     return false;
 &#125;
@@ -1124,7 +1124,7 @@ wget https://d
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

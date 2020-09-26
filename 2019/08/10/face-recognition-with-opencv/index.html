@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -483,7 +483,7 @@
 <li>Under the condition that the face is detected, take a picture with one button;</li>
 <li>For the face part, resize and write the image file in the specified directory;</li>
 </ol>
-<h4 id="1-1-2-Code"><a href="#1-1-2-Code" class="headerlink" title="1.1.2 Code"></a>1.1.2 Code</h4><pre><code class="cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
+<h4 id="1-1-2-Code"><a href="#1-1-2-Code" class="headerlink" title="1.1.2 Code"></a>1.1.2 Code</h4><pre><code class="line-numbers language-cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
 #include &lt;opencv2/imgproc/imgproc.hpp&gt;
 #include &lt;opencv2/core/core.hpp&gt;
 #include &lt;opencv2/objdetect/objdetect.hpp&gt;
@@ -612,7 +612,7 @@ int main(int argc, char* argv[])&#123;
 <h3 id="1-2-Face-Database-Creation"><a href="#1-2-Face-Database-Creation" class="headerlink" title="1.2 Face Database Creation"></a>1.2 Face Database Creation</h3><p>The official document provides a download of the face database, and i use the <a target="_blank" rel="noopener" href="http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html">AT&amp;T Facedatabase</a> to create my face database. I have updated this zip file to my github, you can download it from <a href="att_faces.zip">here</a> faster.<br>AT&amp;T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).<br>You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from “s1” to “s40”. Each folder has the same person’s photos with different expressions, and there are 10 face photos.<br>The format of these images is “.pgm”<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/2.png"></p>
 <p>Note:<br>If you want to add your own photos to the face database through the program, the number of added pictures must be no less than 2.</p>
 <h2 id="2-Face-Recognition-Model-training"><a href="#2-Face-Recognition-Model-training" class="headerlink" title="2. Face Recognition Model training"></a>2. Face Recognition Model training</h2><h3 id="2-1-Create-a-label-file-CSV"><a href="#2-1-Create-a-label-file-CSV" class="headerlink" title="2.1 Create a label file CSV"></a>2.1 Create a label file CSV</h3><p>With the face database data, we need to read it in the program, here we need to use csv file to read the image data in the face database.<br>The format of a csv file: image path name + label, such as /Img/s1/image.jpg;1<br>Assume the face image path is: /Img/s1/01..jpg<br>And we give this face image a label “1”, this label represents the person’s name. One person’s face image label must be the same.<br>You can create a csv file manually and then enter the data one by one. But if you use python, you don’t have to do this tedious and boring work.<br>The following is a piece of code which can write data in the CSV file automatically.</p>
-<pre><code class="python">#!/usr/bin/env python
+<pre><code class="line-numbers language-python">#!/usr/bin/env python
 
 import sys
 import os.path
@@ -662,7 +662,7 @@ if __name__ == &quot;__main__&quot;:
 <p>You should set the image path parameter (absolute path) when running.(E.g: <strong>python filename.py /home/kevin/OpenCV/face_rec/Img</strong> ) and you can get a CSV file like this:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/5.png"><br>This CSV file is created.</p>
 <h3 id="2-2-Model-training"><a href="#2-2-Model-training" class="headerlink" title="2.2 Model training"></a>2.2 Model training</h3><p>This is the official example of OpenCV: <a target="_blank" rel="noopener" href="https://docs.opencv.org/3.2.0/da/d60/tutorial_face_main.html">Click here</a><br>They offer three models: Eigenfaces, Fisherfaces and Local Binary Patterns Histograms(LBPH)    </p>
 <p>Then I will train my own face database based on these models on the first step.</p>
-<pre><code class="cpp">static Mat norm_0_255(InputArray _src)&#123;
+<pre><code class="line-numbers language-cpp">static Mat norm_0_255(InputArray _src)&#123;
   Mat src = _src.getMat();
   Mat dst; //Create and return a normalized image matrix:
   switch(src.channels()) &#123;
@@ -783,7 +783,7 @@ int main(int argc, char* argv[])&#123;
 <ol>
 <li><p>Changes to the API of the OpenCV3.3 Face Recognition Module</p>
 <p>a. Facerec.hpp before opencv3.3</p>
-<pre><code class="cpp">#ifndef __OPENCV_FACEREC_HPP__
+<pre><code class="line-numbers language-cpp">#ifndef __OPENCV_FACEREC_HPP__
 #define __OPENCV_FACEREC_HPP__
 
 #include &quot;opencv2/face.hpp&quot;
@@ -828,7 +828,7 @@ CV_EXPORTS_W Ptr&lt;LBPHFaceRecognizer&gt; createLBPHFaceRecognizer(int radius=1
 <li><p>Comment section of the ninth line: <code>// base for two classes</code>,  This shows that BasicFaceRecognizer is the base class of two classes: EigenFaceRecognizer and FisherFaceRecognizer. With LBPHFaceRecognizer is irrelevant. Even the new API is still the case.</p>
 </li>
 <li><p>Method of creating three face recognizers.</p>
-<pre><code class="cpp">Ptr&lt;BasicFaceRecognizer&gt; model =  createEigenFaceRecognizer();
+<pre><code class="line-numbers language-cpp">Ptr&lt;BasicFaceRecognizer&gt; model =  createEigenFaceRecognizer();
 Ptr&lt;BasicFaceRecognizer&gt; model =  createFisherFaceRecognizer();
 Ptr&lt;LBPHFaceRecognizer&gt; model  =  createLBPHFaceRecognizer();</code></pre>
 </li>
@@ -836,7 +836,7 @@ Ptr&lt;LBPHFaceRecognizer&gt; model  =  createLBPHFaceRecognizer();</code></pre>
 <p>b. Facerec.hpp after opencv3.3</p>
 </li>
 </ol>
-<pre><code class="cpp">#ifndef __OPENCV_FACEREC_HPP__
+<pre><code class="line-numbers language-cpp">#ifndef __OPENCV_FACEREC_HPP__
 #define __OPENCV_FACEREC_HPP__
 
 #include &quot;opencv2/face.hpp&quot;
@@ -898,7 +898,7 @@ public:
 <li>Both EigenFaceRecognizer and FisherFaceRecognizer are inherited from BasicFaceRecognizer. However, the LBFPHaceRecognizer, like the BasicFaceRecognizer, inherits from FaceRecognizer.    </li>
 <li>Method of creating three face recognizer</li>
 </ul>
-<pre><code class="cpp">Ptr&lt;EigenFaceRecognizer&gt; model  = EigenFaceRecognizer::create();
+<pre><code class="line-numbers language-cpp">Ptr&lt;EigenFaceRecognizer&gt; model  = EigenFaceRecognizer::create();
 Ptr&lt;FisherFaceRecognizer&gt; model = FisherFaceRecognizer::create();
 Ptr&lt;LBPHFaceRecognizer&gt; model   = LBPHFaceRecognizer::create();</code></pre>
 <h2 id="3-Identify-faces-in-the-video-stream-camera"><a href="#3-Identify-faces-in-the-video-stream-camera" class="headerlink" title="3. Identify faces in the video stream (camera)"></a>3. Identify faces in the video stream (camera)</h2><h3 id="3-1-Ready-to-work"><a href="#3-1-Ready-to-work" class="headerlink" title="3.1 Ready to work."></a>3.1 Ready to work.</h3><h4 id="3-1-1-Copy-the-training-file-obtained-in-the-second-step-to-the-current-folder"><a href="#3-1-1-Copy-the-training-file-obtained-in-the-second-step-to-the-current-folder" class="headerlink" title="3.1.1 Copy the training file obtained in the second step to the current folder."></a>3.1.1 Copy the training file obtained in the second step to the current folder.</h4><h4 id="3-1-2-The-process-or-method-of-Face-Recognition"><a href="#3-1-2-The-process-or-method-of-Face-Recognition" class="headerlink" title="3.1.2 The process or method of Face Recognition"></a>3.1.2 The process or method of Face Recognition</h4><p>This step has a similar part to the creation of a face recognition database.</p>
@@ -909,7 +909,7 @@ Ptr&lt;LBPHFaceRecognizer&gt; model   = LBPHFaceRecognizer::create();</code></pr
 <li>Face recognition (compare to face model)</li>
 <li>Label faces with rectangular wireframes and add text labels</li>
 </ul>
-<h4 id="3-2-Code"><a href="#3-2-Code" class="headerlink" title="3.2 Code"></a>3.2 Code</h4><pre><code class="cpp">#include &lt;opencv2/opencv.hpp&gt;  
+<h4 id="3-2-Code"><a href="#3-2-Code" class="headerlink" title="3.2 Code"></a>3.2 Code</h4><pre><code class="line-numbers language-cpp">#include &lt;opencv2/opencv.hpp&gt;  
 #include &quot;opencv2/core.hpp&quot;
 #include &quot;opencv2/face.hpp&quot;
 #include &quot;opencv2/highgui.hpp&quot;
@@ -1560,7 +1560,7 @@ int main()&#123;
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

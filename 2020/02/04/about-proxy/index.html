@@ -28,7 +28,7 @@ a VPS: vultr( ">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -473,17 +473,17 @@ a VPS: vultr( ">
 <p>NOTE: <strong>Do it after installed V2Ray if u need it</strong></p>
 <h4 id="4-Ping"><a href="#4-Ping" class="headerlink" title="4. Ping"></a>4. Ping</h4><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/7.png"> </p>
 <p>it works.</p>
-<h3 id="2-Set-BBR-lotserver"><a href="#2-Set-BBR-lotserver" class="headerlink" title="2. Set BBR lotserver"></a>2. Set BBR lotserver</h3><pre><code class="bash">wget --no-check-certificate https://raw.githubusercontent.com/liuyaanng/SSR/master/tcp.sh &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code></pre>
+<h3 id="2-Set-BBR-lotserver"><a href="#2-Set-BBR-lotserver" class="headerlink" title="2. Set BBR lotserver"></a>2. Set BBR lotserver</h3><pre><code class="line-numbers language-bash">wget --no-check-certificate https://raw.githubusercontent.com/liuyaanng/SSR/master/tcp.sh &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/8.png"> </p>
 <h3 id="3-Install-V2Ray"><a href="#3-Install-V2Ray" class="headerlink" title="3. Install V2Ray"></a>3. Install V2Ray</h3><p>There are two way to install V2Ray use different methods.</p>
 <ul>
 <li>Vmess+websocket+TLS+Nginx+Website</li>
 </ul>
-<pre><code class="bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log</code></pre>
+<pre><code class="line-numbers language-bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log</code></pre>
 <ul>
 <li>Vmess + HTTP2 over TLS</li>
 </ul>
-<pre><code class="bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh) | tee v2ray_ins_h2.log</code></pre>
+<pre><code class="line-numbers language-bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh) | tee v2ray_ins_h2.log</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-Proxy/9.png"> </p>
 <p>SELF TESTING</p>
 <h3 id="4-Run-V2Ray"><a href="#4-Run-V2Ray" class="headerlink" title="4. Run V2Ray"></a>4. Run V2Ray</h3><ul>
@@ -512,7 +512,7 @@ a VPS: vultr( ">
 </li>
 <li><p>Configuration V2Ray</p>
 <p>config file is located in <code>/etc/v2ray/config.json</code></p>
-<pre><code class="bash">&#123;
+<pre><code class="line-numbers language-bash">&#123;
 &quot;policy&quot;: null,
 &quot;log&quot;: &#123;
 &quot;access&quot;: &quot;&quot;,
@@ -640,9 +640,9 @@ a VPS: vultr( ">
 <ul>
 <li>Installation</li>
 </ul>
-<pre><code class="bash">sudo pacman -S proxychains</code></pre>
+<pre><code class="line-numbers language-bash">sudo pacman -S proxychains</code></pre>
 <p>Or you can install it from source code. (make sure your <code>gcc</code> installed)</p>
-<pre><code class="bash">git clone https://github.com/rofl0r/proxychains-ng
+<pre><code class="line-numbers language-bash">git clone https://github.com/rofl0r/proxychains-ng
 cd proxychains-ng
 ./configure
 sudo make &amp;&amp; make install
@@ -655,22 +655,22 @@ sudo make install-config(generate config file)</code></pre>
 <li>Use</li>
 </ul>
 <p>Add <code>proxychains</code> before the terminal commands.</p>
-<pre><code class="bash">proxychains git clone https://github.com/rofl0r/proxychains-ng</code></pre>
+<pre><code class="line-numbers language-bash">proxychains git clone https://github.com/rofl0r/proxychains-ng</code></pre>
 <p>you can run <code>npm</code> , <code>docker</code> … But <code>ping</code> command is not suitable, because proxychains can only proxy <strong>TCP</strong>, and <code>ping</code> is use <strong>ICMP</strong>.</p>
 <h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>You may need to configure a proxy server if you’re having trouble cloning or fetching from a remote repository or getting an error like unable to access <code>Couldn&#39;t resolve host</code>.</p>
 <p>Consider something like:</p>
-<pre><code class="bash">git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port</code></pre>
+<pre><code class="line-numbers language-bash">git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port</code></pre>
 <p>i use <code>git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;</code> to set my git cause i use socks5.</p>
 <p>i also use <code> git config --local http.proxy &#39;socks5://127.0.0.1:1080&#39;</code> to set my local config that can only work in ‘git clone’ repositories.</p>
 <p>Check global proxy:</p>
-<pre><code class="bash">git config --global http.proxy</code></pre>
+<pre><code class="line-numbers language-bash">git config --global http.proxy</code></pre>
 <p>Check local proxy:</p>
-<pre><code class="bash">git config --local http.proxy</code></pre>
+<pre><code class="line-numbers language-bash">git config --local http.proxy</code></pre>
 <p>Cancel proxy:</p>
-<pre><code class="bash">git config --global --unset http.proxy</code></pre>
-<pre><code class="bash">git config --local --unset http.proxy</code></pre>
+<pre><code class="line-numbers language-bash">git config --global --unset http.proxy</code></pre>
+<pre><code class="line-numbers language-bash">git config --local --unset http.proxy</code></pre>
 <h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>Create <code>.wgetrc</code> file in home directory.</p>
-<pre><code class="bash">use_proxy=yes
+<pre><code class="line-numbers language-bash">use_proxy=yes
 http_proxy=127.0.0.1:1080
 https_proxy=127.0.0.1:1080</code></pre>
 <p>it can only use http proxy.</p>
@@ -1209,7 +1209,7 @@ https_proxy=127.0.0.1:1080</code></pre>
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

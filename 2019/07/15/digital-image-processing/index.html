@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -527,10 +527,10 @@
 <li><p>直方图的处理和函数绘图</p>
 <ul>
 <li><p>生成图像的直方图</p>
-<pre><code class="matlab">  &gt;&gt; h = imhist(f)</code></pre>
+<pre><code class="line-numbers language-matlab">  &gt;&gt; h = imhist(f)</code></pre>
 </li>
 <li><p>也可以用条形图来表示</p>
-<pre><code class="matlab">&gt;&gt; h = imhist(f,25);
+<pre><code class="line-numbers language-matlab">&gt;&gt; h = imhist(f,25);
 &gt;&gt; horz = linespace(0,255,25);
 &gt;&gt; bar(horz,h)
 &gt;&gt; axis(0 255 0 60000);
@@ -1108,7 +1108,7 @@ Python单排系列
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

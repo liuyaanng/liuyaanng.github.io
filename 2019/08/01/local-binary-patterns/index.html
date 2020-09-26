@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -532,7 +532,7 @@
 <td align="center">25</td>
 </tr>
 </tbody></table>
-<h1 id="LBP特征实现"><a href="#LBP特征实现" class="headerlink" title="LBP特征实现"></a>LBP特征实现</h1><h2 id="原始LBP特征"><a href="#原始LBP特征" class="headerlink" title="原始LBP特征"></a>原始LBP特征</h2><pre><code class="cpp">//Original_LBP
+<h1 id="LBP特征实现"><a href="#LBP特征实现" class="headerlink" title="LBP特征实现"></a>LBP特征实现</h1><h2 id="原始LBP特征"><a href="#原始LBP特征" class="headerlink" title="原始LBP特征"></a>原始LBP特征</h2><pre><code class="line-numbers language-cpp">//Original_LBP
 Mat get_original_LBP_feature(Mat img)&#123;
   Mat result;
   result.create(img.rows - 2, img.cols -2, img.type());
@@ -555,7 +555,7 @@ Mat get_original_LBP_feature(Mat img)&#123;
   return result;
 &#125;</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d4161dac5f0b23887.png"></p>
-<h2 id="圆形LBP特征"><a href="#圆形LBP特征" class="headerlink" title="圆形LBP特征"></a>圆形LBP特征</h2><pre><code class="cpp">//Circular_LBP_feature
+<h2 id="圆形LBP特征"><a href="#圆形LBP特征" class="headerlink" title="圆形LBP特征"></a>圆形LBP特征</h2><pre><code class="line-numbers language-cpp">//Circular_LBP_feature
 Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
 &#123;
   Mat result;
@@ -603,7 +603,7 @@ Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
 &#125;</code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/01/5d42b5d2e345026549.png"></p>
 <p>第一幅图设置半径为4,第二幅图设置半径为1,可以看到半径越小处理的越精细。</p>
-<h2 id="旋转不变LBP特征"><a href="#旋转不变LBP特征" class="headerlink" title="旋转不变LBP特征"></a>旋转不变LBP特征</h2><pre><code class="cpp">//Rotation_Invariant_LBP_feature
+<h2 id="旋转不变LBP特征"><a href="#旋转不变LBP特征" class="headerlink" title="旋转不变LBP特征"></a>旋转不变LBP特征</h2><pre><code class="line-numbers language-cpp">//Rotation_Invariant_LBP_feature
 Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
 &#123;
   Mat result;
@@ -665,7 +665,7 @@ Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
 </code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/01/5d42b5d30749958722.png"></p>
 <p>第一幅图neighbors值设置为8,第二幅设置为6,可以看出neighbors值越大，得到的LBP特征亮度越高。</p>
-<h2 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h2><pre><code class="cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
+<h2 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h2><pre><code class="line-numbers language-cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
 
 using namespace cv;
 
@@ -1372,7 +1372,7 @@ int main(int argc, char* argv[])
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

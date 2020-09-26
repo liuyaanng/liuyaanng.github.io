@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -491,7 +491,7 @@
 <p>2.6、对每一个圆心，完成上面的2.1～2.5步骤，得到所有的圆半径。</p>
 <p>HoughCircles函数的原型为：<br><code>void HoughCircles (InputArray image,OutputArray circles, int method, double dp, double minDist,double param1=100, double param2=100, int minRadius=0,int maxRadius=0 )</code><br>image为输入图像，要求是灰度图像<br>circles为输出圆向量，每个向量包括三个浮点型的元素——圆心横坐标，圆心纵坐标和圆半径<br>method为使用霍夫变换圆检测的算法，Opencv2.4.9只实现了2-1霍夫变换，它的参数是CV_HOUGH_GRADIENT<br>dp为第一阶段所使用的霍夫空间的分辨率，dp=1时表示霍夫空间与输入图像空间的大小一致，dp=2时霍夫空间是输入图像空间的一半，以此类推<br>minDist为圆心之间的最小距离，如果检测到的两个圆心之间距离小于该值，则认为它们是同一个圆心<br>param1为边缘检测时使用Canny算子的高阈值<br>param2为步骤1.5和步骤2.5中所共有的阈值<br>minRadius和maxRadius为所检测到的圆半径的最小值和最大值</p>
 <h3 id="霍夫变换椭圆检测的实现"><a href="#霍夫变换椭圆检测的实现" class="headerlink" title="霍夫变换椭圆检测的实现"></a>霍夫变换椭圆检测的实现</h3><p>运行环境: vs2017 + Opencv3.4<br>由于HoughCircles函数是调用Canny函数进行边缘检测，OpenCV的Canny函数不包括平滑滤波，所以先对原图进行滤波处理，在这里使用的是高斯模糊</p>
-<pre><code class="cpp">#include &quot;opencv2/core/core.hpp&quot;
+<pre><code class="line-numbers language-cpp">#include &quot;opencv2/core/core.hpp&quot;
 #include &quot;opencv2/highgui/highgui.hpp&quot;
 #include &quot;opencv2/imgproc/imgproc.hpp&quot;
 #include &lt;iostream&gt;
@@ -1080,7 +1080,7 @@ OpenCV椭圆绘制ellip
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

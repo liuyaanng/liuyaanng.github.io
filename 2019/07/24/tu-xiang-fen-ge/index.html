@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -553,7 +553,7 @@
 <ul>
 <li>MATLAB实现</li>
 </ul>
-<pre><code class="matlab">f = imread(&#39;moon.jpg&#39;);
+<pre><code class="line-numbers language-matlab">f = imread(&#39;moon.jpg&#39;);
 
 f = rgb2gray(f);
 
@@ -669,7 +669,7 @@ imshow(g)</code></pre>
 <ul>
 <li>MATLAB实现检测指定方向上的线</li>
 </ul>
-<pre><code class="matlab">clc
+<pre><code class="line-numbers language-matlab">clc
 
 clear
 
@@ -726,7 +726,7 @@ subplot(2,3,6);
 imshow(g)
 </code></pre>
 <p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a815b7125153.jpg"><br>可能会用到的M函数pixeldup</p>
-<pre><code class="matlab">function B=pixeldup(A,m,n)%pixeldup用来重复像素的，在水平方向复制m倍，在垂直方向复制n倍，m，n必须为整数，n没有赋值默认为m%检查输入参数个数
+<pre><code class="line-numbers language-matlab">function B=pixeldup(A,m,n)%pixeldup用来重复像素的，在水平方向复制m倍，在垂直方向复制n倍，m，n必须为整数，n没有赋值默认为m%检查输入参数个数
 if nargin&lt;2
     error(&#39;At least two inputs are required.&#39;);
     end
@@ -785,7 +785,7 @@ B=A(u,v);</code></pre>
 <h4 id="使用函数edge的边缘检测"><a href="#使用函数edge的边缘检测" class="headerlink" title="使用函数edge的边缘检测"></a>使用函数edge的边缘检测</h4><ul>
 <li>语法</li>
 </ul>
-<pre><code class="matlab">[g,t] = edge(f, &#39;method&#39;, parameters);</code></pre>
+<pre><code class="line-numbers language-matlab">[g,t] = edge(f, &#39;method&#39;, parameters);</code></pre>
 <p>f是输入图像，method是边缘检测方法，parameters是附加参数</p>
 <h4 id="边缘检测算子"><a href="#边缘检测算子" class="headerlink" title="边缘检测算子"></a>边缘检测算子</h4><p>图像邻域如下图所示:</p>
 <table>
@@ -853,7 +853,7 @@ B=A(u,v);</code></pre>
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre><code class="matlab">[g, t] = edge(f, &#39;sobel&#39;, T, dir);</code></pre>
+<pre><code class="line-numbers language-matlab">[g, t] = edge(f, &#39;sobel&#39;, T, dir);</code></pre>
 <p>f是输入的图像，T是指定的阀值，dir是指定的检测边缘的首选方向:’horizontal’,’vertical’,’both’(默认值)<br>t是可选的，T未指定，则t自动设置</p>
 <h5 id="Prewitt边缘检测算子"><a href="#Prewitt边缘检测算子" class="headerlink" title="Prewitt边缘检测算子"></a>Prewitt边缘检测算子</h5><ul>
 <li>Prewitt边缘检测算子模板</li>
@@ -901,7 +901,7 @@ B=A(u,v);</code></pre>
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre><code class="matlab">[g, t] = edge(f, &#39;prewitt&#39;, T ,dir);</code></pre>
+<pre><code class="line-numbers language-matlab">[g, t] = edge(f, &#39;prewitt&#39;, T ,dir);</code></pre>
 <p>计算简单，但容易产生噪声</p>
 <h5 id="Roberts边缘检测算子"><a href="#Roberts边缘检测算子" class="headerlink" title="Roberts边缘检测算子"></a>Roberts边缘检测算子</h5><ul>
 <li>Roberts边缘检测算子模板</li>
@@ -935,7 +935,7 @@ B=A(u,v);</code></pre>
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre><code class="matlab">[g, t] = edge(f, &#39;roberts&#39;, T , dir);</code></pre>
+<pre><code class="line-numbers language-matlab">[g, t] = edge(f, &#39;roberts&#39;, T , dir);</code></pre>
 <h5 id="LoG检测算子"><a href="#LoG检测算子" class="headerlink" title="LoG检测算子"></a>LoG检测算子</h5><ul>
 <li>LoG</li>
 </ul>
@@ -944,22 +944,22 @@ B=A(u,v);</code></pre>
 <ul>
 <li>MATLAB语法</li>
 </ul>
-<pre><code class="matlab">[g, t] = edge(f, &#39;log&#39;, T , sigma);</code></pre>
+<pre><code class="line-numbers language-matlab">[g, t] = edge(f, &#39;log&#39;, T , sigma);</code></pre>
 <p>sigma默认值是2</p>
 <h5 id="零交叉检测算子"><a href="#零交叉检测算子" class="headerlink" title="零交叉检测算子"></a>零交叉检测算子</h5><ul>
 <li>基于LoG，卷积使用特殊的滤波函数H来完成</li>
 <li>MATLAB语法</li>
 </ul>
-<pre><code class="matlab">[g, t] = edge(f, &#39;zerocross&#39;, T , H);</code></pre>
+<pre><code class="line-numbers language-matlab">[g, t] = edge(f, &#39;zerocross&#39;, T , H);</code></pre>
 <h5 id="Canny检测算子"><a href="#Canny检测算子" class="headerlink" title="Canny检测算子"></a>Canny检测算子</h5><ul>
 <li>edge函数中最强的边缘检测算子</li>
 <li>MATLAB语法</li>
 </ul>
-<pre><code class="matlab">[g, t] = edge(f, &#39;canny&#39;, T , sigma);</code></pre>
+<pre><code class="line-numbers language-matlab">[g, t] = edge(f, &#39;canny&#39;, T , sigma);</code></pre>
 <h4 id="MATLAB实现"><a href="#MATLAB实现" class="headerlink" title="MATLAB实现"></a>MATLAB实现</h4><ul>
 <li>几种边缘检测算法的比较(Sobel,LoG,Canny)</li>
 </ul>
-<pre><code class="matlab">f = imread(&#39;timg1.jpg&#39;); 
+<pre><code class="line-numbers language-matlab">f = imread(&#39;timg1.jpg&#39;); 
 imshow(f),title(&#39;currect image&#39;);
 f = rgb2gray(f);
 %Default Output
@@ -1527,7 +1527,7 @@ figure,imshow(gCanny_best),title(&#39;gCanny best&#39;);</code></pre>
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

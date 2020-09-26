@@ -27,7 +27,7 @@ calib3d">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -488,7 +488,7 @@ calib3d">
 <li>其它辅助模块，如用户贡献的算法</li>
 </ul>
 <h2 id="人脸检测-1"><a href="#人脸检测-1" class="headerlink" title="人脸检测"></a>人脸检测</h2><h2 id="检测图片中的人脸"><a href="#检测图片中的人脸" class="headerlink" title="检测图片中的人脸"></a>检测图片中的人脸</h2><p>在OpenCV中，主要使用两种特征进行人脸检测，Haar特征和LBP特征，下面使用的是LBP特征。<br>实现人脸检测主要依赖于detectMultiScale()函数</p>
-<pre><code class="cpp">CV_WRAP virtual void detectMultiScale
+<pre><code class="line-numbers language-cpp">CV_WRAP virtual void detectMultiScale
 ( const Mat&amp; image,
   CV_OUT vector&lt;Rect&gt;&amp; objects,
   double scaleFactor=1.1,
@@ -497,7 +497,7 @@ calib3d">
   Size maxSize=Size() );</code></pre>
 <p>各参数含义如下：<br><strong>const Mat&amp; image</strong>: 需要被检测的图像（灰度图）。<br><strong>vector<Rect>&amp; objects</strong>: 保存被检测出的人脸位置坐标序列。<br><strong>double scaleFactor</strong>: 每次图片缩放的比例。<br><strong>int minNeighbors</strong>: 每一个人脸至少要检测到多少次才算是真的人脸。<br><strong>doubleint flags</strong>： 决定是缩放分类器来检测，还是缩放图像。<br><strong>Size()</strong>: 表示人脸的最大最小尺寸。</p>
 <p>具体实现代码如下:</p>
-<pre><code class="cpp">#include&lt;opencv2/highgui/highgui.hpp&gt;
+<pre><code class="line-numbers language-cpp">#include&lt;opencv2/highgui/highgui.hpp&gt;
 #include&lt;opencv2/imgproc/imgproc.hpp&gt;
 #include&lt;opencv2/objdetect/objdetect.hpp&gt;
 #include&lt;iostream&gt;
@@ -528,7 +528,7 @@ int main(int argc, char* argv[])
 &#125;</code></pre>
 <p>检测结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/2.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/3.png"></p>
 <h3 id="检测视频中的人脸"><a href="#检测视频中的人脸" class="headerlink" title="检测视频中的人脸"></a>检测视频中的人脸</h3><p>原理就是对视频逐帧处理，1s大约分为30帧。</p>
-<pre><code class="cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
+<pre><code class="line-numbers language-cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
 #include &lt;opencv2/imgproc/imgproc.hpp&gt;
 #include &lt;opencv2/core/core.hpp&gt;
 #include &lt;opencv2/objdetect/objdetect.hpp&gt;
@@ -1126,7 +1126,7 @@ int main(int argc, char** argv)
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

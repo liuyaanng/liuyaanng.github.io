@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -492,27 +492,27 @@
 <h2 id="MATLAB实现对图像的Fourier变换和逆变换"><a href="#MATLAB实现对图像的Fourier变换和逆变换" class="headerlink" title="MATLAB实现对图像的Fourier变换和逆变换"></a>MATLAB实现对图像的Fourier变换和逆变换</h2><ul>
 <li>Fourier变换，f为原图像</li>
 </ul>
-<pre><code class="matlab">&gt;&gt; F = fft2(f);</code></pre>
+<pre><code class="line-numbers language-matlab">&gt;&gt; F = fft2(f);</code></pre>
 <ul>
 <li>Fourier谱</li>
 </ul>
-<pre><code class="matlab">&gt;&gt; S = abs(F);</code></pre>
+<pre><code class="line-numbers language-matlab">&gt;&gt; S = abs(F);</code></pre>
 <p>该函数计算的是数组中每个元素的幅值( $ \sqrt{r^2+i^2} $ )<br>可以在这里观察到4个角的亮点，这就是周期特性的结果，不便观察</p>
 <ul>
 <li>将交换的原点移动到频域矩形的中心</li>
 </ul>
-<pre><code class="matlab">&gt;&gt; Fc = fftshift(F)</code></pre>
+<pre><code class="line-numbers language-matlab">&gt;&gt; Fc = fftshift(F)</code></pre>
 <p>频谱范围大，不便观察</p>
 <ul>
 <li>取模，缩放</li>
 </ul>
-<pre><code class="matlab">S2 = log(1 + abs(Fc));</code></pre>
+<pre><code class="line-numbers language-matlab">S2 = log(1 + abs(Fc));</code></pre>
 <ul>
 <li>Fourier逆变换</li>
 </ul>
-<pre><code class="matlab">&gt;&gt; f = ifft2(F);</code></pre>
+<pre><code class="line-numbers language-matlab">&gt;&gt; f = ifft2(F);</code></pre>
 <p>下面是完整代码</p>
-<pre><code class="matlab">img=imread(&#39;moon.jpg&#39;);
+<pre><code class="line-numbers language-matlab">img=imread(&#39;moon.jpg&#39;);
 subplot(2,2,1);
     imshow(img);
     title(&#39;原图&#39;);
@@ -551,24 +551,24 @@ subplot(2,2,4);
 <p>Fourier频谱图上的明暗点，意义是指图像上的某一点与邻域点差异的强弱，即梯度的大小。</p>
 <p>对频谱移频到原点之后，可以看出图像的频率分布是以原点为圆心，对称分布的.</p>
 <h2 id="DFT滤波"><a href="#DFT滤波" class="headerlink" title="DFT滤波"></a>DFT滤波</h2><h3 id="滤波步骤"><a href="#滤波步骤" class="headerlink" title="滤波步骤"></a>滤波步骤</h3><ol>
-<li>用函数<code>tofloat</code>把输入图像转换成浮点图像<pre><code class="matlab">&gt;&gt; [f, revertclass] = tofloat(f);</code></pre>
+<li>用函数<code>tofloat</code>把输入图像转换成浮点图像<pre><code class="line-numbers language-matlab">&gt;&gt; [f, revertclass] = tofloat(f);</code></pre>
 </li>
-<li>用函数<code>paddedsize</code>来获得填充参数<pre><code class="matlab">&gt;&gt; PQ = paddedsize(size(f));</code></pre>
+<li>用函数<code>paddedsize</code>来获得填充参数<pre><code class="line-numbers language-matlab">&gt;&gt; PQ = paddedsize(size(f));</code></pre>
 </li>
-<li>得到有填充的Fourier变换<pre><code class="matlab">&gt;&gt; F = fft2(f,PQ(1), PQ(2));</code></pre>
+<li>得到有填充的Fourier变换<pre><code class="line-numbers language-matlab">&gt;&gt; F = fft2(f,PQ(1), PQ(2));</code></pre>
 </li>
-<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre><code class="matlab">&gt;&gt; H = lpfilter(&#39;gaussian&#39;,PQ(1),PQ(2),2*sig);</code></pre>
+<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre><code class="line-numbers language-matlab">&gt;&gt; H = lpfilter(&#39;gaussian&#39;,PQ(1),PQ(2),2*sig);</code></pre>
 在使用滤波器之前，要先<code>H = fftshift(H)</code></li>
-<li>用滤波器乘以FFT变换<pre><code class="matlab">&gt;&gt; G = H .* F;</code></pre>
+<li>用滤波器乘以FFT变换<pre><code class="line-numbers language-matlab">&gt;&gt; G = H .* F;</code></pre>
 </li>
-<li>获得G的逆Fourier变换<pre><code class="matlab">&gt;&gt; g = ifft2(G);</code></pre>
+<li>获得G的逆Fourier变换<pre><code class="line-numbers language-matlab">&gt;&gt; g = ifft2(G);</code></pre>
 </li>
-<li>修剪左上部矩形为原始大小<pre><code class="matlab">&gt;&gt; g = g(1:size(f, 1), 1:size(f, 2));</code></pre>
+<li>修剪左上部矩形为原始大小<pre><code class="line-numbers language-matlab">&gt;&gt; g = g(1:size(f, 1), 1:size(f, 2));</code></pre>
 </li>
-<li>把滤波后的图像变换为输入图像的类<pre><code class="matlab">&gt;&gt; g = revertclass(g);</code></pre>
+<li>把滤波后的图像变换为输入图像的类<pre><code class="line-numbers language-matlab">&gt;&gt; g = revertclass(g);</code></pre>
 <h3 id="Matlab实现"><a href="#Matlab实现" class="headerlink" title="Matlab实现"></a>Matlab实现</h3></li>
 </ol>
-<pre><code class="matlab">f = imread(&#39;1.jpg&#39;);
+<pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
 
 f = rgb2gray(f);
 
@@ -624,7 +624,7 @@ title(&#39;已填充的滤波&#39;);</code></pre>
 <ul>
 <li>paddedsize函数</li>
 </ul>
-<pre><code class="matlab">function PQ = paddedsize(AB, CD, PARAM)
+<pre><code class="line-numbers language-matlab">function PQ = paddedsize(AB, CD, PARAM)
 
 if nargin == 1
 
@@ -660,7 +660,7 @@ end</code></pre>
 <ul>
 <li>lpfilter函数</li>
 </ul>
-<pre><code class="matlab">function [ H, D ] = lpfilter( type,M,N,D0,n )
+<pre><code class="line-numbers language-matlab">function [ H, D ] = lpfilter( type,M,N,D0,n )
 
 %LPFILTER creates the transfer function of a lowpass filter.
 
@@ -711,7 +711,7 @@ end</code></pre>
 <ul>
 <li>dftuv函数</li>
 </ul>
-<pre><code class="matlab">function [ U,V ] = dftuv( M, N )
+<pre><code class="line-numbers language-matlab">function [ U,V ] = dftuv( M, N )
 
 %DFTUV 实现频域滤波器的网格函数
 
@@ -1286,7 +1286,7 @@ v(idy) = v(idy) - N;
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

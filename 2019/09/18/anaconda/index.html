@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -470,7 +470,7 @@
             <div id="articleContent">
                 <h2 id="Install-Guide"><a href="#Install-Guide" class="headerlink" title="Install Guide"></a>Install Guide</h2><p>You probably need proxy: <a target="_blank" rel="noopener" href="https://godliuyang.wang/2020/02/04/about-proxy/">About Proxy</a> </p>
 <h3 id="1-Download-Anaconda"><a href="#1-Download-Anaconda" class="headerlink" title="1. Download Anaconda"></a>1. Download <code>Anaconda</code></h3><p>Click here to download <a target="_blank" rel="noopener" href="https://www.anaconda.com/distribution/">Anaconda</a></p>
-<h3 id="2-Install-Anaconda"><a href="#2-Install-Anaconda" class="headerlink" title="2. Install Anaconda"></a>2. Install <code>Anaconda</code></h3><pre><code class="bash">bash ~/Downloads/Anaconda3-2019.07-Linux-x86_64.sh</code></pre>
+<h3 id="2-Install-Anaconda"><a href="#2-Install-Anaconda" class="headerlink" title="2. Install Anaconda"></a>2. Install <code>Anaconda</code></h3><pre><code class="line-numbers language-bash">bash ~/Downloads/Anaconda3-2019.07-Linux-x86_64.sh</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/3.png"></p>
 <p>Press ENTER</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/4.png"></p>
@@ -482,29 +482,29 @@
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/7.png"></p>
 <p>successful installation.</p>
 <p>You can use <code>conda -V</code> to check the version of anaconda.</p>
-<h3 id="3-Bash-user"><a href="#3-Bash-user" class="headerlink" title="3. Bash user"></a>3. Bash user</h3><pre><code class="bash">vim ~/.bashrc</code></pre>
+<h3 id="3-Bash-user"><a href="#3-Bash-user" class="headerlink" title="3. Bash user"></a>3. Bash user</h3><pre><code class="line-numbers language-bash">vim ~/.bashrc</code></pre>
 <p>add the following line to your ~/.bashrc.</p>
-<pre><code class="bash">export PATH=&quot;/home/xupp/anaconda3/bin:$PATH&quot;</code></pre>
+<pre><code class="line-numbers language-bash">export PATH=&quot;/home/xupp/anaconda3/bin:$PATH&quot;</code></pre>
 <p>Reboot your terminal.</p>
 <h3 id="4-Fish-user"><a href="#4-Fish-user" class="headerlink" title="4. Fish user"></a>4. Fish user</h3><p>If your shell is <strong>fish</strong>, you probably need to configure your environment variable.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/8.png"></p>
 <p>I use <code>set</code> command to do this.</p>
-<pre><code class="bash">set -xg</code></pre>
+<pre><code class="line-numbers language-bash">set -xg</code></pre>
 <p>Prints all global, exported variables.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/1.png"></p>
 <p>I find the user name of anaconda path in PATH is wrong.<br>I don’t know why it is, but i know i should correct it.</p>
-<pre><code class="bash">set PATH[1] /home/kevin/anaconda3/bin</code></pre>
+<pre><code class="line-numbers language-bash">set PATH[1] /home/kevin/anaconda3/bin</code></pre>
 <p>it works.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/9.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/10.png"></p>
-<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><h3 id="1-Create-Python-environment"><a href="#1-Create-Python-environment" class="headerlink" title="1. Create Python environment"></a>1. Create Python environment</h3><pre><code class="bash">conda create --name python37 python=3.7</code></pre>
-<h3 id="2-Check-Python-Environment-you-have-created"><a href="#2-Check-Python-Environment-you-have-created" class="headerlink" title="2. Check Python Environment you have created."></a>2. Check Python Environment you have created.</h3><pre><code class="bash">conda info --envs</code></pre>
+<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><h3 id="1-Create-Python-environment"><a href="#1-Create-Python-environment" class="headerlink" title="1. Create Python environment"></a>1. Create Python environment</h3><pre><code class="line-numbers language-bash">conda create --name python37 python=3.7</code></pre>
+<h3 id="2-Check-Python-Environment-you-have-created"><a href="#2-Check-Python-Environment-you-have-created" class="headerlink" title="2. Check Python Environment you have created."></a>2. Check Python Environment you have created.</h3><pre><code class="line-numbers language-bash">conda info --envs</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/11.png"> </p>
 <p>Where * indicates the current Python environment</p>
-<h3 id="3-Modify-Python-environment"><a href="#3-Modify-Python-environment" class="headerlink" title="3. Modify Python environment"></a>3. Modify Python environment</h3><pre><code class="bash">source activate python37</code></pre>
+<h3 id="3-Modify-Python-environment"><a href="#3-Modify-Python-environment" class="headerlink" title="3. Modify Python environment"></a>3. Modify Python environment</h3><pre><code class="line-numbers language-bash">source activate python37</code></pre>
 <p>and modify default Python environment</p>
-<pre><code class="bash">source deactivate</code></pre>
-<h3 id="4-Delate-Python-environment"><a href="#4-Delate-Python-environment" class="headerlink" title="4. Delate Python environment"></a>4. Delate Python environment</h3><pre><code class="bash">conda remove --name python37 --all</code></pre>
+<pre><code class="line-numbers language-bash">source deactivate</code></pre>
+<h3 id="4-Delate-Python-environment"><a href="#4-Delate-Python-environment" class="headerlink" title="4. Delate Python environment"></a>4. Delate Python environment</h3><pre><code class="line-numbers language-bash">conda remove --name python37 --all</code></pre>
 
             </div>
             <hr/>
@@ -1032,7 +1032,7 @@
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

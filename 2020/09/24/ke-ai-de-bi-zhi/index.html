@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -456,7 +456,7 @@
 <p>先来几张图：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/1.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/13.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/29.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/65.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg"> </p>
 <h3 id="1-得到图片"><a href="#1-得到图片" class="headerlink" title="1. 得到图片"></a>1. 得到图片</h3><p>懒癌晚期当然是不能一张一张的下载了，于是就有了下面</p>
-<pre><code class="python">import os
+<pre><code class="line-numbers language-python">import os
 import time
 import random
 import requests
@@ -512,11 +512,11 @@ except:
 <ul>
 <li>首先选中需要修改的部分，接下来执行两条指令:</li>
 </ul>
-<pre><code class="shell">:&#39;&lt;,&gt;&#39;s/.*/mv &amp; aaa.jpg
+<pre><code class="line-numbers language-shell">:&#39;&lt;,&gt;&#39;s/.*/mv &amp; aaa.jpg
 :&#39;&lt;,&gt;&#39;s/aaa/\=line(&quot;.&quot;)-line(&quot;&#39;&lt;&quot;)+1</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/2.gif"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@latest/blog_images/%E5%8F%AF%E7%88%B1%E7%9A%84%E5%A3%81%E7%BA%B8/3.gif"> </p>
 <p>具体命令详解：</p>
-<pre><code class="vim">&#39;&lt;,&#39;&gt;        所选中的区域 (:help &#39;&lt;，:help &#39;&gt; )
+<pre><code class="line-numbers language-vim">&#39;&lt;,&#39;&gt;        所选中的区域 (:help &#39;&lt;，:help &#39;&gt; )
 s            在选中的区域中进行替换 (:help :s )
 .*           匹配当前所有字符
 \=           指明后面是一个表达式 (:help :s\= )
@@ -1055,7 +1055,7 @@ line(&quot;&#39;&lt;&quot;)   所选区域中第一行的行号 (:help line() ) 
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

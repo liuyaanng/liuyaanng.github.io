@@ -27,7 +27,7 @@ Python: 3.">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -479,16 +479,16 @@ Python: 3.">
 </ul>
 <p>Getting started with PyTorch is very easy. The recommended best option is to use the Anaconda Pythob package manager.</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://www.anaconda.com/distribution/">Download and install Anaconda</a>(Go with the latest Python version)<br>You can download the <code>.sh</code> package from the Anaconda website, but it’s very slowly for me. So i find another choice.<br>You can find it in <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">Tsinghua university open source mirror station</a>, which i download is <code>Anaconda3-5.2.0-Linux-x86_64.sh</code>. Or if you already get the “wget”, you can run this command in the terminal.<pre><code class="bash">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
-Use <code>conda -V</code> to check the Version of Anaconda after open a new terminal.<br>If it isn’t work, try,<pre><code class="bash">echo &#39;export PATH=&quot;~/anaconda3/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
+<li><a target="_blank" rel="noopener" href="https://www.anaconda.com/distribution/">Download and install Anaconda</a>(Go with the latest Python version)<br>You can download the <code>.sh</code> package from the Anaconda website, but it’s very slowly for me. So i find another choice.<br>You can find it in <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">Tsinghua university open source mirror station</a>, which i download is <code>Anaconda3-5.2.0-Linux-x86_64.sh</code>. Or if you already get the “wget”, you can run this command in the terminal.<pre><code class="line-numbers language-bash">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
+Use <code>conda -V</code> to check the Version of Anaconda after open a new terminal.<br>If it isn’t work, try,<pre><code class="line-numbers language-bash">echo &#39;export PATH=&quot;~/anaconda3/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
 source ./bashrc</code></pre>
 </li>
 <li>Go to the Getting Started section on the <a target="_blank" rel="noopener" href="https://pytorch.org/">Pytorch website</a>.</li>
 <li>Specify the appropriate configuration options for your particular environment.<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Enjoy-PyTorch-Task1/1.png"></li>
-<li>Run the presented command in the terminal to install Pytorch.<pre><code class="bash">conda install pytorch-cpu torchvision-cpu -c pytorch</code></pre>
+<li>Run the presented command in the terminal to install Pytorch.<pre><code class="line-numbers language-bash">conda install pytorch-cpu torchvision-cpu -c pytorch</code></pre>
 </li>
 </ol>
-<pre><code class="python">import torch
+<pre><code class="line-numbers language-python">import torch
 import torch.nn as nn
 import torchvision
 import torch.utils.data as Data
@@ -1117,7 +1117,7 @@ print(&#39;Accuracy in Test : %.4f%%&#39; % (sum(predict_y == test_y.data.numpy(
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>

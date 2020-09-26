@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         
     </style>
@@ -587,7 +587,7 @@
 <li>选择 链接器-&gt;输入-&gt;附加依赖项,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156f13aac74119.png" alt="12.png"><br>在里面添加 <strong>opencv_world344d.lib</strong>，这个lib文件根据你的OpenCV版本号灵活变动<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156f0828190561.png"></li>
 <li>点击应用，确定即可<br>到这里，OpenCV的所有配置工作已经完成了，要注意的是解决方案那一栏要换成x64(因为我们一直在配置的就是x64)<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/27/5d3c156ee8b6668598.png"><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>这是一段读取并显示本地图片的代码，测试一下你的OpenCV环境是否配置好</li>
 </ol>
-<pre><code class="cpp">#include &lt;iostream&gt;
+<pre><code class="line-numbers language-cpp">#include &lt;iostream&gt;
 #include &lt;opencv2/core/core.hpp&gt;
 #include &lt;opencv2/highgui/highgui.hpp&gt;
 
@@ -614,13 +614,13 @@ int main()
 </li>
 </ol>
 <hr>
-<h1 id="MacOS-安装opencv-python"><a href="#MacOS-安装opencv-python" class="headerlink" title="MacOS 安装opencv-python"></a>MacOS 安装opencv-python</h1><h3 id="1-首先安装xcode"><a href="#1-首先安装xcode" class="headerlink" title="1. 首先安装xcode"></a>1. 首先安装xcode</h3><pre><code class="bash">xcode-select --install </code></pre>
-<h3 id="2-安装opencv-python"><a href="#2-安装opencv-python" class="headerlink" title="2. 安装opencv-python"></a>2. 安装opencv-python</h3><pre><code class="bash">pip install opencv-python</code></pre>
+<h1 id="MacOS-安装opencv-python"><a href="#MacOS-安装opencv-python" class="headerlink" title="MacOS 安装opencv-python"></a>MacOS 安装opencv-python</h1><h3 id="1-首先安装xcode"><a href="#1-首先安装xcode" class="headerlink" title="1. 首先安装xcode"></a>1. 首先安装xcode</h3><pre><code class="line-numbers language-bash">xcode-select --install </code></pre>
+<h3 id="2-安装opencv-python"><a href="#2-安装opencv-python" class="headerlink" title="2. 安装opencv-python"></a>2. 安装opencv-python</h3><pre><code class="line-numbers language-bash">pip install opencv-python</code></pre>
 <p>这默认将安装<code>opencv-python 4.2</code>, 但在 <strong>catalina</strong> 貌似不可用</p>
 <p>所以我选择了安装低版本的opencv-python</p>
-<pre><code class="bash">pip install opencv-python==4.1.2.30</code></pre>
+<pre><code class="line-numbers language-bash">pip install opencv-python==4.1.2.30</code></pre>
 <p>或者选择安装</p>
-<pre><code class="bash">pip install opencv-python-headless</code></pre>
+<pre><code class="line-numbers language-bash">pip install opencv-python-headless</code></pre>
 <p>这个原因未知</p>
 <p>好了，教程到此结束，<br>接下来你就可以放心地去玩耍了，Enjoy Your OpenCV!</p>
 
@@ -1170,7 +1170,7 @@ int main()
         }
     });
 </script>
-<script src="/js/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
