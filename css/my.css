@@ -4,7 +4,7 @@
 /* 	background: #242933; */
 /* } */
 body.night {
-	background: #2f3742 !important;
+	background: #2f3742;
 }
 body.night .aplayer {
 	background: #2f3742 !important;
@@ -21,15 +21,6 @@ body.night .card {
 	background: #242933;
 	color: white;
 }
-.articles_night div {
-	background-color: #242933;
-	color: white;
-}
-.content_night {
-	background: #242933;
-	color: white;
-}
-
 #xm {
 	cursor: pointer;
 	position: fixed;
@@ -44,5 +35,5 @@ body.night .card {
 	transform: translateY(0);
 }
 #xm img {
-	width: 100px;
+	width: 50px;
 }
