@@ -1141,23 +1141,6 @@ $(function () {
     </a>
 </div>
 
-		<div id="xm">
-			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
-		</div>
-		<script>
-			function switchNightMode() {
-				var body = document.body;
-				if (body.classList.contains("night")) {
-					document.body.classList.remove("night");
-					localStorage.setItem("night", "0");
-				} else {
-					document.body.classList.add("night");
-					localStorage.setItem("night", "1");
-				}
-			}
-			var xm = document.getElementById("xm");
-			xm.onclick = switchNightMode;
-		</script>
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/masonry/masonry.pkgd.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.js"></script>
@@ -1218,8 +1201,10 @@ $(function () {
 					console.error(err);
 				});
 		</script>
+
 		<!-- live2d -->
-		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@latest/blog_source/live2d-widget/autoload.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d-widget/autoload.js"></script>
+
 		<!--动态线条背景-->
 		<script
 			type="text/javascript"
@@ -1230,14 +1215,11 @@ $(function () {
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
 
-		<!-- <!&#45;&#45; 黑夜模式 &#45;&#45;> -->
-		<!-- <script src="https://cdn.jsdelivr.net/npm/nightmode&#45;js@1.5.7/lib/darkmode&#45;js.min.js"></script> -->
-		<!-- <script> -->
-		<!-- 	function addnightmodeWidget() { -->
-		<!-- 		new nightmode().showWidget(); -->
-		<!-- 	} -->
-		<!-- 	window.addEventListener("load", addnightmodeWidget); -->
-		<!-- </script> -->
+		<!-- night mode -->
+		<div id="xm">
+			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
+		</div>
+		<script></script>
 		<script>
 			// // 主页置顶展示卡片
 			// var card = document.getElementById("card");
@@ -1270,12 +1252,36 @@ $(function () {
 			// 		element.classList.add(value);
 			// 	}
 			// }
+			var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			alert(cookie);
+			function switchNightMode() {
+				var body = document.body;
+				if (body.classList.contains("night")) {
+					document.body.classList.remove("night");
+					document.cookie = "night=0;path=/";
+				} else {
+					document.body.classList.add("night");
+					document.cookie = "night=1;path=/";
+				}
+			}
+			var xm = document.getElementById("xm");
+			xm.onclick = switchNightMode;
+			// if (localStorage.getItem("night") === "1") {
+			// 	document.body.classList.add("night");
+			// } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+			// 	document.body.classList.add("night");
+			// } else if (matchMedia("(prefers-color-scheme: night)").matches) {
+			// 	document.body.classList.add("night");
+			// }
 			(function () {
 				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
 					if (new Date().getHours() > 22 || new Date().getHours() < 6) {
 						document.body.classList.add("night");
 						document.cookie = "night=1;path=/";
 						console.log("夜间模式开启");
+					} else if (matchMedia("(prefers-color-scheme: night)").matches) {
+						document.body.classList.add("night");
+						document.cookie = "night=1;path=/";
 					} else {
 						document.body.classList.remove("night");
 						document.cookie = "night=0;path=/";
@@ -1293,43 +1299,6 @@ $(function () {
 					}
 				}
 			})();
-			// var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-			//  if (night == '0'){
-			//      document.body.classList.add('night');
-			//      document.cookie = "night=1;path=/";
-			//      console.log('night mode on');
-			//  }else{
-			//      document.body.classList.remove('night');
-			//      document.cookie = "night=0;path=/";
-			//      console.log('night mode off');
-			//  }
-			// if (localStorage.getItem("night") === "1") {
-			// 	document.body.classList.add("night");
-			// 	// add_night_class(card, "content_dark");
-			// // 	add_night_class(articles, "articles_dark");
-			// // 	add_night_class(article_content, "content_dark");
-			// // 	add_night_class(galleries, "content_dark");
-			// // 	add_night_class(tag_cloud, "content_dark");
-			// // 	add_night_class(tag_wordcloud, "content_dark");
-			// // 	add_night_class(category_clouds, "content_dark");
-			// // 	add_night_class(category_radars, "content_dark");
-			// // 	add_night_class(post_calendar, "content_dark");
-			// // 	add_night_class(aboutme, "content_dark");
-			// } else if (new Date().getHours() >= 18 || new Date().getHours() < 12) {
-			// 	document.body.className = "night";
-			// 	// add_night_class(card, "content_dark");
-			// 	// add_night_class(articles, "articles_dark");
-			// 	// add_night_class(article_content, "content_dark");
-			// 	// add_night_class(galleries, "content_dark");
-			// 	// add_night_class(tag_cloud, "content_dark");
-			// 	// add_night_class(tag_wordcloud, "content_dark");
-			// 	// add_night_class(category_clouds, "content_dark");
-			// 	// add_night_class(category_radars, "content_dark");
-			// 	// add_night_class(post_calendar, "content_dark");
-			// // 	// add_night_class(aboutme, "content_dark");
-			// 	// articles.classList.add("articles_night");
-			// } else if (matchMedia("(prefers-color-scheme: night)").matches) {
-			// 	document.body.classList.add("night");
 		</script>
 	<script>
             window.imageLazyLoadSetting = {

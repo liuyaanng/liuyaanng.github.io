@@ -10,7 +10,7 @@ body.night .aplayer {
 	background: #2f3742 !important;
 }
 body.night img {
-	filter: brightness(50%);
+	filter: brightness(60%);
 }
 
 /* .main_night { */
