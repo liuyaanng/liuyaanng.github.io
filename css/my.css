@@ -18,8 +18,15 @@ body.night img {
 /* } */
 
 body.night .card {
-	background: #242933;
-	color: white;
+	--background: #242933;
+	--color: white;
+	--duration: 0.7s;
+	--timing: ease;
+
+	color: var(--color);
+	background-color: var(--background);
+
+	transition: color var(--duration) var(--timing), background var(--duration) var(--timing);
 }
 #xm {
 	cursor: pointer;
@@ -36,4 +43,14 @@ body.night .card {
 }
 #xm img {
 	width: 50px;
+}
+
+body {
+	--duration: 1s;
+	--timing: ease;
+
+	color: var(--color);
+	background-color: var(--background-color);
+
+	transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }

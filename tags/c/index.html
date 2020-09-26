@@ -31,7 +31,7 @@
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
-	<body class="<?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>">
+	<body>
 		<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -315,46 +315,10 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Python/" title="Python: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Python" style="background-color: #F9EBEA;">Python
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Anaconda3/" title="Anaconda3: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Anaconda3" style="background-color: #F5EEF8;">Anaconda3
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Bilibili-com/" title="Bilibili.com: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Bilibili.com" style="background-color: #D5F5E3;">Bilibili.com
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Script/" title="Script: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Script" style="background-color: #E8F8F5;">Script
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Arch/" title="Arch: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Arch" style="background-color: #FEF9E7;">Arch
+                            data-tagname="Arch" style="background-color: #F9EBEA;">Arch
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -363,7 +327,43 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/linux/" title="linux: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="linux" style="background-color: #F8F9F9;">linux
+                            data-tagname="linux" style="background-color: #F5EEF8;">linux
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Python/" title="Python: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Python" style="background-color: #D5F5E3;">Python
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Anaconda3/" title="Anaconda3: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Anaconda3" style="background-color: #E8F8F5;">Anaconda3
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Bilibili-com/" title="Bilibili.com: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Bilibili.com" style="background-color: #FEF9E7;">Bilibili.com
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Script/" title="Script: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Script" style="background-color: #F8F9F9;">Script
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -468,15 +468,6 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/GPU/" title="GPU: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="GPU" style="background-color: #F9E79F;">GPU
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -491,6 +482,15 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                              chip-default "
                             data-tagname="Github" style="background-color: #FEF9E7;">Github
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GPU/" title="GPU: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="GPU" style="background-color: #F9E79F;">GPU
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -1093,8 +1093,10 @@ $(function () {
 			// 		element.classList.add(value);
 			// 	}
 			// }
-			var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-			alert(cookie);
+			// var tip = <?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>;
+			// alert(tip);
+			// var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			// alert(cookie);
 			function switchNightMode() {
 				var body = document.body;
 				if (body.classList.contains("night")) {
