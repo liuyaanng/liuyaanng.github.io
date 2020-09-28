@@ -1,17 +1,19 @@
 #waifu-toggle {
 	/* background-color: #fa0; */
 	/* border-radius: 5px; */
-	/* bottom: 66px; */
+	bottom: 0;
+	left: 0;
 	/* color: #fff; */
-	/* cursor: pointer; */
+	cursor: pointer;
 	/* font-size: 12px; */
 	/* left: 0; */
-	/* margin-left: -100px; */
 	/* padding: 5px 2px 5px 5px; */
-	/* position: fixed; */
+	position: fixed;
 	/* transition: margin-left 1s; */
-	/* width: 60px; */
 	/* writing-mode: vertical-rl; */
+}
+#waifu-toggle img {
+	width: 0;
 }
 
 #waifu-toggle.waifu-toggle-active {
