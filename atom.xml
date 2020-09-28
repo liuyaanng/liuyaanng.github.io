@@ -5,9 +5,9 @@
   <subtitle>kevin&#39;s blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://liuyaanng.github.io/"/>
+  <link href="https://godliuyang.wang/"/>
   <updated>2020-09-28T00:31:11.096Z</updated>
-  <id>https://liuyaanng.github.io/</id>
+  <id>https://godliuyang.wang/</id>
   
   <author>
     <name>留洋</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>可爱的壁纸</title>
-    <link href="https://liuyaanng.github.io/2020/09/24/ke-ai-de-bi-zhi/"/>
-    <id>https://liuyaanng.github.io/2020/09/24/ke-ai-de-bi-zhi/</id>
+    <link href="https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/"/>
+    <id>https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/</id>
     <published>2020-09-24T06:30:41.000Z</published>
     <updated>2020-09-28T00:31:11.096Z</updated>
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>魔改hexo博客</title>
-    <link href="https://liuyaanng.github.io/2020/09/18/mo-gai-hexo-bo-ke/"/>
-    <id>https://liuyaanng.github.io/2020/09/18/mo-gai-hexo-bo-ke/</id>
+    <link href="https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/"/>
+    <id>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</id>
     <published>2020-09-18T13:12:34.000Z</published>
     <updated>2020-09-25T15:49:05.639Z</updated>
     
@@ -61,14 +61,14 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://liuyaanng.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://godliuyang.wang/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Neovim</title>
-    <link href="https://liuyaanng.github.io/2020/09/16/neovim/"/>
-    <id>https://liuyaanng.github.io/2020/09/16/neovim/</id>
+    <link href="https://godliuyang.wang/2020/09/16/neovim/"/>
+    <id>https://godliuyang.wang/2020/09/16/neovim/</id>
     <published>2020-09-16T12:58:44.000Z</published>
     <updated>2020-09-25T23:50:29.118Z</updated>
     
@@ -85,16 +85,16 @@
     </summary>
     
     
-      <category term="vim" scheme="https://liuyaanng.github.io/tags/vim/"/>
+      <category term="vim" scheme="https://godliuyang.wang/tags/vim/"/>
     
-      <category term="neovim" scheme="https://liuyaanng.github.io/tags/neovim/"/>
+      <category term="neovim" scheme="https://godliuyang.wang/tags/neovim/"/>
     
   </entry>
   
   <entry>
     <title>CDN_for_blog</title>
-    <link href="https://liuyaanng.github.io/2020/09/15/cdn-for-blog/"/>
-    <id>https://liuyaanng.github.io/2020/09/15/cdn-for-blog/</id>
+    <link href="https://godliuyang.wang/2020/09/15/cdn-for-blog/"/>
+    <id>https://godliuyang.wang/2020/09/15/cdn-for-blog/</id>
     <published>2020-09-15T09:45:39.000Z</published>
     <updated>2020-09-18T12:32:17.824Z</updated>
     
@@ -110,19 +110,19 @@
     
     </summary>
     
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="hexo" scheme="https://liuyaanng.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://godliuyang.wang/tags/hexo/"/>
     
-      <category term="jsdelivr" scheme="https://liuyaanng.github.io/tags/jsdelivr/"/>
+      <category term="jsdelivr" scheme="https://godliuyang.wang/tags/jsdelivr/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode EASY_9</title>
-    <link href="https://liuyaanng.github.io/2020/08/17/leetcode-easy-9/"/>
-    <id>https://liuyaanng.github.io/2020/08/17/leetcode-easy-9/</id>
+    <link href="https://godliuyang.wang/2020/08/17/leetcode-easy-9/"/>
+    <id>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</id>
     <published>2020-08-17T13:26:14.000Z</published>
     <updated>2020-08-18T07:34:54.241Z</updated>
     
@@ -138,19 +138,19 @@
     
     </summary>
     
-      <category term="算法" scheme="https://liuyaanng.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python3" scheme="https://liuyaanng.github.io/tags/Python3/"/>
+      <category term="Python3" scheme="https://godliuyang.wang/tags/Python3/"/>
     
-      <category term="LeetCode" scheme="https://liuyaanng.github.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>Use Tensorflow in AI Studio</title>
-    <link href="https://liuyaanng.github.io/2020/05/09/use-tensorflow-in-ai-studio/"/>
-    <id>https://liuyaanng.github.io/2020/05/09/use-tensorflow-in-ai-studio/</id>
+    <link href="https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/"/>
+    <id>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</id>
     <published>2020-05-08T16:04:38.000Z</published>
     <updated>2020-05-14T08:03:19.739Z</updated>
     
@@ -167,19 +167,19 @@
     
     </summary>
     
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="GPU" scheme="https://liuyaanng.github.io/tags/GPU/"/>
+      <category term="GPU" scheme="https://godliuyang.wang/tags/GPU/"/>
     
-      <category term="Tensorflow" scheme="https://liuyaanng.github.io/tags/Tensorflow/"/>
+      <category term="Tensorflow" scheme="https://godliuyang.wang/tags/Tensorflow/"/>
     
   </entry>
   
   <entry>
     <title>CLSW</title>
-    <link href="https://liuyaanng.github.io/2020/04/22/clsw/"/>
-    <id>https://liuyaanng.github.io/2020/04/22/clsw/</id>
+    <link href="https://godliuyang.wang/2020/04/22/clsw/"/>
+    <id>https://godliuyang.wang/2020/04/22/clsw/</id>
     <published>2020-04-22T07:32:13.000Z</published>
     <updated>2020-09-23T15:01:07.023Z</updated>
     
@@ -200,8 +200,8 @@
   
   <entry>
     <title>GPU servers</title>
-    <link href="https://liuyaanng.github.io/2020/04/21/gpu-servers/"/>
-    <id>https://liuyaanng.github.io/2020/04/21/gpu-servers/</id>
+    <link href="https://godliuyang.wang/2020/04/21/gpu-servers/"/>
+    <id>https://godliuyang.wang/2020/04/21/gpu-servers/</id>
     <published>2020-04-21T10:01:15.000Z</published>
     <updated>2020-09-16T10:04:16.575Z</updated>
     
@@ -217,19 +217,19 @@
     
     </summary>
     
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Deep Learning" scheme="https://liuyaanng.github.io/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
     
-      <category term="GPU" scheme="https://liuyaanng.github.io/tags/GPU/"/>
+      <category term="GPU" scheme="https://godliuyang.wang/tags/GPU/"/>
     
   </entry>
   
   <entry>
     <title>scikit-image guide</title>
-    <link href="https://liuyaanng.github.io/2020/03/30/scikit-image-guide/"/>
-    <id>https://liuyaanng.github.io/2020/03/30/scikit-image-guide/</id>
+    <link href="https://godliuyang.wang/2020/03/30/scikit-image-guide/"/>
+    <id>https://godliuyang.wang/2020/03/30/scikit-image-guide/</id>
     <published>2020-03-30T15:26:25.000Z</published>
     <updated>2020-03-30T15:40:08.826Z</updated>
     
@@ -246,14 +246,14 @@
     </summary>
     
     
-      <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
+      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Pandas 基础</title>
-    <link href="https://liuyaanng.github.io/2020/03/17/pandas-ji-chu/"/>
-    <id>https://liuyaanng.github.io/2020/03/17/pandas-ji-chu/</id>
+    <link href="https://godliuyang.wang/2020/03/17/pandas-ji-chu/"/>
+    <id>https://godliuyang.wang/2020/03/17/pandas-ji-chu/</id>
     <published>2020-03-17T02:49:18.000Z</published>
     <updated>2020-03-17T07:53:08.870Z</updated>
     
@@ -269,19 +269,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="https://liuyaanng.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://godliuyang.wang/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Python" scheme="https://liuyaanng.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://godliuyang.wang/tags/Python/"/>
     
-      <category term="Pandas" scheme="https://liuyaanng.github.io/tags/Pandas/"/>
+      <category term="Pandas" scheme="https://godliuyang.wang/tags/Pandas/"/>
     
   </entry>
   
   <entry>
     <title>Numpy 基础</title>
-    <link href="https://liuyaanng.github.io/2020/03/14/numpy-ji-chu/"/>
-    <id>https://liuyaanng.github.io/2020/03/14/numpy-ji-chu/</id>
+    <link href="https://godliuyang.wang/2020/03/14/numpy-ji-chu/"/>
+    <id>https://godliuyang.wang/2020/03/14/numpy-ji-chu/</id>
     <published>2020-03-14T09:36:01.000Z</published>
     <updated>2020-03-17T07:53:51.549Z</updated>
     
@@ -297,19 +297,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="https://liuyaanng.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://godliuyang.wang/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Python" scheme="https://liuyaanng.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://godliuyang.wang/tags/Python/"/>
     
-      <category term="Numpy" scheme="https://liuyaanng.github.io/tags/Numpy/"/>
+      <category term="Numpy" scheme="https://godliuyang.wang/tags/Numpy/"/>
     
   </entry>
   
   <entry>
     <title>Playing Atari with Deep Reinforcement Learning</title>
-    <link href="https://liuyaanng.github.io/2020/03/03/playing-atari-with-deep-reinforcement-learning/"/>
-    <id>https://liuyaanng.github.io/2020/03/03/playing-atari-with-deep-reinforcement-learning/</id>
+    <link href="https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/"/>
+    <id>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</id>
     <published>2020-03-03T02:29:11.000Z</published>
     <updated>2020-03-04T00:41:36.614Z</updated>
     
@@ -325,17 +325,17 @@
     
     </summary>
     
-      <category term="Paper Notes" scheme="https://liuyaanng.github.io/categories/Paper-Notes/"/>
+      <category term="Paper Notes" scheme="https://godliuyang.wang/categories/Paper-Notes/"/>
     
     
-      <category term="Deep Reinforcement Learning" scheme="https://liuyaanng.github.io/tags/Deep-Reinforcement-Learning/"/>
+      <category term="Deep Reinforcement Learning" scheme="https://godliuyang.wang/tags/Deep-Reinforcement-Learning/"/>
     
   </entry>
   
   <entry>
     <title>About Proxy</title>
-    <link href="https://liuyaanng.github.io/2020/02/04/about-proxy/"/>
-    <id>https://liuyaanng.github.io/2020/02/04/about-proxy/</id>
+    <link href="https://godliuyang.wang/2020/02/04/about-proxy/"/>
+    <id>https://godliuyang.wang/2020/02/04/about-proxy/</id>
     <published>2020-02-04T07:00:57.000Z</published>
     <updated>2020-09-16T16:01:26.974Z</updated>
     
@@ -356,8 +356,8 @@
   
   <entry>
     <title>Horner&#39;s Method</title>
-    <link href="https://liuyaanng.github.io/2020/02/02/horner-s-method/"/>
-    <id>https://liuyaanng.github.io/2020/02/02/horner-s-method/</id>
+    <link href="https://godliuyang.wang/2020/02/02/horner-s-method/"/>
+    <id>https://godliuyang.wang/2020/02/02/horner-s-method/</id>
     <published>2020-02-02T11:54:55.000Z</published>
     <updated>2020-02-24T10:49:41.358Z</updated>
     
@@ -378,8 +378,8 @@
   
   <entry>
     <title>SORT</title>
-    <link href="https://liuyaanng.github.io/2020/01/29/sort/"/>
-    <id>https://liuyaanng.github.io/2020/01/29/sort/</id>
+    <link href="https://godliuyang.wang/2020/01/29/sort/"/>
+    <id>https://godliuyang.wang/2020/01/29/sort/</id>
     <published>2020-01-29T06:20:02.000Z</published>
     <updated>2020-09-24T14:22:15.874Z</updated>
     
@@ -395,17 +395,17 @@
     
     </summary>
     
-      <category term="Algorithms" scheme="https://liuyaanng.github.io/categories/Algorithms/"/>
+      <category term="Algorithms" scheme="https://godliuyang.wang/categories/Algorithms/"/>
     
     
-      <category term="python" scheme="https://liuyaanng.github.io/tags/python/"/>
+      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>2020</title>
-    <link href="https://liuyaanng.github.io/2020/01/01/2020/"/>
-    <id>https://liuyaanng.github.io/2020/01/01/2020/</id>
+    <link href="https://godliuyang.wang/2020/01/01/2020/"/>
+    <id>https://godliuyang.wang/2020/01/01/2020/</id>
     <published>2020-01-01T02:37:05.000Z</published>
     <updated>2020-02-24T10:49:41.283Z</updated>
     
@@ -427,8 +427,8 @@
   
   <entry>
     <title>Arch Linux</title>
-    <link href="https://liuyaanng.github.io/2019/12/06/arch-linux/"/>
-    <id>https://liuyaanng.github.io/2019/12/06/arch-linux/</id>
+    <link href="https://godliuyang.wang/2019/12/06/arch-linux/"/>
+    <id>https://godliuyang.wang/2019/12/06/arch-linux/</id>
     <published>2019-12-05T17:14:50.000Z</published>
     <updated>2020-09-16T17:14:09.616Z</updated>
     
@@ -445,16 +445,16 @@
     </summary>
     
     
-      <category term="Arch" scheme="https://liuyaanng.github.io/tags/Arch/"/>
+      <category term="Arch" scheme="https://godliuyang.wang/tags/Arch/"/>
     
-      <category term="linux" scheme="https://liuyaanng.github.io/tags/linux/"/>
+      <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Bilibili-Evolved</title>
-    <link href="https://liuyaanng.github.io/2019/09/21/bilibili-evolved/"/>
-    <id>https://liuyaanng.github.io/2019/09/21/bilibili-evolved/</id>
+    <link href="https://godliuyang.wang/2019/09/21/bilibili-evolved/"/>
+    <id>https://godliuyang.wang/2019/09/21/bilibili-evolved/</id>
     <published>2019-09-20T16:40:43.000Z</published>
     <updated>2020-09-16T09:58:51.226Z</updated>
     
@@ -470,19 +470,19 @@
     
     </summary>
     
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Bilibili.com" scheme="https://liuyaanng.github.io/tags/Bilibili-com/"/>
+      <category term="Bilibili.com" scheme="https://godliuyang.wang/tags/Bilibili-com/"/>
     
-      <category term="Script" scheme="https://liuyaanng.github.io/tags/Script/"/>
+      <category term="Script" scheme="https://godliuyang.wang/tags/Script/"/>
     
   </entry>
   
   <entry>
     <title>Git &amp; Github</title>
-    <link href="https://liuyaanng.github.io/2019/09/18/git-github/"/>
-    <id>https://liuyaanng.github.io/2019/09/18/git-github/</id>
+    <link href="https://godliuyang.wang/2019/09/18/git-github/"/>
+    <id>https://godliuyang.wang/2019/09/18/git-github/</id>
     <published>2019-09-18T08:21:29.000Z</published>
     <updated>2020-09-23T08:38:41.519Z</updated>
     
@@ -499,16 +499,16 @@
     </summary>
     
     
-      <category term="Git" scheme="https://liuyaanng.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://godliuyang.wang/tags/Git/"/>
     
-      <category term="Github" scheme="https://liuyaanng.github.io/tags/Github/"/>
+      <category term="Github" scheme="https://godliuyang.wang/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Anaconda</title>
-    <link href="https://liuyaanng.github.io/2019/09/18/anaconda/"/>
-    <id>https://liuyaanng.github.io/2019/09/18/anaconda/</id>
+    <link href="https://godliuyang.wang/2019/09/18/anaconda/"/>
+    <id>https://godliuyang.wang/2019/09/18/anaconda/</id>
     <published>2019-09-18T02:27:45.000Z</published>
     <updated>2020-09-16T09:56:15.953Z</updated>
     
@@ -524,12 +524,12 @@
     
     </summary>
     
-      <category term="教程" scheme="https://liuyaanng.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Python" scheme="https://liuyaanng.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://godliuyang.wang/tags/Python/"/>
     
-      <category term="Anaconda3" scheme="https://liuyaanng.github.io/tags/Anaconda3/"/>
+      <category term="Anaconda3" scheme="https://godliuyang.wang/tags/Anaconda3/"/>
     
   </entry>
   
