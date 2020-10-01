@@ -205,13 +205,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
-    
-    <lastmod>2020-02-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
@@ -220,6 +213,13 @@
   
   <url>
     <loc>https://godliuyang.wang/friends/index.html</loc>
+    
+    <lastmod>2020-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -310,14 +310,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/</loc>
+    <loc>https://godliuyang.wang/2020/02/02/horner-s-method/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2020/02/02/horner-s-method/</loc>
+    <loc>https://godliuyang.wang/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -338,14 +338,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/07/15/digital-image-processing/</loc>
+    <loc>https://godliuyang.wang/2019/07/28/day14/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/07/28/day14/</loc>
+    <loc>https://godliuyang.wang/2019/07/15/digital-image-processing/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -417,6 +417,13 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/tags/%E5%AE%9E%E4%B9%A0/</loc>
+    <lastmod>2020-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
     <lastmod>2020-10-01</lastmod>
     <changefreq>daily</changefreq>
@@ -425,13 +432,6 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Matlab/</loc>
-    <lastmod>2020-10-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/%E5%AE%9E%E4%B9%A0/</loc>
     <lastmod>2020-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
