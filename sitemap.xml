@@ -212,6 +212,13 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/friends/index.html</loc>
+    
+    <lastmod>2020-02-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
@@ -220,13 +227,6 @@
   
   <url>
     <loc>https://godliuyang.wang/categories/index.html</loc>
-    
-    <lastmod>2020-02-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/friends/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -515,13 +515,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Markdown/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Manjaro/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
@@ -536,7 +529,21 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/tags/Markdown/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/plan/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Numpy/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -551,13 +558,6 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/neovim/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Numpy/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
