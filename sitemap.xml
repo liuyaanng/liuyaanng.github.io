@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/09/12/my-vim-config/</loc>
+    <loc>https://godliuyang.wang/2019/07/05/my-plan/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/07/05/my-plan/</loc>
+    <loc>https://godliuyang.wang/2019/09/12/my-vim-config/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -403,20 +403,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/hexo/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/%E5%AE%9E%E4%B9%A0/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
@@ -432,6 +418,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Matlab/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/hexo/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
