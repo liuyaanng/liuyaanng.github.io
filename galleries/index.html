@@ -343,24 +343,6 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
 </div>
 
 <main class="content">
-		<script>
-			var main_card = document.getElementById("card");
-			console.log(main_card);
-			var main_dark_card = main_card.className;
-			console.log("dark:", main_dark_card);
-			main_dark_card += " ";
-			main_dark_card += "main_dark";
-			console.log("dark:11", main_dark_card);
-			if (localStorage.getItem("dark") === "1") {
-				document.body.classList.add("dark");
-			} else if (new Date().getHours() >= 18 || new Date().getHours() < 7) {
-				document.body.classList.add("dark");
-				main_card.className = main_dark_card;
-			} else if (matchMedia("(prefers-color-scheme: dark)").matches) {
-				document.body.classList.add("dark");
-			}
-		</script>
-
     <div id="Galleries" class="container about-container">
         <div class="card" id="galleries">
 
