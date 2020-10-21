@@ -333,8 +333,12 @@
     </div>
 </div>
 <script>
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 // 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/banner/' + getRandomInt(25) + '.jpg)');
 // $('.bg-cover').css('background-image', 'url(https://i.loli.net/2020/10/20/sTglFbBW8yxY4dr.jpg)');
 </script>
 
@@ -737,6 +741,18 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
             
             
             
+            <a href="/tags/hexo/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            </a>
+            
+            
+            
+            <a href="/tags/jsdelivr/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">jsdelivr</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E5%AE%9E%E4%B9%A0/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">实习</span>
             </a>
@@ -748,18 +764,6 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
             </a>
             
             
-            
-            
-            
-            <a href="/tags/hexo/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
-            </a>
-            
-            
-            
-            <a href="/tags/jsdelivr/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">jsdelivr</span>
-            </a>
             
             
             

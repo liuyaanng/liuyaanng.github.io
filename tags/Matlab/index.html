@@ -326,8 +326,12 @@
     </div>
 </div>
 <script>
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 // 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/banner/' + getRandomInt(25) + '.jpg)');
 // $('.bg-cover').css('background-image', 'url(https://i.loli.net/2020/10/20/sTglFbBW8yxY4dr.jpg)');
 </script>
 
@@ -384,37 +388,10 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/%E5%AE%9E%E4%B9%A0/" title="实习: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="实习" style="background-color: #FEF9E7;">实习
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" title="图像处理: 11">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="图像处理" style="background-color: #F8F9F9;">图像处理
-                        <span class="tag-length">11</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Matlab/" title="Matlab: 8">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="Matlab" style="background-color: #82E0AA;">Matlab
-                        <span class="tag-length">8</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/hexo/" title="hexo: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="hexo" style="background-color: #D7BDE2;">hexo
+                            data-tagname="hexo" style="background-color: #FEF9E7;">hexo
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -423,8 +400,35 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/jsdelivr/" title="jsdelivr: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="jsdelivr" style="background-color: #A3E4D7;">jsdelivr
+                            data-tagname="jsdelivr" style="background-color: #F8F9F9;">jsdelivr
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AE%9E%E4%B9%A0/" title="实习: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="实习" style="background-color: #82E0AA;">实习
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" title="图像处理: 11">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="图像处理" style="background-color: #D7BDE2;">图像处理
+                        <span class="tag-length">11</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Matlab/" title="Matlab: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Matlab" style="background-color: #A3E4D7;">Matlab
+                        <span class="tag-length">8</span>
                     </span>
                 </a>
                 
