@@ -219,13 +219,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/07/26/yuan-xing-jian-ce/</loc>
-    
-    <lastmod>2020-02-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/2019/07/22/xing-tai-xue-tu-xiang-chu-li/</loc>
     
     <lastmod>2020-02-24</lastmod>
@@ -233,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/07/17/kong-jian-lu-bo/</loc>
+    <loc>https://godliuyang.wang/2019/07/26/yuan-xing-jian-ce/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -248,6 +241,13 @@
   
   <url>
     <loc>https://godliuyang.wang/2019/07/19/pin-yu-lu-bo/</loc>
+    
+    <lastmod>2020-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/07/17/kong-jian-lu-bo/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -459,13 +459,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/GPU/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Git/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
@@ -474,6 +467,13 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Github/</loc>
+    <lastmod>2020-11-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/GPU/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
