@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends/index.html</loc>
+    <loc>https://godliuyang.wang/tags/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/index.html</loc>
+    <loc>https://godliuyang.wang/friends/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -275,14 +275,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/07/05/my-plan/</loc>
+    <loc>https://godliuyang.wang/2019/09/12/my-vim-config/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/09/12/my-vim-config/</loc>
+    <loc>https://godliuyang.wang/2019/07/05/my-plan/</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -459,13 +459,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/GPU/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Git/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
@@ -474,6 +467,13 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Github/</loc>
+    <lastmod>2020-11-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/GPU/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
