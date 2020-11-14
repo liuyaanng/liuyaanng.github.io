@@ -382,6 +382,20 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/tags/PyTorch/</loc>
+    <lastmod>2020-11-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Deep-Learning/</loc>
+    <lastmod>2020-11-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/Face-Detection/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
@@ -403,14 +417,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/PyTorch/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Deep-Learning/</loc>
+    <loc>https://godliuyang.wang/tags/GPU/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -425,13 +432,6 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Github/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/GPU/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -566,14 +566,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</loc>
+    <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
+    <loc>https://godliuyang.wang/categories/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
