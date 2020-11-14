@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2020-09-28T00:31:11.096Z</updated>
+  <updated>2020-11-14T10:20:25.758Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/"/>
     <id>https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/</id>
     <published>2020-09-24T06:30:41.000Z</published>
-    <updated>2020-09-28T00:31:11.096Z</updated>
+    <updated>2020-11-14T10:20:25.758Z</updated>
     
     <summary type="html">
     
@@ -45,7 +45,7 @@
     <link href="https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/"/>
     <id>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</id>
     <published>2020-09-18T13:12:34.000Z</published>
-    <updated>2020-09-25T15:49:05.639Z</updated>
+    <updated>2020-11-14T10:22:55.073Z</updated>
     
     <summary type="html">
     
@@ -70,7 +70,7 @@
     <link href="https://godliuyang.wang/2020/09/16/neovim/"/>
     <id>https://godliuyang.wang/2020/09/16/neovim/</id>
     <published>2020-09-16T12:58:44.000Z</published>
-    <updated>2020-09-25T23:50:29.118Z</updated>
+    <updated>2020-11-14T10:18:19.869Z</updated>
     
     <summary type="html">
     
@@ -96,7 +96,7 @@
     <link href="https://godliuyang.wang/2020/09/15/cdn-for-blog/"/>
     <id>https://godliuyang.wang/2020/09/15/cdn-for-blog/</id>
     <published>2020-09-15T09:45:39.000Z</published>
-    <updated>2020-09-18T12:32:17.824Z</updated>
+    <updated>2020-11-14T10:09:52.179Z</updated>
     
     <summary type="html">
     
@@ -124,7 +124,7 @@
     <link href="https://godliuyang.wang/2020/08/17/leetcode-easy-9/"/>
     <id>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</id>
     <published>2020-08-17T13:26:14.000Z</published>
-    <updated>2020-08-18T07:34:54.241Z</updated>
+    <updated>2020-11-14T10:16:38.223Z</updated>
     
     <summary type="html">
     
@@ -152,7 +152,7 @@
     <link href="https://godliuyang.wang/2020/04/22/clsw/"/>
     <id>https://godliuyang.wang/2020/04/22/clsw/</id>
     <published>2020-04-22T07:32:13.000Z</published>
-    <updated>2020-09-23T15:01:07.023Z</updated>
+    <updated>2020-11-14T10:10:07.538Z</updated>
     
     <summary type="html">
     
@@ -174,7 +174,7 @@
     <link href="https://godliuyang.wang/2020/04/21/gpu-servers/"/>
     <id>https://godliuyang.wang/2020/04/21/gpu-servers/</id>
     <published>2020-04-21T10:01:15.000Z</published>
-    <updated>2020-10-01T07:23:06.526Z</updated>
+    <updated>2020-11-14T10:15:30.232Z</updated>
     
     <summary type="html">
     
@@ -202,7 +202,7 @@
     <link href="https://godliuyang.wang/2020/03/30/scikit-image-guide/"/>
     <id>https://godliuyang.wang/2020/03/30/scikit-image-guide/</id>
     <published>2020-03-30T15:26:25.000Z</published>
-    <updated>2020-03-30T15:40:08.826Z</updated>
+    <updated>2020-11-14T10:19:32.626Z</updated>
     
     <summary type="html">
     
@@ -226,7 +226,7 @@
     <link href="https://godliuyang.wang/2020/03/17/pandas-ji-chu/"/>
     <id>https://godliuyang.wang/2020/03/17/pandas-ji-chu/</id>
     <published>2020-03-17T02:49:18.000Z</published>
-    <updated>2020-03-17T07:53:08.870Z</updated>
+    <updated>2020-11-14T10:18:49.277Z</updated>
     
     <summary type="html">
     
@@ -254,7 +254,7 @@
     <link href="https://godliuyang.wang/2020/03/14/numpy-ji-chu/"/>
     <id>https://godliuyang.wang/2020/03/14/numpy-ji-chu/</id>
     <published>2020-03-14T09:36:01.000Z</published>
-    <updated>2020-03-17T07:53:51.549Z</updated>
+    <updated>2020-11-14T10:18:28.751Z</updated>
     
     <summary type="html">
     
@@ -278,11 +278,33 @@
   </entry>
   
   <entry>
+    <title>About Proxy</title>
+    <link href="https://godliuyang.wang/2020/02/04/about-proxy/"/>
+    <id>https://godliuyang.wang/2020/02/04/about-proxy/</id>
+    <published>2020-02-04T07:00:57.000Z</published>
+    <updated>2020-11-14T10:08:53.746Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;About-Proxy&quot;&gt;&lt;a href=&quot;#About-Proxy&quot; class=&quot;headerlink&quot; title=&quot;About Proxy&quot;&gt;&lt;/a&gt;About Proxy&lt;/h1&gt;&lt;p&gt;&lt;del&gt;Script: &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Horner&#39;s Method</title>
     <link href="https://godliuyang.wang/2020/02/02/horner-s-method/"/>
     <id>https://godliuyang.wang/2020/02/02/horner-s-method/</id>
     <published>2020-02-02T11:54:55.000Z</published>
-    <updated>2020-02-24T10:49:41.358Z</updated>
+    <updated>2020-11-14T10:16:12.177Z</updated>
     
     <summary type="html">
     
@@ -304,7 +326,7 @@
     <link href="https://godliuyang.wang/2020/01/29/sort/"/>
     <id>https://godliuyang.wang/2020/01/29/sort/</id>
     <published>2020-01-29T06:20:02.000Z</published>
-    <updated>2020-09-24T14:22:15.874Z</updated>
+    <updated>2020-11-14T10:19:42.465Z</updated>
     
     <summary type="html">
     
@@ -330,7 +352,7 @@
     <link href="https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/"/>
     <id>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</id>
     <published>2019-12-05T17:14:50.000Z</published>
-    <updated>2020-10-01T07:17:34.700Z</updated>
+    <updated>2020-11-14T10:09:25.959Z</updated>
     
     <summary type="html">
     
@@ -356,7 +378,7 @@
     <link href="https://godliuyang.wang/2019/09/21/bilibili-evolved/"/>
     <id>https://godliuyang.wang/2019/09/21/bilibili-evolved/</id>
     <published>2019-09-20T16:40:43.000Z</published>
-    <updated>2020-09-16T09:58:51.226Z</updated>
+    <updated>2020-11-14T10:09:35.718Z</updated>
     
     <summary type="html">
     
@@ -384,7 +406,7 @@
     <link href="https://godliuyang.wang/2019/09/18/git-github/"/>
     <id>https://godliuyang.wang/2019/09/18/git-github/</id>
     <published>2019-09-18T08:21:29.000Z</published>
-    <updated>2020-09-23T08:38:41.519Z</updated>
+    <updated>2020-11-14T10:15:17.581Z</updated>
     
     <summary type="html">
     
@@ -410,7 +432,7 @@
     <link href="https://godliuyang.wang/2019/09/18/anaconda/"/>
     <id>https://godliuyang.wang/2019/09/18/anaconda/</id>
     <published>2019-09-18T02:27:45.000Z</published>
-    <updated>2020-09-16T09:56:15.953Z</updated>
+    <updated>2020-11-14T10:09:06.238Z</updated>
     
     <summary type="html">
     
@@ -434,25 +456,11 @@
   </entry>
   
   <entry>
-    <title>My Vim Config</title>
-    <link href="https://godliuyang.wang/2019/09/12/my-vim-config/"/>
-    <id>https://godliuyang.wang/2019/09/12/my-vim-config/</id>
-    <published>2019-09-11T19:05:29.000Z</published>
-    <updated>2020-02-24T10:49:41.378Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Manjaro i3wm 高效率环境配置篇(持续更新)</title>
     <link href="https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/"/>
     <id>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</id>
     <published>2019-08-24T07:45:27.000Z</published>
-    <updated>2020-11-13T14:14:13.467Z</updated>
+    <updated>2020-11-14T10:17:17.652Z</updated>
     
     <summary type="html">
     
@@ -480,7 +488,7 @@
     <link href="https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/"/>
     <id>https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/</id>
     <published>2019-08-10T04:00:00.000Z</published>
-    <updated>2020-09-16T17:14:27.384Z</updated>
+    <updated>2020-11-14T10:15:04.166Z</updated>
     
     <summary type="html">
     
@@ -508,16 +516,30 @@
   </entry>
   
   <entry>
-    <title>How to install OpenCV and OpenCV_contrib in Ubuntu16.04</title>
-    <link href="https://godliuyang.wang/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/"/>
-    <id>https://godliuyang.wang/2019/08/09/how-to-install-opencv-and-opencv-contrib-in-ubuntu16-04/</id>
-    <published>2019-08-09T03:49:11.000Z</published>
-    <updated>2020-02-24T10:49:41.358Z</updated>
+    <title>Enjoy PyTorch</title>
+    <link href="https://godliuyang.wang/2019/08/07/enjoy-pytorch/"/>
+    <id>https://godliuyang.wang/2019/08/07/enjoy-pytorch/</id>
+    <published>2019-08-07T05:11:13.000Z</published>
+    <updated>2020-11-14T10:14:14.863Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
+        
+      
+    
     </summary>
     
+      <category term="PyTorch Notes" scheme="https://godliuyang.wang/categories/PyTorch-Notes/"/>
+    
+    
+      <category term="PyTorch" scheme="https://godliuyang.wang/tags/PyTorch/"/>
+    
+      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
     
   </entry>
   

@@ -6,7 +6,11 @@
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
     <meta name="keywords" content="Enjoy PyTorch, wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="Enjoy PyTorch | Kevin">
+    <meta name="description" content="Installing PyTorch with Anaconda and CondaMy Particular Environment:
+
+OS: Ubuntu 16.04
+Package Manager: conda
+Python: 3.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -322,7 +326,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2019/08/07/qwgZ9yezahmipo2.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/53.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -443,8 +447,8 @@
                                 <span class="chip bg-color">PyTorch</span>
                             </a>
                         
-                            <a href="/tags/Deep-Learing/" target="_blank">
-                                <span class="chip bg-color">Deep Learing</span>
+                            <a href="/tags/Deep-Learning/" target="_blank">
+                                <span class="chip bg-color">Deep Learning</span>
                             </a>
                         
                     </div>
@@ -470,18 +474,23 @@
                     2019-08-07
                 </div>
 
+								<div class="update-data info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-08-07
+								</div>
+
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        0
+                        474
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -497,7 +506,124 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="Installing-PyTorch-with-Anaconda-and-Conda"><a href="#Installing-PyTorch-with-Anaconda-and-Conda" class="headerlink" title="Installing PyTorch with Anaconda and Conda"></a>Installing PyTorch with Anaconda and Conda</h1><p>My Particular Environment:</p>
+<ul>
+<li>OS: Ubuntu 16.04</li>
+<li>Package Manager: conda</li>
+<li>Python: 3.6</li>
+<li>CUDA: None</li>
+</ul>
+<p>Getting started with PyTorch is very easy. The recommended best option is to use the Anaconda Pythob package manager.</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.anaconda.com/distribution/">Download and install Anaconda</a>(Go with the latest Python version)<br>You can download the <code>.sh</code> package from the Anaconda website, but it’s very slowly for me. So i find another choice.<br>You can find it in <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">Tsinghua university open source mirror station</a>, which i download is <code>Anaconda3-5.2.0-Linux-x86_64.sh</code>. Or if you already get the “wget”, you can run this command in the terminal.<pre><code class="line-numbers language-bash">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
+Use <code>conda -V</code> to check the Version of Anaconda after open a new terminal.<br>If it isn’t work, try,<pre><code class="line-numbers language-bash">echo &#39;export PATH=&quot;~/anaconda3/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
+source ./bashrc</code></pre>
+</li>
+<li>Go to the Getting Started section on the <a target="_blank" rel="noopener" href="https://pytorch.org/">Pytorch website</a>.</li>
+<li>Specify the appropriate configuration options for your particular environment.<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Enjoy-PyTorch-Task1/1.png"></li>
+<li>Run the presented command in the terminal to install Pytorch.<pre><code class="line-numbers language-bash">conda install pytorch-cpu torchvision-cpu -c pytorch</code></pre>
+</li>
+</ol>
+<pre><code class="line-numbers language-python">import torch
+import torch.nn as nn
+import torchvision
+import torch.utils.data as Data
+
+# Hyper Parameters
+EPOCH = 1  
+BATCH_SIZE = 50
+LR = 0.001  
+DOWNLOAD_MNIST = True  
+
+# Mnist
+train_data = torchvision.datasets.MNIST(
+    root=&#39;./mnist/&#39;,  
+    train=True,  # this is training data
+    transform=torchvision.transforms.ToTensor(),  # exchange PIL.Image or numpy.ndarray to torch.FloatTensor (C x H x W)
+    download=DOWNLOAD_MNIST,  
+)
+
+test_data = torchvision.datasets.MNIST(
+    root=&#39;./mnist/&#39;,
+    train=False
+)
+
+# BATCH_SIZE
+train_loader = Data.DataLoader(
+    dataset=train_data,
+    batch_size=BATCH_SIZE,
+    shuffle=True  
+)
+
+# test_data
+test_x = torch.unsqueeze(test_data.test_data, dim=1).type(torch.FloatTensor)
+test_y = test_data.test_labels
+
+
+# cnn
+
+class CNN(nn.Module):
+    def __init__(self):
+        super(CNN, self).__init__()
+        self.layer1 = nn.Sequential(
+            # (1, 28, 28)
+            nn.Conv2d(
+                in_channels=1,
+                out_channels=16,
+                kernel_size=5,  
+                stride=1,  
+                padding=2,
+                groups=1
+            ),
+            # (16, 28, 38)
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2)
+            # (16, 14, 14)
+        )
+        self.layer2 = nn.Sequential(
+
+            nn.Conv2d(
+                in_channels=16,
+                out_channels=32,
+                kernel_size=5,
+                stride=1,
+                padding=2
+            ),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2)
+        )
+        self.layer3 = nn.Linear(32 * 7 * 7, 10)
+
+    def forward(self, x):
+        # print(x.shape)
+        x = self.layer1(x)
+        # print(x.shape)
+        x = self.layer2(x)
+        # print(x.shape)
+        x = x.view(x.size(0), -1)
+        # print(x.shape)
+        x = self.layer3(x)
+        # print(x.shape)
+        return x
+
+
+cnn = CNN()
+
+optimizer = torch.optim.Adam(cnn.parameters(), lr=LR)
+loss_function = nn.CrossEntropyLoss()
+for epoch in range(EPOCH):
+    for step, (b_x, b_y) in enumerate(train_loader):
+        output = cnn(b_x)
+        loss = loss_function(output, b_y)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+print(&#39;finished training&#39;)
+test_out = cnn(test_x)
+predict_y = torch.argmax(test_out, 1).data.numpy()
+print(&#39;Accuracy in Test : %.4f%%&#39; % (sum(predict_y == test_y.data.numpy()) * 100/ len(predict_y)))</code></pre>
+
             </div>
             <hr/>
 
@@ -961,31 +1087,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/07/enjoy-pytorch-task1/">
+                <a href="/2019/08/10/face-recognition-with-opencv/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/img.jpg" class="responsive-img" alt="Face Recognition">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/37.jpg" class="responsive-img" alt="Enjoy PyTorch-Task1">
-                        
-                        <span class="card-title">Enjoy PyTorch-Task1</span>
+                        <span class="card-title">Face Recognition</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            My notes of PyTorch
+                            Face Recognition
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/PyTorch-Notes/" class="post-category" target="_blank">
-                                    PyTorch Notes
+                            <a href="/categories/Face-Recognition/" class="post-category" target="_blank">
+                                    Face Recognition
                                 </a>
                             
                             
@@ -995,12 +1120,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PyTorch/" target="_blank">
-                        <span class="chip bg-color">PyTorch</span>
+                    <a href="/tags/OpenCV/" target="_blank">
+                        <span class="chip bg-color">OpenCV</span>
                     </a>
                     
-                    <a href="/tags/Deep-Learning/" target="_blank">
-                        <span class="chip bg-color">Deep Learning</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/Face-Recongnition/" target="_blank">
+                        <span class="chip bg-color">Face Recongnition</span>
                     </a>
                     
                 </div>
@@ -1218,7 +1351,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.4k</span>
+            <span class="white-color">44.2k</span>
             
 
             <br>
@@ -1382,12 +1515,6 @@ $(function () {
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
 		
 
-		<!-- clustrmaps-->
-		<script
-			type="text/javascript"
-			id="clustrmaps"
-			src="//clustrmaps.com/map_v2.js?d=BXtuRChcYD3DbZ8FD3genwpiCSyWfnP65vzHzaH1MqQ&cl=ffffff&w=a"
-		></script>
 		<!-- <!&#45;&#45; Aplayer &#45;&#45;> -->
 		<!-- <div -->
 		<!-- 	class="aplayer" -->
