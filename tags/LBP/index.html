@@ -532,15 +532,6 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/Markdown/" title="Markdown: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Markdown" style="background-color: #F8F9F9;">Markdown
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/vim/" title="vim: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -559,19 +550,19 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/Numpy/" title="Numpy: 1">
+                <a href="/tags/Markdown/" title="Markdown: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Numpy" style="background-color: #F9EBEA;">Numpy
+                            data-tagname="Markdown" style="background-color: #F8F9F9;">Markdown
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Pandas/" title="Pandas: 1">
+                <a href="/tags/Numpy/" title="Numpy: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Pandas" style="background-color: #FEF9E7;">Pandas
+                            data-tagname="Numpy" style="background-color: #F9EBEA;">Numpy
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -582,6 +573,15 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                              chip-default "
                             data-tagname="PCA" style="background-color: #A3E4D7;">PCA
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Pandas/" title="Pandas: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Pandas" style="background-color: #FEF9E7;">Pandas
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -874,7 +874,8 @@ $(function () {
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
 		<script>
-			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+			fetch("https://v1.hitokoto.cn")
 				.then(function (res) {
 					return res.json();
 				})
