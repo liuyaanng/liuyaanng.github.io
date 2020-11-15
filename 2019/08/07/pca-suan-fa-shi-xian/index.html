@@ -528,7 +528,7 @@
 <li>$Y = PX$即为降维到k维后的数据</li>
 </ol>
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>以<br>$$ \begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix} $$<br>为例，我们用PCA方法将这组二维数据其降到一维。</p>
-<p>因为这个矩阵的每行已经是零均值，这里我们直接求协方差矩阵：<br>$$ C=\frac{1}{5}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -2 \\<br>  -1 &amp; 0  \\<br>  0  &amp; 0  \\<br>  2  &amp; 1  \\<br>  0  &amp; 1 \<br>\end{pmatrix}=\begin{pmatrix}<br>  \frac{6}{5} &amp; \frac{4}{5} \\<br>  \frac{4}{5} &amp; \frac{6}{5} \<br>\end{pmatrix}$$<br>然后求其特征值和特征向量，具体求解方法不再详述，可以参考相关资料。求解后特征值为：<br>$$\lambda_1=2,\lambda_2=2/5$$<br>其对应的特征向量分别是：<br>$$c_1\begin{pmatrix}<br>  1 \\<br>  1<br>\end{pmatrix},c_2\begin{pmatrix}<br>  -1 \\<br>  1<br>\end{pmatrix}$$<br>其中对应的特征向量分别是一个通解， $c_1$和 $c_2$ 可取任意实数。那么标准化后的特征向量为：<br>$$\begin{pmatrix}<br>  1/\sqrt{2} \\<br>  1/\sqrt{2}<br>\end{pmatrix},\begin{pmatrix}<br>  -1/\sqrt{2} \\<br>  1/\sqrt{2}<br>\end{pmatrix}$$<br>因此我们的矩阵P是：<br>$$P=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}$$<br>最后我们用P的第一行乘以数据矩阵，就得到了降维后的表示：<br>$$Y=\begin{pmatrix}<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1<br>\end{pmatrix}=\begin{pmatrix}<br>  -3/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0 &amp; 3/\sqrt{2} &amp; -1/\sqrt{2}<br>\end{pmatrix}$$<br>可以验证协方差矩阵C的对角化：<br>$$PCP^\mathsf{T}=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  6/5 &amp; 4/5 \\<br>  4/5 &amp; 6/5<br>\end{pmatrix}\begin{pmatrix}<br>  1/\sqrt{2} &amp; -1/\sqrt{2}  \\<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}=\begin{pmatrix}<br>  2 &amp; 0  \\<br>  0 &amp; 2/5<br>\end{pmatrix}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="02.png"></p>
+<p>因为这个矩阵的每行已经是零均值，这里我们直接求协方差矩阵：<br>$$ C=\frac{1}{5}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -2 \\<br>  -1 &amp; 0  \\<br>  0  &amp; 0  \\<br>  2  &amp; 1  \\<br>  0  &amp; 1 \<br>\end{pmatrix}=\begin{pmatrix}<br>  \frac{6}{5} &amp; \frac{4}{5} \\<br>  \frac{4}{5} &amp; \frac{6}{5} \<br>\end{pmatrix}$$<br>然后求其特征值和特征向量，具体求解方法不再详述，可以参考相关资料。求解后特征值为：<br>$$\lambda_1=2,\lambda_2=2/5$$<br>其对应的特征向量分别是：<br>$$c_1\begin{pmatrix}<br>  1 \\<br>  1<br>\end{pmatrix},c_2\begin{pmatrix}<br>  -1 \\<br>  1<br>\end{pmatrix}$$<br>其中对应的特征向量分别是一个通解， $c_1$和 $c_2$ 可取任意实数。那么标准化后的特征向量为：<br>$$\begin{pmatrix}<br>  1/\sqrt{2} \\<br>  1/\sqrt{2}<br>\end{pmatrix},\begin{pmatrix}<br>  -1/\sqrt{2} \\<br>  1/\sqrt{2}<br>\end{pmatrix}$$<br>因此我们的矩阵P是：<br>$$P=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}$$<br>最后我们用P的第一行乘以数据矩阵，就得到了降维后的表示：<br>$$Y=\begin{pmatrix}<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0 \\<br>  -2 &amp; 0 &amp; 0 &amp; 1 &amp; 1<br>\end{pmatrix}=\begin{pmatrix}<br>  -3/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0 &amp; 3/\sqrt{2} &amp; -1/\sqrt{2}<br>\end{pmatrix}$$<br>可以验证协方差矩阵C的对角化：<br>$$PCP^\mathsf{T}=\begin{pmatrix}<br>  1/\sqrt{2}  &amp; 1/\sqrt{2}  \\<br>  -1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}\begin{pmatrix}<br>  6/5 &amp; 4/5 \\<br>  4/5 &amp; 6/5<br>\end{pmatrix}\begin{pmatrix}<br>  1/\sqrt{2} &amp; -1/\sqrt{2}  \\<br>  1/\sqrt{2} &amp; 1/\sqrt{2}<br>\end{pmatrix}=\begin{pmatrix}<br>  2 &amp; 0  \\<br>  0 &amp; 2/5<br>\end{pmatrix}$$<br><img src="02.png"></p>
 <h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h2><p>因为要对一组图片信息进行训练，所以我写了一部分通过摄像头截取图片帧的代码，<code>get_img()</code>函数。这里提取了5个特征脸和一个均值脸</p>
 <pre><code class="line-numbers language-cpp">#include &lt;opencv2/core/core.hpp&gt;
 #include &lt;opencv2/highgui/highgui.hpp&gt;
@@ -664,7 +664,7 @@ int main(int argc, const char* argv[])&#123;
     return 0;
 
 &#125;</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="01.png"></p>
+<p><img src="01.png"></p>
 
             </div>
             <hr/>
@@ -1433,31 +1433,29 @@ int main(int argc, const char* argv[])&#123;
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1537,9 +1535,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1560,14 +1556,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1579,14 +1574,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1595,8 +1588,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -1682,10 +1677,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>

@@ -510,7 +510,7 @@
             <div id="articleContent">
                 <h1 id="LBP算法"><a href="#LBP算法" class="headerlink" title="LBP算法"></a>LBP算法</h1><p>LBP（Local Binary Patterns，局部二值模式）是一种能够有效地度量和提取图像局部纹理信息的算子，具有旋转不变性和灰度不变性等显著的优点。它是人脸识别中一种提取特征的重要方法，具有对光照不敏感的特性，但是对姿态和表情的鲁棒性不强。</p>
 <h2 id="纹理"><a href="#纹理" class="headerlink" title="纹理"></a>纹理</h2><p>纹理是由于物体表面物理属性不同所引起的能够表示某个特定表面特征的灰度或颜色信息。纹理反映了图像灰度模式的空间分布，包含了图像的表面信息及其周围环境的关系。</p>
-<h2 id="基本的LBP算子"><a href="#基本的LBP算子" class="headerlink" title="基本的LBP算子"></a>基本的LBP算子</h2><p>局部二值模式是一种灰度范围内的纹理描述方式。最初的LBP算子定义在一个3×3的窗口，以窗口中心像素点为阈值，将相邻的像素的灰度值与其进行比较，若周围的像素值大于中心点的值，则将该像素位置标记为1,否则为0.这样一个3×3邻域内的8个点可产生一个8-bit的无符号数，再按其位置赋予不同权重求和得一整数，即可得到该窗口的 <strong>LBP</strong> 值，并用这个数反映该区域的纹理信息。<br>对比度分量C是邻域中所有大于和等于中心点像素的均值与所有小于中心点像素的均值之差。<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d415779ca87257597.jpg"></p>
+<h2 id="基本的LBP算子"><a href="#基本的LBP算子" class="headerlink" title="基本的LBP算子"></a>基本的LBP算子</h2><p>局部二值模式是一种灰度范围内的纹理描述方式。最初的LBP算子定义在一个3×3的窗口，以窗口中心像素点为阈值，将相邻的像素的灰度值与其进行比较，若周围的像素值大于中心点的值，则将该像素位置标记为1,否则为0.这样一个3×3邻域内的8个点可产生一个8-bit的无符号数，再按其位置赋予不同权重求和得一整数，即可得到该窗口的 <strong>LBP</strong> 值，并用这个数反映该区域的纹理信息。<br>对比度分量C是邻域中所有大于和等于中心点像素的均值与所有小于中心点像素的均值之差。<br><img src="https://i.loli.net/2019/07/31/5d415779ca87257597.jpg"></p>
 <p>基本的LBP算子最大的缺陷是只覆盖了一个固定半径范围内的小区域，改进的LBP算子，将3×3邻域扩展到任意邻域，用圆形邻域代替了正方形邻域，该算子允许在半径为R的圆形邻域内有任意多个像素点。</p>
 <ul>
 <li>一个局部区域的纹理分布可假设为局部区域内像素灰度的联合分布密度<br>$$T = t(g_c,g_0, ….,g_{p-1})$$<br>$g_c$表示局部区域的中心点的灰度值,$g_p(p=0,1,…,p)$对应中心点周围等距分布的P个点</li>
@@ -524,14 +524,14 @@
 <p>$$s(x)=\begin{cases}<br>1 , \quad &amp;x &gt; 0  \\<br>0 , &amp;x \geqslant 0<br>\end{cases}<br>$$</p>
 <p>上式得到了一个8位的二进制数，再对像素按不同位置用$2^p$进行加权求和，这样得到了一个与邻域像素点相关的唯一的 <strong>LBP</strong> 值，这个值称为 <strong>模式</strong>。这个值描述的是以$(x_c,y_c)$为中心的局部区域的纹理，可以表示为<br>$$LBP(x_c,y_c) = \sum_{p=0}^{P-1}s(g_p - g_c)2^P$$<br>上式意味着差值的符号转化成一个P-bit的二进制数，进而转化成为一个取值范围为0-$2^p$的离散的LBP值，或者说转化为一种LBP模式。</p>
 <ul>
-<li>局部区域的灰度分布或纹理，可以用这个LBP值或LBP模式近似描述为:<br>$$T\approx t(LBP(x_c,y_c))$$<br>LBP算子对于任何单调的灰度变化具有鲁棒性，用符号$LBP_P^R$表示在半径为R的圆形邻域内有P个像素点$g_p(p=0,1,…,P)$的LBP算子<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d415779b84ac47631.jpg"></li>
+<li>局部区域的灰度分布或纹理，可以用这个LBP值或LBP模式近似描述为:<br>$$T\approx t(LBP(x_c,y_c))$$<br>LBP算子对于任何单调的灰度变化具有鲁棒性，用符号$LBP_P^R$表示在半径为R的圆形邻域内有P个像素点$g_p(p=0,1,…,P)$的LBP算子<br><img src="https://i.loli.net/2019/07/31/5d415779b84ac47631.jpg"></li>
 </ul>
 <h2 id="LBP等价模式"><a href="#LBP等价模式" class="headerlink" title="LBP等价模式"></a>LBP等价模式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>当某个局部二进制模式所对应的循环二进制数从０到１或从１到０最多有两次跳变时，该局部二进制模式所对应的二进制就称为一个等价模式类。比如00000000,11111111,10001111都是等价类。</p>
-<h3 id="检验方法"><a href="#检验方法" class="headerlink" title="检验方法"></a>检验方法</h3><p>检验某种模式是否是等价模式的简单办法是将其和其移动一位后的二进制模式按位相减的绝对值求和<br>$$U(G_p) = |s(g_{p-1}-g_c)-s(g_0-g_c)|+\sum_{p=1}^{P-1}|s(g_p-g_c)-s(g_{p-1}-g_c)$$<br>若某种模式计算得到的 $U(G_p)$小于或等于２，则将其归于等价模式<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d415779c949196019.jpg"></p>
+<h3 id="检验方法"><a href="#检验方法" class="headerlink" title="检验方法"></a>检验方法</h3><p>检验某种模式是否是等价模式的简单办法是将其和其移动一位后的二进制模式按位相减的绝对值求和<br>$$U(G_p) = |s(g_{p-1}-g_c)-s(g_0-g_c)|+\sum_{p=1}^{P-1}|s(g_p-g_c)-s(g_{p-1}-g_c)$$<br>若某种模式计算得到的 $U(G_p)$小于或等于２，则将其归于等价模式<br><img src="https://i.loli.net/2019/07/31/5d415779c949196019.jpg"></p>
 <h2 id="旋转不变的LBP算子"><a href="#旋转不变的LBP算子" class="headerlink" title="旋转不变的LBP算子"></a>旋转不变的LBP算子</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>不断旋转圆形邻域得到一系列的初始定义的LBP值，取其最小值作为该邻域的LBP值，用公式表示为:<br>$$LBP_{P,R}^{ri} = min(ROR(LBP_{P,R}^{ri},i)|i=0,1,…,P-1)$$<br>$LBP^{ri}$表示旋转不变的LBP算子，$ROR(x,i)$函数为旋转函数，表示将x循环右移i(i&lt;P)位。</p>
 <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ul>
 <li>对于图像旋转，表现的更为鲁棒，并且LBP模式的种类进一步减少，使纹理识别更加容易。</li>
-<li>丢失了方向信息<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d415779b8fed91298.jpg"></li>
+<li>丢失了方向信息<br><img src="https://i.loli.net/2019/07/31/5d415779b8fed91298.jpg"></li>
 </ul>
 <h2 id="旋转不变的的等价模式"><a href="#旋转不变的的等价模式" class="headerlink" title="旋转不变的的等价模式"></a>旋转不变的的等价模式</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>将等价模式类进行旋转得到旋转不变的等价模式</p>
 <p>$$LBP_{P,R}^{riu2} = \begin{cases}<br>\sum_{P=0}^{P-1}s(g_p-g_c), &amp; U(G_p) \leq 2 \\<br>P + 1, &amp; U(G_p) &gt;2<br>\end{cases}<br>$$</p>
@@ -592,7 +592,7 @@ Mat get_original_LBP_feature(Mat img)&#123;
   &#125;
   return result;
 &#125;</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/31/5d4161dac5f0b23887.png"></p>
+<p><img src="https://i.loli.net/2019/07/31/5d4161dac5f0b23887.png"></p>
 <h2 id="圆形LBP特征"><a href="#圆形LBP特征" class="headerlink" title="圆形LBP特征"></a>圆形LBP特征</h2><pre><code class="line-numbers language-cpp">//Circular_LBP_feature
 Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
 &#123;
@@ -639,7 +639,7 @@ Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
     &#125;
   return result;
 &#125;</code></pre>
-<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/01/5d42b5d2e345026549.png"></p>
+<p>结果:<br><img src="https://i.loli.net/2019/08/01/5d42b5d2e345026549.png"></p>
 <p>第一幅图设置半径为4,第二幅图设置半径为1,可以看到半径越小处理的越精细。</p>
 <h2 id="旋转不变LBP特征"><a href="#旋转不变LBP特征" class="headerlink" title="旋转不变LBP特征"></a>旋转不变LBP特征</h2><pre><code class="line-numbers language-cpp">//Rotation_Invariant_LBP_feature
 Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
@@ -701,7 +701,7 @@ Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
     return result;
 &#125;
 </code></pre>
-<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/08/01/5d42b5d30749958722.png"></p>
+<p>结果:<br><img src="https://i.loli.net/2019/08/01/5d42b5d30749958722.png"></p>
 <p>第一幅图neighbors值设置为8,第二幅设置为6,可以看出neighbors值越大，得到的LBP特征亮度越高。</p>
 <h2 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h2><pre><code class="line-numbers language-cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
 
@@ -1639,31 +1639,29 @@ int main(int argc, char* argv[])
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1743,9 +1741,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1766,14 +1762,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1785,14 +1780,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1801,8 +1794,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -1888,10 +1883,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>

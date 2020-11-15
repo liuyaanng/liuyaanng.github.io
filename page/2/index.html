@@ -1054,31 +1054,29 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1158,9 +1156,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1181,14 +1177,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1200,14 +1195,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1216,8 +1209,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -1303,10 +1298,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>

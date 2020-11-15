@@ -507,7 +507,7 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的<a target="_blank" rel="noopener" href="https://arcade.academy/index.html">Arcade</a> 库来写的。    </p>
 <p>我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用<strong>OpenGL</strong> 和<strong>Pyglet</strong> 来进行渲染的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
 <p>而服务器大多都以ssh登陆，而OpenGL就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。</p>
 <h2 id="GPU-servers"><a href="#GPU-servers" class="headerlink" title="GPU servers"></a>GPU servers</h2><p>  <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/51707286">知乎:目前哪里可以租用到GPU服务器？</a> </p>
 <hr>
@@ -611,14 +611,14 @@ arcade.run()</code></pre>
 <p>意思是OpenCV版本太低</p>
 </li>
 <li><p>接下来查看服务器端的OpenGL版本，使用<code>glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version.png" alt="opencv_version"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version.png" alt="opencv_version"> </p>
 <p>还是没有图形界面的问题，继续使用<code>xvfb-run -a glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version2.png" alt="opencv_version"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version2.png" alt="opencv_version"> </p>
 <p>显示OpenGL的版本为3.1, 依旧无法满足arcade需要的OpenGL3+。</p>
 </li>
 <li><p>会不会是由于服务端原机器上的低版本OpenGL造成<code>xvfb</code>虚拟后的OpenCV版本较低？</p>
 <p>我在本地的Ubuntu系统上分别运行<code>glxinfo | grep &quot;OpenGL&quot;</code>, 发现原机器版本为4.6，但<code>xvfb</code>虚拟后的版本为3.1，推测为<code>Xvfb</code>虚拟图形界面的原因。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/glxinfo.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/glxinfo.png"></p>
 <p>此问题没有找到解决办法</p>
 </li>
 <li><p>⚠️ 如果你是一个<code>pygame</code>用户，或者你对OpenGL的版本要求不高（3.1），你完全可以使用<code>xvfb-run</code>来进行要求图形化的测试。经测试，pygame在GPU服务器上可以运行。</p>
@@ -1387,31 +1387,29 @@ CPU: I5</code></pre>
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1491,9 +1489,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1514,14 +1510,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1533,14 +1528,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1549,8 +1542,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -1636,10 +1631,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>

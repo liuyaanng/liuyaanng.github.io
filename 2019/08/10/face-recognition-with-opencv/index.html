@@ -642,12 +642,12 @@ int main(int argc, char* argv[])&#123;
   get_face(argv[1]);
   return 0;
 &#125;</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/4.jpg"><br>Note:    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/4.jpg"><br>Note:    </p>
 <ol>
 <li>After the compilation is successful, the execution executable file must provide parameters, which are the directories for storing the face image, and it must be an existing directory.(E.g: ./program_name Img/s41)    </li>
 <li>Press the “P” button to take a photo and save the face. Press the “Esc” button to exit.</li>
 </ol>
-<h3 id="1-2-Face-Database-Creation"><a href="#1-2-Face-Database-Creation" class="headerlink" title="1.2 Face Database Creation"></a>1.2 Face Database Creation</h3><p>The official document provides a download of the face database, and i use the <a target="_blank" rel="noopener" href="http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html">AT&amp;T Facedatabase</a> to create my face database. I have updated this zip file to my github, you can download it from <a href="att_faces.zip">here</a> faster.<br>AT&amp;T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).<br>You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from “s1” to “s40”. Each folder has the same person’s photos with different expressions, and there are 10 face photos.<br>The format of these images is “.pgm”<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/2.png"></p>
+<h3 id="1-2-Face-Database-Creation"><a href="#1-2-Face-Database-Creation" class="headerlink" title="1.2 Face Database Creation"></a>1.2 Face Database Creation</h3><p>The official document provides a download of the face database, and i use the <a target="_blank" rel="noopener" href="http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html">AT&amp;T Facedatabase</a> to create my face database. I have updated this zip file to my github, you can download it from <a href="att_faces.zip">here</a> faster.<br>AT&amp;T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).<br>You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from “s1” to “s40”. Each folder has the same person’s photos with different expressions, and there are 10 face photos.<br>The format of these images is “.pgm”<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/2.png"></p>
 <p>Note:<br>If you want to add your own photos to the face database through the program, the number of added pictures must be no less than 2.</p>
 <h2 id="2-Face-Recognition-Model-training"><a href="#2-Face-Recognition-Model-training" class="headerlink" title="2. Face Recognition Model training"></a>2. Face Recognition Model training</h2><h3 id="2-1-Create-a-label-file-CSV"><a href="#2-1-Create-a-label-file-CSV" class="headerlink" title="2.1 Create a label file CSV"></a>2.1 Create a label file CSV</h3><p>With the face database data, we need to read it in the program, here we need to use csv file to read the image data in the face database.<br>The format of a csv file: image path name + label, such as /Img/s1/image.jpg;1<br>Assume the face image path is: /Img/s1/01..jpg<br>And we give this face image a label “1”, this label represents the person’s name. One person’s face image label must be the same.<br>You can create a csv file manually and then enter the data one by one. But if you use python, you don’t have to do this tedious and boring work.<br>The following is a piece of code which can write data in the CSV file automatically.</p>
 <pre><code class="line-numbers language-python">#!/usr/bin/env python
@@ -697,7 +697,7 @@ if __name__ == &quot;__main__&quot;:
                 fh.write(subdirname[1:])
                 fh.write(&quot;\n&quot;)
     fh.close()</code></pre>
-<p>You should set the image path parameter (absolute path) when running.(E.g: <strong>python filename.py /home/kevin/OpenCV/face_rec/Img</strong> ) and you can get a CSV file like this:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/5.png"><br>This CSV file is created.</p>
+<p>You should set the image path parameter (absolute path) when running.(E.g: <strong>python filename.py /home/kevin/OpenCV/face_rec/Img</strong> ) and you can get a CSV file like this:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/5.png"><br>This CSV file is created.</p>
 <h3 id="2-2-Model-training"><a href="#2-2-Model-training" class="headerlink" title="2.2 Model training"></a>2.2 Model training</h3><p>This is the official example of OpenCV: <a target="_blank" rel="noopener" href="https://docs.opencv.org/3.2.0/da/d60/tutorial_face_main.html">Click here</a><br>They offer three models: Eigenfaces, Fisherfaces and Local Binary Patterns Histograms(LBPH)    </p>
 <p>Then I will train my own face database based on these models on the first step.</p>
 <pre><code class="line-numbers language-cpp">static Mat norm_0_255(InputArray _src)&#123;
@@ -817,7 +817,7 @@ int main(int argc, char* argv[])&#123;
 &#125;</code></pre>
 <p>At this point, we have completed the training of the face model. And we get three files:     </p>
 <p><code>MyFaceFisherModel.xml、MyFaceLBPHModel.xml、MyFacePCAModel.xml</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/6.png"><br>Note:    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/6.png"><br>Note:    </p>
 <ol>
 <li><p>Changes to the API of the OpenCV3.3 Face Recognition Module</p>
 <p>a. Facerec.hpp before opencv3.3</p>
@@ -1062,7 +1062,7 @@ int main()&#123;
   Recognition_And_Draw();
   return 0;
 &#125;</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/7.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/7.jpg"></p>
 <p>Note:    </p>
 <ol>
 <li>This program supports multiple face recognition at the same time</li>
@@ -1832,31 +1832,29 @@ int main()&#123;
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1936,9 +1934,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1959,14 +1955,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1978,14 +1973,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1994,8 +1987,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -2081,10 +2076,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>

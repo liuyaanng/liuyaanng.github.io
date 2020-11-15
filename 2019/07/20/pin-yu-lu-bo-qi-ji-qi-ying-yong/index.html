@@ -504,9 +504,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="频域滤波器"><a href="#频域滤波器" class="headerlink" title="频域滤波器"></a>频域滤波器</h1><h2 id="低通滤波器"><a href="#低通滤波器" class="headerlink" title="低通滤波器"></a>低通滤波器</h2><h3 id="理想低通滤波器"><a href="#理想低通滤波器" class="headerlink" title="理想低通滤波器"></a>理想低通滤波器</h3><p>在以原点为圆心，以$D_0$为半径的圆内无衰减通过所有频率，而在圆外切断所有频率的二维低通滤波器，称为理想低通滤波器(ILPF)，定义为<br>$$y=\begin{cases}<br>1,\quad D(x,y)\leq 0\<br>0, \quad D(x,y) &gt; 0<br>\end{cases}$$<br>$D_0$是一个常数，D(u,v)是频率域中心点(u,v)与频率矩形中心的距离，即<br>$$ D(u,v)=\lbrack{(u-\frac{P}{2})^2+(v-\frac{Q}{2})^2}\rbrack^\frac{1}{2} $$<br>过渡点称为<strong>截止频率</strong><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f0cb755202.jpg"></p>
-<h3 id="布特沃斯低通滤波器"><a href="#布特沃斯低通滤波器" class="headerlink" title="布特沃斯低通滤波器"></a>布特沃斯低通滤波器</h3><p>截止频率位于距原点$D_0$处的n阶布特沃斯低通滤波器(BLPF)的传递函数的定义为:<br>$$H(u,v)=\frac{1}{1+{[D(u,v)/D_0]}^{2n}}$$<br>截止频率点是当D(u,v) = $D_0$时的点<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f101518273.jpg"></p>
-<h3 id="高斯低通滤波器"><a href="#高斯低通滤波器" class="headerlink" title="高斯低通滤波器"></a>高斯低通滤波器</h3><p>二维形式:<br>$$H(u,v) = e^{-D^2(u,v)/2{D_0}^2} $$<br>$D_0$ 是截止频率<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f163e99741.jpg"></p>
+                <h1 id="频域滤波器"><a href="#频域滤波器" class="headerlink" title="频域滤波器"></a>频域滤波器</h1><h2 id="低通滤波器"><a href="#低通滤波器" class="headerlink" title="低通滤波器"></a>低通滤波器</h2><h3 id="理想低通滤波器"><a href="#理想低通滤波器" class="headerlink" title="理想低通滤波器"></a>理想低通滤波器</h3><p>在以原点为圆心，以$D_0$为半径的圆内无衰减通过所有频率，而在圆外切断所有频率的二维低通滤波器，称为理想低通滤波器(ILPF)，定义为<br>$$y=\begin{cases}<br>1,\quad D(x,y)\leq 0\<br>0, \quad D(x,y) &gt; 0<br>\end{cases}$$<br>$D_0$是一个常数，D(u,v)是频率域中心点(u,v)与频率矩形中心的距离，即<br>$$ D(u,v)=\lbrack{(u-\frac{P}{2})^2+(v-\frac{Q}{2})^2}\rbrack^\frac{1}{2} $$<br>过渡点称为<strong>截止频率</strong><br><img src="https://i.loli.net/2019/07/21/5d341bf1f0cb755202.jpg"></p>
+<h3 id="布特沃斯低通滤波器"><a href="#布特沃斯低通滤波器" class="headerlink" title="布特沃斯低通滤波器"></a>布特沃斯低通滤波器</h3><p>截止频率位于距原点$D_0$处的n阶布特沃斯低通滤波器(BLPF)的传递函数的定义为:<br>$$H(u,v)=\frac{1}{1+{[D(u,v)/D_0]}^{2n}}$$<br>截止频率点是当D(u,v) = $D_0$时的点<br><img src="https://i.loli.net/2019/07/21/5d341bf1f101518273.jpg"></p>
+<h3 id="高斯低通滤波器"><a href="#高斯低通滤波器" class="headerlink" title="高斯低通滤波器"></a>高斯低通滤波器</h3><p>二维形式:<br>$$H(u,v) = e^{-D^2(u,v)/2{D_0}^2} $$<br>$D_0$ 是截止频率<br><img src="https://i.loli.net/2019/07/21/5d341bf1f163e99741.jpg"></p>
 <h3 id="使用低通滤波器平滑图像"><a href="#使用低通滤波器平滑图像" class="headerlink" title="使用低通滤波器平滑图像"></a>使用低通滤波器平滑图像</h3><h4 id="1-高斯低通滤波器"><a href="#1-高斯低通滤波器" class="headerlink" title="1. 高斯低通滤波器"></a>1. 高斯低通滤波器</h4><pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
 f = rgb2gray(f);
 [f, revertclass] = tofloat(f);
@@ -521,7 +521,7 @@ g = revertclass(g);
 figure, imshow(fftshift(H));
 figure, imshow(log(1 + abs(fftshift(F))), [])
 figure, imshow(g);</code></pre>
-<p>滤波结果：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/20/5d32d02f5468855048.jpg"></p>
+<p>滤波结果：<br><img src="https://i.loli.net/2019/07/20/5d32d02f5468855048.jpg"></p>
 <p>除了之前说的几个M函数外，还需要用到<code>dftfilt()</code>函数</p>
 <pre><code class="line-numbers language-matlab">function g=dftfilt(f,H)
 %DFTFILT Performs frequency domain filtering.
@@ -617,16 +617,16 @@ subplot(2,3,3), imshow(image3), title(&#39;D0 = 40, n = 2&#39;);
 subplot(2,3,4), imshow(image4), title(&#39;D0 = 80, n = 2&#39;);
 subplot(2,3,5), imshow(image5), title(&#39;D0 = 150, n = 2&#39;);
 subplot(2,3,6), imshow(image6), title(&#39;D0 = 450, n = 2&#39;);</code></pre>
-<p>滤波结果如下:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/20/5d32d02f43bc610556.jpg"><br>分析结果:    </p>
+<p>滤波结果如下:<br><img src="https://i.loli.net/2019/07/20/5d32d02f43bc610556.jpg"><br>分析结果:    </p>
 <ol>
 <li>模糊的平滑过渡是截止频率增大的函数</li>
-<li>滤波后输出三副连续的色图，原因是rgb图像的分三次呈现<br>一副彩图是由三色组成,红绿蓝三色，图像读取到matlab后，有三个参数m × n × 3, 代表的是三色叠加，处理之后的图将三色展开分别呈现了，所以才会出现三副连续的色图<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/20/5d32d80a09a9124012.jpg"></li>
+<li>滤波后输出三副连续的色图，原因是rgb图像的分三次呈现<br>一副彩图是由三色组成,红绿蓝三色，图像读取到matlab后，有三个参数m × n × 3, 代表的是三色叠加，处理之后的图将三色展开分别呈现了，所以才会出现三副连续的色图<br><img src="https://i.loli.net/2019/07/20/5d32d80a09a9124012.jpg"></li>
 </ol>
-<p>换成彩色图可以明显看到<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/20/5d32d80a3073491464.jpg"></p>
+<p>换成彩色图可以明显看到<br><img src="https://i.loli.net/2019/07/20/5d32d80a3073491464.jpg"></p>
 <h2 id="高通滤波器"><a href="#高通滤波器" class="headerlink" title="高通滤波器"></a>高通滤波器</h2><p>图像的锐化可以在频率与通过高通滤波器来实现<br>一个高通滤波器可以由一个低通滤波器来实现:<br>$$H_{HP}(u,v)=1-H_{LP}(u,v)$$<br>被低通滤波器衰减的频率可以通过高通滤波器</p>
-<h3 id="理想高通滤波器"><a href="#理想高通滤波器" class="headerlink" title="理想高通滤波器"></a>理想高通滤波器</h3><p>二维理想高通滤波器可以定义为<br>$$ H(u,v)=\begin{cases}<br>1,\quad D(u,v)\leq D_0\<br>0,\quad D(u,v)&gt;D_0<br>\end{cases}<br>$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1c410443073.jpg"></p>
-<h3 id="布特沃斯高通滤波器"><a href="#布特沃斯高通滤波器" class="headerlink" title="布特沃斯高通滤波器"></a>布特沃斯高通滤波器</h3><p>截止频率为$D_0$的n阶布特沃斯高通滤波器(BHPF)的定义为:<br>$$ H(u,v)=\frac{1}{1+[D_0/D(u,v)]^{2n}}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1c376281237.jpg"></p>
-<h3 id="高斯高通滤波器"><a href="#高斯高通滤波器" class="headerlink" title="高斯高通滤波器"></a>高斯高通滤波器</h3><p>截止频率处在距频率矩形中心距离为$D_0$的高斯高通滤波器(GHPF)的传递函数如下:<br>$$H(u,v)=1-e^{-D^2(u,v)/2D_0^2}$$<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1c3f7954220.jpg"></p>
+<h3 id="理想高通滤波器"><a href="#理想高通滤波器" class="headerlink" title="理想高通滤波器"></a>理想高通滤波器</h3><p>二维理想高通滤波器可以定义为<br>$$ H(u,v)=\begin{cases}<br>1,\quad D(u,v)\leq D_0\<br>0,\quad D(u,v)&gt;D_0<br>\end{cases}<br>$$<br><img src="https://i.loli.net/2019/07/21/5d341bf1c410443073.jpg"></p>
+<h3 id="布特沃斯高通滤波器"><a href="#布特沃斯高通滤波器" class="headerlink" title="布特沃斯高通滤波器"></a>布特沃斯高通滤波器</h3><p>截止频率为$D_0$的n阶布特沃斯高通滤波器(BHPF)的定义为:<br>$$ H(u,v)=\frac{1}{1+[D_0/D(u,v)]^{2n}}$$<br><img src="https://i.loli.net/2019/07/21/5d341bf1c376281237.jpg"></p>
+<h3 id="高斯高通滤波器"><a href="#高斯高通滤波器" class="headerlink" title="高斯高通滤波器"></a>高斯高通滤波器</h3><p>截止频率处在距频率矩形中心距离为$D_0$的高斯高通滤波器(GHPF)的传递函数如下:<br>$$H(u,v)=1-e^{-D^2(u,v)/2D_0^2}$$<br><img src="https://i.loli.net/2019/07/21/5d341bf1c3f7954220.jpg"></p>
 <h3 id="使用高通滤波器锐化图像"><a href="#使用高通滤波器锐化图像" class="headerlink" title="使用高通滤波器锐化图像"></a>使用高通滤波器锐化图像</h3><p>使用高通滤波器来锐化图像，与平滑图像类似，只是将低通滤波器换成了高通滤波器，具体步骤不再赘述</p>
 <pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
 f = rgb2gray(f);
@@ -694,9 +694,9 @@ H = 1 - Hlp;
 %       End of function</code></pre>
 <p>锐化结果:</p>
 <ol>
-<li>IHPF<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341eae3a6b123891.jpg"></li>
-<li>BHPF<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341bf1f13e453488.jpg"></li>
-<li>GHPF<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/21/5d341eae4fa8d96779.jpg"></li>
+<li>IHPF<br><img src="https://i.loli.net/2019/07/21/5d341eae3a6b123891.jpg"></li>
+<li>BHPF<br><img src="https://i.loli.net/2019/07/21/5d341bf1f13e453488.jpg"></li>
+<li>GHPF<br><img src="https://i.loli.net/2019/07/21/5d341eae4fa8d96779.jpg"></li>
 </ol>
 
             </div>
@@ -1464,31 +1464,29 @@ H = 1 - Hlp;
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1568,9 +1566,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1591,14 +1587,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1610,14 +1605,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1626,8 +1619,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -1713,10 +1708,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>

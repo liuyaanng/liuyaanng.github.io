@@ -496,14 +496,14 @@ Installation guide1. Boot the live environmentThe live environment can be booted
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Arch-linux-i3"><a href="#Arch-linux-i3" class="headerlink" title="Arch linux + i3"></a>Arch linux + i3</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/img.jpg" alt="arch+i3"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/main.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/albert.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/music.png"> </p>
+                <h2 id="Arch-linux-i3"><a href="#Arch-linux-i3" class="headerlink" title="Arch linux + i3"></a>Arch linux + i3</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/img.jpg" alt="arch+i3"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/main.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/albert.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/music.png"> </p>
 <h2 id="Installation-guide"><a href="#Installation-guide" class="headerlink" title="Installation guide"></a>Installation guide</h2><h3 id="1-Boot-the-live-environment"><a href="#1-Boot-the-live-environment" class="headerlink" title="1. Boot the live environment"></a>1. Boot the live environment</h3><p>The live environment can be booted from a USB flash device, an optical disc or a network with PXE. </p>
 <h3 id="2-Connect-the-Internet"><a href="#2-Connect-the-Internet" class="headerlink" title="2. Connect the Internet"></a>2. Connect the Internet</h3><pre><code class="line-numbers language-bash">wifi-menu</code></pre>
 <p>Use <code>ping www.archlinux.org</code> to verify the connection.</p>
 <h3 id="3-Update-the-system-clock"><a href="#3-Update-the-system-clock" class="headerlink" title="3. Update the system clock"></a>3. Update the system clock</h3><p>Use <code>tiledatectl</code> to ensure the system colck is accurate</p>
 <pre><code class="line-numbers language-bash">timedatectl set-ntp true</code></pre>
 <p>To check the service status, use <code>timedatectl status</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/1.png" alt="timedate"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/1.png" alt="timedate"> </p>
 <h3 id="4-Partition-the-disks"><a href="#4-Partition-the-disks" class="headerlink" title="4. Partition the disks"></a>4. Partition the disks</h3><p>When recognized by the live system, disks are assigned to a block device such as <code>/dev/sda</code> or <code>/dev/nvme0n1</code> . To identify these devices, use <code>lsblk</code> or <code>fdisk</code> .</p>
 <pre><code class="line-numbers language-bash">fdisk -l</code></pre>
 <p>Use <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Fdisk">fdisk</a> or <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Parted">parted</a> to modify partition tables. </p>
@@ -514,7 +514,7 @@ New disk label type? gpt
 (parted) exit</code></pre>
 <p>Use <code>cfdisk</code> to create partition.    </p>
 <p>It should include <strong>EFI</strong> , <strong>/</strong> (root), <strong>/home</strong> , <strong>/swap</strong> .</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/2.png" alt="Disks"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/2.png" alt="Disks"> </p>
 <h3 id="5-Format-the-partitions"><a href="#5-Format-the-partitions" class="headerlink" title="5. Format the partitions"></a>5. Format the partitions</h3><p>Note the correct partitions</p>
 <ul>
 <li>EFI partition</li>
@@ -548,12 +548,12 @@ mkdir /mnt/boot/EFI
 mount /dev/sda2 /mnt/boot/EFI</code></pre>
 <h3 id="7-Select-the-mirrors"><a href="#7-Select-the-mirrors" class="headerlink" title="7. Select the mirrors"></a>7. Select the mirrors</h3><pre><code class="line-numbers language-bash">vim /etc/pacman.d/mirrorlist</code></pre>
 <p>Paste the China mirrors in the beginning</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/3.png" alt="mirrorlist"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/3.png" alt="mirrorlist"> </p>
 <h3 id="8-Install-essential-packages"><a href="#8-Install-essential-packages" class="headerlink" title="8. Install essential packages"></a>8. Install essential packages</h3><pre><code class="line-numbers language-bash">pacstrap /mnt base linux linux-firmware</code></pre>
 <h3 id="9-Generate-an-fstab-file"><a href="#9-Generate-an-fstab-file" class="headerlink" title="9. Generate an fstab file"></a>9. Generate an <strong>fstab</strong> file</h3><pre><code class="line-numbers language-bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></pre>
 <p>Check the resulting <code>/mnt/etc/fstab</code> file, and edit it in case of errors.</p>
 <pre><code class="line-numbers language-bash">cat /mnt/etc/fstab</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/4.png" alt="fstab"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/4.png" alt="fstab"> </p>
 <h3 id="10-Change-root-into-the-new-system"><a href="#10-Change-root-into-the-new-system" class="headerlink" title="10. Change root into the new system"></a>10. Change root into the new system</h3><pre><code class="line-numbers language-bash">arch-chroot /mnt</code></pre>
 <h3 id="11-Time-zone"><a href="#11-Time-zone" class="headerlink" title="11. Time zone"></a>11. Time zone</h3><pre><code class="line-numbers language-bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc.localtime
 hwclock --systohc</code></pre>
@@ -596,7 +596,7 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
 umount -R /mnt
 reboot</code></pre>
 <p>Use <code>uname -a</code> to view the Version of Arch linux.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/5.png" alt="Arch_linux Version"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/5.png" alt="Arch_linux Version"> </p>
 <h2 id="My-config-recommendations"><a href="#My-config-recommendations" class="headerlink" title="My config recommendations"></a>My config recommendations</h2><h3 id="1-Add-users"><a href="#1-Add-users" class="headerlink" title="1. Add users"></a>1. Add users</h3><pre><code class="line-numbers language-bash">useradd -s -G wheel -s /bin/bash username</code></pre>
 <p>To allow user to gain full root privileges when he precdeds a command with <code>sudo</code> , add the following line to <code>/etc/sudoers</code> .</p>
 <pre><code class="line-numbers language-bash">USER_NAME ALL=(ALL) ALL</code></pre>
@@ -605,7 +605,7 @@ reboot</code></pre>
 <pre><code class="line-numbers language-bash">systemctl enable NetworkManager.service
 systemctl start NetworkManager.service</code></pre>
 <p>Use <code>ip link</code> to view the network interface.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/6.png" alt="Network interface"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/6.png" alt="Network interface"> </p>
 <p><strong>Usage</strong></p>
 <ul>
 <li>List nearby wifi networks</li>
@@ -642,8 +642,8 @@ systemctl start NetworkManager.service</code></pre>
 <li>First, identify your card:</li>
 </ol>
 <pre><code class="line-numbers language-bash">lspci | grep -e VGA -e 3D</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/7.png" alt="card"> </p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/8.png"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/7.png" alt="card"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/8.png"> </p>
 <ol start="2">
 <li>Install an appropriate deiver</li>
 </ol>
@@ -751,7 +751,7 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 <ul>
 <li>VoulmeIcon</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/9.png" alt="VolumeIcon"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/9.png" alt="VolumeIcon"> </p>
 <p>If you want a System volume tray, you can try <strong>volumeicon</strong></p>
 <ol>
 <li><p>Install volumeicon</p>
@@ -802,7 +802,7 @@ Hidden=false</code></pre>
 </li>
 </ol>
 <h3 id="8-Screen-brightness"><a href="#8-Screen-brightness" class="headerlink" title="8. Screen brightness"></a>8. Screen brightness</h3><p>A good advice for backlight management is <code>xorg-xbacklight</code> , but it seems not work on my computer. </p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/12.png" alt="xbacklight -error"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/12.png" alt="xbacklight -error"> </p>
 <p>If you have the same problem, you can try the solution of Wiki, but it still can’t work on my computer. Sad! So i try another way to control the screen brightness.<br>The backlight can be controlled by the file <code>/sys/class/backlight/intel_backlight/brightness</code> ‘s value. So i wrote a script to control it. I named it <code>intel_brightness_control.sh</code></p>
 <pre><code class="line-numbers language-bash">#!/bin/bash
 set -e
@@ -839,7 +839,7 @@ bindsym XF86MonBrightnessDown exec &quot;intel_brightness_control.sh -dec 100&qu
 <ul>
 <li>The generic Bluetooth driver is the <code>btusb</code> Kernel module. Use <code>lsmod</code> to check whether that module is loaded. </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/11.png" alt="btusb module"><br>  If it’s not, do <code>modprobe btusb</code> to load the moudle.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/11.png" alt="btusb module"><br>  If it’s not, do <code>modprobe btusb</code> to load the moudle.</p>
 <ul>
 <li>Start / Enable</li>
 </ul>
@@ -878,7 +878,7 @@ Exec=/usr/local/bin/dunst</code></pre>
 <p>An example configuration file is included at <code>/usr/local/share/dunst/dunstrc</code> . Copy this file to <code>~/.config/dunst/dunstrc</code> and edit it accordingly.</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/liuyaanng/Arch_linux/tree/master/dunst">My Dunstrc</a> </p>
 <p>Use <code>notify-send &quot;Hello, world!&quot; </code> to test.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/10.png" alt="Dunst"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Arch-Linux/10.png" alt="Dunst"> </p>
 <h3 id="11-Shutdown-Reboot-LockScreen"><a href="#11-Shutdown-Reboot-LockScreen" class="headerlink" title="11. Shutdown Reboot LockScreen"></a>11. Shutdown Reboot LockScreen</h3><ul>
 <li>Create a script named <code>i3exit</code> . Make sure you have <code>polkit</code> installed. </li>
 </ul>
@@ -1690,31 +1690,29 @@ bindsym $mod+Pause mode &quot;$mode_system&quot;</code></pre>
 <div class="progress-bar"></div>
 
 <!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
 
 
 <script src="/js/prism/prism.js" async></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
@@ -1794,9 +1792,7 @@ $(function () {
 					  }, 3e3)));
 			});
 		</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
- 
+		
 		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
 		 
 		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
@@ -1817,14 +1813,13 @@ $(function () {
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -1836,14 +1831,12 @@ $(function () {
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
 		
 
 		<!--动态线条背景-->
+		
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -1852,8 +1845,10 @@ $(function () {
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		
 
 		<!-- night mode -->
+		
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
@@ -1939,10 +1934,6 @@ $(function () {
 				}
 			})();
 		</script>
-	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+		
+	</body>
 </html>
