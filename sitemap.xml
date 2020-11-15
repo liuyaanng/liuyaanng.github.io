@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2020/01/29/sort/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
     
     <lastmod>2020-11-15</lastmod>
@@ -65,28 +86,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2020/01/29/sort/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/2020/03/30/scikit-image-guide/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -275,6 +275,13 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/friends.json</loc>
+    
+    <lastmod>2020-02-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
@@ -290,13 +297,6 @@
   
   <url>
     <loc>https://godliuyang.wang/friends/index.html</loc>
-    
-    <lastmod>2020-02-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/friends.json</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -438,20 +438,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Manjaro/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/i3wm/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Python3/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
@@ -460,6 +446,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/LeetCode/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Manjaro/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/i3wm/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
