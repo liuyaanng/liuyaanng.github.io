@@ -6,6 +6,7 @@ toc: true
 mathjax: false
 img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/img.jpg
 date: 2019-09-18 10:27:45
+updatedate: 2019-09-18 10:27:45
 password:
 summary: Install Anaconda3 and use conda to manage python environment
 tags:

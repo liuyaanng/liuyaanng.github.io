@@ -59,6 +59,7 @@
 
 <head>
     <meta charset="utf-8">
+		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
     <meta name="keywords" content="<%= keyWords %>">
     <meta name="description" content="<%= description %>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,13 +79,44 @@
     <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.lightgallery %>">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
     <style type="text/css">
         <% if (!theme.code.break) { %>
-        code[class*="language-"], pre[class*="language-"] {
+        code[class*="line-numbers language-"], pre[class*="line-numbers language-"] {
             white-space: pre !important;
         }
         <% } %>
     </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179139676-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-179139676-1');
+</script>
+
+<!--google ad-->
+<!-- <script data-ad-client="ca-pub-9928999713093426" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<script data-ad-client="ca-pub-4649517024925244" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--End google ad-->
 
     <script src="<%- theme.libs.js.jquery %>"></script>
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setCookieDomain", "*.godliuyang.wang"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://godliuyangwang.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/godliuyangwang.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
 </head>

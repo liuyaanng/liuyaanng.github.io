@@ -5,6 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2019-07-15 09:25:32
+updatedate: 2019-07-15 09:25:32
 password:
 summary: Digital Image Processing Notes.
 img: https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png

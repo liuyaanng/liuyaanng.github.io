@@ -23,7 +23,7 @@
 					  }, 3e3)));
 			});
 		</script>
-		<%- partial('_partial/google-analytics') %> <% if (theme.clicklove.enable) { %>
+		<% if (theme.clicklove && theme.clicklove.enable) { %>
 		<script src="<%- theme.libs.js.clicklove %>"></script>
 		<% } %> <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
 		<script async src="<%- theme.libs.js.busuanzi %>"></script>
@@ -44,14 +44,13 @@
 		<!-- 	data&#45;preload="auto" -->
 		<!-- ></div> -->
 		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 		<!-- 一言API -->
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
 		<script>
-			fetch("https://v1.hitokoto.cn")
+			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
 				.then(function (res) {
 					return res.json();
 				})
@@ -63,11 +62,15 @@
 					console.error(err);
 				});
 		</script>
-
+		<!--End-->
 		<!-- live2d -->
+		<% if (theme.live2d && theme.live2d.enable) { %>
 		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
 		<script src="/live2d-widget/autoload.js"></script>
+		<% } %>
+
 		<!--动态线条背景-->
+		<% if(theme.canvas && theme.canvas.enable) { %>
 		<script
 			type="text/javascript"
 			color="220,220,220"
@@ -76,12 +79,13 @@
 			count="150"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
+		<% } %>
 
 		<!-- night mode -->
+		<% if(theme.darkmode && theme.darkmode.enable) { %>
 		<div id="xm">
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
-		<script></script>
 		<script>
 			// // 主页置顶展示卡片
 			// var card = document.getElementById("card");
@@ -139,7 +143,7 @@
 			// }
 			(function () {
 				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
-					if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+					if (new Date().getHours() > 20 || new Date().getHours() < 6) {
 						document.body.classList.add("night");
 						document.cookie = "night=1;path=/";
 						console.log("夜间模式开启");
@@ -164,5 +168,6 @@
 				}
 			})();
 		</script>
+		<% } %>
 	</body>
 </html>

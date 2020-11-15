@@ -38,6 +38,11 @@
                     <%- date(page.date, 'YYYY-MM-DD') %>
                 </div>
 
+								<div class="update-data info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i><%- __('updateDate') %>:&nbsp;&nbsp;
+                    <%- date(page.updatedate, 'YYYY-MM-DD') %>
+								</div>
+
                 <% if (theme.wordCount.enable) { %>
                     <% if (theme.wordCount.postWordCount) { %>
                     <div class="info-break-policy">
@@ -55,9 +60,11 @@
                 <% } %>
 				
 				<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <div class="info-break-policy">
+												<span id="busuanzi_container_page_pv">
                         <i class="fa fa-eye fa-fw"></i><%- __('readCount') %>:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
+												</span>
                     </div>
 				<% } %>
             </div>

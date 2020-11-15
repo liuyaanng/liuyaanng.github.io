@@ -5,19 +5,28 @@
 # Site
 title: Kevin
 subtitle: kevin's blog
-description: 1
-# description: You Can Do It
-keywords: "Artificial Intelligence OpenCV liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
+# description: 1
+description:
+keywords: "wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
 author: 留洋
-language: zh_CN
-timezone:
+language: zh-CN
+# language: default
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://liuyaanng.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+
+
+# 新增字段
+sitemap: 
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+# 修改字段
+url: https://godliuyang.wang
 
 # Directory
 source_dir: source
@@ -36,22 +45,24 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true #add a folder to save your file
+post_asset_folder: false #add a folder to save your file
 relative_link: false
 future: true
 #highlight
 highlight:
   enable: false
-  line_number: true
+  line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: false
 #highlight
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false    # default false
-  custom_css:
-
+# prism_plugin:
+#   mode: 'preprocess'    # realtime/preprocess
+#   theme: 'tomorrow'
+#   line_number: false    # default false
+#   custom_css:
+#
+marked:
+  langPrefix: line-numbers language-
 #search
 search:
   path: search.xml
@@ -105,39 +116,24 @@ theme: matery
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repository: git@github.com:liuyaanng/liuyaanng.github.io.git
-  branch: master
+  - type: git
+    repository: git@github.com:liuyaanng/liuyaanng.github.io.git
+    branch: master
 
-# live2d
-live2d:
-  enable: false
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  debug: false
-  model:
-    use: Pio
-  display:
-    position: left
-    width: 160
-    height: 320
-  mobile:
-    show: true
-  react:
-    opacity: 0.7
-  dialog:
-    enbale: true
-    hitokoto: true
+  - type: baidu_url_submitter
+
+baidu_url_submit:
+  count: 5
+  host: godliuyang.wang
+  token: p4u0KNJRylmBQHEY
+  path: baidu_urls.txt
 
 
 # LazyLoad
 lazyload:
-  enable: true 
+  enable: false
   onlypost: true # 是否只对文章的图片做懒加载
-  loadingImg: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/loading.gif
+  loadingImg: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading_compress.gif
 
 
 # # Aplayer

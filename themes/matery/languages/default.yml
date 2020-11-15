@@ -6,10 +6,10 @@ tags: Tags
 archives: Archives
 about: About
 friends: Friends
-galleries: Galleries
 startRead: Start
 recommendedPosts: Recommended Posts
 publishDate: Publish Date
+updateDate: Update Date
 readCount: Read Count
 wordCount: Word Count
 readTimes: Read Times
@@ -36,9 +36,13 @@ maximum: Maximum
 minimum: Minimum
 average: Average
 myProjects: My Projects
+clustrMaps: Visitors Map(from 2020.11.14)
 mySkills: My Skills
 otherSkills: Other Skills
 gallery: Gallery
+mc: MC
+wallpaper: WallPaper
+declaration: If there is any infringement, please contact me.
 from: From
 author: Author
 link: Link

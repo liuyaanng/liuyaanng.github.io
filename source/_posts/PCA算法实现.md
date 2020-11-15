@@ -5,6 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2019-08-07 09:48:10
+updatedate: 2019-08-07 09:48:10
 password:
 summary: PCA算法实例及C++实现
 tags:
@@ -98,7 +99,7 @@ $$PCP^\mathsf{T}=\begin{pmatrix}
   2 & 0  \\\\
   0 & 2/5
 \end{pmatrix}$$
-![](02.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/PCA算法实现/02.png)
 
 ## C++实现
 因为要对一组图片信息进行训练，所以我写了一部分通过摄像头截取图片帧的代码，`get_img()`函数。这里提取了5个特征脸和一个均值脸
@@ -239,4 +240,4 @@ int main(int argc, const char* argv[]){
 
 }
 ```
-![](01.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/PCA算法实现/01.png)

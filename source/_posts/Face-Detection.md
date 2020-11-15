@@ -6,6 +6,7 @@ img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-D
 toc: true
 mathjax: false
 date: 2019-08-03 14:15:02
+updatedate: 2019-08-03 14:15:02
 password:
 summary: 基于LBP的人脸检测
 tags:

@@ -1,8 +1,8 @@
 ---
 title: Markdown数学公式汇总
 date: 2019-07-19 15:31:03
+updatedate: 2019-07-19 15:31:03
 toc: ture
-top: true
 tags: 
 - Markdown
 categories: 

@@ -5,6 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2020-02-02 19:54:55
+updatedate: 2020-02-02 19:54:55
 img:
 password:
 summary: Horner's Method

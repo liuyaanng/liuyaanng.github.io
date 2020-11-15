@@ -11,7 +11,7 @@
 
             <div class="description center-align">
                 <% if (config.description && config.description.length > 0) { %>
-                    <p id="hitokoto">正在加载一言...</p>
+										<%= config.description %>
                 <% } else { %>
                     <p id="hitokoto">正在加载一言...</p>
                 <% } %>
@@ -21,7 +21,12 @@
     </div>
 </div>
 <script>
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@latest/blog_source/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/banner/' + getRandomInt(25) + '.jpg)');
+// $('.bg-cover').css('background-image', 'url(https://i.loli.net/2020/10/20/sTglFbBW8yxY4dr.jpg)');
 </script>
 

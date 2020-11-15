@@ -5,6 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2019-08-01 14:05:20
+updatedate: 2019-08-01 14:05:20
 password:
 summary: LBP算法原理、LBP特征实现(c++)
 tags:

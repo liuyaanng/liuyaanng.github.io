@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/ 
+Allow: /about/
+Allow: /friends/
+Allow: /galleries/
+Allow: /2019/
+Allow: /2020/
+Allow: /page/
+Disallow: /she/
+Disallow: /js/
+Disallow: /css/
+Disallow: /medias/
+Disallow: /live2d-widget/
+
+Sitemap: https://godliuyang.wang/sitemap.xml
+Sitemap: https://godliuyang.wang/baidusitemap.xml
+

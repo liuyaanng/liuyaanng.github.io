@@ -1,11 +1,12 @@
 ---
 title: Manjaro i3wm 高效率环境配置篇(持续更新)
-top: false
+top: true
 cover: false
-img: https://i.loli.net/2019/08/24/bx7Ky4DUoWQXzdq.jpg
+img: https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/paper.jpg
 toc: true
 mathjax: false
 date: 2019-08-24 15:45:27
+updatedate: 2020-01-26 15:45:27
 password:
 summary: Manjaro i3wm配置教程
 tags:
@@ -14,7 +15,7 @@ tags:
 categories:
 - 教程
 ---
-![](4.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/4.png)
 Manjaro是一款基于Arch Linux、对用户友好、全球排名第1的Linux发行版     
 使用它是因为 AUR软件仓库有着世界上最齐全的Linux软件，万物皆可 pacman ,arch的wiki绝对是我见过的最详细的linux发行版的"说明书", 在这里基本能解决我所有的问题, 另，作为基于Arch的发行版，每日一 `sudo pacman -Syu`简直不要太爽啊！    
 有时间一定要尝试一下 原生Arch(有生之年系列，趁还折腾的动)
@@ -38,7 +39,7 @@ Manjaro i3属于社区版本
 
 按照软件的操作步骤制作启动盘    
 注：若遇到启动盘系统安装的过程中遇到启动盘不可用则使用 **Rufus** 使用DD镜像模式制作
-![](1.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/1.png)
 
 ### 1.3 系统安装
 安装过程很简单，参考下面这篇博客
@@ -138,8 +139,8 @@ export XMODIFIERS="@im=fcitx"
 sudo pacman -S fcitx-googlepinyin
 ```
 之后在终端运行 `$ fcitx` 在图形化界面的配置文件中配置输入法即可，配置快捷键
-![](2.png)
-![](3.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/2.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/3.png)
 
 若中文输入法开机无法自启动，则执行如下操作
 
@@ -178,7 +179,7 @@ sudo pacman -S fish
 cat /etc/shells
 ```
 
-![](12.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/12.png)
 - 修改默认shell
 
 看一下上一步输出的`fish`的位置，然后执行
@@ -186,12 +187,12 @@ cat /etc/shells
 ```bash
 chsh -s usr/bin/fish
 ```
-![](13.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/13.png)
 之后重启终端,shell就默认为fish了
-![](14.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/14.png)
 
 配置文件的位置是`/home/kevin/.config/fish/functions/fish_prompt.fish`，可以在这里设置替换命令，提高效率，举个例子:
-![](18.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/18.png)
 
 - oh-my-fish是一个 Fishshell 框架，允许你安装扩展或更改你的 shell 外观的软件包。它简单易用，快速可扩展。使用 omf，你可以根据你的想法，很容易地安装主题，丰富你的外观和安装插件来调整你的 Fish shell。    
 - 安装omf
@@ -208,7 +209,7 @@ omf list
 
 这条命令会列出一安装的主题和插件
 
-![](15.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/15.png)
 - 列出已安装主题
 
 ```bash
@@ -255,7 +256,7 @@ sudo pacman -S chromium
 ```bash
 sudo pacman -S nitrogen
 ```
-![](5.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/5.png)
 
 #### 3.1.5 neofetch
 
@@ -264,10 +265,10 @@ neofetch是一个个性化显示Linux系统信息的工具
 ```bash
 sudo pacman -S neofetch
 ```
-![](19.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/19.png)
 #### 3.1.6 vim 
 
-![](6.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/6.png)
 
 文本/代码编辑中最最最为优秀经典的上古神器,之后我会写一个调教Vim的教程
 
@@ -277,7 +278,7 @@ sudo pacman -S vim
 
 #### 3.1.7 albert
 
-![](7.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/7.png)
 一款软件/文件/搜索 启动器
 
 ```bash
@@ -285,8 +286,8 @@ sudo pacman -S albert
 ```
 第一次运行会提示你设置一下
 
-![](8.png)
-![](9.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/8.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/9.png)
 
 #### 3.1.8 iease-music
 
@@ -295,7 +296,7 @@ sudo pacman -S albert
 ```bash
 sudo pacman -S iease-music
 ```
-![](10.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/10.png)
 
 #### 3.1.9 deepin-screenshot
 
@@ -319,13 +320,13 @@ sudo pacman -S shadowsocks-qt5
 ```bash
 sudo pacman -S thefuck
 ```
-![](11.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/11.png)
 
 #### 3.1.12 compton
 
 设置窗口半透明+毛玻璃效果
 
-![](16.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/16.png)
 
 Manjaro i3 自带的有compton，不过这个只能做到半透明而没有毛玻璃效果，我使用的是[Compton](https://github.com/tryone144/compton),下面详细介绍一下安装过程
 
@@ -352,7 +353,7 @@ git clone git@github.com:liuyaanng/compton.git
 安装前要确保下列依赖已经安装。    
 其实大部分都已经安装,只有个别没有，若下面安装不成功，则按提示把依赖装上即可，有问题也可以在issues上查看
 
-![](17.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/17.png)
 
 ```bash
 cd compton
@@ -378,7 +379,7 @@ sudo pacman -S deepin-file-manager
 ```
 在配置文件里
 
-![](20.png)
+![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/20.png)
 
 
 ### 3.2 i3的配置

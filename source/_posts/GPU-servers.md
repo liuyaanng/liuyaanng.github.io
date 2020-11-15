@@ -5,7 +5,7 @@ cover: false
 toc: true
 mathjax: False
 date: 2020-04-21 18:01:15
-password: 9c9f1c821316b17111901cc76c1fe43604de1235f4f4cfafa4eb98355477465e
+updatedate: 2020-04-21 18:01:15
 img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/img.jpg
 summary: 记录一下我在使用GPU服务器做深度强化学习训练的过程
 tags:

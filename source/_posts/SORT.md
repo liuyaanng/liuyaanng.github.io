@@ -5,6 +5,7 @@ cover: false
 toc: true
 mathjax: true
 date: 2020-01-29 14:20:02
+updatedate: 2020-01-29 14:20:02
 password:
 summary: Sort algorithms with python
 tags:
@@ -27,7 +28,7 @@ for i = 1 to A.length - 1
 
 ```
 
-![BUBBLE_SORT](BUBBLE_SORT.gif) 
+![BUBBLE_SORT](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/SORT/BUBBLE_SORT.gif) 
 
 $$ \Theta (n^2) $$
 
@@ -47,7 +48,7 @@ for j = 2 to A.length
   A[i+1] = key
 ```
 
-![INSERTION_SORT](INSERTION_SORT.gif) 
+![INSERTION_SORT](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/SORT/INSERTION_SORT.gif) 
 
 $$ \Theta (n^2) $$
 
@@ -65,7 +66,7 @@ for i = 1 to range(i,A.length)
   swap(A[i],A[min_index])
 ```
 
-![SELECT_SORT](SELECT_SORT.gif) 
+![SELECT_SORT](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/SORT/SELECT_SORT.gif) 
 
 $$ \Theta (n^2) $$
 
@@ -109,6 +110,6 @@ for k = p to r
     j = j + 1
 ```
 
-![MERGE_SORT](MERGE_SORT.gif) 
+![MERGE_SORT](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/SORT/MERGE_SORT.gif) 
 
 $$ \Theta (n) $$

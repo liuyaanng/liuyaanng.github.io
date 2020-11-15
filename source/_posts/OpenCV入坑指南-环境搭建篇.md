@@ -1,6 +1,7 @@
 ---
 title: 'OpenCV入坑指南:环境搭建篇'
 date: 2019-07-25 21:12:11
+updatedate: 2019-07-25 21:12:11
 tags: OpenCV
 cover: false
 top: true

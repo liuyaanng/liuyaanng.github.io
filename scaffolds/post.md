@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+updatedate: {{ date }}
 top: false
 img: 
 cover: false

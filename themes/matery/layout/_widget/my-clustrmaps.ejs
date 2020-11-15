@@ -1,0 +1,17 @@
+<%
+	var widget = theme.clustrMaps.widget
+%>
+
+<div class="my-clustrmaps">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fa fa-map-marker"></i>&nbsp;&nbsp;<%- __('clustrMaps') %>
+    </div>
+    <div class="row">
+		<% if(widget == 'map') { %>
+			<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=BXtuRChcYD3DbZ8FD3genwpiCSyWfnP65vzHzaH1MqQ'></script>
+		<% } %>
+		<% if(widget == 'globe') { %>
+		<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=BXtuRChcYD3DbZ8FD3genwpiCSyWfnP65vzHzaH1MqQ"></script>
+		<% } %>
+    </div>
+</div>

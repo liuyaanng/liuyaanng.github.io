@@ -5,6 +5,7 @@ cover: false
 toc: true
 mathjax: false
 date: 2020-04-22 15:32:13
+updatedate: 2020-04-22 15:32:13
 img: https://i.loli.net/2020/04/22/eyqgx4QanMLjrH1.jpg
 password:
 summary: Command Line SofeWare(Ranger, Vim, Fish)

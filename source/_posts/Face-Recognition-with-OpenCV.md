@@ -6,6 +6,7 @@ img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-R
 toc: true
 mathjax: false
 date: 2019-08-10 12:00:00
+updatedate: 2019-08-10 12:00:00
 password:
 summary: Face Recognition
 tags: 

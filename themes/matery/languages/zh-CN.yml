@@ -5,11 +5,11 @@ tag: 标签
 tags: 标签
 archives: 归档
 about: 关于
-friends: 友情链接
-galleries: 相册
+friends: 友链
 startRead: 开始阅读
 recommendedPosts: 推荐文章
 publishDate: 发布日期
+updateDate: 更新日期
 readCount: 阅读次数
 wordCount: 文章字数
 readTimes: 阅读时长
@@ -36,9 +36,13 @@ maximum: 最大值
 minimum: 最小值
 average: 平均值
 myProjects: 我的项目
+clustrMaps: 访客地图(自2020.11.14起)
 mySkills: 我的技能
 otherSkills: 其他技能
 gallery: 相册
+mc: mc酱
+wallpaper: 壁纸
+declaration: 如有侵权 联系删除
 from: 来源
 author: 作者
 link: 链接
