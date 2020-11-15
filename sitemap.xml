@@ -289,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/friends/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -340,20 +340,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/hexo/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
@@ -362,6 +348,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Script/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/hexo/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,20 +396,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Git/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Github/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Face-Detection/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
@@ -438,6 +424,34 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/tags/Git/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Github/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Python3/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/LeetCode/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/Manjaro/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
@@ -459,27 +473,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Python3/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/LeetCode/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Numpy/</loc>
-    <lastmod>2020-11-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/vim/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
@@ -494,7 +487,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Pandas/</loc>
+    <loc>https://godliuyang.wang/tags/Numpy/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -508,7 +501,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/%E5%AE%9E%E4%B9%A0/</loc>
+    <loc>https://godliuyang.wang/tags/Pandas/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -522,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Face-Recongnition/</loc>
+    <loc>https://godliuyang.wang/tags/%E5%AE%9E%E4%B9%A0/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -537,6 +530,13 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/linux/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Face-Recongnition/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
