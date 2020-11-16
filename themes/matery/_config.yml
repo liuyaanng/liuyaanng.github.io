@@ -135,9 +135,7 @@ toc:
   showToggleBtn: true # 是否显示切换TOC目录展开收缩的按钮
 
 # Whether the code is broken.
-# 代码是否折行
-code:
-  break: true
+
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
@@ -163,7 +161,7 @@ mathjax:
   enable: true
   cdn: https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-# Post word count, reading duration, site total word count.
+# 
 # Before you activate, please confirm that you have installed the hexo-wordcount plugin,
 # install the plugin command: `npm i --save hexo-wordcount`.
 # 文章字数统计、阅读时长、总字数统计
@@ -493,6 +491,7 @@ googleAnalytics:
 # 使用到的前端库，可按需替换成对应的Blog_source地址，如果下面未指定具体的版本号，使用最新的版本即可.
 libs:
   css:
+    matery: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.7/blog_source/css/matery.css
     fontAwesome: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css # V4.7.0
     materialize: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.css # 1.0.0
     aos: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.css
@@ -667,3 +666,4 @@ background:
 tuxiaochao:
   enable: true
   productId: 293542
+

@@ -77,16 +77,11 @@
     <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.aos %>">
     <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.animate %>">
     <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.lightgallery %>">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.matery %>">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 		<link rel="stylesheet" href="/js/prism/prism.css">
-    <style type="text/css">
-        <% if (!theme.code.break) { %>
-        code[class*="line-numbers language-"], pre[class*="line-numbers language-"] {
-            white-space: pre !important;
-        }
-        <% } %>
-    </style>
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179139676-2"></script>
 <script>
@@ -102,21 +97,5 @@
 <!--End google ad-->
 
     <script src="<%- theme.libs.js.jquery %>"></script>
-<!-- Matomo -->
-<script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setCookieDomain", "*.godliuyang.wang"]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://godliuyangwang.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/godliuyangwang.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
 
 </head>
