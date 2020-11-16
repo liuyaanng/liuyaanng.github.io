@@ -289,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/friends/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -396,6 +396,13 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/tags/GPU/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/Face-Detection/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
@@ -411,13 +418,6 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/c/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/GPU/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
