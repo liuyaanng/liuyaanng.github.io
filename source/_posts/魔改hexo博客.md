@@ -42,3 +42,5 @@ categories:
 
 #### 2020.11.15
 - 删除冗余脚本,模块化插件
+- 使用[valine-admin](https://deserts.io/valine-admin-document/)实现评论邮件提醒
+- 修复黑夜模式bug,现已完美运行

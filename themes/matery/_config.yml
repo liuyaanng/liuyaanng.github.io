@@ -449,10 +449,11 @@ valine:
   appKey: kLSDOxY3iclKHGiVHrAzoNoR
   notify: false
   verify: false
-  visitor: false
-  avatar: '' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  visitor: true
+  avatar: 'mp' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
-  placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' # Comment Box placeholder
+  enableQQ: true
+  placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!' # Comment Box placeholder
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
@@ -657,4 +658,12 @@ canvas:
 darkmode:
   enable: true
 
+# 网站背景图
+background:
+  enable: false
+  url: "https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/featureimages/14.jpg"
 
+# 腾讯兔小巢，见https://txc.qq.com/
+tuxiaochao:
+  enable: true
+  productId: 293542

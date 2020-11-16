@@ -131,12 +131,13 @@ baidu_url_submit:
 
 # LazyLoad
 lazyload:
-  enable: false
+  enable: true
   onlypost: true # 是否只对文章的图片做懒加载
-  loadingImg: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading_compress.gif
+  loadingImg: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif
 
 
 # # Aplayer
 # aplayer:
 #   meting: true # MetingJS 支持
 #   asset_inject: false # 自动插入Aplayer.js与Meting.js资源脚本（默认开启）
+#   oo

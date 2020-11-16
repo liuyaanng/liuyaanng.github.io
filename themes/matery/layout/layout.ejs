@@ -2,6 +2,8 @@
 <html lang="<%= config.language %>">
 	<%- partial('_partial/head') %>
 
+	<!-- background -->
+	<% if (theme.background.enable) { %> <%- partial('_partial/background') %> <% } %>
 	<body>
 		<%- partial('_partial/header') %> <%- body %> <%- partial('_partial/footer') %> <%-
 		partial('_partial/search') %> <%- partial('_partial/back-top') %>
@@ -23,9 +25,14 @@
 					  }, 3e3)));
 			});
 		</script>
+
+		<!-- clicklove -->
 		<% if (theme.clicklove && theme.clicklove.enable) { %>
 		<script src="<%- theme.libs.js.clicklove %>"></script>
-		<% } %> <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+		<% } %>
+
+		<!-- busuanzi -->
+		<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
 		<script async src="<%- theme.libs.js.busuanzi %>"></script>
 		<% } %>
 
@@ -50,7 +57,8 @@
 		<!-- 现代写法，推荐 -->
 		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
 		<script>
-			fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+			fetch("https://v1.hitokoto.cn")
 				.then(function (res) {
 					return res.json();
 				})
@@ -63,11 +71,23 @@
 				});
 		</script>
 		<!--End-->
+
 		<!-- live2d -->
 		<% if (theme.live2d && theme.live2d.enable) { %>
 		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
 		<script src="/live2d-widget/autoload.js"></script>
 		<% } %>
+
+		<!-- 腾讯兔小巢 -->
+		<% if (theme.tuxiaochao.enable) { %>
+		<div style="position: fixed; bottom: 50%; left: -10px; cursor: pointer">
+			<a title="兔小巢" href="https://support.qq.com/products/<%- theme.tuxiaochao.productId %>"
+				><img
+					src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_source/tuxiaochao.png"
+					style="width: 70px; height: 70px"
+			/></a>
+		</div>
+		<%}%>
 
 		<!--动态线条背景-->
 		<% if(theme.canvas && theme.canvas.enable) { %>
@@ -87,41 +107,6 @@
 			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
 		</div>
 		<script>
-			// // 主页置顶展示卡片
-			// var card = document.getElementById("card");
-			// //主页文章卡片
-			// var articles = document.getElementById("articles");
-			// //文章详细内容
-			// var article_content = document.getElementById("article-content");
-			// // 壁纸
-			// var galleries = document.getElementById("galleries");
-			// // 标签云
-			// var tag_cloud = document.getElementById("tag-cloud");
-			// //标签词云
-			// var tag_wordcloud = document.getElementById("tag-wordcloud");
-			// //分类云
-			// var category_clouds = document.getElementById("category-clouds");
-			// //分类图
-			// var category_radars = document.getElementById("category-radars");
-			// //活动日历
-			// var post_calendar = document.getElementById("post-calendar");
-			// //关于
-			// var aboutme = document.getElementById("aboutme-content");
-			// console.log(card);
-			// console.log(articles);
-			// console.log(main_content);
-			//
-			// function add_night_class(element, value) {
-			// 	if (!element) {
-			// 		return;
-			// 	} else {
-			// 		element.classList.add(value);
-			// 	}
-			// }
-			// var tip = <?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>;
-			// alert(tip);
-			// var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-			// alert(cookie);
 			function switchNightMode() {
 				var body = document.body;
 				if (body.classList.contains("night")) {
@@ -134,13 +119,6 @@
 			}
 			var xm = document.getElementById("xm");
 			xm.onclick = switchNightMode;
-			// if (localStorage.getItem("night") === "1") {
-			// 	document.body.classList.add("night");
-			// } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
-			// 	document.body.classList.add("night");
-			// } else if (matchMedia("(prefers-color-scheme: night)").matches) {
-			// 	document.body.classList.add("night");
-			// }
 			(function () {
 				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
 					if (new Date().getHours() > 20 || new Date().getHours() < 6) {
