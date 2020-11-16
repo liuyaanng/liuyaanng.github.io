@@ -452,7 +452,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        806
+                        779
                     </div>
                     
 
@@ -478,26 +478,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="魔改hexo博客"><a href="#魔改hexo博客" class="headerlink" title="魔改hexo博客"></a>魔改hexo博客</h1><p>本次魔改主要包括以下几个方面</p>
-<h2 id="1-添加一言插件"><a href="#1-添加一言插件" class="headerlink" title="1. 添加一言插件"></a>1. 添加一言插件</h2><h2 id="2-添加动态线条背景"><a href="#2-添加动态线条背景" class="headerlink" title="2. 添加动态线条背景"></a>2. 添加动态线条背景</h2><h2 id="3-添加Dplayer视频播放器"><a href="#3-添加Dplayer视频播放器" class="headerlink" title="3. 添加Dplayer视频播放器"></a>3. 添加Dplayer视频播放器</h2><h2 id="4-添加Aplayer播放器"><a href="#4-添加Aplayer播放器" class="headerlink" title="4. 添加Aplayer播放器"></a>4. 添加Aplayer播放器</h2><h2 id="5-添加看板娘（live2d-widget插件）"><a href="#5-添加看板娘（live2d-widget插件）" class="headerlink" title="5. 添加看板娘（live2d-widget插件）"></a>5. 添加看板娘（live2d-widget插件）</h2><h2 id="6-添加黑夜模式"><a href="#6-添加黑夜模式" class="headerlink" title="6. 添加黑夜模式"></a>6. 添加黑夜模式</h2><h2 id="7-添加文章更新日期"><a href="#7-添加文章更新日期" class="headerlink" title="7. 添加文章更新日期"></a>7. 添加文章更新日期</h2><h2 id="8-添加访客地图统计"><a href="#8-添加访客地图统计" class="headerlink" title="8. 添加访客地图统计"></a>8. 添加访客地图统计</h2><h2 id="9-添加valine评论邮件提醒"><a href="#9-添加valine评论邮件提醒" class="headerlink" title="9. 添加valine评论邮件提醒"></a>9. 添加valine评论邮件提醒</h2><h2 id="10-添加网站背景"><a href="#10-添加网站背景" class="headerlink" title="10. 添加网站背景"></a>10. 添加网站背景</h2><h2 id="11-添加腾讯兔小巢"><a href="#11-添加腾讯兔小巢" class="headerlink" title="11. 添加腾讯兔小巢"></a>11. 添加腾讯兔小巢</h2><h2 id="12-Mac样式的代码块的添加"><a href="#12-Mac样式的代码块的添加" class="headerlink" title="12. Mac样式的代码块的添加"></a>12. Mac样式的代码块的添加</h2><h3 id="12-1-代码高亮"><a href="#12-1-代码高亮" class="headerlink" title="12.1 代码高亮"></a>12.1 代码高亮</h3><h4 id="12-1-1-禁用highlight"><a href="#12-1-1-禁用highlight" class="headerlink" title="12.1.1 禁用highlight"></a>12.1.1 禁用highlight</h4><pre><code>打开根目录下的`_config.yml`文件,修改配置
-
-```yml
-highlight:</code></pre>
-<p>  enable: false<br>  line_number: false<br>  auto_detect: false<br>  tab_replace:<br>    ```</p>
-<h4 id="12-1-2-获取prism配置文件"><a href="#12-1-2-获取prism配置文件" class="headerlink" title="12.1.2 获取prism配置文件"></a>12.1.2 获取prism配置文件</h4><pre><code>在[https://prismjs.com/download.html](https://prismjs.com/download.html)选择喜欢的theme, 需要的language和plug\(不推荐选太多,需要的选上即可\), 将文件下载到本地后分别重命名为`prism.css`, `prism.js`, 将其放入到`/theme/matery/source/js/prism`目录下\(prism文件夹自己创建\), </code></pre>
-<h4 id="12-1-3-配置prism"><a href="#12-1-3-配置prism" class="headerlink" title="12.1.3 配置prism"></a>12.1.3 配置prism</h4><pre><code>- 在`themes/matery/layout/_partial/head.ejs` 添加以下代码:
-
-```javascript
-&lt;link rel=&quot;stylesheet&quot; href=&quot;/js/prism/prism.css&quot;&gt;
-```
-
-- 在`themes/matery/layout/_partial/footer.ejs` 添加以下代码:
-```javascript
-&lt;script src=&quot;/js/prism/prism.js&quot; async&gt;&lt;/script&gt;
-```</code></pre>
-<h4 id="12-1-4-添加配置"><a href="#12-1-4-添加配置" class="headerlink" title="12.1.4 添加配置"></a>12.1.4 添加配置</h4><pre><code>在根目录的 `_config.yml` 文件中添加以下代码:
-
-```yml
-prism_plugin:
+<h2 id="1-添加一言插件"><a href="#1-添加一言插件" class="headerlink" title="1. 添加一言插件"></a>1. 添加一言插件</h2><h2 id="2-添加动态线条背景"><a href="#2-添加动态线条背景" class="headerlink" title="2. 添加动态线条背景"></a>2. 添加动态线条背景</h2><h2 id="3-添加Dplayer视频播放器"><a href="#3-添加Dplayer视频播放器" class="headerlink" title="3. 添加Dplayer视频播放器"></a>3. 添加Dplayer视频播放器</h2><h2 id="4-添加Aplayer播放器"><a href="#4-添加Aplayer播放器" class="headerlink" title="4. 添加Aplayer播放器"></a>4. 添加Aplayer播放器</h2><h2 id="5-添加看板娘（live2d-widget插件）"><a href="#5-添加看板娘（live2d-widget插件）" class="headerlink" title="5. 添加看板娘（live2d-widget插件）"></a>5. 添加看板娘（live2d-widget插件）</h2><h2 id="6-添加黑夜模式"><a href="#6-添加黑夜模式" class="headerlink" title="6. 添加黑夜模式"></a>6. 添加黑夜模式</h2><h2 id="7-添加文章更新日期"><a href="#7-添加文章更新日期" class="headerlink" title="7. 添加文章更新日期"></a>7. 添加文章更新日期</h2><h2 id="8-添加访客地图统计"><a href="#8-添加访客地图统计" class="headerlink" title="8. 添加访客地图统计"></a>8. 添加访客地图统计</h2><h2 id="9-添加valine评论邮件提醒"><a href="#9-添加valine评论邮件提醒" class="headerlink" title="9. 添加valine评论邮件提醒"></a>9. 添加valine评论邮件提醒</h2><h2 id="10-添加网站背景"><a href="#10-添加网站背景" class="headerlink" title="10. 添加网站背景"></a>10. 添加网站背景</h2><h2 id="11-添加腾讯兔小巢"><a href="#11-添加腾讯兔小巢" class="headerlink" title="11. 添加腾讯兔小巢"></a>11. 添加腾讯兔小巢</h2><h2 id="12-Mac样式的代码块的添加"><a href="#12-Mac样式的代码块的添加" class="headerlink" title="12. Mac样式的代码块的添加"></a>12. Mac样式的代码块的添加</h2><h3 id="12-1-代码高亮"><a href="#12-1-代码高亮" class="headerlink" title="12.1 代码高亮"></a>12.1 代码高亮</h3><h4 id="12-1-1-禁用highlight"><a href="#12-1-1-禁用highlight" class="headerlink" title="12.1.1 禁用highlight"></a>12.1.1 禁用highlight</h4><p>打开根目录下的<code>_config.yml</code>文件,修改配置</p>
+<pre><code class="line-numbers language-yml">highlight:
+enable: false
+line_number: false
+auto_detect: false
+tab_replace:</code></pre>
+<h4 id="12-1-2-获取prism配置文件"><a href="#12-1-2-获取prism配置文件" class="headerlink" title="12.1.2 获取prism配置文件"></a>12.1.2 获取prism配置文件</h4><p>在<a target="_blank" rel="noopener" href="https://prismjs.com/download.html">https://prismjs.com/download.html</a>选择喜欢的theme, 需要的language和plug(不推荐选太多,需要的选上即可), 将文件下载到本地后分别重命名为<code>prism.css</code>, <code>prism.js</code>, 将其放入到<code>/theme/matery/source/js/prism</code>目录下(prism文件夹自己创建) </p>
+<h4 id="12-1-3-配置prism"><a href="#12-1-3-配置prism" class="headerlink" title="12.1.3 配置prism"></a>12.1.3 配置prism</h4><ul>
+<li>在<code>themes/matery/layout/_partial/head.ejs</code> 添加以下代码:</li>
+</ul>
+<pre><code class="line-numbers language-javascript">&lt;link rel=&quot;stylesheet&quot; href=&quot;/js/prism/prism.css&quot;&gt;</code></pre>
+<ul>
+<li>在<code>themes/matery/layout/_partial/footer.ejs</code> 添加以下代码:<pre><code class="line-numbers language-javascript">&lt;script src=&quot;/js/prism/prism.js&quot; async&gt;&lt;/script&gt;</code></pre>
+</li>
+</ul>
+<h4 id="12-1-4-添加配置"><a href="#12-1-4-添加配置" class="headerlink" title="12.1.4 添加配置"></a>12.1.4 添加配置</h4><p>在根目录的 <code>_config.yml</code> 文件中添加以下代码:</p>
+<pre><code class="line-numbers language-yml">prism_plugin:
     mode: &#39;preprocess&#39;    # realtime/preprocess
     theme: &#39;tomorrow&#39;
     line_number: false   # default false
@@ -505,12 +502,9 @@ prism_plugin:
 
 marked:
     langPrefix: line-numbers language-
-
-```
-
-此时测试效果如下图所示:
-
-![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source/blog_images/魔改hexo博客/1.png) </code></pre>
+</code></pre>
+<p>此时测试效果如下图所示:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source/blog_images/%E9%AD%94%E6%94%B9hexo%E5%8D%9A%E5%AE%A2/1.png"> </p>
 <h3 id="12-2-添加mac样式"><a href="#12-2-添加mac样式" class="headerlink" title="12.2 添加mac样式"></a>12.2 添加mac样式</h3><h4 id="12-2-1-创建codeblock的js文件"><a href="#12-2-1-创建codeblock的js文件" class="headerlink" title="12.2.1 创建codeblock的js文件"></a>12.2.1 创建codeblock的js文件</h4><p>在目录<code>theme/source/libs/codeBlock/</code>下创建<code>codeBlock.js</code>文件, 在里面添加如下代码:</p>
 <pre><code class="line-numbers language-javascript">// 代码块
 
@@ -1292,7 +1286,7 @@ pre[class*=&quot;language-&quot;] &#123;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">45k</span>
+            <span class="white-color">44.9k</span>
             
 
             <br>
