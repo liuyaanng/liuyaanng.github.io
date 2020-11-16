@@ -191,9 +191,9 @@
       <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
-    
       <category term="GPU" scheme="https://godliuyang.wang/tags/GPU/"/>
+    
+      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
     
   </entry>
   
@@ -537,9 +537,9 @@
       <category term="PyTorch Notes" scheme="https://godliuyang.wang/categories/PyTorch-Notes/"/>
     
     
-      <category term="PyTorch" scheme="https://godliuyang.wang/tags/PyTorch/"/>
-    
       <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
+    
+      <category term="PyTorch" scheme="https://godliuyang.wang/tags/PyTorch/"/>
     
   </entry>
   
