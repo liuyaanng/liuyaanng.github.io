@@ -504,30 +504,30 @@ MatLab和">
 <h2 id="MatLab和C-混合编程环境配置"><a href="#MatLab和C-混合编程环境配置" class="headerlink" title="MatLab和C++混合编程环境配置"></a>MatLab和C++混合编程环境配置</h2><p>Matlab的安装这里不再说    </p>
 <ol>
 <li>在命令行里输入 <code>mex -setup</code>，选择vs就行了</li>
-<li>执行 <code>mex -setup C++</code>完成配置<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/1.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/2.png"></li>
+<li>执行 <code>mex -setup C++</code>完成配置<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/1.png"><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/2.png"></li>
 </ol>
 <h2 id="下载Github文件"><a href="#下载Github文件" class="headerlink" title="下载Github文件"></a>下载Github文件</h2><p>download Zip即可</p>
 <h2 id="导入依赖文件"><a href="#导入依赖文件" class="headerlink" title="导入依赖文件"></a>导入依赖文件</h2><p>将 <strong>D:\OpenCV\opencv\build\x64\vc15\lib</strong>下的 <strong>opencv_world344.lib</strong>文件复制到你的Matlab安装路径下的 <strong>microsoft</strong>文件夹下,我的是 <strong>D:\MATLAB\R2019a\extern\lib\win64\microsoft</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/3.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/4.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/3.png"><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/4.png"></p>
 <h2 id="在Matlab中导入文件"><a href="#在Matlab中导入文件" class="headerlink" title="在Matlab中导入文件"></a>在Matlab中导入文件</h2><h2 id="在命令行执行以下命令"><a href="#在命令行执行以下命令" class="headerlink" title="在命令行执行以下命令"></a>在命令行执行以下命令</h2><p>注意作者的命令为:</p>
 <pre><code class="line-numbers language-matlab">mex generateEllipseCandidates.cpp -IF:\OpenCV\opencv2.4.9\build\include -IF:\OpenCV\opencv2.4.9\build\include\opencv -IF:\OpenCV\opencv2.4.9\build\include\opencv2 -LF:\OpenCV\opencv2.4.9\build\x64\vc11\lib -IF:\Matlab\settlein\extern\include -LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code></pre>
-<p>把OpenCV和Matlab的相关文件的路径改成你的安装路径<br>我这里版本号为OpenCV3.4.4,安装路径如下,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/5.png"><br>故修改为<code>D:\OpenCV\opencv\build...</code>,<br>由于OpenCV3.4.4只有 <strong>opencv_world344.lib</strong> 这一个lib文件，故将 <code>LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code>　修改为 <code>LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib</code></p>
+<p>把OpenCV和Matlab的相关文件的路径改成你的安装路径<br>我这里版本号为OpenCV3.4.4,安装路径如下,<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/5.png"><br>故修改为<code>D:\OpenCV\opencv\build...</code>,<br>由于OpenCV3.4.4只有 <strong>opencv_world344.lib</strong> 这一个lib文件，故将 <code>LF:\Matlab\settlein\extern\lib\win64\microsoft -lopencv_core249 -lopencv_highgui249 -lopencv_imgproc249 -llibmwlapack.lib</code>　修改为 <code>LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib</code></p>
 <p>完整的命令为:</p>
 <pre><code class="line-numbers language-matlab">mex generateEllipseCandidates.cpp -ID:\OpenCV\opencv\build\include 
 -ID:\OpenCV\opencv\build\include\opencv -ID:\OpenCV\opencv\build\include\opencv2 
 -LD:\OpenCV\opencv\build\x64\vc15\lib 
 -ID:\Matlab\R2019a\include -LD:\Matlab\R2019a\extern\lib\win64\microsoft -lopencv_world344 -llibmwlapack.lib
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/6.png"><br>编译成功之后生成<code>generateEllipseCandidates.mexw64</code>文件<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/7.png"><br>之后再运行<code>LCS_ellipse.m</code><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/8.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/6.png"><br>编译成功之后生成<code>generateEllipseCandidates.mexw64</code>文件<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/7.png"><br>之后再运行<code>LCS_ellipse.m</code><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/8.png"></p>
 <p>##　报错解决办法</p>
 <ol>
-<li>如图<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/9.png"><br>在.cpp文件中添加</li>
+<li>如图<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/9.png"><br>在.cpp文件中添加</li>
 </ol>
 <pre><code class="line-numbers language-cpp">using namespace std</code></pre>
 <ol start="2">
 <li>如图</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/10.png"><br>缺少lib文件，检查一下是不是配置出错了</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/10.png"><br>缺少lib文件，检查一下是不是配置出错了</p>
 <p>参考文献:</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://github.com/AlanLuSun/High-quality-ellipse-detection">Arc-support Line Segments Revisited: An Efficient and High-quality Ellipse Detection</a></li>
@@ -981,7 +981,7 @@ MatLab和">
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1513,9 +1513,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

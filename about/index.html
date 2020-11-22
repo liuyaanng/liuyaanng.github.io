@@ -552,7 +552,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"教程","value":8},{"name":"Digital Image Processing","value":7},{"name":"PyTorch Notes","value":1},{"name":"人脸检测","value":1},{"name":"Open Source","value":1},{"name":"算法","value":5},{"name":"笔记","value":2},{"name":"Algorithms","value":1},{"name":"Face Recognition","value":1}],
+                data: [{"name":"教程","value":8},{"name":"PyTorch Notes","value":1},{"name":"Digital Image Processing","value":7},{"name":"人脸检测","value":1},{"name":"Open Source","value":1},{"name":"算法","value":5},{"name":"笔记","value":2},{"name":"Algorithms","value":1},{"name":"Face Recognition","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -738,14 +738,6 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
             
             
             
-            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">图像处理</span>
-            </a>
-            
-            
-            
-            
-            
             <a href="/tags/PyTorch/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">PyTorch</span>
             </a>
@@ -755,6 +747,14 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
             <a href="/tags/Deep-Learning/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Deep Learning</span>
             </a>
+            
+            
+            
+            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">图像处理</span>
+            </a>
+            
+            
             
             
             
@@ -1171,9 +1171,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

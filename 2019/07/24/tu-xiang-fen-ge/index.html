@@ -597,7 +597,7 @@ imshow(f)
 subplot(1,2,2)
 
 imshow(g)</code></pre>
-<p>结果：<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a82234833730.jpg"></p>
+<p>结果：<br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37b3a82234833730.jpg"></p>
 <h3 id="线检测"><a href="#线检测" class="headerlink" title="线检测"></a>线检测</h3><p>可以预期，二阶导数将导致更强的响应，并产生比一阶导数更细的线</p>
 <p>线检测模板</p>
 <ul>
@@ -748,7 +748,7 @@ subplot(2,3,6);
 
 imshow(g)
 </code></pre>
-<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37b3a815b7125153.jpg"><br>可能会用到的M函数pixeldup</p>
+<p>结果:<br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37b3a815b7125153.jpg"><br>可能会用到的M函数pixeldup</p>
 <pre><code class="line-numbers language-matlab">function B=pixeldup(A,m,n)%pixeldup用来重复像素的，在水平方向复制m倍，在垂直方向复制n倍，m，n必须为整数，n没有赋值默认为m%检查输入参数个数
 if nargin&lt;2
     error(&#39;At least two inputs are required.&#39;);
@@ -767,7 +767,7 @@ B=A(u,v);</code></pre>
 <h3 id="基本边缘检测"><a href="#基本边缘检测" class="headerlink" title="基本边缘检测"></a>基本边缘检测</h3><h4 id="边缘模型"><a href="#边缘模型" class="headerlink" title="边缘模型"></a>边缘模型</h4><ul>
 <li>台阶模型<br>在一个像素的距离上发生两次灰度级间理想的过渡</li>
 <li>斜坡模型<br>数字图像存在被模糊或有噪声的边缘，这时的边缘被建模成一个更接近灰度斜坡的剖面，斜坡的斜度与边缘的模糊程度成反比</li>
-<li>屋顶模型<br>通过一个区域的线的模型，屋顶边缘的基底(宽度)由该线的宽度和尖锐度决定<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d382004cd3e437707.jpg"></li>
+<li>屋顶模型<br>通过一个区域的线的模型，屋顶边缘的基底(宽度)由该线的宽度和尖锐度决定<br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d382004cd3e437707.jpg"></li>
 </ul>
 <p>结合前面提到的一阶导数和二阶导数的性质，可以得出结论:</p>
 <ol>
@@ -1004,7 +1004,7 @@ figure,imshow(gLoG_default),title(&#39;gLoG default&#39;);
 figure,imshow(gLoG_best),title(&#39;gLoG best&#39;);
 figure,imshow(gCanny_default),title(&#39;gCanny default&#39;);
 figure,imshow(gCanny_best),title(&#39;gCanny best&#39;);</code></pre>
-<p>其中最佳输出的阀值是根据得到的ts,tlog,tc的值来确定的<br>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b4bec1777947.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b5886d994031.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b3ad9b270352.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b573bae72055.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b61724d14715.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b51df2874618.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b65663011930.jpg"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/24/5d37d6b3e566366232.jpg"><br>综合结果来看，Canny边缘检测算子可以得到最好的结果</p>
+<p>其中最佳输出的阀值是根据得到的ts,tlog,tc的值来确定的<br>结果:<br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b4bec1777947.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b5886d994031.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b3ad9b270352.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b573bae72055.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b61724d14715.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b51df2874618.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b65663011930.jpg"><br><img loading="lazy" src="https://i.loli.net/2019/07/24/5d37d6b3e566366232.jpg"><br>综合结果来看，Canny边缘检测算子可以得到最好的结果</p>
 
             </div>
             <hr/>
@@ -1454,7 +1454,7 @@ figure,imshow(gCanny_best),title(&#39;gCanny best&#39;);</code></pre>
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1986,9 +1986,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

@@ -495,7 +495,7 @@
             <div id="articleContent">
                 <h1 id="基于霍夫变换的圆形检测"><a href="#基于霍夫变换的圆形检测" class="headerlink" title="基于霍夫变换的圆形检测"></a>基于霍夫变换的圆形检测</h1><h2 id="霍夫变换的原理"><a href="#霍夫变换的原理" class="headerlink" title="霍夫变换的原理"></a>霍夫变换的原理</h2><p>Hough 变换就是利用图像全局特征将边缘像素连接起来组成区域封闭边界，它将图像空间转换到参数空间，在参数空间对点进行描述，达到检测图像边缘的目的。该方法把所有可能落在边缘上的点进行统计计算，根据对数据的统计结果确定属于边缘的程度。Hough 变换的实质就是对图像进行坐标变换，把平面坐标变换为参数坐标，使变换的结果更易识别和检测。<br>具体原理: <a href="https://godliuyang.wang/2019/07/26/huo-fu-bian-huan/">霍夫变换</a></p>
 <hr>
-<h3 id="对霍夫变换圆形检测的原理的理解"><a href="#对霍夫变换圆形检测的原理的理解" class="headerlink" title="对霍夫变换圆形检测的原理的理解:"></a>对霍夫变换圆形检测的原理的理解:</h3><p>已知圆的一般方程为:<br>$$(x-a)^2 + (y-b)^2 = r^2 $$<br>其中(a,b)代表圆心，r是圆的半径<br>依旧是把图像空间转换成参数空间，这里是将X-Y平面转化成a-b-r参数空间，则在图像空间中的一个过(x,y)点的圆，对应参数空间中高度变化的三维锥面。<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/26/5d3ab8c50fc2a28962.jpg"><br>同理，过图像空间的任意一点的圆都对应于参数空间的一个三维锥面，因此，过图像空间上同一圆的点，对应的参数空间中的三维锥面，在r平面必然相交于一点(a,b,r)，这样通过这一点就可以得到一个圆的参数。<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/26/5d3ab8c4d635d79647.jpg"><br>这里霍夫变换的圆检测就是在这三个参数组成的三维空间内进行的<br>换一种理解思路:在笛卡尔坐标下的圆的方程已给出，在极坐标系下，假设圆心为$(x_0,y_0)$,圆上的点可以表示为:<br>$$x = x_0 + rcos\theta, y = y_0 + rsin\theta$$<br>对于一个圆，假如中心像素点$(x_0,y_0)$，半径r已知，那么旋转360°，圆上的所有点就可以求得。同样，假如圆上的所有点，半径r已知，旋转360°，则会得到一个累加的极值点，那么这个点就是圆心了。</p>
+<h3 id="对霍夫变换圆形检测的原理的理解"><a href="#对霍夫变换圆形检测的原理的理解" class="headerlink" title="对霍夫变换圆形检测的原理的理解:"></a>对霍夫变换圆形检测的原理的理解:</h3><p>已知圆的一般方程为:<br>$$(x-a)^2 + (y-b)^2 = r^2 $$<br>其中(a,b)代表圆心，r是圆的半径<br>依旧是把图像空间转换成参数空间，这里是将X-Y平面转化成a-b-r参数空间，则在图像空间中的一个过(x,y)点的圆，对应参数空间中高度变化的三维锥面。<br><img loading="lazy" src="https://i.loli.net/2019/07/26/5d3ab8c50fc2a28962.jpg"><br>同理，过图像空间的任意一点的圆都对应于参数空间的一个三维锥面，因此，过图像空间上同一圆的点，对应的参数空间中的三维锥面，在r平面必然相交于一点(a,b,r)，这样通过这一点就可以得到一个圆的参数。<br><img loading="lazy" src="https://i.loli.net/2019/07/26/5d3ab8c4d635d79647.jpg"><br>这里霍夫变换的圆检测就是在这三个参数组成的三维空间内进行的<br>换一种理解思路:在笛卡尔坐标下的圆的方程已给出，在极坐标系下，假设圆心为$(x_0,y_0)$,圆上的点可以表示为:<br>$$x = x_0 + rcos\theta, y = y_0 + rsin\theta$$<br>对于一个圆，假如中心像素点$(x_0,y_0)$，半径r已知，那么旋转360°，圆上的所有点就可以求得。同样，假如圆上的所有点，半径r已知，旋转360°，则会得到一个累加的极值点，那么这个点就是圆心了。</p>
 <hr>
 <p>理论上霍夫变换可以检测任何形状，但复杂的形状需要的参数就多，霍夫空间的维数就多，因此在程序实现上所需的内存空间以及运行效率上都不利于把标准霍夫变换应用于实际复杂图形的检测中。所以一些改进的霍夫变换就相继提出，它们的基本原理就是尽可能减小霍夫空间的维数。</p>
 <p>在OpenCV中，HoughCircles函数实现了圆形检测，它使用的算法也是改进的霍夫变换——2-1霍夫变换（21HT）。也就是把霍夫变换分为两个阶段，从而减小了霍夫空间的维数。第一阶段用于检测圆心，第二阶段从圆心推导出圆半径。<br>检测圆心的原理是圆心是它所在圆周所有法线的交汇处，因此只要找到这个交点，即可确定圆心，该方法所用的霍夫空间与图像空间的性质相同，因此它仅仅是二维空间。检测圆半径的方法是从圆心到圆周上的任意一点的距离（即半径）是相同，只要确定一个阈值，只要相同距离的数量大于该阈值，我们就认为该距离就是该圆心所对应的圆半径，该方法只需要计算半径直方图，不使用霍夫空间。圆和半径知道了，圆自然就能求得。</p>
@@ -554,7 +554,7 @@ int main( int argc, char** argv )
     waitKey(0);
     return 0;
 &#125;</code></pre>
-<p>结果:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/26/5d3abf54a4c3b88169.jpg"></p>
+<p>结果:<br><img loading="lazy" src="https://i.loli.net/2019/07/26/5d3abf54a4c3b88169.jpg"></p>
 
             </div>
             <hr/>
@@ -1004,7 +1004,7 @@ int main( int argc, char** argv )
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1539,9 +1539,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

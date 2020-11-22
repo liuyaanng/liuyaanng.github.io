@@ -492,7 +492,7 @@
 <li>既然出现上面的内容就会报错，那就尽量避免出现呗…(说的都是废话)</li>
 <li>使用<code>\lbrace</code>代替<code>\&#123;</code>,使用<code>\rbrace</code>代替<code>\&#125;</code><br>推荐大神的解决办法，一劳永逸，以后就不用管了</li>
 </ol>
-<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/1.png"></p>
+<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/1.png"></p>
 <p>有可能是hexo解析的问题，我在使用markdown-preview的时候看的是正常的</p>
 
             </div>
@@ -943,7 +943,7 @@
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1476,9 +1476,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

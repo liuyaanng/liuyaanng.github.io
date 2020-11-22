@@ -489,7 +489,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/4.png"><br>Manjaro是一款基于Arch Linux、对用户友好、全球排名第1的Linux发行版<br>使用它是因为 AUR软件仓库有着世界上最齐全的Linux软件，万物皆可 pacman ,arch的wiki绝对是我见过的最详细的linux发行版的”说明书”, 在这里基本能解决我所有的问题, 另，作为基于Arch的发行版，每日一 <code>sudo pacman -Syu</code>简直不要太爽啊！<br>有时间一定要尝试一下 原生Arch(有生之年系列，趁还折腾的动)</p>
+                <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/4.png"><br>Manjaro是一款基于Arch Linux、对用户友好、全球排名第1的Linux发行版<br>使用它是因为 AUR软件仓库有着世界上最齐全的Linux软件，万物皆可 pacman ,arch的wiki绝对是我见过的最详细的linux发行版的”说明书”, 在这里基本能解决我所有的问题, 另，作为基于Arch的发行版，每日一 <code>sudo pacman -Syu</code>简直不要太爽啊！<br>有时间一定要尝试一下 原生Arch(有生之年系列，趁还折腾的动)</p>
 <h2 id="1-系统安装"><a href="#1-系统安装" class="headerlink" title="1. 系统安装"></a>1. 系统安装</h2><h3 id="1-1-ISO文件下载"><a href="#1-1-ISO文件下载" class="headerlink" title="1.1 ISO文件下载"></a>1.1 ISO文件下载</h3><p><a target="_blank" rel="noopener" href="https://www.manjaro.org/">Manjaro官网</a></p>
 <p>Manjaro i3属于社区版本<br><a target="_blank" rel="noopener" href="https://osdn.net/projects/manjaro-community/storage/i3/18.0.4/manjaro-i3-18.0.4-stable-x86_64.iso/">Download manjaro-i3-18.0.4-stable-x86_64.iso</a></p>
 <h3 id="1-2-U盘启动盘制作"><a href="#1-2-U盘启动盘制作" class="headerlink" title="1.2 U盘启动盘制作"></a>1.2 U盘启动盘制作</h3><p>首先准备一个容量大于4G的U盘，在制作启动盘之前请先把里面的资料转存到别处，因为此项操作会格式化U盘且不可恢复。<br>刻录工具有很多，</p>
@@ -498,7 +498,7 @@
 <li><a target="_blank" rel="noopener" href="http://cdimage.deepin.com/applications/deepin-boot-maker/windows/deepin-boot-maker.exe">深度启动盘制作工具</a> 深度科技，很简洁的一个工具</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/pbatard/rufus/releases/download/v3.6/rufus-3.6.exe">Rufus</a></li>
 </ul>
-<p>按照软件的操作步骤制作启动盘<br>注：若遇到启动盘系统安装的过程中遇到启动盘不可用则使用 <strong>Rufus</strong> 使用DD镜像模式制作<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/1.png"></p>
+<p>按照软件的操作步骤制作启动盘<br>注：若遇到启动盘系统安装的过程中遇到启动盘不可用则使用 <strong>Rufus</strong> 使用DD镜像模式制作<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/1.png"></p>
 <h3 id="1-3-系统安装"><a href="#1-3-系统安装" class="headerlink" title="1.3 系统安装"></a>1.3 系统安装</h3><p>安装过程很简单，参考下面这篇博客<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e555a079f78a">Manjaro Linux i3 安装笔记</a></p>
 <p>安装时语言选择  <strong>简体中文</strong>即可</p>
 <h2 id="2-中文环境配置"><a href="#2-中文环境配置" class="headerlink" title="2. 中文环境配置"></a>2. 中文环境配置</h2><h3 id="2-1-更换Linux国内源"><a href="#2-1-更换Linux国内源" class="headerlink" title="2.1 更换Linux国内源"></a>2.1 更换Linux国内源</h3><p>Manjaro 默认的更新源在国外，没翻墙的宝宝无法更新，这里先换一下更新源</p>
@@ -541,7 +541,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
 <p>之后安装中文输入法，搜狗拼音貌似对arch的支持不太好，所以我们选择谷歌拼音</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S fcitx-googlepinyin</code></pre>
-<p>之后在终端运行 <code>$ fcitx</code> 在图形化界面的配置文件中配置输入法即可，配置快捷键<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/2.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/3.png"></p>
+<p>之后在终端运行 <code>$ fcitx</code> 在图形化界面的配置文件中配置输入法即可，配置快捷键<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/2.png"><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/3.png"></p>
 <p>若中文输入法开机无法自启动，则执行如下操作</p>
 <pre><code class="line-numbers language-bash">vim ~/.i3/config</code></pre>
 <p>添加如下内容:</p>
@@ -557,14 +557,14 @@ export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
 <li>查看已经安装的shell</li>
 </ul>
 <pre><code class="line-numbers language-bash">cat /etc/shells</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/12.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/12.png"></p>
 <ul>
 <li>修改默认shell</li>
 </ul>
 <p>看一下上一步输出的<code>fish</code>的位置，然后执行</p>
 <pre><code class="line-numbers language-bash">chsh -s usr/bin/fish</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/13.png"><br>之后重启终端,shell就默认为fish了<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/14.png"></p>
-<p>配置文件的位置是<code>/home/kevin/.config/fish/functions/fish_prompt.fish</code>，可以在这里设置替换命令，提高效率，举个例子:<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/18.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/13.png"><br>之后重启终端,shell就默认为fish了<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/14.png"></p>
+<p>配置文件的位置是<code>/home/kevin/.config/fish/functions/fish_prompt.fish</code>，可以在这里设置替换命令，提高效率，举个例子:<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/18.png"></p>
 <ul>
 <li>oh-my-fish是一个 Fishshell 框架，允许你安装扩展或更改你的 shell 外观的软件包。它简单易用，快速可扩展。使用 omf，你可以根据你的想法，很容易地安装主题，丰富你的外观和安装插件来调整你的 Fish shell。    </li>
 <li>安装omf<br>在fish shell里执行</li>
@@ -575,7 +575,7 @@ export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
 </ul>
 <pre><code class="line-numbers language-bash">omf list</code></pre>
 <p>这条命令会列出一安装的主题和插件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/15.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/15.png"></p>
 <ul>
 <li>列出已安装主题</li>
 </ul>
@@ -606,28 +606,28 @@ end</code></pre>
 <pre><code class="line-numbers language-bash">sudo pacman -S chromium</code></pre>
 <h4 id="3-1-4-nitrogen"><a href="#3-1-4-nitrogen" class="headerlink" title="3.1.4 nitrogen"></a>3.1.4 nitrogen</h4><p>一款可视化换壁纸的软件,当然<strong>feh</strong>也是一款优秀的壁纸切换软件，教程很多，这里不再说了</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S nitrogen</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/5.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/5.png"></p>
 <h4 id="3-1-5-neofetch"><a href="#3-1-5-neofetch" class="headerlink" title="3.1.5 neofetch"></a>3.1.5 neofetch</h4><p>neofetch是一个个性化显示Linux系统信息的工具</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S neofetch</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/19.png"></p>
-<h4 id="3-1-6-vim"><a href="#3-1-6-vim" class="headerlink" title="3.1.6 vim"></a>3.1.6 vim</h4><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/6.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/19.png"></p>
+<h4 id="3-1-6-vim"><a href="#3-1-6-vim" class="headerlink" title="3.1.6 vim"></a>3.1.6 vim</h4><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/6.png"></p>
 <p>文本/代码编辑中最最最为优秀经典的上古神器,之后我会写一个调教Vim的教程</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S vim </code></pre>
-<h4 id="3-1-7-albert"><a href="#3-1-7-albert" class="headerlink" title="3.1.7 albert"></a>3.1.7 albert</h4><p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/7.png"><br>一款软件/文件/搜索 启动器</p>
+<h4 id="3-1-7-albert"><a href="#3-1-7-albert" class="headerlink" title="3.1.7 albert"></a>3.1.7 albert</h4><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/7.png"><br>一款软件/文件/搜索 启动器</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S albert</code></pre>
 <p>第一次运行会提示你设置一下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/8.png"><br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/9.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/8.png"><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/9.png"></p>
 <h4 id="3-1-8-iease-music"><a href="#3-1-8-iease-music" class="headerlink" title="3.1.8 iease-music"></a>3.1.8 iease-music</h4><p>网易云音乐最漂亮的第三方客户端！</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S iease-music</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/10.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/10.png"></p>
 <h4 id="3-1-9-deepin-screenshot"><a href="#3-1-9-deepin-screenshot" class="headerlink" title="3.1.9 deepin-screenshot"></a>3.1.9 deepin-screenshot</h4><p>深度截图</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S deepin-screenshot</code></pre>
 <h4 id="3-1-10-shadowsocks-qt5"><a href="#3-1-10-shadowsocks-qt5" class="headerlink" title="3.1.10 shadowsocks-qt5"></a>3.1.10 shadowsocks-qt5</h4><pre><code class="line-numbers language-bash">sudo pacman -S shadowsocks-qt5</code></pre>
 <h4 id="3-1-11-thefuck"><a href="#3-1-11-thefuck" class="headerlink" title="3.1.11 thefuck"></a>3.1.11 thefuck</h4><p>自从用了”Thefuck”,妈妈再也不用担心我敲错命令了。<br>有了它，万物皆可fffffffffuck!</p>
 <pre><code class="line-numbers language-bash">sudo pacman -S thefuck</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/11.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/11.png"></p>
 <h4 id="3-1-12-compton"><a href="#3-1-12-compton" class="headerlink" title="3.1.12 compton"></a>3.1.12 compton</h4><p>设置窗口半透明+毛玻璃效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/16.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/16.png"></p>
 <p>Manjaro i3 自带的有compton，不过这个只能做到半透明而没有毛玻璃效果，我使用的是<a target="_blank" rel="noopener" href="https://github.com/tryone144/compton">Compton</a>,下面详细介绍一下安装过程</p>
 <ol>
 <li>卸载原有的compton</li>
@@ -643,7 +643,7 @@ end</code></pre>
 <li>安装</li>
 </ol>
 <p>具体内容参考<a target="_blank" rel="noopener" href="https://github.com/liuyaanng/compton/blob/dual_kawase/README.md">README</a><br>安装前要确保下列依赖已经安装。<br>其实大部分都已经安装,只有个别没有，若下面安装不成功，则按提示把依赖装上即可，有问题也可以在issues上查看</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/17.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/17.png"></p>
 <pre><code class="line-numbers language-bash">cd compton
 # Make the main program
 make
@@ -658,7 +658,7 @@ make install</code></pre>
 <h4 id="3-1-13-deepin-file-manager"><a href="#3-1-13-deepin-file-manager" class="headerlink" title="3.1.13 deepin-file-manager"></a>3.1.13 deepin-file-manager</h4><p>默认的 <code>pcmanfm</code> 竟然没有搜索功能，这不能忍啊<br>我使用 <code>deepin-file-manager</code> 来代替默认的 <code>pcmanfm</code></p>
 <pre><code class="line-numbers language-bash">sudo pacman -S deepin-file-manager</code></pre>
 <p>在配置文件里</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/20.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%AF%87/20.png"></p>
 <h3 id="3-2-i3的配置"><a href="#3-2-i3的配置" class="headerlink" title="3.2 i3的配置"></a>3.2 i3的配置</h3><p>i3的配置文件在 <code>~/.i3/config</code></p>
 <p>里面的配置信息介绍的很详细,需要更详细的信息你可以阅读官方<a target="_blank" rel="noopener" href="https://i3wm.org/docs/userguide.html">userguide</a></p>
 <p> 首先在<code>Autoapplications</code>处添加自启动的应用</p>
@@ -1152,7 +1152,7 @@ gaps outer 0</code></pre>
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1693,9 +1693,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

@@ -558,17 +558,17 @@ ret=im2uint8(mat2gray(fr));    %更改图像类型
 subplot(2,2,4);
     imshow(ret);
     title(&#39;逆傅里叶变换&#39;);</code></pre>
-<p>结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d3043778b4e114553.jpg"><br>如果使用<code>&gt;&gt; f = im2double(img)</code>进行处理，则会出现以下结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377bcc9554917.jpg"></p>
+<p>结果<br><img loading="lazy" src="https://i.loli.net/2019/07/18/5d3043778b4e114553.jpg"><br>如果使用<code>&gt;&gt; f = im2double(img)</code>进行处理，则会出现以下结果<br><img loading="lazy" src="https://i.loli.net/2019/07/18/5d304377bcc9554917.jpg"></p>
 <ul>
 <li>分析    </li>
 </ul>
 <ol>
-<li>图像Fourier变换之后立即imshow会报错<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d3043779bef722309.jpg"><br>这是因为经过fourier变换之后的图像矩阵为复数矩阵，包含实部和虚部，此时进行<code>abs(f)</code>取复数矩阵的模，再显示。</li>
+<li>图像Fourier变换之后立即imshow会报错<br><img loading="lazy" src="https://i.loli.net/2019/07/18/5d3043779bef722309.jpg"><br>这是因为经过fourier变换之后的图像矩阵为复数矩阵，包含实部和虚部，此时进行<code>abs(f)</code>取复数矩阵的模，再显示。</li>
 <li><code>rgb2gray()</code>和<code>im2double()</code>的使用<br>这一点要特别注意，对于RGB图像，<code>imread()</code>是已三维矩阵的形式来存储的，要先进行类型转换，否则会出现空白    </li>
 <li><code>rgb2gray()</code>转换为灰度图像,得到的图像呈灰色基调，见‘结果’</li>
-<li><code>im2double()</code>转换成双精度图像，得到的图像呈白色基调，见‘结果’<br>其他图像处理结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377bd0c676784.jpg"></li>
+<li><code>im2double()</code>转换成双精度图像，得到的图像呈白色基调，见‘结果’<br>其他图像处理结果<br><img loading="lazy" src="https://i.loli.net/2019/07/18/5d304377bd0c676784.jpg"></li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/18/5d304377b0b2610307.jpg"><br>可以看到Fourier逆变换处理之后的图片为原图的灰度图片。</p>
+<p><img loading="lazy" src="https://i.loli.net/2019/07/18/5d304377b0b2610307.jpg"><br>可以看到Fourier逆变换处理之后的图片为原图的灰度图片。</p>
 <h2 id="对图像Fourier变换的意义分析"><a href="#对图像Fourier变换的意义分析" class="headerlink" title="对图像Fourier变换的意义分析"></a>对图像Fourier变换的意义分析</h2><p>对于一个图像，其频率是表征图像中灰度变化剧烈程度的指标，是灰度在平面空间的梯度。设f为一个能量有限的模拟信号，其傅里叶变换代表f的频谱。从纯粹的数学意义上来看，Fourier变换是将一个函数转换成一系列的周期函数来进行处理的。从物理角度来看，Fourier变换是将图像从空间域转换到频率域，逆变换是将图像从频率域转换到空间域。也就是说，Fourier变换是将图像的灰度分布函数变换成图像的频率分布函数。<strong>这里要注意是灰度分布函数</strong>,下面还会说到。</p>
 <p>Fourie逆变换是将图像的频率分布函数转换成灰度分布函数(原始图像的灰度分布函数),图像的概念前边说过，用一个二维矩阵来表示空间上的各点，z=f(x,y)，但空间是三维的，因此空间上的物体在另一个维度上的关系必须由梯度来表示。</p>
 <p>Fourier频谱图上的明暗点，意义是指图像上的某一点与邻域点差异的强弱，即梯度的大小。</p>
@@ -580,7 +580,7 @@ subplot(2,2,4);
 </li>
 <li>得到有填充的Fourier变换<pre><code class="line-numbers language-matlab">&gt;&gt; F = fft2(f,PQ(1), PQ(2));</code></pre>
 </li>
-<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre><code class="line-numbers language-matlab">&gt;&gt; H = lpfilter(&#39;gaussian&#39;,PQ(1),PQ(2),2*sig);</code></pre>
+<li>生成大小为PQ(1)×PQ(2)的滤波函数H,函数类型要满足如下图所示,<br><img loading="lazy" src="https://i.loli.net/2019/07/19/5d318dcf343b438405.jpg"><br>如果是类似这样的<br><img loading="lazy" src="https://i.loli.net/2019/07/19/5d318dcf4915275796.jpg">    <pre><code class="line-numbers language-matlab">&gt;&gt; H = lpfilter(&#39;gaussian&#39;,PQ(1),PQ(2),2*sig);</code></pre>
 在使用滤波器之前，要先<code>H = fftshift(H)</code></li>
 <li>用滤波器乘以FFT变换<pre><code class="line-numbers language-matlab">&gt;&gt; G = H .* F;</code></pre>
 </li>
@@ -642,7 +642,7 @@ subplot(1,2,2);
 imshow(gpc);
 
 title(&#39;已填充的滤波&#39;);</code></pre>
-<p>这里展示了不填充滤波和填充滤波的两种情况，结果<br><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://i.loli.net/2019/07/19/5d318dcf1e88071166.jpg"><br>可以观察到未填充滤波处理后图像的垂直边缘未模糊</p>
+<p>这里展示了不填充滤波和填充滤波的两种情况，结果<br><img loading="lazy" src="https://i.loli.net/2019/07/19/5d318dcf1e88071166.jpg"><br>可以观察到未填充滤波处理后图像的垂直边缘未模糊</p>
 <p>涉及到的函数    </p>
 <ul>
 <li>paddedsize函数</li>
@@ -1209,7 +1209,7 @@ v(idy) = v(idy) - N;
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1745,9 +1745,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

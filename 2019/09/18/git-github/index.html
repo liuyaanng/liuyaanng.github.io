@@ -497,9 +497,9 @@ Find wheather you are">
 <li>Generating a new SSH key</li>
 </ul>
 <pre><code class="line-numbers language-bash">ssh-keygen</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/1.png"> </p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/1.png"> </p>
 <pre><code class="line-numbers language-bash">tree .ssh</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/2.png"> </p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/2.png"> </p>
 <ul>
 <li>Copy the SSH key to your clipboard</li>
 </ul>
@@ -507,7 +507,7 @@ Find wheather you are">
 <ul>
 <li>In the upper-right corner of any page, click your profile photo, then click <strong>Settings</strong></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/3.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/3.png"></p>
 <ul>
 <li><p>In the user settings sidebar, click <strong>SSH and GPG keys</strong></p>
 </li>
@@ -518,7 +518,7 @@ Find wheather you are">
 <li><p>Paste your key into the “Key” field.</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/4.png"> </p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Git-Github/4.png"> </p>
 <ul>
 <li>If prompted, confirm your GitHub password.</li>
 </ul>
@@ -972,7 +972,7 @@ Find wheather you are">
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1505,9 +1505,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>

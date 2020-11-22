@@ -31,7 +31,7 @@
         
           &lt;p&gt;在寻找壁纸api的时候突然发现了一套灰常灰常可爱的壁纸，于是想把他们都放到我的壁纸界面上，无奈api一次请求的图片一样，所以就想着把这些图片搞下来，存到我的cdn加速中。&lt;/p&gt;
 &lt;p&gt;先来几张图：&lt;/p&gt;
-&lt;p&gt;&lt;img
+&lt;p&gt;&lt;img loading=&quot;lazy&quot;
         
       
     
@@ -45,7 +45,7 @@
     <link href="https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/"/>
     <id>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</id>
     <published>2020-09-18T13:12:34.000Z</published>
-    <updated>2020-11-16T14:53:46.045Z</updated>
+    <updated>2020-11-22T08:22:52.485Z</updated>
     
     <summary type="html">
     
@@ -360,7 +360,7 @@
       
         
         
-          &lt;h2 id=&quot;Arch-linux-i3&quot;&gt;&lt;a href=&quot;#Arch-linux-i3&quot; class=&quot;headerlink&quot; title=&quot;Arch linux + i3&quot;&gt;&lt;/a&gt;Arch linux + i3&lt;/h2&gt;&lt;p&gt;&lt;img
+          &lt;h2 id=&quot;Arch-linux-i3&quot;&gt;&lt;a href=&quot;#Arch-linux-i3&quot; class=&quot;headerlink&quot; title=&quot;Arch linux + i3&quot;&gt;&lt;/a&gt;Arch linux + i3&lt;/h2&gt;&lt;p&gt;&lt;img loading=&quot;lazy&quot;
         
       
     
@@ -468,7 +468,7 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif&quot;
+          &lt;p&gt;&lt;img loading=&quot;lazy&quot;
         
       
     

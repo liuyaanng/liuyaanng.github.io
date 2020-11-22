@@ -492,7 +492,7 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我的任务是在GPU服务器上使用深度强化学习训练Amazing Brick，Amazing Brick使用Python的<a target="_blank" rel="noopener" href="https://arcade.academy/index.html">Arcade</a> 库来写的。    </p>
 <p>我在考虑在GPU服务器上训练之前，没有注意到Arcade是使用<strong>OpenGL</strong> 和<strong>Pyglet</strong> 来进行渲染的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/ArcadeVSPygame.png" alt="Arcade VS Pygame"></p>
 <p>而服务器大多都以ssh登陆，而OpenGL就更不要说了，所以在我寻找服务器和准备环境的过程中就遇到了很多问题，这个在下面会说到。</p>
 <h2 id="GPU-servers"><a href="#GPU-servers" class="headerlink" title="GPU servers"></a>GPU servers</h2><p>  <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/51707286">知乎:目前哪里可以租用到GPU服务器？</a> </p>
 <hr>
@@ -596,14 +596,14 @@ arcade.run()</code></pre>
 <p>意思是OpenCV版本太低</p>
 </li>
 <li><p>接下来查看服务器端的OpenGL版本，使用<code>glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version.png" alt="opencv_version"> </p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version.png" alt="opencv_version"> </p>
 <p>还是没有图形界面的问题，继续使用<code>xvfb-run -a glxinfo | grep &quot;OpenGL&quot;</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version2.png" alt="opencv_version"> </p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/opencv_version2.png" alt="opencv_version"> </p>
 <p>显示OpenGL的版本为3.1, 依旧无法满足arcade需要的OpenGL3+。</p>
 </li>
 <li><p>会不会是由于服务端原机器上的低版本OpenGL造成<code>xvfb</code>虚拟后的OpenCV版本较低？</p>
 <p>我在本地的Ubuntu系统上分别运行<code>glxinfo | grep &quot;OpenGL&quot;</code>, 发现原机器版本为4.6，但<code>xvfb</code>虚拟后的版本为3.1，推测为<code>Xvfb</code>虚拟图形界面的原因。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/glxinfo.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/GPU-servers/glxinfo.png"></p>
 <p>此问题没有找到解决办法</p>
 </li>
 <li><p>⚠️ 如果你是一个<code>pygame</code>用户，或者你对OpenGL的版本要求不高（3.1），你完全可以使用<code>xvfb-run</code>来进行要求图形化的测试。经测试，pygame在GPU服务器上可以运行。</p>
@@ -1082,7 +1082,7 @@ CPU: I5</code></pre>
         visitor: 'true' === 'true',
 				enableQQ: 'true' === 'true',
         avatar: 'mp',
-        pageSize: '10',
+        pageSize: '6',
         lang: 'zh-cn',
         placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
     });
@@ -1591,9 +1591,16 @@ $(function () {
 		</script>
 		
 	<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
 </html>
