@@ -148,6 +148,35 @@
   </entry>
   
   <entry>
+    <title>Use Tensorflow in AI Studio</title>
+    <link href="https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/"/>
+    <id>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</id>
+    <published>2020-05-08T16:04:38.000Z</published>
+    <updated>2020-11-15T08:13:36.074Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/336485090&quot;&gt;How to install tensorflow-gpu in PaddlePaddle&lt;/a&gt; &lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="GPU" scheme="https://godliuyang.wang/tags/GPU/"/>
+    
+      <category term="Tensorflow" scheme="https://godliuyang.wang/tags/Tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CLSW</title>
     <link href="https://godliuyang.wang/2020/04/22/clsw/"/>
     <id>https://godliuyang.wang/2020/04/22/clsw/</id>
@@ -274,6 +303,32 @@
       <category term="Python" scheme="https://godliuyang.wang/tags/Python/"/>
     
       <category term="Numpy" scheme="https://godliuyang.wang/tags/Numpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Playing Atari with Deep Reinforcement Learning</title>
+    <link href="https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/"/>
+    <id>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</id>
+    <published>2020-03-03T02:29:11.000Z</published>
+    <updated>2020-11-14T10:19:20.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;This is the first deep learning model using
+        
+      
+    
+    </summary>
+    
+      <category term="Paper Notes" scheme="https://godliuyang.wang/categories/Paper-Notes/"/>
+    
+    
+      <category term="Deep Reinforcement Learning" scheme="https://godliuyang.wang/tags/Deep-Reinforcement-Learning/"/>
     
   </entry>
   
@@ -480,66 +535,6 @@
       <category term="Manjaro" scheme="https://godliuyang.wang/tags/Manjaro/"/>
     
       <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Face Recognition</title>
-    <link href="https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/"/>
-    <id>https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/</id>
-    <published>2019-08-10T04:00:00.000Z</published>
-    <updated>2020-11-14T10:15:04.166Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Face-Recognition-with-OpenCV&quot;&gt;&lt;a href=&quot;#Face-Recognition-with-OpenCV&quot; class=&quot;headerlink&quot; title=&quot;Face Recognition with
-        
-      
-    
-    </summary>
-    
-      <category term="Face Recognition" scheme="https://godliuyang.wang/categories/Face-Recognition/"/>
-    
-    
-      <category term="OpenCV" scheme="https://godliuyang.wang/tags/OpenCV/"/>
-    
-      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
-    
-      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
-    
-      <category term="Face Recongnition" scheme="https://godliuyang.wang/tags/Face-Recongnition/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Enjoy PyTorch</title>
-    <link href="https://godliuyang.wang/2019/08/07/enjoy-pytorch/"/>
-    <id>https://godliuyang.wang/2019/08/07/enjoy-pytorch/</id>
-    <published>2019-08-07T05:11:13.000Z</published>
-    <updated>2020-11-14T10:14:14.863Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="PyTorch Notes" scheme="https://godliuyang.wang/categories/PyTorch-Notes/"/>
-    
-    
-      <category term="PyTorch" scheme="https://godliuyang.wang/tags/PyTorch/"/>
-    
-      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
     
   </entry>
   

@@ -111,6 +111,33 @@
     
     
     <entry>
+      <title>Use Tensorflow in AI Studio</title>
+      <link href="/2020/05/09/use-tensorflow-in-ai-studio/"/>
+      <url>/2020/05/09/use-tensorflow-in-ai-studio/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.zhihu.com/question/336485090">How to install tensorflow-gpu in PaddlePaddle</a> </p><h2 id="Tensorflow-gpu-1-13-1"><a href="#Tensorflow-gpu-1-13-1" class="headerlink" title="Tensorflow-gpu 1.13.1"></a>Tensorflow-gpu 1.13.1</h2><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Use-Tensorflow-in-AI-Studio/cuda-cudnn.png"> </p><h3 id="1-Install-cuda10-0"><a href="#1-Install-cuda10-0" class="headerlink" title="1. Install cuda10.0"></a>1. Install <a href="https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal">cuda10.0</a></h3><ul><li>Base Installer</li></ul><pre><code class="line-numbers language-bash">wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux</code></pre><ul><li>Patch</li></ul><pre><code class="line-numbers language-bash">wget https://developer.download.nvidia.cn/compute/cuda/10.0/Prod/patches/1/cuda_10.0.130.1_linux.run</code></pre><ul><li>Install </li></ul><pre><code class="line-numbers language-bash">sh cuda_10.0.130_410.48_linux --silent --toolkit --toolkitpath=$HOME/cuda_10.0sh cuda_10.0.130.1_linux.run --silent --installdir=$HOME/cuda_10.0 --accept-eula</code></pre><h3 id="2-cuDNN"><a href="#2-cuDNN" class="headerlink" title="2. cuDNN"></a>2. <a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN</a></h3><ul><li>Choose v7.4</li></ul><pre><code class="line-numbers language-bash">wget https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.4.2/prod/10.0_20181213/cudnn-10.0-linux-x64-v7.4.2.24.tgz</code></pre><ul><li>Next:</li></ul><pre><code class="line-numbers language-bash">tar -zxvf cudnn-10.0-linux-x64-v7.4.2.24.tgzcp cuda/include/cudnn.h cuda_10.0/include/cp cuda/lib64/libcudnn* cuda_10.0/lib64/</code></pre><ul><li>The following code are needed to run when you reboot your servers. We can write it into a shell file to autorun. </li></ul><pre><code class="line-numbers language-bash">chmod a+r cuda_10.0/include/cudnn.hchmod a+r cuda_10.0/lib64/libcudnn*</code></pre><ul><li>Then create a file named ‘environment’ /(whatever you like /)</li></ul><pre><code class="line-numbers language-bash">echo -e &#39;export PATH=$HOME/cuda_10.0/bin:$PATH\nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/cuda_10.0/lib64&#39;&gt;~/environmentsource ~/environment</code></pre><h3 id="3-Install-Tensotflow-gpu"><a href="#3-Install-Tensotflow-gpu" class="headerlink" title="3. Install Tensotflow-gpu"></a>3. Install Tensotflow-gpu</h3><pre><code class="line-numbers language-bash">pip install tensorflow-gpu==1.13.1 </code></pre><p>OR </p><p><a href="https://pypi.tuna.tsinghua.edu.cn/simple/tensorflow-gpu/">tensorflow-gpu</a> </p><pre><code class="line-numbers language-bash">wget https://pypi.tuna.tsinghua.edu.cn/packages/2c/65/8dc8fc4a263a24f7ad935b72ad35e72ba381cb9e175b6a5fe086c85f17a7/tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl#sha256=931c7d49b1757a0a6f3c577ab465cc53d0c4984ef766122f4f48159f5acdec81pip install tensorflow_gpu-1.13.1-cp37-cp37m-manylinux1_x86_64.whl</code></pre><h3 id="4-Autostart-shell"><a href="#4-Autostart-shell" class="headerlink" title="4. Autostart shell"></a>4. Autostart shell</h3><p>Create a file named <code>chmod_cuda100.sh</code></p><pre><code class="line-numbers language-bash">#!/bin/bashchmod a+r ~/cuda_10.0/include/cudnn.hchmod a+r ~/cuda_10.0/lib64/libcudnn*source ~/environment</code></pre><p>Every time the environment starts, just run the following code</p><pre><code class="line-numbers language-bash">source chmod_cuda100.sh</code></pre><h3 id="5-Test"><a href="#5-Test" class="headerlink" title="5. Test"></a>5. Test</h3><pre><code class="line-numbers language-python">import tensorflow as tfsess = tf.Session()a = tf.constant(1)b = tf.constant(2)print(sess.run(a+b))</code></pre><p>Result: 3</p><pre><code class="line-numbers language-python">from tensorflow.python.client import device_lib local_device_protos = device_lib.list_local_devices() print([x.name for x in local_device_protos if x.device_type == &#39;GPU&#39;])</code></pre><p>Result: [‘/device:GPU:0’]</p><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Use-Tensorflow-in-AI-Studio/GPU.png"> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GPU </tag>
+            
+            <tag> Tensorflow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CLSW</title>
       <link href="/2020/04/22/clsw/"/>
       <url>/2020/04/22/clsw/</url>
@@ -216,6 +243,31 @@
             <tag> Python </tag>
             
             <tag> Numpy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Playing Atari with Deep Reinforcement Learning</title>
+      <link href="/2020/03/03/playing-atari-with-deep-reinforcement-learning/"/>
+      <url>/2020/03/03/playing-atari-with-deep-reinforcement-learning/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This is the first deep learning model using reforcement learning to learn contorl policies ditectly from high-dimensional sensory input. The model is a <strong>convolutional neural network</strong> , trained with a bariant of Q-Learning.</p><p>Input: raw pixels<br>Output: a alue function estimating future reawards</p><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><ul><li>Learning tp control agents directly <strong>from high-dimensional sensory input</strong> like vision and speech is one of the long-standing challenges of RL</li><li>Deep learning have made it possible to extract hig-level features from raw sensory data. The neural network architrctures including <strong>recurrnet neural network</strong>, <strong>multilayer perceptrons</strong>, <strong>restricted Boltzmann machines and recurrent neural networks</strong>, and have ex-ploited both <strong>supervised</strong> and <strong>unsupervised learning</strong>.</li><li>RL algorithms must be able to learn from a <strong>scalar reward signal that is frequently space, noisy and delayed.</strong></li><li>The network is trained with a variant of Q-learning algorithm, with stochastic gradirnt <strong>descent</strong> to update the weights.</li><li>Arcade Learning Enviroment: Atari 2600 presents agents with a high dimensional visualimput(210x160RGB video at 60Hz)</li><li>The goal is to create a single neural network agent that is able to successfully learn to play as many of the game as possible.</li></ul><h3 id="2-Background"><a href="#2-Background" class="headerlink" title="2. Background"></a>2. Background</h3><ul><li><p>The Programe</p><ul><li>Environment $\mathcal{E}$ may be stochastic.</li><li>Atari emulator: a sequence of <strong>actions, observations, rewards</strong></li><li>Each time-step the agent selects an action $a_t$</li><li>The emulator’s internal state observers an image $x_t \in\mathbb{R}^{d}$ ,  which is a <strong>vector of raw pixel values representing the current screen</strong></li><li>The emulator receives a reward $r_t$ representing the change in game score.</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Paper Notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Reinforcement Learning </tag>
             
         </tags>
       
