@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</loc>
     
     <lastmod>2020-12-05</lastmod>
     
@@ -31,13 +45,6 @@
   
   <url>
     <loc>https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/</loc>
-    
-    <lastmod>2020-11-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</loc>
     
     <lastmod>2020-11-15</lastmod>
     
@@ -108,13 +115,6 @@
   
   <url>
     <loc>https://godliuyang.wang/2020/03/30/scikit-image-guide/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -289,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/about/index.html</loc>
+    <loc>https://godliuyang.wang/friends.json</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends.json</loc>
+    <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
