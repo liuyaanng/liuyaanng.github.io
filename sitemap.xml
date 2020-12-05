@@ -289,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends.json</loc>
+    <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/about/index.html</loc>
+    <loc>https://godliuyang.wang/friends.json</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -508,14 +508,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Pandas/</loc>
+    <loc>https://godliuyang.wang/tags/PCA/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/PCA/</loc>
+    <loc>https://godliuyang.wang/tags/Pandas/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
