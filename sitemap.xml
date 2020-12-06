@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</loc>
+    
+    <lastmod>2020-12-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
     
     <lastmod>2020-12-06</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</loc>
-    
-    <lastmod>2020-12-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</loc>
     
     <lastmod>2020-12-05</lastmod>
     
@@ -296,7 +296,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -310,7 +310,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/about/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -515,14 +515,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Pandas/</loc>
+    <loc>https://godliuyang.wang/tags/Deep-Reinforcement-Learning/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Deep-Reinforcement-Learning/</loc>
+    <loc>https://godliuyang.wang/tags/Pandas/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
