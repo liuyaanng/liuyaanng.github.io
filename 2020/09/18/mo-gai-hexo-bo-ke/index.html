@@ -446,14 +446,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        7 分
                     </div>
                     
                 
@@ -572,7 +572,23 @@ pre[class*=&quot;language-&quot;] &#123;
 <h4 id="13-1-2-HTML压缩"><a href="#13-1-2-HTML压缩" class="headerlink" title="13.1.2 HTML压缩"></a>13.1.2 HTML压缩</h4><p>待定</p>
 <h4 id="13-1-3-CSS压缩"><a href="#13-1-3-CSS压缩" class="headerlink" title="13.1.3 CSS压缩"></a>13.1.3 CSS压缩</h4><p>待定</p>
 <h3 id="13-2-静态资源加载优化"><a href="#13-2-静态资源加载优化" class="headerlink" title="13.2 静态资源加载优化"></a>13.2 静态资源加载优化</h3><h4 id="13-2-1-使用CDN"><a href="#13-2-1-使用CDN" class="headerlink" title="13.2.1 使用CDN"></a>13.2.1 使用CDN</h4><p>参考<a href="https://godliuyang.wang/2020/09/15/cdn-for-blog/">CDN for Blog</a> </p>
-<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h3 id="2020-12-06"><a href="#2020-12-06" class="headerlink" title="2020.12.06"></a>2020.12.06</h3><ul>
+<h2 id="14-添加推荐文章插件-hexo-recommended-posts"><a href="#14-添加推荐文章插件-hexo-recommended-posts" class="headerlink" title="14. 添加推荐文章插件(hexo-recommended-posts)"></a>14. 添加推荐文章插件(<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo-recommended-posts</a>)</h2><p>推荐文章的插件有很多, <a target="_blank" rel="noopener" href="https://github.com/tea3/hexo-related-popular-posts">hexo-related-popular-posts</a> 是一个很棒的插件, 安装也很简单,不过我这里使用的是<code>hexo-recommended-posts</code></p>
+<h3 id="14-1-安装"><a href="#14-1-安装" class="headerlink" title="14.1 安装"></a>14.1 安装</h3><pre><code class="line-numbers language-bash">npm install hexo-recommended-posts --save</code></pre>
+<h3 id="14-2-下载推荐文章列表"><a href="#14-2-下载推荐文章列表" class="headerlink" title="14.2 下载推荐文章列表"></a>14.2 下载推荐文章列表</h3><pre><code class="line-numbers language-bash">hexo recommend</code></pre>
+<h3 id="14-3-自定义配置"><a href="#14-3-自定义配置" class="headerlink" title="14.3 自定义配置"></a>14.3 自定义配置</h3><p>在博客根目录添加以下默认配置,根据个人情况修改</p>
+<pre><code class="line-numbers language-yml">recommended_posts:
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 3 #内部文章数量
+  externalLinks: 1 #外部文章数量
+  fixedNumber: false #控制是否返回固定数量的推荐文章, 如果默认推荐文章不够的话会填充当前文章的前后文章作为推荐文章.
+  autoDisplay: true #自动在文章底部显示推荐文章
+  excludePattern: [] #添加想要被过滤的链接的正则表达式, 如配置为 [&quot;example.com&quot;], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
+  titleHtml: &lt;h1&gt;推荐文章&lt;span style=&quot;font-size:0.45em; color:gray&quot;&gt;（由&lt;a href=&quot;https://github.com/huiwang/hexo-recommended-posts&quot;&gt;hexo文章推荐插件&lt;/a&gt;驱动）&lt;/span&gt;&lt;/h1&gt; #自定义标题</code></pre>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h3 id="2020-12-07"><a href="#2020-12-07" class="headerlink" title="2020.12.07"></a>2020.12.07</h3><ul>
+<li>添加<code>hexo-recommended-posts</code>插件</li>
+</ul>
+<h3 id="2020-12-06"><a href="#2020-12-06" class="headerlink" title="2020.12.06"></a>2020.12.06</h3><ul>
 <li>优化图片资源(首页轮播图)</li>
 </ul>
 <h3 id="2020-12-05"><a href="#2020-12-05" class="headerlink" title="2020.12.05"></a>2020.12.05</h3><ul>
@@ -603,7 +619,7 @@ pre[class*=&quot;language-&quot;] &#123;
 <li>加入黑夜模式</li>
 <li>试运行黑夜模式</li>
 </ul>
-
+<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2020/09/15/cdn-for-blog/">CDN_for_blog</a></li><li><a href="https://godliuyang.wang/2019/07/22/hexo-da-keng/">hexo大坑</a></li><li><a target="_blank" rel="noopener" href="https://lailin.xyz/post/27142.html">hexo-next-algolia-search全文搜索</a></li></ul></div>
             </div>
             <hr/>
 
@@ -1301,7 +1317,7 @@ pre[class*=&quot;language-&quot;] &#123;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">46.1k</span>
+            <span class="white-color">46.8k</span>
             
 
             <br>
