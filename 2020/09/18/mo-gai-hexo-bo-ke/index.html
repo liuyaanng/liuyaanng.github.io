@@ -446,14 +446,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        8 分
                     </div>
                     
                 
@@ -585,6 +585,30 @@ pre[class*=&quot;language-&quot;] &#123;
   autoDisplay: true #自动在文章底部显示推荐文章
   excludePattern: [] #添加想要被过滤的链接的正则表达式, 如配置为 [&quot;example.com&quot;], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
   titleHtml: &lt;h1&gt;推荐文章&lt;span style=&quot;font-size:0.45em; color:gray&quot;&gt;（由&lt;a href=&quot;https://github.com/huiwang/hexo-recommended-posts&quot;&gt;hexo文章推荐插件&lt;/a&gt;驱动）&lt;/span&gt;&lt;/h1&gt; #自定义标题</code></pre>
+<h3 id="14-4-一点小改动"><a href="#14-4-一点小改动" class="headerlink" title="14.4 一点小改动"></a>14.4 一点小改动</h3><p>插件虽然有<code>autoDisplay</code>选项来控制是否在文章底部显示文章,但在配置文件中竟然没有一个选项来控制是否启用插件,这不能忍,于是我修改了一点插件的代码,实现了这个功能,具体实现如下:</p>
+<ul>
+<li><p>编辑<code>hexo-recommended-posts/lib/recommend.js</code>文件,第二行修改为</p>
+<pre><code class="line-numbers language-javascript">var posts = filterPosts(recommended_posts, post, config.excludePattern, config.enable)</code></pre>
+<p>第九行修改为</p>
+<pre><code class="line-numbers language-javascript">function filterPosts(recommended_posts, post, excludePattern, enable) &#123;
+  if (recommended_posts === undefined || !enable ||
+      recommended_posts[post.permalink] === undefined) &#123;
+      return [];
+  &#125;</code></pre>
+</li>
+<li><p>在根目录config中添加<code>enable</code>选项,具体如下:</p>
+<pre><code class="line-numbers language-yml">recommended_posts:
+enable: false
+server: https://api.truelaurel.com #后端推荐服务器地址
+timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+internalLinks: 3 #内部文章数量
+externalLinks: 1 #外部文章数量
+fixedNumber: true
+autoDisplay: true #自动在文章底部显示推荐文章
+excludePattern: []
+titleHtml: &lt;h1&gt;推荐文章&lt;span style=&quot;font-size:0.45em; color:gray&quot;&gt;&lt;/span&gt;&lt;/h1&gt; #自定义标题</code></pre>
+</li>
+</ul>
 <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h3 id="2020-12-07"><a href="#2020-12-07" class="headerlink" title="2020.12.07"></a>2020.12.07</h3><ul>
 <li>添加<code>hexo-recommended-posts</code>插件</li>
 </ul>
@@ -619,7 +643,7 @@ pre[class*=&quot;language-&quot;] &#123;
 <li>加入黑夜模式</li>
 <li>试运行黑夜模式</li>
 </ul>
-<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2020/09/15/cdn-for-blog/">CDN_for_blog</a></li><li><a href="https://godliuyang.wang/2019/07/22/hexo-da-keng/">hexo大坑</a></li><li><a target="_blank" rel="noopener" href="https://lailin.xyz/post/27142.html">hexo-next-algolia-search全文搜索</a></li></ul></div>
+
             </div>
             <hr/>
 
@@ -1317,7 +1341,7 @@ pre[class*=&quot;language-&quot;] &#123;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">46.8k</span>
+            <span class="white-color">46.6k</span>
             
 
             <br>
