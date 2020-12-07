@@ -5,10 +5,10 @@ cover: false
 toc: true
 mathjax: false
 date: 2020-09-18 21:12:34
-updatedate: 2020-11-16
+updatedate: 2020-12-05
 img:
 password:
-summary:
+summary: 记录hexo-matery主题的个人个性化设置
 tags:
 - hexo
 categories:
@@ -51,13 +51,13 @@ tab_replace:
 #### 12.1.3 配置prism
 - 在`themes/matery/layout/_partial/head.ejs` 添加以下代码:
 
-```javascript
+```ejs
 <link rel="stylesheet" href="/js/prism/prism.css">
 ```
 
 - 在`themes/matery/layout/_partial/footer.ejs` 添加以下代码:
 
-```javascript
+```ejs
 <script src="/js/prism/prism.js" async></script>
 ```
 
@@ -155,7 +155,7 @@ pre[class*="language-"] {
 
 在`theme/layout/_partial/post-detail.ejs`文件中添加
 
-```javascript
+```ejs
 <!-- 代码块 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 ```
@@ -166,9 +166,75 @@ pre[class*="language-"] {
 
 ![](https://cdn.jsdelivr.net/gh/liuyaanng/blog_source/blog_images/魔改hexo博客/2.png) 
 
+## 13. 访问速度优化
+### 13.1 静态资源优化
+#### 13.1.1 图片压缩
+[WebP](https://developers.google.com/speed/webp?hl=zh-cn) 是Google开发的新图像格式,旨在以可接受的视觉质量为无损和有损压缩提供较小的文件大小。有损模式下比 JPEG 小 25% - 34%，无损模式下较 PNG 小 26%,很显然,在相同的用户体验下,使用WebP格式可以提高网站的访问速度.    
+如果你想详细了解这其中的技术细节，可以阅读 Google 开发者文章[WebP压缩技术](https://developers.google.com/speed/webp/docs/compression?hl=zh-cn) 
+
+##### 13.1.1.1 优化目标
+使用WebP固然可以优化图像资源,提高访问速度,但截止到目前为止,即便浏览器对WebP的[支持情况](https://caniuse.com/#search=webp) 已经接近80%, 却依然有些主流浏览器如 Safari、IE 仍不支持，所以不能直接转用 WebP.    
+由于目前精力有限,故先设定一个优化目标如下:    
+- 由于压缩图像这项工作重复且繁琐，图像优化应自动化完成,初次配置完成，日后使用无需任何操作便可全自动切换 WebP 图片格式.
+- 对于不支持的浏览器，会自动回退到 JPEG/PNG 等传统格式
+- 提前生成好两份文件而非请求时计算，节省算力且响应更迅速
+
+##### 13.1.1.2 目前已完成(网站首页轮播图)
+
+这里使用一个开源工具: [Webp Converter and Analytics](https://github.com/Jacksgong/webp-converter), 具体使用方法在项目介绍页,这里不再赘述.    
+只是暂时使用这个工具,因为我的博客目前图片资源大的就是首页轮播图,这只是一个暂时的解决方案,因为需要手动(懒)...
+
+#### 13.1.2 HTML压缩
+待定
+
+#### 13.1.3 CSS压缩
+待定
+
+### 13.2 静态资源加载优化
+#### 13.2.1 使用CDN
+参考[CDN for Blog](https://godliuyang.wang/2020/09/15/cdn-for-blog/) 
+
+## 14. 添加推荐文章插件([hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts))
+推荐文章的插件有很多, [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 是一个很棒的插件, 安装也很简单,不过我这里使用的是`hexo-recommended-posts`
+### 14.1 安装
+```bash
+npm install hexo-recommended-posts --save
+```
+
+### 14.2 下载推荐文章列表
+```bash
+hexo recommend
+```
+
+### 14.3 自定义配置
+在博客根目录添加以下默认配置,根据个人情况修改
+```yml
+recommended_posts:
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 3 #内部文章数量
+  externalLinks: 1 #外部文章数量
+  fixedNumber: false #控制是否返回固定数量的推荐文章, 如果默认推荐文章不够的话会填充当前文章的前后文章作为推荐文章.
+  autoDisplay: true #自动在文章底部显示推荐文章
+  excludePattern: [] #添加想要被过滤的链接的正则表达式, 如配置为 ["example.com"], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
+  titleHtml: <h1>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h1> #自定义标题
+```
 
 
 ## 更新日志
+
+### 2020.12.07
+- 添加`hexo-recommended-posts`插件
+ 
+### 2020.12.06
+- 优化图片资源(首页轮播图)
+
+### 2020.12.05
+- 修复了一个 `ClustrMaps` 未统计访客的bug
+- 默认不开启看板娘(太占用cpu内存,影响用户体验)
+
+### 2020.11.22
+- 使用[hexo-native-lazy-load](https://github.com/fengkx/hexo-native-lazy-load) 代替[hexo-lazyload-image](https://github.com/Troy-Yang/hexo-lazyload-image) 
 
 ### 2020.11.16
 - 添加网站背景图, 添加腾讯兔小巢

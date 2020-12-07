@@ -5,21 +5,19 @@ cover: false
 toc: true
 mathjax: true
 date: 2020-05-09 00:04:38
-updatedate: 2020-05-09 00:04:38
+updatedate: 2020-05-29 00:04:38
 img:
 password: 
-summary: 
+summary: Use Tensorflow in AI Studio.
 tags:
 - Tensorflow
 - GPU
 categories:
 - 教程
 ---
+<h1> It can no longer work(2020.05.29) </h1>
 
-
-[How to install tensorflow-gpu in PaddlePaddle](https://www.zhihu.com/question/336485090) 
-
-## Tensorflow-gpu 1.13.1
+<h4> Tensorflow-gpu 1.13.1 </h4>
 
 ![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Use-Tensorflow-in-AI-Studio/cuda-cudnn.png) 
 
@@ -136,7 +134,7 @@ Result: ['/device:GPU:0']
 
 ![](https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Use-Tensorflow-in-AI-Studio/GPU.png) 
 
-
+Reference: [How to install tensorflow-gpu in PaddlePaddle](https://www.zhihu.com/question/336485090) 
 
 
 

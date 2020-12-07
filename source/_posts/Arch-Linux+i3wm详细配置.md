@@ -453,7 +453,7 @@ Insatll yaourt
 sudo pacman -S yaourt
 ```
 
-- [Software i use often](https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-13)
+- [Software i often use](https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-13)
 
 ### 6. Fonts
 
