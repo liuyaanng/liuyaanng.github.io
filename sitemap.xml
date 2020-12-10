@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/about/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -354,20 +354,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/hexo/</loc>
-    <lastmod>2020-12-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
-    <lastmod>2020-12-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
@@ -382,20 +368,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/PyTorch/</loc>
-    <lastmod>2020-12-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Deep-Learning/</loc>
-    <lastmod>2020-12-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
@@ -404,6 +376,34 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Matlab/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/hexo/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/PyTorch/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Deep-Learning/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -587,14 +587,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
+    <loc>https://godliuyang.wang/categories/Digital-Image-Processing/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/Digital-Image-Processing/</loc>
+    <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
