@@ -45,7 +45,7 @@
     <link href="https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/"/>
     <id>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</id>
     <published>2020-09-18T13:12:34.000Z</published>
-    <updated>2020-12-07T16:31:03.945Z</updated>
+    <updated>2020-12-11T19:40:05.338Z</updated>
     
     <summary type="html">
     
@@ -60,8 +60,12 @@
     
     </summary>
     
+      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
+    
     
       <category term="hexo" scheme="https://godliuyang.wang/tags/hexo/"/>
+    
+      <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
     
   </entry>
   
@@ -124,7 +128,7 @@
     <link href="https://godliuyang.wang/2020/08/17/leetcode-easy-9/"/>
     <id>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</id>
     <published>2020-08-17T13:26:14.000Z</published>
-    <updated>2020-11-14T10:16:38.223Z</updated>
+    <updated>2020-12-11T19:38:57.537Z</updated>
     
     <summary type="html">
     
@@ -141,7 +145,7 @@
       <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python3" scheme="https://godliuyang.wang/tags/Python3/"/>
+      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
     
       <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
     
@@ -152,7 +156,7 @@
     <link href="https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/"/>
     <id>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</id>
     <published>2020-05-08T16:04:38.000Z</published>
-    <updated>2020-12-06T14:31:48.311Z</updated>
+    <updated>2020-12-11T19:39:41.204Z</updated>
     
     <summary type="html">
     
@@ -340,7 +344,7 @@
     <link href="https://godliuyang.wang/2020/02/04/about-proxy/"/>
     <id>https://godliuyang.wang/2020/02/04/about-proxy/</id>
     <published>2020-02-04T07:00:57.000Z</published>
-    <updated>2020-11-14T10:08:53.746Z</updated>
+    <updated>2020-12-11T19:37:34.239Z</updated>
     
     <summary type="html">
     
@@ -354,6 +358,8 @@
     
     </summary>
     
+    
+      <category term="vpn" scheme="https://godliuyang.wang/tags/vpn/"/>
     
   </entry>
   
@@ -410,7 +416,7 @@
     <link href="https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/"/>
     <id>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</id>
     <published>2019-12-05T17:14:50.000Z</published>
-    <updated>2020-11-17T12:05:05.254Z</updated>
+    <updated>2020-12-11T19:37:50.626Z</updated>
     
     <summary type="html">
     
@@ -425,9 +431,11 @@
     </summary>
     
     
-      <category term="Arch" scheme="https://godliuyang.wang/tags/Arch/"/>
-    
       <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
+    
+      <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
+    
+      <category term="Arch" scheme="https://godliuyang.wang/tags/Arch/"/>
     
   </entry>
   
@@ -518,7 +526,7 @@
     <link href="https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/"/>
     <id>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</id>
     <published>2019-08-24T07:45:27.000Z</published>
-    <updated>2020-11-17T12:04:23.176Z</updated>
+    <updated>2020-12-11T19:38:25.364Z</updated>
     
     <summary type="html">
     
@@ -536,6 +544,8 @@
     
     
       <category term="Manjaro" scheme="https://godliuyang.wang/tags/Manjaro/"/>
+    
+      <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
     
       <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
     

@@ -4,14 +4,42 @@
   <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
     
-    <lastmod>2020-12-07</lastmod>
+    <lastmod>2020-12-11</lastmod>
     
   </url>
   
   <url>
     <loc>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</loc>
     
-    <lastmod>2020-12-06</lastmod>
+    <lastmod>2020-12-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</loc>
+    
+    <lastmod>2020-12-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</loc>
+    
+    <lastmod>2020-12-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</loc>
+    
+    <lastmod>2020-12-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2020/02/04/about-proxy/</loc>
+    
+    <lastmod>2020-12-11</lastmod>
     
   </url>
   
@@ -19,20 +47,6 @@
     <loc>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</loc>
     
     <lastmod>2020-12-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</loc>
-    
-    <lastmod>2020-11-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</loc>
-    
-    <lastmod>2020-11-17</lastmod>
     
   </url>
   
@@ -163,13 +177,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/2020/02/02/horner-s-method/</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -268,13 +275,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2020/02/04/about-proxy/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/she/index.html</loc>
     
     <lastmod>2020-10-20</lastmod>
@@ -340,6 +340,13 @@
 
   
   <url>
+    <loc>https://godliuyang.wang/tags/vpn/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/Python/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
@@ -382,20 +389,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Matlab/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/PyTorch/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
@@ -431,6 +424,20 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Matlab/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/GPU/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
@@ -452,7 +459,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Python3/</loc>
+    <loc>https://godliuyang.wang/tags/python/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -467,6 +474,13 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Manjaro/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/linux/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -529,13 +543,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/python/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Tensorflow/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
@@ -551,13 +558,6 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Arch/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/linux/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -587,13 +587,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/Digital-Image-Processing/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
@@ -602,6 +595,13 @@
   
   <url>
     <loc>https://godliuyang.wang/categories/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/categories/Digital-Image-Processing/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

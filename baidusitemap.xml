@@ -2,23 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
-    <lastmod>2020-12-07</lastmod>
+    <lastmod>2020-12-11</lastmod>
   </url>
   <url>
     <loc>https://godliuyang.wang/2020/05/09/use-tensorflow-in-ai-studio/</loc>
-    <lastmod>2020-12-06</lastmod>
+    <lastmod>2020-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</loc>
+    <lastmod>2020-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</loc>
+    <lastmod>2020-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</loc>
+    <lastmod>2020-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://godliuyang.wang/2020/02/04/about-proxy/</loc>
+    <lastmod>2020-12-11</lastmod>
   </url>
   <url>
     <loc>https://godliuyang.wang/2020/03/03/playing-atari-with-deep-reinforcement-learning/</loc>
     <lastmod>2020-12-05</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</loc>
-    <lastmod>2020-11-17</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</loc>
-    <lastmod>2020-11-17</lastmod>
   </url>
   <url>
     <loc>https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/</loc>
@@ -93,10 +101,6 @@
     <lastmod>2020-11-14</lastmod>
   </url>
   <url>
-    <loc>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</loc>
-    <lastmod>2020-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://godliuyang.wang/2020/02/02/horner-s-method/</loc>
     <lastmod>2020-11-14</lastmod>
   </url>
@@ -150,10 +154,6 @@
   </url>
   <url>
     <loc>https://godliuyang.wang/2019/09/18/anaconda/</loc>
-    <lastmod>2020-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2020/02/04/about-proxy/</loc>
     <lastmod>2020-11-14</lastmod>
   </url>
 </urlset> 
