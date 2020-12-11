@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	
+
+<head>
+    <meta charset="utf-8">
+		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
+    <meta name="keywords" content="Face Recognition, GeekSheep geeksheep wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="Face Recognition with OpenCVPrefaceMy Particular Environment:Ubuntu16.04 + OpenCV3.3.0 + OpenCV_contrib3.3.0
+1. Image Ac">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Face Recognition | GeekerSheep</title>
+    <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.7/blog_source/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+		<link rel="stylesheet" href="/js/prism/prism.css">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179139676-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-179139676-1');
+</script>
+
+
+<!-- Google AdSense -->
+<script data-ad-client="ca-pub-9928999713093426" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+</script>
+    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+	<!-- background -->
+	
+	<body>
+		<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo kevin-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">GeekerSheep</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right menu-item">
+    
+    <li class="hide-on-med-and-down menu-item-home">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down menu-item-tags">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down menu-item-categories">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down menu-item-archives">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down menu-item-about">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down menu-item-friends">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友链</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down menu-item-galleries">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-image"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="menu-item-search">
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">GeekerSheep</div>
+        <div class="logo-desc">
+            
+            Wang Liuyang
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友链
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-image"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liuyaanng" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liuyaanng" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+ 
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('Please enter the password')).toString(CryptoJS.enc.Hex)) {
+                alert('Wrong! Return main page.');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/img.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Face Recognition
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card" id="article-content">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OpenCV/" target="_blank">
+                                <span class="chip bg-color">OpenCV</span>
+                            </a>
+                        
+                            <a href="/tags/c/" target="_blank">
+                                <span class="chip bg-color">c++</span>
+                            </a>
+                        
+                            <a href="/tags/python/" target="_blank">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/Face-Recongnition/" target="_blank">
+                                <span class="chip bg-color">Face Recongnition</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Face-Recognition/" class="post-category" target="_blank">
+                                Face Recognition
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-10
+                </div>
+
+								<div class="update-data info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-08-10
+								</div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2.9k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        18 分
+                    </div>
+                    
+                
+				
+				
+                    <div class="info-break-policy">
+												<span id="busuanzi_container_page_pv">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+												</span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Face-Recognition-with-OpenCV"><a href="#Face-Recognition-with-OpenCV" class="headerlink" title="Face Recognition with OpenCV"></a>Face Recognition with OpenCV</h1><h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>My Particular Environment:<br>Ubuntu16.04 + OpenCV3.3.0 + OpenCV_contrib3.3.0</p>
+<h2 id="1-Image-Acquisition-and-Face-Database-Creation"><a href="#1-Image-Acquisition-and-Face-Database-Creation" class="headerlink" title="1. Image Acquisition and Face Database Creation"></a>1. Image Acquisition and Face Database Creation</h2><h3 id="1-1-Image-Acquisition"><a href="#1-1-Image-Acquisition" class="headerlink" title="1.1 Image Acquisition"></a>1.1 Image Acquisition</h3><h4 id="1-1-1-Steps-and-methods"><a href="#1-1-1-Steps-and-methods" class="headerlink" title="1.1.1 Steps and methods"></a>1.1.1 Steps and methods</h4><ol>
+<li>Open the camera and capture images;</li>
+<li>Loading the face classifier;</li>
+<li>Start face detection, frame the face part and display;</li>
+<li>Under the condition that the face is detected, take a picture with one button;</li>
+<li>For the face part, resize and write the image file in the specified directory;</li>
+</ol>
+<h4 id="1-1-2-Code"><a href="#1-1-2-Code" class="headerlink" title="1.1.2 Code"></a>1.1.2 Code</h4><pre><code class="line-numbers language-cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
+#include &lt;opencv2/imgproc/imgproc.hpp&gt;
+#include &lt;opencv2/core/core.hpp&gt;
+#include &lt;opencv2/objdetect/objdetect.hpp&gt;
+#include &lt;stdio.h&gt;
+#include &lt;opencv2/face.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt; 
+using namespace cv;
+using namespace std;
+using namespace cv::face;
+
+#define CV_COLOR_GREEN cv::Scalar(0, 255, 0)
+
+int resize_save(Mat&amp; faceIn, char* path, int  faceseq);
+//Input: current image, the path of file, the name or faceseq of images.
+//Output: None
+//Function: resize the current image to (92, 112), which is same to the train data.
+int get_face(char* path);
+//Input: the path of file.
+//Output: None
+//Function: Use face_cascade to detect if there are faces in the window, and save the faces through function reszie_save.
+
+
+int resize_save(Mat&amp; faceIn, char* path, int  faceseq)&#123;
+  string strname;
+  Mat faceOut;
+  bool ret;
+  if(faceIn.empty())&#123;
+    printf(&quot;FaceIn is empty.\n&quot;);
+    return -1;
+  &#125;
+
+  if(faceIn.cols &gt; 100)&#123;
+    resize(faceIn, faceOut, Size(92, 112));
+    //Resize and Keep a match with the train database.
+    strname = format(&quot;%s/%d.jpg&quot;, path, faceseq); //mkdir
+    ret = imwrite(strname, faceOut); //save image. Note the file suffix.
+    if(ret == false)&#123;
+      printf(&quot;Image write failed!\n&quot;);
+      printf(&quot;Please check filename[%s] is legal!\n&quot;, strname.c_str());
+      return -1;
+    &#125;
+    imshow(strname, faceOut);
+  &#125;
+  waitKey(20);
+  return 0;
+&#125;
+
+int get_face(char* path)&#123;
+  CascadeClassifier face_cascade;
+  VideoCapture camera;
+  int ret;
+  Mat frame;  //camera frame
+  vector&lt;Rect&gt; objects; //The faces coordinates.
+  Mat img_gary; //Gradation pictures.
+  Mat faceImg;
+  int faceNum = 1; //
+  char key;
+  camera.open(0);
+  if(!camera.isOpened())&#123;
+    cout &lt;&lt; &quot;Open camera failed.&quot; &lt;&lt; endl;
+    return -1;
+  &#125;
+  cout &lt;&lt; &quot;Open camera succeed. &quot; &lt;&lt; endl;
+
+  //Load the face cascadeclassifier.
+  ret = face_cascade.load(&quot;haarcascade_frontalface_alt2.xml&quot;);
+  if(!ret)&#123;
+    cout &lt;&lt; &quot;Load xml failed.&quot; &lt;&lt; endl;
+    return -1;
+  &#125;
+  cout &lt;&lt; &quot;Load xml succeed.&quot; &lt;&lt; endl;
+
+  while(1)&#123;
+    camera &gt;&gt; frame;
+    if(frame.empty())&#123;
+      continue;
+    &#125;
+    cvtColor(frame, img_gary, COLOR_BGR2GRAY); //Transform frame as the gradation picture, note imshow is still the original frame.
+    equalizeHist(img_gary, img_gary); //Histogram equalization, which is helpful to improve the quality of pictures.
+
+    //Face detection
+    face_cascade.detectMultiScale(img_gary, objects, 1.1,3 , 0, Size(50,50));
+    for(size_t i = 0; i &lt; objects.size(); i++)&#123;
+      rectangle(frame, objects[i], CV_COLOR_GREEN);
+    &#125;
+    imshow(&quot;Camera&quot;, frame);
+    key = waitKey(1);
+    switch (key)&#123;
+      case &#39;p&#39;: //tap &#39;P&#39; to save.
+        if(objects.size() == 1)&#123;
+          faceImg = frame(objects[0]);
+          ret = resize_save(faceImg, path, faceNum);
+          if(ret == 0)&#123;
+            cout &lt;&lt; &quot;resize_save succeed.\n&quot; &lt;&lt; endl;
+            faceNum++;
+          &#125;
+        &#125;
+        break;
+      case 27:   //switch to ESC
+        cout &lt;&lt; &quot;Esc ...&quot; &lt;&lt; endl;
+        return 0;
+      default:
+        break;
+    &#125;
+  &#125;
+&#125;
+
+
+
+int main(int argc, char* argv[])&#123;
+  if(argc != 2)
+      &#123;
+        printf(&quot;usage: %s &lt;path&gt;\n&quot;, argv[0]);
+        return -1;
+      &#125;
+  get_face(argv[1]);
+  return 0;
+&#125;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/4.jpg"><br>Note:    </p>
+<ol>
+<li>After the compilation is successful, the execution executable file must provide parameters, which are the directories for storing the face image, and it must be an existing directory.(E.g: ./program_name Img/s41)    </li>
+<li>Press the “P” button to take a photo and save the face. Press the “Esc” button to exit.</li>
+</ol>
+<h3 id="1-2-Face-Database-Creation"><a href="#1-2-Face-Database-Creation" class="headerlink" title="1.2 Face Database Creation"></a>1.2 Face Database Creation</h3><p>The official document provides a download of the face database, and i use the <a target="_blank" rel="noopener" href="http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html">AT&amp;T Facedatabase</a> to create my face database. I have updated this zip file to my github, you can download it from <a href="att_faces.zip">here</a> faster.<br>AT&amp;T Face Database is also known as the OCR face database, 40 people, 10 photos per person. The photos are token at different times, different lighting, different expressions(closed eyes, laughing or not laughing), different face details(with or without glasses). All images were captured on a dark , even background with a vertical face o the front(some with a slight rotation).<br>You can download the compressed package from the website, and first extract the att_faces folder. There are 40 folders under the folder, which named from “s1” to “s40”. Each folder has the same person’s photos with different expressions, and there are 10 face photos.<br>The format of these images is “.pgm”<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/1.png"><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/2.png"></p>
+<p>Note:<br>If you want to add your own photos to the face database through the program, the number of added pictures must be no less than 2.</p>
+<h2 id="2-Face-Recognition-Model-training"><a href="#2-Face-Recognition-Model-training" class="headerlink" title="2. Face Recognition Model training"></a>2. Face Recognition Model training</h2><h3 id="2-1-Create-a-label-file-CSV"><a href="#2-1-Create-a-label-file-CSV" class="headerlink" title="2.1 Create a label file CSV"></a>2.1 Create a label file CSV</h3><p>With the face database data, we need to read it in the program, here we need to use csv file to read the image data in the face database.<br>The format of a csv file: image path name + label, such as /Img/s1/image.jpg;1<br>Assume the face image path is: /Img/s1/01..jpg<br>And we give this face image a label “1”, this label represents the person’s name. One person’s face image label must be the same.<br>You can create a csv file manually and then enter the data one by one. But if you use python, you don’t have to do this tedious and boring work.<br>The following is a piece of code which can write data in the CSV file automatically.</p>
+<pre><code class="line-numbers language-python">#!/usr/bin/env python
+
+import sys
+import os.path
+
+# This is a tiny script to help you creating a CSV file from a face
+# database with a similar hierarchie:
+#
+#  
+#  
+#  |-- s1
+#  |   |-- 1.pgm
+#  |   |-- ...
+#  |   |-- 10.pgm
+#  |-- s2
+#  |   |-- 1.pgm
+#  |   |-- ...
+#  |   |-- 10.pgm
+#  ...
+#  |-- s40
+#  |   |-- 1.pgm
+#  |   |-- ...
+#  |   |-- 10.pgm
+#
+
+if __name__ == &quot;__main__&quot;:
+
+    if len(sys.argv) != 2:
+        print &quot;usage: create_csv &lt;base_path&gt;&quot;
+        sys.exit(1)
+
+    BASE_PATH=sys.argv[1]        
+    SEPARATOR=&quot;;&quot;
+    # This is output csv file.
+    fh = open(&quot;../at.csv&quot;,&#39;w&#39;)
+
+    for dirname, dirnames, filenames in os.walk(BASE_PATH):
+        for subdirname in dirnames:
+            subject_path = os.path.join(dirname, subdirname)
+            for filename in os.listdir(subject_path):
+                abs_path = &quot;%s/%s&quot; % (subject_path, filename)
+                print(&quot;%s%s%s&quot; % (abs_path, SEPARATOR, subdirname[1:]))
+                fh.write(abs_path)
+                fh.write(SEPARATOR)
+                fh.write(subdirname[1:])
+                fh.write(&quot;\n&quot;)
+    fh.close()</code></pre>
+<p>You should set the image path parameter (absolute path) when running.(E.g: <strong>python filename.py /home/kevin/OpenCV/face_rec/Img</strong> ) and you can get a CSV file like this:<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/5.png"><br>This CSV file is created.</p>
+<h3 id="2-2-Model-training"><a href="#2-2-Model-training" class="headerlink" title="2.2 Model training"></a>2.2 Model training</h3><p>This is the official example of OpenCV: <a target="_blank" rel="noopener" href="https://docs.opencv.org/3.2.0/da/d60/tutorial_face_main.html">Click here</a><br>They offer three models: Eigenfaces, Fisherfaces and Local Binary Patterns Histograms(LBPH)    </p>
+<p>Then I will train my own face database based on these models on the first step.</p>
+<pre><code class="line-numbers language-cpp">static Mat norm_0_255(InputArray _src)&#123;
+  Mat src = _src.getMat();
+  Mat dst; //Create and return a normalized image matrix:
+  switch(src.channels()) &#123;
+    case 1:
+        cv::normalize(_src, dst, 0, 255, NORM_MINMAX, CV_8UC1);
+        break;
+    case 3:
+        cv::normalize(_src, dst, 0, 255, NORM_MINMAX, CV_8UC3);
+        break;
+    default:
+        src.copyTo(dst);
+        break;
+  &#125;
+  return dst;
+&#125;
+//load CSV file
+static void read_csv(const string&amp; filename, vector&lt;Mat&gt;&amp; images, vector&lt;int&gt;&amp; labels, char separator = &#39;;&#39;)&#123;
+  std::ifstream file(filename.c_str(), ifstream::in);
+    if (!file) &#123;
+        string error_message = &quot;No valid input file was given, please check the given filename.&quot;;
+        CV_Error(Error::StsBadArg, error_message);
+    &#125;
+    string line, path, classlabel;
+    while (getline(file, line)) &#123;
+        stringstream liness(line);
+        getline(liness, path, separator);
+        getline(liness, classlabel);
+        if(!path.empty() &amp;&amp; !classlabel.empty()) &#123;
+            images.push_back(imread(path, 0));
+            labels.push_back(atoi(classlabel.c_str()));
+        &#125;
+    &#125;
+&#125;
+
+void train_model(const string&amp; fn_csv)&#123;
+  // 2 containers to store image data and corresponding labels
+    vector&lt;Mat&gt; images;
+    vector&lt;int&gt; labels;
+    // load data
+    try
+    &#123;
+        read_csv(fn_csv, images, labels);
+    &#125;
+    catch (cv::Exception&amp; e)
+    &#123;
+        cerr &lt;&lt; &quot;Error opening file \&quot;&quot; &lt;&lt; fn_csv &lt;&lt; &quot;\&quot;. Reason: &quot; &lt;&lt; e.msg &lt;&lt; endl;
+        exit(1);
+    &#125;
+    if (images.size() &lt;= 1) &#123;
+        string error_message = &quot;This demo needs at least 2 images to work. Please add more images to your data set!&quot;;
+        CV_Error(CV_StsError, error_message);
+    &#125;
+
+    Mat testSample = images[images.size() - 1];
+    int testLabel = labels[labels.size() - 1];
+    images.pop_back();
+    labels.pop_back();
+    // The following lines create a feature face model for face recognition.
+     // Train it with images and tags read from a CSV file.
+     // Here is a complete PCA transform
+     //If you only want to keep 10 principal components, use the following code
+     // cv::EigenFaceRecognizer::create(10);
+     // cv::FisherFaceRecognizer::create(10);
+     //
+     // If you also want to initialize with a confidence threshold, use the following statement:
+     // cv::EigenFaceRecognizer::create(10, 123.0);
+     //
+     // If you use all features and use a threshold, use the following statement:
+     // cv::EigenFaceRecognizer::create(0, 123.0);
+     // cv::FisherFaceRecognizer::create(0, 123.0);
+
+    Ptr&lt;BasicFaceRecognizer&gt; model0 = EigenFaceRecognizer::create();
+    model0-&gt;train(images, labels);
+    model0-&gt;write(&quot;MyFacePCAModel.xml&quot;);
+
+    Ptr&lt;BasicFaceRecognizer&gt; model1 = FisherFaceRecognizer::create();
+    model1-&gt;train(images, labels);
+    model1-&gt;write(&quot;MyFaceFisherModel.xml&quot;);
+
+     Ptr&lt;LBPHFaceRecognizer&gt; model2 = LBPHFaceRecognizer::create();
+    model2-&gt;train(images, labels);
+    model2-&gt;write(&quot;MyFaceLBPHModel.xml&quot;);
+
+
+    // The test image is predicted below, predictedLabel is the predicted label result
+    int predictedLabel0 = model0-&gt;predict(testSample);
+    int predictedLabel1 = model1-&gt;predict(testSample);
+    int predictedLabel2 = model2-&gt;predict(testSample);
+
+    // There is also a way to get the result and get the threshold:
+    //      int predictedLabel = -1;
+    //      double confidence = 0.0;
+    //      model-&gt;predict(testSample, predictedLabel, confidence);
+
+    string result_message0 = format(&quot;Predicted class = %d / Actual class = %d.&quot;, predictedLabel0, testLabel);
+    string result_message1 = format(&quot;Predicted class = %d / Actual class = %d.&quot;, predictedLabel1, testLabel);
+    string result_message2 = format(&quot;Predicted class = %d / Actual class = %d.&quot;, predictedLabel2, testLabel);
+    cout &lt;&lt; result_message0 &lt;&lt; endl;
+    cout &lt;&lt; result_message1 &lt;&lt; endl;
+    cout &lt;&lt; result_message2 &lt;&lt; endl;
+
+    waitKey(0);
+&#125;
+
+int main(int argc, char* argv[])&#123;
+  if(argc != 2)
+      &#123;
+        printf(&quot;usage: %s &lt;csv_file&gt;\n&quot;, argv[0]);
+        return -1;
+      &#125;
+  string fn_csv = string(argv[1]);
+  train_model(fn_csv);
+  return 0;
+&#125;</code></pre>
+<p>At this point, we have completed the training of the face model. And we get three files:     </p>
+<p><code>MyFaceFisherModel.xml、MyFaceLBPHModel.xml、MyFacePCAModel.xml</code></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/6.png"><br>Note:    </p>
+<ol>
+<li><p>Changes to the API of the OpenCV3.3 Face Recognition Module</p>
+<p>a. Facerec.hpp before opencv3.3</p>
+<pre><code class="line-numbers language-cpp">#ifndef __OPENCV_FACEREC_HPP__
+#define __OPENCV_FACEREC_HPP__
+
+#include &quot;opencv2/face.hpp&quot;
+#include &quot;opencv2/core.hpp&quot;
+
+namespace cv &#123; namespace face &#123;
+
+// base for two classes
+class CV_EXPORTS_W BasicFaceRecognizer : public FaceRecognizer
+&#123;
+public:
+    /** @see setNumComponents */
+    CV_WRAP virtual int getNumComponents() const = 0;
+    // ----------- ...... -----------
+
+    CV_WRAP virtual cv::Mat getEigenValues() const = 0;
+    CV_WRAP virtual cv::Mat getEigenVectors() const = 0;
+    CV_WRAP virtual cv::Mat getMean() const = 0;
+&#125;;
+
+CV_EXPORTS_W Ptr&lt;BasicFaceRecognizer&gt; createEigenFaceRecognizer(int num_components = 0, double threshold = DBL_MAX);
+
+CV_EXPORTS_W Ptr&lt;BasicFaceRecognizer&gt; createFisherFaceRecognizer(int num_components = 0, double threshold = DBL_MAX);
+
+class CV_EXPORTS_W LBPHFaceRecognizer : public FaceRecognizer
+&#123;
+public:
+    /** @see setGridX */
+    CV_WRAP virtual int getGridX() const = 0;
+    /** @copybrief getGridX @see getGridX */
+    CV_WRAP virtual void setGridX(int val) = 0;
+    // ----------- ...... -----------
+    CV_WRAP virtual cv::Mat getLabels() const = 0;
+&#125;;
+
+CV_EXPORTS_W Ptr&lt;LBPHFaceRecognizer&gt; createLBPHFaceRecognizer(int radius=1, int neighbors=8, int grid_x=8, int grid_y=8, double threshold = DBL_MAX);
+
+&#125;&#125; //namespace cv::face
+
+#endif //__OPENCV_FACEREC_HPP__</code></pre>
+<ul>
+<li><p>Comment section of the ninth line: <code>// base for two classes</code>,  This shows that BasicFaceRecognizer is the base class of two classes: EigenFaceRecognizer and FisherFaceRecognizer. With LBPHFaceRecognizer is irrelevant. Even the new API is still the case.</p>
+</li>
+<li><p>Method of creating three face recognizers.</p>
+<pre><code class="line-numbers language-cpp">Ptr&lt;BasicFaceRecognizer&gt; model =  createEigenFaceRecognizer();
+Ptr&lt;BasicFaceRecognizer&gt; model =  createFisherFaceRecognizer();
+Ptr&lt;LBPHFaceRecognizer&gt; model  =  createLBPHFaceRecognizer();</code></pre>
+</li>
+</ul>
+<p>b. Facerec.hpp after opencv3.3</p>
+</li>
+</ol>
+<pre><code class="line-numbers language-cpp">#ifndef __OPENCV_FACEREC_HPP__
+#define __OPENCV_FACEREC_HPP__
+
+#include &quot;opencv2/face.hpp&quot;
+#include &quot;opencv2/core.hpp&quot;
+
+namespace cv &#123; namespace face &#123;
+
+// base for two classes
+class CV_EXPORTS_W BasicFaceRecognizer : public FaceRecognizer
+&#123;
+public:
+    /** @see setNumComponents */
+    CV_WRAP int getNumComponents() const;
+    // ----------- ...... -----------
+    CV_WRAP cv::Mat getEigenValues() const;
+    CV_WRAP cv::Mat getEigenVectors() const;
+    CV_WRAP cv::Mat getMean() const;
+
+    virtual void read(const FileNode&amp; fn);
+    virtual void write(FileStorage&amp; fs) const;
+    virtual bool empty() const;
+
+    using FaceRecognizer::read;
+    using FaceRecognizer::write;
+
+protected:
+    int _num_components;
+    double _threshold;
+    std::vector&lt;Mat&gt; _projections;
+    Mat _labels;
+    Mat _eigenvectors;
+    Mat _eigenvalues;
+    Mat _mean;
+&#125;;
+class CV_EXPORTS_W EigenFaceRecognizer : public BasicFaceRecognizer
+&#123;
+public:
+    CV_WRAP static Ptr&lt;EigenFaceRecognizer&gt; create(int num_components = 0, double threshold = DBL_MAX);
+&#125;;
+
+class CV_EXPORTS_W FisherFaceRecognizer : public BasicFaceRecognizer
+&#123;
+public:
+    CV_WRAP static Ptr&lt;FisherFaceRecognizer&gt; create(int num_components = 0, double threshold = DBL_MAX);
+&#125;;
+class CV_EXPORTS_W LBPHFaceRecognizer : public FaceRecognizer
+&#123;
+public:
+    /** @see setGridX */
+    CV_WRAP virtual int getGridX() const = 0;
+    // ----------- ...... -----------
+    CV_WRAP virtual cv::Mat getLabels() const = 0;
+    CV_WRAP static Ptr&lt;LBPHFaceRecognizer&gt; create(int radius=1, int neighbors=8, int grid_x=8, int grid_y=8, double threshold = DBL_MAX);
+&#125;;
+&#125;&#125; //namespace cv::face
+
+#endif //__OPENCV_FACEREC_HPP__</code></pre>
+<ul>
+<li>Both EigenFaceRecognizer and FisherFaceRecognizer are inherited from BasicFaceRecognizer. However, the LBFPHaceRecognizer, like the BasicFaceRecognizer, inherits from FaceRecognizer.    </li>
+<li>Method of creating three face recognizer</li>
+</ul>
+<pre><code class="line-numbers language-cpp">Ptr&lt;EigenFaceRecognizer&gt; model  = EigenFaceRecognizer::create();
+Ptr&lt;FisherFaceRecognizer&gt; model = FisherFaceRecognizer::create();
+Ptr&lt;LBPHFaceRecognizer&gt; model   = LBPHFaceRecognizer::create();</code></pre>
+<h2 id="3-Identify-faces-in-the-video-stream-camera"><a href="#3-Identify-faces-in-the-video-stream-camera" class="headerlink" title="3. Identify faces in the video stream (camera)"></a>3. Identify faces in the video stream (camera)</h2><h3 id="3-1-Ready-to-work"><a href="#3-1-Ready-to-work" class="headerlink" title="3.1 Ready to work."></a>3.1 Ready to work.</h3><h4 id="3-1-1-Copy-the-training-file-obtained-in-the-second-step-to-the-current-folder"><a href="#3-1-1-Copy-the-training-file-obtained-in-the-second-step-to-the-current-folder" class="headerlink" title="3.1.1 Copy the training file obtained in the second step to the current folder."></a>3.1.1 Copy the training file obtained in the second step to the current folder.</h4><h4 id="3-1-2-The-process-or-method-of-Face-Recognition"><a href="#3-1-2-The-process-or-method-of-Face-Recognition" class="headerlink" title="3.1.2 The process or method of Face Recognition"></a>3.1.2 The process or method of Face Recognition</h4><p>This step has a similar part to the creation of a face recognition database.</p>
+<ul>
+<li>Open the camera</li>
+<li>Loading face detector, face model</li>
+<li>Scale the image (for efficiency)</li>
+<li>Face recognition (compare to face model)</li>
+<li>Label faces with rectangular wireframes and add text labels</li>
+</ul>
+<h4 id="3-2-Code"><a href="#3-2-Code" class="headerlink" title="3.2 Code"></a>3.2 Code</h4><pre><code class="line-numbers language-cpp">#include &lt;opencv2/opencv.hpp&gt;  
+#include &quot;opencv2/core.hpp&quot;
+#include &quot;opencv2/face.hpp&quot;
+#include &quot;opencv2/highgui.hpp&quot;
+#include &quot;opencv2/imgproc.hpp&quot;
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+
+using namespace cv;
+using namespace cv::face;
+using namespace std;
+
+#define ROW_MIN        45
+
+int exitFlag = 0;
+
+int Recognition_And_Draw();
+
+int Recognition_And_Draw()&#123;
+  int ret = 0; //
+  double scale = 4; //Zoom factor
+  double fx = 1 / scale;
+  Mat frame;  //Video frame
+  VideoCapture cap(0);    //Open the camera
+  if(!cap.isOpened())&#123;
+    cout &lt;&lt; &quot;Open camera failed.\n&quot; &lt;&lt; endl;
+    return -1;
+  &#125;
+
+  //Load cascade classifier
+  CascadeClassifier cascade;
+  ret = cascade.load(&quot;haarcascade_frontalface_alt2.xml&quot;);
+
+  if(!ret)&#123;
+    printf(&quot;Load xml failed[ret = %d]. \n&quot;, ret);
+    return -1;
+  &#125;
+  cout &lt;&lt; &quot;Load xml succeed.&quot; &lt;&lt; endl;
+
+  // Loading trained face models
+  Ptr&lt;BasicFaceRecognizer&gt; modelPCA = EigenFaceRecognizer::create();  
+  modelPCA-&gt;read(&quot;MyFacePCAModel.xml&quot;);  
+  Ptr&lt;BasicFaceRecognizer&gt; modelFisher = FisherFaceRecognizer::create();
+  modelFisher-&gt;read(&quot;MyFaceFisherModel.xml&quot;);  
+  Ptr&lt;LBPHFaceRecognizer&gt; modelLBPH = LBPHFaceRecognizer::create();  
+  modelLBPH-&gt;read(&quot;MyFaceLBPHModel.xml&quot;);  
+
+  while(!exitFlag)&#123;
+    cap &gt;&gt; frame;
+    if(frame.empty())
+      continue;
+
+    Mat facesImg;  //
+    vector&lt;Rect&gt; faces;  //Create a vector container for storing faces
+    Mat gary_img; //grayscale image
+    Mat scl_gary_img; //Scaled grayscale image
+
+    cvtColor(frame, gary_img, COLOR_BGR2GRAY); //Convert the original image to a grayscale image
+    resize(gary_img, scl_gary_img, Size(), fx, fx, INTER_LINEAR); //resize img
+    equalizeHist( scl_gary_img, scl_gary_img );
+
+  //face detection
+    cascade.detectMultiScale(scl_gary_img, faces, 1.1, 2, 0|CASCADE_SCALE_IMAGE,Size(30, 30));
+    printf(&quot;Face.size = %ld\n&quot;, faces.size());
+  //facesImg = scl_gary_img(faces[0]);
+
+    Mat face_resize;  //To prevent the picture is too small (that is, people too far away from the camera)
+    int predictPCA = 0;  
+    int predictFisher = 0;  
+    int predictLBPH = 0;
+    for(size_t i = 0; i &lt; faces.size(); i++)&#123;
+
+      Rect rectFace = faces[i];
+      facesImg = scl_gary_img(faces[i]);
+      if(facesImg.rows &gt;= ROW_MIN)&#123;
+        resize(facesImg, face_resize, Size(92, 112));
+      &#125;
+      else&#123;
+        printf(&quot;faceImg.rows[%d] &lt; %d \n&quot;, facesImg.rows, ROW_MIN);
+        continue;
+      &#125;
+      if(!face_resize.empty())&#123;
+        predictPCA = modelPCA-&gt;predict(face_resize);  
+        predictFisher = modelFisher-&gt;predict(face_resize);  
+        predictLBPH = modelLBPH-&gt;predict(face_resize); 
+      &#125;
+      cout &lt;&lt; &quot;predictPCA   : &quot; &lt;&lt; predictPCA    &lt;&lt; endl;
+      cout &lt;&lt; &quot;predictFisher: &quot; &lt;&lt; predictFisher &lt;&lt; endl;
+      cout &lt;&lt; &quot;predictLBPH  : &quot; &lt;&lt; predictLBPH   &lt;&lt; endl;
+      rectangle(frame, Point(rectFace.x, rectFace.y) * scale, Point(rectFace.x + rectFace.width, rectFace.y + rectFace.height) * scale, Scalar(0, 255, 0), 2, 8);
+      if (predictPCA == 41)&#123;
+        putText(frame, &quot;Liuyang&quot;, Point(faces[i].x, faces[i].y) * scale, FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 0, 255), 2);
+      &#125;
+      else&#123;
+        putText(frame, &quot;X&quot;, Point(faces[i].x, faces[i].y) * scale, FONT_HERSHEY_SIMPLEX, 1.5, Scalar(0, 0, 255), 2);
+      &#125;
+
+  // if(faces.size() &lt;= 0)&#123;
+  //  cout &lt;&lt; &quot;There are no faces in the camera.\n&quot; &lt;&lt; endl;
+ // &#125;
+    &#125;
+    imshow(&quot;frame&quot;, frame);
+      if (waitKey(1) == 27)&#123;
+                exitFlag = 1;
+                cout &lt;&lt; &quot;Esc...&quot; &lt;&lt; endl;
+                break;
+      &#125;
+  &#125;
+&#125;
+
+int main()&#123;
+  Recognition_And_Draw();
+  return 0;
+&#125;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Recognition-with-OpenCV/7.jpg"></p>
+<p>Note:    </p>
+<ol>
+<li>This program supports multiple face recognition at the same time</li>
+<li>Face recognition accuracy is not high, and it is susceptible to environmental factors such as light.</li>
+</ol>
+
+            </div>
+            <hr/>
+						<ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/08/03/face-detection/" title="Face Detection" rel="bookmark">Face Detection</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/29/high-quality-ellipse-detection/" title="High-quality-ellipse-detection" rel="bookmark">High-quality-ellipse-detection</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/08/07/pca-suan-fa-shi-xian/" title="PCA算法实现" rel="bookmark">PCA算法实现</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/26/yuan-xing-jian-ce/" title="圆形检测" rel="bookmark">圆形检测</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/" title="OpenCV入坑指南:环境搭建篇" rel="bookmark">OpenCV入坑指南:环境搭建篇</a></h3></div></li></ul>
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward" class="reward-content">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">如果觉得本文对你有帮助，请赏杯咖啡呗！</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《Face Recognition》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/10/face-recognition-with-opencv/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                留洋
+            </a> 采用
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'hDkKfARtq15Qmzk62bNg9BR6-gzGzoHsz',
+        appKey: 'kLSDOxY3iclKHGiVHrAzoNoR',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+				enableQQ: 'true' === 'true',
+        avatar: 'mp',
+        pageSize: '6',
+        lang: 'zh-cn',
+        placeholder: 'ヾﾉ≧∀≦)o请写上您的邮箱地址,以便回复!'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/paper.jpg" class="responsive-img" alt="Manjaro i3wm 高效率环境配置篇(持续更新)">
+                        
+                        <span class="card-title">Manjaro i3wm 高效率环境配置篇(持续更新)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Manjaro i3wm配置教程
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Manjaro/" target="_blank">
+                        <span class="chip bg-color">Manjaro</span>
+                    </a>
+                    
+                    <a href="/tags/i3wm/" target="_blank">
+                        <span class="chip bg-color">i3wm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/07/enjoy-pytorch/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/53.webp" class="responsive-img" alt="Enjoy PyTorch">
+                        
+                        <span class="card-title">Enjoy PyTorch</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            My notes of PyTorch
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PyTorch-Notes/" class="post-category" target="_blank">
+                                    PyTorch Notes
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PyTorch/" target="_blank">
+                        <span class="chip bg-color">PyTorch</span>
+                    </a>
+                    
+                    <a href="/tags/Deep-Learning/" target="_blank">
+                        <span class="chip bg-color">Deep Learning</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: GeekerSheep<br />'
+            + '作者: 留洋<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+ <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 Liu yang. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">46.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                小破站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liuyaanng" class="tooltipped github-link" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1757465118@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1757465118" class="tooltipped tencent-qq" data-tooltip="QQ联系我: 1757465118" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped rss-feed" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<!-- <script> -->
+<!--     $(document).ready(function () { -->
+<!--         var int = setInterval(fixCount, 50); -->
+<!--         var pvcountOffset = 0; -->
+<!--         var uvcountOffset = 0; -->
+<!--         function fixCount() { -->
+<!--             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { -->
+<!--                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--             if ($("#busuanzi_container_site_pv").css("display") != "none") { -->
+<!--                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据  -->
+<!--                 clearInterval(int); -->
+<!--             } -->
+<!--         } -->
+<!--     }); -->
+<!-- </script> -->
+
+
+<script src="/js/prism/prism.js" async></script>
+
+<!-- APlayer -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"> -->
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 07, 01, 00, 00, 00); 
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "小破站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+ <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script> <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll back-to-top">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/masonry/masonry.pkgd.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/scrollprogress/scrollProgress.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/js/lightgallery-all.min.js"></script>
+		<script src="/js/matery.js"></script>
+		<script type="text/javascript">
+			var OriginTitile = document.title,
+				st;
+			document.addEventListener("visibilitychange", function () {
+				document.hidden
+					? ((document.title = " ( ͡ಥ ͜ʖ ͡ಥ) 喔哟，崩溃啦！"), clearTimeout(st))
+					: ((document.title = " ( ͡ᵔ ͜ʖ ͡ᵔ) 咦，又好了！"),
+					  (st = setTimeout(function () {
+							document.title = OriginTitile;
+					  }, 3e3)));
+			});
+		</script>
+
+		<!-- clicklove -->
+		
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/others/clicklove.js"></script>
+		
+
+		<!-- busuanzi -->
+		
+		<script async src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/libs/others/busuanzi.pure.mini.js"></script>
+		
+
+		<!-- <!&#45;&#45; Aplayer &#45;&#45;> -->
+		<!-- <div -->
+		<!-- 	class="aplayer" -->
+		<!-- 	data&#45;id="2909081825" -->
+		<!-- 	data&#45;server="netease" -->
+		<!-- 	data&#45;type="playlist" -->
+		<!-- 	data&#45;fixed="true" -->
+		<!-- 	data&#45;mini="true" -->
+		<!-- 	data&#45;autoplay="false" -->
+		<!-- 	data&#45;order="random" -->
+		<!-- 	data&#45;volume="0.5" -->
+		<!-- 	data&#45;theme="#1da496" -->
+		<!-- 	data&#45;preload="auto" -->
+		<!-- ></div> -->
+		<!--  -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+		<!-- 一言API -->
+		<!-- 现代写法，推荐 -->
+		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+		<script>
+			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+			fetch("https://v1.hitokoto.cn")
+				.then(function (res) {
+					return res.json();
+				})
+				.then(function (data) {
+					var hitokoto = document.getElementById("hitokoto");
+					hitokoto.innerText = data.hitokoto;
+				})
+				.catch(function (err) {
+					console.error(err);
+				});
+		</script>
+		<!--End-->
+
+		<!-- live2d -->
+		
+
+		<!-- 腾讯兔小巢 -->
+		
+		<div style="position: fixed; bottom: 50%; left: -10px; cursor: pointer">
+			<a title="兔小巢" target="_blank" rel="noopener" href="https://support.qq.com/products/293542"
+				><img
+					src="https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_source/tuxiaochao.png"
+					style="width: 70px; height: 70px"
+			/></a>
+		</div>
+		
+
+		<!--动态线条背景-->
+		
+
+		<!-- night mode -->
+		
+		<div id="xm">
+			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
+		</div>
+		<script>
+			function switchNightMode() {
+				var body = document.body;
+				if (body.classList.contains("night")) {
+					document.body.classList.remove("night");
+					document.cookie = "night=0;path=/";
+				} else {
+					document.body.classList.add("night");
+					document.cookie = "night=1;path=/";
+				}
+			}
+			var xm = document.getElementById("xm");
+			xm.onclick = switchNightMode;
+			(function () {
+				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
+					if (new Date().getHours() > 20 || new Date().getHours() < 6) {
+						document.body.classList.add("night");
+						document.cookie = "night=1;path=/";
+						console.log("夜间模式开启");
+					} else if (matchMedia("(prefers-color-scheme: night)").matches) {
+						document.body.classList.add("night");
+						document.cookie = "night=1;path=/";
+					} else {
+						document.body.classList.remove("night");
+						document.cookie = "night=0;path=/";
+						console.log("夜间模式关闭");
+					}
+				} else {
+					var night =
+						document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || "0";
+					if (night == "0") {
+						document.body.classList.remove("night");
+						console.log("夜间模式移除,from cookie");
+					} else if (night == "1") {
+						document.body.classList.add("night");
+						console.log("夜间模式开启,from cookie");
+					}
+				}
+			})();
+		</script>
+		
+	<script>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body>
+</html>
