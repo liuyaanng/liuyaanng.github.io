@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/about/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/about/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -522,14 +522,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Deep-Reinforcement-Learning/</loc>
+    <loc>https://godliuyang.wang/tags/python/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/python/</loc>
+    <loc>https://godliuyang.wang/tags/Deep-Reinforcement-Learning/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -629,14 +629,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/Paper-Notes/</loc>
+    <loc>https://godliuyang.wang/categories/Algorithms/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/Algorithms/</loc>
+    <loc>https://godliuyang.wang/categories/Paper-Notes/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
