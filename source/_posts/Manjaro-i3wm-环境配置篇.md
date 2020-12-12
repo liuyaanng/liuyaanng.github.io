@@ -11,6 +11,7 @@ password:
 summary: Manjaro i3wm配置教程
 tags:
 - Manjaro
+- linux
 - i3wm
 categories:
 - 教程

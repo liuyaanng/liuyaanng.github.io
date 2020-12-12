@@ -5,13 +5,15 @@ cover: false
 toc: true
 mathjax: false
 date: 2020-09-18 21:12:34
-updatedate: 2020-12-05
+updatedate: 2020-12-07
 img:
 password:
 summary: 记录hexo-matery主题的个人个性化设置
 tags:
 - hexo
+- linux
 categories:
+- 教程
 ---
 
 
@@ -219,7 +221,34 @@ recommended_posts:
   excludePattern: [] #添加想要被过滤的链接的正则表达式, 如配置为 ["example.com"], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
   titleHtml: <h1>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h1> #自定义标题
 ```
+### 14.4 一点小改动
+插件虽然有`autoDisplay`选项来控制是否在文章底部显示文章,但在配置文件中竟然没有一个选项来控制是否启用插件,这不能忍,于是我修改了一点插件的代码,实现了这个功能,具体实现如下:
+- 编辑`hexo-recommended-posts/lib/recommend.js`文件,第二行修改为
+```javascript
+var posts = filterPosts(recommended_posts, post, config.excludePattern, config.enable)
+```
+第九行修改为
+```javascript
+function filterPosts(recommended_posts, post, excludePattern, enable) {
+	if (recommended_posts === undefined || !enable ||
+		recommended_posts[post.permalink] === undefined) {
+		return [];
+	}
+```
 
+- 在根目录config中添加`enable`选项,具体如下:
+```yml
+recommended_posts:
+	enable: true
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 3 #内部文章数量
+  externalLinks: 1 #外部文章数量
+  fixedNumber: false #控制是否返回固定数量的推荐文章, 如果默认推荐文章不够的话会填充当前文章的前后文章作为推荐文章.
+  autoDisplay: true #自动在文章底部显示推荐文章
+  excludePattern: [] #添加想要被过滤的链接的正则表达式, 如配置为 ["example.com"], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
+  titleHtml: <h1>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h1> #自定义标题
+```
 
 ## 更新日志
 

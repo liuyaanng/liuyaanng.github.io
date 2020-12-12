@@ -10,6 +10,7 @@ img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/About-
 password:
 summary: SSR OR V2RAY?
 tags:
+- vpn
 categories:
 ---
 

@@ -10,7 +10,7 @@ img: https://i.loli.net/2020/08/17/dE57y8WIv1eflOX.png
 password:
 summary: 回文数
 tags: 
-- Python3
+- python
 - LeetCode
 categories:
 - 算法

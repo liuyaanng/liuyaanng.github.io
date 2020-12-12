@@ -12,6 +12,7 @@ summary: Arch-linux Install and i3wm config guide.
 tags:
 - Arch
 - linux
+- i3wm
 categories:
 ---
 

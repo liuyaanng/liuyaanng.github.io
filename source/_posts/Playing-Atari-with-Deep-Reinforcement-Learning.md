@@ -4,6 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: true
+hidden: true
 date: 2020-03-03 10:29:11
 updatedate: 2020-03-03 10:29:11
 img:

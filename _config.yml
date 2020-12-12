@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kevin
-subtitle: kevin's blog
+title: NerdSheep
+subtitle: Welcome to NerdSheep
 # description: 1
 description:
-keywords: "wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
+keywords: "NerdSheep nerdsheep wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
 author: 留洋
 language: zh-CN
 # language: default
@@ -136,14 +136,19 @@ lazy_load:
 # recommended_posts
 # https://github.com/huiwang/hexo-recommended-posts
 recommended_posts:
+  enable: true
   server: https://api.truelaurel.com #后端推荐服务器地址
   timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
   internalLinks: 3 #内部文章数量
-  externalLinks: 1 #外部文章数量
-  fixedNumber: true
+  externalLinks: 0 #外部文章数量
+  fixedNumber: true #控制是否返回固定数量的推荐文章, 如果默认推荐文章不够的话会填充当前文章的前后文章作为推荐文章.
   autoDisplay: true #自动在文章底部显示推荐文章
-  excludePattern: []
+  excludePattern: [] #添加想要被过滤的链接的正则表达式, 如配置为 ["example.com"], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
   titleHtml: <h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1> #自定义标题
+# Hexo-related-popular-posts config
+# More detailed settings
+
+
 # # LazyLoad-images
 # lazyload:
 #   enable: false

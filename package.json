@@ -7,6 +7,7 @@
 	},
 	"dependencies": {
 		"aplayer": "^1.10.1",
+		"ga-analytics": "0.0.7",
 		"hexo": "^5.1.1",
 		"hexo-baidu-url-submit": "0.0.6",
 		"hexo-browsersync": "^0.3.0",
@@ -19,14 +20,17 @@
 		"hexo-generator-search": "^2.4.0",
 		"hexo-generator-sitemap": "^2.1.0",
 		"hexo-generator-tag": "^0.2.0",
+		"hexo-hide-posts": "^0.1.1",
 		"hexo-lazyload-image": "^1.0.9",
 		"hexo-native-lazy-load": "^1.1.2",
 		"hexo-permalink-pinyin": "^1.1.0",
 		"hexo-recommended-posts": "^1.2.0",
+		"hexo-related-popular-posts": "^5.0.1",
 		"hexo-renderer-ejs": "^0.3.1",
 		"hexo-renderer-marked": "^3.2.0",
 		"hexo-renderer-stylus": "^0.3.3",
 		"hexo-server": "^0.3.3",
 		"hexo-wordcount": "^6.0.1"
-	}
+	},
+	"devDependencies": {}
 }
