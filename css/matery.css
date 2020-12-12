@@ -419,12 +419,11 @@ header .go-back i {
 }
 
 .bg-cover .title {
-	font-size: 3rem;
+	font-size: 3.8rem;
 	font-weight: 700;
 	line-height: 1.85em;
 	margin-bottom: 40px;
 	position: relative;
-	font-family: Zapfino;
 }
 
 .bg-cover .description {
