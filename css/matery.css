@@ -248,8 +248,8 @@ header .brand-logo .logo-img {
 }
 
 header .brand-logo .logo-span {
-	font-size: 1.8rem;
-	font-family: mango;
+	font-size: 1.3rem;
+	font-family: Zapfino;
 }
 
 header .button-collapse i {
@@ -419,11 +419,12 @@ header .go-back i {
 }
 
 .bg-cover .title {
-	font-size: 4rem;
+	font-size: 3.5rem;
 	font-weight: 700;
 	line-height: 1.85em;
 	margin-bottom: 20px;
 	position: relative;
+	font-family: Zapfino;
 }
 
 .bg-cover .description {
