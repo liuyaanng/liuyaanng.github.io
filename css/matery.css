@@ -92,8 +92,12 @@ blockquote {
 	background-color: rgba(66, 185, 131, 0.1);
 }
 
-pre {
-	padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
+.line-numbers-rows {
+	border-right-width: 0px !important;
+}
+
+.line-numbers {
+	padding: 1.5rem 1.5rem 1.5rem 3.5rem !important;
 	margin: 1rem 0 !important;
 	background: #272822;
 	overflow: auto;
@@ -101,10 +105,34 @@ pre {
 	tab-size: 4;
 }
 
+pre {
+	padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
+	margin: 1rem 0 !important;
+	background: #272822;
+	overflow: auto;
+	border-radius: 0.35rem;
+	tab-size: 4;
+}
+
+.code-area::after {
+	content: " ";
+	position: absolute;
+	border-radius: 50%;
+	background: #ff5f56;
+	width: 12px;
+	height: 12px;
+	top: 0;
+	left: 12px;
+	margin-top: 12px;
+	-webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+	box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+}
+
 code {
 	padding: 1px 5px;
+	top: 13px !important;
 	font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
-	/* font-size: 0.91rem; */
+	font-size: 0.91rem;
 	color: #e96900;
 	background-color: #f8f8f8;
 	border-radius: 2px;
@@ -220,7 +248,7 @@ header .brand-logo .logo-img {
 }
 
 header .brand-logo .logo-span {
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
 
 header .button-collapse i {
@@ -240,7 +268,7 @@ header .side-nav .mobile-head img {
 header .side-nav .mobile-head .logo-name {
 	margin-top: -30px;
 	padding-left: 10px;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 }
 
 header .side-nav .mobile-head .logo-desc {
@@ -402,11 +430,6 @@ header .go-back i {
 	font-weight: 300;
 	line-height: 1.4em;
 	color: #eee;
-}
-
-.clock {
-	margin: 0 auto;
-	padding: 20px;
 }
 
 .bg-cover .post-title {
