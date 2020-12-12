@@ -146,7 +146,11 @@
 				}
 			})();
 		</script>
-		<% } %>
+		<!-- 明月浩空播放器 -->
+		<% } %> <% if(theme.music_box && theme.music_box.enable) { if(theme.music_box.mobile) { %>
+		<script src="https://myhkw.cn/player/js/player.js" id="myhk" key="160774417274" m="1"></script>
+		<% } else { %>
 		<script src="https://myhkw.cn/player/js/player.js" id="myhk" key="160774417274"></script>
+		<% } } %>
 	</body>
 </html>

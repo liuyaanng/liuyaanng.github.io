@@ -84,7 +84,7 @@ music:
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
-  enable: true
+  enable: false
   showTitle: true
   title: Never Give Up
   url: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/video/video.mp4
@@ -495,7 +495,7 @@ googleAnalytics:
 # 使用到的前端库，可按需替换成对应的Blog_source地址，如果下面未指定具体的版本号，使用最新的版本即可.
 libs:
   css:
-    matery: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.7/blog_source/css/matery.css
+    matery: /css/matery.css
     fontAwesome: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css # V4.7.0
     materialize: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.css # 1.0.0
     aos: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.css
@@ -721,3 +721,8 @@ hide_posts:
   public_generators: []
   # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
   noindex: true
+
+# 明月浩空播放器
+music_box:
+  enable: false
+  mobile: false
