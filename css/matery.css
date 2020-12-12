@@ -1925,3 +1925,7 @@ footer .copy-right {
 	/* bg color = bg color under block */
 	background: white;
 }
+
+#hitokoto {
+	font-size: 2.2em;
+}
