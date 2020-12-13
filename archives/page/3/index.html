@@ -477,11 +477,11 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><span class="chip bg-color">图像处理</span></a>
-                            
                             <a href="/tags/OpenCV/"><span class="chip bg-color">OpenCV</span></a>
                             
                             <a href="/tags/c/"><span class="chip bg-color">c++</span></a>
+                            
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><span class="chip bg-color">图像处理</span></a>
                             
                         </div>
                         
@@ -1292,7 +1292,7 @@ $(function () {
 			xm.onclick = switchNightMode;
 			(function () {
 				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
-					if (new Date().getHours() > 20 || new Date().getHours() < 6) {
+					if (new Date().getHours() > 19 || new Date().getHours() < 8) {
 						document.body.classList.add("night");
 						document.cookie = "night=1;path=/";
 						console.log("夜间模式开启");
