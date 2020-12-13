@@ -1341,6 +1341,18 @@ $(function () {
 
 		<!-- gary blog -->
 		
+		<script>
+			calendar = new Date();
+			month = calendar.getMonth() + 1; //0-11,所以要+1
+			data = calendar.getDate();
+			var isgaryblog = false;
+			if (month == 3 && data == 1) isgaryblog = true; //清明节
+			if (month == 12 && data == 13) isgaryblog = true; //南京大屠杀纪念日
+			if (isgaryblog) {
+				document.body.classList.add("gary");
+			}
+		</script>
+		
 	<script>
     if(!('loading' in HTMLImageElement.prototype)) {
         const srp = document.createElement('script');

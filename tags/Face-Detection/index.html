@@ -421,33 +421,6 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/Face-Detection/" title="Face_Detection: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="Face_Detection" style="background-color: #85C1E9;">Face_Detection
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/OpenCV/" title="OpenCV: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="OpenCV" style="background-color: #F8C471;">OpenCV
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/c/" title="c++: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="c++" style="background-color: #F9E79F;">c++
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/PyTorch/" title="PyTorch: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -460,8 +433,35 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/Deep-Learning/" title="Deep Learning: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Deep Learning" style="background-color: #F9E79F;">Deep Learning
+                            data-tagname="Deep Learning" style="background-color: #F8C471;">Deep Learning
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Face-Detection/" title="Face_Detection: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Face_Detection" style="background-color: #F9E79F;">Face_Detection
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/OpenCV/" title="OpenCV: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="OpenCV" style="background-color: #A3E4D7;">OpenCV
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/c/" title="c++: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="c++" style="background-color: #E8F8F5;">c++
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -924,6 +924,18 @@ $(function () {
 		 
 
 		<!-- gary blog -->
+		
+		<script>
+			calendar = new Date();
+			month = calendar.getMonth() + 1; //0-11,所以要+1
+			data = calendar.getDate();
+			var isgaryblog = false;
+			if (month == 3 && data == 1) isgaryblog = true; //清明节
+			if (month == 12 && data == 13) isgaryblog = true; //南京大屠杀纪念日
+			if (isgaryblog) {
+				document.body.classList.add("gary");
+			}
+		</script>
 		
 	<script>
     if(!('loading' in HTMLImageElement.prototype)) {
