@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2019/08/03/face-detection/</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
     
     <lastmod>2020-12-11</lastmod>
@@ -135,21 +163,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/2020/02/02/horner-s-method/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -171,20 +185,6 @@
   
   <url>
     <loc>https://godliuyang.wang/2019/09/18/git-github/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/08/03/face-detection/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -531,14 +531,7 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2020-12-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/categories/Open-Source/</loc>
+    <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -552,6 +545,13 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/categories/Algorithms/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
@@ -559,7 +559,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/Face-Recognition/</loc>
+    <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/Face-Recognition/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
