@@ -2,34 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://godliuyang.wang/2020/12/13/test2/</loc>
-    
-    <lastmod>2020-12-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/12/13/test1-1/</loc>
-    
-    <lastmod>2020-12-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/12/13/test1/</loc>
-    
-    <lastmod>2020-12-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/12/13/test/</loc>
-    
-    <lastmod>2020-12-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
     
     <lastmod>2020-12-13</lastmod>
@@ -340,20 +312,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
-    <lastmod>2020-12-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Script/</loc>
-    <lastmod>2020-12-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Python/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
@@ -362,6 +320,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Anaconda3/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Script/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

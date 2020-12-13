@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2020-12-13T08:44:37.081Z</updated>
+  <updated>2020-11-14T10:20:25.758Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,62 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test2</title>
-    <link href="https://godliuyang.wang/2020/12/13/test2/"/>
-    <id>https://godliuyang.wang/2020/12/13/test2/</id>
-    <published>2020-12-13T08:44:37.000Z</published>
-    <updated>2020-12-13T08:44:37.081Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test1</title>
-    <link href="https://godliuyang.wang/2020/12/13/test1-1/"/>
-    <id>https://godliuyang.wang/2020/12/13/test1-1/</id>
-    <published>2020-12-13T08:39:39.000Z</published>
-    <updated>2020-12-13T08:39:39.887Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test1</title>
-    <link href="https://godliuyang.wang/2020/12/13/test1/"/>
-    <id>https://godliuyang.wang/2020/12/13/test1/</id>
-    <published>2020-12-13T08:38:57.000Z</published>
-    <updated>2020-12-13T08:38:57.273Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://godliuyang.wang/2020/12/13/test/"/>
-    <id>https://godliuyang.wang/2020/12/13/test/</id>
-    <published>2020-12-13T08:37:55.000Z</published>
-    <updated>2020-12-13T08:37:55.870Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>可爱的壁纸</title>
@@ -490,6 +434,126 @@
       <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
     
       <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Face Recognition</title>
+    <link href="https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/"/>
+    <id>https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/</id>
+    <published>2019-08-10T04:00:00.000Z</published>
+    <updated>2020-12-13T07:47:18.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Face-Recognition-with-OpenCV&quot;&gt;&lt;a href=&quot;#Face-Recognition-with-OpenCV&quot; class=&quot;headerlink&quot; title=&quot;Face Recognition with
+        
+      
+    
+    </summary>
+    
+      <category term="实习" scheme="https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/"/>
+    
+      <category term="Face Recognition" scheme="https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/Face-Recognition/"/>
+    
+    
+      <category term="OpenCV" scheme="https://godliuyang.wang/tags/OpenCV/"/>
+    
+      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
+    
+      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
+    
+      <category term="Face Recongnition" scheme="https://godliuyang.wang/tags/Face-Recongnition/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enjoy PyTorch</title>
+    <link href="https://godliuyang.wang/2019/08/07/enjoy-pytorch/"/>
+    <id>https://godliuyang.wang/2019/08/07/enjoy-pytorch/</id>
+    <published>2019-08-07T05:11:13.000Z</published>
+    <updated>2020-11-14T10:14:14.863Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PyTorch Notes" scheme="https://godliuyang.wang/categories/PyTorch-Notes/"/>
+    
+    
+      <category term="PyTorch" scheme="https://godliuyang.wang/tags/PyTorch/"/>
+    
+      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PCA算法实现</title>
+    <link href="https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/"/>
+    <id>https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/</id>
+    <published>2019-08-07T01:48:10.000Z</published>
+    <updated>2020-11-15T08:14:38.767Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;PCA算法实例及C-实现&quot;&gt;&lt;a href=&quot;#PCA算法实例及C-实现&quot; class=&quot;headerlink&quot; title=&quot;PCA算法实例及C++实现&quot;&gt;&lt;/a&gt;PCA算法实例及C++实现&lt;/h1&gt;&lt;h2 id=&quot;PCA算法&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="图像处理" scheme="https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="OpenCV" scheme="https://godliuyang.wang/tags/OpenCV/"/>
+    
+      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
+    
+      <category term="PCA" scheme="https://godliuyang.wang/tags/PCA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PCA原理分析</title>
+    <link href="https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/"/>
+    <id>https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/</id>
+    <published>2019-08-05T07:22:19.000Z</published>
+    <updated>2020-11-15T08:17:43.856Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;参考资料&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="PCA" scheme="https://godliuyang.wang/tags/PCA/"/>
     
   </entry>
   

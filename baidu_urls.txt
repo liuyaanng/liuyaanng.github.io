@@ -1,7 +1,3 @@
-https://godliuyang.wang/2020/12/13/test2/
-https://godliuyang.wang/2020/12/13/test1-1/
-https://godliuyang.wang/2020/12/13/test1/
-https://godliuyang.wang/2020/12/13/test/
 https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/
 https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/
 https://godliuyang.wang/2020/09/16/neovim/
@@ -28,3 +24,7 @@ https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/
 https://godliuyang.wang/2019/07/28/ellipse-function/
 https://godliuyang.wang/2019/07/26/yuan-xing-jian-ce/
 https://godliuyang.wang/2019/07/26/huo-fu-bian-huan/
+https://godliuyang.wang/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/
+https://godliuyang.wang/2019/07/24/tu-xiang-fen-ge/
+https://godliuyang.wang/2019/07/22/hexo-da-keng/
+https://godliuyang.wang/2019/07/22/xing-tai-xue-tu-xiang-chu-li/
