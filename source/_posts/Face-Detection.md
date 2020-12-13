@@ -14,6 +14,7 @@ tags:
 - OpenCV
 - c++
 categories:
+- 实习
 - 人脸检测
 ---
 # 人脸检测

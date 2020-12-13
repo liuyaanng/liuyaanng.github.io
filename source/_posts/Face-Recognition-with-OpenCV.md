@@ -15,6 +15,7 @@ tags:
 - c++
 - python
 categories: 
+- 实习
 - Face Recognition
 ---
 

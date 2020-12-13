@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: NerdSheep
-subtitle: Welcome to NerdSheep
+title: GeekOcean
+subtitle: Welcome to GeekOcean
 # description: 1
 description:
-keywords: "NerdSheep nerdsheep wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
+keywords: "GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理"
 author: 留洋
 language: zh-CN
 # language: default
@@ -124,7 +124,7 @@ deploy:
 
 # Submit
 baidu_url_submit:
-  count: 5
+  count: 30
   host: godliuyang.wang
   token: p4u0KNJRylmBQHEY
   path: baidu_urls.txt

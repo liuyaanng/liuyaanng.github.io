@@ -15,7 +15,7 @@ tags:
 - OpenCV
 - c++
 categories:
-- Open Source
+- 实习
 ---
 
 # High-quality-ellipse-detection
