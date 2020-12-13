@@ -26,6 +26,7 @@ PCA的数学原理PCA（Principal Component Analysis）是一种常用的数据�
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 		<link rel="stylesheet" href="/js/prism/prism.css">
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179139676-1"></script>
@@ -1533,6 +1534,20 @@ $(function () {
 		</script>
 		<!-- 明月浩空播放器 -->
 		 
+		<script>
+			calendar = new Date();
+			month = calendar.getMonth();
+			data = calendar.getDate();
+			var isgaryblog = false;
+			if (month == 3 && data == 1) isgaryblog = true;
+			if (month == 12 && data == 13) isgaryblog = true;
+			var LinkElement = document.createElement("link");
+
+			LinkElement.href = "./css/garyblog.css";
+			if (isgaryblog) {
+				document.body.append(LinkElement);
+			}
+		</script>
 	<script>
     if(!('loading' in HTMLImageElement.prototype)) {
         const srp = document.createElement('script');
