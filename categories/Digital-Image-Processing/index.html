@@ -350,20 +350,20 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/categories/PyTorch-Notes/" title="PyTorch Notes: 1">
+                <a href="/categories/Digital-Image-Processing/" title="Digital Image Processing: 7">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">PyTorch Notes
-                        <span class="tag-length">1</span>
+                             chip-active "
+                            style="background-color: #F5EEF8;">Digital Image Processing
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Digital-Image-Processing/" title="Digital Image Processing: 7">
+                <a href="/categories/PyTorch-Notes/" title="PyTorch Notes: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #D5F5E3;">Digital Image Processing
-                        <span class="tag-length">7</span>
+                             chip-default "
+                            style="background-color: #D5F5E3;">PyTorch Notes
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -1050,16 +1050,14 @@ $(function () {
 		 
 		<script>
 			calendar = new Date();
-			month = calendar.getMonth();
+			month = calendar.getMonth() + 1; //0-11,所以要+1
 			data = calendar.getDate();
 			var isgaryblog = false;
-			if (month == 3 && data == 1) isgaryblog = true;
-			if (month == 12 && data == 13) isgaryblog = true;
-			var LinkElement = document.createElement("link");
-
-			LinkElement.href = "/css/garyblog.css";
+			if (month == 3 && data == 1) isgaryblog = true; //清明节
+			if (month == 12 && data == 13) isgaryblog = true; //南京大屠杀纪念日
+			console.log(isgaryblog);
 			if (isgaryblog) {
-				document.body.append(LinkElement);
+				document.body.classList.add("gary");
 			}
 		</script>
 	<script>

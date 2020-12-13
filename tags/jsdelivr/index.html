@@ -367,28 +367,10 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/Bilibili-com/" title="Bilibili.com: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Bilibili.com" style="background-color: #E8F8F5;">Bilibili.com
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Script/" title="Script: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Script" style="background-color: #FEF9E7;">Script
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/hexo/" title="hexo: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="hexo" style="background-color: #F8F9F9;">hexo
+                            data-tagname="hexo" style="background-color: #E8F8F5;">hexo
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -397,26 +379,26 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/jsdelivr/" title="jsdelivr: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="jsdelivr" style="background-color: #82E0AA;">jsdelivr
+                            data-tagname="jsdelivr" style="background-color: #FEF9E7;">jsdelivr
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/PyTorch/" title="PyTorch: 1">
+                <a href="/tags/Bilibili-com/" title="Bilibili.com: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="PyTorch" style="background-color: #D7BDE2;">PyTorch
+                            data-tagname="Bilibili.com" style="background-color: #F8F9F9;">Bilibili.com
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Deep-Learning/" title="Deep Learning: 2">
+                <a href="/tags/Script/" title="Script: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Deep Learning" style="background-color: #A3E4D7;">Deep Learning
-                        <span class="tag-length">2</span>
+                            data-tagname="Script" style="background-color: #82E0AA;">Script
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -424,7 +406,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" title="图像处理: 11">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="图像处理" style="background-color: #85C1E9;">图像处理
+                            data-tagname="图像处理" style="background-color: #D7BDE2;">图像处理
                         <span class="tag-length">11</span>
                     </span>
                 </a>
@@ -433,8 +415,26 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/Matlab/" title="Matlab: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Matlab" style="background-color: #F8C471;">Matlab
+                            data-tagname="Matlab" style="background-color: #A3E4D7;">Matlab
                         <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PyTorch/" title="PyTorch: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="PyTorch" style="background-color: #85C1E9;">PyTorch
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Deep-Learning/" title="Deep Learning: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Deep Learning" style="background-color: #F8C471;">Deep Learning
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -920,16 +920,14 @@ $(function () {
 		 
 		<script>
 			calendar = new Date();
-			month = calendar.getMonth();
+			month = calendar.getMonth() + 1; //0-11,所以要+1
 			data = calendar.getDate();
 			var isgaryblog = false;
-			if (month == 3 && data == 1) isgaryblog = true;
-			if (month == 12 && data == 13) isgaryblog = true;
-			var LinkElement = document.createElement("link");
-
-			LinkElement.href = "/css/garyblog.css";
+			if (month == 3 && data == 1) isgaryblog = true; //清明节
+			if (month == 12 && data == 13) isgaryblog = true; //南京大屠杀纪念日
+			console.log(isgaryblog);
 			if (isgaryblog) {
-				document.body.append(LinkElement);
+				document.body.classList.add("gary");
 			}
 		</script>
 	<script>
