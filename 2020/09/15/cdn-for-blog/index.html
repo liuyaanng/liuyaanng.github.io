@@ -469,7 +469,7 @@ USE CDN
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        839
+                        797
                     </div>
                     
 
@@ -519,7 +519,7 @@ https://cdn.jsdelivr.net/gh/user/repo@version/file</code></pre>
 <p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@1.02/blog_images/CDN_for_blog/release.jpg</a> </p>
 <p>其中<strong>1.02</strong>是我发布的版本号，当然也可以使用模糊版本号的方法进行访问，无论哪种形式，都可以明显的感觉到访问速度快了很多。</p>
 <p>另外，在我使用的过程中，发现在第一次发布之后，以后在使用图片可将版本号换成<code>master</code>直接访问。</p>
-<h2 id="Generate-Jsdelivr-Link"><a href="#Generate-Jsdelivr-Link" class="headerlink" title="Generate Jsdelivr Link"></a>Generate Jsdelivr Link</h2><ul>
+<h2 id="Generate-Jsdelivr-Link"><a href="#Generate-Jsdelivr-Link" class="headerlink" title="Generate Jsdelivr Link"></a>Generate Jsdelivr Link</h2><h3 id="1-使用脚本生成-更优解见2"><a href="#1-使用脚本生成-更优解见2" class="headerlink" title="1. 使用脚本生成  **更优解见2 **"></a><del>1. 使用脚本生成</del>  **更优解见<a href="#1">2</a> **</h3><ul>
 <li>我写博客的截图均是由<a target="_blank" rel="noopener" href="https://zh.xnipapp.com/">Xnip</a> 生成，截图文件存储目录<code>Pictures/Xnip</code>,故我写了一个小脚本来实现</li>
 </ul>
 <pre><code class="line-numbers language-bash">#!/bin/bash
@@ -588,10 +588,9 @@ fi</code></pre>
 <p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源. 若不想指定版本号（第一次发布之后可用），可以直接使用 <code>-a master</code>.</p>
 <p>例如：</p>
 <pre><code class="line-numbers language-bash">cdn_server.sh -a master -f CDN_for_blog</code></pre>
-<p>生成链接为: <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg">https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg</a><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg"> </p>
-<p>为了写博客更（l）方（a）便（n）, 我在<code>hexo new</code>的同时在github的CDN仓库创建了一个同名的文件夹用于存储博客图片：</p>
-<pre><code class="line-numbers language-bash"># hexo and CDN
-alias hn=&#39;f() &#123;hexo new $1;mkdir ~/Github/Myrep/CND/$1;echo Created folder ~/Github/Myrep/CND/$1&#125;;f&#39;</code></pre>
+<h3 id='1'> 2. 使用PicGO工具实现一键上传并生成CDN链接</h3>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo</a><br>文档太详细,不想做过多介绍了</p>
 <div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/">魔改hexo博客</a></li><li><a href="https://godliuyang.wang/2019/07/22/hexo-da-keng/">hexo大坑</a></li></ul></div>
             </div>
             <hr/>
@@ -1312,7 +1311,7 @@ alias hn=&#39;f() &#123;hexo new $1;mkdir ~/Github/Myrep/CND/$1;echo Created fol
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.3k</span>
+            <span class="white-color">43.2k</span>
             
 
             <br>

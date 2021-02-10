@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2020/09/15/cdn-for-blog/</loc>
+    
+    <lastmod>2021-02-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2021/02/11/leetcode-day1/</loc>
     
     <lastmod>2021-02-10</lastmod>
@@ -241,13 +248,6 @@
   
   <url>
     <loc>https://godliuyang.wang/2020/04/22/clsw/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/09/15/cdn-for-blog/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
