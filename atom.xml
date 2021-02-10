@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2020-11-14T10:20:25.758Z</updated>
+  <updated>2021-02-10T15:39:29.953Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-CLI</title>
+    <link href="https://godliuyang.wang/2021/02/10/leetcode-cli/"/>
+    <id>https://godliuyang.wang/2021/02/10/leetcode-cli/</id>
+    <published>2021-02-10T04:00:42.000Z</published>
+    <updated>2021-02-10T15:39:29.953Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;由于我有长期使vim的习惯, 在刷leetcode题时,在网页上写代码实在是有点难受, &lt;a href=&quot;https://github.com/skygragon/leetcode-cli&quot;&gt;LeetCode-cli&lt;/a&gt; 完美解决了我的问题.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode_Day1</title>
+    <link href="https://godliuyang.wang/2021/02/09/leetcode-day1/"/>
+    <id>https://godliuyang.wang/2021/02/09/leetcode-day1/</id>
+    <published>2021-02-09T14:11:48.000Z</published>
+    <updated>2021-02-10T03:59:30.672Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode_Daily_Questions</title>
+    <link href="https://godliuyang.wang/2021/02/09/leetcode-daily-questions/"/>
+    <id>https://godliuyang.wang/2021/02/09/leetcode-daily-questions/</id>
+    <published>2021-02-09T14:06:49.000Z</published>
+    <updated>2021-02-09T14:10:58.796Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>可爱的壁纸</title>
@@ -145,9 +199,9 @@
       <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
-    
       <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
     
   </entry>
   
@@ -468,92 +522,6 @@
       <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
     
       <category term="Face Recongnition" scheme="https://godliuyang.wang/tags/Face-Recongnition/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Enjoy PyTorch</title>
-    <link href="https://godliuyang.wang/2019/08/07/enjoy-pytorch/"/>
-    <id>https://godliuyang.wang/2019/08/07/enjoy-pytorch/</id>
-    <published>2019-08-07T05:11:13.000Z</published>
-    <updated>2020-11-14T10:14:14.863Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Installing-PyTorch-with-Anaconda-and-Conda&quot;&gt;&lt;a href=&quot;#Installing-PyTorch-with-Anaconda-and-Conda&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="PyTorch Notes" scheme="https://godliuyang.wang/categories/PyTorch-Notes/"/>
-    
-    
-      <category term="PyTorch" scheme="https://godliuyang.wang/tags/PyTorch/"/>
-    
-      <category term="Deep Learning" scheme="https://godliuyang.wang/tags/Deep-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PCA算法实现</title>
-    <link href="https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/"/>
-    <id>https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/</id>
-    <published>2019-08-07T01:48:10.000Z</published>
-    <updated>2020-11-15T08:14:38.767Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;PCA算法实例及C-实现&quot;&gt;&lt;a href=&quot;#PCA算法实例及C-实现&quot; class=&quot;headerlink&quot; title=&quot;PCA算法实例及C++实现&quot;&gt;&lt;/a&gt;PCA算法实例及C++实现&lt;/h1&gt;&lt;h2 id=&quot;PCA算法&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="图像处理" scheme="https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
-      <category term="OpenCV" scheme="https://godliuyang.wang/tags/OpenCV/"/>
-    
-      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
-    
-      <category term="PCA" scheme="https://godliuyang.wang/tags/PCA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PCA原理分析</title>
-    <link href="https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/"/>
-    <id>https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/</id>
-    <published>2019-08-05T07:22:19.000Z</published>
-    <updated>2020-11-15T08:17:43.856Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;参考资料&lt;br&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="PCA" scheme="https://godliuyang.wang/tags/PCA/"/>
     
   </entry>
   
