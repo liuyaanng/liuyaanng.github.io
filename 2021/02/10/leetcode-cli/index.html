@@ -456,14 +456,14 @@ leetcode支持本地缓存题目,写代码,测试以及提交到leetcode.com.
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        841
+                        941
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -513,50 +513,129 @@ npm install -g leetcode-tools/leetcode-cli</code></pre>
 <p><strong>2. 使用<code>leetcode.cn</code>, 用<code>leetcode show</code>命令出现<code>http error</code></strong><br>解决办法: 参考<a target="_blank" rel="noopener" href="https://github.com/LeetCode-OpenSource/vscode-leetcode/issues/489">https://github.com/LeetCode-OpenSource/vscode-leetcode/issues/489</a> </p>
 <ul>
 <li>找到<code>leetcode.cn.js</code>文件, <strong>MacOS</strong> 一般在<code>/usr/local/lib/node_modules/vsc-leetcode-cli/lib/plugins/leetcode.cn.js</code></li>
-<li>替换成以下代码:<pre><code class="line-numbers language-js">&#39;use strict&#39;
-var request = require(&#39;request&#39;);
-</code></pre>
-</li>
+<li>替换成以下代码:</li>
 </ul>
-<p>var config = require(‘../config’);<br>var h = require(‘../helper’);<br>var log = require(‘../log’);<br>var Plugin = require(‘../plugin’);<br>var session = require(‘../session’);</p>
-<p>//<br>// [Usage]<br>//<br>// <a target="_blank" rel="noopener" href="https://github.com/skygragon/leetcode-cli-plugins/blob/master/docs/leetcode.cn.md">https://github.com/skygragon/leetcode-cli-plugins/blob/master/docs/leetcode.cn.md</a><br>//<br>var plugin = new Plugin(15, ‘leetcode.cn’, ‘2018.11.25’,<br>    ‘Plugin to talk with leetcode-cn APIs.’);</p>
-<p>plugin.init = function() {<br>  config.app = ‘leetcode.cn’;<br>  config.sys.urls.base            = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com&/#39;">https://leetcode-cn.com&#39;</a>;<br>  config.sys.urls.login           = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/accounts/login/&#39;">https://leetcode-cn.com/accounts/login/&#39;</a>;<br>  config.sys.urls.problems        = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/api/problems/$category/&#39;">https://leetcode-cn.com/api/problems/$category/&#39;</a>;<br>  config.sys.urls.problem         = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/$slug/description/&#39;">https://leetcode-cn.com/problems/$slug/description/&#39;</a>;<br>  config.sys.urls.graphql         = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/graphql&#39;">https://leetcode-cn.com/graphql&#39;</a>;<br>  config.sys.urls.problem_detail  = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/graphql&#39;">https://leetcode-cn.com/graphql&#39;</a>;<br>  config.sys.urls.test            = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/$slug/interpret_solution/&#39;">https://leetcode-cn.com/problems/$slug/interpret_solution/&#39;</a>;<br>  config.sys.urls.session         = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/session/&#39;">https://leetcode-cn.com/session/&#39;</a>;<br>  config.sys.urls.submit          = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/$slug/submit/&#39;">https://leetcode-cn.com/problems/$slug/submit/&#39;</a>;<br>  config.sys.urls.submissions     = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/api/submissions/$slug&#39;">https://leetcode-cn.com/api/submissions/$slug&#39;</a>;<br>  config.sys.urls.submission      = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/submissions/detail/$id/&#39;">https://leetcode-cn.com/submissions/detail/$id/&#39;</a>;<br>  config.sys.urls.verify          = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/submissions/detail/$id/check/&#39;">https://leetcode-cn.com/submissions/detail/$id/check/&#39;</a>;<br>  config.sys.urls.favorites       = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/list/api/questions&#39;">https://leetcode-cn.com/list/api/questions&#39;</a>;<br>  config.sys.urls.favorite_delete = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/list/api/questions/$hash/$id&#39;">https://leetcode-cn.com/list/api/questions/$hash/$id&#39;</a>;<br>};</p>
-<p>// FIXME: refactor those<br>// update options with user credentials<br>function signOpts(opts, user) {<br>  opts.headers.Cookie = ‘LEETCODE_SESSION=’ + user.sessionId +<br>                        ‘;csrftoken=’ + user.sessionCSRF + ‘;’;<br>  opts.headers[‘X-CSRFToken’] = user.sessionCSRF;<br>  opts.headers[‘X-Requested-With’] = ‘XMLHttpRequest’;<br>}</p>
-<p>function makeOpts(url) {<br>  const opts = {};<br>  opts.url = url;<br>  opts.headers = {};</p>
-<p>  if (session.isLogin())<br>    signOpts(opts, session.getUser());<br>  return opts;<br>}</p>
-<p>function checkError(e, resp, expectedStatus) {<br>  if (!e &amp;&amp; resp &amp;&amp; resp.statusCode !== expectedStatus) {<br>    const code = resp.statusCode;<br>    log.debug(‘http error: ‘ + code);</p>
-<pre><code>if (code === 403 || code === 401) &#123;
-  e = session.errors.EXPIRED;
-&#125; else &#123;
-  e = &#123;msg: &#39;http error&#39;, statusCode: code&#125;;
-&#125;</code></pre>
-<p>  }<br>  return e;<br>}</p>
-<p>plugin.getProblems = function(cb) {<br>  plugin.next.getProblems(function(e, problems) {<br>    if (e) return cb(e);</p>
-<pre><code>plugin.getProblemsTitle(function(e, titles) &#123;
-  if (e) return cb(e);
+<pre><code class="line-numbers language-js">&#39;use strict&#39;
+var request = require(&#39;request&#39;);
+var config = require(&#39;../config&#39;);
+var h = require(&#39;../helper&#39;);
+var log = require(&#39;../log&#39;);
+var Plugin = require(&#39;../plugin&#39;);
+var session = require(&#39;../session&#39;);
+//
+// [Usage]
+//
+// https://github.com/skygragon/leetcode-cli-plugins/blob/master/docs/leetcode.cn.md
+//
+var plugin = new Plugin(15, &#39;leetcode.cn&#39;, &#39;2018.11.25&#39;,
+    &#39;Plugin to talk with leetcode-cn APIs.&#39;);
+plugin.init = function() &#123;
+  config.app = &#39;leetcode.cn&#39;;
+  config.sys.urls.base            = &#39;https://leetcode-cn.com&#39;;
+  config.sys.urls.login           = &#39;https://leetcode-cn.com/accounts/login/&#39;;
+  config.sys.urls.problems        = &#39;https://leetcode-cn.com/api/problems/$category/&#39;;
+  config.sys.urls.problem         = &#39;https://leetcode-cn.com/problems/$slug/description/&#39;;
+  config.sys.urls.graphql         = &#39;https://leetcode-cn.com/graphql&#39;;
+  config.sys.urls.problem_detail  = &#39;https://leetcode-cn.com/graphql&#39;;
+  config.sys.urls.test            = &#39;https://leetcode-cn.com/problems/$slug/interpret_solution/&#39;;
+  config.sys.urls.session         = &#39;https://leetcode-cn.com/session/&#39;;
+  config.sys.urls.submit          = &#39;https://leetcode-cn.com/problems/$slug/submit/&#39;;
+  config.sys.urls.submissions     = &#39;https://leetcode-cn.com/api/submissions/$slug&#39;;
+  config.sys.urls.submission      = &#39;https://leetcode-cn.com/submissions/detail/$id/&#39;;
+  config.sys.urls.verify          = &#39;https://leetcode-cn.com/submissions/detail/$id/check/&#39;;
+  config.sys.urls.favorites       = &#39;https://leetcode-cn.com/list/api/questions&#39;;
+  config.sys.urls.favorite_delete = &#39;https://leetcode-cn.com/list/api/questions/$hash/$id&#39;;
+&#125;;
 
-  problems.forEach(function(problem) &#123;
-    const title = titles[problem.id];
-    if (title)
-      problem.name = title;
+// FIXME: refactor those
+// update options with user credentials
+function signOpts(opts, user) &#123;
+  opts.headers.Cookie = &#39;LEETCODE_SESSION=&#39; + user.sessionId +
+                        &#39;;csrftoken=&#39; + user.sessionCSRF + &#39;;&#39;;
+  opts.headers[&#39;X-CSRFToken&#39;] = user.sessionCSRF;
+  opts.headers[&#39;X-Requested-With&#39;] = &#39;XMLHttpRequest&#39;;
+&#125;
+
+function makeOpts(url) &#123;
+  const opts = &#123;&#125;;
+  opts.url = url;
+  opts.headers = &#123;&#125;;
+
+  if (session.isLogin())
+    signOpts(opts, session.getUser());
+  return opts;
+&#125;
+
+function checkError(e, resp, expectedStatus) &#123;
+  if (!e &amp;&amp; resp &amp;&amp; resp.statusCode !== expectedStatus) &#123;
+    const code = resp.statusCode;
+    log.debug(&#39;http error: &#39; + code);
+
+    if (code === 403 || code === 401) &#123;
+      e = session.errors.EXPIRED;
+    &#125; else &#123;
+      e = &#123;msg: &#39;http error&#39;, statusCode: code&#125;;
+    &#125;
+  &#125;
+  return e;
+&#125;
+
+plugin.getProblems = function(cb) &#123;
+  plugin.next.getProblems(function(e, problems) &#123;
+    if (e) return cb(e);
+
+    plugin.getProblemsTitle(function(e, titles) &#123;
+      if (e) return cb(e);
+
+      problems.forEach(function(problem) &#123;
+        const title = titles[problem.id];
+        if (title)
+          problem.name = title;
+      &#125;);
+
+      return cb(null, problems);
+    &#125;);
   &#125;);
+&#125;;
 
-  return cb(null, problems);
-&#125;);</code></pre>
-<p>  });<br>};</p>
-<p>plugin.getProblemsTitle = function(cb) {<br>  log.debug(‘running leetcode.cn.getProblemNames’);</p>
-<p>  const opts = makeOpts(config.sys.urls.graphql);<br>  opts.headers.Origin = config.sys.urls.base;<br>  opts.headers.Referer = ‘<a target="_blank" rel="noopener" href="https://leetcode-cn.com/api/problems/algorithms/&#39;">https://leetcode-cn.com/api/problems/algorithms/&#39;</a>;</p>
-<p>  opts.json = true;<br>  opts.body = {<br>    query: [<br>      ‘query getQuestionTranslation($lang: String) {‘,<br>      ‘  translations: allAppliedQuestionTranslations(lang: $lang) {‘,<br>      ‘    title’,<br>      ‘    questionId’,<br>      ‘  }’,<br>      ‘}’,<br>      ‘’<br>    ].join(‘\n’),<br>    variables:     {},<br>    operationName: ‘getQuestionTranslation’<br>  };</p>
-<p>  const spin = h.spin(‘Downloading questions titles’);<br>  request.post(opts, function(e, resp, body) {<br>    spin.stop();<br>    e = checkError(e, resp, 200);<br>    if (e) return cb(e);</p>
-<pre><code>const titles = [];
-body.data.translations.forEach(function(x) &#123;
-  titles[x.questionId] = x.title;
-&#125;);
+plugin.getProblemsTitle = function(cb) &#123;
+  log.debug(&#39;running leetcode.cn.getProblemNames&#39;);
 
-return cb(null, titles);</code></pre>
-<p>  });<br>};</p>
-<p>module.exports = plugin;</p>
-<pre><code></code></pre>
+  const opts = makeOpts(config.sys.urls.graphql);
+  opts.headers.Origin = config.sys.urls.base;
+  opts.headers.Referer = &#39;https://leetcode-cn.com/api/problems/algorithms/&#39;;
+
+  opts.json = true;
+  opts.body = &#123;
+    query: [
+      &#39;query getQuestionTranslation($lang: String) &#123;&#39;,
+      &#39;  translations: allAppliedQuestionTranslations(lang: $lang) &#123;&#39;,
+      &#39;    title&#39;,
+      &#39;    questionId&#39;,
+      &#39;  &#125;&#39;,
+      &#39;&#125;&#39;,
+      &#39;&#39;
+    ].join(&#39;\n&#39;),
+    variables:     &#123;&#125;,
+    operationName: &#39;getQuestionTranslation&#39;
+  &#125;;
+
+  const spin = h.spin(&#39;Downloading questions titles&#39;);
+  request.post(opts, function(e, resp, body) &#123;
+    spin.stop();
+    e = checkError(e, resp, 200);
+    if (e) return cb(e);
+
+    const titles = [];
+    body.data.translations.forEach(function(x) &#123;
+      titles[x.questionId] = x.title;
+    &#125;);
+
+    return cb(null, titles);
+  &#125;);
+&#125;;
+
+module.exports = plugin;</code></pre>
 
             </div>
             <hr/>
@@ -1261,7 +1340,7 @@ return cb(null, titles);</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43.2k</span>
+            <span class="white-color">43.3k</span>
             
 
             <br>
