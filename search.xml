@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>LeetCode_Day1</title>
-      <link href="/2021/02/11/leetcode-day1/"/>
-      <url>/2021/02/11/leetcode-day1/</url>
-      
-        <content type="html"><![CDATA[<p>[1] Two Sum  </p><p><a href="https://leetcode.com/problems/two-sum/description/">https://leetcode.com/problems/two-sum/description/</a></p><ul><li>algorithms</li><li>Easy (46.37%)</li><li>Likes:    19171</li><li>Dislikes: 682</li><li>Total Accepted:    3.8M</li><li>Total Submissions: 8.3M</li><li>Testcase Example:  ‘[2,7,11,15]\n9’</li></ul><p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p><p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p><p>You can return the answer in any order.</p><p>&nbsp;</p><p><strong>Example 1:</strong></p><pre><strong>Input:</strong> nums = [2,7,11,15], target = 9<strong>Output:</strong> [0,1]<strong>Output:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].</pre><p><strong>Example 2:</strong></p><pre><strong>Input:</strong> nums = [3,2,4], target = 6<strong>Output:</strong> [1,2]</pre><p><strong>Example 3:</strong></p><pre><strong>Input:</strong> nums = [3,3], target = 6<strong>Output:</strong> [0,1]</pre><p>&nbsp;</p><p><strong>Constraints:</strong></p><ul>    <li><code>2 &lt;= nums.length &lt;= 10<sup>3</sup></code></li>    <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>    <li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>    <li><strong>Only one valid answer exists.</strong></li></ul><p><strong>Approach 1:</strong> Brute Force</p><p>Loop through each element <code>x</code>  and find if there is another value that equals to <code>target - x</code> </p><pre><code class="line-numbers language-c++">class Solution &#123;public:        vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;            vector&lt;int&gt; answer;            int i, j;            for(i = 0; i&lt; nums.size() - 1; i++)&#123;                for(j = i + 1; j &lt; nums.size(); j++)&#123;                    int diff = target - nums[j];                    if(nums[i] == diff)&#123;                        answer.push_back(i);                        answer.push_back(j);                    &#125;                &#125;            &#125;            return answer;    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210211230613.png"></p><p><strong>Complexity Analysis</strong> </p><ul><li>Time Complexity: $O(n^2)$</li><li>Space Complexity: $O(1)$</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LeetCode-CLI</title>
       <link href="/2021/02/10/leetcode-cli/"/>
       <url>/2021/02/10/leetcode-cli/</url>
