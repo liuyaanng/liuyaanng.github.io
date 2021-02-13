@@ -59,12 +59,6 @@
         <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="./img/bg.jpg"></video>
     </div>
 
-    <span style="position:absolute;top:5px;left:10px;color:#fff;font-size:10px;">点击按钮选择【连续】/【循环】模式</span>
-    <span style="position:absolute;top:20px;left:10px;color:#fff;font-size:10px;">右滑/上滑切换下一个</span>
-    <span style="position:absolute;top:35px;left:10px;color:#fff;font-size:10px;">点击来源切换数据源</span>
-    <span style="position:absolute;top:50px;left:10px;color:#fff;font-size:10px;">点击爱心按钮收藏</span>
-    <span style="position:absolute;top:65px;left:10px;color:#fff;font-size:10px;">单击播放/暂停</span>
-    <span style="position:absolute;top:80px;left:10px;color:#fff;font-size:10px;">双击进入全屏</span>
 
     <div id="buttons" style="position:absolute;bottom:150px;right:10px;">
         <button id="bth" style="border-radius:20px;width:32px;height:32px;">循环</button>
@@ -100,7 +94,6 @@
 <script type="text/javascript" src="./js/jquery.cookie.min.js"></script>
 <script>
 $(document).ready(function(){
-		var URL = "https://esi.evepc.163.com/latest/status/?datasource=serenity";
 
 let ourRequest = new XMLHttpRequest;
 
@@ -117,7 +110,7 @@ ourRequest.open('GET', URL);
 ourRequest.send();
     auto = false;
     gi = 1;
-    url = "./demo.mp4";
+    url = "https://toktiks.b-cdn.net/VioletSecretAfricanbushviper/index.m3u8";
     vdurl = "./demo.mp4";
     player = document.getElementById("player");
     players();
