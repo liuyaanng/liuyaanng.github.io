@@ -43,7 +43,7 @@
 				<button id="bth" class="xhms">单视频循环播放</button>
 			</div>
 			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
-				<button class="pass" onclick="players();">PASS</button>
+				<button class="pass" onclick="players(url_list);">PASS</button>
 			</div>
 			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
 				<img src="./img/love.png" id="love" style="background-color: #0E0F1A;border-radius:10px;width:38px;height:38px;" title="点击喜欢按钮收藏">
@@ -131,7 +131,7 @@ $(document).ready(function(){
 
     vdurl = "./demo.mp4";
     player = document.getElementById("player");
-    players();
+    players(url_list);
  
     $("#bth").on("click", function(){
         auto = !auto;
@@ -180,7 +180,7 @@ $(document).ready(function(){
         if (auto == false) {
             player.play();
         } else {
-            players();
+            players(url_list);
         }
     }, false);
 
@@ -206,7 +206,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
 }
 
-function players() {
+function players(url_list) {
 	console.log("成功获取数据！");
 	var i = getRandomInt(0,34);
 	console.log(i);
