@@ -94,8 +94,41 @@ $(document).ready(function(){
   //       });
     auto = true;
     gi = 1;
+				var url_list = new Array("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin3_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin20_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin22_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin1_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin26_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin5_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin19_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin7_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin24_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin0_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin23_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin21_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin2_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin25_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin6_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin18_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin4_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin32_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin8_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin16_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin14_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin29_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin30_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin34_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin10_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin12_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin28_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin15_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin31_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin33_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin17_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin9_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin11_.m3u8",
+)
 
-	url = "https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/test_index.m3u8";
     vdurl = "./demo.mp4";
     player = document.getElementById("player");
     players();
@@ -167,10 +200,18 @@ $(document).ready(function(){
         }
     });
 });
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+}
 
 function players() {
 	console.log("成功获取数据！");
-    player.src = url;
+	var i = getRandomInt(0,34);
+	console.log(i);
+    player.src =	url_list[i];
+		console.log(player.src)
     vdurl = url;
     if (gi==0) {
         $("#love").attr('src','./img/loves.png');
