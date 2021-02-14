@@ -467,6 +467,41 @@ $(function () {
                     
 
                     
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="title center-align">
+        <i class="fa fa-video-camera"></i>&nbsp;&nbsp;Never Give Up
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer" class="dplayer-video"
+                    ></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'none',
+            volume: Number('0.7'),
+            video: {
+                url: 'https://toktiks.b-cdn.net/EnlightenedFaintBear/index.m3u8',
+                pic: 'https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/video/pic.jpg',
+                thumbnails: 'https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/video/thumbnails.jpg'
+            }
+        });
+    });
+</script>
+                    
 
                     <div id="recommend-sections" class="recommend">
                         
@@ -1354,10 +1389,30 @@ $(function () {
 				.then(function (data) {
 					var hitokoto = document.getElementById("hitokoto");
 					hitokoto.innerText = data.hitokoto;
+					console.log(data.hitokoto);
 				})
 				.catch(function (err) {
 					console.error(err);
 				});
+		</script>
+		<!--End-->
+
+		<script>
+				// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+				fetch("https://toktik.app/api/content",{
+			      method: "POST",
+			mode: "cors",
+			headers: {
+			  "Content-Type": "application/x-www-form-urlencoded"})
+					.then(function (res) {
+						return res.json();
+					})
+					.then(function (data) {
+						console.log("get tiktok success");
+					})
+					.catch(function (err) {
+						console.error(err);
+					});
 		</script>
 		<!--End-->
 

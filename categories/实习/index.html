@@ -870,10 +870,30 @@ $(function () {
 				.then(function (data) {
 					var hitokoto = document.getElementById("hitokoto");
 					hitokoto.innerText = data.hitokoto;
+					console.log(data.hitokoto);
 				})
 				.catch(function (err) {
 					console.error(err);
 				});
+		</script>
+		<!--End-->
+
+		<script>
+				// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+				fetch("https://toktik.app/api/content",{
+			      method: "POST",
+			mode: "cors",
+			headers: {
+			  "Content-Type": "application/x-www-form-urlencoded"})
+					.then(function (res) {
+						return res.json();
+					})
+					.then(function (data) {
+						console.log("get tiktok success");
+					})
+					.catch(function (err) {
+						console.error(err);
+					});
 		</script>
 		<!--End-->
 
