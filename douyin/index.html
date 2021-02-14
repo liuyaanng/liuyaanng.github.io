@@ -61,35 +61,35 @@
 
 
     <div id="buttons" style="position:absolute;bottom:150px;right:10px;">
-        <button id="bth" style="border-radius:20px;width:32px;height:32px;">循环</button>
-        <br><br><br>
-        <button id="yuan" style="border-radius:20px;width:32px;height:32px;">源1</button>
+        <!-- <button id="bth" style="border&#45;radius:20px;width:32px;height:32px;">循环</button> -->
+        <!-- <br><br><br> -->
+        <!-- <button id="yuan" style="border&#45;radius:20px;width:32px;height:32px;">源1</button> -->
         <br><br><br>
         <button style="border-radius:20px;width:48px;height:32px;" onclick="players();">PASS</button>
         <br><br><br>
-        <img style="border-radius:10px;width:32px;height:32px;" src="./img/love.png" title="点击添加收藏" id="love"/>
+        <!-- <img style="border&#45;radius:10px;width:32px;height:32px;" src="./img/love.png" title="点击添加收藏" id="love"/> -->
     </div>
 
-    <span style="position:absolute;top:5px;right:10px;color:#4682B4;;font-size:12px;" id="userid">@dafeiyu`Power</span>
+    <span style="position:absolute;top:5px;right:10px;color:#4682B4;;font-size:12px;" id="userid">GeekOcean</span>
 
     <span style="position:absolute;bottom:10px;left:10px;color:#fff;font-size:9px;">本程序仅作研究学习演示，数据采集自网络<br>原作者拍摄创作不易，请勿下载传播</span>
 </body>
 
-<div class="login" id="dlym" style="height:80vh;width: 85vw;">
-    <div class="login-title">ID*组·收藏登入<span><a class="close-login" onclick="$('#dlym').hide();">关闭</a></span></div>
-    <div class="login-input-content">
-        <div style="width:100%;height:1px;border-top: solid #ACC0D8 1px;"></div><br>
-        <div class="login-input">
-            <label>ID*组·账号：</label>
-            <input type="text" placeholder="ID*组·账号（建议使用易记的纯数字）"  id="username" class="list-input"/>
-        </div>
-        <br><div style="width:100%;height:1px;border-top: solid #ACC0D8 1px;"></div>
-        <strong>温馨提示：</strong><br>
-        <span>1.本收藏功能为开放性ID组账号收藏体验，ID*组·账号不设密码，如已存在同ID组账号，即会在原ID组账号上添加收藏数据，您可以公开您的ID组账号给您志同道合的好友们；添加的收藏数据暂不支持取消，不支持删除ID组账号，请您谨慎操作！</span><br>
-        <span>2.点击来源显示按钮切换到收藏源即可浏览当前ID组账号收藏的数据。</span>
-    </div>
-    <div class="login-button"><a id="login">登录账号</a></div>
-</div>
+<!-- <div class="login" id="dlym" style="height:80vh;width: 85vw;"> -->
+<!--     <div class="login&#45;title">ID*组·收藏登入<span><a class="close&#45;login" onclick="$('#dlym').hide();">关闭</a></span></div> -->
+<!--     <div class="login&#45;input&#45;content"> -->
+<!--         <div style="width:100%;height:1px;border&#45;top: solid #ACC0D8 1px;"></div><br> -->
+<!--         <div class="login&#45;input"> -->
+<!--             <label>ID*组·账号：</label> -->
+<!--             <input type="text" placeholder="ID*组·账号（建议使用易记的纯数字）"  id="username" class="list&#45;input"/> -->
+<!--         </div> -->
+<!--         <br><div style="width:100%;height:1px;border&#45;top: solid #ACC0D8 1px;"></div> -->
+<!--         <strong>温馨提示：</strong><br> -->
+<!--         <span>1.本收藏功能为开放性ID组账号收藏体验，ID*组·账号不设密码，如已存在同ID组账号，即会在原ID组账号上添加收藏数据，您可以公开您的ID组账号给您志同道合的好友们；添加的收藏数据暂不支持取消，不支持删除ID组账号，请您谨慎操作！</span><br> -->
+<!--         <span>2.点击来源显示按钮切换到收藏源即可浏览当前ID组账号收藏的数据。</span> -->
+<!--     </div> -->
+<!--     <div class="login&#45;button"><a id="login">登录账号</a></div> -->
+<!-- </div> -->
 <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="./js/jquery.cookie.min.js"></script>
 <script>
@@ -110,40 +110,6 @@ ourRequest.open('GET', URL);
 ourRequest.send();
     auto = false;
     gi = 1;
-		var url_list = new Array("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin3_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin20_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin22_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin1_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin26_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin5_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin19_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin7_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin24_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin0_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin23_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin21_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin2_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin25_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin6_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin18_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin4_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin32_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin8_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin16_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin14_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin29_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin30_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin34_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin10_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin12_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin28_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin15_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin31_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin33_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin17_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin9_.m3u8",
-"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin11_.m3u8",
-)
     vdurl = "./demo.mp4";
     player = document.getElementById("player");
     players();
@@ -222,6 +188,40 @@ function getRandomInt(min, max) {
 }
 function players() {
     console.log("成功获取数据！");
+		var url_list = new Array("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin3_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin20_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin22_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin1_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin26_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin5_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin19_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin7_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin24_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin0_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin23_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin21_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin2_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin25_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin6_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin18_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin4_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin32_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin8_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin16_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin14_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin29_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin30_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin34_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin10_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin12_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin28_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin15_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin31_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin33_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin17_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin9_.m3u8",
+"https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/videos/douyin11_.m3u8",
+)
 		var i = getRandomInt(0,34);
     player.src = url_list[i];
     vdurl = url;
