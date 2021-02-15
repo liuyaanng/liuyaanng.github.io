@@ -449,14 +449,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        822
+                        862
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -558,7 +558,20 @@
 <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="./js/jquery.cookie.min.js"></script>
 <script>
+
 $(document).ready(function(){
+			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
+			fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/txt/cdn_link.json")
+				.then(function (res) {
+					return res.json();
+				})
+				.then(function (data) {
+					console.log(data);
+				})
+				.catch(function (err) {
+					console.error(err);
+				});
+
 	// $.ajax({
   //           type: "GET",
   //           url: "https://toktik.app/api/content",
@@ -1648,20 +1661,6 @@ $(function () {
 					var hitokoto = document.getElementById("hitokoto");
 					hitokoto.innerText = data.hitokoto;
 					console.log(data.hitokoto);
-				})
-				.catch(function (err) {
-					console.error(err);
-				});
-		</script>
-		<!--End-->
-		<script>
-			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
-			fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource/txt/cdn_link.json")
-				.then(function (res) {
-					return res.json();
-				})
-				.then(function (data) {
-					console.log(data);
 				})
 				.catch(function (err) {
 					console.error(err);
