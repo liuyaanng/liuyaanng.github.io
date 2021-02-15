@@ -10,7 +10,6 @@ Allow: /2019/
 Allow: /2020/
 Allow: /page/
 Disallow: /she/
-Disallow:/douyin/
 Allow: /js/
 Allow: /css/
 Disallow: /medias/
