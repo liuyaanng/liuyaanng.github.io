@@ -188,7 +188,6 @@
 			<!-- <button id="auto" style="border&#45;radius:20px;width:32px;height:32px;"></button> -->
 			<!-- <br><br><br> -->
 			<!-- <button id="yuan" style="border&#45;radius:20px;width:32px;height:32px;">源1</button> -->
-			<br /><br /><br />
 			<button style="border-radius: 20px; width: 48px; height: 32px" onclick="players();">
 				PASS
 			</button>
@@ -326,7 +325,7 @@
 		}
 		function players() {
 			console.log("成功获取数据！");
-			fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@latest/txt/cdn_link.json")
+			fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@latest/txt/ks.json")
 				.then(function (res) {
 					return res.json();
 				})
