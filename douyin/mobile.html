@@ -56,18 +56,18 @@
 </style>
 <body>
     <div class="app">
-        <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="./img/bg.jpg"></video>
+        <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210215124035.png"></video>
     </div>
 
 
     <div id="buttons" style="position:absolute;bottom:150px;right:10px;">
-        <!-- <button id="bth" style="border&#45;radius:20px;width:32px;height:32px;">循环</button> -->
+        <!-- <button id="auto" style="border&#45;radius:20px;width:32px;height:32px;"></button> -->
         <!-- <br><br><br> -->
         <!-- <button id="yuan" style="border&#45;radius:20px;width:32px;height:32px;">源1</button> -->
         <br><br><br>
         <button style="border-radius:20px;width:48px;height:32px;" onclick="players();">PASS</button>
         <br><br><br>
-        <img style="border-radius:10px;width:32px;height:32px;" src="./img/love.png" title="点击添加收藏" id="love"/>
+        <!-- <img style="border&#45;radius:10px;width:32px;height:32px;" src="./img/love.png" title="点击添加收藏" id="love"/> -->
     </div>
 
     <span style="position:absolute;top:5px;right:10px;color:#4682B4;;font-size:12px;" id="userid">@GeekOcean</span>
@@ -108,9 +108,9 @@ ourRequest.onreadystatechange = function () {
 
 ourRequest.open('GET', URL);
 ourRequest.send();
-    auto = false;
+    auto = true;
     gi = 1;
-    vdurl = "./demo.mp4";
+    // vdurl = "./demo.mp4";
     player = document.getElementById("player");
     players();
     
@@ -121,11 +121,13 @@ ourRequest.send();
     //     $("#userid").html('@dafeiyu');
     // }
  
-    // $("#bth").on("click", function(){
+    // $("#auto").on("click", function(){
+		// 		console.log(auto);
+		// 		console.log("auto");
     //     auto = !auto;
     //     this.innerText = (auto ? '连播' : '循环');
     // });
-    //
+
     // $("#love").on("click", function(){
     // 	user = $.cookie('user');
 	  //   if (user == null) {
@@ -158,6 +160,7 @@ ourRequest.send();
     //
     player.addEventListener('ended', function () {
         console.log("播放结束");
+			console.log(auto);
         if (auto == false) {
             player.play();
         } else {
@@ -201,14 +204,12 @@ function players() {
 	console.log(i);
 	var i = getRandomInt(0,obj.length);
     player.src =	obj[i].url;
-
-    vdurl = url;
-    if (gi==0) {
-        $("#love").attr('src','./img/loves.png');
-    } else {
-        $("#love").attr('src','./img/love.png');
-    }
-    ;
+    // if (gi==0) {
+    //     $("#love").attr('src','./img/loves.png');
+    // } else {
+    //     $("#love").attr('src','./img/love.png');
+    // }
+    // ;
     player.play();
 }
 

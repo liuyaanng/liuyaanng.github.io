@@ -19,31 +19,31 @@
 	</span>
 	<div class="app">
 		<div>
-		    <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="./img/bg.jpg"></video>
+		    <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210215124035.png"></video>
 		</div>
 		<div class="box">
 			<div style="padding-top:10px;padding-left:40px;background-color: #0E0F1A;">
 				<!-- <img src="./img/logo.png" style="border&#45;radius:20px;width:32px;height:32px;background&#45;color: #fff;"> -->
-			    <span style="color:#fff;padding-left:12px;font-size:16px;background-color: #0E0F1A;" id="userid">@GeekOcean</span>
+			    <span style="color:#fff;padding-left:12px;font-size:20px;background-color: #0E0F1A;" id="userid">@GeekOcean</span>
 			</div>
-			<div style="padding-top:15px;padding-left:20px;padding-right:20px;background-color: #0E0F1A;">
+			<div style="padding-top:35px;padding-left:20px;padding-right:20px;background-color: #0E0F1A;">
 			    <span style="color:#fff;color: #999999;background-color: #0E0F1A;">本程序仅作研究学习演示，视频采集自网络;原作者拍摄创作不易，请勿下载传播!</span>
 			</div>
 			<!-- <div style="padding&#45;top: 15px;padding&#45;left: 40px;padding&#45;right:40px;background&#45;color: #0E0F1A;text&#45;align: center;font&#45;size:14px;"> -->
 				<!-- <span style="color: #FF4040;background&#45;color: #0E0F1A;">点击来源切换数据源</span><br> -->
 			    <!-- <span style="color: #4682B4;background&#45;color: #0E0F1A;">点击爱心按钮收藏</span> -->
 			<!-- </div> -->
-			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
-				<span style="color:#fff;background-color: #0E0F1A;">点击按钮选择【连续】/【循环】模式</span><br>
+			<!-- <div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
+				<!-- <span style="color:#fff;background&#45;color: #0E0F1A;">点击按钮选择【连续】/【循环】模式</span><br> -->
 			<!-- 	<span style="color:#fff;background&#45;color: #0E0F1A;">点击【PASS】按钮刷新播放下一个</span><br> -->
 			<!--     <span style="color:#fff;background&#45;color: #0E0F1A;">单击视频 播放/暂停</span><br> -->
 			<!--     <span style="color:#fff;background&#45;color: #0E0F1A;">双击视频进入 全屏播放</span><br> -->
 			<!-- </div> -->
 			<!-- <div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
-				<button id="bth" class="xhms">单视频循环播放</button>
-			</div>
+				<!-- <button id="bth" class="xhms">单视频循环播放</button> -->
+			<!-- </div> -->
 			<div style="padding-top: 60px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
-				<button class="pass" onclick="players();">PASS</button>
+				<button class="pass" onclick="players();">NEXT</button>
 			</div>
 		<!-- 	<div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
 		<!-- 		<img src="./img/love.png" id="love" style="background&#45;color: #0E0F1A;border&#45;radius:10px;width:38px;height:38px;" title="点击喜欢按钮收藏"> -->
@@ -102,12 +102,12 @@ $(document).ready(function(){
     player = document.getElementById("player");
     players();
  
-    $("#bth").on("click", function(){
-        auto = !auto;
-        this.innerText = (auto ? '自动连续播放下一个' : '单视频循环播放');
-        this.className = (auto ? 'zdlb' : 'xhms');
-    });
-
+    // $("#bth").on("click", function(){
+    //     auto = !auto;
+    //     this.innerText = (auto ? '自动连续播放下一个' : '单视频循环播放');
+    //     this.className = (auto ? 'zdlb' : 'xhms');
+    // });
+    //
     // $("#love").on("click", function(){
     // 	user = $.cookie('user');
 	  //   if (user == null) {
