@@ -190,10 +190,11 @@ function players() {
 				.catch(function (err) {
 					console.error(err);
 				});
-	console.log(i);
+	console.log(obj.length);
 	var i = getRandomInt(0,obj.length);
+		console.log(i)
     player.src =	obj[i].url;
-		console.log(player.src)
+		// console.log(player.src)
     // vdurl = url;
     // if (gi==0) {
     //     $("#love").attr('src','./img/loves.png');
