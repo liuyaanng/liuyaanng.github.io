@@ -420,6 +420,33 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
+                <a href="/tags/Face-Detection/" title="Face_Detection: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Face_Detection" style="background-color: #85C1E9;">Face_Detection
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/OpenCV/" title="OpenCV: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="OpenCV" style="background-color: #F8C471;">OpenCV
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/c/" title="c++: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="c++" style="background-color: #F9E79F;">c++
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/PyTorch/" title="PyTorch: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -432,35 +459,8 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 <a href="/tags/Deep-Learning/" title="Deep Learning: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Deep Learning" style="background-color: #F8C471;">Deep Learning
+                            data-tagname="Deep Learning" style="background-color: #F9E79F;">Deep Learning
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Face-Detection/" title="Face_Detection: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Face_Detection" style="background-color: #F9E79F;">Face_Detection
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/OpenCV/" title="OpenCV: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="OpenCV" style="background-color: #A3E4D7;">OpenCV
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/c/" title="c++: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="c++" style="background-color: #E8F8F5;">c++
-                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -573,19 +573,19 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
                 </a>
                 
                 
-                <a href="/tags/Face-Recongnition/" title="Face Recongnition: 1">
+                <a href="/tags/Arch/" title="Arch: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Face Recongnition" style="background-color: #82E0AA;">Face Recongnition
+                            data-tagname="Arch" style="background-color: #FEF9E7;">Arch
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Arch/" title="Arch: 1">
+                <a href="/tags/Face-Recongnition/" title="Face Recongnition: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Arch" style="background-color: #FEF9E7;">Arch
+                            data-tagname="Face Recongnition" style="background-color: #82E0AA;">Face Recongnition
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -824,126 +824,76 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/liuyaann
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
 <script language=javascript>
-  se" -->
-		<!-- 	data&#45;order="random" -->
-		<!-- 	data&#45;volume="0.5" -->
-		<!-- 	data&#45;theme="#1da496" -->
-		<!-- 	data&#45;preload="auto" -->
-		<!-- ></div> -->
-		<!--  -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!-- 一言API -->
-		<!-- 现代写法，推荐 -->
-		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script>
-			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
-			fetch("https://v1.hitokoto.cn")
-				.then(function (res) {
-					return res.json();
-				})
-				.then(function (data) {
-					var hitokoto = document.getElementById("hitokoto");
-					hitokoto.innerText = data.hitokoto;
-					console.log(data.hitokoto);
-				})
-				.catch(function (err) {
-					console.error(err);
-				});
-		</script>
-		<!--End-->
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 07, 01, 00, 00, 00); 
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "小破站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+ <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
 
-		<!-- live2d -->
-		
-		<!-- <script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/live2d&#45;widget/autoload.js"></script> -->
-		<script src="/live2d-widget/autoload.js"></script>
-		
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script> <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll back-to-top">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
 
-		<!-- 腾讯兔小巢 -->
-		
-
-		<!--动态线条背景-->
-		
-
-		<!-- night mode -->
-		
-		<div id="xm">
-			<img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/xm.png" />
-		</div>
-		<script>
-			function switchNightMode() {
-				var body = document.body;
-				if (body.classList.contains("night")) {
-					document.body.classList.remove("night");
-					document.cookie = "night=0;path=/";
-				} else {
-					document.body.classList.add("night");
-					document.cookie = "night=1;path=/";
-				}
-			}
-			var xm = document.getElementById("xm");
-			xm.onclick = switchNightMode;
-			(function () {
-				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
-					if (new Date().getHours() > 19 || new Date().getHours() < 8) {
-						document.body.classList.add("night");
-						document.cookie = "night=1;path=/";
-						console.log("夜间模式开启");
-					} else if (matchMedia("(prefers-color-scheme: night)").matches) {
-						document.body.classList.add("night");
-						document.cookie = "night=1;path=/";
-					} else {
-						document.body.classList.remove("night");
-						document.cookie = "night=0;path=/";
-						console.log("夜间模式关闭");
-					}
-				} else {
-					var night =
-						document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || "0";
-					if (night == "0") {
-						document.body.classList.remove("night");
-						console.log("夜间模式移除,from cookie");
-					} else if (night == "1") {
-						document.body.classList.add("night");
-						console.log("夜间模式开启,from cookie");
-					}
-				}
-			})();
-		</script>
-		<!-- 明月浩空播放器 -->
-		 
-		<script src="https://myhkw.cn/player/js/player.js" id="myhk" key="160774417274"></script>
-		
-
-		<!-- gary blog -->
-		
-		<script>
-			calendar = new Date();
-			month = calendar.getMonth() + 1; //0-11,所以要+1
-			data = calendar.getDate();
-			var isgaryblog = false;
-			if (month == 3 && data == 1) isgaryblog = true; //清明节
-			if (month == 12 && data == 13) isgaryblog = true; //南京大屠杀纪念日
-			if (isgaryblog) {
-				document.body.classList.add("gary");
-			}
-		</script>
-		
-	<script>
-    if(!('loading' in HTMLImageElement.prototype)) {
-        const srp = document.createElement('script');
-        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
-        document.body.append(srp);
-        const imgs = document.querySelectorAll('img');
-        imgs.forEach(el => {
-            el.setAttribute('data-src', el.getAttribute('src'));
-            el.removeAttribute('src');
-            el.classList.add('lazyload');
-    })
-}
-</script></body>
-</html>
-		? ((document.title = " ( ͡ಥ ͜ʖ ͡ಥ) 喔哟，崩溃啦！"), clearTimeout(st))
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/materialize/materialize.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/masonry/masonry.pkgd.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/aos/aos.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/scrollprogress/scrollProgress.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/lightGallery/js/lightgallery-all.min.js"></script>
+		<script src="/js/matery.js"></script>
+		<script type="text/javascript">
+			var OriginTitile = document.title,
+				st;
+			document.addEventListener("visibilitychange", function () {
+				document.hidden
+					? ((document.title = " ( ͡ಥ ͜ʖ ͡ಥ) 喔哟，崩溃啦！"), clearTimeout(st))
 					: ((document.title = " ( ͡ᵔ ͜ʖ ͡ᵔ) 咦，又好了！"),
 					  (st = setTimeout(function () {
 							document.title = OriginTitile;
