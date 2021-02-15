@@ -184,8 +184,8 @@
 			></video>
 		</div>
 
-		<div id="buttons" style="position: absolute; bottom: 150px; right: 10px">
-			<!-- <button id="auto" style="border&#45;radius:20px;width:32px;height:32px;"></button> -->
+		<div id="buttons" style="position: absolute; bottom: 200px; right: 10px">
+			<button id="auto" style="border-radius: 20px; width: 32px; height: 32px">auto</button>
 			<!-- <br><br><br> -->
 			<!-- <button id="yuan" style="border&#45;radius:20px;width:32px;height:32px;">源1</button> -->
 			<button style="border-radius: 20px; width: 48px; height: 32px" onclick="players();">
@@ -251,12 +251,12 @@
 			//     $("#userid").html('@dafeiyu');
 			// }
 
-			// $("#auto").on("click", function(){
-			// 		console.log(auto);
-			// 		console.log("auto");
-			//     auto = !auto;
-			//     this.innerText = (auto ? '连播' : '循环');
-			// });
+			$("#auto").on("click", function () {
+				console.log(auto);
+				console.log("auto");
+				auto = !auto;
+				this.innerText = auto ? "连播" : "循环";
+			});
 
 			// $("#love").on("click", function(){
 			// 	user = $.cookie('user');
