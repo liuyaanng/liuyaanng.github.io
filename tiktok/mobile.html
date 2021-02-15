@@ -191,7 +191,7 @@ function getRandomInt(min, max) {
 }
 function players() {
     console.log("成功获取数据！");
-			fetch("https://raw.githubusercontent.com/liuyaanng/douyin_resource/main/txt/cdn_link.json")
+			fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@latest/txt/cdn_link.json")
 				.then(function (res) {
 					return res.json();
 				})
