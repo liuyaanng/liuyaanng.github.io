@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-<title>DouYin</title>
+<title>Tiktok🔞</title>
 <link rel="stylesheet" type="text/css" href="./css/pc.css">
 <script type="text/javascript">
    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        window.location.href = "mobile.html";
+        window.location.href = "mobile_tiktok.html";
     }else{
     //    window.location.href = "pc.html";
     }
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<span style="position:absolute;top:15px;left:8vw;color:#fff;font-size:16px;">
-		<strong style="font-size:18px;">DouYin</strong>
+		<strong style="font-size:18px;">Tiktok🔞</strong>
 	</span>
 	<div class="app">
 		<div>
@@ -40,17 +40,17 @@
 			<!--     <span style="color:#fff;background&#45;color: #0E0F1A;">单击视频 播放/暂停</span><br> -->
 			<!--     <span style="color:#fff;background&#45;color: #0E0F1A;">双击视频进入 全屏播放</span><br> -->
 			<!-- </div> -->
-			<!-- <div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
-			<!-- 	<button id="bth" class="xhms" onclick="auto_load()">单视频循环播放</button> -->
-			<!-- </div> -->
-			<div style="padding-top: 120px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
+			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
+				<!-- <button id="bth" class="xhms" onclick="auto_load()">单视频循环播放</button> -->
+			</div>
+			<div style="padding-top: 60px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
 				<button class="pass" onclick="players();">NEXT</button>
 			</div>
 		<!-- 	<div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
 		<!-- 		<img src="./img/love.png" id="love" style="background&#45;color: #0E0F1A;border&#45;radius:10px;width:38px;height:38px;" title="点击喜欢按钮收藏"> -->
 		<!-- 	</div> -->
-			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
-				<button id="yuan"><a href="./pc.html" style="background-color:transparent;">TikTok🔞</a></button>
+			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: black;text-align: center;">
+				<button id="yuan"><a href="./pc_ks.html" style="background-color:transparent;">DouYin</a></button>
 			</div>
 		<!--     <div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
 		<!--     	<span style="color:#fff;">扫描下方二维码.使用手机播放</span><br> -->
@@ -86,7 +86,7 @@
 
 $(document).ready(function(){
     auto = true;
-		url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
+		url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng@master/douyin_resource/txt/'
     gi = 1;
 	url_after = 'toktik.json'
 	url = url_pre + url_after;
@@ -116,20 +116,20 @@ $(document).ready(function(){
     //     $('.login-bg').hide();
     // });
     //
-    // $("#yuan").on("click", function(){
-    // 	if (gi == 0) {
-    // 		gi = 1;
-		// 		let url_after = 'toktik.json';
-    // 		this.innerText = "TikTok";
-    // 	} else if (gi == 1) {
-		// 	gi = 0;
-		// 	let url_after = 'ks.json';
-		// 	this.innerText = "DouYin";
-    // 	}
-		// url = url+"?sourceId=" + gi;
-		// console.log("change");
-    // console.log(url);
-    // });
+    $("#yuan").on("click", function(){
+    	if (gi == 0) {
+    		gi = 1;
+				let url_after = 'toktik.json';
+    		this.innerText = "TikTok";
+    	} else if (gi == 1) {
+			gi = 0;
+			let url_after = 'ks.json';
+			this.innerText = "DouYin";
+    	}
+		url = url+"?sourceId=" + gi;
+		console.log("change");
+    console.log(url);
+    });
 
     player.addEventListener('ended', function () {
         console.log("播放结束");
