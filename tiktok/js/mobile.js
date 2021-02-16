@@ -70,12 +70,10 @@ function FullScreen() {
 		player.play();
 	}
 }
-	</script>
-	<script>
-	var startx, starty;
+var startx, starty;
 //获得角度
 function getAngle(angx, angy) {
-return (Math.atan2(angy, angx) * 180) / Math.PI;
+	return (Math.atan2(angy, angx) * 180) / Math.PI;
 }
 
 //根据起点终点返回方向 1向上 2向下 3向左 4向右 0未滑动

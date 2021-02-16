@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	auto = true;
 	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
-	url_after = 'tiktok.json'
+	url_after = 'toktik.json'
 	url = url_pre + url_after;
 	player = document.getElementById("player");
 	players();
