@@ -40,18 +40,18 @@
 			<!--     <span style="color:#fff;background&#45;color: #0E0F1A;">单击视频 播放/暂停</span><br> -->
 			<!--     <span style="color:#fff;background&#45;color: #0E0F1A;">双击视频进入 全屏播放</span><br> -->
 			<!-- </div> -->
-			<!-- <div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
-				<!-- <button id="bth" class="xhms">单视频循环播放</button> -->
-			<!-- </div> -->
+			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
+				<button id="bth" class="xhms" onclick="auto_load()">单视频循环播放</button>
+			</div>
 			<div style="padding-top: 60px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
 				<button class="pass" onclick="players();">NEXT</button>
 			</div>
 		<!-- 	<div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
 		<!-- 		<img src="./img/love.png" id="love" style="background&#45;color: #0E0F1A;border&#45;radius:10px;width:38px;height:38px;" title="点击喜欢按钮收藏"> -->
 		<!-- 	</div> -->
-		<!-- 	<div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
-		<!-- 		<button id="yuan">当前数据源【001】</button> -->
-		<!-- 	</div> -->
+			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
+				<button id="yuan">DouYin</button>
+			</div>
 		<!--     <div style="padding&#45;top: 15px;padding&#45;left: 20px;padding&#45;right:20px;background&#45;color: #0E0F1A;text&#45;align: center;"> -->
 		<!--     	<span style="color:#fff;">扫描下方二维码.使用手机播放</span><br> -->
 		<!-- 		<img src="./img/ewm.png" style="width:88px;height:88px;"><br> -->
@@ -85,30 +85,14 @@
 <script>
 
 $(document).ready(function(){
-			// fetch("https://v1.hitokoto.cn?c=j&c=k&c=i")
-	// $.ajax({
-  //           type: "GET",
-  //           url: "https://toktik.app/api/content",
-  //           data: {},
-  //           success: function(data) {
-  //           console.log(data);
-  //           console.log(typeof data);
-  //           },
-  //       });
     auto = true;
-    // gi = 1;
-		var url_list = [];
-
-    // vdurl = "./demo.mp4";
+		url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng@master/douyin_resource/txt/'
+    gi = 1;
+	url_after = 'toktik.json'
+	url = url_pre + url_after;
     player = document.getElementById("player");
     players();
  
-    // $("#bth").on("click", function(){
-    //     auto = !auto;
-    //     this.innerText = (auto ? '自动连续播放下一个' : '单视频循环播放');
-    //     this.className = (auto ? 'zdlb' : 'xhms');
-    // });
-    //
     // $("#love").on("click", function(){
     // 	user = $.cookie('user');
 	  //   if (user == null) {
@@ -132,18 +116,20 @@ $(document).ready(function(){
     //     $('.login-bg').hide();
     // });
     //
-    // $("#yuan").on("click", function(){
-    // 	if (gi == 0) {
-    // 		gi = 1;
-    // 		this.innerText = "快手数据源【00" + gi + "】";
-    // 	} else if (gi == 1) {
-		// 	gi = 0;
-		// 	let j = gi+2
-		// 	this.innerText = "最右数据源【00" + j + "】";
-    // 	}
-		// url = url+"?sourceId=" + gi;
-    //     console.log(url);
-    // });
+    $("#yuan").on("click", function(){
+    	if (gi == 0) {
+    		gi = 1;
+				let url_after = 'toktik.json';
+    		this.innerText = "TikTok";
+    	} else if (gi == 1) {
+			gi = 0;
+			let url_after = 'ks.json';
+			this.innerText = "DouYin";
+    	}
+		url = url+"?sourceId=" + gi;
+		console.log("change");
+    console.log(url);
+    });
 
     player.addEventListener('ended', function () {
         console.log("播放结束");
@@ -170,7 +156,12 @@ $(document).ready(function(){
         }
     });
 });
-
+function auto_load(){
+        auto = !auto;
+				console.log("auto load");
+        this.innerHTML = (auto ? '自动连续播放下一个' : '单视频循环播放');
+        this.className = (auto ? 'zdlb' : 'xhms');
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -182,7 +173,8 @@ function getRandomInt(min, max) {
 function players() {
 	console.log("成功获取数据！");
 			// fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@latest/txt/cdn_link.json")
-			fetch("https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@latest/txt/ks.json")
+			console.log(url)
+			fetch(url)
 				.then(function (res) {
 					return res.json();
 				})
