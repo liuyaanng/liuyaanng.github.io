@@ -2,7 +2,7 @@ $(document).ready(function(){
 	setInterval('var hour = new Date().getHours();var minutes = new Date().getMinutes();var seconds = new Date().getSeconds();if( hour < 10 ){ hour = "0"+hour; }if( minutes < 10 ){ minutes = "0"+minutes; }if( seconds < 10 ){ seconds = "0"+seconds; }$("#time").html(hour+":"+minutes+":"+seconds);', 1000);
 	setTimeout(function(){$("#msgs").hide();},10000);
 	layer.msg('Loading Environment, please wait a second...');
-	auto = false;//循环播放模式
+	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
 	url_name = ['ks','toktik']
@@ -16,7 +16,7 @@ $(document).ready(function(){
 		}	});
 	//播放结束事件
 	player.onended = function() {
-		if (auto == false) {//播放结束，执行重播！
+		if (auto == true) {//播放结束，执行重播！
 			player.play();
 		} else {//播放结束，重新获取数据！
 			pass();
@@ -26,7 +26,7 @@ $(document).ready(function(){
 //播放模式选择
 $("#auto_btn").on("click", function(){
 	auto = !auto;console.log(auto);
-	this.innerText = (auto ? 'Loop' : 'Repeat');
+	this.innerText = (auto ? 'Repeat' : 'Loop');
 });
 //播放源按钮事件
 $("#yuan").on("click", function(){
