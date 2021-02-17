@@ -62,8 +62,7 @@ function players() {
 			vdurl_data = JSON.parse(vdurl_data)
 			var i = getRandomInt(0, vdurl_data.length)
 			vdurl = vdurl_data[i].url;
-			player.src = vdurl;
-			console.log(vdurl);
+			// console.log(vdurl);
 			let xhr = new window.XMLHttpRequest();
 			xhr.open('get', vdurl)
 			// xhr.open('get', 'http://tx.cdn.kwai.net/upic/2018/05/13/22/BMjAxODA1MTMyMjM2MDVfMzIxMzgyMjQ0XzYyNzg2MjQ5NjJfMV8z_hd3_Bde1a5b86b6cb178de96e7c35d3e9e29e.mp4')
@@ -72,6 +71,7 @@ function players() {
 			xhr.onload = function () {
 				if (xhr.status === 200 || xhr.status === 206) {
 					console.log(xhr.response)
+					player.src = vdurl;
 					player.play()
 				}
 				else{
@@ -95,30 +95,25 @@ function players() {
 //点击屏幕事件
 $("#player").click(function(){
 	if (player.paused) {
-		$("#logo_img").hide();
+		// $("#logo_img").hide();
 		player.play();
-		$("#msgs").hide();
-		if (textstf==true) {
-			$("#texts").show();
-		}else{
-			$("#texts").hide();
-		}
+		// $("#msgs").hide();
 	} else {
-		$("#logo_img").show();
+		// $("#logo_img").show();
 		player.pause();
-		$("#texts").show();
-		$("#msgs").show();
+		// $("#texts").show();
+		// $("#msgs").show();
 	}
 });
-$("#logo_img").click(function(){
-	if (player.paused) {
-		$("#logo_img").hide();
-		player.play();
-	} else {
-		$("#logo_img").show();
-		player.pause();
-	}
-});
+// $("#logo_img").click(function(){
+//	if (player.paused) {
+//		$("#logo_img").hide();
+//		player.play();
+//	} else {
+//		$("#logo_img").show();
+//		player.pause();
+//	}
+// });
 $("#logo_img").dblclick(function(){
 	toggleFullScreen();
 });
