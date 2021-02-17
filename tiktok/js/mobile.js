@@ -58,20 +58,34 @@ function players() {
 	layer.msg('Loading...', {icon: 16,time: 400,shadeClose: true,});
 	$.get(url,function(vdurl_data,status){
 		if (status==status) {
-			console.log(status)
+			// console.log(status)
 			vdurl_data = JSON.parse(vdurl_data)
 			var i = getRandomInt(0, vdurl_data.length)
 			vdurl = vdurl_data[i].url;
 			player.src = vdurl;
 			console.log(vdurl);
-			$.ajax({url: vdurl,type: 'GET',complete: function(response) {
-				if(response.status != 200) {//测试链接通信状态
-					console.log('加载失败!')
-					pass();
-				}else{
-					player.play();
+			let xhr = new window.XMLHttpRequest();
+			// xhr.open('get', vdurl)
+			// xhr.open('get', 'http://tx.cdn.kwai.net/upic/2018/05/13/22/BMjAxODA1MTMyMjM2MDVfMzIxMzgyMjQ0XzYyNzg2MjQ5NjJfMV8z_hd3_Bde1a5b86b6cb178de96e7c35d3e9e29e.mp4')
+			xhr.responseType = 'arraybuffer';
+			// xhr.setRequestHeader('Range', `bytes=0-390625`)
+			xhr.onload = function () {
+				if (xhr.status === 200 || xhr.status === 206) {
+					console.log(xhr.response)
+					player.play()
 				}
-			}});
+				else{
+					pass()
+				}
+			}
+			//	$.ajax({url: vdurl,type: 'GET',complete: function(response) {
+			//		if(response.status != 200) {//测试链接通信状态
+			//			console.log('加载失败!')
+			//			pass();
+			//		}else{
+			//			player.play();
+			//		}
+			//	}});
 		} else {
 			$("#msg").html("Load failed, Reloading....");
 			pass();
