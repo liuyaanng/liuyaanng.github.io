@@ -1,41 +1,44 @@
+<!--
+    By:GeekOcean
+-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta name="google" value="notranslate">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-<title>DouYin</title>
+<meta name=author content="GeekOcean">
+<title>Tiktok</title>
 <link rel="stylesheet" type="text/css" href="./css/pc.css">
 <script type="text/javascript">
-   if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        window.location.href = "mobile.html";
-    }else{
-    //    window.location.href = "pc.html";
-    }
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {window.location.href = "index.html";}
 </script>
-</head>
 <body>
 	<span style="position:absolute;top:15px;left:8vw;color:#fff;font-size:16px;">
-		<strong style="font-size:18px;">DouYin</strong>
+		<strong style="font-size:18px;">Tiktok</strong>   | 看见美好生活
 	</span>
 	<div class="app">
 		<div>
-		    <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/wallhaven-l33w72.jpg"></video>
+		    <video id="player" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload" poster="./img/bg.jpg"></video>
 		</div>
 		<div class="box">
 			<div style="padding-top:10px;padding-left:40px;background-color: #0E0F1A;">
-				<!-- <img src="./img/logo.png" style="border&#45;radius:20px;width:32px;height:32px;background&#45;color: #fff;"> -->
-			    <span style="color:#fff;padding-left:12px;font-size:20px;background-color: #0E0F1A;" id="userid">@GeekOcean</span>
+				<img src="./img/logo.png" style="border-radius:20px;width:32px;height:32px;background-color: #fff;">
+			    <span style="color:#fff;padding-left:12px;font-size:16px;background-color: #0E0F1A;" id="userid">@GeekOcean</span>
 			</div>
-			<div style="padding-top:35px;padding-left:20px;padding-right:20px;background-color: #0E0F1A;">
+			<div style="padding-top:15px;padding-left:20px;padding-right:20px;background-color: #0E0F1A;">
 			    <span style="color:#fff;color: #999999;background-color: #0E0F1A;">本程序仅作研究学习演示，视频采集自网络;原作者拍摄创作不易，请勿下载传播!</span>
 			</div>
-			<div style="padding-top: 120px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
-				<button class="pass" onclick="players();">NEXT</button>
+			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
+				<button id="bth" class="xhms">Auto</button>
 			</div>
 			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
-				<button id="yuan"><a href="./pc_tiktok.html" style="background-color:transparent;">TikTok🔞</a></button>
+				<button class="pass" onclick="players();">PASS</button>
 			</div>
+			<div style="padding-top: 15px;padding-left: 20px;padding-right:20px;background-color: #0E0F1A;text-align: center;">
+				<button id="yuan">ks</button>
+			</div>
+		</div>
 	</div>
 	<div class="bom">
 		<div style="text-align: center;color:#fff;">
@@ -44,7 +47,8 @@
 	</div>
 </body>
 
-<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="./js/jquery.cookie.min.js"></script>
-<script type="text/javascript" src="./js/pc.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
+<script src="./js/pc.js"></script>
 </html>

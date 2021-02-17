@@ -1,10 +1,39 @@
 $(document).ready(function(){
 	auto = true;
+	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
-	url_after = 'ks.json'
-	url = url_pre + url_after;
+	url_name = ['ks','toktik']
+	url_after = '.json'
+	url = url_pre +url_name[0] + url_after;
 	player = document.getElementById("player");
 	players();
+
+	$("#bth").on("click", function(){
+		auto = !auto;
+		this.innerText = (auto ? 'Random' : 'Repeat');
+		this.className = (auto ? 'zdlb' : 'xhms');
+	});
+
+	$("#yuan").on("click", function(){
+		if (gi < url_name.length - 1) {
+			gi = gi + 1;
+			this.innerText =  url_name[gi];
+		} else {
+			gi = 0;
+			this.innerText =  url_name[gi];
+		}
+		url = url_pre + url_name[gi] + url_after;
+		console.log(url);
+	});
+
+	player.addEventListener('ended', function () {
+		console.log("播放结束");
+		if (auto == false) {
+			player.play();
+		} else {
+			players();
+		}
+	}, false);
 
 	touchtime = new Date().getTime();
 	$("#player").on("click", function(){
@@ -30,24 +59,28 @@ function getRandomInt(min, max) {
 }
 
 function players() {
-	console.log("成功获取数据！");
-	// console.log(url)
-	fetch(url)
-		.then(function (res) {
-			return res.json();
-		})
-		.then(function (data) {
-			obj = JSON.parse(data)
-		})
-		.catch(function (err) {
-			console.error(err);
-		});
-	console.log(obj.length);
-	var i = getRandomInt(0,obj.length);
-	// console.log(i)
-	player.src =	obj[i].url;
-	// console.log(player.src)
-	player.play();
+	$.get(url,function(data,status){
+		if (status==status) {
+			console.log("成功获取数据！");
+			// console.log(typeof(data))
+			data = JSON.parse(data)
+			var i = getRandomInt(0,data.length);
+			vdurl = data[i].url;
+			$.ajax({type: 'GET',url: vdurl,complete: function(response) {
+				if(response.status != 200) {
+					console.log(response.status);
+					players();
+				}
+				else{
+					player.src = vdurl;
+					player.play();
+				}
+			}});
+		} else {
+			console.log("失败，重新发起请求！");
+			players();
+		}
+	});
 }
 
 //进入全屏
