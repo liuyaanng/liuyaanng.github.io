@@ -58,6 +58,7 @@ function players() {
 	layer.msg('Loading...', {icon: 16,time: 400,shadeClose: true,});
 	$.get(url,function(vdurl_data,status){
 		if (status==status) {
+			console.log(status)
 			vdurl_data = JSON.parse(vdurl_data)
 			var i = getRandomInt(0, vdurl_data.length)
 			vdurl = vdurl_data[i].url;
