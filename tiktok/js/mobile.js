@@ -74,37 +74,35 @@ function players() {
 
 			video.src = vdurl;
 			//不同浏览器情况不同，这里判断在该浏览器是否可以播放
-			if(video.oncanplaythrough = function() {
-				console.log('succedd  sdaa ')
-			}){
-				console.log("if suedasda")
+			if(video.oncanplaythrough{
+				console.log("ifiaisiaid")
 			}
-			// console.log(vdurl);
-			// let xhr = new window.XMLHttpRequest();
-			// xhr.open('get', vdurl)
-			// // xhr.open('get', 'http://tx.cdn.kwai.net/upic/2018/05/13/22/BMjAxODA1MTMyMjM2MDVfMzIxMzgyMjQ0XzYyNzg2MjQ5NjJfMV8z_hd3_Bde1a5b86b6cb178de96e7c35d3e9e29e.mp4')
-			// xhr.responseType = 'arraybuffer';
-			// // xhr.setRequestHeader('Range', `bytes=0-390625`)
-			// xhr.onload = function () {
-			//	console.log(xhr.status)
-			//	if (xhr.status === 200 || xhr.status === 206 || xhr.status === 304) {
-			//		console.log(xhr.response)
-			//		player.play()
-			//	}
-			//	else{
-			//		pass()
-			//	}
-			// }
-			// //	$.ajax({url: vdurl,type: 'GET',complete: function(response) {
-			//		if(response.status != 200) {//测试链接通信状态
-			//			console.log('加载失败!')
-			//			pass();
-			//		}else{
-			//			player.play();
-			//		}
-			//	}});
-		} else {
-			$("#msg").html("Load failed, Reloading....");
+				// console.log(vdurl);
+				// let xhr = new window.XMLHttpRequest();
+				// xhr.open('get', vdurl)
+				// // xhr.open('get', 'http://tx.cdn.kwai.net/upic/2018/05/13/22/BMjAxODA1MTMyMjM2MDVfMzIxMzgyMjQ0XzYyNzg2MjQ5NjJfMV8z_hd3_Bde1a5b86b6cb178de96e7c35d3e9e29e.mp4')
+				// xhr.responseType = 'arraybuffer';
+				// // xhr.setRequestHeader('Range', `bytes=0-390625`)
+				// xhr.onload = function () {
+				//	console.log(xhr.status)
+				//	if (xhr.status === 200 || xhr.status === 206 || xhr.status === 304) {
+				//		console.log(xhr.response)
+				//		player.play()
+				//	}
+				//	else{
+				//		pass()
+				//	}
+				// }
+				// //	$.ajax({url: vdurl,type: 'GET',complete: function(response) {
+				//		if(response.status != 200) {//测试链接通信状态
+				//			console.log('加载失败!')
+				//			pass();
+				//		}else{
+				//			player.play();
+				//		}
+				//	}});
+			} else {
+				$("#msg").html("Load failed, Reloading....");
 			pass();
 		}
 	});
@@ -122,21 +120,21 @@ $("#player").click(function(){
 		// $("#msgs").show();
 	}
 });
-// $("#logo_img").click(function(){
-//	if (player.paused) {
-//		$("#logo_img").hide();
-//		player.play();
-//	} else {
-//		$("#logo_img").show();
-//		player.pause();
-//	}
-// });
-$("#logo_img").dblclick(function(){
-	toggleFullScreen();
-});
-$("#player").dblclick(function(){
-	toggleFullScreen();
-});
+	// $("#logo_img").click(function(){
+	//	if (player.paused) {
+	//		$("#logo_img").hide();
+	//		player.play();
+	//	} else {
+	//		$("#logo_img").show();
+	//		player.pause();
+	//	}
+	// });
+	$("#logo_img").dblclick(function(){
+		toggleFullScreen();
+	});
+	$("#player").dblclick(function(){
+		toggleFullScreen();
+	});
 //进入全屏，建议使用EDGE浏览器
 function toggleFullScreen() {
 	if (!document.fullscreenElement &&
