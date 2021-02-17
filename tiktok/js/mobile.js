@@ -64,22 +64,23 @@ function players() {
 			vdurl = vdurl_data[i].url;
 
 			player.src = vdurl;
-			var video = document.createElement('video');
+			// var video = document.createElement('video');
+			//
+			// video.onload = function() {
+			// }
+			//
+			// video.onerror = function() {
+			// }
+			// console.log('first')
+			// video.src = vdurl;
+			// //不同浏览器情况不同，这里判断在该浏览器是否可以播放
+			// video.onloadstart = function() {
+			//	player.play()
+			//	console.log('in ')
+			//	return;
+			// }
+			// console.log('out of ')
 
-			video.onload = function() {
-			}
-
-			video.onerror = function() {
-			}
-
-			video.src = vdurl;
-			//不同浏览器情况不同，这里判断在该浏览器是否可以播放
-			if(video.loadstart = function() {
-				console.log(video.status)
-			}){
-				console.log("if ")
-			}
-			else{console.log("elelslelsl")}
 			// console.log(vdurl);
 			// let xhr = new window.XMLHttpRequest();
 			// xhr.open('get', vdurl)
@@ -96,14 +97,14 @@ function players() {
 			//		pass()
 			//	}
 			// }
-			// //	$.ajax({url: vdurl,type: 'GET',complete: function(response) {
-			//		if(response.status != 200) {//测试链接通信状态
-			//			console.log('加载失败!')
-			//			pass();
-			//		}else{
-			//			player.play();
-			//		}
-			//	}});
+			$.ajax({url: vdurl,type: 'GET',complete: function(response) {
+				if(response.status != 200) {//测试链接通信状态
+					console.log('加载失败!')
+					pass();
+				}else{
+					player.play();
+				}
+			}});
 		} else {
 			$("#msg").html("Load failed, Reloading....");
 			pass();
