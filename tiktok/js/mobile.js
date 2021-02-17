@@ -97,14 +97,14 @@ function players() {
 			//		pass()
 			//	}
 			// }
-			$.ajax({url: vdurl,type: 'GET',complete: function(response) {
-				if(response.status != 200) {//测试链接通信状态
-					console.log('加载失败!')
-					pass();
-				}else{
-					player.play();
-				}
-			}});
+			// $.ajax({url: vdurl,type: 'GET',complete: function(response) {
+			//	if(response.status != 200) {//测试链接通信状态
+			//		console.log('加载失败!')
+			//		pass();
+			//	}else{
+			player.play();
+			//	}
+			// }});
 		} else {
 			$("#msg").html("Load failed, Reloading....");
 			pass();
