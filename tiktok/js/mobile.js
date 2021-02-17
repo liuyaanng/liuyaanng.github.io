@@ -75,6 +75,7 @@ function players() {
 			video.src = vdurl;
 			//不同浏览器情况不同，这里判断在该浏览器是否可以播放
 			if(video.loadstart = function() {
+				console.log(video.status)
 			}){
 				console.log("if ")
 			}
