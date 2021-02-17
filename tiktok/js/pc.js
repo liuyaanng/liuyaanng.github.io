@@ -66,16 +66,18 @@ function players() {
 			data = JSON.parse(data)
 			var i = getRandomInt(0,data.length);
 			vdurl = data[i].url;
-			$.ajax({type: 'GET',url: vdurl,complete: function(response) {
-				if(response.status != 200) {
-					console.log(response.status);
-					players();
-				}
-				else{
-					player.src = vdurl;
-					player.play();
-				}
-			}});
+			player.src = vdurl;
+			player.play();
+			// $.ajax({type: 'GET',url: vdurl,complete: function(response) {
+			//	if(response.status != 200) {
+			//		console.log(response.status);
+			//		players();
+			//	}
+			//	else{
+			//		player.src = vdurl;
+			//		player.play();
+			//	}
+			// }});
 		} else {
 			console.log("失败，重新发起请求！");
 			players();
