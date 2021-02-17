@@ -74,9 +74,11 @@ function players() {
 
 			video.src = vdurl;
 			//不同浏览器情况不同，这里判断在该浏览器是否可以播放
-			video.oncanplaythrough = function() {
+			if(video.oncanplaythrough = function() {
 				console.log('succedd  sdaa ')
-			};
+			}){
+				console.log("if suedasda")
+			}
 			// console.log(vdurl);
 			// let xhr = new window.XMLHttpRequest();
 			// xhr.open('get', vdurl)
