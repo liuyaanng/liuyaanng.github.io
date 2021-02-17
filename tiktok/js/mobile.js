@@ -2,7 +2,7 @@ $(document).ready(function(){
 	setInterval('var hour = new Date().getHours();var minutes = new Date().getMinutes();var seconds = new Date().getSeconds();if( hour < 10 ){ hour = "0"+hour; }if( minutes < 10 ){ minutes = "0"+minutes; }if( seconds < 10 ){ seconds = "0"+seconds; }$("#time").html(hour+":"+minutes+":"+seconds);', 1000);
 	setTimeout(function(){$("#msgs").hide();},10000);
 	layer.msg('Loading Environment, please wait a second...');
-	auto = true;//循环播放模式
+	auto = false;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
 	url_name = ['ks','toktik']
@@ -65,7 +65,7 @@ function players() {
 			player.src = vdurl;
 			console.log(vdurl);
 			let xhr = new window.XMLHttpRequest();
-			// xhr.open('get', vdurl)
+			xhr.open('get', vdurl)
 			// xhr.open('get', 'http://tx.cdn.kwai.net/upic/2018/05/13/22/BMjAxODA1MTMyMjM2MDVfMzIxMzgyMjQ0XzYyNzg2MjQ5NjJfMV8z_hd3_Bde1a5b86b6cb178de96e7c35d3e9e29e.mp4')
 			xhr.responseType = 'arraybuffer';
 			// xhr.setRequestHeader('Range', `bytes=0-390625`)
