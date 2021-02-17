@@ -65,6 +65,7 @@ function players() {
 			console.log(vdurl);
 			$.ajax({url: vdurl,type: 'GET',complete: function(response) {
 				if(response.status != 200) {//测试链接通信状态
+					console.log('加载失败!')
 					pass();
 				}else{
 					player.play();
