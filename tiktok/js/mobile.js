@@ -67,20 +67,16 @@ function players() {
 			var video = document.createElement('video');
 
 			video.onload = function() {
-				alert('success, it exsist');
-				// show video element
 			}
 
 			video.onerror = function() {
-				alert('error, couldn\'t load');
-				// don't show video element
 			}
 
 			video.src = vdurl;
 			//不同浏览器情况不同，这里判断在该浏览器是否可以播放
-			video.oncanplaythrough = function() {
-				alert("This file can be played in the current browser");
-			};
+			if(video.oncanplaythrough){
+				console.log("good file")
+			}
 			// console.log(vdurl);
 			// let xhr = new window.XMLHttpRequest();
 			// xhr.open('get', vdurl)
