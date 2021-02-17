@@ -62,6 +62,8 @@ function players() {
 			vdurl_data = JSON.parse(vdurl_data)
 			var i = getRandomInt(0, vdurl_data.length)
 			vdurl = vdurl_data[i].url;
+
+			player.src = vdurl;
 			// console.log(vdurl);
 			let xhr = new window.XMLHttpRequest();
 			xhr.open('get', vdurl)
@@ -69,9 +71,9 @@ function players() {
 			xhr.responseType = 'arraybuffer';
 			// xhr.setRequestHeader('Range', `bytes=0-390625`)
 			xhr.onload = function () {
-				if (xhr.status === 200 || xhr.status === 206) {
+				console.log(xhr.status)
+				if (xhr.status === 200 || xhr.status === 206 || xhr.status === 304) {
 					console.log(xhr.response)
-					player.src = vdurl;
 					player.play()
 				}
 				else{
