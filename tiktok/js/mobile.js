@@ -5,7 +5,7 @@ $(document).ready(function(){
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
-	url_name = ['ks','toktik']
+	url_name = ['ks','tiktok']
 	url_after = '.json'
 	url = url_pre +url_name[gi] + url_after;
 	player = document.getElementById("player");
