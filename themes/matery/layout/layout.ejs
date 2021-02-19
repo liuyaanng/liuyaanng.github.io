@@ -65,6 +65,7 @@
 				.then(function (data) {
 					var hitokoto = document.getElementById("hitokoto");
 					hitokoto.innerText = data.hitokoto;
+					console.log(data.hitokoto);
 				})
 				.catch(function (err) {
 					console.error(err);
@@ -96,7 +97,7 @@
 			color="220,220,220"
 			opacity="0.7"
 			zIndex="-1"
-			count="150"
+			count="100"
 			src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
 		></script>
 		<% } %>
@@ -121,7 +122,7 @@
 			xm.onclick = switchNightMode;
 			(function () {
 				if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "") {
-					if (new Date().getHours() > 20 || new Date().getHours() < 6) {
+					if (new Date().getHours() > 19 || new Date().getHours() < 8) {
 						document.body.classList.add("night");
 						document.cookie = "night=1;path=/";
 						console.log("夜间模式开启");
@@ -166,6 +167,13 @@
 				document.body.classList.add("gary");
 			}
 		</script>
+		<!-- <!&#45;&#45; Clustrmaps &#45;&#45;> -->
+		<!-- <script -->
+		<!-- 	type="text/javascript" -->
+		<!-- 	id="clustrmaps" -->
+		<!-- 	src="//cdn.clustrmaps.com/map_v2.js?cl=0e1633&#38;w=300&#38;t=tt&#38;d=sVWKicULnl5HbigBve0GtYU7c9_irQ9jA3lx2rGKxKE&#38;co=0b4975&#38;ct=cdd4d9&#38;cmo=3acc3a&#38;cmn=ff5353" -->
+		<!-- ></script> -->
+
 		<% } %>
 	</body>
 </html>

@@ -6,6 +6,7 @@
 		"version": "5.1.1"
 	},
 	"dependencies": {
+		"@videojs/http-streaming": "^2.6.0",
 		"aplayer": "^1.10.1",
 		"ga-analytics": "0.0.7",
 		"hexo": "^5.1.1",
@@ -31,6 +32,5 @@
 		"hexo-renderer-stylus": "^0.3.3",
 		"hexo-server": "^0.3.3",
 		"hexo-wordcount": "^6.0.1"
-	},
-	"devDependencies": {}
+	}
 }

@@ -56,6 +56,7 @@ https://cdn.jsdelivr.net/gh/user/repo@version/file
 
 ## Generate Jsdelivr Link
 
+### ~~1. 使用脚本生成~~  **更优解见[2](#toc-heading-5) **
 - 我写博客的截图均是由[Xnip](https://zh.xnipapp.com/) 生成，截图文件存储目录`Pictures/Xnip`,故我写了一个小脚本来实现
 
 ```bash
@@ -134,15 +135,12 @@ fi
 cdn_server.sh -a master -f CDN_for_blog
 ```
 
-生成链接为: [https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg](https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg) 
-![](https://cdn.jsdelivr.net/gh/liuyaanng/CDN@master/blog_images/CDN_for_blog/result.jpg) 
+<h3 id='1'> 2. 使用PicGO工具实现一键上传并生成CDN链接</h3>
 
-为了写博客更（l）方（a）便（n）, 我在`hexo new`的同时在github的CDN仓库创建了一个同名的文件夹用于存储博客图片：
+[PicGo](https://github.com/Molunerfinn/PicGo) 
+文档太详细,不想做过多介绍了
 
-```bash
-# hexo and CDN
-alias hn='f() {hexo new $1;mkdir ~/Github/Myrep/CND/$1;echo Created folder ~/Github/Myrep/CND/$1};f'
-```
+
 
 
 

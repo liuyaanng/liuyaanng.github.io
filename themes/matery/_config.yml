@@ -181,7 +181,7 @@ clicklove:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/medias/avatar.jpg
-  career: Zhengzhou University | C S | Senior
+  career: Zhengzhou University | C S |
   introduction:
 
 # config my projects informations in about page.
@@ -651,7 +651,7 @@ reprint:
   default: cc_by
 
 live2d:
-  enable: false
+  enable: true
 
 # 动态线条
 canvas:
@@ -668,12 +668,12 @@ background:
 
 # 腾讯兔小巢，见https://txc.qq.com/
 tuxiaochao:
-  enable: true
+  enable: false
   productId: 293542
 
 # visit map
 clustrMaps:
-  enable: true
+  enable: false
   show: false
   widget: map # There are 2 widget: map or globe
 
@@ -724,7 +724,7 @@ hide_posts:
 
 # 明月浩空播放器
 music_box:
-  enable: false
+  enable: true
   mobile: false
 
 # gary blog

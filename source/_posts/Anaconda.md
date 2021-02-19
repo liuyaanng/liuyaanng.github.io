@@ -3,6 +3,7 @@ title: Anaconda
 top: false
 cover: false
 toc: true
+hide: true
 mathjax: false
 img: https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Anaconda/img.jpg
 date: 2019-09-18 10:27:45
