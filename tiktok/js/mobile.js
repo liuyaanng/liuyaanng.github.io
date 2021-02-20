@@ -56,7 +56,7 @@ function getRandomInt(min, max) {
 
 //GET播放链接
 function players() {
-	layer.msg('Loading...', {icon: 16,time: 400,shadeClose: true,});
+	layer.msg('Loading...', {icon: 16,time: 800,shadeClose: true,});
 	$.get(url,function(vdurl_data,status){
 		if (status==status) {
 			// console.log(status)
