@@ -38,7 +38,7 @@ $("#yuan").on("click", function(){
 		gi = 0;
 		this.innerText =  url_name[gi];
 	}
-	url = url_pre + url_name[gi] + url_after;
+	url = url_pre +url_name[gi] + url_pre_2 + url_after;
 	console.log(url);
 });
 
