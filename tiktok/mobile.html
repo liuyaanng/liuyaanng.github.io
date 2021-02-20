@@ -32,7 +32,7 @@
 #player{
     width: 100%;
     height: 100%;
-    object-fit: contain; /*内容保持原比例，内容被裁剪*/
+    object-fit: cover; /*内容保持原比例，内容被裁剪*/
     object-position: center center;/*指定 image 或 video 在容器中的位置*/
     z-index: 333;/*显示在最顶层*/
 }
@@ -60,7 +60,7 @@ video::-webkit-media-controls-panel {
         <span style="position:absolute;bottom:5px;left:10px;font-size:9px;">本程序仅作研究学习演示，数据采集自网络<br>原作者拍摄创作不易，请勿下载传播<br></span>
     </div>
 
-    <span style="position:absolute;top:5px;font-family:electronicFont;color:#fff;font-size:1.2rem;" id="time">00:00:00</span>
+    <span style="position:absolute;top:5px;left: 50%;font-family:electronicFont;color:#fff;font-size:1.2rem;" id="time">00:00:00</span>
 
     <div id="buttons" style="position:absolute;bottom:150px;right:10px;z-index:999">
         <button id="auto_btn" style="border-radius:20px;width:42px;height:42px;">Repeat</button>
