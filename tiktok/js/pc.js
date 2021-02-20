@@ -1,10 +1,12 @@
 $(document).ready(function(){
 	auto = true;
 	gi = 0;//初始化GET链接序号
-	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
-	url_name = ['ks','toktik']
+	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
+	url_pre_2 = '_resource@master/txt/'
+	url_name = ['ks','tiktok']
 	url_after = '.json'
-	url = url_pre +url_name[0] + url_after;
+	url = url_pre +url_name[gi] + url_pre_2 + url_after;
+
 	player = document.getElementById("player");
 	players();
 
@@ -67,17 +69,16 @@ function players() {
 			var i = getRandomInt(0,data.length);
 			vdurl = data[i].url;
 			player.src = vdurl;
-			player.play();
-			// $.ajax({type: 'GET',url: vdurl,complete: function(response) {
-			//	if(response.status != 200) {
-			//		console.log(response.status);
-			//		players();
-			//	}
-			//	else{
-			//		player.src = vdurl;
-			//		player.play();
-			//	}
-			// }});
+			$.ajax({type: 'GET',url: vdurl,complete: function(response) {
+				if(response.status != 200) {
+					console.log(response.status);
+					players();
+				}
+				else{
+					player.src = vdurl;
+					player.play();
+				}
+			}});
 		} else {
 			console.log("失败，重新发起请求！");
 			players();
