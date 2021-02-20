@@ -8,7 +8,7 @@ $(document).ready(function(){
 	url_pre_2 = '_resource@master/txt/'
 	url_name = ['ks','tiktok']
 	url_after = '.json'
-	url = url_pre +url_name[gi] + url_pre_2 + url_after;
+	url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	player = document.getElementById("player");
 	players();
 	layer.msg('Loaded successfully!', {time: 10000,
@@ -38,7 +38,7 @@ $("#yuan").on("click", function(){
 		gi = 0;
 		this.innerText =  url_name[gi];
 	}
-	url = url_pre +url_name[gi] + url_pre_2 + url_after;
+	url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	console.log(url);
 });
 
