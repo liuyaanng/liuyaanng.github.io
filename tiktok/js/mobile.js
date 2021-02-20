@@ -4,10 +4,11 @@ $(document).ready(function(){
 	layer.msg('Loading Environment, please wait a second...');
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
-	url_pre = 'https://cdn.jsdelivr.net/gh/liuyaanng/douyin_resource@master/txt/'
+	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
+	url_pre_2 = '_resource@master/txt/'
 	url_name = ['ks','tiktok']
 	url_after = '.json'
-	url = url_pre +url_name[gi] + url_after;
+	url = url_pre +url_name[gi] + url_pre_2 + url_after;
 	player = document.getElementById("player");
 	players();
 	layer.msg('Loaded successfully!', {time: 10000,
