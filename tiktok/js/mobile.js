@@ -26,7 +26,8 @@ $(document).ready(function(){
 });
 //播放模式选择
 $("#auto_btn").on("click", function(){
-	auto = !auto;console.log(auto);
+	auto = !auto;
+	console.log(auto);
 	this.innerText = (auto ? 'Repeat' : 'Loop');
 });
 //播放源按钮事件
