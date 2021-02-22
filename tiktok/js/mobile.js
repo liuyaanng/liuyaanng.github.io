@@ -6,7 +6,7 @@ $(document).ready(function(){
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
 	url_pre_2 = '_resource@master/txt/'
-	url_name = ['ks','tiktok']
+	url_name = ['ks','tiktok','ted']
 	url_after = '.json'
 	url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	player = document.getElementById("player");
