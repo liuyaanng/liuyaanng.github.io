@@ -27,12 +27,12 @@
     position: absolute; /*定位类型：绝对定位*/
     margin: 0;
     overflow: hidden;/*内容溢出：被修剪，且其余内容不可见*/
-    background-color: #ffffff;
+    background-color: black;
 }
 #player{
     width: 100%;
     height: 100%;
-    object-fit: cover; /*内容保持原比例，内容被裁剪*/
+    object-fit: contain; /*内容保持原比例，内容被裁剪*/
     object-position: center center;/*指定 image 或 video 在容器中的位置*/
     z-index: 333;/*显示在最顶层*/
 }
@@ -65,7 +65,7 @@ video::-webkit-media-controls-panel {
     <div id="buttons" style="position:absolute;bottom:150px;right:10px;z-index:999">
         <button id="auto_btn" style="border-radius:20px;width:42px;height:42px;">Repeat</button>
         <br><br><br>
-        <button id="yuan" style="border-radius:20px;width:48px;height:32px;">ks</button>
+        <button id="yuan" style="border-radius:20px;width:48px;height:32px;">ted</button>
         <br><br><br>
         <button style="border-radius:20px;width:48px;height:32px;" onclick="pass();">PASS</button>
     </div>
