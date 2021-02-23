@@ -98,118 +98,118 @@ function players() {
 			//		pass()
 			//	}
 			// }
-			// $.ajax({url: vdurl,type: 'GET',complete: function(response) {
-			if(response.status != 200) {//测试链接通信状态
-				console.log('加载失败!')
-				pass();
-			}else{
-				player.play();
-				setInterval('var video_name = vdurl_data[i].name $("#time").html(video_name);', 1000);
-				//	}
-				// }});
-			} else {
-				$("#msg").html("Load failed, Reloading....");
-				pass();
-			}
-		});
-	}
-		//点击屏幕事件
-		$("#player").click(function(){
-			if (player.paused) {
-				// $("#logo_img").hide();
-				player.play();
-				// $("#msgs").hide();
-			} else {
-				// $("#logo_img").show();
-				player.pause();
-				// $("#texts").show();
-				// $("#msgs").show();
-			}
-		});
-		// $("#logo_img").click(function(){
-		//	if (player.paused) {
-		//		$("#logo_img").hide();
-		//		player.play();
-		//	} else {
-		//		$("#logo_img").show();
-		//		player.pause();
-		//	}
-		// });
-		$("#logo_img").dblclick(function(){
-			toggleFullScreen();
-		});
-		$("#player").dblclick(function(){
-			toggleFullScreen();
-		});
-	//进入全屏，建议使用EDGE浏览器
-	function toggleFullScreen() {
-		if (!document.fullscreenElement &&
-			!document.mozFullScreenElement && !document.webkitFullscreenElement) {
-			if (document.documentElement.requestFullscreen) {
-				document.documentElement.requestFullscreen();
-			} else if (document.documentElement.mozRequestFullScreen) {
-				document.documentElement.mozRequestFullScreen();
-			} else if (document.documentElement.webkitRequestFullscreen) {
-				document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-			}
+			$.ajax({url: vdurl,type: 'GET',complete: function(response) {
+				if(response.status != 200) {//测试链接通信状态
+					console.log('加载失败!')
+					pass();
+				}else{
+					player.play();
+					setInterval('var video_name = vdurl_data[i].name $("#time").html(video_name);', 1000);
+				}
+			}});
 		} else {
-			if (document.cancelFullScreen) {
-				document.cancelFullScreen();
-			} else if (document.mozCancelFullScreen) {
-				document.mozCancelFullScreen();
-			} else if (document.webkitCancelFullScreen) {
-				document.webkitCancelFullScreen();
-			}
+			$("#msg").html("Load failed, Reloading....");
+			pass();
+		}
+	});
+}
+//点击屏幕事件
+$("#player").click(function(){
+	if (player.paused) {
+		// $("#logo_img").hide();
+		player.play();
+		// $("#msgs").hide();
+	} else {
+		// $("#logo_img").show();
+		player.pause();
+		// $("#texts").show();
+		// $("#msgs").show();
+	}
+});
+// $("#logo_img").click(function(){
+//	if (player.paused) {
+//		$("#logo_img").hide();
+//		player.play();
+//	} else {
+//		$("#logo_img").show();
+//		player.pause();
+//	}
+// });
+$("#logo_img").dblclick(function(){
+	toggleFullScreen();
+});
+$("#player").dblclick(function(){
+	toggleFullScreen();
+});
+//进入全屏，建议使用EDGE浏览器
+function toggleFullScreen() {
+	if (!document.fullscreenElement &&
+		!document.mozFullScreenElement && !document.webkitFullscreenElement) {
+		if (document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		} else if (document.documentElement.mozRequestFullScreen) {
+			document.documentElement.mozRequestFullScreen();
+		} else if (document.documentElement.webkitRequestFullscreen) {
+			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		}
+	} else {
+		if (document.cancelFullScreen) {
+			document.cancelFullScreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitCancelFullScreen) {
+			document.webkitCancelFullScreen();
 		}
 	}
-	//触摸屏幕手势
-	var startx, starty; //获得角度
-	function getAngle(angx, angy) {
-		return Math.atan2(angy, angx) * 180 / Math.PI;
-	};
-	function getDirection(startx, starty, endx, endy) { //根据起点终点返回方向 1向上 2向下 3向左 4向右 0未滑动
-		var angx = endx - startx;
-		var angy = endy - starty;
-		var result = 0;
-		if (Math.abs(angx) < 2 && Math.abs(angy) < 2) { //如果滑动距离太短
-			return result;
-		}
-		var angle = getAngle(angx, angy);
-		if (angle >= -135 && angle <= -45) {
-			result = 1;
-		} else if (angle > 45 && angle < 135) {
-			result = 2;
-		} else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
-			result = 3;
-		} else if (angle >= -45 && angle <= 45) {
-			result = 4;
-		}
+}
+//触摸屏幕手势
+var startx, starty; //获得角度
+function getAngle(angx, angy) {
+	return Math.atan2(angy, angx) * 180 / Math.PI;
+};
+function getDirection(startx, starty, endx, endy) { //根据起点终点返回方向 1向上 2向下 3向左 4向右 0未滑动
+	var angx = endx - startx;
+	var angy = endy - starty;
+	var result = 0;
+	if (Math.abs(angx) < 2 && Math.abs(angy) < 2) { //如果滑动距离太短
 		return result;
 	}
-	document.addEventListener("touchstart",function(e) { //手指接触屏幕
-		startx = e.touches[0].pageX;
-		starty = e.touches[0].pageY;
-	},false);
-	document.addEventListener("touchend",function(e) { //手指离开屏幕
-		var endx, endy;
-		endx = e.changedTouches[0].pageX;
-		endy = e.changedTouches[0].pageY;
-		var direction = getDirection(startx, starty, endx, endy);
-		switch (direction) {//1向上 2向下 3向左 4向右 0未滑动
-			case 1:
-				players();
-				break;
-			case 2:
-				playold();
-				break;
-			case 3:
-				$('#texts').hide();
-				textstf = !textstf;
-				break;
-			case 4:
-				$('#texts').show();
-				textstf = !textstf;
-				break;
-		}
-	},false);
+	var angle = getAngle(angx, angy);
+	if (angle >= -135 && angle <= -45) {
+		result = 1;
+	} else if (angle > 45 && angle < 135) {
+		result = 2;
+	} else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+		result = 3;
+	} else if (angle >= -45 && angle <= 45) {
+		result = 4;
+	}
+	return result;
+}
+document.addEventListener("touchstart",function(e) { //手指接触屏幕
+	startx = e.touches[0].pageX;
+	starty = e.touches[0].pageY;
+},false);
+document.addEventListener("touchend",function(e) { //手指离开屏幕
+	var endx, endy;
+	endx = e.changedTouches[0].pageX;
+	endy = e.changedTouches[0].pageY;
+	var direction = getDirection(startx, starty, endx, endy);
+	switch (direction) {//1向上 2向下 3向左 4向右 0未滑动
+		case 1:
+			players();
+			break;
+		case 2:
+			playold();
+			break;
+		case 3:
+			$('#texts').hide();
+			textstf = !textstf;
+			break;
+		case 4:
+			$('#texts').show();
+			textstf = !textstf;
+			break;
+	}
+},false);
 
