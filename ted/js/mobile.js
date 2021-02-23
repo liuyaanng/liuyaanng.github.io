@@ -4,7 +4,7 @@ $(document).ready(function(){
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
-	url_pre_2 = '_resource@master/txt/'
+	url_pre_2 = '_resource/txt/'
 	url_name = ['ted']
 	url_after = '.json'
 	url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
