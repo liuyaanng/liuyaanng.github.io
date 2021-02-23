@@ -14,7 +14,7 @@
 </script>
 <style type="text/css">
 @charset "utf-8";
-@font-face{font-family:electronicFont;src:url(./css/DS-DIGIT.TTF)}
+/* @font-face{font-family:electronicFont;src:url(./css/DS-DIGIT.TTF)} */
 *{
     margin: 0px; 
     padding: 0px;
@@ -59,8 +59,9 @@ video::-webkit-media-controls-panel {
         <span style="position:absolute;bottom:42px;left:10px;;font-size:1rem;" id="userid">@GeekOcean</span>
         <span style="position:absolute;bottom:5px;left:10px;font-size:9px;">本程序仅作研究学习演示，数据采集自网络<br>原作者拍摄创作不易，请勿下载传播<br></span>
     </div>
-
-    <span style="position:absolute;top:5px;left: 50%;font-family:electronicFont;color:#fff;font-size:1.2rem;" id="time">00:00:00</span>
+		<div style="position:absolute; margin: auto; width: 100%; top: 15%; text-align: center">
+    <span style="font-family:electronicFont;color:#fff;font-size:1.2rem;" id="time">Loading...</span>
+		</div>
 
     <div id="buttons" style="position:absolute;bottom:150px;right:10px;z-index:999">
         <button id="auto_btn" style="border-radius:20px;width:42px;height:42px;">Repeat</button>

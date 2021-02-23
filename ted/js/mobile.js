@@ -66,6 +66,7 @@ function players() {
 			var video_name = vdurl_data[i].name
 			console.log(video_name)
 			player.src = vdurl;
+			$("#time").html(video_name)
 			// var video = document.createElement('video');
 			//
 			// video.onload = function() {
@@ -105,7 +106,7 @@ function players() {
 					pass();
 				}else{
 					player.play();
-					setInterval(function($("#time").html(video_name);), 1000);
+					// setInterval(function($("#time").html(video_name);), 1000);
 				}
 			}});
 		} else {
