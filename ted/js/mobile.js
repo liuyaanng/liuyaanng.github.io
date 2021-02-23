@@ -63,7 +63,8 @@ function players() {
 			vdurl_data = JSON.parse(vdurl_data)
 			var i = getRandomInt(0, vdurl_data.length)
 			vdurl = vdurl_data[i].url;
-
+			var video_name = vdurl_data[i].name
+			console.log(video_name)
 			player.src = vdurl;
 			// var video = document.createElement('video');
 			//
@@ -104,7 +105,7 @@ function players() {
 					pass();
 				}else{
 					player.play();
-					setInterval('var video_name = vdurl_data[i].name $("#time").html(video_name);', 1000);
+					setInterval('$("#time").html(video_name);', 1000);
 				}
 			}});
 		} else {
