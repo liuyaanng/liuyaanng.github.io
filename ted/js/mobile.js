@@ -105,7 +105,7 @@ function players() {
 					pass();
 				}else{
 					player.play();
-					setInterval('$("#time").html(video_name);', 1000);
+					setInterval(function($("#time").html(video_name);), 1000);
 				}
 			}});
 		} else {
