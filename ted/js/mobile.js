@@ -4,10 +4,10 @@ $(document).ready(function(){
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
-	url_pre_2 = '_resource@2.23.4/txt/'
-	url_name = ['ted']
+	url_pre_2 = 'TED_resource@master/txt/'
+	url_name = ['Bilingual_ted','English_ted', 'Raw_ted' ]
 	url_after = '.json'
-	url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
+	url = url_pre + url_pre_2 + url_name[gi] + url_after;
 	player = document.getElementById("player");
 	players();
 	layer.msg('Loaded successfully!', {time: 10000,
@@ -38,7 +38,8 @@ $("#yuan").on("click", function(){
 		gi = 0;
 		this.innerText =  url_name[gi];
 	}
-	url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
+	url = url_pre + url_pre_2 + url_name[gi] + url_after;
+	// url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	console.log(url);
 });
 
