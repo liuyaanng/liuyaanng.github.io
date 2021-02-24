@@ -46,6 +46,7 @@ $("#yuan").on("click", function(){
 function pass(){
 	setTimeout(function () {
 		players();
+		set_select_checked('selRate', 1);
 	}, 257);
 }
 function getRandomInt(min, max) {
@@ -161,6 +162,27 @@ function toggleFullScreen() {
 			document.mozCancelFullScreen();
 		} else if (document.webkitCancelFullScreen) {
 			document.webkitCancelFullScreen();
+		}
+	}
+}
+//视频变速播放
+var eleSelect = document.getElementById('selRate');
+var video = document.getElementById('player');
+// 改变播放速率
+eleSelect.addEventListener('change', function () {
+	console.log(this.value)
+	video.playbackRate = this.value;
+});
+
+//设置速度
+function set_select_checked(selectId, checkValue){
+	var select = document.getElementById(selectId);
+
+	for (var i = 0; i < select.options.length; i++){
+		console.log(select.options[i].value)
+		if (select.options[i].value == checkValue){
+			select.options[i].selected = true;
+			break;
 		}
 	}
 }
