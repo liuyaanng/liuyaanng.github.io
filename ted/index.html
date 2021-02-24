@@ -44,9 +44,16 @@ video::-webkit-media-controls-panel {
 }
 .button1{
 	color:white;
-	border-radius:20px;
+	border-radius:2px;
 	width:42px;
 	height:42px;
+	border: 2px solid #e7e7e7;
+}
+.button2{
+	color:white;
+	border-radius:2px;
+	width:48px;
+	height:32px;
 	border: 2px solid #e7e7e7;
 }
 </style>
@@ -67,12 +74,12 @@ video::-webkit-media-controls-panel {
     <span style="font-family:electronicFont;color:#fff;font-size:1.2rem;" id="time">Loading...</span>
 		</div>
 
-    <div id="buttons" style="position:absolute;bottom:10%;width:100%;z-index:999">
+    <div id="buttons" style="position:absolute;bottom:12%;width:100%;z-index:999">
         <button id="auto_btn" class="button1">Repeat</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="yuan" style="border-radius:20px;width:48px;height:32px;">ted</button>
+        <button id="yuan" class="button2">ted</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-        <button style="border-radius:20px;width:48px;height:32px;" onclick="pass();">PASS</button>
+        <button class="button2" onclick="pass();">PASS</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<select id="selRate">
 			<option value="0.5">0.5</option>
