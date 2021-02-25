@@ -41,6 +41,7 @@ $("#yuan").on("click", function(){
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
 	// url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	console.log(url);
+	pass();
 });
 
 //PASS切换事件
