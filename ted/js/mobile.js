@@ -8,6 +8,8 @@ $(document).ready(function(){
 	url_name = ['Bilingual','English', 'Raw' ]
 	url_after = '.json'
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
+	var i = 0; //设置随机数
+	check_yuan = false
 	player = document.getElementById("player");
 	players();
 	layer.msg('Loaded successfully!', {time: 10000,
@@ -41,12 +43,18 @@ $("#yuan").on("click", function(){
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
 	// url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	console.log(url);
-	pass();
+	check_yuan = true;
+	console.log("yuan")
+	console.log(i)
+	players()
+
+	// pass();
 });
 
 //PASS切换事件
 function pass(){
 	setTimeout(function () {
+		check_yuan = false;
 		players();
 		set_select_checked('selRate', 1);
 	}, 257);
@@ -56,7 +64,6 @@ function getRandomInt(min, max) {
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
 }
-
 //GET播放链接
 function players() {
 	layer.msg('Loading...', {icon: 16,time: 800,shadeClose: true,});
@@ -64,7 +71,11 @@ function players() {
 		if (status==status) {
 			// console.log(status)
 			vdurl_data = JSON.parse(vdurl_data)
-			var i = getRandomInt(0, vdurl_data.length)
+			if(check_yuan==false){
+				i = getRandomInt(0, vdurl_data.length)
+			}
+			console.log("player")
+			console.log(i)
 			vdurl = vdurl_data[i].url;
 			var video_name = vdurl_data[i].name
 			console.log(video_name)
