@@ -4,7 +4,7 @@ $(document).ready(function(){
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
-	url_pre_2 = 'TED_resource@1.1/txt/'
+	url_pre_2 = 'TED_resource@2.1/txt/'
 	url_name = ['Bilingual','English', 'Raw' ]
 	url_after = '.json'
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
@@ -77,7 +77,7 @@ function players() {
 			console.log("player")
 			console.log(i)
 			vdurl = vdurl_data[i].url;
-			var video_name = vdurl_data[i].name
+			var video_name = vdurl_data[i].name.replace(/_/g,' ')
 			console.log(video_name)
 			player.src = vdurl;
 			$("#time").html(video_name)
