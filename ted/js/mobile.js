@@ -4,11 +4,12 @@ $(document).ready(function(){
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
-	url_pre_2 = 'TED_resource@2.1/txt/'
+	url_pre_2 = 'TED_resource@2.2/txt/'
 	url_name = ['Bilingual','English', 'Raw' ]
 	url_after = '.json'
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
 	var i = 0; //设置随机数
+	var vdurl_data = {}
 	check_yuan = false
 	player = document.getElementById("player");
 	players();
@@ -44,12 +45,15 @@ $("#yuan").on("click", function(){
 	// url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
 	console.log(url);
 	check_yuan = true;
-	console.log("yuan")
-	console.log(i)
+	// console.log("yuan i is %d", i)
 	players()
-
-	// pass();
 });
+
+//加载字幕pdf链接
+function subtitles(){
+	var sub_url = vdurl_data[i].subtitle_url;
+	console.log("sub_url is %s", sub_url)
+}
 
 //PASS切换事件
 function pass(){
@@ -73,9 +77,9 @@ function players() {
 			vdurl_data = JSON.parse(vdurl_data)
 			if(check_yuan==false){
 				i = getRandomInt(0, vdurl_data.length)
+				console.log("check yuan is false i = %d", i)
 			}
-			console.log("player")
-			console.log(i)
+			console.log("Player i is %d", i)
 			vdurl = vdurl_data[i].url;
 			var video_name = vdurl_data[i].name.replace(/_/g,' ')
 			console.log(video_name)
