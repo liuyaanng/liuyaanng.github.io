@@ -8,8 +8,8 @@ $(document).ready(function(){
 	url_name = ['Bilingual','English', 'Raw' ]
 	url_after = '.json'
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
-	var i = 0; //设置随机数
-	var vdurl_data = {}
+	i = 0; //设置随机数
+	vdurl_data = {}
 	check_yuan = false
 	player = document.getElementById("player");
 	players();
@@ -49,12 +49,19 @@ $("#yuan").on("click", function(){
 	players()
 });
 
-//加载字幕pdf链接
-function subtitles(){
-	var sub_url = vdurl_data[i].subtitle_url;
-	console.log("sub_url is %s", sub_url)
-}
-
+// //加载字幕pdf链接
+// function subtitles(){
+//	$.get(url,function(vdurl_data,status){
+//		if (status==status) {
+//			// console.log(status)
+//			vdurl_data = JSON.parse(vdurl_data)
+//			var sub_url = vdurl_data[i].subtitle_url;
+//			console.log("sub_url is %s", sub_url)
+// open(sub_url)
+//		}
+//	});
+// }
+//
 //PASS切换事件
 function pass(){
 	setTimeout(function () {
@@ -81,6 +88,8 @@ function players() {
 			}
 			console.log("Player i is %d", i)
 			vdurl = vdurl_data[i].url;
+			var sub_url = vdurl_data[i].subtitle_url
+			document.getElementById("subtitle").setAttribute("href", sub_url);
 			var video_name = vdurl_data[i].name.replace(/_/g,' ')
 			console.log(video_name)
 			player.src = vdurl;
