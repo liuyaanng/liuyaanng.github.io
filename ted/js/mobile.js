@@ -99,11 +99,11 @@ function players() {
 			if(sub_url){
 				document.getElementById("subtitle").setAttribute("href", sub_url);
 			}
-			else{
-				layer.msg('⚠️Notice:   No subtitle!', {time: 8000,
-					btn: ['Close'],yes:function(){
-						layer.closeAll()
-					}})}
+			// else{
+			//	layer.msg('⚠️Notice:   No subtitle!', {time: 8000,
+			//		btn: ['Close'],yes:function(){
+			//			layer.closeAll()
+			//		}})}
 			var video_name = vdurl_data[i].name.replace(/_/g,' ')
 			console.log(video_name)
 			player.src = vdurl;
