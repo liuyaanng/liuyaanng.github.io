@@ -4,7 +4,7 @@ $(document).ready(function(){
 	auto = true;//循环播放模式
 	gi = 0;//初始化GET链接序号
 	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
-	url_pre_2 = 'TED_resource@2.3/txt/'
+	url_pre_2 = 'TED_resource@2.4/txt/'
 	url_name = ['Bilingual','English', 'Raw' ]
 	url_after = '.json'
 	url = url_pre + url_pre_2 + url_name[gi] + url_after;
@@ -49,18 +49,25 @@ $("#yuan").on("click", function(){
 	players()
 });
 
-// //加载字幕pdf链接
-// function subtitles(){
-//	$.get(url,function(vdurl_data,status){
-//		if (status==status) {
-//			// console.log(status)
-//			vdurl_data = JSON.parse(vdurl_data)
-//			var sub_url = vdurl_data[i].subtitle_url;
-//			console.log("sub_url is %s", sub_url)
-// open(sub_url)
-//		}
-//	});
-// }
+//加载字幕pdf链接
+function subtitles(){
+	$.get(url,function(vdurl_data,status){
+		if (status==status) {
+			// console.log(status)
+			vdurl_data = JSON.parse(vdurl_data)
+			var sub_url = vdurl_data[i].subtitle_url;
+			console.log("sub_url is %s", sub_url)
+			if(sub_url){
+				open(sub_url)
+			}
+			else{
+				layer.msg('No subtitle', {time: 10000,
+					btn: ['Close'],yes:function(){
+						layer.closeAll()
+					}})}
+		}
+	});
+}
 //
 //PASS切换事件
 function pass(){
@@ -88,8 +95,15 @@ function players() {
 			}
 			console.log("Player i is %d", i)
 			vdurl = vdurl_data[i].url;
-			var sub_url = vdurl_data[i].subtitle_url
-			document.getElementById("subtitle").setAttribute("href", sub_url);
+			// var sub_url = vdurl_data[i].subtitle_url
+			// if(sub_url){
+			//	document.getElementById("subtitle").setAttribute("href", sub_url);
+			// }
+			// else{
+			//	layer.msg('No subtitle', {time: 10000,
+			//		btn: ['Close'],yes:function(){
+			//			layer.closeAll()
+			//		}})}
 			var video_name = vdurl_data[i].name.replace(/_/g,' ')
 			console.log(video_name)
 			player.src = vdurl;
