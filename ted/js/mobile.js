@@ -49,25 +49,25 @@ $("#yuan").on("click", function(){
 	players()
 });
 
-//加载字幕pdf链接
-function subtitles(){
-	$.get(url,function(vdurl_data,status){
-		if (status==status) {
-			// console.log(status)
-			vdurl_data = JSON.parse(vdurl_data)
-			var sub_url = vdurl_data[i].subtitle_url;
-			console.log("sub_url is %s", sub_url)
-			if(sub_url){
-				open(sub_url)
-			}
-			else{
-				layer.msg('No subtitle', {time: 10000,
-					btn: ['Close'],yes:function(){
-						layer.closeAll()
-					}})}
-		}
-	});
-}
+// //加载字幕pdf链接
+// function subtitles(){
+//	$.get(url,function(vdurl_data,status){
+//		if (status==status) {
+//			// console.log(status)
+//			vdurl_data = JSON.parse(vdurl_data)
+//			var sub_url = vdurl_data[i].subtitle_url;
+//			console.log("sub_url is %s", sub_url)
+//			if(sub_url){
+//				open(sub_url)
+//			}
+//			else{
+//				layer.msg('No subtitle', {time: 10000,
+//					btn: ['Close'],yes:function(){
+//						layer.closeAll()
+//					}})}
+//		}
+//	});
+// }
 //
 //PASS切换事件
 function pass(){
@@ -95,15 +95,15 @@ function players() {
 			}
 			console.log("Player i is %d", i)
 			vdurl = vdurl_data[i].url;
-			// var sub_url = vdurl_data[i].subtitle_url
-			// if(sub_url){
-			//	document.getElementById("subtitle").setAttribute("href", sub_url);
-			// }
-			// else{
-			//	layer.msg('No subtitle', {time: 10000,
-			//		btn: ['Close'],yes:function(){
-			//			layer.closeAll()
-			//		}})}
+			var sub_url = vdurl_data[i].subtitle_url
+			if(sub_url){
+				document.getElementById("subtitle").setAttribute("href", sub_url);
+			}
+			else{
+				layer.msg('⚠️Notice:   No subtitle!', {time: 8000,
+					btn: ['Close'],yes:function(){
+						layer.closeAll()
+					}})}
 			var video_name = vdurl_data[i].name.replace(/_/g,' ')
 			console.log(video_name)
 			player.src = vdurl;
