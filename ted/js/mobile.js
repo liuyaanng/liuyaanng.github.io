@@ -85,7 +85,7 @@ function getRandomInt(min, max) {
 }
 //GET播放链接
 function players() {
-	// layer.msg('Loading...', {icon: 16,time: 1200,shadeClose: true,});
+	layer.msg('Loading...', {icon: 16,time: 200,shadeClose: true,});
 	$.get(url,function(vdurl_data,status){
 		if (status==status) {
 			// console.log(status)
@@ -147,7 +147,7 @@ function players() {
 					var video_name = vdurl_data[i].name.replace(/_/g,' ')
 					console.log(video_name)
 					player.play();
-					player.onplay = function(){
+					player.oncanplay = function(){
 						$("#time").html(video_name)
 					}
 					// setInterval(function($("#time").html(video_name);), 1000);
