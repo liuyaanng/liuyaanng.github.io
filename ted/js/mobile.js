@@ -13,7 +13,7 @@ $(document).ready(function(){
 	check_yuan = false
 	player = document.getElementById("player");
 	players();
-	layer.msg('Loaded successfully!', {time: 10000,
+	layer.msg('Successfully loaded!', {time: 10000,
 		btn: ['Full Screen', 'Keep it'],yes:function(){
 			toggleFullScreen();layer.closeAll();player.play();
 		}	});
