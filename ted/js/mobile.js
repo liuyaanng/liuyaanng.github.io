@@ -73,6 +73,7 @@ $("#yuan").on("click", function(){
 function pass(){
 	setTimeout(function () {
 		check_yuan = false;
+		$("#time").html("Loading...")
 		players();
 		set_select_checked('selRate', 1);
 	}, 257);
@@ -84,7 +85,7 @@ function getRandomInt(min, max) {
 }
 //GET播放链接
 function players() {
-	layer.msg('Loading...', {icon: 16,time: 1200,shadeClose: true,});
+	// layer.msg('Loading...', {icon: 16,time: 1200,shadeClose: true,});
 	$.get(url,function(vdurl_data,status){
 		if (status==status) {
 			// console.log(status)
@@ -104,10 +105,7 @@ function players() {
 			//		btn: ['Close'],yes:function(){
 			//			layer.closeAll()
 			//		}})}
-			var video_name = vdurl_data[i].name.replace(/_/g,' ')
-			console.log(video_name)
 			player.src = vdurl;
-			$("#time").html(video_name)
 			// var video = document.createElement('video');
 			//
 			// video.onload = function() {
@@ -146,7 +144,11 @@ function players() {
 					console.log('加载失败!')
 					pass();
 				}else{
+					var video_name = vdurl_data[i].name.replace(/_/g,' ')
+					console.log(video_name)
 					player.play();
+					player.addEventListener('play', function () {						$("#time").html(video_name)
+					});
 					// setInterval(function($("#time").html(video_name);), 1000);
 				}
 			}});
