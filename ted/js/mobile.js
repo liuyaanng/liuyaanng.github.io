@@ -147,8 +147,9 @@ function players() {
 					var video_name = vdurl_data[i].name.replace(/_/g,' ')
 					console.log(video_name)
 					player.play();
-					player.addEventListener('play', function () {						$("#time").html(video_name)
-					});
+					player.onplay = function(){
+						$("#time").html(video_name)
+					}
 					// setInterval(function($("#time").html(video_name);), 1000);
 				}
 			}});
