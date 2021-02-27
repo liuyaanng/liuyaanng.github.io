@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-02-12T10:54:23.878Z</updated>
+  <updated>2021-02-27T04:23:23.277Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git</title>
+    <link href="https://godliuyang.wang/2021/02/27/git/"/>
+    <id>https://godliuyang.wang/2021/02/27/git/</id>
+    <published>2021-02-27T03:29:38.000Z</published>
+    <updated>2021-02-27T04:23:23.277Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-Github-Cheat-Sheet&quot;&gt;&lt;a href=&quot;#1-Github-Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;1. Github Cheat Sheet&quot;&gt;&lt;/a&gt;1. Github Cheat
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>LeetCode_Day1</title>
@@ -510,40 +532,6 @@
       <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
     
       <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Face Recognition</title>
-    <link href="https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/"/>
-    <id>https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/</id>
-    <published>2019-08-10T04:00:00.000Z</published>
-    <updated>2020-12-13T07:47:18.305Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Face-Recognition-with-OpenCV&quot;&gt;&lt;a href=&quot;#Face-Recognition-with-OpenCV&quot; class=&quot;headerlink&quot; title=&quot;Face Recognition with
-        
-      
-    
-    </summary>
-    
-      <category term="实习" scheme="https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/"/>
-    
-      <category term="Face Recognition" scheme="https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/Face-Recognition/"/>
-    
-    
-      <category term="OpenCV" scheme="https://godliuyang.wang/tags/OpenCV/"/>
-    
-      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
-    
-      <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
-    
-      <category term="Face Recongnition" scheme="https://godliuyang.wang/tags/Face-Recongnition/"/>
     
   </entry>
   

@@ -5,8 +5,14 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="频域滤波器及其应用, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="频域滤波器低通滤波器理想低通滤波器在以原点为圆心，以$D_0$为半径的圆内无衰减通过所有频率，而在圆外切断所有频率的二维低通滤波器，称为理想低通滤波器(ILPF)，定义为$$y=\begin{cases}1,\quad D(x,y)\leq">
+    <meta name="keywords" content="Git, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="1. Github Cheat Sheet配置工具对所有本地仓库的用户信息进行配置
+
+对你的commit操作设置关联的用户名
+
+$ git config --global user.name &amp;quot;[name]&amp;quot;
+
+对你的c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>频域滤波器及其应用 | GeekOcean</title>
+    <title>Git | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -332,13 +338,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/26.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        频域滤波器及其应用
+                        Git
                     </div>
                 </div>
             </div>
@@ -447,29 +453,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                                <span class="chip bg-color">图像处理</span>
-                            </a>
-                        
-                            <a href="/tags/Matlab/" target="_blank">
-                                <span class="chip bg-color">Matlab</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                Digital Image Processing
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -477,26 +466,26 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-20
+                    2021-02-27
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-07-20
+                    2021-02-27
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        901
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        3 分
                     </div>
                     
                 
@@ -514,201 +503,113 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="频域滤波器"><a href="#频域滤波器" class="headerlink" title="频域滤波器"></a>频域滤波器</h1><h2 id="低通滤波器"><a href="#低通滤波器" class="headerlink" title="低通滤波器"></a>低通滤波器</h2><h3 id="理想低通滤波器"><a href="#理想低通滤波器" class="headerlink" title="理想低通滤波器"></a>理想低通滤波器</h3><p>在以原点为圆心，以$D_0$为半径的圆内无衰减通过所有频率，而在圆外切断所有频率的二维低通滤波器，称为理想低通滤波器(ILPF)，定义为<br>$$y=\begin{cases}<br>1,\quad D(x,y)\leq 0\<br>0, \quad D(x,y) &gt; 0<br>\end{cases}$$<br>$D_0$是一个常数，D(u,v)是频率域中心点(u,v)与频率矩形中心的距离，即<br>$$ D(u,v)=\lbrack{(u-\frac{P}{2})^2+(v-\frac{Q}{2})^2}\rbrack^\frac{1}{2} $$<br>过渡点称为<strong>截止频率</strong><br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1f0cb755202.jpg"></p>
-<h3 id="布特沃斯低通滤波器"><a href="#布特沃斯低通滤波器" class="headerlink" title="布特沃斯低通滤波器"></a>布特沃斯低通滤波器</h3><p>截止频率位于距原点$D_0$处的n阶布特沃斯低通滤波器(BLPF)的传递函数的定义为:<br>$$H(u,v)=\frac{1}{1+{[D(u,v)/D_0]}^{2n}}$$<br>截止频率点是当D(u,v) = $D_0$时的点<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1f101518273.jpg"></p>
-<h3 id="高斯低通滤波器"><a href="#高斯低通滤波器" class="headerlink" title="高斯低通滤波器"></a>高斯低通滤波器</h3><p>二维形式:<br>$$H(u,v) = e^{-D^2(u,v)/2{D_0}^2} $$<br>$D_0$ 是截止频率<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1f163e99741.jpg"></p>
-<h3 id="使用低通滤波器平滑图像"><a href="#使用低通滤波器平滑图像" class="headerlink" title="使用低通滤波器平滑图像"></a>使用低通滤波器平滑图像</h3><h4 id="1-高斯低通滤波器"><a href="#1-高斯低通滤波器" class="headerlink" title="1. 高斯低通滤波器"></a>1. 高斯低通滤波器</h4><pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
-f = rgb2gray(f);
-[f, revertclass] = tofloat(f);
-PQ = paddedsize(size(f));
-[U, V] = dftuv(PQ(1), PQ(2));
-D = hypot(U, V);
-D0 = 0.05*PQ(2);
-F = fft2(f, PQ(1), PQ(2));
-H = exp(-(D .^ 2)/(2 * (D0^2))); %高斯低通滤波器
-g = dftfilt(f, H);
-g = revertclass(g);
-figure, imshow(fftshift(H));
-figure, imshow(log(1 + abs(fftshift(F))), [])
-figure, imshow(g);</code></pre>
-<p>滤波结果：<br><img loading="lazy" src="https://i.loli.net/2019/07/20/5d32d02f5468855048.jpg"></p>
-<p>除了之前说的几个M函数外，还需要用到<code>dftfilt()</code>函数</p>
-<pre><code class="line-numbers language-matlab">function g=dftfilt(f,H)
-%DFTFILT Performs frequency domain filtering.
-%   G=DFTFILT(F,H) filters F in the frequency domain using the
-%   filter transfer function H. The output, G, is the filtered
-%   image, which has the same size as F. DFTFILT automatically pads
-%   F to be the same size as H. Function PADDEDSIZE can be used
-%   to determine an appropriate size for H.
-%
-%   DFTFILT assumes that F is real and that H is a real, uncentered,
-%   circularly-symmetric filter function.
+                <h1 id="1-Github-Cheat-Sheet"><a href="#1-Github-Cheat-Sheet" class="headerlink" title="1. Github Cheat Sheet"></a>1. Github Cheat Sheet</h1><h2 id="配置工具"><a href="#配置工具" class="headerlink" title="配置工具"></a>配置工具</h2><p>对所有本地仓库的用户信息进行配置</p>
+<ul>
+<li>对你的commit操作设置关联的用户名</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git config --global user.name &quot;[name]&quot;</code></pre>
+<ul>
+<li>对你的commit操作设置关联的邮箱地址</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git config --global user.email &quot;[email address]&quot;</code></pre>
+<ul>
+<li>启用有帮助的彩色命令行输出</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git config --global color.ui auto</code></pre>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支是使用 Git 工作的一个重要部分。你做的任何提交都会发生在当前“checked out”到的分支上。使用<code>git status</code>查看那是哪个分支。</p>
+<ul>
+<li>创建一个新分支</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git branch [branch-name]</code></pre>
+<ul>
+<li>切换到指定分支并更新工作目录(working directory)</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git checkout [branch-name]</code></pre>
+<ul>
+<li>将指定分支的历史合并到当前分支。这通常在拉取请求(PR)中完成，但也是一个重要的 Git 操作。</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git merge [branch]</code></pre>
+<ul>
+<li>删除指定分支</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git branch -d [branch-name]</code></pre>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>当着手于一个新的仓库时，你只需创建一次。要么在本地创建，然后推送到 GitHub；要么通过 clone 一个现有仓库。</p>
+<ul>
+<li>初始化仓库</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git init</code></pre>
+<ul>
+<li>在使用过<code>git init</code> 命令后，使用以下命令将本地仓库与一个 GitHub 上的空仓库连接起来, 即将现在目录转化为一个git仓库</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git remote add origin [url]</code></pre>
+<ul>
+<li>Clone（下载）一个已存在于 GitHub 上的仓库，包括所有的文件、分支和提交(commits)</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git clone [url]</code></pre>
+<h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><p>有时一些文件最好不要用 Git 跟踪。这通常在名为<code>.gitignore</code>的特殊文件中完成。你可以在<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">github.com/github/gitignore</a> 找到有用的<code>.gitignore</code>文件模板.</p>
+<h2 id="同步更改"><a href="#同步更改" class="headerlink" title="同步更改"></a>同步更改</h2><p>将你本地仓库与 GitHub.com 上的远端仓库同步</p>
+<ul>
+<li>下载远端跟踪分支的所有历史</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git fetch</code></pre>
+<ul>
+<li>将远端跟踪分支合并到当前本地分支</li>
+</ul>
+<pre><code class="line-numbers language-bash">git merge</code></pre>
+<ul>
+<li>将所有本地分支提交上传到 GitHub</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git push</code></pre>
+<ul>
+<li>使用来自 GitHub 的对应远端分支的所有新提交更新你当前的本地工作分支。·<code>git pull</code> 是 <code>git fetch</code> 和    <code>git merge</code> 的结合</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git pull</code></pre>
+<h2 id="进行更改"><a href="#进行更改" class="headerlink" title="进行更改"></a>进行更改</h2><p>浏览并检查项目文件的发展</p>
+<ul>
+<li>列出当前分支的版本历史</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git log</code></pre>
+<ul>
+<li>列出文件的版本历史，包括重命名</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git log --follow [file]</code></pre>
+<ul>
+<li>展示两个分支之间的内容差异</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git diff [first-branch]...[second-branch]</code></pre>
+<ul>
+<li>输出指定commit的元数据和内容变化</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git show [commit]</code></pre>
+<ul>
+<li>将文件进行快照处理用于版本控制</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git add [file]</code></pre>
+<ul>
+<li>将文件快照永久地记录在版本历史中</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git commit -m &quot;[descriptive message]&quot;</code></pre>
+<h2 id="重做提交"><a href="#重做提交" class="headerlink" title="重做提交"></a>重做提交</h2><p>清除错误和构建用于替换的历史</p>
+<ul>
+<li>撤销所有 <code>[commit]</code>  <strong>后</strong>的提交,在本地保存更改</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git reset [commit]</code></pre>
+<ul>
+<li>放弃所有历史，改回指定提交。</li>
+</ul>
+<pre><code class="line-numbers language-bash">$ git reset --hard [commit]</code></pre>
+<h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><ul>
+<li><strong>git</strong> : 一个开源的分布式版本控制系统</li>
+<li><strong>GitHub</strong> : 一个托管和协作管理 Git 仓库的平台</li>
+<li>**commit ** 提交: 一个 Git 对象，是你整个仓库的快照的哈希值</li>
+<li>**branch ** 分支: 一个轻型可移动的 commit 指针</li>
+<li><strong>clone</strong> : 一个仓库的本地版本，包含所有提交和分支</li>
+<li>**remote ** 远端: 一个 GitHub 上的公共仓库，所有小组成员通过它来交换修改</li>
+<li><strong>fork</strong> : 一个属于另一用户的 GitHub 上的仓库的副本</li>
+<li><strong>pull request 拉取请求</strong>: 一处用于比较和讨论分支上引入的差异，且具有评审、评论、集成测试等功能的地方</li>
+<li><strong>HEAD</strong> : 代表你当前的工作目录。使用git checkout 可移动 HEAD 指针到不同的分支、标记(tags)或提交</li>
+</ul>
 
-%Obtain the FFT of the padded input.
-F=fft2(f,size(H,1),size(H,2));
-
-%Perform filtering.
-g=real(ifft2(H.*F));
-
-%Crop to original size.
-g=g(1:size(f,1),1:size(f,2));</code></pre>
-<h4 id="2-Butterworth滤波"><a href="#2-Butterworth滤波" class="headerlink" title="2. Butterworth滤波"></a>2. Butterworth滤波</h4><p>该函数输入为灰度图像，自由设置截止频率$D_0$和BLPF的阶数n，输出为滤波后的图像(已归一化到[0,255])</p>
-<pre><code class="line-numbers language-matlab">function [image_out] = Bfilter(image_in, D0, N)
-% Butterworth滤波器，在频率域进行滤波
-% 输入为需要进行滤波的灰度图像，Butterworth滤波器的截止频率D0，阶数N
-% 输出为滤波之后的灰度图像
-
-[m, n] = size(image_in);
-P = 2 * m;
-Q = 2 * n;
-
-fp = zeros(P, Q);
-%对图像填充0,并且乘以(-1)^(x+y) 以移到变换中心
-for i = 1 : m
-    for j = 1 : n
-        fp(i, j) = double(image_in(i, j)) * (-1)^(i+j);
-    end
-end
-% 对填充后的图像进行傅里叶变换
-F1 = fft2(fp);
-
-% 生成Butterworth滤波函数，中心在(m+1,n+1)
-Bw = zeros(P, Q);
-a = D0^(2 * N);
-for u = 1 : P
-    for v = 1 : Q
-        temp = (u-(m+1.0))^2 + (v-(n+1.0))^2;
-        Bw(u, v) = 1 / (1 + (temp^N) / a);
-    end
-end
-
-%进行滤波
-G = F1 .* Bw;
-
-% 反傅里叶变换
-gp = ifft2(G);
-
-% 处理得到的图像
-image_out = zeros(m, n, &#39;uint8&#39;);
-gp = real(gp);
-g = zeros(m, n);
-for i = 1 : m
-    for j = 1 : n
-        g(i, j) = gp(i, j) * (-1)^(i+j);
-
-    end
-end
-mmax = max(g(:));
-mmin = min(g(:));
-range = mmax-mmin;
-for i = 1 : m
-    for j = 1 : n
-        image_out(i,j) = uint8(255 * (g(i, j)-mmin) / range);
-    end
-end
-end</code></pre>
-<p>测试BLPF的阶数为2,截止频率分别为10,40,80,150,450</p>
-<pre><code class="line-numbers language-matlab">clear all;
-close all;
-clc;
-
-image1 = imread(&#39;2.jpg&#39;);
-
-image2 = Bfilter(image1, 10, 2);
-image3 = Bfilter(image1, 40, 2);
-image4 = Bfilter(image1, 80, 2);
-image5 = Bfilter(image1, 150, 2);
-image6 = Bfilter(image1, 450, 2);
-
-% 显示图像
-subplot(2,3,1), imshow(image1), title(&#39;原图像&#39;);
-subplot(2,3,2), imshow(image2), title(&#39;D0 = 10, n = 2&#39;);
-subplot(2,3,3), imshow(image3), title(&#39;D0 = 40, n = 2&#39;);
-subplot(2,3,4), imshow(image4), title(&#39;D0 = 80, n = 2&#39;);
-subplot(2,3,5), imshow(image5), title(&#39;D0 = 150, n = 2&#39;);
-subplot(2,3,6), imshow(image6), title(&#39;D0 = 450, n = 2&#39;);</code></pre>
-<p>滤波结果如下:<br><img loading="lazy" src="https://i.loli.net/2019/07/20/5d32d02f43bc610556.jpg"><br>分析结果:    </p>
-<ol>
-<li>模糊的平滑过渡是截止频率增大的函数</li>
-<li>滤波后输出三副连续的色图，原因是rgb图像的分三次呈现<br>一副彩图是由三色组成,红绿蓝三色，图像读取到matlab后，有三个参数m × n × 3, 代表的是三色叠加，处理之后的图将三色展开分别呈现了，所以才会出现三副连续的色图<br><img loading="lazy" src="https://i.loli.net/2019/07/20/5d32d80a09a9124012.jpg"></li>
-</ol>
-<p>换成彩色图可以明显看到<br><img loading="lazy" src="https://i.loli.net/2019/07/20/5d32d80a3073491464.jpg"></p>
-<h2 id="高通滤波器"><a href="#高通滤波器" class="headerlink" title="高通滤波器"></a>高通滤波器</h2><p>图像的锐化可以在频率与通过高通滤波器来实现<br>一个高通滤波器可以由一个低通滤波器来实现:<br>$$H_{HP}(u,v)=1-H_{LP}(u,v)$$<br>被低通滤波器衰减的频率可以通过高通滤波器</p>
-<h3 id="理想高通滤波器"><a href="#理想高通滤波器" class="headerlink" title="理想高通滤波器"></a>理想高通滤波器</h3><p>二维理想高通滤波器可以定义为<br>$$ H(u,v)=\begin{cases}<br>1,\quad D(u,v)\leq D_0\<br>0,\quad D(u,v)&gt;D_0<br>\end{cases}<br>$$<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1c410443073.jpg"></p>
-<h3 id="布特沃斯高通滤波器"><a href="#布特沃斯高通滤波器" class="headerlink" title="布特沃斯高通滤波器"></a>布特沃斯高通滤波器</h3><p>截止频率为$D_0$的n阶布特沃斯高通滤波器(BHPF)的定义为:<br>$$ H(u,v)=\frac{1}{1+[D_0/D(u,v)]^{2n}}$$<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1c376281237.jpg"></p>
-<h3 id="高斯高通滤波器"><a href="#高斯高通滤波器" class="headerlink" title="高斯高通滤波器"></a>高斯高通滤波器</h3><p>截止频率处在距频率矩形中心距离为$D_0$的高斯高通滤波器(GHPF)的传递函数如下:<br>$$H(u,v)=1-e^{-D^2(u,v)/2D_0^2}$$<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1c3f7954220.jpg"></p>
-<h3 id="使用高通滤波器锐化图像"><a href="#使用高通滤波器锐化图像" class="headerlink" title="使用高通滤波器锐化图像"></a>使用高通滤波器锐化图像</h3><p>使用高通滤波器来锐化图像，与平滑图像类似，只是将低通滤波器换成了高通滤波器，具体步骤不再赘述</p>
-<pre><code class="line-numbers language-matlab">f = imread(&#39;1.jpg&#39;);
-f = rgb2gray(f);
-[f, revertclass] = tofloat(f);
-PQ = paddedsize(size(f));
-[U, V] = dftuv(PQ(1), PQ(2));
-D = hypot(U, V);
-D0 = 0.05*PQ(1);
-F = fft2(f, PQ(1), PQ(2));
-H = hpfilter(&#39;gaussian&#39;,PQ(1), PQ(2), D0);
-g = dftfilt(f, H);
-g = revertclass(g);
-figure(1)
-subplot(2,2,1);
-imshow(f,[]);
-title(&#39;原图像&#39;)
-subplot(2,2,2);
-imshow(fftshift(H));
-title(&#39;高斯高通滤波器&#39;);
-subplot(2,2,3);
-imshow(log(1 + abs(fftshift(F))), [])
-title(&#39;滤波后图像谱&#39;);
-subplot(2,2,4);
-imshow(g);
-title(&#39;滤波后图像&#39;);</code></pre>
-<p>同样这里需要的是高通滤波函数hpfilter()</p>
-<pre><code class="line-numbers language-matlab">function [H] = hpfilter(type,M,N,D0,n)
-%HPFILTER Computes freq. domain highpass filters
-%        THIS IS NOT A STANDARD MATLAB FUNCTION
-%        H = hpfilter (type,M,N,D0,n) creates the
-%        transfer function of a highpass filter, H, of
-%        the specified type and size MxN. Possible
-%        values for type, D0, and n are:
-%
-%        &#39;ideal&#39;                Ideal highpass filter with
-%                        cutoff frequency D0. If
-%                        supplied, n is ignored.
-%        &#39;btw&#39;                Butterworth highpass filter
-%                        of order n, and cutoff D0.
-%        &#39;gaussn&#39;            Gaussian highpass filter with
-%                        cutoff (standard deviation)D0.
-%                        If supplied, n is ignored.
-%        M and N should be even numbers for DFT
-%        filtering.
-%
-%        Class support: double, uint8, uint16
-%        The output is of class double
-
-%       The transfer function Hhp of a highpass filter
-%       is 1 - Hlp, where Hlp is the transfer function of
-%       the corresponding lowpass filter.  Thus, we can
-%       use function lpfilter to generate highpass filters
-
-%       If filter is btw, make sure that n is provided
-%       Otherwise, pass n=1 as an arbitrary value to
-%       prevent error message
-
-if nargin == 4
-    n = 1; %default value of n
-end
-
-Hlp = lpfilter(type,M,N,D0,n);
-H = 1 - Hlp;
-
-%       End of function</code></pre>
-<p>锐化结果:</p>
-<ol>
-<li>IHPF<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341eae3a6b123891.jpg"></li>
-<li>BHPF<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341bf1f13e453488.jpg"></li>
-<li>GHPF<br><img loading="lazy" src="https://i.loli.net/2019/07/21/5d341eae4fa8d96779.jpg"></li>
-</ol>
-<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/">PCA算法实现</a></li><li><a href="https://godliuyang.wang/2019/08/01/local-binary-patterns/">Local Binary Patterns</a></li><li><a href="https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/">High-quality-ellipse-detection</a></li></ul></div>
             </div>
             <hr/>
             
@@ -866,9 +767,9 @@ H = 1 - Hlp;
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《频域滤波器及其应用》
+                    《Git》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/20/pin-yu-lu-bo-qi-ji-qi-ying-yong/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/02/27/git/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1169,52 +1070,45 @@ H = 1 - Hlp;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/22/xing-tai-xue-tu-xiang-chu-li/">
+                <a href="/2021/02/27/git/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="形态学图像处理">
                         
-                        <span class="card-title">形态学图像处理</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/26.webp" class="responsive-img" alt="Git">
+                        
+                        <span class="card-title">Git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            形态学图像处理、二值图像上的运算、图像的腐蚀与膨胀
+                            1. Github Cheat Sheet配置工具对所有本地仓库的用户信息进行配置
+
+对你的commit操作设置关联的用户名
+
+$ git config --global user.name &quot;[name]&quot;
+
+对你的c
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-27
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            GeekOcean
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
-                    </a>
-                    
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1225,32 +1119,28 @@ H = 1 - Hlp;
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/19/pin-yu-lu-bo/">
+                <a href="/2021/02/12/leetcode-day1/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="频域滤波">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/LeetCode_Daily_Question/leetcode.png" class="responsive-img" alt="LeetCode_Day1">
                         
-                        <span class="card-title">频域滤波</span>
+                        <span class="card-title">LeetCode_Day1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二维傅立叶变换、Matlab实现傅立叶变换及其逆变换、DFT滤波
+                            Q1_Two Sum
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            GeekOcean
                             
                         </span>
                     </div>
@@ -1258,12 +1148,8 @@ H = 1 - Hlp;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
-                    </a>
-                    
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1415,13 +1301,6 @@ H = 1 - Hlp;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
