@@ -1,0 +1,282 @@
+$(document).ready(function(){
+	setTimeout(function(){$("#msgs").hide();},10000);
+	layer.msg('Loading Environment, please wait a second...');
+	auto = true;//循环播放模式
+	gi = 0;//初始化GET链接序号
+	url_pre = 'https://cdn.jsdelivr.net/gh/GeekOcean/'
+	url_pre_2 = 'TED_resource@2.17/txt/'
+	url_name = ['Bilingual','English', 'Raw' ]
+	url_after = '.json'
+	url = url_pre + url_pre_2 + url_name[gi] + url_after;
+	i = 0; //设置随机数
+	vdurl_data = {}
+	check_yuan = false
+	player = document.getElementById("player");
+	players();
+	layer.msg('Successfully loaded!', {time: 10000,
+		btn: ['Full Screen', 'Keep it'],yes:function(){
+			toggleFullScreen();layer.closeAll();player.play();
+		}	});
+	//播放结束事件
+	player.onended = function() {
+		if (auto == true) {//播放结束，执行重播！
+			player.play();
+		} else {//播放结束，重新获取数据！
+			pass();
+		}
+	}
+});
+//播放模式选择
+$("#auto_btn").on("click", function(){
+	auto = !auto;
+	console.log(auto);
+	this.innerText = (auto ? 'Repeat' : 'Loop');
+});
+//播放源按钮事件
+$("#yuan").on("click", function(){
+	if (gi < url_name.length - 1) {
+		gi = gi + 1;
+		this.innerText =  url_name[gi];
+	} else {
+		gi = 0;
+		this.innerText =  url_name[gi];
+	}
+	url = url_pre + url_pre_2 + url_name[gi] + url_after;
+	// url = url_pre +url_name[gi] + url_pre_2 + url_name[gi] + url_after;
+	console.log(url);
+	check_yuan = true;
+	// console.log("yuan i is %d", i)
+	players()
+});
+
+// //加载字幕pdf链接
+// function subtitles(){
+//	$.get(url,function(vdurl_data,status){
+//		if (status==status) {
+//			// console.log(status)
+//			vdurl_data = JSON.parse(vdurl_data)
+//			var sub_url = vdurl_data[i].subtitle_url;
+//			console.log("sub_url is %s", sub_url)
+//			if(sub_url){
+//				open(sub_url)
+//			}
+//			else{
+//				layer.msg('No subtitle', {time: 10000,
+//					btn: ['Close'],yes:function(){
+//						layer.closeAll()
+//					}})}
+//		}
+//	});
+// }
+//
+//PASS切换事件
+function pass(){
+	setTimeout(function () {
+		check_yuan = false;
+		$("#time").html("Loading...")
+		players();
+		set_select_checked('selRate', 1);
+	}, 257);
+}
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+}
+//GET播放链接
+function players() {
+	layer.msg('Loading...', {icon: 16,time: 200,shadeClose: true,});
+	$.get(url,function(vdurl_data,status){
+		if (status==status) {
+			// console.log(status)
+			vdurl_data = JSON.parse(vdurl_data)
+			if(check_yuan==false){
+				i = getRandomInt(0, vdurl_data.length)
+				console.log("check yuan is false i = %d", i)
+			}
+			console.log("Player i is %d", i)
+			vdurl = vdurl_data[i].url;
+			var sub_url = vdurl_data[i].subtitle_url
+			if(sub_url){
+				document.getElementById("subtitle").setAttribute("href", sub_url);
+			}
+			// else{
+			//	layer.msg('⚠️Notice:   No subtitle!', {time: 8000,
+			//		btn: ['Close'],yes:function(){
+			//			layer.closeAll()
+			//		}})}
+			player.src = vdurl;
+			// var video = document.createElement('video');
+			//
+			// video.onload = function() {
+			// }
+			//
+			// video.onerror = function() {
+			// }
+			// console.log('first')
+			// video.src = vdurl;
+			// //不同浏览器情况不同，这里判断在该浏览器是否可以播放
+			// video.onloadstart = function() {
+			//	player.play()
+			//	console.log('in ')
+			//	return;
+			// }
+			// console.log('out of ')
+
+			// console.log(vdurl);
+			// let xhr = new window.XMLHttpRequest();
+			// xhr.open('get', vdurl)
+			// // xhr.open('get', 'http://tx.cdn.kwai.net/upic/2018/05/13/22/BMjAxODA1MTMyMjM2MDVfMzIxMzgyMjQ0XzYyNzg2MjQ5NjJfMV8z_hd3_Bde1a5b86b6cb178de96e7c35d3e9e29e.mp4')
+			// xhr.responseType = 'arraybuffer';
+			// // xhr.setRequestHeader('Range', `bytes=0-390625`)
+			// xhr.onload = function () {
+			//	console.log(xhr.status)
+			//	if (xhr.status === 200 || xhr.status === 206 || xhr.status === 304) {
+			//		console.log(xhr.response)
+			//		player.play()
+			//	}
+			//	else{
+			//		pass()
+			//	}
+			// }
+			$.ajax({url: vdurl,type: 'GET',complete: function(response) {
+				if(response.status != 200) {//测试链接通信状态
+					console.log('加载失败!')
+					pass();
+				}else{
+					var video_name = vdurl_data[i].name.replace(/_/g,' ')
+					console.log(video_name)
+					player.play();
+					player.oncanplay = function(){
+						$("#time").html(video_name)
+					}
+					// setInterval(function($("#time").html(video_name);), 1000);
+				}
+			}});
+		} else {
+			$("#msg").html("Load failed, Reloading....");
+			pass();
+		}
+	});
+}
+//点击屏幕事件
+$("#player").click(function(){
+	if (player.paused) {
+		// $("#logo_img").hide();
+		player.play();
+		// $("#msgs").hide();
+	} else {
+		// $("#logo_img").show();
+		player.pause();
+		// $("#texts").show();
+		// $("#msgs").show();
+	}
+});
+// $("#logo_img").click(function(){
+//	if (player.paused) {
+//		$("#logo_img").hide();
+//		player.play();
+//	} else {
+//		$("#logo_img").show();
+//		player.pause();
+//	}
+// });
+$("#logo_img").dblclick(function(){
+	toggleFullScreen();
+});
+$("#player").dblclick(function(){
+	toggleFullScreen();
+});
+//进入全屏，建议使用EDGE浏览器
+function toggleFullScreen() {
+	if (!document.fullscreenElement &&
+		!document.mozFullScreenElement && !document.webkitFullscreenElement) {
+		if (document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		} else if (document.documentElement.mozRequestFullScreen) {
+			document.documentElement.mozRequestFullScreen();
+		} else if (document.documentElement.webkitRequestFullscreen) {
+			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		}
+	} else {
+		if (document.cancelFullScreen) {
+			document.cancelFullScreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitCancelFullScreen) {
+			document.webkitCancelFullScreen();
+		}
+	}
+}
+//视频变速播放
+var eleSelect = document.getElementById('selRate');
+var video = document.getElementById('player');
+// 改变播放速率
+eleSelect.addEventListener('change', function () {
+	console.log(this.value)
+	video.playbackRate = this.value;
+});
+
+//设置速度
+function set_select_checked(selectId, checkValue){
+	var select = document.getElementById(selectId);
+
+	for (var i = 0; i < select.options.length; i++){
+		console.log(select.options[i].value)
+		if (select.options[i].value == checkValue){
+			select.options[i].selected = true;
+			break;
+		}
+	}
+}
+//触摸屏幕手势
+var startx, starty; //获得角度
+function getAngle(angx, angy) {
+	return Math.atan2(angy, angx) * 180 / Math.PI;
+};
+function getDirection(startx, starty, endx, endy) { //根据起点终点返回方向 1向上 2向下 3向左 4向右 0未滑动
+	var angx = endx - startx;
+	var angy = endy - starty;
+	var result = 0;
+	if (Math.abs(angx) < 2 && Math.abs(angy) < 2) { //如果滑动距离太短
+		return result;
+	}
+	var angle = getAngle(angx, angy);
+	if (angle >= -135 && angle <= -45) {
+		result = 1;
+	} else if (angle > 45 && angle < 135) {
+		result = 2;
+	} else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+		result = 3;
+	} else if (angle >= -45 && angle <= 45) {
+		result = 4;
+	}
+	return result;
+}
+document.addEventListener("touchstart",function(e) { //手指接触屏幕
+	startx = e.touches[0].pageX;
+	starty = e.touches[0].pageY;
+},false);
+document.addEventListener("touchend",function(e) { //手指离开屏幕
+	var endx, endy;
+	endx = e.changedTouches[0].pageX;
+	endy = e.changedTouches[0].pageY;
+	var direction = getDirection(startx, starty, endx, endy);
+	switch (direction) {//1向上 2向下 3向左 4向右 0未滑动
+		case 1:
+			players();
+			break;
+		case 2:
+			playold();
+			break;
+		case 3:
+			$('#texts').hide();
+			textstf = !textstf;
+			break;
+		case 4:
+			$('#texts').show();
+			textstf = !textstf;
+			break;
+	}
+},false);
+
