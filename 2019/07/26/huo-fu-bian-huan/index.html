@@ -1584,7 +1584,8 @@ $(function () {
 			month = calendar.getMonth() + 1; //0-11,所以要+1
 			data = calendar.getDate();
 			var isgaryblog = false;
-			if (month == 3 && data == 1) isgaryblog = true; //清明节
+			if (month == 4 && data == 4) isgaryblog = true; //清明节
+			if (month == 5 && data == 12) isgaryblog = true; //5·12汶川大地震
 			if (month == 12 && data == 13) isgaryblog = true; //南京大屠杀纪念日
 			if (isgaryblog) {
 				document.body.classList.add("gary");
