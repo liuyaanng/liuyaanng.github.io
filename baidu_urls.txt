@@ -1,3 +1,4 @@
+https://godliuyang.wang/2021/03/01/neovim/
 https://godliuyang.wang/2021/02/28/fzf/
 https://godliuyang.wang/2021/02/27/linux/
 https://godliuyang.wang/2021/02/27/git/
@@ -11,7 +12,6 @@ https://godliuyang.wang/2020/08/17/leetcode-easy-9/
 https://godliuyang.wang/2020/04/22/clsw/
 https://godliuyang.wang/2020/04/21/gpu-servers/
 https://godliuyang.wang/2020/03/30/scikit-image-guide/
-https://godliuyang.wang/2020/03/01/neovim/
 https://godliuyang.wang/2020/02/04/about-proxy/
 https://godliuyang.wang/2020/02/02/horner-s-method/
 https://godliuyang.wang/2020/01/29/sort/
