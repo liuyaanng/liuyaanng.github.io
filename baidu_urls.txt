@@ -1,3 +1,5 @@
+https://godliuyang.wang/2021/02/28/fzf/
+https://godliuyang.wang/2021/02/27/linux/
 https://godliuyang.wang/2021/02/27/git/
 https://godliuyang.wang/2021/02/12/leetcode-day1/
 https://godliuyang.wang/2021/02/10/leetcode-cli/
@@ -26,5 +28,3 @@ https://godliuyang.wang/2019/08/03/face-detection/
 https://godliuyang.wang/2019/08/01/local-binary-patterns/
 https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/
 https://godliuyang.wang/2019/07/28/ellipse-function/
-https://godliuyang.wang/2019/07/26/yuan-xing-jian-ce/
-https://godliuyang.wang/2019/07/26/huo-fu-bian-huan/

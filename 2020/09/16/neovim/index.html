@@ -481,14 +481,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        151
+                        847
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -508,8 +508,214 @@
             <div id="articleContent">
                 <p>本文是为了方便记忆vim插件的一些快捷键。这是我的配置地址：<a target="_blank" rel="noopener" href="https://github.com/liuyaanng/nvim">nvim</a>, 该配置在你装完neovim之后，打开neovim后会自动安装插件，你需要修改的地方是下图中python位置以及markdown预览插件中的默认浏览器。<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Neovim/1.jpg"> </p>
 <p>我的vim插件大部分来自于一位大佬<a target="_blank" rel="noopener" href="https://github.com/theniceboy">theniceboy</a>, 他在B站上出了很多包括vim, ranger, i3, dwm等等教程, 这是他的B站地址：<a target="_blank" rel="noopener" href="https://space.bilibili.com/13081489?from=search&seid=4240676561582012103">theCW</a> </p>
-<h2 id="Vim快捷键"><a href="#Vim快捷键" class="headerlink" title="Vim快捷键"></a>Vim快捷键</h2><h2 id="Vim-插件"><a href="#Vim-插件" class="headerlink" title="Vim 插件"></a>Vim 插件</h2><ul>
+<h2 id="1-Install-Neovim"><a href="#1-Install-Neovim" class="headerlink" title="1. Install Neovim"></a>1. Install Neovim</h2><p><a target="_blank" rel="noopener" href="https://github.com/neovim/neovim/wiki/Installing-Neovim">Install Guide</a> </p>
+<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><ul>
+<li>figlet</li>
+</ul>
+<pre><code class="line-numbers language-bash">brew install figlet</code></pre>
+<h2 id="Vim快捷键"><a href="#Vim快捷键" class="headerlink" title="Vim快捷键"></a>Vim快捷键</h2><p>这里<code>&lt;LEADER&gt;</code>就是空格键</p>
+<ul>
+<li><p>基础快捷键<br>```vim</p>
+</li>
+<li><p>‘;’ :</p>
+</li>
+<li><p>‘Q’ quit</p>
+</li>
+<li><p>‘ctrl_q’ Exit Vim, unless there are some buffers<br>which have been changed.</p>
+</li>
+<li><p>‘S’ save</p>
+</li>
+<li><p>‘<LEADER>rc’ open vimrc</p>
+</li>
+<li><p>‘Y’ copy to system clipboard</p>
+</li>
+<li><p>‘&gt;’ right indent</p>
+</li>
+<li><p>‘&lt;’ left indent<br>Search</p>
+</li>
+<li><p>‘<LEADER><CR>‘ highlight off</p>
+</li>
+<li><p>‘=’ next</p>
+</li>
+<li><p>‘-‘ last</p>
+</li>
+<li><p>‘<LEADER>dw’ adjacent duplicate words</p>
+</li>
+<li><p>‘<LEADER>tt’ turn space to tab</p>
+</li>
+<li><p>‘<LEADER>o’ folding</p>
+</li>
+<li><p>‘\g’ :Git</p>
+</li>
+<li><p>‘ctrl_g’ open lazygit</p>
+</li>
+</ul>
+<p>Cursor Movement<br>“     ^<br>“     i<br>“ &lt; j   l &gt;<br>“     k<br>“     v</p>
+<ul>
+<li>‘i’ up</li>
+<li>‘k’ down</li>
+<li>‘j’ left</li>
+<li>‘l’ right</li>
+<li>‘J’ go to the start of the line</li>
+<li>‘L’ go to the end of the line</li>
+<li>‘w’ go to the next word or sign</li>
+<li>‘b’ go to the last word or sign</li>
+<li>‘h’ go to the next end of word</li>
+<li>‘ctrl_I’ move up the view port without moving the cursor</li>
+<li>‘ctrl_K’ move down the view port without moving the cursor</li>
+</ul>
+<p>Insert Mode Cursor Movement</p>
+<ul>
+<li>‘ctrl_a’ move to the end of current line</li>
+</ul>
+<p>Command Mode Cursor Movement</p>
+<p>Split the screen</p>
+<ul>
+<li>‘si’ to up</li>
+<li>‘sk’ to down</li>
+<li>‘sj’ to left</li>
+<li>‘sl’ to right</li>
+</ul>
+<p>Window management</p>
+<ul>
+<li>‘<LEADER>w’ go to last window</li>
+<li>‘<LEADER>i’ up</li>
+<li>‘<LEADER>k’ down</li>
+<li>‘<LEADER>j’ left</li>
+<li>‘<LEADER>l’ right</li>
+<li>‘sh’ place the two windows up and down</li>
+<li>‘sv’ place the two windows left and right</li>
+<li>‘<LEADER>q’ close the window below the current window</li>
+</ul>
+<p>Rotate screen</p>
+<ul>
+<li>‘srh’ horizontal rotate</li>
+<li>‘srv’ vertical rotate</li>
+</ul>
+<p>Resize splits</p>
+<ul>
+<li>‘<up>‘ increase horizontal size</li>
+<li>‘<down>‘ decrease horizontal size</li>
+<li>‘<left>‘ decrease vertical size</li>
+<li>‘<right>‘ increase vertical size</li>
+</ul>
+<p>Tab management</p>
+<ul>
+<li><p>‘tu’ create a new tab</p>
+</li>
+<li><p>‘tj’ move to left tab</p>
+</li>
+<li><p>‘tl’ move to right tab</p>
+</li>
+<li><p>‘tmj’ move current tab to left</p>
+</li>
+<li><p>‘tml’ move current tab to right</p>
+</li>
+<li><p>‘<LEADER>/‘ open a terminal window</p>
+</li>
+<li><p>‘tx’ use ‘figlet’ to generate words</p>
+</li>
+<li><p>‘\s’ find and replace</p>
+<pre><code>
+
+</code></pre>
+</li>
+</ul>
+<h2 id="Vim-插件"><a href="#Vim-插件" class="headerlink" title="Vim 插件"></a>Vim 插件</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mbbill/undotree">undotree</a><br><code>U</code>打开undotree 面板</li>
+</ul>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === Undotree
+&quot; ===
+noremap U :UndotreeToggle&lt;CR&gt;
+let g:undotree_DiffAutoOpen = 1
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_ShortIndicators = 1
+let g:undotree_WindowLayout = 2
+let g:undotree_DiffpanelHeight = 8
+let g:undotree_SplitWidth = 24
+function g:Undotree_CustomMap()
+    nmap &lt;buffer&gt; i &lt;plug&gt;UndotreeNextState
+    nmap &lt;buffer&gt; k &lt;plug&gt;UndotreePreviousState
+    nmap &lt;buffer&gt; I 5&lt;plug&gt;UndotreeNextState
+    nmap &lt;buffer&gt; K 5&lt;plug&gt;UndotreePreviousState
+endfunc</code></pre>
+<h3 id="Pretty-Dress"><a href="#Pretty-Dress" class="headerlink" title="Pretty Dress"></a>Pretty Dress</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/bling/vim-bufferline">vim-bufferline</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/bpietravalle/vim-bolt">vim-bolt</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ajmwagar/vim-deus">vim-deus</a> </li>
+</ul>
+<h3 id="Status-line"><a href="#Status-line" class="headerlink" title="Status line"></a>Status line</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/theniceboy/eleline.vim">lelline</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ojroques/vim-scrollstatus">vim-scrollstatus</a> </li>
+</ul>
+<h3 id="General-Highlight"><a href="#General-Highlight" class="headerlink" title="General Highlight"></a>General Highlight</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/RRethy/vim-hexokinase">vim-hexokinase</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/RRethy/vim-illuminate">vim-illuminate</a> </li>
+</ul>
+<h3 id="File-navigation"><a href="#File-navigation" class="headerlink" title="File navigation"></a>File navigation</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf.vim">fzf.vim</a><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301113521.png"></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf/blob/master/README-VIM.md">fzf.vim README</a> </p>
+</li>
+<li><p>安装</p>
+<pre><code class="line-numbers language-vim">Plug &#39;junegunn/fzf.vim&#39;</code></pre>
+</li>
+<li><p>配置</p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === FZF
+&quot; ===
+set rtp+=/usr/local/opt/fzf
+&quot; set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+&quot; noremap &lt;silent&gt; &lt;C-p&gt; :Files&lt;CR&gt;
+noremap &lt;silent&gt; &lt;C-p&gt; :Leaderf file&lt;CR&gt;
+noremap &lt;silent&gt; &lt;C-f&gt; :Rg&lt;CR&gt;
+noremap &lt;silent&gt; &lt;C-h&gt; :History&lt;CR&gt;
+&quot;noremap &lt;C-t&gt; :BTags&lt;CR&gt;
+noremap &lt;silent&gt; &lt;C-l&gt; :Lines&lt;CR&gt;
+noremap &lt;silent&gt; &lt;C-w&gt; :Buffers&lt;CR&gt;
+noremap &lt;leader&gt;; :History:&lt;CR&gt;
+
+let g:fzf_preview_window = &#39;right:60%&#39;
+let g:fzf_commits_log_options = &#39;--graph --color=always --format=&quot;%C(auto)%h%d %s %C(black)%C(bold)%cr&quot;&#39;
+
+function! s:list_buffers()
+  redir =&gt; list
+  silent ls
+  redir END
+  return split(list, &quot;\n&quot;)
+endfunction
+
+function! s:delete_buffers(lines)
+  execute &#39;bwipeout&#39; join(map(a:lines, &#123;_, line -&gt; split(line)[0]&#125;))
+endfunction
+
+command! BD call fzf#run(fzf#wrap(&#123;
+  \ &#39;source&#39;: s:list_buffers(),
+  \ &#39;sink*&#39;: &#123; lines -&gt; s:delete_buffers(lines) &#125;,
+  \ &#39;options&#39;: &#39;--multi --reverse --bind ctrl-a:select-all+accept&#39;
+\ &#125;))
+
+noremap &lt;c-d&gt; :BD&lt;CR&gt;
+
+let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;height&#39;: 0.8 &#125; &#125;</code></pre>
+<p>快捷键:    </p>
+</li>
+<li><p><code>ctrl_f</code> 查找文件</p>
+</li>
+<li><p><code>ctrl_p</code> 查找当前目录下的文件</p>
+</li>
+<li><p><code>ctrl_l</code> 查找当前文件的行</p>
+</li>
+<li><p><code>ctrl_h</code> 打开文件浏览历史</p>
+</li>
+<li><p><code>ctrl_w</code> 打开buffer</p>
+</li>
+<li><p><code>ctrl_d</code> 选择关闭指定的buffer</p>
+</li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -1228,7 +1434,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">44.5k</span>
+            <span class="white-color">46k</span>
             
 
             <br>

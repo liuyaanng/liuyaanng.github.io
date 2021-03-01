@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-02-27T04:28:57.967Z</updated>
+  <updated>2021-03-01T03:36:02.753Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FZF</title>
+    <link href="https://godliuyang.wang/2021/02/28/fzf/"/>
+    <id>https://godliuyang.wang/2021/02/28/fzf/</id>
+    <published>2021-02-28T13:59:09.000Z</published>
+    <updated>2021-03-01T03:36:02.753Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://github.com/junegunn/fzf&quot;&gt;fzf&lt;/a&gt; 是一个非常强大的终端文件模糊查找神器,在mac下也有许多优秀的工具,比如mac自带的    &lt;code&gt;spotlight&lt;/code&gt; , &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LINUX</title>
+    <link href="https://godliuyang.wang/2021/02/27/linux/"/>
+    <id>https://godliuyang.wang/2021/02/27/linux/</id>
+    <published>2021-02-27T12:35:16.000Z</published>
+    <updated>2021-02-28T08:33:45.983Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;USER&quot;&gt;&lt;a href=&quot;#USER&quot; class=&quot;headerlink&quot; title=&quot;USER&quot;&gt;&lt;/a&gt;USER&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;添加用户&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Git</title>
@@ -172,7 +219,7 @@
     <link href="https://godliuyang.wang/2020/09/16/neovim/"/>
     <id>https://godliuyang.wang/2020/09/16/neovim/</id>
     <published>2020-09-16T12:58:44.000Z</published>
-    <updated>2020-11-14T10:18:19.869Z</updated>
+    <updated>2021-03-01T03:54:06.818Z</updated>
     
     <summary type="html">
     
@@ -474,64 +521,6 @@
       <category term="Git" scheme="https://godliuyang.wang/tags/Git/"/>
     
       <category term="Github" scheme="https://godliuyang.wang/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Anaconda</title>
-    <link href="https://godliuyang.wang/2019/09/18/anaconda/"/>
-    <id>https://godliuyang.wang/2019/09/18/anaconda/</id>
-    <published>2019-09-18T02:27:45.000Z</published>
-    <updated>2020-12-16T10:16:15.708Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Install-Guide&quot;&gt;&lt;a href=&quot;#Install-Guide&quot; class=&quot;headerlink&quot; title=&quot;Install Guide&quot;&gt;&lt;/a&gt;Install Guide&lt;/h2&gt;&lt;p&gt;You probably need proxy:
-        
-      
-    
-    </summary>
-    
-      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Python" scheme="https://godliuyang.wang/tags/Python/"/>
-    
-      <category term="Anaconda3" scheme="https://godliuyang.wang/tags/Anaconda3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Manjaro i3wm 高效率环境配置篇(持续更新)</title>
-    <link href="https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/"/>
-    <id>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</id>
-    <published>2019-08-24T07:45:27.000Z</published>
-    <updated>2020-12-11T19:38:25.364Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img loading=&quot;lazy&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Manjaro" scheme="https://godliuyang.wang/tags/Manjaro/"/>
-    
-      <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
-    
-      <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
     
   </entry>
   
