@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-01T03:36:02.753Z</updated>
+  <updated>2021-03-01T04:05:47.070Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://godliuyang.wang/2021/02/28/fzf/"/>
     <id>https://godliuyang.wang/2021/02/28/fzf/</id>
     <published>2021-02-28T13:59:09.000Z</published>
-    <updated>2021-03-01T03:36:02.753Z</updated>
+    <updated>2021-03-01T04:05:47.070Z</updated>
     
     <summary type="html">
     
@@ -215,32 +215,6 @@
   </entry>
   
   <entry>
-    <title>Neovim</title>
-    <link href="https://godliuyang.wang/2020/09/16/neovim/"/>
-    <id>https://godliuyang.wang/2020/09/16/neovim/</id>
-    <published>2020-09-16T12:58:44.000Z</published>
-    <updated>2021-03-01T03:54:06.818Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本文是为了方便记忆vim插件的一些快捷键。这是我的配置地址：&lt;a href=&quot;https://github.com/liuyaanng/nvim&quot;&gt;nvim&lt;/a&gt;,
-        
-      
-    
-    </summary>
-    
-    
-      <category term="vim" scheme="https://godliuyang.wang/tags/vim/"/>
-    
-      <category term="neovim" scheme="https://godliuyang.wang/tags/neovim/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CDN_for_blog</title>
     <link href="https://godliuyang.wang/2020/09/15/cdn-for-blog/"/>
     <id>https://godliuyang.wang/2020/09/15/cdn-for-blog/</id>
@@ -367,6 +341,32 @@
     
     
       <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Neovim</title>
+    <link href="https://godliuyang.wang/2020/03/01/neovim/"/>
+    <id>https://godliuyang.wang/2020/03/01/neovim/</id>
+    <published>2020-02-29T16:00:00.000Z</published>
+    <updated>2021-03-01T04:07:08.820Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文是为了方便记忆vim插件的一些快捷键。这是我的配置地址：&lt;a href=&quot;https://github.com/liuyaanng/nvim&quot;&gt;nvim&lt;/a&gt;,
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="https://godliuyang.wang/tags/vim/"/>
+    
+      <category term="neovim" scheme="https://godliuyang.wang/tags/neovim/"/>
     
   </entry>
   

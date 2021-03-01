@@ -6,12 +6,12 @@ https://godliuyang.wang/2021/02/10/leetcode-cli/
 https://godliuyang.wang/2021/02/09/leetcode-daily-questions/
 https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/
 https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/
-https://godliuyang.wang/2020/09/16/neovim/
 https://godliuyang.wang/2020/09/15/cdn-for-blog/
 https://godliuyang.wang/2020/08/17/leetcode-easy-9/
 https://godliuyang.wang/2020/04/22/clsw/
 https://godliuyang.wang/2020/04/21/gpu-servers/
 https://godliuyang.wang/2020/03/30/scikit-image-guide/
+https://godliuyang.wang/2020/03/01/neovim/
 https://godliuyang.wang/2020/02/04/about-proxy/
 https://godliuyang.wang/2020/02/02/horner-s-method/
 https://godliuyang.wang/2020/01/29/sort/
