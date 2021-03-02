@@ -530,7 +530,7 @@ export FZF_DEFAULT_COMMAND=&#39;ag --hidden --ignore .git -g &quot;&quot;&#39;</
 <pre><code class="line-numbers language-bash">export FZF_DEFAULT_OPTS=&#39;--bind ctrl-k:down,ctrl-i:up --preview &quot;[[ $(file --mime &#123;&#125;) =~ binary ]] &amp;&amp; echo &#123;&#125; is a binary file || (ccat --color=always &#123;&#125; || highlight -O ansi -l &#123;&#125; || cat &#123;&#125;) 2&gt; /dev/null | head -500&quot;&#39;</code></pre>
 <p>结合我的vim使用习惯,我将 <code>ctrl + i</code> 设置为向上, <code>ctrl + k</code> 设置为向下</p>
 <p>当然,还有一些其他的配置,这些都可以在fzf的文档里找到.</p>
-<h2 id="FZF-RANGER-EXCELLENT"><a href="#FZF-RANGER-EXCELLENT" class="headerlink" title="FZF + RANGER = EXCELLENT"></a>FZF + RANGER = EXCELLENT</h2><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/Capto_Capture%202021-03-01_10-54-36_AM.gif"></p>
+<h2 id="FZF-RANGER-EXCELLENT"><a href="#FZF-RANGER-EXCELLENT" class="headerlink" title="FZF + RANGER = EXCELLENT"></a>FZF + RANGER = EXCELLENT</h2><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/ranger.gif"></p>
 <p>fzf 和ranger 结合可直接在ranger下进行文件搜索,直接跳转到文件所在目录</p>
 <ul>
 <li>首先在ranger的配置文件中设置打开fzf搜索的快捷键( <code>ctrl+f</code> )</li>
@@ -1035,28 +1035,29 @@ map &lt;C-f&gt; fzf_select</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/01/neovim/">
+                <a href="/2021/02/28/fzf/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301120656.png" class="responsive-img" alt="Neovim">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301100558.png" class="responsive-img" alt="FZF">
                         
-                        <span class="card-title">Neovim</span>
+                        <span class="card-title">FZF</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手把vim打造成最舒适的写代码神器
+                            Fuzzy File Finder
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -1065,18 +1066,7 @@ map &lt;C-f&gt; fzf_select</code></pre>
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vim/" target="_blank">
-                        <span class="chip bg-color">vim</span>
-                    </a>
-                    
-                    <a href="/tags/neovim/" target="_blank">
-                        <span class="chip bg-color">neovim</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1271,7 +1261,7 @@ map &lt;C-f&gt; fzf_select</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">46.1k</span>
+            <span class="white-color">46.7k</span>
             
 
             <br>

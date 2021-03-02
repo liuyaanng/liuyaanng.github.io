@@ -469,26 +469,26 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2021-02-10
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2021-03-02
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1k
+                        1.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        8 分
                     </div>
                     
                 
@@ -598,9 +598,9 @@ Tab management
 - &#39;tx&#39; use &#39;figlet&#39; to generate words
 - &#39;\s&#39; find and replace</code></pre>
 <h2 id="4-Vim-插件"><a href="#4-Vim-插件" class="headerlink" title="4. Vim 插件"></a>4. Vim 插件</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/mbbill/undotree">undotree</a><br><code>U</code>打开undotree 面板</li>
-</ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mbbill/undotree">undotree</a><br><code>U</code>打开undotree 面板</p>
 <pre><code class="line-numbers language-vim">&quot; ===
 &quot; === Undotree
 &quot; ===
@@ -617,6 +617,8 @@ function g:Undotree_CustomMap()
     nmap &lt;buffer&gt; I 5&lt;plug&gt;UndotreeNextState
     nmap &lt;buffer&gt; K 5&lt;plug&gt;UndotreePreviousState
 endfunc</code></pre>
+</li>
+</ul>
 <h3 id="Pretty-Dress"><a href="#Pretty-Dress" class="headerlink" title="Pretty Dress"></a>Pretty Dress</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/bling/vim-bufferline">vim-bufferline</a> </li>
 <li><a target="_blank" rel="noopener" href="https://github.com/bpietravalle/vim-bolt">vim-bolt</a> </li>
@@ -631,14 +633,15 @@ endfunc</code></pre>
 <li><a target="_blank" rel="noopener" href="https://github.com/RRethy/vim-illuminate">vim-illuminate</a> </li>
 </ul>
 <h3 id="File-navigation"><a href="#File-navigation" class="headerlink" title="File navigation"></a>File navigation</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Yggdroot/LeaderF">LeaderF</a> </p>
+</li>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf.vim">fzf.vim</a><br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301113521.png"></p>
 <ul>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf/blob/master/README-VIM.md">fzf.vim README</a> </p>
 </li>
 <li><p>安装</p>
 <pre><code class="line-numbers language-vim">Plug &#39;junegunn/fzf.vim&#39;</code></pre>
-</li>
-<li><p>配置</p>
+<p>配置</p>
 <pre><code class="line-numbers language-vim">&quot; ===
 &quot; === FZF
 &quot; ===
@@ -680,7 +683,7 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
 </li>
 <li><p><code>ctrl_f</code> 查找文件</p>
 </li>
-<li><p><code>ctrl_p</code> 查找当前目录下的文件</p>
+<li><p><code>ctrl_p</code> 使用 <code>LeaderF</code> 查找当前目录下的文件</p>
 </li>
 <li><p><code>ctrl_l</code> 查找当前文件的行</p>
 </li>
@@ -692,6 +695,104 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
 </li>
 </ul>
 </li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/kevinhwang91/rnvimr">rnvimr</a> 在vim下使用ranger</p>
+<p>  配置 </p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === rnvimr
+&quot; ===
+let g:rnvimr_ex_enable = 1
+let g:rnvimr_pick_enable = 1
+let g:rnvimr_draw_border = 0
+&quot; Change the border&#39;s color
+let g:rnvimr_border_attr = &#123;&#39;fg&#39;: 14, &#39;bg&#39;: -1&#125;
+&quot; Add a shadow window, value is equal to 100 will disable shadow
+let g:rnvimr_shadow_winblend = 70
+&quot; let g:rnvimr_bw_enable = 1
+highlight link RnvimrNormal CursorLine
+nnoremap &lt;silent&gt; R :RnvimrToggle&lt;CR&gt;&lt;C-\&gt;&lt;C-n&gt;:RnvimrResize 0&lt;CR&gt;
+let g:rnvimr_action = &#123;
+                        \ &#39;&lt;C-t&gt;&#39;: &#39;NvimEdit tabedit&#39;,
+                        \ &#39;&lt;C-x&gt;&#39;: &#39;NvimEdit split&#39;,
+                        \ &#39;&lt;C-v&gt;&#39;: &#39;NvimEdit vsplit&#39;,
+                        \ &#39;gw&#39;: &#39;JumpNvimCwd&#39;,
+                        \ &#39;yw&#39;: &#39;EmitRangerCwd&#39;
+                        \ &#125;
+let g:rnvimr_layout = &#123; &#39;relative&#39;: &#39;editor&#39;,
+                        \ &#39;width&#39;: &amp;columns,
+                        \ &#39;height&#39;: &amp;lines,
+                        \ &#39;col&#39;: 0,
+                        \ &#39;row&#39;: 0,
+                        \ &#39;style&#39;: &#39;minimal&#39; &#125;
+let g:rnvimr_presets = [&#123;&#39;width&#39;: 0.8, &#39;height&#39;: 0.8&#125;]</code></pre>
+<p>  快捷键</p>
+<ul>
+<li><code>R</code> 打开ranger</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/airblade/vim-rooter">vim-rooter</a> :自动将vim的工作目录到项目的根目录.</p>
+<p>  <code>Rooter changes the working directory to the project root when you open a file or directory.</code></p>
+<p>  对比:<br>  原文件目录:</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302121823.png"></p>
+<p>  关闭rooter: 在vim里打开一个文件,此时vim的工作目录依旧是原文件所在目录</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302122402.png"></p>
+<p>  启用rooter: 打开文件,vim的工作目录会切换到文件的根目录</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302122752.png"></p>
+<p>  配置</p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === vim-rooter
+&quot; ===
+let g:rooter_patterns = [&#39;__vim_project_root&#39;, &#39;.git/&#39;]
+let g:rooter_silent_chdir = 1</code></pre>
+<p>  默认打开 <code>rooter</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/pechorin/any-jump.vim">any-jump</a> </p>
+<p>  用法: 在 <code>normal</code> 和 <code>visual</code> 模式下都可用. 只需要将光标放到想要查找的单词上,这个单词可以是 <code>变量</code>, <code>类</code>, <code>常量</code>, <code>名称</code>, <code>符号</code> ( <code>variable/class/constant/name/symbol</code> ) 然后按下 <code>&lt;LEADER&gt;j</code> 即可.</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302124051.png"></p>
+<p>  配置</p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === any-jump
+&quot; ===
+nnoremap &lt;LEADER&gt;j :AnyJump&lt;CR&gt;
+let g:any_jump_window_width_ratio  = 0.8
+let g:any_jump_window_height_ratio = 0.9</code></pre>
+<p>  快捷键</p>
+<ul>
+<li><code>&lt;LEADER&gt;j</code> search </li>
+</ul>
+</li>
+</ul>
+<h3 id="Taglist"><a href="#Taglist" class="headerlink" title="Taglist"></a>Taglist</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/liuchengxu/vista.vim">Vista.vim</a>  </p>
+<p>  这是一款查看LSP符号,标签的插件,可配合多个vim插件使用</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302125525.png"></p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === Vista.vim
+&quot; ===
+noremap &lt;LEADER&gt;v :Vista coc&lt;CR&gt;
+noremap &lt;c-t&gt; :silent! Vista finder coc&lt;CR&gt;
+let g:vista_icon_indent = [&quot;╰─▸ &quot;, &quot;├─▸ &quot;]
+let g:vista_default_executive = &#39;ctags&#39;
+let g:vista_fzf_preview = [&#39;right:50%&#39;]
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = &#123;
+\   &quot;function&quot;: &quot;\uf794&quot;,
+\   &quot;variable&quot;: &quot;\uf71b&quot;,
+\  &#125;
+let g:scrollstatus_size = 15</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li><p><code>&lt;LEADER&gt;v</code> 打开vista面板</p>
+</li>
+<li><p><code>&lt;ctrl-t&gt;</code>  使用fzf查找名称</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302133944.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Auto-Complete"><a href="#Auto-Complete" class="headerlink" title="Auto Complete"></a>Auto Complete</h3><ul>
+<li><a href="">coc</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wellle/tmux-complete.vim">tmux-complete.vim</a> </li>
 </ul>
 
             </div>
@@ -853,7 +954,7 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
                   property="dct:title" rel="dct:type">
                     《Neovim》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/01/neovim/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/02/10/neovim/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1154,29 +1255,28 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/01/neovim/">
+                <a href="/2021/02/10/leetcode-cli/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301120656.png" class="responsive-img" alt="Neovim">
+                        <img src="https://github.com/skygragon/leetcode-cli/raw/master/docs/logo.png" class="responsive-img" alt="LeetCode-CLI">
                         
-                        <span class="card-title">Neovim</span>
+                        <span class="card-title">LeetCode-CLI</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手把vim打造成最舒适的写代码神器
+                            如何优雅的刷LeetCode
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -1185,16 +1285,11 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vim/" target="_blank">
-                        <span class="chip bg-color">vim</span>
-                    </a>
-                    
-                    <a href="/tags/neovim/" target="_blank">
-                        <span class="chip bg-color">neovim</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1208,31 +1303,43 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/28/fzf/">
+                <a href="/2021/02/09/leetcode-daily-questions/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301100558.png" class="responsive-img" alt="FZF">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/LeetCode_Daily_Question/leetcode.png" class="responsive-img" alt="LeetCode_Daily_Questions">
                         
-                        <span class="card-title">FZF</span>
+                        <span class="card-title">LeetCode_Daily_Questions</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Fuzzy File Finder
+                            LeetCode_Daily_Questions
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            GeekOcean
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1391,7 +1498,7 @@ let g:fzf_layout = &#123; &#39;window&#39;: &#123; &#39;width&#39;: 0.9, &#39;he
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">46.1k</span>
+            <span class="white-color">46.7k</span>
             
 
             <br>
