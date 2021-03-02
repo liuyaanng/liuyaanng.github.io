@@ -481,14 +481,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        10 分
                     </div>
                     
                 
@@ -598,26 +598,7 @@ Tab management
 - &#39;tx&#39; use &#39;figlet&#39; to generate words
 - &#39;\s&#39; find and replace</code></pre>
 <h2 id="4-Vim-插件"><a href="#4-Vim-插件" class="headerlink" title="4. Vim 插件"></a>4. Vim 插件</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/mbbill/undotree">undotree</a><br><code>U</code>打开undotree 面板</p>
-<pre><code class="line-numbers language-vim">&quot; ===
-&quot; === Undotree
-&quot; ===
-noremap U :UndotreeToggle&lt;CR&gt;
-let g:undotree_DiffAutoOpen = 1
-let g:undotree_SetFocusWhenToggle = 1
-let g:undotree_ShortIndicators = 1
-let g:undotree_WindowLayout = 2
-let g:undotree_DiffpanelHeight = 8
-let g:undotree_SplitWidth = 24
-function g:Undotree_CustomMap()
-    nmap &lt;buffer&gt; i &lt;plug&gt;UndotreeNextState
-    nmap &lt;buffer&gt; k &lt;plug&gt;UndotreePreviousState
-    nmap &lt;buffer&gt; I 5&lt;plug&gt;UndotreeNextState
-    nmap &lt;buffer&gt; K 5&lt;plug&gt;UndotreePreviousState
-endfunc</code></pre>
-</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</li>
 </ul>
 <h3 id="Pretty-Dress"><a href="#Pretty-Dress" class="headerlink" title="Pretty Dress"></a>Pretty Dress</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/bling/vim-bufferline">vim-bufferline</a> </li>
@@ -791,10 +772,116 @@ let g:scrollstatus_size = 15</code></pre>
 </li>
 </ul>
 <h3 id="Auto-Complete"><a href="#Auto-Complete" class="headerlink" title="Auto Complete"></a>Auto Complete</h3><ul>
-<li><a href="">coc</a> </li>
-<li><a target="_blank" rel="noopener" href="https://github.com/wellle/tmux-complete.vim">tmux-complete.vim</a> </li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/neoclide/coc.nvim">coc</a> </p>
+<p>  <a href="">详细配置教程</a> </p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wellle/tmux-complete.vim">tmux-complete.vim</a> </p>
+<p>  在临近的tmux窗格中启动单词的自动补全</p>
+</li>
 </ul>
-
+<h3 id="Snippets"><a href="#Snippets" class="headerlink" title="Snippets"></a>Snippets</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/honza/vim-snippets">vim-snippets</a>     </p>
+<p>  快速补全工具,非常强大</p>
+</li>
+</ul>
+<h3 id="Ubdo-Tree"><a href="#Ubdo-Tree" class="headerlink" title="Ubdo Tree"></a>Ubdo Tree</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mbbill/undotree">undotree</a></p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302154803.png"></p>
+<p>  配置: </p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === Undotree
+&quot; ===
+noremap U :UndotreeToggle&lt;CR&gt;
+let g:undotree_DiffAutoOpen = 1
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_ShortIndicators = 1
+let g:undotree_WindowLayout = 2
+let g:undotree_DiffpanelHeight = 8
+let g:undotree_SplitWidth = 24
+function g:Undotree_CustomMap()
+    nmap &lt;buffer&gt; i &lt;plug&gt;UndotreeNextState
+    nmap &lt;buffer&gt; k &lt;plug&gt;UndotreePreviousState
+    nmap &lt;buffer&gt; I 5&lt;plug&gt;UndotreeNextState
+    nmap &lt;buffer&gt; K 5&lt;plug&gt;UndotreePreviousState
+endfunc</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li><code>U</code>  打开undotree 面板</li>
+</ul>
+</li>
+</ul>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gisphm/vim-gitignore">vim-gitignore</a>:<br>  提供 <code>.gitignore</code> 文件高亮显示</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/fszymanski/fzf-gitignore">fzf-gitignore</a>:  生成 <code>.gitignore</code> 文件</p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">noremap &lt;LEADER&gt;gi :FzfGitignore&lt;CR&gt;</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li><code>&lt;LEADER&gt;gi</code> 生成 <code>.gitignore</code> 文件</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/akiomik/git-gutter-vim">vim-gitgutter</a>:<br>  一个保存文件后能看到状态的插件</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302164010.png"></p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">&quot; ==
+&quot; == GitGutter
+&quot; ==
+&quot; let g:gitgutter_signs = 0
+let g:gitgutter_sign_allow_clobber = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_preview_win_floating = 1
+let g:gitgutter_sign_added = &#39;▎&#39;
+let g:gitgutter_sign_modified = &#39;░&#39;
+let g:gitgutter_sign_removed = &#39;▏&#39;
+let g:gitgutter_sign_removed_first_line = &#39;▔&#39;
+let g:gitgutter_sign_modified_removed = &#39;▒&#39;
+&quot; autocmd BufWritePost * GitGutter
+nnoremap &lt;LEADER&gt;gf :GitGutterFold&lt;CR&gt;
+nnoremap H :GitGutterPreviewHunk&lt;CR&gt;
+nnoremap &lt;LEADER&gt;g- :GitGutterPrevHunk&lt;CR&gt;
+nnoremap &lt;LEADER&gt;g= :GitGutterNextHunk&lt;CR&gt;</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li><p><code>&lt;LEADER&gt;gf</code> 折叠</p>
+</li>
+<li><p><code>H</code> 预览当前文件块</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302164503.png"></p>
+</li>
+<li><p><code>&lt;LEADER&gt;g-</code> 上一块</p>
+</li>
+<li><p><code>&lt;LEADER&gt;g+</code> 下一块</p>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/cohama/agit.vim">agit</a>: 轻松查看git提交记录以及做出的更改</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210302164810.png"></p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === Agit
+&quot; ===
+nnoremap &lt;LEADER&gt;gl :Agit&lt;CR&gt;
+let g:agit_no_default_mappings = 1</code></pre>
+</li>
+</ul>
+<h3 id="Autoformat"><a href="#Autoformat" class="headerlink" title="Autoformat"></a>Autoformat</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Chiel92/vim-autoformat">vim-autoformat</a>: 一键格式化代码</p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">&quot; ===
+&quot; === AutoFormat
+&quot; ===
+nnoremap \f :Autoformat&lt;CR&gt;
+let g:formatdef_custom_js = &#39;&quot;js-beautify -t&quot;&#39;
+let g:formatters_javascript = [&#39;custom_js&#39;]
+au BufWrite *.js :Autoformat</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li><code>\f</code> 一键格式化代码</li>
+</ul>
+</li>
+</ul>
+<h3 id="Csharp"><a href="#Csharp" class="headerlink" title="Csharp"></a>Csharp</h3>
             </div>
             <hr/>
             
@@ -1486,7 +1573,7 @@ let g:scrollstatus_size = 15</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">46.7k</span>
+            <span class="white-color">47k</span>
             
 
             <br>
