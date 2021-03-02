@@ -1,9 +1,9 @@
 https://godliuyang.wang/2021/02/28/fzf/
 https://godliuyang.wang/2021/02/27/linux/
 https://godliuyang.wang/2021/02/27/git/
+https://godliuyang.wang/2021/02/20/neovim/
 https://godliuyang.wang/2021/02/12/leetcode-day1/
 https://godliuyang.wang/2021/02/10/leetcode-cli/
-https://godliuyang.wang/2021/02/10/neovim/
 https://godliuyang.wang/2021/02/09/leetcode-daily-questions/
 https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/
 https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/
