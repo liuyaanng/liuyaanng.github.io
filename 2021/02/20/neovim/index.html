@@ -481,14 +481,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
+                        2.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        11 分
                     </div>
                     
                 
@@ -597,10 +597,7 @@ Tab management
 - &#39;&lt;LEADER&gt;/&#39; open a terminal window
 - &#39;tx&#39; use &#39;figlet&#39; to generate words
 - &#39;\s&#39; find and replace</code></pre>
-<h2 id="4-Vim-插件"><a href="#4-Vim-插件" class="headerlink" title="4. Vim 插件"></a>4. Vim 插件</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</li>
-</ul>
-<h3 id="Pretty-Dress"><a href="#Pretty-Dress" class="headerlink" title="Pretty Dress"></a>Pretty Dress</h3><ul>
+<h2 id="4-Vim-插件"><a href="#4-Vim-插件" class="headerlink" title="4. Vim 插件"></a>4. Vim 插件</h2><h3 id="Pretty-Dress"><a href="#Pretty-Dress" class="headerlink" title="Pretty Dress"></a>Pretty Dress</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/bling/vim-bufferline">vim-bufferline</a> </li>
 <li><a target="_blank" rel="noopener" href="https://github.com/bpietravalle/vim-bolt">vim-bolt</a> </li>
 <li><a target="_blank" rel="noopener" href="https://github.com/ajmwagar/vim-deus">vim-deus</a> </li>
@@ -869,7 +866,7 @@ let g:agit_no_default_mappings = 1</code></pre>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/Chiel92/vim-autoformat">vim-autoformat</a>: 一键格式化代码</p>
 <p>  配置:</p>
 <pre><code class="line-numbers language-vim">&quot; ===
-&quot; === AutoFormat
+&quot; === AutoFormatr
 &quot; ===
 nnoremap \f :Autoformat&lt;CR&gt;
 let g:formatdef_custom_js = &#39;&quot;js-beautify -t&quot;&#39;
@@ -881,7 +878,66 @@ au BufWrite *.js :Autoformat</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="Csharp"><a href="#Csharp" class="headerlink" title="Csharp"></a>Csharp</h3>
+<h3 id="HTML-CSS-JS-TypeScript-JSON-etc"><a href="#HTML-CSS-JS-TypeScript-JSON-etc" class="headerlink" title="HTML CSS JS TypeScript JSON, etc"></a>HTML CSS JS TypeScript JSON, etc</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/leshill/vim-json">vim-json</a>: 提供json数据的高亮显示</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/neoclide/jsonc.vim">jsonc.vim</a> : 支持 <code>jsonc</code> 语法</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/othree/html5.vim">html5.vim</a> : 提供H5高亮和补全</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/alvan/vim-closetag">vim-closetag</a> : 快速书写 <code>html</code> 的标签</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/vim-colsetag.gif"></p>
+<p>  注意: 下面的标签不适用</p>
+<pre><code class="line-numbers language-html">&lt;area&gt;, &lt;base&gt;, &lt;br&gt;, &lt;col&gt;, &lt;command&gt;, &lt;embed&gt;, &lt;hr&gt;, &lt;img&gt;,
+&lt;input&gt;, &lt;keygen&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;source&gt;, &lt;track&gt;, &lt;wbr&gt;,&lt;menuitem&gt;</code></pre>
+<p>  快捷键: </p>
+<ul>
+<li><code>&gt;</code> </li>
+<li><code>&gt;&gt;</code> </li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/coolwanglu/vim.js">vim-js</a> : 支持JS语法</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HerringtonDarkholme/yats.vim">yats.vim</a> : 支持 <code>TypeScript</code> 语法</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/posva/vim-vue">vim-vue</a> : 支持vue</p>
+</li>
+</ul>
+<h3 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/fatih/vim-go">vim-go</a> 支持Go语言</li>
+</ul>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Vimjas/vim-python-pep8-indent">vim-python-pep8-indent</a> : 调整vim的缩进以符合 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/">pep8</a> 规范</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tweekmonster/braceless.vim">braceless.vim</a> : 包含一些有用的快捷键, 在这里只配置函数主体高亮</p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">autocmd FileType python BracelessEnable +highlight-cc2</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li>Moving to recognized blocks is done with <code>[[</code> and <code>]]</code>. In Python, <code>[m</code> and <code>]m</code> moves to def and class blocks, while <code>[M</code> and <code>]M</code> moves to the end of those blocks.</li>
+<li><code>zc</code> 折叠</li>
+<li><code>zR</code> 取消折叠</li>
+</ul>
+</li>
+</ul>
+<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/iamcco/markdown-preview.nvim">markdown-preview</a> 这是一个实时预览markdown文件的插件, markdown 文件按<code>r</code>即可实时预览</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dhruvasagar/vim-table-mode">vim-table-mode</a> : md文件快速创建表格</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/vim-table-mode.gif"><br>  配置:</p>
+<pre><code class="line-numbers language-vim">&quot;let g:table_mode_disable_mappings = 1
+let g:table_mode_cell_text_object_i_map = &#39;k&lt;Bar&gt;&#39;</code></pre>
+<p>  快捷键: </p>
+<ul>
+<li><code>&lt;LEADER&gt;tm</code>:  打开/关闭    <code>table-mode</code></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mzlogin/vim-markdown-toc">vim-markdown-toc</a> : 一键生成TOC</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dkarter/bullets.vim">bullets.vim</a> </p>
+</li>
+</ul>
+
             </div>
             <hr/>
             
@@ -1573,7 +1629,7 @@ au BufWrite *.js :Autoformat</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">47k</span>
+            <span class="white-color">47.3k</span>
             
 
             <br>

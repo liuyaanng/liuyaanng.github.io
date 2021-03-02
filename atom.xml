@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-02T07:15:07.926Z</updated>
+  <updated>2021-03-02T11:45:36.940Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>COC</title>
+    <link href="https://godliuyang.wang/2021/03/02/coc/"/>
+    <id>https://godliuyang.wang/2021/03/02/coc/</id>
+    <published>2021-03-02T11:28:49.000Z</published>
+    <updated>2021-03-02T11:45:36.940Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>FZF</title>
@@ -90,7 +104,7 @@
     <link href="https://godliuyang.wang/2021/02/20/neovim/"/>
     <id>https://godliuyang.wang/2021/02/20/neovim/</id>
     <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-03-02T10:13:55.822Z</updated>
+    <updated>2021-03-02T15:00:55.023Z</updated>
     
     <summary type="html">
     
@@ -495,32 +509,6 @@
       <category term="Bilibili.com" scheme="https://godliuyang.wang/tags/Bilibili-com/"/>
     
       <category term="Script" scheme="https://godliuyang.wang/tags/Script/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git &amp; Github</title>
-    <link href="https://godliuyang.wang/2019/09/18/git-github/"/>
-    <id>https://godliuyang.wang/2019/09/18/git-github/</id>
-    <published>2019-09-18T08:21:29.000Z</published>
-    <updated>2020-11-14T10:15:17.581Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-When-i-download-files-from-GitHub-Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="https://godliuyang.wang/tags/Git/"/>
-    
-      <category term="Github" scheme="https://godliuyang.wang/tags/Github/"/>
     
   </entry>
   
