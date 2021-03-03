@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2020/04/22/clsw/</loc>
+    
+    <lastmod>2021-03-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2021/02/20/neovim/</loc>
     
     <lastmod>2021-03-03</lastmod>
@@ -269,13 +276,6 @@
   
   <url>
     <loc>https://godliuyang.wang/2019/07/15/digital-image-processing/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2020/04/22/clsw/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
