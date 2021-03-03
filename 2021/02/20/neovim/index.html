@@ -481,14 +481,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.2k
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        12 分
                     </div>
                     
                 
@@ -935,6 +935,65 @@ let g:table_mode_cell_text_object_i_map = &#39;k&lt;Bar&gt;&#39;</code></pre>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/mzlogin/vim-markdown-toc">vim-markdown-toc</a> : 一键生成TOC</p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/dkarter/bullets.vim">bullets.vim</a> </p>
+</li>
+</ul>
+<h3 id="Editor-Enhancement"><a href="#Editor-Enhancement" class="headerlink" title="Editor Enhancement"></a>Editor Enhancement</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jiangmiao/auto-pairs">auto-pairs</a> : 成对添加或删除括号, 引号</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mg979/vim-visual-multi">vim-visual-multi</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tomtom/tcomment_vim">tcomment_vim</a> :快速注释内容</p>
+<p>  配置:</p>
+<pre><code class="line-numbers language-vim">let g:tcomment_textobject_inlinecomment = &#39;&#39;
+nmap &lt;LEADER&gt;cn g&gt;c
+vmap &lt;LEADER&gt;cn g&gt;
+nmap &lt;LEADER&gt;cu g&lt;c
+vmap &lt;LEADER&gt;cu g&lt;</code></pre>
+<p>  快捷键:</p>
+<ul>
+<li><code>&lt;leader&gt;CN</code> 注释</li>
+<li><code>&lt;leader&gt;CU</code> 取消注释</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LIUYAANNG/ANTOVIM">ANTOVIM</a> : 一键改变 <code>TRUE</code> 和 <code>FALSE</code></p>
+<p>  快捷键:</p>
+<ul>
+<li><code>gs</code> 切换</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tpope/vim-surround">vim-surround</a> </p>
+<p>  快捷键:</p>
+<ul>
+<li><code>yskw&#39;</code> 在所选单词两边添加 <code>&#39;</code> : <code>word</code> to <code>&#39;word&#39;</code></li>
+<li><code>cd&#39;&quot;</code> 将单词两边的 <code>&#39;&#39;</code> 变成    <code>&quot;&quot;</code> : <code>&#39;word&#39;</code> to <code>&quot;word&quot;</code></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gcmt/wildfire.vim">wildfire.vim</a> : 选中特殊符号包裹的文字</p>
+<p>  快捷键:</p>
+<ul>
+<li><p>在 <code>Visual Mode</code> 下, 使用 <code>n&#39;</code> 会选中被 <code>&#39;&#39;</code>包裹的文字, 同样的    <code>n), n&#125;, n]</code> 也适用</p>
+<p>注意: 仓库wiki中快捷键是 <code>i&#39;</code>, 因为我做了按键映射, 将 <code>i</code> 映射到 <code>n</code> 上了</p>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/godlygeek/tabular">tabular</a> : 快速对齐文本</p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/vim-tabular.gif"></p>
+<p>  快捷键:</p>
+<ul>
+<li><code>ga</code> + 对齐的参照物, 如: <code>:</code>, <code>=</code></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tpope/vim-capslock">vim-capslock</a> : 大写锁定</p>
+<p>  快捷键:</p>
+<ul>
+<li><code>Insert Mode</code> : <code>ctrl_C</code> </li>
+<li><code>Normal Mode</code> : <code>gC</code></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/easymotion/vim-easymotion">vim-easymotion</a>  待完善</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/svermeulen/vim-subversive">vim-subversive</a>  </p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/vim-subversive.gif"></p>
 </li>
 </ul>
 
@@ -1629,7 +1688,7 @@ let g:table_mode_cell_text_object_i_map = &#39;k&lt;Bar&gt;&#39;</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">47.3k</span>
+            <span class="white-color">47.5k</span>
             
 
             <br>
