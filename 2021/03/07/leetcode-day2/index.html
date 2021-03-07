@@ -5,14 +5,14 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="LeetCode_Day1, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="[1] Two Sum  
-https://leetcode.com/problems/two-sum/description/
+    <meta name="keywords" content="LeetCode_Day2, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[461] 汉明距离
+https://leetcode-cn.com/problems/hamming-distance/description/
 
 algorithms
-Easy (46.37%)
-Likes:    19171
-Dislikes: 682">
+Easy (78.70%)
+Likes:    379
+Dislik">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@ Dislikes: 682">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode_Day1 | GeekOcean</title>
+    <title>LeetCode_Day2 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -338,13 +338,13 @@ Dislikes: 682">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/LeetCode_Daily_Question/leetcode.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/83.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode_Day1
+                        LeetCode_Day2
                     </div>
                 </div>
             </div>
@@ -453,13 +453,9 @@ Dislikes: 682">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/LeetCode/" target="_blank">
-                                <span class="chip bg-color">LeetCode</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -470,19 +466,19 @@ Dislikes: 682">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-03-07
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-03-07
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        258
+                        381
                     </div>
                     
 
@@ -507,80 +503,70 @@ Dislikes: 682">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>[1] Two Sum  </p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/description/">https://leetcode.com/problems/two-sum/description/</a></p>
+                <p>[461] 汉明距离</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/hamming-distance/description/">https://leetcode-cn.com/problems/hamming-distance/description/</a></p>
 <ul>
 <li>algorithms</li>
-<li>Easy (46.37%)</li>
-<li>Likes:    19171</li>
-<li>Dislikes: 682</li>
-<li>Total Accepted:    3.8M</li>
-<li>Total Submissions: 8.3M</li>
-<li>Testcase Example:  ‘[2,7,11,15]\n9’</li>
+<li>Easy (78.70%)</li>
+<li>Likes:    379</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    97.6K</li>
+<li>Total Submissions: 123.7K</li>
+<li>Testcase Example:  ‘1\n4’</li>
+<li>Source Code:       461.hamming-distance.cpp</li>
 </ul>
-<p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
+<p>两个整数之间的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB">汉明距离</a>指的是这两个数字对应二进制位不同的位置的数目。</p>
 
-<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>
+<p>给出两个整数 <code>x</code> 和 <code>y</code>，计算它们之间的汉明距离。</p>
 
-<p>You can return the answer in any order.</p>
+<p><strong>注意：</strong><br />
+0 &le; <code>x</code>, <code>y</code> &lt; 2<sup>31</sup>.</p>
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [2,7,11,15], target = 9
-<strong>Output:</strong> [0,1]
-<strong>Output:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
-</pre>
-
-<p><strong>Example 2:</strong></p>
+<p><strong>示例:</strong></p>
 
 <pre>
-<strong>Input:</strong> nums = [3,2,4], target = 6
-<strong>Output:</strong> [1,2]
+<strong>输入:</strong> x = 1, y = 4
+
+<strong>输出:</strong> 2
+
+<strong>解释:</strong>
+1   (0 0 0 1)
+4   (0 1 0 0)
+       &uarr;   &uarr;
+
+上面的箭头指出了对应二进制位不同的位置。
 </pre>
 
-<p><strong>Example 3:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [3,3], target = 6
-<strong>Output:</strong> [0,1]
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li><code>2 &lt;= nums.length &lt;= 10<sup>3</sup></code></li>
-    <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-    <li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
-    <li><strong>Only one valid answer exists.</strong></li>
-</ul>
-
-<p><strong>Approach 1:</strong> Brute Force</p>
-<p>Loop through each element <code>x</code>  and find if there is another value that equals to <code>target - x</code> </p>
+<p>方法1:</p>
+<p>计算x与y的XOR值, 值与1进行 <code>&amp;</code> 操作, 结果为1则x与y在此位值不同, 汉明距离+1, 再进行移位操作, 逐位计算即可.</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210307215223.png"></p>
 <pre><code class="line-numbers language-c++">class Solution &#123;
 public:
-        vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;
-            vector&lt;int&gt; answer;
-            int i, j;
-            for(i = 0; i&lt; nums.size() - 1; i++)&#123;
-                for(j = i + 1; j &lt; nums.size(); j++)&#123;
-                    int diff = target - nums[j];
-                    if(nums[i] == diff)&#123;
-                        answer.push_back(i);
-                        answer.push_back(j);
-                    &#125;
-                &#125;
+    int hammingDistance(int x, int y) &#123;
+            int z = x ^ y;
+            int distance = 0;
+            while(z)&#123;
+                distance += z &amp; 1;
+                z = z &gt;&gt; 1;
             &#125;
-            return answer;
+            return distance;
+
+
     &#125;
 &#125;;</code></pre>
-<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210211230613.png"></p>
-<p><strong>Complexity Analysis</strong> </p>
+<p>复杂度分析: </p>
 <ul>
-<li>Time Complexity: $O(n^2)$</li>
-<li>Space Complexity: $O(1)$</li>
+<li>时间复杂度: O(1), 整数长度固定, 最高32位 </li>
+<li>空间复杂度: O(1), 恒定空间</li>
+</ul>
+<p>方法2: 布赖恩·克尼根算法</p>
+<p>逐位移动，逐位比较边缘位置是否为 1。利用布莱恩·克尼根算法, 遇到最右边的 1 后，如果可以跳过中间的 0，直接跳到下一个 1，效率会高很多. </p>
+<p>当 <code>num &amp; (num - 1)</code> 运算时, 最右边等于1的一位会被抹除</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210307225134.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(1)</code>, 实际进行了更少的迭代</li>
+<li>空间复杂度:  <code>O(1)</code>, 恒定空间</li>
 </ul>
 
             </div>
@@ -740,9 +726,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode_Day1》
+                    《LeetCode_Day2》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/02/12/leetcode-day1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/07/leetcode-day2/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1043,28 +1029,36 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/20/neovim/">
+                <a href="/2021/03/07/leetcode-day2/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210301120656.png" class="responsive-img" alt="Neovim">
                         
-                        <span class="card-title">Neovim</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/83.webp" class="responsive-img" alt="LeetCode_Day2">
+                        
+                        <span class="card-title">LeetCode_Day2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手把vim打造成最舒适的写代码神器
+                            [461] 汉明距离
+https://leetcode-cn.com/problems/hamming-distance/description/
+
+algorithms
+Easy (78.70%)
+Likes:    379
+Dislik
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -1073,18 +1067,7 @@ public:
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vim/" target="_blank">
-                        <span class="chip bg-color">vim</span>
-                    </a>
-                    
-                    <a href="/tags/neovim/" target="_blank">
-                        <span class="chip bg-color">neovim</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1095,23 +1078,24 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/10/leetcode-cli/">
+                <a href="/2021/03/07/c-1/">
                     <div class="card-image">
                         
-                        <img src="https://github.com/skygragon/leetcode-cli/raw/master/docs/logo.png" class="responsive-img" alt="LeetCode-CLI">
                         
-                        <span class="card-title">LeetCode-CLI</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/34.webp" class="responsive-img" alt="C++_1">
+                        
+                        <span class="card-title">C++_1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何优雅的刷LeetCode
+                            C++
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-07
                             </span>
                         <span class="publish-author">
                             
@@ -1120,14 +1104,6 @@ public:
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1278,13 +1254,6 @@ public:
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
     <div class="container row center-align">
@@ -1293,7 +1262,7 @@ public:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">47.6k</span>
+            <span class="white-color">48k</span>
             
 
             <br>

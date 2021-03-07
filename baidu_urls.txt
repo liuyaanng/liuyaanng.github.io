@@ -1,9 +1,11 @@
+https://godliuyang.wang/2021/03/07/leetcode-day2/
+https://godliuyang.wang/2021/03/07/c-1/
+https://godliuyang.wang/2021/03/06/leetcode-day1/
 https://godliuyang.wang/2021/03/02/coc/
 https://godliuyang.wang/2021/02/28/fzf/
 https://godliuyang.wang/2021/02/27/linux/
 https://godliuyang.wang/2021/02/27/git/
 https://godliuyang.wang/2021/02/20/neovim/
-https://godliuyang.wang/2021/02/12/leetcode-day1/
 https://godliuyang.wang/2021/02/10/leetcode-cli/
 https://godliuyang.wang/2021/02/09/leetcode-daily-questions/
 https://godliuyang.wang/2020/09/24/ke-ai-de-bi-zhi/
@@ -26,5 +28,3 @@ https://godliuyang.wang/2019/08/07/enjoy-pytorch/
 https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/
 https://godliuyang.wang/2019/08/05/pca-yuan-li-fen-xi/
 https://godliuyang.wang/2019/08/03/face-detection/
-https://godliuyang.wang/2019/08/01/local-binary-patterns/
-https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-02T11:45:36.940Z</updated>
+  <updated>2021-03-07T14:55:13.565Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_Day2</title>
+    <link href="https://godliuyang.wang/2021/03/07/leetcode-day2/"/>
+    <id>https://godliuyang.wang/2021/03/07/leetcode-day2/</id>
+    <published>2021-03-07T13:46:47.000Z</published>
+    <updated>2021-03-07T14:55:13.565Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[461] 汉明距离&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++_1</title>
+    <link href="https://godliuyang.wang/2021/03/07/c-1/"/>
+    <id>https://godliuyang.wang/2021/03/07/c-1/</id>
+    <published>2021-03-07T02:30:32.000Z</published>
+    <updated>2021-03-07T02:32:18.432Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode_Day1</title>
+    <link href="https://godliuyang.wang/2021/03/06/leetcode-day1/"/>
+    <id>https://godliuyang.wang/2021/03/06/leetcode-day1/</id>
+    <published>2021-03-06T07:11:48.000Z</published>
+    <updated>2021-03-07T14:55:48.918Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[1] Two Sum  &lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>COC</title>
@@ -122,31 +184,6 @@
       <category term="vim" scheme="https://godliuyang.wang/tags/vim/"/>
     
       <category term="neovim" scheme="https://godliuyang.wang/tags/neovim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode_Day1</title>
-    <link href="https://godliuyang.wang/2021/02/12/leetcode-day1/"/>
-    <id>https://godliuyang.wang/2021/02/12/leetcode-day1/</id>
-    <published>2021-02-12T07:11:48.000Z</published>
-    <updated>2021-02-12T10:54:23.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;[1] Two Sum  &lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
     
   </entry>
   
@@ -453,62 +490,6 @@
     
     
       <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Arch Linux + i3wm详细配置篇</title>
-    <link href="https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/"/>
-    <id>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</id>
-    <published>2019-12-05T17:14:50.000Z</published>
-    <updated>2020-12-11T19:37:50.626Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Arch-linux-i3&quot;&gt;&lt;a href=&quot;#Arch-linux-i3&quot; class=&quot;headerlink&quot; title=&quot;Arch linux + i3&quot;&gt;&lt;/a&gt;Arch linux + i3&lt;/h2&gt;&lt;p&gt;&lt;img loading=&quot;lazy&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
-    
-      <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
-    
-      <category term="Arch" scheme="https://godliuyang.wang/tags/Arch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bilibili-Evolved</title>
-    <link href="https://godliuyang.wang/2019/09/21/bilibili-evolved/"/>
-    <id>https://godliuyang.wang/2019/09/21/bilibili-evolved/</id>
-    <published>2019-09-20T16:40:43.000Z</published>
-    <updated>2020-11-14T10:09:35.718Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Bilibili-Evolved&quot;&gt;&lt;a href=&quot;#Bilibili-Evolved&quot; class=&quot;headerlink&quot; title=&quot;Bilibili-Evolved&quot;&gt;&lt;/a&gt;Bilibili-Evolved&lt;/h2&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="教程" scheme="https://godliuyang.wang/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Bilibili.com" scheme="https://godliuyang.wang/tags/Bilibili-com/"/>
-    
-      <category term="Script" scheme="https://godliuyang.wang/tags/Script/"/>
     
   </entry>
   
