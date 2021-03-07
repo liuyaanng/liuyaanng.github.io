@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-07T15:03:11.006Z</updated>
+  <updated>2021-03-07T02:32:18.432Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>LeetCode_Day2</title>
-    <link href="https://godliuyang.wang/2021/03/07/leetcode-day2/"/>
-    <id>https://godliuyang.wang/2021/03/07/leetcode-day2/</id>
-    <published>2021-03-07T13:46:47.000Z</published>
-    <updated>2021-03-07T15:03:11.006Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;[461] 汉明距离&lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>C++_1</title>
@@ -490,6 +467,34 @@
     
     
       <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arch Linux + i3wm详细配置篇</title>
+    <link href="https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/"/>
+    <id>https://godliuyang.wang/2019/12/06/arch-linux-i3wm-xiang-xi-pei-zhi/</id>
+    <published>2019-12-05T17:14:50.000Z</published>
+    <updated>2020-12-11T19:37:50.626Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Arch-linux-i3&quot;&gt;&lt;a href=&quot;#Arch-linux-i3&quot; class=&quot;headerlink&quot; title=&quot;Arch linux + i3&quot;&gt;&lt;/a&gt;Arch linux + i3&lt;/h2&gt;&lt;p&gt;&lt;img loading=&quot;lazy&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://godliuyang.wang/tags/linux/"/>
+    
+      <category term="i3wm" scheme="https://godliuyang.wang/tags/i3wm/"/>
+    
+      <category term="Arch" scheme="https://godliuyang.wang/tags/Arch/"/>
     
   </entry>
   
