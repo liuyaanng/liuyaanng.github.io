@@ -478,7 +478,7 @@ Dislik">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        381
+                        415
                     </div>
                     
 
@@ -554,6 +554,7 @@ public:
 
     &#125;
 &#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210307230112.png"></p>
 <p>复杂度分析: </p>
 <ul>
 <li>时间复杂度: O(1), 整数长度固定, 最高32位 </li>
@@ -563,6 +564,19 @@ public:
 <p>逐位移动，逐位比较边缘位置是否为 1。利用布莱恩·克尼根算法, 遇到最右边的 1 后，如果可以跳过中间的 0，直接跳到下一个 1，效率会高很多. </p>
 <p>当 <code>num &amp; (num - 1)</code> 运算时, 最右边等于1的一位会被抹除</p>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210307225134.png"></p>
+<pre><code class="line-numbers language-c++">class Solution &#123;
+public:
+    int hammingDistance(int x, int y) &#123;
+            int z = x xor y;
+            int distance = 0;
+            while(z)&#123;
+                distance += 1;
+                z = z &amp; (z - 1);
+            &#125;
+            return distance;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210307230254.png"></p>
 <p>复杂度分析: </p>
 <ul>
 <li>时间复杂度: <code>O(1)</code>, 实际进行了更少的迭代</li>
@@ -1262,7 +1276,7 @@ Dislik
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">48k</span>
+            <span class="white-color">48.1k</span>
             
 
             <br>
