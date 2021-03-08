@@ -5,14 +5,13 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="LeetCode_Day1, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="[1] Two Sum  
-https://leetcode.com/problems/two-sum/description/
+    <meta name="keywords" content="LeetCode_Day3, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[338] 比特位计数https://leetcode-cn.com/problems/counting-bits/description/
 
 algorithms
-Easy (46.37%)
-Likes:    19171
-Dislikes: 682">
+Medium (76.57%)
+Likes:    664
+Dislike">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@ Dislikes: 682">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode_Day1 | GeekOcean</title>
+    <title>LeetCode_Day3 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -338,13 +337,13 @@ Dislikes: 682">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/82.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/84.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode_Day1
+                        LeetCode_Day3
                     </div>
                 </div>
             </div>
@@ -453,13 +452,9 @@ Dislikes: 682">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/LeetCode/" target="_blank">
-                                <span class="chip bg-color">LeetCode</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -470,26 +465,26 @@ Dislikes: 682">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-06
+                    2021-03-08
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-06
+                    2021-03-08
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        258
+                        790
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -507,81 +502,180 @@ Dislikes: 682">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>[1] Two Sum  </p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/description/">https://leetcode.com/problems/two-sum/description/</a></p>
+                <h2 id="338-比特位计数"><a href="#338-比特位计数" class="headerlink" title="[338] 比特位计数"></a>[338] 比特位计数</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/counting-bits/description/">https://leetcode-cn.com/problems/counting-bits/description/</a></p>
 <ul>
 <li>algorithms</li>
-<li>Easy (46.37%)</li>
-<li>Likes:    19171</li>
-<li>Dislikes: 682</li>
-<li>Total Accepted:    3.8M</li>
-<li>Total Submissions: 8.3M</li>
-<li>Testcase Example:  ‘[2,7,11,15]\n9’</li>
+<li>Medium (76.57%)</li>
+<li>Likes:    664</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    115.6K</li>
+<li>Total Submissions: 146.3K</li>
+<li>Testcase Example:  ‘2’</li>
+<li>Source Code:       338.counting-bits.cpp</li>
 </ul>
-<p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
+<p>给定一个非负整数&nbsp;<strong>num</strong>。对于&nbsp;<strong>0 &le; i &le; num </strong>范围中的每个数字&nbsp;<strong>i&nbsp;</strong>，计算其二进制数中的 1 的数目并将它们作为数组返回。</p>
 
-<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>
+<p><strong>示例 1:</strong></p>
 
-<p>You can return the answer in any order.</p>
+<pre><strong>输入: </strong>2
+<strong>输出: </strong>[0,1,1]</pre>
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+<p><strong>示例&nbsp;2:</strong></p>
 
-<pre>
-<strong>Input:</strong> nums = [2,7,11,15], target = 9
-<strong>Output:</strong> [0,1]
-<strong>Output:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
-</pre>
+<pre><strong>输入: </strong>5
+<strong>输出: </strong><code>[0,1,1,2,1,2]</code></pre>
 
-<p><strong>Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [3,2,4], target = 6
-<strong>Output:</strong> [1,2]
-</pre>
-
-<p><strong>Example 3:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [3,3], target = 6
-<strong>Output:</strong> [0,1]
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+<p><strong>进阶:</strong></p>
 
 <ul>
-    <li><code>2 &lt;= nums.length &lt;= 10<sup>3</sup></code></li>
-    <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-    <li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
-    <li><strong>Only one valid answer exists.</strong></li>
+    <li>给出时间复杂度为<strong>O(n*sizeof(integer))</strong>的解答非常容易。但你可以在线性时间<strong>O(n)</strong>内用一趟扫描做到吗？</li>
+    <li>要求算法的空间复杂度为<strong>O(n)</strong>。</li>
+    <li>你能进一步完善解法吗？要求在C++或任何其他语言中不使用任何内置函数（如 C++ 中的&nbsp;<strong>__builtin_popcount</strong>）来执行此操作。</li>
 </ul>
 
-<p><strong>Approach 1:</strong> Brute Force</p>
-<p>Loop through each element <code>x</code>  and find if there is another value that equals to <code>target - x</code> </p>
-<pre><code class="line-numbers language-c++">class Solution &#123;
+<p>方法1: </p>
+<p>从0到num直接计算1的个数, 计算方法用到了上面的 布赖恩·克尼根算法</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
 public:
-        vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;
-            vector&lt;int&gt; answer;
-            int i, j;
-            for(i = 0; i&lt; nums.size() - 1; i++)&#123;
-                for(j = i + 1; j &lt; nums.size(); j++)&#123;
-                    int diff = target - nums[j];
-                    if(nums[i] == diff)&#123;
-                        answer.push_back(i);
-                        answer.push_back(j);
-                    &#125;
-                &#125;
+    int count_ones(int x)&#123;
+        int count = 0;
+        while(x &gt; 0)&#123;
+            x &amp;= (x - 1);
+            count++;
+        &#125;
+        return count;
+    &#125;
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            for(int x=0; x &lt;= num; x++)&#123;
+                result[x] = count_ones(x);
             &#125;
-            return answer;
+            return result;
     &#125;
 &#125;;</code></pre>
-<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210211230613.png"></p>
-<p><strong>Complexity Analysis</strong> </p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210307234957.png"></p>
+<p>复杂度分析: </p>
 <ul>
-<li>Time Complexity: $O(n^2)$</li>
-<li>Space Complexity: $O(1)$</li>
+<li>时间复杂度: <code>O(k*num)</code> , k 为int整型长度(32), </li>
+<li>空间复杂度: <code>O(1)</code> , 除了返回的数组以外，空间复杂度为常数。</li>
 </ul>
+<p>方法2: 动态规划 最高有效位</p>
+<p>对于整数x, 存在一个最大整数y, 且y是2的整数幂, 令 <code>z=y-x</code>, 用 <code>bits[x]</code> 来表示x的’一比特数’, 则 <code>bit[x] = bit[z] + 1 </code>, 这里加的 <code>1</code> 是最高位的1.</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>y</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>z=x-y</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p><strong>正整数 <code>y</code> 是 <code>2</code> 的整数次幂，当且仅当 <code>y&amp;(y-1)=0 </code></strong></p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            int highbit = 0;
+            for(int x=1; x &lt;= num; x++)&#123;
+                if((x &amp; (x - 1)) == 0)&#123;
+                    highbit = x;
+                &#125;
+                result[x] = result[x - highbit] + 1;
+            &#125;
+            return result;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210308113259.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(num)</code> , 只需要 <code>O(1)</code> 的时间计算</li>
+<li>空间复杂度:  <code>O(1)</code>, 为常数</li>
+</ul>
+<p>方法3: 动态规划 最低有效位</p>
+<p>将x右移一位可得到 $\dfrac{x}{2}$ 的值,<br>| x   | 1 | 0 | 1 | 1 |<br>|—–|—|—|—|—|<br>| x/2 | 0 | 1 | 0 | 1 |</p>
+<p> 反向考虑:</p>
+<p>$$<br>bit[x] = bit[\dfrac{x}{2}] + bit[x]最低位<br>$$</p>
+<p>据此, 合并奇偶情况:</p>
+<p>$$<br>bit[x] = bit[\dfrac{x}{2}] + (x &amp; 1)<br>$$</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            int highbit = 0;
+            for(int x=1; x &lt;= num; x++)&#123;
+                result[x] = result[x&gt;&gt;1] + (x &amp; 1);
+            &#125;
+            return result;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210308115024.png"></p>
+<p>方法4: 动态规划 最低设置位</p>
+<p>定义正整数 <code>x</code> 的「最低设置位」为 <code>x</code> 的二进制表示中的最低的 <code>1</code> 所在位。</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+</table>
+<p> 最低设置位是 <code>2</code></p>
+<p> 令 <code>y=x&amp;(x-1)</code> , 则y是去除最低设置位后的数, 则 <code>bits[x]=bits[y]+1</code></p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x-1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>x&amp;(x-1)</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            int highbit = 0;
+            for(int x=1; x &lt;= num; x++)&#123;
+                result[x] = result[x&amp;(x-1)] +1;
+            &#125;
+            return result;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210308120402.png"></p>
 
             </div>
             <hr/>
@@ -740,9 +834,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode_Day1》
+                    《LeetCode_Day3》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/06/leetcode-day1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/08/leetcode-day3/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1043,9 +1137,48 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/08/leetcode-day3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/84.webp" class="responsive-img" alt="LeetCode_Day3">
+                        
+                        <span class="card-title">LeetCode_Day3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            338->比特位计数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            GeekOcean
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/03/07/leetcode-day2/">
                     <div class="card-image">
@@ -1063,45 +1196,8 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-07
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            GeekOcean
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/02/coc/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/79.webp" class="responsive-img" alt="COC">
-                        
-                        <span class="card-title">COC</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Conquer Of Completion
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-07
                             </span>
                         <span class="publish-author">
                             
@@ -1259,13 +1355,6 @@ public:
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
