@@ -477,14 +477,14 @@ Dislike">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        763
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        5 分
                     </div>
                     
                 
@@ -637,6 +637,123 @@ public:
 <li>时间复杂度: <code>O(k*num)</code> , k 为int整型长度(32), </li>
 <li>空间复杂度: <code>O(1)</code> , 除了返回的数组以外，空间复杂度为常数。</li>
 </ul>
+<p>方法2: 动态规划 最高有效位</p>
+<p>对于整数x, 存在一个最大整数y, 且y是2的整数幂, 令 <code>z=y-x</code>, 用 <code>bits[x]</code> 来表示x的’一比特数’, 则 <code>bit[x] = bit[z] + 1 </code>, 这里加的 <code>1</code> 是最高位的1.</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>y</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>z=x-y</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p><strong>正整数 <code>y</code> 是 <code>2</code> 的整数次幂，当且仅当 <code>y&amp;(y-1)=0 </code></strong></p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            int highbit = 0;
+            for(int x=1; x &lt;= num; x++)&#123;
+                if((x &amp; (x - 1)) == 0)&#123;
+                    highbit = x;
+                &#125;
+                result[x] = result[x - highbit] + 1;
+            &#125;
+            return result;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210308113259.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(num)</code> , 只需要 <code>O(1)</code> 的时间计算</li>
+<li>空间复杂度:  <code>O(1)</code>, 为常数</li>
+</ul>
+<p>方法3: 动态规划 最低有效位</p>
+<p>将x右移一位可得到 $\dfrac{x}{2}$ 的值,<br>| x   | 1 | 0 | 1 | 1 |<br>|—–|—|—|—|—|<br>| x/2 | 0 | 1 | 0 | 1 |</p>
+<p> 反向考虑:</p>
+<p>$$<br>bit[x] = bit[\dfrac{x}{2}] + bit[x]最低位<br>$$</p>
+<p>据此, 合并奇偶情况:</p>
+<p>$$<br>bit[x] = bit[\dfrac{x}{2}] + (x &amp; 1)<br>$$</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            int highbit = 0;
+            for(int x=1; x &lt;= num; x++)&#123;
+                result[x] = result[x&gt;&gt;1] + (x &amp; 1);
+            &#125;
+            return result;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210308115024.png"></p>
+<p>方法4: 动态规划 最低设置位</p>
+<p>定义正整数 <code>x</code> 的「最低设置位」为 <code>x</code> 的二进制表示中的最低的 <code>1</code> 所在位。</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+</table>
+<p> 最低设置位是 <code>2</code></p>
+<p> 令 <code>y=x&amp;(x-1)</code> , 则y是去除最低设置位后的数, 则 <code>bits[x]=bits[y]+1</code></p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x-1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>x&amp;(x-1)</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    vector&lt;int&gt; countBits(int num) &#123;
+            vector&lt;int&gt; result(num + 1);
+            int highbit = 0;
+            for(int x=1; x &lt;= num; x++)&#123;
+                result[x] = result[x&amp;(x-1)] +1;
+            &#125;
+            return result;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210308120402.png"></p>
 
             </div>
             <hr/>
@@ -1144,7 +1261,8 @@ public:
                 <a href="/2021/03/06/leetcode-day1/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/LeetCode_Daily_Question/leetcode.png" class="responsive-img" alt="LeetCode_Day1">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/82.webp" class="responsive-img" alt="LeetCode_Day1">
                         
                         <span class="card-title">LeetCode_Day1</span>
                     </div>
@@ -1152,7 +1270,7 @@ public:
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Q1_Two Sum
+                            1->Two Sum
                         
                     </div>
                     <div class="publish-info">
@@ -1324,6 +1442,13 @@ public:
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
     <div class="container row center-align">
@@ -1332,7 +1457,7 @@ public:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">48.4k</span>
+            <span class="white-color">48.9k</span>
             
 
             <br>
