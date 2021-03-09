@@ -608,7 +608,25 @@ public:
 <li>空间复杂度:  <code>O(1)</code>, 为常数</li>
 </ul>
 <p>方法3: 动态规划 最低有效位</p>
-<p>将x右移一位可得到 $\dfrac{x}{2}$ 的值,<br>| x   | 1 | 0 | 1 | 1 |<br>|—–|—|—|—|—|<br>| x/2 | 0 | 1 | 0 | 1 |</p>
+<p>将x右移一位可得到 $\dfrac{x}{2}$ 的值,</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x/2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
 <p> 反向考虑:</p>
 <p>$$<br>bit[x] = bit[\dfrac{x}{2}] + bit[x]最低位<br>$$</p>
 <p>据此, 合并奇偶情况:</p>
