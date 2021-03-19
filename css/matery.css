@@ -109,8 +109,8 @@ pre {
 	padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
 	margin: 1rem 0 !important;
 	/* background: #272822; */
-	background: dimgray;
-	color: antiquewhite;
+	background: #2d2d2d;
+	color: white;
 	overflow: auto;
 	border-radius: 0.35rem;
 	tab-size: 2;
@@ -142,8 +142,8 @@ code {
 
 pre code {
 	padding: 0;
-	color: antiquewhite;
-	background-color: dimgray;
+	color: white;
+	background-color: #2d2d2d;
 }
 
 pre[class*="language-"] {
