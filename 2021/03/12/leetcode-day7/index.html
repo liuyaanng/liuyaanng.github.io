@@ -633,9 +633,9 @@ private:
         vector&lt;vector&lt;int&gt;&gt; data;
 &#125;;</code></pre>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210319110154.png"></p>
-<h3 id="方法3-链地址法1"><a href="#方法3-链地址法1" class="headerlink" title="方法3: 链地址法1"></a>方法3: 链地址法1</h3><p>这是一种处理冲突的方法, 具体原理如图:</p>
+<h3 id="方法3-链地址法-无头节点"><a href="#方法3-链地址法-无头节点" class="headerlink" title="方法3: 链地址法 无头节点"></a>方法3: 链地址法 无头节点</h3><p>这是一种处理冲突的方法, 具体原理如图:</p>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/IMG_3726.JPG"></p>
-<p>此方法不使用头节点(dummy head node), 减小空间开销, 但每次都需要判断是否为空节点</p>
+<p>此方法不使用头节点(dummy head node), 将所有关键字为同义词的记录存储在同一线性链表中, 减小空间开销, 但每次都需要判断是否为空节点</p>
 <p>需注意当移除键值对时, 对于头节点与非头节点要分开讨论</p>
 <pre><code class="line-numbers language-cpp">struct MyListNode&#123;
     int key; 
@@ -728,6 +728,124 @@ private:
         vector&lt;MyListNode*&gt; data;
 &#125;;</code></pre>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210319120829.png"></p>
+<h3 id="方法4-链地址法-有头节点"><a href="#方法4-链地址法-有头节点" class="headerlink" title="方法4: 链地址法 有头节点"></a>方法4: 链地址法 有头节点</h3><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/IMG_3726.JPG"></p>
+<p>头节点一直存在, 省去了对头节点的判断, 但略占空间</p>
+<pre><code class="line-numbers language-cpp">struct MyListNode&#123;
+    int key; 
+    int val;
+    MyListNode* next;
+    MyListNode() : key(-1), val(-1), next(nullptr) &#123;&#125;
+    MyListNode(int _key, int _val) : key(_key), val(_val), next(nullptr) &#123;&#125;
+&#125;;
+class MyHashMap &#123;
+public:
+    /** Initialize your data structure here. */
+    MyHashMap() &#123;
+            data.resize(N, new MyListNode());
+    &#125;
+        auto getHashValue(int key)&#123;
+            return key % N;
+        &#125;
+
+    /** value will always be non-negative. */
+    void put(int key, int value) &#123;
+            auto hashkey = getHashValue(key);
+            auto&amp; head = data[hashkey];
+            auto p = head;
+            auto tail = p;
+            // add value which has been added
+            while(p != nullptr)&#123;
+                if(p-&gt;key == key)&#123;
+                    p-&gt;val = value;
+                    return;
+                &#125;
+                tail = p;
+                p = p-&gt;next;
+            &#125;
+            // add new value
+            tail-&gt;next = new MyListNode(key, value);
+    &#125;
+
+    /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
+    int get(int key) &#123;
+            auto hashkey = getHashValue(key);
+            auto&amp; head = data[hashkey];
+            auto p = head;
+            while(p != nullptr)&#123;
+                if(p-&gt;key == key)&#123;
+                    return p-&gt;val;
+                &#125;
+                p = p-&gt;next;
+            &#125;
+            return -1;
+    &#125;
+
+    /** Removes the mapping of the specified value key if this map contains a mapping for the key */
+    void remove(int key) &#123;
+            auto hashkey = getHashValue(key);
+            auto&amp; head = data[hashkey];
+            auto p = head;
+            MyListNode* prev = nullptr;
+            while(p != nullptr)&#123;
+                if(p-&gt;key == key)&#123;
+                    prev-&gt;next = p-&gt;next;
+                    p-&gt;next = nullptr;
+                    delete p;
+                    return;
+                &#125;
+                prev = p;
+                p = p-&gt;next;
+            &#125;
+    &#125;
+private:
+        const int N = 1001;
+        vector&lt;MyListNode*&gt; data;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210319154530.png"></p>
+<h3 id="方法5-开放地址法-线性探测"><a href="#方法5-开放地址法-线性探测" class="headerlink" title="方法5: 开放地址法 线性探测"></a>方法5: 开放地址法 线性探测</h3><p>算法原理: </p>
+<p>$$<br>H_i = (H(key) + d_i) \space MOD \space m  \quad i=1, 2, \cdots, k(k&lt;=m-1)<br>$$</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/IMG_3729.JPG"></p>
+<pre><code class="line-numbers language-cpp">class MyHashMap &#123;
+public:
+    /** Initialize your data structure here. */
+    MyHashMap() &#123;
+            hashtable = vector&lt;pair&lt;int, int&gt;&gt;(N, &#123;-1, -1&#125;);
+    &#125;
+        auto getHashValue(int key)&#123;
+            int k = key % N;
+            while(hashtable[k].first != key &amp;&amp; hashtable[k].first != -1)&#123;
+                k = (k + 1) % N;
+            &#125;
+            return k; 
+        &#125;
+
+    /** value will always be non-negative. */
+    void put(int key, int value) &#123;
+            auto k = getHashValue(key);
+            hashtable[k] = &#123;key, value&#125;;
+    &#125;
+
+    /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
+    int get(int key) &#123;
+            auto k = getHashValue(key);
+            if(hashtable[k].first == -1)&#123;
+                return -1;
+            &#125;
+            return hashtable[k].second;
+    &#125;
+
+    /** Removes the mapping of the specified value key if this map contains a mapping for the key */
+    void remove(int key) &#123;
+            auto k = getHashValue(key);
+            if(hashtable[k].first != -1)&#123;
+                hashtable[k].first = -2;
+            &#125;
+    &#125;
+private:
+        const static int N = 20011;
+        vector&lt;pair&lt;int, int&gt;&gt; hashtable;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210319162846.png"></p>
 
             </div>
             <hr/>
@@ -1423,6 +1541,13 @@ private:
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
