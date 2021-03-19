@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
+    
+    <lastmod>2021-03-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2021/03/12/leetcode-day7/</loc>
     
     <lastmod>2021-03-19</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://godliuyang.wang/2019/09/18/anaconda/</loc>
     
     <lastmod>2020-12-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
-    
-    <lastmod>2020-12-13</lastmod>
     
   </url>
   
@@ -366,14 +366,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/friends/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -410,20 +410,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Python/</loc>
-    <lastmod>2021-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Anaconda3/</loc>
-    <lastmod>2021-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
@@ -432,6 +418,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Script/</loc>
+    <lastmod>2021-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Python/</loc>
+    <lastmod>2021-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Anaconda3/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -665,13 +665,6 @@
   
   <url>
     <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/Face-Recognition/</loc>
-    <lastmod>2021-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

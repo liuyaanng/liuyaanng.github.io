@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
+    <lastmod>2021-03-19</lastmod>
+  </url>
+  <url>
     <loc>https://godliuyang.wang/2021/03/12/leetcode-day7/</loc>
     <lastmod>2021-03-19</lastmod>
   </url>
@@ -71,10 +75,6 @@
   <url>
     <loc>https://godliuyang.wang/2019/09/18/anaconda/</loc>
     <lastmod>2020-12-16</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2019/08/01/local-binary-patterns/</loc>
-    <lastmod>2020-12-13</lastmod>
   </url>
   <url>
     <loc>https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/</loc>
