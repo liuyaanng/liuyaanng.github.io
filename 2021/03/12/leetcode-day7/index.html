@@ -586,7 +586,8 @@ private:
         vector&lt;int&gt; data;
 &#125;;</code></pre>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210319103752.png"></p>
-<h3 id="方法2-二维数组-稀疏数组节省空间"><a href="#方法2-二维数组-稀疏数组节省空间" class="headerlink" title="方法2: 二维数组, 稀疏数组节省空间"></a>方法2: 二维数组, 稀疏数组节省空间</h3><pre><code class="line-numbers language-cpp">class MyHashMap &#123;
+<h3 id="方法2-二维数组-稀疏数组节省空间"><a href="#方法2-二维数组-稀疏数组节省空间" class="headerlink" title="方法2: 二维数组, 稀疏数组节省空间"></a>方法2: 二维数组, 稀疏数组节省空间</h3><p>通过设置两个hash值来避免冲突</p>
+<pre><code class="line-numbers language-cpp">class MyHashMap &#123;
 public:
     /** Initialize your data structure here. */
     MyHashMap() &#123;
@@ -632,7 +633,10 @@ private:
         vector&lt;vector&lt;int&gt;&gt; data;
 &#125;;</code></pre>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210319110154.png"></p>
-<h3 id="方法3-链地址法1"><a href="#方法3-链地址法1" class="headerlink" title="方法3: 链地址法1"></a>方法3: 链地址法1</h3><p>不使用头节点(dummy head node), 减小空间开销, 但每次都需要判断是否为空节点</p>
+<h3 id="方法3-链地址法1"><a href="#方法3-链地址法1" class="headerlink" title="方法3: 链地址法1"></a>方法3: 链地址法1</h3><p>这是一种处理冲突的方法, 具体原理如图:</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/IMG_3726.JPG"></p>
+<p>此方法不使用头节点(dummy head node), 减小空间开销, 但每次都需要判断是否为空节点</p>
+<p>需注意当移除键值对时, 对于头节点与非头节点要分开讨论</p>
 <pre><code class="line-numbers language-cpp">struct MyListNode&#123;
     int key; 
     int val;
