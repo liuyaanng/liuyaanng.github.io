@@ -5,9 +5,13 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="LeetCode_Daily_Questions, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="待完善
-">
+    <meta name="keywords" content="LeetCode_Day11, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[605] 种花问题https://leetcode-cn.com/problems/can-place-flowers/description/
+
+algorithms
+Easy (34.14%)
+Likes:    322
+Dislik">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode_Daily_Questions | GeekOcean</title>
+    <title>LeetCode_Day11 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -333,13 +337,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/LeetCode_Daily_Question/leetcode.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/75.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode_Daily_Questions
+                        LeetCode_Day11
                     </div>
                 </div>
             </div>
@@ -450,8 +454,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/c/" target="_blank">
+                                <span class="chip bg-color">c++</span>
+                            </a>
+                        
                             <a href="/tags/LeetCode/" target="_blank">
                                 <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" target="_blank">
+                                <span class="chip bg-color">贪心算法</span>
                             </a>
                         
                     </div>
@@ -474,19 +486,19 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-09
+                    2021-03-23
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-09
+                    2021-03-23
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3
+                        205
                     </div>
                     
 
@@ -511,7 +523,120 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>待完善</p>
+                <h2 id="605-种花问题"><a href="#605-种花问题" class="headerlink" title="[605] 种花问题"></a>[605] 种花问题</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/can-place-flowers/description/">https://leetcode-cn.com/problems/can-place-flowers/description/</a></p>
+<ul>
+<li>algorithms</li>
+<li>Easy (34.14%)</li>
+<li>Likes:    322</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    84.3K</li>
+<li>Total Submissions: 249.4K</li>
+<li>Testcase Example:  ‘[1,0,0,0,1]\n1’</li>
+<li>Source Code:       605.can-place-flowers.cpp</li>
+</ul>
+<p>假设有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花不能种植在相邻的地块上，它们会争夺水源，两者都会死去。</p>
+
+<p>给你一个整数数组  <code>flowerbed</code> 表示花坛，由若干 <code>0</code> 和 <code>1</code> 组成，其中 <code>0</code> 表示没种植花，<code>1</code> 表示种植了花。另有一个数 <code>n</code><strong> </strong>，能否在不打破种植规则的情况下种入 <code>n</code><strong> </strong>朵花？能则返回 <code>true</code> ，不能则返回 <code>false</code>。</p>
+
+<p> </p>
+
+<p><strong>示例 1：</strong></p>
+
+<pre>
+<strong>输入：</strong>flowerbed = [1,0,0,0,1], n = 1
+<strong>输出：</strong>true
+</pre>
+
+<p><strong>示例 2：</strong></p>
+
+<pre>
+<strong>输入：</strong>flowerbed = [1,0,0,0,1], n = 2
+<strong>输出：</strong>false
+</pre>
+
+<p> </p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+    <li><code>1 <= flowerbed.length <= 2 * 10<sup>4</sup></code></li>
+    <li><code>flowerbed[i]</code> 为 <code>0</code> 或 <code>1</code></li>
+    <li><code>flowerbed</code> 中不存在相邻的两朵花</li>
+    <li><code>0 <= n <= flowerbed.length</code></li>
+</ul>
+
+<h3 id="方法1-跳格法"><a href="#方法1-跳格法" class="headerlink" title="方法1: 跳格法"></a>方法1: 跳格法</h3><p>该方法仅需一次遍历, 可在不遍历完的情况下得出答案</p>
+<p>思路如下:</p>
+<ul>
+<li>遍历数组, 若 <code>index</code> 为1, 则往后跳两格</li>
+<li>若 <code>index</code> 为0, 由于上一条操作可得, <code>index-1</code> 一定为0, 则需要判断 <code>index+1</code> 的值<ul>
+<li>当 <code>index</code> 为最后一位, 可直接种花, 无需其他判断</li>
+<li><code>index+1</code> 为0, 则可以种花, 可以将 <code>index</code> 置为1, 后续按照第一条进行处理</li>
+<li><code>index+1</code> 为1, 不可种花, 向后跳三格</li>
+</ul>
+</li>
+</ul>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    bool canPlaceFlowers(vector&lt;int&gt;&amp; flowerbed, int n) &#123;
+            if(n == 0)&#123;
+                return true;
+            &#125;
+            int size = flowerbed.size();
+            for(int i=0; i&lt;size;)&#123;
+                if(flowerbed[i] == 1)&#123;
+                    i += 2;
+                &#125;else if(i == size - 1 || flowerbed[i+1] == 0)&#123;
+                    // 若在最后一个则直接可以种
+                    n--;
+                    if(n == 0)&#123;
+                        return n == 0;
+                    &#125;
+                    i+=2;
+                &#125;else&#123;
+                    i+=3;
+                &#125;
+            &#125;
+            return n == 0;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210323180355.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(n)</code>, 仅需一次遍历</li>
+<li>空间复杂度: <code>O(1)</code></li>
+</ul>
+<h3 id="方法2-前后种花，瞬间秒杀"><a href="#方法2-前后种花，瞬间秒杀" class="headerlink" title="方法2:前后种花，瞬间秒杀"></a>方法2:前后种花，瞬间秒杀</h3><p><strong>如果存在连续的3个0, 则一定能种花</strong></p>
+<p>若直接进行讨论, 需要进行复杂的边界问题讨论, 如</p>
+<p><code>[0, 0, 1, 0, 0, 1, 0, 0]</code> 虽然首尾都只有2个0, 但首尾是可以种花的<br>,所以需要对首尾进行讨论</p>
+<p>其实不用这样, 可以直接在数组两端添加一个 <code>0</code> 来解决这个问题<br><code>[0, 0, 1, 0, 0, 1, 0, 0]</code> -&gt; <code>[0, 0, 0, 1, 0, 0, 1, 0, 0, 0]</code> </p>
+<p>这样就可以统一讨论</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    bool canPlaceFlowers(vector&lt;int&gt;&amp; flowerbed, int n) &#123;
+            if(n == 0)&#123;
+                return true;
+            &#125;
+            flowerbed.insert(flowerbed.begin(), 0);
+            flowerbed.insert(flowerbed.end(), 0);
+            for(int i = 1; i &lt; flowerbed.size() - 1; i++)&#123;
+                if(flowerbed[i-1] == 0 &amp;&amp; flowerbed[i] == 0 &amp;&amp; flowerbed[i+1] == 0)&#123;
+                    n--;
+                    flowerbed[i] = 1;
+                    if(n == 0)&#123;
+                        return n == 0;
+                    &#125;
+                &#125;
+            &#125;
+            return n == 0;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210323183030.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(n)</code>, 仅需一次遍历</li>
+<li>空间复杂度: <code>O(1)</code></li>
+</ul>
 
             </div>
             <hr/>
@@ -670,9 +795,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode_Daily_Questions》
+                    《LeetCode_Day11》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/02/09/leetcode-daily-questions/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/23/leetcode-day11/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -973,41 +1098,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/10/leetcode-cli/">
+                <a href="/2021/03/23/leetcode-day11/">
                     <div class="card-image">
                         
-                        <img src="https://github.com/skygragon/leetcode-cli/raw/master/docs/logo.png" class="responsive-img" alt="LeetCode-CLI">
                         
-                        <span class="card-title">LeetCode-CLI</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/75.webp" class="responsive-img" alt="LeetCode_Day11">
+                        
+                        <span class="card-title">LeetCode_Day11</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何优雅的刷LeetCode
+                            605 -> 种花问题
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-23
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            GeekOcean
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
                     <a href="/tags/LeetCode/" target="_blank">
                         <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" target="_blank">
+                        <span class="chip bg-color">贪心算法</span>
                     </a>
                     
                 </div>
@@ -1021,31 +1161,52 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/24/ke-ai-de-bi-zhi/">
+                <a href="/2021/03/14/leetcode-day9/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_source/mc/94.jpg" class="responsive-img" alt="可爱的壁纸">
                         
-                        <span class="card-title">可爱的壁纸</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/90.webp" class="responsive-img" alt="LeetCode_Day9">
+                        
+                        <span class="card-title">LeetCode_Day9</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mc酱
+                            贪心算法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            GeekOcean
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" target="_blank">
+                        <span class="chip bg-color">贪心算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
