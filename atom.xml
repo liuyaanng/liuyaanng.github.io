@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-19T09:45:40.318Z</updated>
+  <updated>2021-03-23T04:54:50.379Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_Day9</title>
+    <link href="https://godliuyang.wang/2021/03/23/leetcode-day9/"/>
+    <id>https://godliuyang.wang/2021/03/23/leetcode-day9/</id>
+    <published>2021-03-23T04:09:37.000Z</published>
+    <updated>2021-03-23T04:54:50.379Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;贪心算法&quot;&gt;&lt;a href=&quot;#贪心算法&quot; class=&quot;headerlink&quot; title=&quot;贪心算法:&quot;&gt;&lt;/a&gt;贪心算法:&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;采用贪心的策略, 保证每次操作都是局部最优的,
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+      <category term="贪心算法" scheme="https://godliuyang.wang/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode_Day8</title>
@@ -508,28 +539,6 @@
       <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
     
       <category term="python" scheme="https://godliuyang.wang/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CLSW</title>
-    <link href="https://godliuyang.wang/2020/04/22/clsw/"/>
-    <id>https://godliuyang.wang/2020/04/22/clsw/</id>
-    <published>2020-04-22T07:32:13.000Z</published>
-    <updated>2021-03-03T15:00:30.230Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/#toc-heading-14&quot;&gt;Install and Configure guide&lt;/a&gt;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
