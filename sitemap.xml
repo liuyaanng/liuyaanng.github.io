@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://godliuyang.wang/2021/03/02/coc/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/2021/03/24/leetcode-day19/</loc>
     
     <lastmod>2021-03-24</lastmod>
@@ -159,13 +166,6 @@
     <loc>https://godliuyang.wang/2021/02/20/neovim/</loc>
     
     <lastmod>2021-03-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/2021/03/02/coc/</loc>
-    
-    <lastmod>2021-03-02</lastmod>
     
   </url>
   
@@ -443,14 +443,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/index.html</loc>
+    <loc>https://godliuyang.wang/friends/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/friends/index.html</loc>
+    <loc>https://godliuyang.wang/categories/index.html</loc>
     
     <lastmod>2020-02-24</lastmod>
     
@@ -480,6 +480,13 @@
 
   
   <url>
+    <loc>https://godliuyang.wang/tags/vpn/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://godliuyang.wang/tags/Python/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
@@ -488,13 +495,6 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Anaconda3/</loc>
-    <lastmod>2021-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/vpn/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -529,20 +529,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2021-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Matlab/</loc>
-    <lastmod>2021-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/PyTorch/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
@@ -551,6 +537,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/Deep-Learning/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Matlab/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -713,14 +713,14 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/Digital-Image-Processing/</loc>
+    <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/categories/PyTorch-Notes/</loc>
+    <loc>https://godliuyang.wang/categories/Digital-Image-Processing/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
