@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>LeetCode_Day18</title>
+      <link href="/2021/03/23/leetcode-day18/"/>
+      <url>/2021/03/23/leetcode-day18/</url>
+      
+        <content type="html"><![CDATA[<h3 id="142-环形链表-II"><a href="#142-环形链表-II" class="headerlink" title="[142] 环形链表 II"></a>[142] 环形链表 II</h3><p><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/description/">https://leetcode-cn.com/problems/linked-list-cycle-ii/description/</a></p><ul><li>algorithms</li><li>Medium (54.35%)</li><li>Likes:    923</li><li>Dislikes: -</li><li>Total Accepted:    201.4K</li><li>Total Submissions: 369.7K</li><li>Testcase Example:  ‘[3,2,0,-4]\n1’</li></ul><p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 <code>null</code>。</p><p>为了表示给定链表中的环，我们使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意，<code>pos</code> 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p><p><strong>说明：</strong>不允许修改给定的链表。</p><p><strong>进阶：</strong></p><ul>    <li>你是否可以使用 <code>O(1)</code> 空间解决此题？</li></ul><p> </p><p><strong>示例 1：</strong></p><p><img loading="lazy" alt="" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png" style="height: 97px; width: 300px;" /></p><pre><strong>输入：</strong>head = [3,2,0,-4], pos = 1<strong>输出：</strong>返回索引为 1 的链表节点<strong>解释：</strong>链表中有一个环，其尾部连接到第二个节点。</pre><p><strong>示例 2：</strong></p><p><img loading="lazy" alt="" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png" style="height: 74px; width: 141px;" /></p><pre><strong>输入：</strong>head = [1,2], pos = 0<strong>输出：</strong>返回索引为 0 的链表节点<strong>解释：</strong>链表中有一个环，其尾部连接到第一个节点。</pre><p><strong>示例 3：</strong></p><p><img loading="lazy" alt="" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png" style="height: 45px; width: 45px;" /></p><pre><strong>输入：</strong>head = [1], pos = -1<strong>输出：</strong>返回 null<strong>解释：</strong>链表中没有环。</pre><p> </p><p><strong>提示：</strong></p><ul>    <li>链表中节点的数目范围在范围 <code>[0, 10<sup>4</sup>]</code> 内</li>    <li><code>-10<sup>5</sup> <= Node.val <= 10<sup>5</sup></code></li>    <li><code>pos</code> 的值为 <code>-1</code> 或者链表中的一个有效索引</li></ul><h3 id="方法1-双指针-快慢指针"><a href="#方法1-双指针-快慢指针" class="headerlink" title="方法1: 双指针(快慢指针)"></a>方法1: 双指针(快慢指针)</h3><p>对于链表找环路的问题, 有一种通用解法–快慢指针(Floyd判圈法).</p><p>给定两个指针， 分别命名为 slow 和 fast，起始位置在链表的开头。每次 fast 前进两步，slow 前进一步。如果 fast 可以走到尽头，那么说明没有环路;如果 fast 可以无限走下去，那么说明一定有环路，且一定存 在一个时刻 slow 和 fast 相遇。当 slow 和 fast 第一次相遇时，我们将 fast 重新移动到链表开头，并 让 slow 和 fast 每次都前进一步。当 slow 和 fast 第二次相遇时，相遇的节点即为环路的开始点。</p><p>原理解释如下:</p><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210324193621.png"></p><ul><li><p>假设两指针在紫色点处相遇, 且此时slow指针一定是入环的第一圈, slow指针走的距离是 $a+b$ , fast指针走的距离是 $a+n(b+c)+b = a+(n+1)b+nc$ , 由于fast指针一次前进2步, slow指针一次前进1步, 故<br>$a+(n+1)b+nc = 2(a+b)$ , 可得 $a=(n-1)(b+c)+c$</p></li><li><p>此时重新设置fast指向头节点, 两指针再以相同速度前进, 则一定能在环路起点相遇</p></li><li><p>为何两指针一定可以在slow指针入环第一圈相遇?</p><ul><li>当slow在环路起点时, fast一定在环路的某一位置, slow在环路前进1圈, fast可以前进2圈,所以slow和fast一定可以在slow前进一圈内相遇</li></ul></li><li><p>为何要将fast速度设为2倍slow?</p><ul><li>事实上, fast速度可以是slow速度的任意倍, 任意倍数可能就没有一圈内相遇也没有相遇点加上环外节点长度刚好是入环点这些性质</li></ul></li></ul><pre><code class="line-numbers language-cpp">class Solution &#123;public:    ListNode *detectCycle(ListNode *head) &#123;            ListNode *fast = head, *slow = head;            do&#123;                if(!fast || !fast-&gt;next) return nullptr;                fast = fast-&gt;next-&gt;next;                slow = slow-&gt;next;            &#125;while(fast != slow);            fast = head;            while(fast!=slow)&#123;                fast = fast-&gt;next;                slow = slow-&gt;next;            &#125;            return fast;    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210324195636.png"></p><p>复杂度分析: </p><ul><li>时间复杂度: <code>O(N)</code> 判断是否为环路时, slow指针没有走完一圈, 判断环路起点时, slow走过的距离也不会超过链表的总长度. 因此, 时间复杂度为 <code>O(N) + O(N) = O(N)</code></li><li>空间复杂度: <code>O(1)</code></li></ul><h3 id="方法2-哈希表"><a href="#方法2-哈希表" class="headerlink" title="方法2: 哈希表"></a>方法2: 哈希表</h3><p>遍历整个链表, 记录每个节点, 若出现重复节点, 则该链表含有环路, 且该重复节点即为环路起始点</p><pre><code class="line-numbers language-cpp">class Solution &#123;public:    ListNode *detectCycle(ListNode *head) &#123;            unordered_set&lt;ListNode *&gt; visited;            while(head!=nullptr)&#123;                if(visited.count(head))&#123;                    return head;                &#125;                visited.insert(head);                head = head-&gt;next;            &#125;            return nullptr;        &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source/blog_images/img/20210324201142.png"></p><p>复杂度分析: </p><ul><li>时间复杂度: <code>O(N)</code> , 只需遍历一次链表</li><li>空间复杂度:  <code>O(N)</code>, 需要建立额外的hash表, 表长为N</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 双指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode_Day17</title>
       <link href="/2021/03/22/leetcode-day17/"/>
       <url>/2021/03/22/leetcode-day17/</url>

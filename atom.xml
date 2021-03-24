@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-24T10:12:09.971Z</updated>
+  <updated>2021-03-24T12:14:38.430Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_Day18</title>
+    <link href="https://godliuyang.wang/2021/03/23/leetcode-day18/"/>
+    <id>https://godliuyang.wang/2021/03/23/leetcode-day18/</id>
+    <published>2021-03-23T11:26:15.000Z</published>
+    <updated>2021-03-24T12:14:38.430Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;142-环形链表-II&quot;&gt;&lt;a href=&quot;#142-环形链表-II&quot; class=&quot;headerlink&quot; title=&quot;[142] 环形链表 II&quot;&gt;&lt;/a&gt;[142] 环形链表 II&lt;/h3&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+      <category term="双指针" scheme="https://godliuyang.wang/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode_Day17</title>
@@ -542,31 +572,6 @@
         
         
           &lt;p&gt;&lt;a href=&quot;https://github.com/junegunn/fzf&quot;&gt;fzf&lt;/a&gt; 是一个非常强大的终端文件模糊查找神器,在mac下也有许多优秀的工具,比如mac自带的    &lt;code&gt;spotlight&lt;/code&gt; , &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LINUX</title>
-    <link href="https://godliuyang.wang/2021/02/27/linux/"/>
-    <id>https://godliuyang.wang/2021/02/27/linux/</id>
-    <published>2021-02-27T12:35:16.000Z</published>
-    <updated>2021-02-28T08:33:45.983Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;USER&quot;&gt;&lt;a href=&quot;#USER&quot; class=&quot;headerlink&quot; title=&quot;USER&quot;&gt;&lt;/a&gt;USER&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;添加用户&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;line-numbers
         
       
     
