@@ -5,12 +5,14 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="LeetCode_Day16, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="双指针
-双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多 个数组的多个指针。
+    <meta name="keywords" content="LeetCode_Day17, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[88] 合并两个有序数组
+https://leetcode-cn.com/problems/merge-sorted-array/description/
 
-若两个指针指向同一数组，遍历方向相同且不会相交，则也称为 滑动窗口 (两个指针包围的 区域即为当前的窗口)，经常用于区间搜索。
-">
+algorithms
+Easy (49.33%)
+Likes:    808
+D">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode_Day16 | GeekOcean</title>
+    <title>LeetCode_Day17 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -336,13 +338,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/70.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/69.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode_Day16
+                        LeetCode_Day17
                     </div>
                 </div>
             </div>
@@ -473,8 +475,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
-                                算法
+                            <a href="/categories/%E5%8F%8C%E6%8C%87%E9%92%88/" class="post-category" target="_blank">
+                                双指针
                             </a>
                         
                     </div>
@@ -485,19 +487,19 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-24
+                    2021-03-22
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-24
+                    2021-03-22
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        289
+                        189
                     </div>
                     
 
@@ -522,52 +524,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><ul>
-<li><p>双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多 个数组的多个指针。</p>
-</li>
-<li><p>若两个指针指向同一数组，遍历方向相同且不会相交，则也称为 <strong>滑动窗口</strong> (两个指针包围的 区域即为当前的窗口)，经常用于区间搜索。</p>
-</li>
-<li><p>若两个指针指向同一数组，但是遍历方向相反，则可以用来进行搜索，待搜索的数组往往是 排好序的。</p>
-</li>
-</ul>
-<h2 id="167-两数之和-II-输入有序数组"><a href="#167-两数之和-II-输入有序数组" class="headerlink" title="[167] 两数之和 II - 输入有序数组"></a>[167] 两数之和 II - 输入有序数组</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/</a></p>
+                <p>[88] 合并两个有序数组</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-sorted-array/description/">https://leetcode-cn.com/problems/merge-sorted-array/description/</a></p>
 <ul>
 <li>algorithms</li>
-<li>Easy (57.40%)</li>
-<li>Likes:    490</li>
+<li>Easy (49.33%)</li>
+<li>Likes:    808</li>
 <li>Dislikes: -</li>
-<li>Total Accepted:    201.7K</li>
-<li>Total Submissions: 349.6K</li>
-<li>Testcase Example:  ‘[2,7,11,15]\n9’</li>
-<li>Source Code:       167.two-sum-ii-input-array-is-sorted.cpp</li>
+<li>Total Accepted:    291.8K</li>
+<li>Total Submissions: 589.2K</li>
+<li>Testcase Example:  ‘[1,2,3,0,0,0]\n3\n[2,5,6]\n3’</li>
+<li>Source Code:       88.merge-sorted-array.cpp</li>
 </ul>
-<p>给定一个已按照<strong><em> </em>升序排列  </strong>的整数数组 <code>numbers</code> ，请你从数组中找出两个数满足相加之和等于目标数 <code>target</code> 。</p>
+<p>给你两个有序整数数组 <code>nums1</code><em> </em>和 <code>nums2</code>，请你将 <code>nums2</code><em> </em>合并到 <code>nums1</code><em> </em>中<em>，</em>使 <code>nums1</code><em> </em>成为一个有序数组。</p>
 
-<p>函数应该以长度为 <code>2</code> 的整数数组的形式返回这两个数的下标值<em>。</em><code>numbers</code> 的下标 <strong>从 1 开始计数</strong> ，所以答案数组应当满足 <code>1 <= answer[0] < answer[1] <= numbers.length</code> 。</p>
+<p>初始化 <code>nums1</code> 和 <code>nums2</code> 的元素数量分别为 <code>m</code> 和 <code>n</code><em> </em>。你可以假设 <code>nums1</code><em> </em>的空间大小等于 <code>m + n</code>，这样它就有足够的空间保存来自 <code>nums2</code> 的元素。</p>
 
-<p>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</p>
-
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
 <pre>
-<strong>输入：</strong>numbers = [2,7,11,15], target = 9
-<strong>输出：</strong>[1,2]
-<strong>解释：</strong>2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
+<strong>输入：</strong>nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+<strong>输出：</strong>[1,2,2,3,5,6]
 </pre>
 
 <p><strong>示例 2：</strong></p>
 
 <pre>
-<strong>输入：</strong>numbers = [2,3,4], target = 6
-<strong>输出：</strong>[1,3]
-</pre>
-
-<p><strong>示例 3：</strong></p>
-
-<pre>
-<strong>输入：</strong>numbers = [-1,0], target = -1
-<strong>输出：</strong>[1,2]
+<strong>输入：</strong>nums1 = [1], m = 1, nums2 = [], n = 0
+<strong>输出：</strong>[1]
 </pre>
 
 <p> </p>
@@ -575,35 +561,40 @@
 <p><strong>提示：</strong></p>
 
 <ul>
-    <li><code>2 <= numbers.length <= 3 * 10<sup>4</sup></code></li>
-    <li><code>-1000 <= numbers[i] <= 1000</code></li>
-    <li><code>numbers</code> 按 <strong>递增顺序</strong> 排列</li>
-    <li><code>-1000 <= target <= 1000</code></li>
-    <li>仅存在一个有效答案</li>
+    <li><code>nums1.length == m + n</code></li>
+    <li><code>nums2.length == n</code></li>
+    <li><code>0 <= m, n <= 200</code></li>
+    <li><code>1 <= m + n <= 200</code></li>
+    <li><code>-10<sup>9</sup> <= nums1[i], nums2[i] <= 10<sup>9</sup></code></li>
 </ul>
 
-<h3 id="方法1-双指针"><a href="#方法1-双指针" class="headerlink" title="方法1: 双指针"></a>方法1: 双指针</h3><p>这是一个简单的双指针应用, 通过在数组首尾设置左右指针, 将其和与 <code>target</code> 进行对比, 若 <code>sum &gt; target</code> ,则将右指针左移, 若 <code>sum &lt; target</code> , 则将左指针右移</p>
+<h3 id="方法1-优美的双指针"><a href="#方法1-优美的双指针" class="headerlink" title="方法1: 优美的双指针!"></a>方法1: 优美的双指针!</h3><p>由于两个数组是有序的, 所以可以分别在两个数组末尾设置指针, 比较他们的值, 较大的直接写入 <code>nums1</code> 数组的末尾, 为了写入, 还需设置一个 <code>pos</code> 指针来记录位置</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210324175252.png"></p>
+<p>当 <code>nums1</code> 完成重写, 那么可直接将 <code>nums2</code> 中的数写入 <code>nums1</code> 即可; 若 <code>nums2</code> 先完成, 因为 <code>nums1</code> 中本就有序, 则完成重排</p>
 <pre><code class="line-numbers language-cpp">class Solution &#123;
 public:
-    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; numbers, int target) &#123;
-            int left = 0, right = numbers.size() - 1, sum;
-            while(left &lt; right)&#123;
-                sum = numbers[left] + numbers[right];
-                if(target == sum) break;
-                if(target &gt; sum) left++;
-                else right--;
+    void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) &#123;
+            int pos = (m--) + (n--) -1;
+            while(m&gt;=0 &amp;&amp; n&gt;=0)&#123;
+                nums1[pos--] = nums1[m] &gt; nums2[n] ? nums1[m--] : nums2[n--]; 
             &#125;
-            return vector&lt;int&gt;&#123;left+1, right+1&#125;;
+            while(n&gt;=0)&#123;
+                nums1[pos--] = nums2[n--];
+            &#125;
     &#125;
 &#125;;</code></pre>
-<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210324171452.png"></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210324180346.png"></p>
 <p>复杂度分析: </p>
 <ul>
-<li>时间复杂度: <code>O(n)</code>, 双指针移动总数最多为 n</li>
-<li>空间复杂度: <code>O(1)</code></li>
+<li>时间复杂度: <code>O(m+n)</code> ,  最多移动 <code>m+n</code> 次</li>
+<li>空间复杂度: <code>O(1)</code> , 直接在 <code>nums1</code> 上操作, 无需额外空间</li>
 </ul>
-<p>关于双指针为什么不会漏掉答案的详细解释:</p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/solution/yi-zhang-tu-gao-su-ni-on-de-shuang-zhi-zhen-jie-fa/">一张图告诉你 O(n) 的双指针解法的本质原理（C++/Java）</a> </p>
+<p>注意: 这里用到了 <code>a++, ++a</code> 的一些小技巧. </p>
+<ul>
+<li><code>a++</code> , 将a加1, 返回值为 <code>a</code></li>
+<li><code>++a</code> , 将a加1, 返回值为 <code>a+1</code></li>
+<li>若只希望增加a的值, 不需要返回值, 则推荐 <code>++a</code> , 运行速度快</li>
+</ul>
 
             </div>
             <hr/>
@@ -762,9 +753,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode_Day16》
+                    《LeetCode_Day17》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/24/leetcode-day16/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/22/leetcode-day17/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1070,31 +1061,31 @@ public:
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/03/24/leetcode-day16/">
+                <a href="/2021/03/22/leetcode-day17/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/70.webp" class="responsive-img" alt="LeetCode_Day16">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/69.webp" class="responsive-img" alt="LeetCode_Day17">
                         
-                        <span class="card-title">LeetCode_Day16</span>
+                        <span class="card-title">LeetCode_Day17</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            双指针
+                            88 -> 合并两个有序数组
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
-                                    算法
+                            <a href="/categories/%E5%8F%8C%E6%8C%87%E9%92%88/" class="post-category" target="_blank">
+                                    双指针
                                 </a>
                             
                             
@@ -1128,24 +1119,24 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/20/leetcode-day15/">
+                <a href="/2021/03/21/leetcode-day16/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/71.webp" class="responsive-img" alt="LeetCode_Day15">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/70.webp" class="responsive-img" alt="LeetCode_Day16">
                         
-                        <span class="card-title">LeetCode_Day15</span>
+                        <span class="card-title">LeetCode_Day16</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            665 -> 非递减数列
+                            双指针
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-21
                             </span>
                         <span class="publish-author">
                             
@@ -1170,8 +1161,8 @@ public:
                         <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" target="_blank">
-                        <span class="chip bg-color">贪心算法</span>
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1332,7 +1323,7 @@ public:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">53.9k</span>
+            <span class="white-color">54.1k</span>
             
 
             <br>

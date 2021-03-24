@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://godliuyang.wang/2021/03/24/leetcode-day16/</loc>
+    <loc>https://godliuyang.wang/2021/03/21/leetcode-day16/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/2021/03/22/leetcode-day17/</loc>
     
     <lastmod>2021-03-24</lastmod>
     
@@ -742,6 +749,13 @@
   
   <url>
     <loc>https://godliuyang.wang/categories/%E5%AE%9E%E4%B9%A0/Face-Recognition/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/categories/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
