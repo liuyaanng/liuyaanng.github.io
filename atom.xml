@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-24T05:53:39.479Z</updated>
+  <updated>2021-03-24T09:21:34.242Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_Day16</title>
+    <link href="https://godliuyang.wang/2021/03/24/leetcode-day16/"/>
+    <id>https://godliuyang.wang/2021/03/24/leetcode-day16/</id>
+    <published>2021-03-24T09:06:59.000Z</published>
+    <updated>2021-03-24T09:21:34.242Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+      <category term="双指针" scheme="https://godliuyang.wang/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode_Day15</title>
@@ -533,32 +564,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Neovim</title>
-    <link href="https://godliuyang.wang/2021/02/20/neovim/"/>
-    <id>https://godliuyang.wang/2021/02/20/neovim/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-03-03T14:59:52.197Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本文是为了方便记忆vim插件的一些快捷键。这是我的配置地址：&lt;a href=&quot;https://github.com/liuyaanng/nvim&quot;&gt;nvim&lt;/a&gt;,
-        
-      
-    
-    </summary>
-    
-    
-      <category term="vim" scheme="https://godliuyang.wang/tags/vim/"/>
-    
-      <category term="neovim" scheme="https://godliuyang.wang/tags/neovim/"/>
     
   </entry>
   
