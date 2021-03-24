@@ -5,8 +5,12 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="Local Binary Patterns, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="LBP算法LBP（Local Binary Patterns，局部二值模式）是一种能够有效地度量和提取图像局部纹理信息的算子，具有旋转不变性和灰度不变性等显著的优点。它是人脸识别中一种提取特征的重要方法，具有对光照不敏感的特性，但是对姿态和">
+    <meta name="keywords" content="LeetCode_Day19, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[76] 最小覆盖子串https://leetcode-cn.com/problems/minimum-window-substring/description/
+
+algorithms
+Hard (40.57%)
+Likes:    10">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Local Binary Patterns | GeekOcean</title>
+    <title>LeetCode_Day19 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -332,13 +336,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/54.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/67.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Local Binary Patterns
+                        LeetCode_Day19
                     </div>
                 </div>
             </div>
@@ -449,16 +453,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                                <span class="chip bg-color">图像处理</span>
-                            </a>
-                        
                             <a href="/tags/c/" target="_blank">
                                 <span class="chip bg-color">c++</span>
                             </a>
                         
-                            <a href="/tags/LBP/" target="_blank">
-                                <span class="chip bg-color">LBP</span>
+                            <a href="/tags/LeetCode/" target="_blank">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                                <span class="chip bg-color">双指针</span>
                             </a>
                         
                     </div>
@@ -469,8 +473,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%9E%E4%B9%A0/" class="post-category" target="_blank">
-                                实习
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                算法
                             </a>
                         
                     </div>
@@ -481,26 +485,26 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-01
+                    2021-03-24
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-08-01
+                    2021-03-24
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.8k
+                        141
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        18 分
+                        1 分
                     </div>
                     
                 
@@ -518,356 +522,120 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LBP算法"><a href="#LBP算法" class="headerlink" title="LBP算法"></a>LBP算法</h1><p>LBP（Local Binary Patterns，局部二值模式）是一种能够有效地度量和提取图像局部纹理信息的算子，具有旋转不变性和灰度不变性等显著的优点。它是人脸识别中一种提取特征的重要方法，具有对光照不敏感的特性，但是对姿态和表情的鲁棒性不强。</p>
-<h2 id="纹理"><a href="#纹理" class="headerlink" title="纹理"></a>纹理</h2><p>纹理是由于物体表面物理属性不同所引起的能够表示某个特定表面特征的灰度或颜色信息。纹理反映了图像灰度模式的空间分布，包含了图像的表面信息及其周围环境的关系。</p>
-<h2 id="基本的LBP算子"><a href="#基本的LBP算子" class="headerlink" title="基本的LBP算子"></a>基本的LBP算子</h2><p>局部二值模式是一种灰度范围内的纹理描述方式。最初的LBP算子定义在一个3×3的窗口，以窗口中心像素点为阈值，将相邻的像素的灰度值与其进行比较，若周围的像素值大于中心点的值，则将该像素位置标记为1,否则为0.这样一个3×3邻域内的8个点可产生一个8-bit的无符号数，再按其位置赋予不同权重求和得一整数，即可得到该窗口的 <strong>LBP</strong> 值，并用这个数反映该区域的纹理信息。<br>对比度分量C是邻域中所有大于和等于中心点像素的均值与所有小于中心点像素的均值之差。<br><img loading="lazy" src="https://i.loli.net/2019/07/31/5d415779ca87257597.jpg"></p>
-<p>基本的LBP算子最大的缺陷是只覆盖了一个固定半径范围内的小区域，改进的LBP算子，将3×3邻域扩展到任意邻域，用圆形邻域代替了正方形邻域，该算子允许在半径为R的圆形邻域内有任意多个像素点。</p>
+                <h3 id="76-最小覆盖子串"><a href="#76-最小覆盖子串" class="headerlink" title="[76] 最小覆盖子串"></a>[76] 最小覆盖子串</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-window-substring/description/">https://leetcode-cn.com/problems/minimum-window-substring/description/</a></p>
 <ul>
-<li>一个局部区域的纹理分布可假设为局部区域内像素灰度的联合分布密度<br>$$T = t(g_c,g_0, ….,g_{p-1})$$<br>$g_c$表示局部区域的中心点的灰度值,$g_p(p=0,1,…,p)$对应中心点周围等距分布的P个点</li>
-<li>采用 <strong>双线性插算法</strong> 对没有完全落在像素位置的点计算灰度值。邻域内的$g_p$点的坐标可以表示为:<br>$$(x_p,y_p) = (x_c + Rcos(\frac{2\pi}{P}),y_c - Rsin(\frac{2\pi}{P}))$$<br>$(x_c,y_c)$表示中心点的坐标</li>
-<li>将中心点$g_c$的值从邻域像素的灰度值$g_p$中减去，则局部区域的纹理可以用中心点和中心点与周边像素值之差的联合分布来表示:<br>$$T = t(g_c,g_0-g_c,….,g_{p-1}-g_c)$$</li>
-<li>假设中心像素点$g_c$与周边点像素$g_p$的差值$g_p-g_c(p=0,1,…P)$独立于中心点$g_c$，则<br>$$T\approx t(g_c)(g_0-g_c,…,g_{p-1}-g_c)$$</li>
-<li>实际上，$t(g_c)$只是描述了整个图像的亮度分布情况，而和图像的局部纹理无关，它不能为纹理分析提供任何有价值的信息<br>$$T\approx t(g_0-g_c,…,g_{p-1}-g_c)$$</li>
-<li>差值的联合分布具有灰度平移不变性，即邻域中所有P+1个像素同时加上或减去某个值，其表征的纹理不变。</li>
-<li>为了达到尺度不变的目的，只考虑差值的符号<br>$$T\approx t(s(g_0-g_c),…,s(g_p-g_c))$$</li>
+<li>algorithms</li>
+<li>Hard (40.57%)</li>
+<li>Likes:    1042</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    120.1K</li>
+<li>Total Submissions: 293.1K</li>
+<li>Testcase Example:  ‘“ADOBECODEBANC”\n”ABC”‘</li>
 </ul>
-<p>$$s(x)=\begin{cases}<br>1 , \quad &amp;x &gt; 0  \\<br>0 , &amp;x \geqslant 0<br>\end{cases}<br>$$</p>
-<p>上式得到了一个8位的二进制数，再对像素按不同位置用$2^p$进行加权求和，这样得到了一个与邻域像素点相关的唯一的 <strong>LBP</strong> 值，这个值称为 <strong>模式</strong>。这个值描述的是以$(x_c,y_c)$为中心的局部区域的纹理，可以表示为<br>$$LBP(x_c,y_c) = \sum_{p=0}^{P-1}s(g_p - g_c)2^P$$<br>上式意味着差值的符号转化成一个P-bit的二进制数，进而转化成为一个取值范围为0-$2^p$的离散的LBP值，或者说转化为一种LBP模式。</p>
-<ul>
-<li>局部区域的灰度分布或纹理，可以用这个LBP值或LBP模式近似描述为:<br>$$T\approx t(LBP(x_c,y_c))$$<br>LBP算子对于任何单调的灰度变化具有鲁棒性，用符号$LBP_P^R$表示在半径为R的圆形邻域内有P个像素点$g_p(p=0,1,…,P)$的LBP算子<br><img loading="lazy" src="https://i.loli.net/2019/07/31/5d415779b84ac47631.jpg"></li>
-</ul>
-<h2 id="LBP等价模式"><a href="#LBP等价模式" class="headerlink" title="LBP等价模式"></a>LBP等价模式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>当某个局部二进制模式所对应的循环二进制数从０到１或从１到０最多有两次跳变时，该局部二进制模式所对应的二进制就称为一个等价模式类。比如00000000,11111111,10001111都是等价类。</p>
-<h3 id="检验方法"><a href="#检验方法" class="headerlink" title="检验方法"></a>检验方法</h3><p>检验某种模式是否是等价模式的简单办法是将其和其移动一位后的二进制模式按位相减的绝对值求和<br>$$U(G_p) = |s(g_{p-1}-g_c)-s(g_0-g_c)|+\sum_{p=1}^{P-1}|s(g_p-g_c)-s(g_{p-1}-g_c)$$<br>若某种模式计算得到的 $U(G_p)$小于或等于２，则将其归于等价模式<br><img loading="lazy" src="https://i.loli.net/2019/07/31/5d415779c949196019.jpg"></p>
-<h2 id="旋转不变的LBP算子"><a href="#旋转不变的LBP算子" class="headerlink" title="旋转不变的LBP算子"></a>旋转不变的LBP算子</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>不断旋转圆形邻域得到一系列的初始定义的LBP值，取其最小值作为该邻域的LBP值，用公式表示为:<br>$$LBP_{P,R}^{ri} = min(ROR(LBP_{P,R}^{ri},i)|i=0,1,…,P-1)$$<br>$LBP^{ri}$表示旋转不变的LBP算子，$ROR(x,i)$函数为旋转函数，表示将x循环右移i(i&lt;P)位。</p>
-<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ul>
-<li>对于图像旋转，表现的更为鲁棒，并且LBP模式的种类进一步减少，使纹理识别更加容易。</li>
-<li>丢失了方向信息<br><img loading="lazy" src="https://i.loli.net/2019/07/31/5d415779b8fed91298.jpg"></li>
-</ul>
-<h2 id="旋转不变的的等价模式"><a href="#旋转不变的的等价模式" class="headerlink" title="旋转不变的的等价模式"></a>旋转不变的的等价模式</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>将等价模式类进行旋转得到旋转不变的等价模式</p>
-<p>$$LBP_{P,R}^{riu2} = \begin{cases}<br>\sum_{P=0}^{P-1}s(g_p-g_c), &amp; U(G_p) \leq 2 \\<br>P + 1, &amp; U(G_p) &gt;2<br>\end{cases}<br>$$</p>
-<p>其中$U(G_p)$表示0到1或1到0跳变的次数，$LBP^{riu2}$被称为旋转不变的等价模式</p>
-<h2 id="几种LBP算子的维数比较"><a href="#几种LBP算子的维数比较" class="headerlink" title="几种LBP算子的维数比较"></a>几种LBP算子的维数比较</h2><table>
-<thead>
-<tr>
-<th align="center">LBP</th>
-<th align="center">原始模式数</th>
-<th align="center">等价模式</th>
-<th align="center">旋转不变等价模式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$LBP_P^R$</td>
-<td align="center">$2^P$</td>
-<td align="center">$P(P-1) + 2$</td>
-<td align="center">$P+1$</td>
-</tr>
-<tr>
-<td align="center">$LBP_8^1$</td>
-<td align="center">256</td>
-<td align="center">58(+1)</td>
-<td align="center">9</td>
-</tr>
-<tr>
-<td align="center">$LBP_{16}^2$</td>
-<td align="center">65536</td>
-<td align="center">242(+1)</td>
-<td align="center">17</td>
-</tr>
-<tr>
-<td align="center">$LBP_{24}^3$</td>
-<td align="center">16777216</td>
-<td align="center">554(+1)</td>
-<td align="center">25</td>
-</tr>
-</tbody></table>
-<h1 id="LBP特征实现"><a href="#LBP特征实现" class="headerlink" title="LBP特征实现"></a>LBP特征实现</h1><h2 id="原始LBP特征"><a href="#原始LBP特征" class="headerlink" title="原始LBP特征"></a>原始LBP特征</h2><pre><code class="line-numbers language-cpp">//Original_LBP
-Mat get_original_LBP_feature(Mat img)&#123;
-  Mat result;
-  result.create(img.rows - 2, img.cols -2, img.type());
-  result.setTo(0);
-  for (int i = 1; i &lt; img.rows - 1; i++)&#123;
-    for (int j = 1; j &lt; img.cols -1; j++)&#123;
-      uchar center = img.at&lt;uchar&gt;(i, j);
-      uchar lbpcode = 0;
-      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j - 1) &gt;= center) &lt;&lt; 7;
-      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j) &gt;= center) &lt;&lt; 6;
-      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j + 1) &gt;= center) &lt;&lt; 5;
-      lbpcode |= (img.at&lt;uchar&gt;(i, j -1) &gt;= center) &lt;&lt; 4;
-      lbpcode |= (img.at&lt;uchar&gt;(i, j + 1) &gt;= center) &lt;&lt; 3;
-      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j - 1) &gt;= center) &lt;&lt; 2;
-      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j) &gt;= center) &lt;&lt; 1;
-      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j + 1) &gt;= center) &lt;&lt; 0;
-      result.at&lt;uchar&gt;(i - 1, j - 1) = lbpcode;
-    &#125;
-  &#125;
-  return result;
-&#125;</code></pre>
-<p><img loading="lazy" src="https://i.loli.net/2019/07/31/5d4161dac5f0b23887.png"></p>
-<h2 id="圆形LBP特征"><a href="#圆形LBP特征" class="headerlink" title="圆形LBP特征"></a>圆形LBP特征</h2><pre><code class="line-numbers language-cpp">//Circular_LBP_feature
-Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
-&#123;
-  Mat result;
-  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
-  result.setTo(0);
-  //循环处理每个像素
-  for(int i=radius;i&lt;img.rows-radius;i++)
-  &#123;
-      for(int j=radius;j&lt;img.cols-radius;j++)
-      &#123;
-          //获得中心像素点的灰度值
-          uchar center = img.at&lt;uchar&gt;(i,j);
-          uchar lbpCode = 0;
-          for(int k=0;k&lt;neighbors;k++)
-          &#123;
-              //根据公式计算第k个采样点的坐标，这个地方可以优化，不必每次都进行计算radius*cos，radius*sin
-              float x = i + static_cast&lt;float&gt;(radius * \
-                  cos(2.0 * CV_PI * k / neighbors));
-              float y = j - static_cast&lt;float&gt;(radius * \
-                  sin(2.0 * CV_PI * k / neighbors));
-                //根据取整结果进行双线性插值，得到第k个采样点的灰度值
-                //1.分别对x，y进行上下取整
-                int x1 = static_cast&lt;int&gt;(floor(x));
-                int x2 = static_cast&lt;int&gt;(ceil(x));
-                int y1 = static_cast&lt;int&gt;(floor(y));
-                int y2 = static_cast&lt;int&gt;(ceil(y));
+<p>给你一个字符串 <code>s</code> 、一个字符串 <code>t</code> 。返回 <code>s</code> 中涵盖 <code>t</code> 所有字符的最小子串。如果 <code>s</code> 中不存在涵盖 <code>t</code> 所有字符的子串，则返回空字符串 <code>""</code> 。</p>
 
-                //将坐标映射到0-1之间
-                float tx = x - x1;
-                float ty = y - y1;
-                //根据0-1之间的x，y的权重计算公式计算权重
-                float w1 = (1-tx) * (1-ty);
-                float w2 =    tx  * (1-ty);
-                float w3 = (1-tx) *    ty;
-                float w4 =    tx  *    ty;
-                //3.根据双线性插值公式计算第k个采样点的灰度值
-                float neighbor = img.at&lt;uchar&gt;(x1,y1) * w1 + img.at&lt;uchar&gt;(x1,y2) *w2 + img.at&lt;uchar&gt;(x2,y1) * w3 +img.at&lt;uchar&gt;(x2,y2) *w4;
-                //通过比较获得LBP值，并按顺序排列起来
-                lbpCode |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
+<p><strong>注意：</strong>如果 <code>s</code> 中存在这样的子串，我们保证它是唯一的答案。</p>
+
+<p> </p>
+
+<p><strong>示例 1：</strong></p>
+
+<pre>
+<strong>输入：</strong>s = "ADOBECODEBANC", t = "ABC"
+<strong>输出：</strong>"BANC"
+</pre>
+
+<p><strong>示例 2：</strong></p>
+
+<pre>
+<strong>输入：</strong>s = "a", t = "a"
+<strong>输出：</strong>"a"
+</pre>
+
+<p> </p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+    <li><code>1 <= s.length, t.length <= 10<sup>5</sup></code></li>
+    <li><code>s</code> 和 <code>t</code> 由英文字母组成</li>
+</ul>
+
+<p> </p>
+<strong>进阶：</strong>你能设计一个在 <code>o(n)</code> 时间内解决此问题的算法吗？
+
+<h3 id="方法1-双指针-滑动窗口"><a href="#方法1-双指针-滑动窗口" class="headerlink" title="方法1: 双指针(滑动窗口)"></a>方法1: 双指针(滑动窗口)</h3><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/76_fig.gif"></p>
+<p>思路:</p>
+<ul>
+<li>通过设置左右两个指针(left&lt;=right), 在两指针之间形成一个窗口, 每次仅仅移动一侧的指针.</li>
+<li>当前窗口未包含t中所需的所有字符串, 则右侧指针右移, 左侧指针不动, 直至满足条件; </li>
+<li>此时右侧指针保持不动, 左侧指针移动来获得能满足条件的最小滑动窗口</li>
+</ul>
+<p>知道原理后, 需要解决的问题如下:</p>
+<ul>
+<li><p>如何判断滑动窗口中是否包含t中全部字符</p>
+<ol>
+<li>设置 <code>flag</code> 数组用来记录t中出现的字母</li>
+<li>设置 <code>chars</code> 数组用来记录t中字母出现的次数, 也可当作滑动窗口中还需要相应字母的个数.  <strong>(当个数为负值则代表该字母有多余)</strong></li>
+<li>设置 <code>count</code> 变量来表示滑动窗口已包含t中字母的个数, 当 <code>count == t.size()</code> 时表示当前窗口已包含t中所有字母, 这也是滑动窗口左侧下标右移的条件</li>
+<li><code>flag</code> , <code>chars</code> 也可用 <code>hashtable</code></li>
+<li>因为字母 <code>z</code> 对应的ASCII码是 <code>123</code> , 所以将数组长度设为123即可, 不过将其设置为2的整数幂128更好</li>
+</ol>
+</li>
+<li><p>如何设置滑动窗口的移动</p>
+<ol>
+<li>具体设置见代码注释</li>
+<li>注意: 这里设置的滑动窗口的区间为 <code>[left, right)</code> , 左闭右开, 所以区间长度为 <code>right - left + 1</code></li>
+</ol>
+</li>
+</ul>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    string minWindow(string s, string t) &#123;
+            // chars 存储t中对应字母出现的次数
+            // flag 记录t中出现的字母
+            vector&lt;int&gt; chars(128, 0);
+            vector&lt;bool&gt; flag(128, false);
+            for(int i=0; i&lt;t.size(); ++i)&#123;
+                flag[t[i]] = true;
+                ++chars[t[i]];
             &#125;
-            result.at&lt;uchar&gt;(i-radius,j-radius) = lbpCode;
-        &#125;
-    &#125;
-  return result;
-&#125;</code></pre>
-<p>结果:<br><img loading="lazy" src="https://i.loli.net/2019/08/01/5d42b5d2e345026549.png"></p>
-<p>第一幅图设置半径为4,第二幅图设置半径为1,可以看到半径越小处理的越精细。</p>
-<h2 id="旋转不变LBP特征"><a href="#旋转不变LBP特征" class="headerlink" title="旋转不变LBP特征"></a>旋转不变LBP特征</h2><pre><code class="line-numbers language-cpp">//Rotation_Invariant_LBP_feature
-Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
-&#123;
-  Mat result;
-  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
-  result.setTo(0);
-  for(int k=0;k&lt;neighbors;k++)
-    &#123;
-        //计算采样点对于中心点坐标的偏移量rx，ry
-        float rx = static_cast&lt;float&gt;(radius * cos(2.0 * CV_PI * k / neighbors));
-        float ry = -static_cast&lt;float&gt;(radius * sin(2.0 * CV_PI * k / neighbors));
-        //为双线性插值做准备
-        //对采样点偏移量分别进行上下取整
-        int x1 = static_cast&lt;int&gt;(floor(rx));
-        int x2 = static_cast&lt;int&gt;(ceil(rx));
-        int y1 = static_cast&lt;int&gt;(floor(ry));
-        int y2 = static_cast&lt;int&gt;(ceil(ry));
-        //将坐标偏移量映射到0-1之间
-        float tx = rx - x1;
-        float ty = ry - y1;
-        //根据0-1之间的x，y的权重计算公式计算权重，权重与坐标具体位置无关，与坐标间的差值有关
-        float w1 = (1-tx) * (1-ty);
-        float w2 =    tx  * (1-ty);
-        float w3 = (1-tx) *    ty;
-        float w4 =    tx  *    ty;
-        //循环处理每个像素
-        for(int i=radius;i&lt;img.rows-radius;i++)
-        &#123;
-            for(int j=radius;j&lt;img.cols-radius;j++)
-            &#123;
-                //获得中心像素点的灰度值
-                uchar center = img.at&lt;uchar&gt;(i,j);
-                //根据双线性插值公式计算第k个采样点的灰度值
-                float neighbor = img.at&lt;uchar&gt;(i+x1,j+y1) * w1 + img.at&lt;uchar&gt;(i+x1,j+y2) *w2 + img.at&lt;uchar&gt;(i+x2,j+y1) * w3 +img.at&lt;uchar&gt;(i+x2,j+y2) *w4;
-                //LBP特征图像的每个邻居的LBP值累加，累加通过与操作完成，对应的LBP值通过移位取得
-                result.at&lt;uchar&gt;(i-radius,j-radius) |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
-            &#125;
-        &#125;
-    &#125;
-    //进行旋转不变处理
-    for(int i=0;i&lt;result.rows;i++)
-    &#123;
-        for(int j=0;j&lt;result.cols;j++)
-        &#123;
-            uchar currentValue = result.at&lt;uchar&gt;(i,j);
-            uchar minValue = currentValue;
-            for(int k=1;k&lt;neighbors;k++)        //循环左移
-            &#123;
-                uchar temp = (currentValue&gt;&gt;(neighbors-k)) | (currentValue&lt;&lt;k);
-                if(temp &lt; minValue)
-                &#123;
-                    minValue = temp;
+            int count=0, left=0, min_left = 0, min_size = s.size() + 1;
+            // count 代表滑动窗口中已包含t中字符的个数
+            // min_left用于记录最小滑动窗口的左侧下标
+            // min_size 用于记录最小滑动窗口大小
+            for(int right=0; right&lt;s.size(); ++right )&#123;
+                if(flag[s[right]])&#123;
+                    if(--chars[s[right]]&gt;=0)&#123;
+                        ++count;
+                    &#125;
+                    while(count==t.size())&#123;
+                        // 更新最小滑动窗口
+                        if(right - left + 1 &lt; min_size)&#123;
+                            min_left = left;
+                            min_size = right -left + 1;
+                        &#125;
+                        // 若左边待滑动元素是t中元素,并且若滑动, 当前滑动窗口不再包含t中所有字符
+                        // 待滑动
+                        if(flag[s[left]] &amp;&amp; ++chars[s[left]] &gt; 0)&#123;
+                            --count;
+                        &#125;
+                        // 执行滑动 
+                        //左侧向右滑动
+                        ++left;
+                    &#125;
                 &#125;
             &#125;
-            result.at&lt;uchar&gt;(i,j) = minValue;
-        &#125;
+            return min_size &gt; s.size() ? &quot;&quot; : s.substr(min_left, min_size);
     &#125;
-    return result;
-&#125;
-</code></pre>
-<p>结果:<br><img loading="lazy" src="https://i.loli.net/2019/08/01/5d42b5d30749958722.png"></p>
-<p>第一幅图neighbors值设置为8,第二幅设置为6,可以看出neighbors值越大，得到的LBP特征亮度越高。</p>
-<h2 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h2><pre><code class="line-numbers language-cpp">#include &lt;opencv2/highgui/highgui.hpp&gt;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210324234551.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(n)</code> , 注意这里虽然 <code>for</code> 循环里面有一个 <code>while</code> ,但 <code>while</code> 循环只负责 <code>left</code> 指针的移动, 且 <code>left</code> 指针只会从左向右移动1次, 故总的时间复杂度还是 <code>O(n)</code></li>
+<li>空间复杂度:  <code>O(1)</code></li>
+</ul>
 
-using namespace cv;
-
-//Original_LBP
-Mat get_original_LBP_feature(Mat img)&#123;
-  Mat result;
-  result.create(img.rows - 2, img.cols -2, img.type());
-  result.setTo(0);
-  for (int i = 1; i &lt; img.rows - 1; i++)&#123;
-    for (int j = 1; j &lt; img.cols -1; j++)&#123;
-      uchar center = img.at&lt;uchar&gt;(i, j);
-      uchar lbpcode = 0;
-      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j - 1) &gt;= center) &lt;&lt; 7;
-      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j) &gt;= center) &lt;&lt; 6;
-      lbpcode |= (img.at&lt;uchar&gt;(i - 1, j + 1) &gt;= center) &lt;&lt; 5;
-      lbpcode |= (img.at&lt;uchar&gt;(i, j -1) &gt;= center) &lt;&lt; 4;
-      lbpcode |= (img.at&lt;uchar&gt;(i, j + 1) &gt;= center) &lt;&lt; 3;
-      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j - 1) &gt;= center) &lt;&lt; 2;
-      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j) &gt;= center) &lt;&lt; 1;
-      lbpcode |= (img.at&lt;uchar&gt;(i + 1, j + 1) &gt;= center) &lt;&lt; 0;
-      result.at&lt;uchar&gt;(i - 1, j - 1) = lbpcode;
-    &#125;
-  &#125;
-  return result;
-&#125;
-
-//Circular_LBP_feature
-Mat get_circular_LBP_feature(Mat img, int radius, int neighbors)
-&#123;
-  Mat result;
-  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
-  result.setTo(0);
-  //循环处理每个像素
-  for(int i=radius;i&lt;img.rows-radius;i++)
-  &#123;
-      for(int j=radius;j&lt;img.cols-radius;j++)
-      &#123;
-          //获得中心像素点的灰度值
-          uchar center = img.at&lt;uchar&gt;(i,j);
-          uchar lbpCode = 0;
-          for(int k=0;k&lt;neighbors;k++)
-          &#123;
-              //根据公式计算第k个采样点的坐标，这个地方可以优化，不必每次都进行计算radius*cos，radius*sin
-              float x = i + static_cast&lt;float&gt;(radius * \
-                  cos(2.0 * CV_PI * k / neighbors));
-              float y = j - static_cast&lt;float&gt;(radius * \
-                  sin(2.0 * CV_PI * k / neighbors));
-                //根据取整结果进行双线性插值，得到第k个采样点的灰度值
-                //1.分别对x，y进行上下取整
-                int x1 = static_cast&lt;int&gt;(floor(x));
-                int x2 = static_cast&lt;int&gt;(ceil(x));
-                int y1 = static_cast&lt;int&gt;(floor(y));
-                int y2 = static_cast&lt;int&gt;(ceil(y));
-
-                //将坐标映射到0-1之间
-                float tx = x - x1;
-                float ty = y - y1;
-                //根据0-1之间的x，y的权重计算公式计算权重
-                float w1 = (1-tx) * (1-ty);
-                float w2 =    tx  * (1-ty);
-                float w3 = (1-tx) *    ty;
-                float w4 =    tx  *    ty;
-                //3.根据双线性插值公式计算第k个采样点的灰度值
-                float neighbor = img.at&lt;uchar&gt;(x1,y1) * w1 + img.at&lt;uchar&gt;(x1,y2) *w2 + img.at&lt;uchar&gt;(x2,y1) * w3 +img.at&lt;uchar&gt;(x2,y2) *w4;
-                //通过比较获得LBP值，并按顺序排列起来
-                lbpCode |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
-            &#125;
-            result.at&lt;uchar&gt;(i-radius,j-radius) = lbpCode;
-        &#125;
-    &#125;
-  return result;
-&#125;
-
-//Rotation_Invariant_LBP_feature
-Mat get_rotation_invariant_LBP_feature(Mat img, int radius, int neighbors)
-&#123;
-  Mat result;
-  result.create(img.rows - radius * 2, img.cols - radius * 2, img.type());
-  result.setTo(0);
-  for(int k=0;k&lt;neighbors;k++)
-    &#123;
-        //计算采样点对于中心点坐标的偏移量rx，ry
-        float rx = static_cast&lt;float&gt;(radius * cos(2.0 * CV_PI * k / neighbors));
-        float ry = -static_cast&lt;float&gt;(radius * sin(2.0 * CV_PI * k / neighbors));
-        //为双线性插值做准备
-        //对采样点偏移量分别进行上下取整
-        int x1 = static_cast&lt;int&gt;(floor(rx));
-        int x2 = static_cast&lt;int&gt;(ceil(rx));
-        int y1 = static_cast&lt;int&gt;(floor(ry));
-        int y2 = static_cast&lt;int&gt;(ceil(ry));
-        //将坐标偏移量映射到0-1之间
-        float tx = rx - x1;
-        float ty = ry - y1;
-        //根据0-1之间的x，y的权重计算公式计算权重，权重与坐标具体位置无关，与坐标间的差值有关
-        float w1 = (1-tx) * (1-ty);
-        float w2 =    tx  * (1-ty);
-        float w3 = (1-tx) *    ty;
-        float w4 =    tx  *    ty;
-        //循环处理每个像素
-        for(int i=radius;i&lt;img.rows-radius;i++)
-        &#123;
-            for(int j=radius;j&lt;img.cols-radius;j++)
-            &#123;
-                //获得中心像素点的灰度值
-                uchar center = img.at&lt;uchar&gt;(i,j);
-                //根据双线性插值公式计算第k个采样点的灰度值
-                float neighbor = img.at&lt;uchar&gt;(i+x1,j+y1) * w1 + img.at&lt;uchar&gt;(i+x1,j+y2) *w2 + img.at&lt;uchar&gt;(i+x2,j+y1) * w3 +img.at&lt;uchar&gt;(i+x2,j+y2) *w4;
-                //LBP特征图像的每个邻居的LBP值累加，累加通过与操作完成，对应的LBP值通过移位取得
-                result.at&lt;uchar&gt;(i-radius,j-radius) |= (neighbor&gt;center) &lt;&lt;(neighbors-k-1);
-            &#125;
-        &#125;
-    &#125;
-    //进行旋转不变处理
-    for(int i=0;i&lt;result.rows;i++)
-    &#123;
-        for(int j=0;j&lt;result.cols;j++)
-        &#123;
-            uchar currentValue = result.at&lt;uchar&gt;(i,j);
-            uchar minValue = currentValue;
-            for(int k=1;k&lt;neighbors;k++)        //循环左移
-            &#123;
-                uchar temp = (currentValue&gt;&gt;(neighbors-k)) | (currentValue&lt;&lt;k);
-                if(temp &lt; minValue)
-                &#123;
-                    minValue = temp;
-                &#125;
-            &#125;
-            result.at&lt;uchar&gt;(i,j) = minValue;
-        &#125;
-    &#125;
-    return result;
-&#125;
-
-int main(int argc, char* argv[])
-&#123;
-  Mat src = imread(argv[1], 0);
-  Mat dst = get_original_LBP_feature(src);
-  Mat odst1 = get_circular_LBP_feature(src, 1, 8);
-  //Mat odst4 = get_circular_LBP_feature(src, 4, 8);
-  Mat rif8 = get_rotation_invariant_LBP_feature(src, 1, 8);
-  Mat rif6 = get_rotation_invariant_LBP_feature(src, 1, 6);
-
-
-  imshow(&quot;原始图片&quot;, src);
-  imshow(&quot;原始LBP&quot;, dst);
-  imshow(&quot;圆形LBP&quot;, odst1);
-  //imshow(&quot;圆形LBP4&quot;, odst4);
-  imshow(&quot;旋转不变LBP&quot;, rif8);
-  //imshow(&quot;旋转不变LBP6&quot;, rif6);
-
-  waitKey(0);
-  return 0;
-&#125;</code></pre>
-<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2019/08/10/face-recognition-with-opencv/">Face Recognition</a></li><li><a href="https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/">PCA算法实现</a></li><li><a href="https://godliuyang.wang/2019/08/03/face-detection/">Face Detection</a></li></ul></div>
             </div>
             <hr/>
             
@@ -1025,9 +793,9 @@ int main(int argc, char* argv[])
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Local Binary Patterns》
+                    《LeetCode_Day19》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/01/local-binary-patterns/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/24/leetcode-day19/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1328,57 +1096,56 @@ int main(int argc, char* argv[])
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/08/03/face-detection/">
+                <a href="/2021/03/24/leetcode-day19/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/Face-Detection/img.jpg" class="responsive-img" alt="Face Detection">
                         
-                        <span class="card-title">Face Detection</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/67.webp" class="responsive-img" alt="LeetCode_Day19">
+                        
+                        <span class="card-title">LeetCode_Day19</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于LBP的人脸检测
+                            76 -> 最小覆盖子串
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9E%E4%B9%A0/" class="post-category" target="_blank">
-                                    实习
-                                </a>
-                            
-                            <a href="/categories/%E5%AE%9E%E4%B9%A0/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/" class="post-category" target="_blank">
-                                    人脸检测
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Face-Detection/" target="_blank">
-                        <span class="chip bg-color">Face_Detection</span>
-                    </a>
-                    
-                    <a href="/tags/OpenCV/" target="_blank">
-                        <span class="chip bg-color">OpenCV</span>
-                    </a>
-                    
                     <a href="/tags/c/" target="_blank">
                         <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1392,30 +1159,31 @@ int main(int argc, char* argv[])
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/29/high-quality-ellipse-detection/">
+                <a href="/2021/03/23/leetcode-day18/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/High-quality-ellipse-detection/img.jpg" class="responsive-img" alt="High-quality-ellipse-detection">
                         
-                        <span class="card-title">High-quality-ellipse-detection</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/68.webp" class="responsive-img" alt="LeetCode_Day18">
+                        
+                        <span class="card-title">LeetCode_Day18</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            高精度椭圆检测
+                            142 -> 环形链表 II
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9E%E4%B9%A0/" class="post-category" target="_blank">
-                                    实习
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
@@ -1425,20 +1193,16 @@ int main(int argc, char* argv[])
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
-                    </a>
-                    
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
-                    </a>
-                    
-                    <a href="/tags/OpenCV/" target="_blank">
-                        <span class="chip bg-color">OpenCV</span>
-                    </a>
-                    
                     <a href="/tags/c/" target="_blank">
                         <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1590,13 +1354,6 @@ int main(int argc, char* argv[])
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
