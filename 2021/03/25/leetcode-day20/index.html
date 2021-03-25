@@ -5,11 +5,12 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="空间滤波, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="空间滤波基础滤波的原理：空间滤波是采用滤波处理的图像增强的方法，理论基础是空间卷积和空间相关，目的是改善图片质量
-线性空间滤波
-移动滤波的模板w称为滤波器
-相关 与 卷积：相关是指模板w按下图所示的方式进行图像数组的处理。在原理上，卷积是相">
+    <meta name="keywords" content="LeetCode_Day20, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[633] 平方数之和https://leetcode-cn.com/problems/sum-of-square-numbers/description/
+
+algorithms
+Medium (34.98%)
+Likes:    169">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>空间滤波 | GeekOcean</title>
+    <title>LeetCode_Day20 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -335,13 +336,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/45.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        空间滤波
+                        LeetCode_Day20
                     </div>
                 </div>
             </div>
@@ -452,12 +453,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                                <span class="chip bg-color">图像处理</span>
+                            <a href="/tags/c/" target="_blank">
+                                <span class="chip bg-color">c++</span>
                             </a>
                         
-                            <a href="/tags/Matlab/" target="_blank">
-                                <span class="chip bg-color">Matlab</span>
+                            <a href="/tags/LeetCode/" target="_blank">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                                <span class="chip bg-color">双指针</span>
                             </a>
                         
                     </div>
@@ -468,8 +473,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                Digital Image Processing
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                算法
                             </a>
                         
                     </div>
@@ -480,26 +485,26 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-17
+                    2021-03-25
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-07-17
+                    2021-03-25
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        298
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        1 分
                     </div>
                     
                 
@@ -517,149 +522,87 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="空间滤波基础"><a href="#空间滤波基础" class="headerlink" title="空间滤波基础"></a>空间滤波基础</h1><h2 id="滤波的原理："><a href="#滤波的原理：" class="headerlink" title="滤波的原理："></a>滤波的原理：</h2><p>空间滤波是采用滤波处理的图像增强的方法，理论基础是空间卷积和空间相关，目的是改善图片质量</p>
-<h2 id="线性空间滤波"><a href="#线性空间滤波" class="headerlink" title="线性空间滤波"></a>线性空间滤波</h2><ul>
-<li>移动滤波的模板w称为滤波器</li>
-<li>相关 与 卷积：<br>相关是指模板w按下图所示的方式进行图像数组的处理。在原理上，卷积是相同的处理过程，只不过在w通过之前先将它选旋转180度<br><img loading="lazy" src="https://i.loli.net/2019/07/16/5d2d9d9ea213761403.jpg"><br>相关与卷积操作说明<br><img loading="lazy" src="https://i.loli.net/2019/07/16/5d2d9dffdbc4911045.jpg"><br>需要注意的地方：    </li>
-</ul>
-<ol>
-<li>相关是滤波器位移的函数</li>
-<li>滤波器w与一个只包含一个1其余全是0的函数相关，得到的是旋转了180度的滤波器w，将这个函数称之为<strong>离散单位冲激</strong><br>结论: 一个函数与离散单位冲激相关，在该冲激位置产生这个函数的一个翻转版本<br>一个函数与离散单位冲激相关激卷积，得到的是在该冲激处的这个函数的拷贝，这个复制的性质称为筛选<br>这种定义推广到图像如下图所示<br><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2e77c7afba429201.jpg"><br>为了便于表达，以公式形式总结两种形式</li>
-</ol>
+                <h2 id="633-平方数之和"><a href="#633-平方数之和" class="headerlink" title="[633] 平方数之和"></a>[633] 平方数之和</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">https://leetcode-cn.com/problems/sum-of-square-numbers/description/</a></p>
 <ul>
-<li>大小为m×n的滤波模板w(x,y)与函数f(x,y)的相关<pre><code>   ![](https://i.loli.net/2019/07/17/5d2e78e52323950837.jpg)</code></pre>
-</li>
-<li>大小为m×n的滤波模板w(x,y)与函数f(x,y)的卷积<br>$$w(x,y)\bigstar f(x,y)=\sum_{s=-a}^{a}\sum_{t=-b}^{b}w(s,t)f(x+s,y+t)$$</li>
+<li>algorithms</li>
+<li>Medium (34.98%)</li>
+<li>Likes:    169</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    40.4K</li>
+<li>Total Submissions: 114.8K</li>
+<li>Testcase Example:  ‘5’</li>
+<li>Source Code:       633.sum-of-square-numbers.cpp</li>
 </ul>
-<ul>
-<li><p>Matlab的实现:<br>工具箱使用imfilter来实现线性空间滤波，语法如下:</p>
-<pre><code class="line-numbers language-matlab">g = imfilter(f, w, filtering_mode, boundary_options, size_options)</code></pre>
-<p>默认值为相关，若想执行卷积操作，有以下两种做法：</p>
-<pre><code class="line-numbers language-matlab">g = imfilter(f, w, &#39;conv&#39;)</code></pre>
-<p>或者使用<code>rot90(w, 2)</code>来将w旋转180度</p>
-<pre><code class="line-numbers language-matlab">g = imfilter(f, rot90(w, 2))</code></pre>
-<p>f是输入图像，w为滤波模板，g为滤波结果<br>其他参数如下<br><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2e84e556ad615011.jpg"><br>使用matlab实现为</p>
-<pre><code class="line-numbers language-matlab">f = imread(&#39;filter.jpg&#39;);
-F = im2double(f);
-imshow(F);
-title(&#39;current image&#39;);
+<p>给定一个非负整数&nbsp;<code>c</code>&nbsp;，你要判断是否存在两个整数 <code>a</code> 和 <code>b</code>，使得&nbsp;<code>a<sup>2</sup> + b<sup>2</sup> = c</code> 。</p>
 
-w = ones(31);
-gd = imfilter(F, w);
-figure,imshow(gd, [ ]);
-title(&#39;Default&#39;);
+<p>&nbsp;</p>
 
-gr = imfilter(F, w, &#39;replicate&#39;);
-figure,imshow(gr, [ ]);
-title(&#39;replicate&#39;);
+<p><strong>示例 1：</strong></p>
 
-gs = imfilter(F, w, &#39;symmetric&#39;);
-figure,imshow(gs, [ ]);
-title(&#39;symmetric&#39;);
+<pre><strong>输入：</strong>c = 5
+<strong>输出：</strong>true
+<strong>解释：</strong>1 * 1 + 2 * 2 = 5
+</pre>
 
-gc = imfilter(F, w, &#39;circular&#39;);
-figure,imshow(gc, [ ]);
-title(&#39;circular&#39;);
+<p><strong>示例 2：</strong></p>
 
-g = imfilter(f, w, &#39;replicate&#39;);
-figure,imshow(g, [ ]);
-title(&#39;replicate unit8&#39;);</code></pre>
-<p>这里开始读取的filter.jpg为uint8格式，故在处理之前先使用<code>im2double</code>将其转化为double类型以提高精度<br>滤波结果如下<br><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2e8517ac67e80281.jpg"></p>
-</li>
-</ul>
-<h2 id="非线性空间滤波："><a href="#非线性空间滤波：" class="headerlink" title="非线性空间滤波："></a>非线性空间滤波：</h2><p>线性空间滤波基于计算乘积和，即线性操作，非线性空间滤波基于涉及邻域像素内的非线性操作，例如，使每个中心点的响应等于邻域内像素最大值的操作可以称为是非线性滤波操作      </p>
+<pre><strong>输入：</strong>c = 3
+<strong>输出：</strong>false
+</pre>
+
+<p><strong>示例 3：</strong></p>
+
+<pre><strong>输入：</strong>c = 4
+<strong>输出：</strong>true
+</pre>
+
+<p><strong>示例 4：</strong></p>
+
+<pre><strong>输入：</strong>c = 2
+<strong>输出：</strong>true
+</pre>
+
+<p><strong>示例 5：</strong></p>
+
+<pre><strong>输入：</strong>c = 1
+<strong>输出：</strong>true</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
 <ul>
-<li>Matlab工具</li>
+    <li><code>0 &lt;= c &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
-<ol>
-<li>nlfilter：直接执行二维操作</li>
-<li>coldilt：按列组织数据，更多采用</li>
-</ol>
-<h2 id="标准的-空间滤波器"><a href="#标准的-空间滤波器" class="headerlink" title="标准的 空间滤波器"></a>标准的 <strong>空间滤波器</strong></h2><h3 id="线性空间滤波器"><a href="#线性空间滤波器" class="headerlink" title="线性空间滤波器"></a>线性空间滤波器</h3><ul>
-<li><p>可以使用fspecial实现，生成滤波器w</p>
-<pre><code class="line-numbers language-matlab">w = fspecial(&#39;type&#39;, parameters)
-</code></pre>
-<p>  ‘type’表示滤波器的类型，’parameters’进一步定义指定的滤波器<br>  应用参数如下：<br>  <img loading="lazy" src="https://i.loli.net/2019/07/17/5d2eba0f5055d41026.jpg"><br>  <img loading="lazy" src="https://i.loli.net/2019/07/17/5d2ec9491164776894.jpg"></p>
-</li>
-<li><p>Laplace滤波器的实现</p>
+
+<h3 id="方法1-双指针"><a href="#方法1-双指针" class="headerlink" title="方法1: 双指针"></a>方法1: 双指针</h3><p>本题可以使用双指针快速找到答案, 思想还是等同于遇到有序数组, 只不过数组范围为 <code>0, sqrt(c)</code><br>唯一需要注意的是 <code>c</code> 的取值范围 , 最好用 <code>long</code> 来创建双指针</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    bool judgeSquareSum(int c) &#123;
+            if(c&lt;=2)&#123;
+                return true;
+            &#125;
+            long a = 0, b = sqrt(c);
+            while(a&lt;=b)&#123;
+                if(b*b == c - a*a)&#123;
+                    return true;
+                &#125;else if(b*b &lt; c - a*a)&#123;
+                    ++a;
+                &#125;else&#123;
+                    --b;
+                &#125;
+            &#125;
+            return false;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210325100329.png"></p>
+<p>复杂度分析: </p>
 <ul>
-<li><p>原理：<br>图像f(x,y)的laplace算子：<br><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2ec90e6a75162149.jpg"><br>Laplace算子增强公式：<br>$$g(x,y) = f(x,y)+c[\triangledown ^2 f(x,y)]$$<br>注意：如果模板的中心系数为正，c为1;如果为负，c为0.</p>
-<pre><code class="line-numbers language-matlab">fspecial(&#39;laplacian&#39;, alpha)</code></pre>
-<p>可以实现更为一般的laplace模板</p>
-</li>
+<li>时间复杂度: <code>O(sqrt(n))</code></li>
+<li>空间复杂度: <code>O(1)</code></li>
 </ul>
-<ul>
-<li><p>下面是用laplace滤波器增强图像的例子：<br>首先设置滤波器</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; w = fspecial(&#39;laplacian&#39;, 0);</code></pre>
-<p><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2ed6fcca83142276.jpg"></p>
-<p>输入的图像为unit8类，</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; g1 = imfilter(f, w, &#39;replicate&#39;);
-&gt;&gt; imshow(g1);</code></pre>
-<p>得到结果，但存在问题，所有像素都是正的。原因：滤波器的中心参数为负值，为了解决这一问题，可以在滤波前将f转换为浮点数</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; ff = tofloat(f);
-&gt;&gt; g2 = imfilter(ff, w, &#39;replicate&#39;);
-&gt;&gt; imshow(g2);</code></pre>
-<p>这里tofloat为M-IPT函数，实现代码如下：</p>
-<pre><code class="line-numbers language-matlab">function [out,revertclass] = tofloat(inputimage)
-%Copy the book of Gonzales
-identify = @(x) x;
-tosingle = @im2single;
-table = &#123;&#39;uint8&#39;,tosingle,@im2uint8
-&#39;uint16&#39;,tosingle,@im2uint16
-&#39;logical&#39;,tosingle,@logical
-&#39;double&#39;,identify,identify
-&#39;single&#39;,identify,identify&#125;;
-classIndex = find(strcmp(class(inputimage),table(:,1)));
-if isempty(classIndex)
-error(&#39;不支持的图像类型&#39;);
-end
-out = table&#123;classIndex,2&#125;(inputimage);
-revertclass = table&#123;classIndex,3&#125;;</code></pre>
-<p>导入workspace即可</p>
-<p>最后用原始图像减去laplace图像来恢复失去的灰度层次(因为中心参数为负值)</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; g = ff - g2;
-imshow(g);</code></pre>
-<p>可以看到结果比原图象要清晰<br><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2ed69eaa47174206.jpg"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="非线性空间滤波器"><a href="#非线性空间滤波器" class="headerlink" title="非线性空间滤波器"></a>非线性空间滤波器</h3><ul>
-<li>函数ordfilt2计算统计排序(order-statistic filter)滤波器(也叫做rank filter,即排序滤波器)<br>语法为：</li>
-</ul>
-<pre><code class="line-numbers language-matlab">g = ordfilt2(f, order, domain)</code></pre>
-<p>用邻域集合中的第order个元素去替换f中的每个元素的值来生成图像g，domain是由0和1组成的大小为m×n的矩阵，规定了在计算中使用的邻域中像素点的位置</p>
-<ul>
-<li>中值滤波器，最著名的统计排序滤波器，对应第50个百分位，对应奇数的m和n</li>
-</ul>
-<pre><code class="line-numbers language-matlab">g = ordfilt2(f, (m*n + 1)/2, ones(m, n));
-</code></pre>
-<ul>
-<li>这里提供了一个专门的二维中值滤波器:</li>
-</ul>
-<pre><code class="line-numbers language-matlab">g = medfilt2(f, [m, n], padopt)</code></pre>
-<p>  padopt规定了三个可能的边缘填充选项:</p>
-<ol>
-<li>‘zeros’,默认值</li>
-<li>‘symmetric’,f按照镜像反射方式对称地沿边缘扩展</li>
-<li>‘indexed’，f属于double类，用1填充;否则用0填充</li>
-</ol>
-<ul>
-<li><p>中值滤波增强图像:<br>首先给图像添加黑白噪点发生概率为0.2的’椒盐噪声’</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; fn = imnoise(f, &#39;salt &amp; pepper&#39;, 0.2)</code></pre>
-<p>对带噪图像进行中值滤波处理</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; gm = medfilt2(fn)</code></pre>
-<p>注意，在这里出现了错误，==A应为二维==<br><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2ed759e608448713.jpg"></p>
-<p>原因:中值滤波medfilt2,输入的图像应为二维矩阵，实际输入的为imread读取的图像加上噪声，通常是三维RGB图，是三维矩阵<br>解决办法:先用rgb2gray(f)将图像转换为灰度矩阵图像</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; fn2 = rgb2gray(fn);
-&gt;&gt; gm = medfilt2(fn2);
-&gt;&gt; imshow(gm);</code></pre>
-<p>减弱外圈黑点</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; gms = medfilt2(fn2, &#39;symmetric&#39;);</code></pre>
-</li>
-</ul>
-<p><img loading="lazy" src="https://i.loli.net/2019/07/17/5d2ed7776b71a55041.jpg"></p>
-<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/">PCA算法实现</a></li><li><a href="https://godliuyang.wang/2019/08/01/local-binary-patterns/">Local Binary Patterns</a></li><li><a href="https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/">High-quality-ellipse-detection</a></li></ul></div>
+<h3 id="方法2-二分查找"><a href="#方法2-二分查找" class="headerlink" title="方法2: 二分查找"></a>方法2: 二分查找</h3><p>待完善</p>
+
             </div>
             <hr/>
             
@@ -817,9 +760,9 @@ imshow(g);</code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《空间滤波》
+                    《LeetCode_Day20》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/17/kong-jian-lu-bo/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/25/leetcode-day20/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1120,49 +1063,56 @@ imshow(g);</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/19/pin-yu-lu-bo/">
+                <a href="/2021/03/25/leetcode-day20/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="频域滤波">
                         
-                        <span class="card-title">频域滤波</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/45.webp" class="responsive-img" alt="LeetCode_Day20">
+                        
+                        <span class="card-title">LeetCode_Day20</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二维傅立叶变换、Matlab实现傅立叶变换及其逆变换、DFT滤波
+                            633 -> 平方数之和
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
                     </a>
                     
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1176,30 +1126,31 @@ imshow(g);</code></pre>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/15/digital-image-processing/">
+                <a href="/2021/03/24/leetcode-day19/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="Digital Image Processing">
                         
-                        <span class="card-title">Digital Image Processing</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/67.webp" class="responsive-img" alt="LeetCode_Day19">
+                        
+                        <span class="card-title">LeetCode_Day19</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Digital Image Processing Notes.
+                            76 -> 最小覆盖子串
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
@@ -1209,12 +1160,16 @@ imshow(g);</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
                     </a>
                     
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1366,13 +1321,6 @@ imshow(g);</code></pre>
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">
