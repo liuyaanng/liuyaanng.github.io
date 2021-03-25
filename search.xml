@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>LeetCode_每日一题</title>
+      <link href="/2021/03/25/leetcode-mei-ri-yi-ti/"/>
+      <url>/2021/03/25/leetcode-mei-ri-yi-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="82-删除排序链表中的重复元素-II"><a href="#82-删除排序链表中的重复元素-II" class="headerlink" title="[82] 删除排序链表中的重复元素 II"></a>[82] 删除排序链表中的重复元素 II</h2><p><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/description/">https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/description/</a></p><ul><li>algorithms</li><li>Medium (50.18%)</li><li>Likes:    535</li><li>Dislikes: -</li><li>Total Accepted:    106.5K</li><li>Total Submissions: 206.7K</li><li>Testcase Example:  ‘[1,2,3,3,4,4,5]’</li></ul><p>存在一个按升序排列的链表，给你这个链表的头节点 <code>head</code> ，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中 <strong>没有重复出现</strong><em> </em>的数字。</p><p>返回同样按升序排列的结果链表。</p><p> </p><p><strong>示例 1：</strong></p><img loading="lazy" alt="" src="https://assets.leetcode.com/uploads/2021/01/04/linkedlist1.jpg" style="width: 500px; height: 142px;" /><pre><strong>输入：</strong>head = [1,2,3,3,4,4,5]<strong>输出：</strong>[1,2,5]</pre><p><strong>示例 2：</strong></p><img loading="lazy" alt="" src="https://assets.leetcode.com/uploads/2021/01/04/linkedlist2.jpg" style="width: 500px; height: 205px;" /><pre><strong>输入：</strong>head = [1,1,1,2,3]<strong>输出：</strong>[2,3]</pre><p> </p><p><strong>提示：</strong></p><ul>    <li>链表中节点数目在范围 <code>[0, 300]</code> 内</li>    <li><code>-100 <= Node.val <= 100</code></li>    <li>题目数据保证链表已经按升序排列</li></ul><h3 id="方法1-迭代-一次遍历"><a href="#方法1-迭代-一次遍历" class="headerlink" title="方法1:  迭代(一次遍历)"></a>方法1:  迭代(一次遍历)</h3><p>因为链表是排好序的, 所以重复的元素一定是连续的. 所以一次遍历即可删除重复元素. 在处理链表问题时, <code>head</code> 节点有可能被删除, 所以需要设置一个哑节点(dummy node) 使得    <code>dummy-&gt;next = head</code> ,这是重点.</p><p>具体迭代如下: </p><ul><li>设置 <code>pos</code> 节点指向链表的哑节点, 遍历链表, 遍历需要保证 <code>pos-&gt;next</code> 和 <code>pos-&gt;next-&gt;next</code> 存在, 若 <code>pos-&gt;next-&gt;val</code> 与 <code>pos-&gt;next-&gt;next-&gt;val</code> 相等, 代表该数字重复, 用一个变量 <code>x</code> 来记录这个重复的数字</li><li>继续遍历, 当 <code>pos-&gt;next</code> 存在 且 <code>pos-&gt;next-&gt;val</code> 与 <code>x</code> 相等, 则将指针继续后移, 忽略掉这个相等的数字, 重复此操作, 直到 <code>pos-&gt;next-&gt;val</code> 与 <code>x</code> 不等, 或 <code>pos-&gt;next</code> 不存在</li><li>返回值是 <code>dummy-&gt;next</code></li><li>未将 <code>dummy node</code> 和被删除节点释放<pre><code class="line-numbers language-cpp">class Solution &#123;public:  ListNode* deleteDuplicates(ListNode* head) &#123;          if(!head) return head;          // 创建 dummy node , dummy-&gt;next = head          ListNode* dummy = new ListNode(0, head);          ListNode* pos = dummy;          while(pos-&gt;next &amp;&amp; pos-&gt;next-&gt;next)&#123;              if(pos-&gt;next-&gt;val == pos-&gt;next-&gt;next-&gt;val)&#123;                  int x = pos-&gt;next-&gt;val;                  while(pos-&gt;next &amp;&amp; pos-&gt;next-&gt;val == x)&#123;                      pos-&gt;next = pos-&gt;next-&gt;next;                  &#125;              &#125;else&#123;                  pos = pos-&gt;next;              &#125;          &#125;          return dummy-&gt;next;  &#125;&#125;;</code></pre></li></ul><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210325163437.png"></p><p>复杂度分析: </p><ul><li>时间复杂度: <code>O(n)</code> , 仅需一次遍历</li><li>空间复杂度:  <code>O(1)</code></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 每日一题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode_Day20</title>
       <link href="/2021/03/25/leetcode-day20/"/>
       <url>/2021/03/25/leetcode-day20/</url>
