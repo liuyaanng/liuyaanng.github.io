@@ -495,14 +495,14 @@ algorit">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        832
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        5 分
                     </div>
                     
                 
@@ -611,8 +611,69 @@ public:
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210326195612.png"></p>
 <p>复杂度分析: </p>
 <ul>
-<li>时间复杂度: <code>O(n*s + nx)</code> , n 代表字典中子串个数, x代表子串平均长度, s代表字符串s长度</li>
+<li>时间复杂度: <code>O(n*s+nx)</code> , n 代表字典中子串个数, x代表子串平均长度, s代表字符串s长度</li>
 <li>空间复杂度: <code>O(n)</code> , 需要额外hashtable</li>
+</ul>
+<h2 id="340-至多包含-K-个不同字符的最长子串"><a href="#340-至多包含-K-个不同字符的最长子串" class="headerlink" title="[340] 至多包含 K 个不同字符的最长子串"></a>[340] 至多包含 K 个不同字符的最长子串</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/">https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/</a></p>
+<p>给定一个字符串 s ，找出 至多 包含 k 个不同字符的最长子串 T。</p>
+
+<p><strong>示例 1:</strong></p>
+
+<pre>
+<strong>输入:</strong>
+s = "eceba", k = 2
+<strong>输出:</strong>
+3
+<strong>解释:</strong>
+ 则 T 为 "ece"，所以长度为 3。
+</pre>
+<p><strong>示例 2:</strong></p>
+
+<pre>
+<strong>输入:</strong>
+s = "aa", k = 1
+<strong>输出:</strong>
+2
+<strong>解释:</strong>
+ 则 T 为 "aa"，所以长度为 2。
+</pre>
+
+
+<h3 id="方法1-双指针-滑动窗口-hashtable"><a href="#方法1-双指针-滑动窗口-hashtable" class="headerlink" title="方法1: 双指针(滑动窗口) + hashtable"></a>方法1: 双指针(滑动窗口) + hashtable</h3><p>思路: 使用双指针设置一个窗口, 保证窗口内的字符串满足题意即可</p>
+<p>步骤: </p>
+<ul>
+<li>创建 <code>hashtable</code> 来存储字母出现的次数, <code>hashtable</code> 的长度为k, 创建 <code>count</code> 变量来统计窗口中不同字母的个数, 用于跟 <code>k</code> 做对比</li>
+<li>设置 <code>left</code> 和 <code>right</code> 指针, 遍历字符串, 如果 <code>hashtable</code> 中没有该字母, 则将其加入 <code>hashtable</code>, 如果存在, 则次数 +1.</li>
+<li>每次加入新字母时, <code>count</code> 要 +1.</li>
+<li>如果 <code>count &gt; k</code> 时, 要将滑动窗口最左侧的字母删掉, 即将 <code>left</code> 指针右移一位, 在移动指针之前, 要先判断如果将该字母移除, <code>hashtable</code> 中还是否存在该字母</li>
+<li>若存在,    可直接执行 <code>left</code> 指针右移, 若不存在, 则将 <code>count</code> -1, 表示可以接受新字母</li>
+<li>遍历过程中, 取滑动窗口的最大值, 即 <code>right - left + 1</code> 的最大值</li>
+</ul>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    int lengthOfLongestSubstringKDistinct(string s, int k) &#123;
+        map&lt;char, int&gt; window;
+        int left=0, count=0, res=0;
+        for(int right=0;right&lt;s.size(); ++right)&#123;
+            if(window.count(s[right]) == 0) count += 1;
+            window[s[right]] += 1;
+            while(count &gt; k)&#123;
+                if(--window[s[left]] == 0)&#123;
+                    window.erase(s[left]);
+                    --count;
+                &#125;
+                ++left;
+            &#125;
+            res = max(res, right - left + 1);
+        &#125;
+        return  res;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210326233359.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(n)</code>, 仅需遍历一次</li>
+<li>空间复杂度: <code>O(k)</code>, hashtable</li>
 </ul>
 
             </div>
@@ -1338,7 +1399,7 @@ public:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">56.1k</span>
+            <span class="white-color">56.6k</span>
             
 
             <br>
