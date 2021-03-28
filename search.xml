@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>LeetCode_第234场周赛</title>
+      <link href="/2021/03/28/leetcode-di-234-chang-zhou-sai/"/>
+      <url>/2021/03/28/leetcode-di-234-chang-zhou-sai/</url>
+      
+        <content type="html"><![CDATA[<h3 id="5713-字符串中不同整数的数目"><a href="#5713-字符串中不同整数的数目" class="headerlink" title="5713. 字符串中不同整数的数目"></a>5713. 字符串中不同整数的数目</h3><p><a href="https://leetcode-cn.com/problems/number-of-different-integers-in-a-string/">https://leetcode-cn.com/problems/number-of-different-integers-in-a-string/</a> </p><p>思路: 双指针问题, 匹配数字, 保持字符串, 去除多余的0, 存入hash表, hash表的大小即为不同整数的数目</p><pre><code class="line-numbers language-cpp">class Solution &#123;public:    int numDifferentIntegers(string word) &#123;        unordered_set &lt;string&gt; nums;        for(int i = 0; i &lt; word.size(); ++i)&#123;            if(!isdigit(word[i])) continue;            string s;            int j = i;            while(j &lt; word.size() &amp;&amp; isdigit(word[j])) s += word[j++];            int k = 0;            while(k&lt;s.size() &amp;&amp; s[k] == &#39;0&#39;) ++k;            nums.insert(s.substr(k));            i = j;        &#125;        return nums.size();    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210328213952.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode_Day23</title>
       <link href="/2021/03/28/leetcode-day23/"/>
       <url>/2021/03/28/leetcode-day23/</url>
