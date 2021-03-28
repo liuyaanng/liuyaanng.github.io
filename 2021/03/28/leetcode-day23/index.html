@@ -611,7 +611,7 @@ public:
     vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) &#123;
             if(nums.empty()) return vector&lt;int&gt; &#123;-1, -1&#125;;
             int lower = lower_bound(nums, target);
-            int upper = upper_bound(nums, target) - 1;
+            int upper = upper_bound(nums, target) - 1; // 左闭右开
 
             if(lower == nums.size() || nums[lower] != target) return vector&lt;int&gt; &#123;-1, -1&#125;;
 
