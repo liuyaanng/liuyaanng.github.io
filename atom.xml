@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-03-27T07:56:16.516Z</updated>
+  <updated>2021-03-28T09:30:36.083Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_Day22</title>
+    <link href="https://godliuyang.wang/2021/03/27/leetcode-day22/"/>
+    <id>https://godliuyang.wang/2021/03/27/leetcode-day22/</id>
+    <published>2021-03-27T09:07:49.000Z</published>
+    <updated>2021-03-28T09:30:36.083Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;二分查找&quot;&gt;&lt;a href=&quot;#二分查找&quot; class=&quot;headerlink&quot; title=&quot;二分查找&quot;&gt;&lt;/a&gt;二分查找&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;二分查找也常被称为二分法或者折半查找，每次查找时通过将待查找区间分成两部分并只取
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
+    
+      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
+    
+      <category term="二分法" scheme="https://godliuyang.wang/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode_每日一题2</title>
@@ -575,35 +606,6 @@
       <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
     
       <category term="剑指Offer" scheme="https://godliuyang.wang/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode_Day4</title>
-    <link href="https://godliuyang.wang/2021/03/09/leetcode-day4/"/>
-    <id>https://godliuyang.wang/2021/03/09/leetcode-day4/</id>
-    <published>2021-03-09T02:10:38.000Z</published>
-    <updated>2021-03-11T08:29:03.980Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;[136] 只出现一次的数字&lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
-    
-      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
     
   </entry>
   

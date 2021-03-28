@@ -5,15 +5,10 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="Digital Image Processing, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="Digital Image Processing notes:
-图像处理的步骤：
-
-图像获取 包括图像预处理
-图像滤波与增强 使之适用于 特定应用
-图像复原 倾向于以图像退化的数学或概率模型为基础
-彩色图像处理
-压缩 减少图像存储量或降低传">
+    <meta name="keywords" content="LeetCode_Day22, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="二分查找
+二分查找也常被称为二分法或者折半查找，每次查找时通过将待查找区间分成两部分并只取 一部分继续查找，将查找的复杂度大大减少。对于一个长度为 $O(n)$ 的数组，二分查找的时间复 杂度为 $O(log n)$ 
+数学定义: 给定一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Digital Image Processing | GeekOcean</title>
+    <title>LeetCode_Day22 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -339,13 +334,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/43.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Digital Image Processing
+                        LeetCode_Day22
                     </div>
                 </div>
             </div>
@@ -456,12 +451,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                                <span class="chip bg-color">图像处理</span>
+                            <a href="/tags/c/" target="_blank">
+                                <span class="chip bg-color">c++</span>
                             </a>
                         
-                            <a href="/tags/Matlab/" target="_blank">
-                                <span class="chip bg-color">Matlab</span>
+                            <a href="/tags/LeetCode/" target="_blank">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" target="_blank">
+                                <span class="chip bg-color">二分法</span>
                             </a>
                         
                     </div>
@@ -472,8 +471,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                Digital Image Processing
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                算法
                             </a>
                         
                     </div>
@@ -484,19 +483,19 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-15
+                    2021-03-27
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-07-15
+                    2021-03-27
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        573
+                        556
                     </div>
                     
 
@@ -521,80 +520,84 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Digital-Image-Processing-notes"><a href="#Digital-Image-Processing-notes" class="headerlink" title="Digital Image Processing notes:"></a>Digital Image Processing notes:</h2><ul>
-<li><p>图像处理的步骤：</p>
-<ol>
-<li>图像获取 包括图像预处理</li>
-<li>图像滤波与增强 使之适用于 <strong>特定应用</strong></li>
-<li>图像复原 倾向于以图像退化的数学或概率模型为基础</li>
-<li>彩色图像处理</li>
-<li>压缩 减少图像存储量或降低传输图像带宽 </li>
-<li>形态学处理</li>
-<li>图像分割</li>
-<li>目标识别<h3 id="数字图像基础"><a href="#数字图像基础" class="headerlink" title="数字图像基础"></a>数字图像基础</h3></li>
-</ol>
-</li>
-<li><p>灰度概念<br>  灰度是表明图像明暗的数值，即黑白图像中点的颜色深度，范围一般是0-255,白色为255,黑色为0,归一化处理之后[0,1],0代表黑色，1代表白色。</p>
-</li>
-<li><p>图像取样与量化</p>
+                <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><ul>
+<li>二分查找也常被称为二分法或者折半查找，每次查找时通过将待查找区间分成两部分并只取 一部分继续查找，将查找的复杂度大大减少。对于一个长度为 $O(n)$ 的数组，二分查找的时间复 杂度为 $O(log n)$ </li>
+<li>数学定义: 给定一个在 <code>[a, b]</code> 区间内的单调函数 $f(x)$ ，若<br>$f(a)$ 和 $f(b)$ 正负性相反，那么必定存在一个解 $c$ ，使得 $f(c) = 0$</li>
+</ul>
+<h2 id="69-x-的平方根"><a href="#69-x-的平方根" class="headerlink" title="[69] x 的平方根"></a>[69] x 的平方根</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sqrtx/description/">https://leetcode-cn.com/problems/sqrtx/description/</a></p>
 <ul>
-<li>对坐标值数字化称为取样，对幅度值数字化称为量化</li>
+<li>algorithms</li>
+<li>Easy (39.23%)</li>
+<li>Likes:    632</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    280.6K</li>
+<li>Total Submissions: 715.3K</li>
+<li>Testcase Example:  ‘4’</li>
+<li>Source Code:       69.sqrtx.cpp</li>
 </ul>
-</li>
-<li><p>数字的图像表示<br>  将连续图像取样表示为一个二维阵列 $f(x,y)$</p>
-<ol>
-<li>函数图表示：用x和y两个坐标轴来表示空间位置，第三个坐标为f(灰度)值，即 $f(x,y,z)$，</li>
-<li>一般的表示：显示的是 $f(x,y)$在监视器或照片上的情况，每个点的灰度与该点处的f值成正比，例如归一化[0,1],三个等间隔点分别为0,0.5,1</li>
-<li>矩阵： 将 $f(x,y)$的值打印成矩阵<br>注意坐标为右手笛卡尔系</li>
-</ol>
-</li>
-<li><p>对比度： 最高和最低的灰度级的差</p>
-</li>
-<li><p>典型灰度级：<br>$$2^k$$<br>称为一副’k bit图像’</p>
-</li>
-<li><p>图像内插</p>
+<p>实现&nbsp;<code>int sqrt(int x)</code>&nbsp;函数。</p>
+
+<p>计算并返回&nbsp;<em>x</em>&nbsp;的平方根，其中&nbsp;<em>x </em>是非负整数。</p>
+
+<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+
+<p><strong>示例 1:</strong></p>
+
+<pre><strong>输入:</strong> 4
+<strong>输出:</strong> 2
+</pre>
+
+<p><strong>示例 2:</strong></p>
+
+<pre><strong>输入:</strong> 8
+<strong>输出:</strong> 2
+<strong>说明:</strong> 8 的平方根是 2.82842...,
+&nbsp;    由于返回类型是整数，小数部分将被舍去。
+</pre>
+
+<h3 id="方法1-二分查找"><a href="#方法1-二分查找" class="headerlink" title="方法1: 二分查找"></a>方法1: 二分查找</h3><p>思路: 设置两个指针, 代表区间 <code>[a, b]</code> 的首尾(注意这里双指针算法不太同, 双指针是一次移动一位, 这里一次移动半个区间) , 取中位数 <code>mid</code> 与 <code>x/mid</code> 进行计算对比, 若 <code>mid</code> 大, 则取 <code>mid</code> 左边区间继续计算, 反之则取右边区间</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    int mySqrt(int x) &#123;
+            if(x==0) return x;
+
+            int left=1, right=x, mid=0, sqrt=0;
+            while(left &lt;= right)&#123;
+                mid = (right - left) / 2 + left;
+                // cout &lt;&lt; mid &lt;&lt; endl;
+                sqrt = x / mid;
+                if(sqrt == mid)&#123;
+                    return mid;
+                &#125;else if(sqrt &gt; mid)&#123;
+                    left = mid + 1;
+                &#125;else&#123;
+                    right = mid - 1;
+                &#125;
+            &#125;
+            return right;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210328171929.png"></p>
+<p>复杂度分析: </p>
 <ul>
-<li>最邻近内插</li>
-<li>双线性内插</li>
-<li>双三次内插</li>
+<li>时间复杂度: <code>O(logn)</code></li>
+<li>空间复杂度: <code>O(1)</code></li>
 </ul>
-</li>
-<li><p>图像处理的算术操作</p>
-<ul>
-<li>图片相加  平均 -&gt; 降噪</li>
-<li>图片相减  增强图像差别</li>
-<li>图片想乘除  校正阴影</li>
-</ul>
-</li>
-<li><p>灰度变换</p>
-<ul>
-<li>s = T(r)</li>
-<li>Matlab中的灰度变换函数<br><code>imadjust(f,[LOW_IN,HIGH_IN],[LOW_OUT,HIGH_OUT],grmma)</code></li>
-</ul>
-</li>
-<li><p>直方图的处理和函数绘图</p>
-<ul>
-<li><p>生成图像的直方图</p>
-<pre><code class="line-numbers language-matlab">  &gt;&gt; h = imhist(f)</code></pre>
-</li>
-<li><p>也可以用条形图来表示</p>
-<pre><code class="line-numbers language-matlab">&gt;&gt; h = imhist(f,25);
-&gt;&gt; horz = linespace(0,255,25);
-&gt;&gt; bar(horz,h)
-&gt;&gt; axis(0 255 0 60000);
-&gt;&gt; set(gca, &#39;xtick&#39;, 0:50:255)
-&gt;&gt; set(gca, &#39;ytick&#39;, 0:20000:60000)</code></pre>
-</li>
-<li><p>杆状图<br><code>stem(horz, z , &#39;LineSpec&#39;, &#39;fill&#39;)</code></p>
-</li>
-<li><p>plot函数<br><code>plot(horz, z, &#39;LineSpec&#39;)</code></p>
-</li>
-<li><p>当处理函数句柄时<br><code>fplot(fhandle, limits, &#39;LineSpec&#39;)</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2019/08/07/pca-suan-fa-shi-xian/">PCA算法实现</a></li><li><a href="https://godliuyang.wang/2019/08/01/local-binary-patterns/">Local Binary Patterns</a></li><li><a href="https://godliuyang.wang/2019/07/29/high-quality-ellipse-detection/">High-quality-ellipse-detection</a></li></ul></div>
+<h3 id="方法2-牛顿迭代法"><a href="#方法2-牛顿迭代法" class="headerlink" title="方法2: 牛顿迭代法"></a>方法2: 牛顿迭代法</h3><p>也就比第一种方法快 <strong>亿</strong> 点点</p>
+<h4 id="牛顿迭代-原理"><a href="#牛顿迭代-原理" class="headerlink" title="牛顿迭代 原理"></a>牛顿迭代 原理</h4><p>待完善</p>
+<p>迭代公式: $x_{n+1} = x_n - f(x_n) / f’(x_n)$<br>求平方根, 等价于给定 $f(x) = x^2 - a = 0$, 代入上式, 可🉐️迭代公式: $x_{n+1} = (x_n + a / x_n) / 2$</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    int mySqrt(int x) &#123;
+            long n = x;
+            while( n * n &gt; x )&#123;
+                n = (n + x / n) / 2;
+            &#125;
+            return n;
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210328172546.png"></p>
+
             </div>
             <hr/>
             
@@ -752,9 +755,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Digital Image Processing》
+                    《LeetCode_Day22》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/15/digital-image-processing/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/27/leetcode-day22/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -1055,86 +1058,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/17/kong-jian-lu-bo/">
+                <a href="/2021/03/27/leetcode-day22/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="空间滤波">
                         
-                        <span class="card-title">空间滤波</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/43.webp" class="responsive-img" alt="LeetCode_Day22">
+                        
+                        <span class="card-title">LeetCode_Day22</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            滤波的原理、滤波器及Matlab中滤波器的实现
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
-                    </a>
-                    
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/07/15/digital-image-processing/">
-                    <div class="card-image">
-                        
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="Digital Image Processing">
-                        
-                        <span class="card-title">Digital Image Processing</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Digital Image Processing Notes.
+                            居合斩! 二分查找
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
@@ -1145,12 +1098,73 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
                     </a>
                     
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" target="_blank">
+                        <span class="chip bg-color">二分法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/27/leetcode-mei-ri-yi-ti-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/49.webp" class="responsive-img" alt="LeetCode_每日一题2">
+                        
+                        <span class="card-title">LeetCode_每日一题2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            61 -> 旋转链表
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" target="_blank">
+                        <span class="chip bg-color">每日一题</span>
                     </a>
                     
                 </div>

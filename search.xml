@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>LeetCode_Day22</title>
+      <link href="/2021/03/27/leetcode-day22/"/>
+      <url>/2021/03/27/leetcode-day22/</url>
+      
+        <content type="html"><![CDATA[<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><ul><li>二分查找也常被称为二分法或者折半查找，每次查找时通过将待查找区间分成两部分并只取 一部分继续查找，将查找的复杂度大大减少。对于一个长度为 $O(n)$ 的数组，二分查找的时间复 杂度为 $O(log n)$ </li><li>数学定义: 给定一个在 <code>[a, b]</code> 区间内的单调函数 $f(x)$ ，若<br>$f(a)$ 和 $f(b)$ 正负性相反，那么必定存在一个解 $c$ ，使得 $f(c) = 0$</li></ul><h2 id="69-x-的平方根"><a href="#69-x-的平方根" class="headerlink" title="[69] x 的平方根"></a>[69] x 的平方根</h2><p><a href="https://leetcode-cn.com/problems/sqrtx/description/">https://leetcode-cn.com/problems/sqrtx/description/</a></p><ul><li>algorithms</li><li>Easy (39.23%)</li><li>Likes:    632</li><li>Dislikes: -</li><li>Total Accepted:    280.6K</li><li>Total Submissions: 715.3K</li><li>Testcase Example:  ‘4’</li><li>Source Code:       69.sqrtx.cpp</li></ul><p>实现&nbsp;<code>int sqrt(int x)</code>&nbsp;函数。</p><p>计算并返回&nbsp;<em>x</em>&nbsp;的平方根，其中&nbsp;<em>x </em>是非负整数。</p><p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p><p><strong>示例 1:</strong></p><pre><strong>输入:</strong> 4<strong>输出:</strong> 2</pre><p><strong>示例 2:</strong></p><pre><strong>输入:</strong> 8<strong>输出:</strong> 2<strong>说明:</strong> 8 的平方根是 2.82842...,&nbsp;    由于返回类型是整数，小数部分将被舍去。</pre><h3 id="方法1-二分查找"><a href="#方法1-二分查找" class="headerlink" title="方法1: 二分查找"></a>方法1: 二分查找</h3><p>思路: 设置两个指针, 代表区间 <code>[a, b]</code> 的首尾(注意这里双指针算法不太同, 双指针是一次移动一位, 这里一次移动半个区间) , 取中位数 <code>mid</code> 与 <code>x/mid</code> 进行计算对比, 若 <code>mid</code> 大, 则取 <code>mid</code> 左边区间继续计算, 反之则取右边区间</p><pre><code class="line-numbers language-cpp">class Solution &#123;public:    int mySqrt(int x) &#123;            if(x==0) return x;            int left=1, right=x, mid=0, sqrt=0;            while(left &lt;= right)&#123;                mid = (right - left) / 2 + left;                // cout &lt;&lt; mid &lt;&lt; endl;                sqrt = x / mid;                if(sqrt == mid)&#123;                    return mid;                &#125;else if(sqrt &gt; mid)&#123;                    left = mid + 1;                &#125;else&#123;                    right = mid - 1;                &#125;            &#125;            return right;    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210328171929.png"></p><p>复杂度分析: </p><ul><li>时间复杂度: <code>O(logn)</code></li><li>空间复杂度: <code>O(1)</code></li></ul><h3 id="方法2-牛顿迭代法"><a href="#方法2-牛顿迭代法" class="headerlink" title="方法2: 牛顿迭代法"></a>方法2: 牛顿迭代法</h3><p>也就比第一种方法快 <strong>亿</strong> 点点</p><h4 id="牛顿迭代-原理"><a href="#牛顿迭代-原理" class="headerlink" title="牛顿迭代 原理"></a>牛顿迭代 原理</h4><p>待完善</p><p>迭代公式: $x_{n+1} = x_n - f(x_n) / f’(x_n)$<br>求平方根, 等价于给定 $f(x) = x^2 - a = 0$, 代入上式, 可🉐️迭代公式: $x_{n+1} = (x_n + a / x_n) / 2$</p><pre><code class="line-numbers language-cpp">class Solution &#123;public:    int mySqrt(int x) &#123;            long n = x;            while( n * n &gt; x )&#123;                n = (n + x / n) / 2;            &#125;            return n;    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210328172546.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 二分法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode_每日一题2</title>
       <link href="/2021/03/27/leetcode-mei-ri-yi-ti-2/"/>
       <url>/2021/03/27/leetcode-mei-ri-yi-ti-2/</url>
