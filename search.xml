@@ -33,6 +33,35 @@
     
     
     <entry>
+      <title>LeetCode_Day24</title>
+      <link href="/2021/03/29/leetcode-day24/"/>
+      <url>/2021/03/29/leetcode-day24/</url>
+      
+        <content type="html"><![CDATA[<h2 id="540-有序数组中的单一元素"><a href="#540-有序数组中的单一元素" class="headerlink" title="[540] 有序数组中的单一元素"></a>[540] 有序数组中的单一元素</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/description/">https://leetcode-cn.com/problems/single-element-in-a-sorted-array/description/</a></p><ul><li>algorithms</li><li>Medium (58.50%)</li><li>Likes:    214</li><li>Dislikes: -</li><li>Total Accepted:    26.1K</li><li>Total Submissions: 44.7K</li><li>Testcase Example:  ‘[1,1,2,3,3,4,4,8,8]’</li></ul><p>给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。</p><p><strong>示例 1:</strong></p><pre><strong>输入:</strong> [1,1,2,3,3,4,4,8,8]<strong>输出:</strong> 2</pre><p><strong>示例 2:</strong></p><pre><strong>输入:</strong> [3,3,7,7,10,11,11]<strong>输出:</strong> 10</pre><p><strong>注意:</strong> 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。</p><h3 id="方法1-暴力搜索"><a href="#方法1-暴力搜索" class="headerlink" title="方法1: 暴力搜索"></a>方法1: 暴力搜索</h3><p>思路: 遍历数组, 比较第 <code>nums[i]</code> 与 <code>nums[i+1]</code>, 相等则往后跳两格继续比较</p><pre><code class="line-numbers language-cpp">class Solution &#123;public:    int singleNonDuplicate(vector&lt;int&gt;&amp; nums) &#123;            int i = 0;            while(i&lt;nums.size() - 1)&#123;                if(nums[i] == nums[i+1])&#123;                    i+=2;                &#125;else&#123;                    return nums[i];                &#125;            &#125;            return nums[i];    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210330210930.png"></p><p>复杂度分析: </p><ul><li>时间复杂度: <code>O(n)</code></li><li>空间复杂度: <code>O(1)</code></li></ul><h3 id="方法2-二分查找"><a href="#方法2-二分查找" class="headerlink" title="方法2: 二分查找"></a>方法2: 二分查找</h3><p>思路: 在出现单一元素之前, 数字是重复出现的, 若此时在中间去掉一组数, 其左右两侧仍然是偶数, 在出现单一元素后, 若在中间去掉一组数, 那么必然一侧偶数, 一侧单数, 分开讨论即可</p><p>步骤: 关于 <code>mid</code> 的情况, 总共有三种</p><ul><li>首先判断一侧是否为偶数: <code>are_even = (right - mid) % 2 == 0</code></li><li><code>nums[mid] == nums[mid+1]</code> 如果 <code>are_even</code> 为真, 则证明去掉 <code>mid</code> 和 <code>mid+1</code> 项, 右侧共有奇数项, 则左侧一定为偶数项, 此时将        <code>left</code> 移到 <code>mid+2</code> 位置继续探索; 反之将 <code>right</code> 移到 <code>mid-1</code></li></ul><table><thead><tr><th>1</th><th>1</th><th>2</th><th>2</th><th>3</th><th>3</th><th>4</th><th>···</th><th>8</th><th>8</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>mid</td><td>mid+1</td><td></td><td></td><td></td><td></td></tr></tbody></table><ul><li><code>nums[mid] == nums[mid-1]</code> 如果    <code>are_even</code> 为真, 则证明去掉 <code>mid</code> 和 <code>mid-1</code> 项, 右侧为共有偶数项, 则左侧一定为奇数项, 单一元素在左侧, 此时将 <code>right</code> 移到 <code>mid-2</code> 位置继续探索; 反之将 <code>lfet</code> 移到 <code>mid+2</code> </li></ul><table><thead><tr><th>1</th><th>1</th><th>2</th><th>2</th><th>3</th><th>3</th><th>4</th><th>···</th><th>8</th><th>8</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>mid-1</td><td>mid</td><td></td><td></td><td></td><td></td></tr></tbody></table><ul><li>若以上条件都不满足, 则 <code>mid</code> 所在位置即为单一元素</li></ul><table><thead><tr><th>1</th><th>1</th><th>2</th><th>2</th><th>3</th><th>4</th><th>4</th><th>···</th><th>8</th><th>8</th></tr></thead><tbody><tr><td></td><td></td><td></td><td>mid-1</td><td>mid</td><td>mid+1</td><td></td><td></td><td></td><td></td></tr></tbody></table><pre><code class="line-numbers language-cpp">class Solution &#123;public:    int singleNonDuplicate(vector&lt;int&gt;&amp; nums) &#123;            int left=0, right = nums.size() -1, mid;            while(left &lt; right)&#123;                mid = left + right &gt;&gt; 1;                bool are_even = (right - mid) % 2 == 0;                 if(nums[mid] == nums[mid + 1])&#123;                    if(are_even)&#123;                        left = mid + 2;                    &#125; else &#123;                        right = mid - 1;                    &#125;                &#125;else if(nums[mid] == nums[mid - 1])&#123;                    if(are_even)&#123;                        right = right - 2;                    &#125; else&#123;                        left = left + 1;                    &#125;                &#125;else&#123;                    return nums[mid];                &#125;            &#125;            return nums[right];    &#125;&#125;;</code></pre><p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210330221349.png"></p><p>复杂度分析: </p><ul><li>时间复杂度: <code>O(logn)</code></li><li>空间复杂度: <code>O(1)</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 二分法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode_第234场周赛</title>
       <link href="/2021/03/28/leetcode-di-234-chang-zhou-sai/"/>
       <url>/2021/03/28/leetcode-di-234-chang-zhou-sai/</url>

@@ -5,8 +5,11 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="hexo大坑, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="坑一、Template render error 模板渲染错误写了一下午博文，高高兴兴地hexo g却发现报错了！INFO  Start processing FATAL Something&amp;#39;s wrong. Maybe you c">
+    <meta name="keywords" content="LeetCode_Day24, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[540] 有序数组中的单一元素https://leetcode-cn.com/problems/single-element-in-a-sorted-array/description/
+
+algorithms
+Medium (58.50">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo大坑 | GeekOcean</title>
+    <title>LeetCode_Day24 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -332,13 +335,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/img.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/41.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo大坑
+                        LeetCode_Day24
                     </div>
                 </div>
             </div>
@@ -449,8 +452,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/" target="_blank">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/c/" target="_blank">
+                                <span class="chip bg-color">c++</span>
+                            </a>
+                        
+                            <a href="/tags/LeetCode/" target="_blank">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" target="_blank">
+                                <span class="chip bg-color">二分法</span>
                             </a>
                         
                     </div>
@@ -461,8 +472,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" target="_blank">
-                                教程
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                算法
                             </a>
                         
                     </div>
@@ -473,26 +484,26 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-22
+                    2021-03-29
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-07-22
+                    2021-03-29
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        490
+                        653
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -510,16 +521,186 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="坑一、Template-render-error-模板渲染错误"><a href="#坑一、Template-render-error-模板渲染错误" class="headerlink" title="坑一、Template render error 模板渲染错误"></a>坑一、Template render error 模板渲染错误</h2><p>写了一下午博文，高高兴兴地hexo g却发现报错了！<br><code>INFO  Start processing FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html Nunjucks Error:  [Line 2, Column 6] unexpected token: &#125;&#125;  at formatNunjucksError (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:102:13)     at Promise.fromCallback.catch.err (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:124:34)     at tryCatcher (/home/kevin/blog/node_modules/bluebird/js/release/util.js:16:23)     at Promise._settlePromiseFromHandler (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:517:31)     at Promise._settlePromise (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:574:18)     at Promise._settlePromise0 (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:619:10)     at Promise._settlePromises (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:695:18)     at _drainQueueStep (/home/kevin/blog/node_modules/bluebird/js/release/async.js:138:12)     at _drainQueue (/home/kevin/blog/node_modules/bluebird/js/release/async.js:131:9)     at Async._drainQueues (/home/kevin/blog/node_modules/bluebird/js/release/async.js:147:5)     at Immediate.Async.drainQueues [as _onImmediate] (/home/kevin/blog/node_modules/bluebird/js/release/async.js:17:14)     at processImmediate (internal/timers.js:443:21)</code></p>
-<p>原因是nunjucks模板标签导致MD文件解析报错的问题，我试验了一下，在md文档中出现<code>双大括号</code>,<code>左大括号+#</code>,<code>左大括号+%</code>等都会报错(原谅我这么打，因为我打出来符号的话这篇博客就发不出来了)，下面是一位大神的<a target="_blank" rel="noopener" href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/">解决办法</a>，他提供了几种解决办法，讲的很详细，可以参考一下</p>
-<p>我觉得有点麻烦就没采用(说多了就是菜～),下面是我的办法:</p>
-<ol>
-<li>既然出现上面的内容就会报错，那就尽量避免出现呗…(说的都是废话)</li>
-<li>使用<code>\lbrace</code>代替<code>\&#123;</code>,使用<code>\rbrace</code>代替<code>\&#125;</code><br>推荐大神的解决办法，一劳永逸，以后就不用管了</li>
-</ol>
-<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/hexo%E5%A4%A7%E5%9D%91/1.png"></p>
-<p>有可能是hexo解析的问题，我在使用markdown-preview的时候看的是正常的</p>
-<div><h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1><ul><li><a href="https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/">魔改hexo博客</a></li><li><a href="https://godliuyang.wang/2020/09/15/cdn-for-blog/">CDN_for_blog</a></li></ul></div>
+                <h2 id="540-有序数组中的单一元素"><a href="#540-有序数组中的单一元素" class="headerlink" title="[540] 有序数组中的单一元素"></a>[540] 有序数组中的单一元素</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/description/">https://leetcode-cn.com/problems/single-element-in-a-sorted-array/description/</a></p>
+<ul>
+<li>algorithms</li>
+<li>Medium (58.50%)</li>
+<li>Likes:    214</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    26.1K</li>
+<li>Total Submissions: 44.7K</li>
+<li>Testcase Example:  ‘[1,1,2,3,3,4,4,8,8]’</li>
+</ul>
+<p>给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。</p>
+
+<p><strong>示例 1:</strong></p>
+
+<pre>
+<strong>输入:</strong> [1,1,2,3,3,4,4,8,8]
+<strong>输出:</strong> 2
+</pre>
+
+<p><strong>示例 2:</strong></p>
+
+<pre>
+<strong>输入:</strong> [3,3,7,7,10,11,11]
+<strong>输出:</strong> 10
+</pre>
+
+<p><strong>注意:</strong> 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。</p>
+
+<h3 id="方法1-暴力搜索"><a href="#方法1-暴力搜索" class="headerlink" title="方法1: 暴力搜索"></a>方法1: 暴力搜索</h3><p>思路: 遍历数组, 比较第 <code>nums[i]</code> 与 <code>nums[i+1]</code>, 相等则往后跳两格继续比较</p>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    int singleNonDuplicate(vector&lt;int&gt;&amp; nums) &#123;
+            int i = 0;
+            while(i&lt;nums.size() - 1)&#123;
+                if(nums[i] == nums[i+1])&#123;
+                    i+=2;
+                &#125;else&#123;
+                    return nums[i];
+                &#125;
+            &#125;
+            return nums[i];
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210330210930.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(n)</code></li>
+<li>空间复杂度: <code>O(1)</code></li>
+</ul>
+<h3 id="方法2-二分查找"><a href="#方法2-二分查找" class="headerlink" title="方法2: 二分查找"></a>方法2: 二分查找</h3><p>思路: 在出现单一元素之前, 数字是重复出现的, 若此时在中间去掉一组数, 其左右两侧仍然是偶数, 在出现单一元素后, 若在中间去掉一组数, 那么必然一侧偶数, 一侧单数, 分开讨论即可</p>
+<p>步骤: 关于 <code>mid</code> 的情况, 总共有三种</p>
+<ul>
+<li>首先判断一侧是否为偶数: <code>are_even = (right - mid) % 2 == 0</code></li>
+<li><code>nums[mid] == nums[mid+1]</code> 如果 <code>are_even</code> 为真, 则证明去掉 <code>mid</code> 和 <code>mid+1</code> 项, 右侧共有奇数项, 则左侧一定为偶数项, 此时将        <code>left</code> 移到 <code>mid+2</code> 位置继续探索; 反之将 <code>right</code> 移到 <code>mid-1</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>1</th>
+<th>2</th>
+<th>2</th>
+<th>3</th>
+<th>3</th>
+<th>4</th>
+<th>···</th>
+<th>8</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>mid</td>
+<td>mid+1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>nums[mid] == nums[mid-1]</code> 如果    <code>are_even</code> 为真, 则证明去掉 <code>mid</code> 和 <code>mid-1</code> 项, 右侧为共有偶数项, 则左侧一定为奇数项, 单一元素在左侧, 此时将 <code>right</code> 移到 <code>mid-2</code> 位置继续探索; 反之将 <code>lfet</code> 移到 <code>mid+2</code> </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>1</th>
+<th>2</th>
+<th>2</th>
+<th>3</th>
+<th>3</th>
+<th>4</th>
+<th>···</th>
+<th>8</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>mid-1</td>
+<td>mid</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>若以上条件都不满足, 则 <code>mid</code> 所在位置即为单一元素</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>1</th>
+<th>2</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>4</th>
+<th>···</th>
+<th>8</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td>mid-1</td>
+<td>mid</td>
+<td>mid+1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre><code class="line-numbers language-cpp">class Solution &#123;
+public:
+    int singleNonDuplicate(vector&lt;int&gt;&amp; nums) &#123;
+            int left=0, right = nums.size() -1, mid;
+            while(left &lt; right)&#123;
+                mid = left + right &gt;&gt; 1;
+                bool are_even = (right - mid) % 2 == 0; 
+                if(nums[mid] == nums[mid + 1])&#123;
+
+                    if(are_even)&#123;
+                        left = mid + 2;
+                    &#125; else &#123;
+                        right = mid - 1;
+                    &#125;
+                &#125;else if(nums[mid] == nums[mid - 1])&#123;
+                    if(are_even)&#123;
+                        right = right - 2;
+                    &#125; else&#123;
+                        left = left + 1;
+                    &#125;
+                &#125;else&#123;
+                    return nums[mid];
+                &#125;
+            &#125;
+
+            return nums[right];
+    &#125;
+&#125;;</code></pre>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210330221349.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(logn)</code></li>
+<li>空间复杂度: <code>O(1)</code></li>
+</ul>
+
             </div>
             <hr/>
             
@@ -677,9 +858,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《hexo大坑》
+                    《LeetCode_Day24》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/22/hexo-da-keng/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/29/leetcode-day24/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -984,30 +1165,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/07/24/tu-xiang-fen-ge/">
+                <a href="/2021/03/30/leetcode-mei-ri-yi-ti-3/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="图像分割">
                         
-                        <span class="card-title">图像分割</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/50.webp" class="responsive-img" alt="LeetCode_每日一题3">
+                        
+                        <span class="card-title">LeetCode_每日一题3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            孤立点检测、线检测、基本边缘检测
+                            74 -> 搜索二维矩阵
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-30
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
@@ -1017,12 +1199,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
                     </a>
                     
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" target="_blank">
+                        <span class="chip bg-color">每日一题</span>
                     </a>
                     
                 </div>
@@ -1036,47 +1222,32 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/22/xing-tai-xue-tu-xiang-chu-li/">
+                <a href="/2021/03/28/leetcode-di-234-chang-zhou-sai/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" class="responsive-img" alt="形态学图像处理">
                         
-                        <span class="card-title">形态学图像处理</span>
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/86.webp" class="responsive-img" alt="LeetCode_第234场周赛">
+                        
+                        <span class="card-title">LeetCode_第234场周赛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            形态学图像处理、二值图像上的运算、图像的腐蚀与膨胀
+                            第234场周赛
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Digital-Image-Processing/" class="post-category" target="_blank">
-                                    Digital Image Processing
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            GeekOcean
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" target="_blank">
-                        <span class="chip bg-color">图像处理</span>
-                    </a>
-                    
-                    <a href="/tags/Matlab/" target="_blank">
-                        <span class="chip bg-color">Matlab</span>
-                    </a>
-                    
                 </div>
                 
             </div>
