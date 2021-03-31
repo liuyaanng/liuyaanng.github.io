@@ -678,11 +678,46 @@ public:
 </ul>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210331123356.png"> </p>
 <ul>
-<li>更新k的值, 令 <code>k = k - 1</code>, 问题又转化为求第k小的数, 不过要注意此时两数组是舍弃更新后的数组.</li>
+<li>更新k的值, 令 <code>k = k / 2</code>, 问题又转化为求第k小的数, 不过要注意此时两数组是舍弃更新后的数组.</li>
+<li>当两个数相等时, 按以上处理即可</li>
 <li>k经过迭代更新, 当<code>k = 1</code>时, 问题变成了求最小的值, 取此时的两数组(舍弃掉较小的值后的数组)的首项, 取其最小值即可</li>
 </ul>
+<p>在对比的过程中, 会出现以下特殊情况:     </p>
+<ol>
+<li><p>下标 <code>k/2-1</code> 超过其中一个数组长度.     </p>
+<p> 此时应取该数组最后一个元素来做对比, 若它小, 在更新k值时不能再 <code>k=k-k/2</code> , 应当减去该数组的长度</p>
+</li>
+<li><p>其中一个数组被完全舍弃.    </p>
+<p> 此时剩余数组的第k项即为所求</p>
+</li>
+<li><p><code>k = 0</code>    </p>
+<p> 比较两数组首项, 较小的值即为所求</p>
+</li>
+</ol>
 <p>下面用一个具体的例子来说明</p>
-<pre><code>nums1 = [1, ]</code></pre>
+<pre><code>nums1 = [1, 3, 4, 9]
+nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+<p>两数组长度之和为 <code>13</code>, 中位数为第7个数, 即第 <code>7</code> 小的数, <code>k=7</code>, 分别取下标为 <code>k/2-1</code> 项进行比较, 即 <code>nums1[2]</code> <code>nums2[2]</code></p>
+<pre><code>nums1: 1 3 4 9
+           ↑
+nums2: 1 2 3 4 5 6 7 8 9
+           ↑</code></pre>
+<p><code>nums1[2] &gt; nums2[2]</code> , 将 nums2 中 <code>nums2[2]</code> 前的项舍去, <code>nums2</code> 的下标偏移量为3,  更新k的值为 <code>k = k - k/2 = 4</code> , 继续查找下标为 <code>k/2-1</code> 的项, 即 <code>nums1[1]</code> <code>nums2[1]</code></p>
+<pre><code>nums1: 1 3 4 9
+         ↑
+nums2: [ 1 2 3 ] 4 5 6 7 8 9
+                   ↑</code></pre>
+<p><code>nums1[1] &lt; nums2[1]</code> , 继续舍弃较小的项, <code>nums1</code> 的下标偏移量为1,更新k的值为 <code>k=k-k/2=2</code>, 继续查找下标为 <code>k/2-1</code> 的项, 即 <code>nums1[0]</code> <code>nums2[0]</code></p>
+<pre><code>nums1: [ 1 3 ] 4 9
+               ↑
+nums2: [ 1 2 3 ] 4 5 6 7 8 9
+                 ↑</code></pre>
+<p><code>nums1[0] = nums2[0]</code> , 舍弃掉较小的项, <code>nums1</code> 的下标偏移量为3, 更新 <code>k = k - k/2=1</code>, 此时比较当前数组的首项, 小的那一项即为 <code>第k小项</code></p>
+<pre><code>nums1: [ 1 3 4 ] 9
+                 ↑
+nums2: [ 1 2 3 ] 4 5 6 7 8 9
+                 ↑</code></pre>
+<p>因此第k小项是4</p>
 <pre><code class="line-numbers language-cpp">class Solution &#123;
 public:
 
@@ -736,6 +771,12 @@ public:
     &#125;
 &#125;;</code></pre>
 <p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210331123507.png"></p>
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(log(m+n))</code> m, n分别为两数组长度</li>
+<li>空间复杂度: <code>O(1)</code></li>
+</ul>
+<h3 id="方法3-划分数组"><a href="#方法3-划分数组" class="headerlink" title="方法3: 划分数组"></a>方法3: 划分数组</h3><p>待完善</p>
 
             </div>
             <hr/>
