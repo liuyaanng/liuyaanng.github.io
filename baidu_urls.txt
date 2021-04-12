@@ -1,3 +1,4 @@
+https://godliuyang.wang/2021/04/12/guan-yu-zi-dian-xu/
 https://godliuyang.wang/2021/04/12/leetcode-day26/
 https://godliuyang.wang/2021/04/01/pai-xu-suan-fa/
 https://godliuyang.wang/2021/03/30/leetcode-day25/
@@ -27,4 +28,3 @@ https://godliuyang.wang/2021/03/11/leetcode-day6/
 https://godliuyang.wang/2021/03/10/leetcode-day5/
 https://godliuyang.wang/2021/03/09/leetcode-day4/
 https://godliuyang.wang/2021/03/08/leetcode-day3/
-https://godliuyang.wang/2021/03/07/leetcode-day2/

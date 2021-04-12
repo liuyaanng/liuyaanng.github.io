@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://godliuyang.wang/"/>
-  <updated>2021-04-12T14:13:31.338Z</updated>
+  <updated>2021-04-12T14:25:11.826Z</updated>
   <id>https://godliuyang.wang/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于字典序</title>
+    <link href="https://godliuyang.wang/2021/04/12/guan-yu-zi-dian-xu/"/>
+    <id>https://godliuyang.wang/2021/04/12/guan-yu-zi-dian-xu/</id>
+    <published>2021-04-12T14:17:03.000Z</published>
+    <updated>2021-04-12T14:25:11.826Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-字典序的定义&quot;&gt;&lt;a href=&quot;#1-字典序的定义&quot; class=&quot;headerlink&quot; title=&quot;1. 字典序的定义&quot;&gt;&lt;/a&gt;1. 字典序的定义&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;字典序（dictionary order）&lt;/strong&gt; , 又称
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>LeetCode_Day26</title>
@@ -561,36 +583,6 @@
         
         
           &lt;h3 id=&quot;763-划分字母区间&quot;&gt;&lt;a href=&quot;#763-划分字母区间&quot; class=&quot;headerlink&quot; title=&quot;[763] 划分字母区间&quot;&gt;&lt;/a&gt;[763] 划分字母区间&lt;/h3&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://godliuyang.wang/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="c++" scheme="https://godliuyang.wang/tags/c/"/>
-    
-      <category term="LeetCode" scheme="https://godliuyang.wang/tags/LeetCode/"/>
-    
-      <category term="贪心算法" scheme="https://godliuyang.wang/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode_Day12</title>
-    <link href="https://godliuyang.wang/2021/03/17/leetcode-day12/"/>
-    <id>https://godliuyang.wang/2021/03/17/leetcode-day12/</id>
-    <published>2021-03-17T12:54:29.000Z</published>
-    <updated>2021-03-23T13:26:05.755Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;452-用最少数量的箭引爆气球&quot;&gt;&lt;a href=&quot;#452-用最少数量的箭引爆气球&quot; class=&quot;headerlink&quot; title=&quot;[452] 用最少数量的箭引爆气球&quot;&gt;&lt;/a&gt;[452] 用最少数量的箭引爆气球&lt;/h3&gt;&lt;p&gt;&lt;a
         
       
     

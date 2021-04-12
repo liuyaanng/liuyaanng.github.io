@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>关于字典序</title>
+      <link href="/2021/04/12/guan-yu-zi-dian-xu/"/>
+      <url>/2021/04/12/guan-yu-zi-dian-xu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-字典序的定义"><a href="#1-字典序的定义" class="headerlink" title="1. 字典序的定义"></a>1. 字典序的定义</h3><p><strong>字典序（dictionary order）</strong> , 又称 <strong>字母序（alphabetical order）</strong> , 原意是表示英文单词在字典中的先后顺序，在计算机领域中扩展成两个任意字符串的大小关系。</p><p>在字典中，单词是按照首字母在字母表中的顺序进行排列的，比如 alpha 在 beta 之前。而第一个字母相同时，会去比较两个单词的第二个字母在字母表中的顺序，比如 account 在 advanced 之前，以此类推。下列单词就是按照字典序进行排列的：</p><pre><code class="line-numbers language-txt">asasterastrolabeastronomyastrophysicsat atamanattackbea</code></pre><h3 id="2-计算机中的字典序"><a href="#2-计算机中的字典序" class="headerlink" title="2. 计算机中的字典序"></a>2. 计算机中的字典序</h3><p>在计算机领域中，这个字典序就不仅仅用来比较英文单词了，而是比较任意字符串。对于两个字符串，大小关系取决于两个字符串从左到右第一个不同字符的 ASCII 值的大小关系.</p><p>比如 <code>ah1x</code> 小于 <code>ahb</code> 而 <code>Z5</code> 小于 <code>a3</code> .</p><h3 id="3-C-中字典序比较"><a href="#3-C-中字典序比较" class="headerlink" title="3. C++中字典序比较"></a>3. C++中字典序比较</h3><pre><code class="line-numbers language-cpp">cout &lt;&lt; (&quot;ah1x&quot; &gt; &quot;ahb&quot;) &lt;&lt; endl;</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode_Day26</title>
       <link href="/2021/04/12/leetcode-day26/"/>
       <url>/2021/04/12/leetcode-day26/</url>
