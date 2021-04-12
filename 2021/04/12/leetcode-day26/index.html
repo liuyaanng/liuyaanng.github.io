@@ -5,8 +5,11 @@
 <head>
     <meta charset="utf-8">
 		<meta name="google-site-verification" content="VnofYX8iuaTsibGaSIUeHanQZBi1NyHODHOFKbFZQZ4" />
-    <meta name="keywords" content="Playing Atari with Deep Reinforcement Learning, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
-    <meta name="description" content="AbstractThis is the first deep learning model using reforcement learning to learn contorl policies ditectly from high-di">
+    <meta name="keywords" content="LeetCode_Day26, GeekOcean geekocean wangliuyang 王留洋 liuyang Liuyang Wang Liuyang 留洋 人工智能 图像处理">
+    <meta name="description" content="[215] 数组中的第K个最大元素https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/
+
+algorithms
+Medium (64.59">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Playing Atari with Deep Reinforcement Learning | GeekOcean</title><meta name="robots" content="noindex">
+    <title>LeetCode_Day26 | GeekOcean</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@1.1/blog_source/libs/awesome/css/font-awesome.min.css">
@@ -332,13 +335,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/13.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/39.webp')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Playing Atari with Deep Reinforcement Learning
+                        LeetCode_Day26
                     </div>
                 </div>
             </div>
@@ -447,25 +450,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Deep-Reinforcement-Learning/" target="_blank">
-                                <span class="chip bg-color">Deep Reinforcement Learning</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Paper-Notes/" class="post-category" target="_blank">
-                                Paper Notes
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -473,19 +463,19 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-03
+                    2021-04-12
                 </div>
 
 								<div class="update-data info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-03
+                    2021-04-12
 								</div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        252
+                        404
                     </div>
                     
 
@@ -510,28 +500,79 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This is the first deep learning model using reforcement learning to learn contorl policies ditectly from high-dimensional sensory input. The model is a <strong>convolutional neural network</strong> , trained with a bariant of Q-Learning.</p>
-<p>Input: raw pixels<br>Output: a alue function estimating future reawards</p>
-<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><ul>
-<li>Learning tp control agents directly <strong>from high-dimensional sensory input</strong> like vision and speech is one of the long-standing challenges of RL</li>
-<li>Deep learning have made it possible to extract hig-level features from raw sensory data. The neural network architrctures including <strong>recurrnet neural network</strong>, <strong>multilayer perceptrons</strong>, <strong>restricted Boltzmann machines and recurrent neural networks</strong>, and have ex-ploited both <strong>supervised</strong> and <strong>unsupervised learning</strong>.</li>
-<li>RL algorithms must be able to learn from a <strong>scalar reward signal that is frequently space, noisy and delayed.</strong></li>
-<li>The network is trained with a variant of Q-learning algorithm, with stochastic gradirnt <strong>descent</strong> to update the weights.</li>
-<li>Arcade Learning Enviroment: Atari 2600 presents agents with a high dimensional visualimput(210x160RGB video at 60Hz)</li>
-<li>The goal is to create a single neural network agent that is able to successfully learn to play as many of the game as possible.</li>
-</ul>
-<h3 id="2-Background"><a href="#2-Background" class="headerlink" title="2. Background"></a>2. Background</h3><ul>
-<li><p>The Programe</p>
+                <h3 id="215-数组中的第K个最大元素"><a href="#215-数组中的第K个最大元素" class="headerlink" title="[215] 数组中的第K个最大元素"></a>[215] 数组中的第K个最大元素</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/">https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/</a></p>
 <ul>
-<li>Environment $\mathcal{E}$ may be stochastic.</li>
-<li>Atari emulator: a sequence of <strong>actions, observations, rewards</strong></li>
-<li>Each time-step the agent selects an action $a_t$</li>
-<li>The emulator’s internal state observers an image $x_t \in\mathbb{R}^{d}$ ,  which is a <strong>vector of raw pixel values representing the current screen</strong></li>
-<li>The emulator receives a reward $r_t$ representing the change in game score.</li>
+<li>algorithms</li>
+<li>Medium (64.59%)</li>
+<li>Likes:    992</li>
+<li>Dislikes: -</li>
+<li>Total Accepted:    298.5K</li>
+<li>Total Submissions: 462.1K</li>
+<li>Testcase Example:  ‘[3,2,1,5,6,4]\n2’</li>
 </ul>
+<p>在未排序的数组中找到第 <strong>k</strong> 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。</p>
+
+<p><strong>示例 1:</strong></p>
+
+<pre><strong>输入:</strong> <code>[3,2,1,5,6,4] 和</code> k = 2
+<strong>输出:</strong> 5
+</pre>
+
+<p><strong>示例&nbsp;2:</strong></p>
+
+<pre><strong>输入:</strong> <code>[3,2,3,1,2,4,5,5,6] 和</code> k = 4
+<strong>输出:</strong> 4</pre>
+
+<p><strong>说明: </strong></p>
+
+<p>你可以假设 k 总是有效的，且 1 &le; k &le; 数组的长度。</p>
+
+<h3 id="方法1-快速查找算法"><a href="#方法1-快速查找算法" class="headerlink" title="方法1: 快速查找算法"></a>方法1: 快速查找算法</h3><p>第K问题, 可以使用快速查找算法</p>
+<h4 id="1-我的算法"><a href="#1-我的算法" class="headerlink" title="1. 我的算法"></a>1. 我的算法</h4><pre><code>class Solution &#123;
+public:
+    int quick_select(vector&lt;int&gt; &amp; nums, int left, int right)&#123;
+        int pivotkey = rand() % (right - left) + left; //随机选择
+        swap(nums[pivotkey], nums[left]);
+        int pivot = nums[left];
+        while(left &lt; right)&#123;
+            while(left &lt; right &amp;&amp; nums[right] &lt;= pivot) --right;
+            nums[left] = nums[right];
+            while(left &lt; right &amp;&amp; nums[left] &gt;= pivot) ++left;
+            nums[right] = nums[left];
+        &#125;
+        nums[left] = pivot;
+        return left;
+    &#125;
+        int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;
+            int left = 0, right = nums.size() - 1, mid = 0, target = k - 1; // target 指第k大的数的索引
+            while(left &lt; right)&#123;
+                mid = quick_select(nums, left, right);
+                if(mid == target)&#123;
+                    return nums[mid];
+                &#125; else if (mid &lt; target)&#123;
+                    left = mid + 1;
+                &#125; else &#123;
+                    right = mid - 1;
+                &#125;
+            &#125;
+            return nums[left];
+        &#125;
+&#125;;</code></pre>
+<p>经测试, 随机选取 <code>pivotkey</code> 会极大的提高效率</p>
+<ul>
+<li><p>随机选择前: </p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210412220406.png"></p>
+</li>
+<li><p>随机选择后: </p>
+<p>  <img loading="lazy" src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_images/img/20210412220509.png"></p>
 </li>
 </ul>
-<!-- flag of hidden posts -->
+<p>复杂度分析: </p>
+<ul>
+<li>时间复杂度: <code>O(n)</code> , 由于随机选择 <code>pivotkey</code> , 故不会出现 $O(n^2)$ 的最坏情况</li>
+<li>空间复杂度:  <code>O(1)</code></li>
+</ul>
+
             </div>
             <hr/>
             
@@ -689,9 +730,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Playing Atari with Deep Reinforcement Learning》
+                    《LeetCode_Day26》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/03/playing-atari-with-deep-reinforcement-learning/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/04/12/leetcode-day26/" property="cc:attributionName"
                rel="cc:attributionURL">
                 GeekOcean
             </a> 采用
@@ -997,46 +1038,37 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/03/03/playing-atari-with-deep-reinforcement-learning/">
+                <a href="/2021/04/12/leetcode-day26/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/13.webp" class="responsive-img" alt="Playing Atari with Deep Reinforcement Learning">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/39.webp" class="responsive-img" alt="LeetCode_Day26">
                         
-                        <span class="card-title">Playing Atari with Deep Reinforcement Learning</span>
+                        <span class="card-title">LeetCode_Day26</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Note
+                            [215] 数组中的第K个最大元素https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/
+
+algorithms
+Medium (64.59
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Paper-Notes/" class="post-category" target="_blank">
-                                    Paper Notes
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            GeekOcean
                             
                         </span>
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Deep-Reinforcement-Learning/" target="_blank">
-                        <span class="chip bg-color">Deep Reinforcement Learning</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -1044,46 +1076,49 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/03/playing-atari-with-deep-reinforcement-learning/">
+                <a href="/2021/04/01/pai-xu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/13.webp" class="responsive-img" alt="Playing Atari with Deep Reinforcement Learning">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/85.webp" class="responsive-img" alt="排序算法">
                         
-                        <span class="card-title">Playing Atari with Deep Reinforcement Learning</span>
+                        <span class="card-title">排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Note
+                            排序算法实现
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Paper-Notes/" class="post-category" target="_blank">
-                                    Paper Notes
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Deep-Reinforcement-Learning/" target="_blank">
-                        <span class="chip bg-color">Deep Reinforcement Learning</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" target="_blank">
+                        <span class="chip bg-color">排序算法</span>
                     </a>
                     
                 </div>
@@ -1235,13 +1270,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  <footer class="page-footer bg-color">

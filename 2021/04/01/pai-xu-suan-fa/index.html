@@ -509,14 +509,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.2k
+                        1.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        7 分
                     </div>
                     
                 
@@ -588,7 +588,7 @@
     &#125;
 &#125;</code></pre>
 <p>时间复杂度: $O(n^2)$</p>
-<h4 id="1-3-折半插入排序-Binary-Insertion-Sort"><a href="#1-3-折半插入排序-Binary-Insertion-Sort" class="headerlink" title="1.3 折半插入排序(Binary Insertion Sort)"></a>1.3 折半插入排序(Binary Insertion Sort)</h4><p>由于是在有序表中查找待插入元素的位置, 显然使用二分法来查找更有效. </p>
+<h4 id="1-2-折半插入排序-Binary-Insertion-Sort"><a href="#1-2-折半插入排序-Binary-Insertion-Sort" class="headerlink" title="1.2 折半插入排序(Binary Insertion Sort)"></a>1.2 折半插入排序(Binary Insertion Sort)</h4><p>由于是在有序表中查找待插入元素的位置, 显然使用二分法来查找更有效. </p>
 <pre><code class="line-numbers language-cpp">void Binary_Insertion_Sort(vector&lt;int&gt; &amp; nums, int n)&#123;
     int left, right, mid, i, j;
 
@@ -613,6 +613,20 @@
         nums[j+1] = X;
     &#125;
 &#125;</code></pre>
+<h4 id="1-3-希尔排序-Sheel-Sort"><a href="#1-3-希尔排序-Sheel-Sort" class="headerlink" title="1.3 希尔排序(Sheel Sort)"></a>1.3 希尔排序(Sheel Sort)</h4><pre><code class="line-numbers language-cpp">void Shell_Sort(vector&lt;int&gt; &amp; nums, int n)&#123;
+    int h = 1;
+    while(h &lt; n/3)&#123;
+        h = h * 3 + 1; // 1, 4, 13, 40, ...
+    &#125;
+    while(h &gt;= 1)&#123;
+        for(int i = h; i &lt; n; ++i)&#123;
+            for(int j = i; j &gt;= h &amp;&amp; nums[j] &lt; nums[j-h]; j -= h)&#123;
+                swap(nums[j], nums[j-h]);
+            &#125;
+        &#125;
+        h = h / 3;
+    &#125;
+&#125;</code></pre>
 <h3 id="2-冒泡排序-Bubble-Sort"><a href="#2-冒泡排序-Bubble-Sort" class="headerlink" title="2. 冒泡排序(Bubble Sort)"></a>2. 冒泡排序(Bubble Sort)</h3><ul>
 <li>第一次遍历数组, 对比第 <code>i</code> 项与 <code>i+1</code> 项, 通过交换他俩的值保证较大的那个数被交换到后面, 增大 <code>i</code> 的值, 再次执行对比交换过程, 直到最大的那个数被交换到数组的末尾, 这是第一次冒泡排序的过程</li>
 <li>遍历数组, 重复以上步骤</li>
@@ -626,9 +640,9 @@
         &#125;
     &#125;
 &#125;</code></pre>
-<h3 id="3-快速排序-Quick-Sort"><a href="#3-快速排序-Quick-Sort" class="headerlink" title="3. 快速排序(Quick Sort)"></a>3. 快速排序(Quick Sort)</h3><p>快速排序是对冒泡排序的一种改进. 它的基本思想是: 通过一趟排序将待排记录分割成独立的两部分, 其中一部分记录的段简直均比另一部分的关键字小,则可分别对这两部分记录继续进行排序, 以达到整个序列有序. </p>
+<h3 id="3-快速排序-Quick-Sort"><a href="#3-快速排序-Quick-Sort" class="headerlink" title="3. 快速排序(Quick Sort)"></a>3. 快速排序(Quick Sort)</h3><h4 id="3-1-快速排序算法"><a href="#3-1-快速排序算法" class="headerlink" title="3.1 快速排序算法"></a>3.1 快速排序算法</h4><p>快速排序是对冒泡排序的一种改进. 它的基本思想是: 通过一趟排序将待排记录分割成独立的两部分, 其中一部分记录的段简直均比另一部分的关键字小,则可分别对这两部分记录继续进行排序, 以达到整个序列有序. </p>
 <p>一次快速排序过程: 设置两个指针 <code>left</code> , <code>right</code> , 设置枢纽记录的关键字为 <code>pivorkey</code>, 首先从 <code>right</code> 所指位置向前搜索第一个小于 <code>pivorkey</code> 的记录与枢纽记录进行交换, 然后从 <code>left</code> 所指位置向后搜索, 找到第一个关键字大于 <code>pivorkey</code> 的记录与枢纽记录进行交换, 重复这两步直到 <code>left = right</code> </p>
-<pre><code class="line-numbers language-cp">// 划分子序列, 返回枢纽所在位置
+<pre><code class="line-numbers language-cpp">// 划分子序列, 返回枢纽所在位置
 int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
     int pivot = nums[left];
     while(left &lt; right)&#123;
@@ -649,6 +663,36 @@ int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
         Quick_Sort(nums, pivotkey + 1, right);
     &#125;
 &#125;</code></pre>
+<h4 id="3-2-改进快速排序"><a href="#3-2-改进快速排序" class="headerlink" title="3.2 改进快速排序"></a>3.2 改进快速排序</h4><p>最坏的情况下, 第一次从最小的元素切分, 第二次从第二小的元素切分, 如此这般. 因此最坏的情况下需要比较 $\frac{N^2}{2}$ . 为了防止数组最开始就是有序的，在进行快速排序时需要随机打乱数组.</p>
+<p>只需在 <code>Partition</code> 函数中改进即可. </p>
+<pre><code class="line-numbers language-cpp">int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
+    int pivotkey = rand() % (right - left + 1) + left;
+    swap(nums[pivotkey], nums[left]);
+    int pivot = nums[left];
+    while(left &lt; right)&#123;
+        while(left &lt; right &amp;&amp; nums[right] &gt;= pivot) --right;
+        nums[left] = nums[right];
+        while(left &lt; right &amp;&amp; nums[left] &lt;= pivot) ++left;
+        nums[right] = nums[left];
+    &#125;
+    nums[left] = pivot;
+    return left;
+&#125;</code></pre>
+<h4 id="3-3-快速选择算法"><a href="#3-3-快速选择算法" class="headerlink" title="3.3 快速选择算法"></a>3.3 快速选择算法</h4><p>快速排序的    <code>Partition()</code> 方法, 会返回一个整数 <code>j</code> 使得 $a[…j-1]$ 小于等于 $a[j]$ , 且    $a[j+1…]$ 大于等于 $a[j]$ , 此时 $a[j]$ 就是数组的第 <code>j</code> 小元素. 可以利用这一特性解决 <code>第K问题</code> </p>
+<pre><code class="line-numbers language-cpp">int quick_select(vector&lt;int&gt; &amp; nums, int left, int right)&#123;
+    int pivotkey = rand() % (right - left) + left;
+    swap(nums[pivotkey], nums[left]);
+    int pivot = nums[left];
+    while(left &lt; right)&#123;
+        while(left &lt; right &amp;&amp; nums[right] &lt;= pivot) --right;
+        nums[left] = nums[right];
+        while(left &lt; right &amp;&amp; nums[left] &gt;= pivot) ++left;
+        nums[right] = nums[left];
+    &#125;
+    nums[left] = pivot;
+    return left;
+&#125;</code></pre>
+<p><a href="">LeetCode 215: 数组中的第K个最大元素</a> </p>
 <h3 id="4-选择排序"><a href="#4-选择排序" class="headerlink" title="4. 选择排序"></a>4. 选择排序</h3><h4 id="4-1-简单选择排序"><a href="#4-1-简单选择排序" class="headerlink" title="4.1 简单选择排序"></a>4.1 简单选择排序</h4><p>一次简单排序为: 通过 <code>n-i</code> 次对比, 从 <code>n-i+1</code> 个记录中选选择关键字最小的记录, 并与第 <code>i</code> 个记录交换. </p>
 <pre><code class="line-numbers language-cpp">void Selection_Sort(vector&lt;int&gt;&amp; nums, int n)&#123;
     int min_index;
@@ -1123,54 +1167,39 @@ int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/01/pai-xu-suan-fa/">
+                <a href="/2021/04/12/leetcode-day26/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/85.webp" class="responsive-img" alt="排序算法">
+                        <img src="https://cdn.jsdelivr.net/gh/liuyaanng/Blog_source@master/blog_source/mc/39.webp" class="responsive-img" alt="LeetCode_Day26">
                         
-                        <span class="card-title">排序算法</span>
+                        <span class="card-title">LeetCode_Day26</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            排序算法实现
+                            [215] 数组中的第K个最大元素https://leetcode-cn.com/problems/kth-largest-element-in-an-array/description/
+
+algorithms
+Medium (64.59
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-12
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
-                                    算法
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            GeekOcean
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/c/" target="_blank">
-                        <span class="chip bg-color">c++</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" target="_blank">
-                        <span class="chip bg-color">排序算法</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1393,7 +1422,7 @@ int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">59.8k</span>
+            <span class="white-color">60.6k</span>
             
 
             <br>
