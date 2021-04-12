@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</loc>
+    <lastmod>2021-04-12</lastmod>
+  </url>
+  <url>
     <loc>https://godliuyang.wang/2021/04/12/guan-yu-zi-dian-xu/</loc>
     <lastmod>2021-04-12</lastmod>
   </url>
@@ -190,10 +194,6 @@
   </url>
   <url>
     <loc>https://godliuyang.wang/2020/08/17/leetcode-easy-9/</loc>
-    <lastmod>2020-12-11</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2019/08/24/manjaro-i3wm-huan-jing-pei-zhi-pian/</loc>
     <lastmod>2020-12-11</lastmod>
   </url>
   <url>
