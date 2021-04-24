@@ -509,14 +509,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        8 分
                     </div>
                     
                 
@@ -561,6 +561,51 @@
 <td>$O(1)$</td>
 <td>in-place</td>
 <td>稳定</td>
+</tr>
+<tr>
+<td>折半插入排序</td>
+<td>$O(n)$</td>
+<td>$O(nlogn)$</td>
+<td>$O(nlogn)$</td>
+<td>$O(1)$</td>
+<td>in-place</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>$O(nlogn)$</td>
+<td>$O(nlogn^2)$</td>
+<td>$O(nlogn^2)$</td>
+<td>$O(1)$</td>
+<td>in-place</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>冒泡排序</td>
+<td>$O(n)$</td>
+<td>$O(n^2)$</td>
+<td>$O(n^2)$</td>
+<td>$O(1)$</td>
+<td>in-place</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>$O(nlogn)$</td>
+<td>$O(n^2)$</td>
+<td>$O(nlogn)$</td>
+<td>$O(logn)$</td>
+<td>in-place</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>$O(n^2)$</td>
+<td>$O(n^2)$</td>
+<td>$O(n^2)$</td>
+<td>$O(1)$</td>
+<td>in-place</td>
+<td>不稳定</td>
 </tr>
 </tbody></table>
 <h3 id="1-插入排序-Insertion-Sort"><a href="#1-插入排序-Insertion-Sort" class="headerlink" title="1. 插入排序(Insertion Sort)"></a>1. 插入排序(Insertion Sort)</h3><p>插入排序的关键是找到正确的插入位置</p>
@@ -706,6 +751,31 @@ int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
         swap(nums[i], nums[min_index]);
     &#125;
 &#125;</code></pre>
+<h3 id="5-归并排序"><a href="#5-归并排序" class="headerlink" title="5. 归并排序"></a>5. 归并排序</h3><p>归并排序用的是分治的思想, 重点在于怎么将两个有序数组合并为一个有序数组. </p>
+<pre><code class="line-numbers language-cpp">void Merge_Sort(vector&lt;int&gt;&amp; nums, int left, int right, vector&lt;int&gt;&amp; temp)&#123;
+    if(left + 1 &gt;= right) return;
+
+
+    //divide
+    int mid = left + right &gt;&gt; 1;
+    Merge_Sort(nums, left, mid, temp);
+    Merge_Sort(nums, mid, right, temp);
+
+    //conquer
+    int p = left, q = mid, i = left;
+    while(p &lt; mid || q &lt; right)&#123;
+        if(q &gt;= right || (p &lt; mid &amp;&amp; nums[p] &lt;= nums[q]))&#123;
+            temp[i++] = nums[p++];
+        &#125; else &#123;
+            temp[i++] = nums[q++];
+        &#125;
+    &#125;
+
+    for(i = left; i &lt; right; ++i)&#123;
+        nums[i] = temp[i];
+    &#125;
+&#125;</code></pre>
+<p><code>temp</code> 为辅助数组, 长度与 <code>nums</code> 数组一样.</p>
 
             </div>
             <hr/>
@@ -1435,7 +1505,7 @@ int Partition(vector&lt;int&gt;&amp; nums, int left, int right)&#123;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">60.9k</span>
+            <span class="white-color">61.2k</span>
             
 
             <br>
