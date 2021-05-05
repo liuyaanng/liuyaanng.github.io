@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://godliuyang.wang/2020/04/21/gpu-servers/</loc>
+    <lastmod>2021-05-05</lastmod>
+  </url>
+  <url>
     <loc>https://godliuyang.wang/2020/09/18/mo-gai-hexo-bo-ke/</loc>
     <lastmod>2021-05-05</lastmod>
   </url>
@@ -266,10 +270,6 @@
   </url>
   <url>
     <loc>https://godliuyang.wang/2019/07/22/hexo-da-keng/</loc>
-    <lastmod>2020-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2020/04/21/gpu-servers/</loc>
     <lastmod>2020-11-14</lastmod>
   </url>
   <url>
