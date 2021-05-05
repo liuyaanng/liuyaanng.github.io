@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://godliuyang.wang/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/</loc>
+    <lastmod>2021-05-05</lastmod>
+  </url>
+  <url>
     <loc>https://godliuyang.wang/2020/04/21/gpu-servers/</loc>
     <lastmod>2021-05-05</lastmod>
   </url>
@@ -258,10 +262,6 @@
   </url>
   <url>
     <loc>https://godliuyang.wang/2020/03/30/scikit-image-guide/</loc>
-    <lastmod>2020-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://godliuyang.wang/2019/07/25/opencv-ru-keng-zhi-nan-huan-jing-da-jian-pian/</loc>
     <lastmod>2020-11-14</lastmod>
   </url>
   <url>
