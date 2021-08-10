@@ -592,20 +592,6 @@
   </url>
   
   <url>
-    <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
-    <lastmod>2021-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godliuyang.wang/tags/Script/</loc>
-    <lastmod>2021-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godliuyang.wang/tags/Python/</loc>
     <lastmod>2021-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -628,6 +614,20 @@
   
   <url>
     <loc>https://godliuyang.wang/tags/jsdelivr/</loc>
+    <lastmod>2021-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Bilibili-com/</loc>
+    <lastmod>2021-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godliuyang.wang/tags/Script/</loc>
     <lastmod>2021-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
