@@ -127,7 +127,7 @@ source deactivate
 ### 4. Delate Python environment
 
 ```bash
-conda remove --name python37 --all
+conda env remove --name python37 --all
 ```
 
 

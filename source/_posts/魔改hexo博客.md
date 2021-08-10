@@ -1,6 +1,6 @@
 ---
 title: 魔改hexo博客
-top: false
+top: true
 cover: false
 toc: true
 mathjax: false

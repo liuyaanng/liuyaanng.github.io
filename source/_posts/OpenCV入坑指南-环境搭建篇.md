@@ -4,7 +4,7 @@ date: 2019-07-25 21:12:11
 updatedate: 2019-07-25 21:12:11
 tags: OpenCV
 cover: false
-top: true
+top: false
 img: https://i.loli.net/2019/08/03/e2qDLXKy9vWnpfa.png
 toc: true
 summary: 从零开始搭建OpenCV图像处理环境, 总结了搭建过程中遇到的坑，满满的干货.

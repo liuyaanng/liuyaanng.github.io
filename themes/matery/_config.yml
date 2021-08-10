@@ -29,6 +29,10 @@ menu:
     url: /galleries
     icon: fa-image
     name: menu-item-galleries
+  # Air-conditioner-room:
+  #   url: /air-conditioner-room
+  #   icon: fa-asterisk
+  #   name: menu-item-air-conditioner-room
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -651,7 +655,7 @@ reprint:
   default: cc_by
 
 live2d:
-  enable: true
+  enable: false
 
 # 动态线条
 canvas:
@@ -724,7 +728,7 @@ hide_posts:
 
 # 明月浩空播放器
 music_box:
-  enable: true
+  enable: false
   mobile: false
 
 # gary blog

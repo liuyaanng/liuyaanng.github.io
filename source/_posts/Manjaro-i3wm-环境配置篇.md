@@ -1,5 +1,5 @@
 ---
-title: Manjaro i3wm 高效率环境配置篇(持续更新)
+title: Manjaro i3wm 高效率环境配置篇
 top: true
 cover: false
 img: https://cdn.jsdelivr.net/gh/liuyaanng/blog_source@master/blog_images/Manjaro-i3wm-环境配置篇/paper.jpg
@@ -8,7 +8,7 @@ mathjax: false
 date: 2019-08-24 15:45:27
 updatedate: 2020-01-26 15:45:27
 password:
-summary: Manjaro i3wm配置教程
+summary: Manjaro i3wm配置教程(转战Mac, 不再更新)
 tags:
 - Manjaro
 - linux

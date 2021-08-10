@@ -10,6 +10,8 @@ Allow: /2019/
 Allow: /2020/
 Allow: /page/
 Disallow: /she/
+Disallow: /tiktok/
+Disallow: /ted/
 Allow: /js/
 Allow: /css/
 Disallow: /medias/

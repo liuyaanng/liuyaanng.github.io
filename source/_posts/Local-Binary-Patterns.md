@@ -14,7 +14,6 @@ tags:
 - c++
 categories:
 - 实习
-- 算法
 ---
 
 # LBP算法
